@@ -1,4 +1,4 @@
-# Federal Seat Research — Technical Architecture
+# Left Field — Technical Architecture
 
 ## Implemented Phase 1 baseline (2026-07-21)
 

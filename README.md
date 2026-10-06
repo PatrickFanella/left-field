@@ -1,4 +1,4 @@
-# Federal Seat Research
+# Left Field
 
 An evidence-based research application for exploring United States House and
 Senate seats, resolving an address to its current federal districts without
@@ -23,6 +23,21 @@ and PostGIS persistence, versioned migrations, source-lock verification,
 reproducible acquisition and generation scripts, unit and integration tests,
 and production-environment contract checks. Repository evidence is not itself a
 claim that every proposed dataset or public release has been approved.
+
+## Project identity
+
+The product name is **Left Field**; the repository and npm package use
+`left-field`. Clone the renamed repository with:
+
+```bash
+git clone https://git.subcult.tv/subculture-collective/left-field.git
+```
+
+Existing databases, roles, service units, configuration paths, and development
+profiles retain their `dsa_seats` or `dsa-seats` identifiers for compatibility.
+Evidence URNs and hash namespaces also retain those identifiers so recorded
+source material and signed receipts remain verifiable. The product rename does
+not require a database or service migration.
 
 ## Local development
 

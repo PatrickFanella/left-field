@@ -1,5 +1,5 @@
 [Unit]
-Description=Probe DSA Seats factual production contracts
+Description=Probe Left Field factual production contracts
 After=docker.service network-online.target
 Wants=network-online.target
 

@@ -6,35 +6,35 @@ groups:
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: DSA Seats factual monitor has not completed for three minutes
+          summary: Left Field factual monitor has not completed for three minutes
 
       - alert: DsaSeatsPublicRouteUnavailable
         expr: dsa_seats_public_route_healthy{project="dsa-seats",environment="factual-r1"} != 1
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: DSA Seats public HTTPS route is unavailable
+          summary: Left Field public HTTPS route is unavailable
 
       - alert: DsaSeatsPublicBodyContractFailed
         expr: dsa_seats_public_body_contract_healthy{project="dsa-seats",environment="factual-r1"} != 1
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: DSA Seats public HTML is empty, synthetic, or release-mismatched
+          summary: Left Field public HTML is empty, synthetic, or release-mismatched
 
       - alert: DsaSeatsExpectedReleaseMismatch
         expr: dsa_seats_expected_release_healthy{project="dsa-seats",environment="factual-r1"} != 1
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: DSA Seats database, origin, Caddy, and public release identities disagree
+          summary: Left Field database, origin, Caddy, and public release identities disagree
 
       - alert: DsaSeatsSyntheticContentDetected
         expr: dsa_seats_synthetic_content_detected{project="dsa-seats",environment="factual-r1"} > 0
         for: 0m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: Synthetic content was detected on a factual DSA Seats route
+          summary: Synthetic content was detected on a factual Left Field route
 
       - alert: DsaSeatsCaddyRouteFailed
         expr: dsa_seats_caddy_route_healthy{project="dsa-seats",environment="factual-r1"} != 1
@@ -55,67 +55,67 @@ groups:
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: A DSA Seats application, PostgreSQL, or raw-store health contract failed
+          summary: A Left Field application, PostgreSQL, or raw-store health contract failed
 
       - alert: DsaSeatsDatabaseProbeFailed
         expr: dsa_seats_database_probe_healthy{project="dsa-seats",environment="factual-r1"} != 1
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: DSA Seats restricted production database telemetry failed
+          summary: Left Field restricted production database telemetry failed
 
       - alert: DsaSeatsValidationGateFailed
         expr: dsa_seats_validation_gate_healthy{project="dsa-seats",environment="factual-r1"} != 1
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: The published DSA Seats release lacks a valid seven-domain gate
+          summary: The published Left Field release lacks a valid seven-domain gate
 
       - alert: DsaSeatsIngestionFailed
         expr: dsa_seats_ingestion_runs{project="dsa-seats",environment="factual-r1",state="failed"} > 0
         for: 2m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: A current DSA Seats ingestion run is failed
+          summary: A current Left Field ingestion run is failed
 
       - alert: DsaSeatsIngestionStuck
         expr: dsa_seats_ingestion_runs{project="dsa-seats",environment="factual-r1",state="running"} > 0
         for: 30m
         labels: { severity: warning, project: dsa-seats }
         annotations:
-          summary: A DSA Seats ingestion run has remained active for thirty minutes
+          summary: A Left Field ingestion run has remained active for thirty minutes
 
       - alert: DsaSeatsBackupFailed
         expr: absent(dsa_seats_backup_success{project="dsa-seats",environment="factual-r1"}) or dsa_seats_backup_success{project="dsa-seats",environment="factual-r1"} != 1
         for: 5m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: The latest encrypted DSA Seats backup did not succeed
+          summary: The latest encrypted Left Field backup did not succeed
 
       - alert: DsaSeatsBackupStale
         expr: absent(dsa_seats_backup_last_success_unixtime{project="dsa-seats",environment="factual-r1"}) or time() - dsa_seats_backup_last_success_unixtime{project="dsa-seats",environment="factual-r1"} > 93600
         for: 5m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: No successful DSA Seats backup has been observed for twenty-six hours
+          summary: No successful Left Field backup has been observed for twenty-six hours
 
       - alert: DsaSeatsRestoreDrillFailed
         expr: absent(dsa_seats_restore_drill_success{project="dsa-seats",environment="factual-r1"}) or dsa_seats_restore_drill_success{project="dsa-seats",environment="factual-r1"} != 1
         for: 5m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: The latest isolated DSA Seats restore drill did not pass
+          summary: The latest isolated Left Field restore drill did not pass
 
       - alert: DsaSeatsRestoreDrillStale
         expr: absent(dsa_seats_restore_drill_last_success_unixtime{project="dsa-seats",environment="factual-r1"}) or time() - dsa_seats_restore_drill_last_success_unixtime{project="dsa-seats",environment="factual-r1"} > 3024000
         for: 15m
         labels: { severity: warning, project: dsa-seats }
         annotations:
-          summary: No successful DSA Seats restore drill has been observed for thirty-five days
+          summary: No successful Left Field restore drill has been observed for thirty-five days
 
       - alert: DsaSeatsMapIntegrityFailed
         expr: dsa_seats_map_integrity_failures{project="dsa-seats",environment="factual-r1"} > 0 or dsa_seats_map_route_healthy{project="dsa-seats",environment="factual-r1"} != 1
         for: 5m
         labels: { severity: critical, project: dsa-seats }
         annotations:
-          summary: A published DSA Seats map receipt, checksum, content type, or route failed
+          summary: A published Left Field map receipt, checksum, content type, or route failed

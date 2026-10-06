@@ -1,8 +1,8 @@
-# Federal Seat Research — Product Requirements
+# Left Field — Product Requirements
 
 ## 1. Product summary
 
-Federal Seat Research is a public, evidence-based tool for exploring U.S. House and Senate seats. A visitor can enter an address to identify their current federal districts, browse all federal seats, compare electoral and campaign-finance conditions, and inspect citation-backed records about incumbents.
+Left Field is a public, evidence-based tool for exploring U.S. House and Senate seats. A visitor can enter an address to identify their current federal districts, browse all federal seats, compare electoral and campaign-finance conditions, and inspect citation-backed records about incumbents.
 
 The MVP is nationwide and federal-only. It supports research about where credible primary or general-election contests may be feasible, but it does not profile individual voters, recommend persuasion targets, or infer political beliefs from an address or demographic characteristics.
 

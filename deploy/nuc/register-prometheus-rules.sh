@@ -15,7 +15,7 @@ exec 9>"$registration_lock"
 flock -n 9 || { echo "Another Prometheus rule registration is in progress" >&2; exit 1; }
 
 [ -f "$prometheus_config" ] || { echo "Prometheus config not found" >&2; exit 1; }
-[ -f "$source_rules" ] || { echo "DSA Seats rules not found" >&2; exit 1; }
+[ -f "$source_rules" ] || { echo "Left Field rules not found" >&2; exit 1; }
 
 config_dir=$(dirname "$prometheus_config")
 rules_dir=$(dirname "$installed_rules")
@@ -72,4 +72,4 @@ mv -f "$rules_candidate" "$installed_rules"
 mv -f "$config_candidate" "$prometheus_config"
 commit_complete=1
 
-echo "DSA Seats Prometheus rules registered; restart Prometheus to activate the atomically replaced config."
+echo "Left Field Prometheus rules registered; restart Prometheus to activate the atomically replaced config."

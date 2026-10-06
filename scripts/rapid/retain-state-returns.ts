@@ -28,7 +28,7 @@ const out = (line: string) => process.stdout.write(`${line}\n`);
 
 async function download(url: string, postBody?: string, postContentType?: string, userAgent?: string): Promise<Buffer> {
   if (!url.startsWith("https://")) throw new Error(`STATE_RETURNS_URL_NOT_HTTPS:${url}`);
-  const headers: Record<string, string> = { "User-Agent": userAgent ?? "dsa-seats-intake (+https://git.subcult.tv/subculture-collective/dsa-seats)" };
+  const headers: Record<string, string> = { "User-Agent": userAgent ?? "left-field-intake (+https://git.subcult.tv/subculture-collective/left-field)" };
   if (postBody !== undefined) headers["Content-Type"] = postContentType ?? "application/x-www-form-urlencoded";
   const response = await fetch(url.replace(/#post:.*$/, ""), { redirect: "follow", headers, ...(postBody !== undefined ? { method: "POST", body: postBody } : {}) });
   if (!response.ok) throw new Error(`STATE_RETURNS_DOWNLOAD_FAILED:${response.status}:${url}`);

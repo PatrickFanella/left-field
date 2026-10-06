@@ -35,10 +35,10 @@ fatal() { log "ERROR: $*"; exit 1; }
 notify_failure() {
   command -v curl >/dev/null || return 0
   curl -fsS \
-    -H 'Title: DSA Seats factual backup failed' \
+    -H 'Title: Left Field factual backup failed' \
     -H 'Priority: high' \
     -H 'Tags: warning,floppy_disk' \
-    --data-binary "DSA Seats factual backup failed on nuc at $(date -u +%Y-%m-%dT%H:%M:%SZ); inspect dsa-seats-factual-backup.service." \
+    --data-binary "Left Field factual backup failed on nuc at $(date -u +%Y-%m-%dT%H:%M:%SZ); inspect dsa-seats-factual-backup.service." \
     "$NTFY_URL" >/dev/null 2>&1 || true
 }
 
@@ -205,7 +205,7 @@ main() {
     printf 'compose_config,%s\n' "$(docker inspect --format '{{index .Config.Labels "com.docker.compose.project.config_files"}}' "$APP_CONTAINER")"
     printf 'backup_schedule,%s\n' 'daily'
     printf 'backup_retention,%s\n' '14 daily; 8 weekly; 12 monthly'
-    printf 'recovery_owner,%s\n' 'DSA Seats operations'
+    printf 'recovery_owner,%s\n' 'Left Field operations'
     printf 'recovery_rpo,%s\n' '24 hours'
     printf 'recovery_rto,%s\n' '2 hours'
   } > "$stage/deployment.csv"
