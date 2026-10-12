@@ -19,6 +19,10 @@ on:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    timeout-minutes: 30
     steps:
       - name: Ensure Git LFS is available
         run: |
@@ -28,7 +32,11 @@ jobs:
           fi
       - uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -44,7 +52,7 @@ jobs:
       - run: npm run test:fast
       - name: Open pull request
         env:
-          GH_TOKEN: ${{ secrets.FORGE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.FORGE_TOKEN || github.token }}
         run: |
           set -euo pipefail
           date="$(date -u +%F)"
@@ -56,4 +64,21 @@ jobs:
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "Refresh priority index inputs ${date}"
           git push origin "$branch"
-          gh pr create --title "Refresh priority index inputs ${date}" --body "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging." --base main --head "$branch"
+          if [ "$GITHUB_SERVER_URL" = https://git.subcult.tv ]; then
+            pr_payload=$(mktemp)
+            pr_response=$(mktemp)
+            trap 'rm -f "$pr_payload" "$pr_response"' EXIT
+            REFRESH_BRANCH="$branch" REFRESH_DATE="$date" python3 - > "$pr_payload" <<'PYTHON'
+          import json, os
+          print(json.dumps({"title": "Refresh priority index inputs " + os.environ["REFRESH_DATE"],
+                            "body": "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging.",
+                            "base": "main", "head": os.environ["REFRESH_BRANCH"]}))
+          PYTHON
+            curl --fail --silent --show-error \
+              -H "Authorization: token $GH_TOKEN" -H 'Content-Type: application/json' \
+              --data-binary "@$pr_payload" \
+              "$GITHUB_SERVER_URL/api/v1/repos/$GITHUB_REPOSITORY/pulls" > "$pr_response"
+            python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["html_url"])' "$pr_response"
+          else
+            gh pr create --title "Refresh priority index inputs ${date}" --body "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging." --base main --head "$branch"
+          fi
