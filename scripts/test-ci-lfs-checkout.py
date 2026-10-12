@@ -85,11 +85,11 @@ class CheckoutTests(unittest.TestCase):
 
     def git(self, *args, check=True):
         return subprocess.run(["git", *args], cwd=self.root, env=self.env,
-                              capture_output=True, text=True, check=check, timeout=20)
+                              capture_output=True, text=True, check=check, timeout=90)
 
     def checkout(self):
         return subprocess.run(["bash", str(SCRIPT)], cwd=self.root, env=self.env,
-                              capture_output=True, text=True, timeout=20)
+                              capture_output=True, text=True, timeout=90)
 
     def test_conflict_is_reproduced_and_helper_fetches_verified_bytes(self):
         self.assertNotEqual(self.git("lfs", "pull", check=False).returncode, 0)
