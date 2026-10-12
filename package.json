@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "node --test scripts/next-eslint-glob.test.mjs && eslint .",
+    "lint": "node --test scripts/next-eslint-glob.check.mjs && eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
