@@ -9,9 +9,13 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   static:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Ensure Git LFS is available
         run: |
@@ -21,7 +25,13 @@ jobs:
           fi
       - uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
+      - name: Verify LFS authentication boundaries
+        run: python3 scripts/test-ci-lfs-checkout.py
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
       - uses: actions/setup-node@v4
         with:
           node-version: 22

@@ -5,9 +5,13 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   acceptance:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       ACCEPTANCE_TESTS: "1"
       # Date columns come back from pg as local-midnight Dates; pin the lane's timezone so subject hashes are reproducible.
@@ -28,7 +32,11 @@ jobs:
           fi
       - uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
       - uses: actions/setup-node@v4
         with:
           node-version: 22
