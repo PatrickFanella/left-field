@@ -82,3 +82,14 @@ pointing tests at an existing database.
 No project-wide license has been declared. The repository also contains public
 source data and derived artifacts whose reuse may be governed by their original
 providers; consult the recorded source metadata before redistribution.
+
+### Next.js lint dependency
+
+The `@next/eslint-plugin-next` override replaces only its `fast-glob` dependency
+with pinned `tinyglobby` 0.2.17 to remove the unpatched `braces` advisory
+[GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm).
+All Next.js, React, accessibility, and TypeScript lint rules remain enabled.
+`npm run lint` first checks that Next.js discovers default, literal, wildcard,
+brace, array, and normalized Windows-style roots and still rejects internal
+HTML links. Remove the override when the upstream plugin has a safe dependency
+chain, and retain the compatibility check when upgrading it.

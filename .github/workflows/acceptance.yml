@@ -111,6 +111,16 @@ jobs:
       - run: npm run db:migrate
       - run: docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -U dsa_seats -d postgres -c "CREATE ROLE acceptance_web LOGIN PASSWORD 'acceptance_web' NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS; GRANT dsa_seats_web TO acceptance_web;"
       - run: npm run test:acceptance
+      - name: Retain browser failure evidence
+        if: failure()
+        uses: https://gitea.com/actions/upload-artifact@c24449f33cd45d4826c6702db7e49f7cdb9b551d
+        with:
+          name: acceptance-browser-failure
+          path: |
+            test-results/
+            playwright-report/
+          if-no-files-found: ignore
+          retention-days: 7
       - if: always()
         run: |
           if [ "${ACCEPTANCE_JOB_CONTAINER:-0}" = 1 ]; then
