@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { loadSourcesPage } from "@/ui/server-data";
@@ -17,7 +18,7 @@ import { loadRapidLocalContextCoverage } from "@/ui/rapid-local-context-coverage
 import { loadRapidExpansionStatus } from "@/ui/rapid-expansion-status";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Source ledger", description: "Which inputs feed the Priority Index, how many seats each one covers, and the retained snapshots behind them." };
+export const metadata: Metadata = pageMetadata("/sources", "Source ledger", "Which inputs feed the Priority Index, how many seats each one covers, and the retained snapshots behind them.");
 type Coverage = SourcesPageViewModel["coverage"][number];
 
 export default async function Sources() {

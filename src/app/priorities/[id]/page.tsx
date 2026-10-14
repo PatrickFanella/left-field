@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
@@ -11,11 +12,8 @@ type Props = { params: Promise<{ id: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const row = getDefaultPriorityRepository().getBrief((await params).id);
   return row
-    ? {
-        title: `${row.districtLabel} · ${row.officialHouseName}`,
-        description: row.scoreSummary,
-      }
-    : { title: "Brief not found" };
+    ? pageMetadata(`/priorities/${encodeURIComponent(row.seatCycleId)}`, `${row.districtLabel} · ${row.officialHouseName}`, row.scoreSummary)
+    : { title: "Brief not found", robots: { index: false, follow: false } };
 }
 
 export default async function PriorityBrief({ params }: Props) {

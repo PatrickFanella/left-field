@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell, fmtCount, fmtDate } from "@/components/presentational";
@@ -6,11 +7,7 @@ import { getDefaultPriorityRepository } from "@/lib/priority-index-store";
 import { DEFAULT_MINIMUM_INPUTS, measuredInputs, paginate, parseMinimumInputs, priorityStandings } from "@/lib/priority-index-view";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = {
-  title: "Priority Index",
-  description:
-    "Ranked research profiles for U.S. House and Senate seats, governorships, and state-legislative seats, with the evidence behind each score.",
-};
+export const metadata: Metadata = pageMetadata("/", "Election seat research", "Ranked research profiles for U.S. House and Senate seats, governorships, and state-legislative seats, with the evidence behind each score.");
 type Props = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };

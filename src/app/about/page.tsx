@@ -1,13 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { LeftFieldMark, Shell, fmtCount, fmtDate } from "@/components/presentational";
 import { getDefaultPriorityRepository } from "@/lib/priority-index-store";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "Who publishes Left Field, what the index covers, how to read a score, and what the site does and does not collect.",
-};
+export const metadata: Metadata = pageMetadata("/about", "About", "Who publishes Left Field, what the index covers, how to read a score, and what the site does and does not collect.");
 
 export default function About() {
   const repo = getDefaultPriorityRepository();

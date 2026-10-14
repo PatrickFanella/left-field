@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { loadMethodologyPage } from "@/ui/server-data";
@@ -7,7 +8,7 @@ import { loadRapidExpansionStatus } from "@/ui/rapid-expansion-status";
 import { getDefaultPriorityRepository } from "@/lib/priority-index-store";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Method", description: "How the Priority Index score is built: routes, weights, formulas, missing-data rules, and limits." };
+export const metadata: Metadata = pageMetadata("/methodology", "Method", "How the Priority Index score is built: routes, weights, formulas, missing-data rules, and limits.");
 
 export default async function Methodology() {
   const [result, expansionStatus] = await Promise.all([loadMethodologyPage(), loadRapidExpansionStatus()]);

@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { cache } from "react";
 import { loadProfilePage } from "@/ui/server-data";
@@ -15,9 +16,9 @@ const loadProfile = cache((id: string) => loadProfilePage({ id }));
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = await loadProfile((await params).id);
-  if (!result.ok) return { title: "Seat record" };
+  if (!result.ok) return { title: "Seat record unavailable", robots: { index: false, follow: false } };
   const { identity } = result.value;
-  return { title: `${identity.geographyLabel} · seat record`, description: `Factual seat record for ${identity.geographyLabel}${identity.currentHolder ? `, held by ${identity.currentHolder}` : ""}.` };
+  return pageMetadata(`/seats/${encodeURIComponent((await params).id)}`, `${identity.geographyLabel} · seat record`, `Factual seat record for ${identity.geographyLabel}${identity.currentHolder ? `, held by ${identity.currentHolder}` : ""}.`);
 }
 
 export default async function SeatProfile({ params }: Props) {

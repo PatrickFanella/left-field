@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Notice, Shell } from "@/components/presentational";
 import { correctionReleaseIdSchema, correctionSeatCycleIdSchema } from "@/domain/corrections";
@@ -11,7 +12,7 @@ const one = (value: string | string[] | undefined) => typeof value === "string" 
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-export const metadata: Metadata = { title: "Corrections" };
+export const metadata: Metadata = pageMetadata("/corrections", "Corrections");
 
 function DisabledCorrections() {
   return <Shell><main id="content" className="page prose correction-page">
