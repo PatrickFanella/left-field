@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Notice, Shell } from "@/components/presentational";
 import { readFeatureGates } from "@/features/gates";
@@ -6,7 +7,7 @@ import { isolatedDatabaseReady } from "@/features/runtime-readiness";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-export const metadata: Metadata = { title: "Address lookup" };
+export const metadata: Metadata = { ...pageMetadata("/lookup", "Address lookup"), robots: { index: false, follow: true } };
 
 function DisabledLookup() {
   return <Shell><main id="content" className="page prose lookup-page">

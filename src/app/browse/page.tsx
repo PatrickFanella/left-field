@@ -1,10 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { loadBrowsePage } from "@/ui/server-data";
 import { Shell, RouteState, Status, fact, fmtDate, fmtMoney, incumbencyLabel, partyLabel, words } from "@/components/presentational";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Browse seat records", description: "Factual House and Senate seat records for the active release, with source context and stated coverage." };
+export const metadata: Metadata = pageMetadata("/browse", "Browse seat records", "Factual House and Senate seat records for the active release, with source context and stated coverage.");
 type Props = { searchParams: Promise<Record<string, string | string[] | undefined>> };
 
 function nextPageHref(query: Record<string, string | number | undefined>, cursor: string) {
