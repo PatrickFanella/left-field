@@ -153,7 +153,7 @@ export function Shell({
         <span>
           LEFT FIELD · Seat research for Congress, governorships, and state
           legislatures · Published by SUBCULT,{" "}
-          <a href="https://subcult.tv">subcult.tv</a>
+          <a href="https://subcult.tv">subcult.tv</a>. Support goes to the studio’s development work, not a campaign, and cannot buy a conclusion or change a score. <a href="https://subcult.tv/support">Support SUBCULT</a>
         </span>
         <nav aria-label="Footer navigation">
           <Link prefetch={false} href="/">
