@@ -10,6 +10,9 @@ import { PENNSYLVANIA_GENERAL } from "./state-general/pennsylvania";
 import { COLORADO_GENERAL } from "./state-general/colorado";
 import { ALASKA_GENERAL } from "./state-general/alaska";
 import { ARIZONA_GENERAL } from "./state-general/arizona";
+import { MICHIGAN_GENERAL } from "./state-general/michigan";
+import { NEVADA_GENERAL } from "./state-general/nevada";
+import { OHIO_GENERAL } from "./state-general/ohio";
 import { ARKANSAS_GENERAL } from "./state-general/arkansas";
 import { HAWAII_GENERAL } from "./state-general/hawaii";
 import { VERMONT_GENERAL } from "./state-general/vermont";
@@ -227,9 +230,21 @@ describe("state-legislative general results", () => {
     // OCR read this write-in's total as 1,152; the scan reads 1,112. A lone named candidate is uncontested.
     expect(value.contests.find((contest) => contest.contestId === "az:state-leg-general:2024:upper:28")).toMatchObject({ contested: false, democraticVotes: 1112, republicanVotes: 97174 });
     expect(votes("az:state-leg-general:2024:upper:30")).toEqual([["Hildy Angius", "Republican", 92213, false], ["J'aime MorgAine", "Democratic", 25295, false]]);
-    const source = ARIZONA_GENERAL.sources[0]!;
-    expect(() => ARIZONA_GENERAL.parse(Buffer.from("page\tchamber\tdistrict\tparty\tcandidate\twrite_in\tvotes\n7\tupper\t31\tREP\tX\tno\t1\n"), source)).toThrow("ARIZONA_GENERAL_ROW");
-    expect(() => ARIZONA_GENERAL.parse(Buffer.from("chamber\tdistrict\n"), source)).toThrow("ARIZONA_GENERAL_HEADER");
+    const source = ARIZONA_GENERAL.sources[0]!, noCompanion = (): Buffer => Buffer.alloc(0);
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("page\tchamber\tdistrict\tparty\tcandidate\twrite_in\tvotes\n7\tupper\t31\tREP\tX\tno\t1\n"), source, noCompanion)).toThrow("ARIZONA_GENERAL_ROW");
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("chamber\tdistrict\n"), source, noCompanion)).toThrow("ARIZONA_GENERAL_HEADER");
+  });
+
+  it("reads the archived Michigan Senate page, Nevada results with candidate-list parties, and Ohio canvass workbooks", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [MICHIGAN_GENERAL, NEVADA_GENERAL, OHIO_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.cycles])).toEqual([["MI", 38, 0, 38, [2022]], ["NV", 105, 84, 21, [2022, 2024]], ["OH", 232, 198, 34, [2022, 2024]]]);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes]);
+    expect(votes("mi:state-leg-general:2022:upper:1")).toEqual([["Geiss, Erika", "Democratic", 53475], ["Soderquist, Erik", "Republican", 21243]]);
+    // Nevada party comes from the Legislative Counsel Bureau list; No Political Party is Independent.
+    expect(votes("nv:state-leg-general:2024:upper:3")).toEqual([["NGUYEN, ROCHELLE", "Democratic", 28254], ["HOWARD, BRENT", "Republican", 21215], ["JONES, KEYA \"KJ\"", "Independent", 2078]]);
+    expect(votes("nv:state-leg-general:2022:lower:26")).toEqual([["DELONG, RICH", "Republican", 23964], ["MITCHELL, REED", "Other", 9455]]);
+    expect(value.contests.find((contest) => contest.contestId === "oh:state-leg-general:2024:upper:33")).toMatchObject({ electionKind: "special_general" });
+    expect(votes("oh:state-leg-general:2024:upper:2")).toEqual([["Theresa Gavarone", "Republican", 111096], ["Paloma De La Fuente", "Democratic", 68948]]);
   });
 
   it("matches the pinned artifact", () => {

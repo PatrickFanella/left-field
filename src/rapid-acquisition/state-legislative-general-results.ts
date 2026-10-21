@@ -133,7 +133,11 @@ export interface StateGeneralAdapter {
   readonly sources: readonly StateGeneralSource[];
   /** Expected contest count per source, checked after parsing so a silently truncated file fails closed. */
   readonly expectedContests: Readonly<Record<string, number>>;
-  readonly parse: (bytes: Buffer, source: StateGeneralSource) => readonly RawGeneralContest[];
+  /**
+   * `readSource` returns the parsed bytes of another of this adapter's sources, for a results file that needs a
+   * companion such as a candidate list for party labels. A companion that reports no contests expects 0.
+   */
+  readonly parse: (bytes: Buffer, source: StateGeneralSource, readSource: (sourceId: string) => Buffer) => readonly RawGeneralContest[];
 }
 
 export const STATE_LEGISLATIVE_GENERAL_RESULTS = {
@@ -200,7 +204,11 @@ export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: 
     for (const source of adapter.sources) {
       readRetainedSource(lock, source.id, root);
       const { bytes } = readRetainedSource(lock, parsedSourceId(source), root);
-      const parsed = adapter.parse(bytes, source).map((raw) => normalize(raw, source, adapter.stateCode));
+      const readSource = (sourceId: string): Buffer => {
+        const companion = adapter.sources.find((candidate) => candidate.id === sourceId) ?? fail(`COMPANION_UNKNOWN:${adapter.stateCode}:${sourceId}`);
+        return readRetainedSource(lock, parsedSourceId(companion), root).bytes;
+      };
+      const parsed = adapter.parse(bytes, source, readSource).map((raw) => normalize(raw, source, adapter.stateCode));
       const expected = adapter.expectedContests[source.id];
       if (expected === undefined) fail(`EXPECTED_COUNT_MISSING:${source.id}`);
       if (parsed.length !== expected) fail(`CONTEST_COUNT:${source.id}:${parsed.length}:expected:${expected}`);

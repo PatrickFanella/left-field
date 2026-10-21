@@ -14,10 +14,10 @@ describe("state-legislative score v0.1", () => {
 
   it("scores every seat in a covered state and carries the rest unscored with a reason", () => {
     const value = buildStateLegislativeScoreV01Projection();
-    expect(value.coveredStates).toEqual(["AK", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "MA", "MD", "ME", "MN", "MO", "MT", "NC", "ND", "NJ", "NM", "NY", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]);
+    expect(value.coveredStates).toEqual(["AK", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "MA", "MD", "ME", "MI", "MN", "MO", "MT", "NC", "ND", "NJ", "NM", "NV", "NY", "OH", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]);
     // Roster refreshes move the scored count as seats fall vacant and fill.
-    expect(value.summary).toMatchObject({ seats: value.rows.length, coveredStates: 41, noContestForDistrict: 121, noMajorPartyInContest: 8, partyMismatches: 6, holderPartyNotScored: 12 });
-    expect(value.summary.scored).toBeGreaterThan(5750);
+    expect(value.summary).toMatchObject({ seats: value.rows.length, coveredStates: 44, noContestForDistrict: 231, noMajorPartyInContest: 8, partyMismatches: 6, holderPartyNotScored: 12 });
+    expect(value.summary.scored).toBeGreaterThan(6000);
     expect(value.summary.democraticScored + value.summary.republicanScored).toBe(value.summary.scored);
     expect(value.summary.stateNotCovered + value.summary.scored + value.summary.noContestForDistrict + value.summary.noMajorPartyInContest + value.summary.holderPartyNotScored + (value.summary.rosterPredatesContest ?? 0)).toBe(value.summary.seats);
     const ga = value.rows.filter((row) => row.stateCode === "GA");

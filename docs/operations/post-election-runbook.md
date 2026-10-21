@@ -48,10 +48,11 @@ Adapter notes:
 - **Clarity states (CO, IA, SC, WV)**: each election has a new Clarity election id in the URL.
 - **PDF states (KS, KY, MO, OR)**: set `pdfLayoutExtract`. The layout of a new year's PDF may differ, so check the parse against the publisher's totals.
 - **Arizona**: the Secretary of State publishes the canvass as a signed scan, and its sites block the VPN egress. Retain the scan (from the Internet Archive if the site still refuses), set `transcription`, and write `<pdf>-transcription.tsv` beside it in the 2024 layout. Check every total against the scan's county figures and against an independent county or precinct compilation; settle each disagreement from the scan and record it in `state-general/arizona.ts`.
+- **Michigan, Nevada, Ohio**: the official hosts block the VPN egress, and the 2022 and 2024 files came from Internet Archive captures. For 2026, retain the certified file the same way once a capture taken after certification exists (or through the residential route), with the archive URL as the source URL. Michigan's House and Senate are both on the 2026 ballot; its results now come from `mvic.sos.state.mi.us`, which needs a new parser. Nevada's results pages give no party, so add that cycle's Legislative Counsel Bureau candidate list as a companion source; its 2022 list sits at a generic address that the Research Division reuses.
 - **Florida**: the POST body carries `ElectionDate`.
 - **Texas, Pennsylvania**: the adapters carry year-specific rules (a 2022 skip in Texas, a candidate override in Pennsylvania). Check that they still hold for 2026.
 - Publishers that block the VPN egress need the residential route described in `docs/data/rapid-intake.md`.
 
 ## Coverage gaps that remain
 
-These are not part of this update and stay uncovered after it: state legislatures in AL, LA, MI, MS, NE, NH, NV, OH and OK (MI, NV and OH publishers block the VPN egress; see the v1.15 release note); statewide executives other than governor; and local offices beyond the IN, NC and NM primary catalogs.
+These are not part of this update and stay uncovered after it: state legislatures in AL, LA, MS, NE, NH and OK, and the Michigan House (its 2024 results are only on `mvic.sos.state.mi.us`, which blocks the VPN egress; see the v1.15 release note); statewide executives other than governor; and local offices beyond the IN, NC and NM primary catalogs.
