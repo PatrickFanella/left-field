@@ -47,6 +47,8 @@ export interface StateGeneralContest {
   readonly democraticMarginPercentagePoints: number | null;
   readonly contested: boolean;
   readonly sourceId: string;
+  /** Present only for unofficial (election-night or pre-canvass) returns; absent means the certified canvass. */
+  readonly resultStatus?: "unofficial";
   readonly contestSha256: string;
 }
 
@@ -59,6 +61,8 @@ export interface StateGeneralStateSummary {
   readonly upperContests: number;
   readonly uncontested: number;
   readonly candidateVotes: number;
+  /** Sources still carrying unofficial returns; absent when every source is certified. */
+  readonly unofficialSourceIds?: readonly string[];
 }
 
 export interface StateLegislativeGeneralResults {
@@ -98,6 +102,12 @@ export interface StateGeneralSource {
   readonly electionDate: string;
   /** Human note for the review ledger, e.g. which chamber the file covers. */
   readonly note: string;
+  /**
+   * "unofficial" for returns retained before the state certifies its canvass. Absent means certified; every
+   * source before 2026 is a certified canvass. Replace an unofficial source with the certified file, under a new
+   * id, once the state certifies.
+   */
+  readonly resultStatus?: "certified" | "unofficial";
   /** Request body when the publisher serves the file only in response to a POST; the retained bytes are that response. */
   readonly postBody?: string;
   /** Content type of postBody; form encoding when absent. */
@@ -167,6 +177,7 @@ function normalize(raw: RawGeneralContest, source: StateGeneralSource, stateCode
     stateCode, chamber: raw.chamber, district, districtKey: districtKey(district), position: raw.position ?? null, cycleYear: source.cycleYear,
     electionDate: raw.electionDate ?? source.electionDate, electionKind: raw.electionKind ?? "general", seats: raw.seats ?? 1,
     candidates, totalVotes, democraticVotes, republicanVotes, democraticMarginPercentagePoints: margin, contested, sourceId: source.id,
+    ...(source.resultStatus === "unofficial" ? { resultStatus: "unofficial" as const } : {}),
   };
   return { ...unsigned, contestSha256: hash("dsa-seats:state-legislative-general-contest:v1", unsigned) };
 }
@@ -191,6 +202,7 @@ export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: 
       stateCode: adapter.stateCode, sourceIds: adapter.sources.map((source) => source.id), cycles: [...new Set(stateContests.map((contest) => contest.cycleYear))].sort(),
       contests: stateContests.length, lowerContests: stateContests.filter((contest) => contest.chamber === "lower").length, upperContests: stateContests.filter((contest) => contest.chamber !== "lower").length,
       uncontested: stateContests.filter((contest) => !contest.contested).length, candidateVotes: stateContests.reduce((sum, contest) => sum + contest.totalVotes, 0),
+      ...(adapter.sources.some((source) => source.resultStatus === "unofficial") ? { unofficialSourceIds: adapter.sources.filter((source) => source.resultStatus === "unofficial").map((source) => source.id) } : {}),
     });
     contests.push(...stateContests);
   }

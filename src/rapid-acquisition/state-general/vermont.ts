@@ -5,7 +5,7 @@ import type { RosterParty } from "../state-legislative-roster";
  * Vermont Secretary of State, election archive (electionarchive.vermont.gov,
  * a Civera ElectionStats app) queried through its public GraphQL endpoint
  * for State Representative (office 8) and State Senate (office 9) contests
- * in 2024. Results come back in pages of 96; each page is retained as its own
+ * in each retained year (2024 so far). Results come back in pages of 96; each page is retained as its own
  * source so the lock records exactly what was served. Pages include primaries,
  * which are skipped.
  *
@@ -20,19 +20,21 @@ import type { RosterParty } from "../state-legislative-roster";
  */
 const ENDPOINT = "https://electionarchive.vermont.gov/api/graphql_pr";
 const QUERY = "query SearchContests($pagination: Pagination!, $filters: SearchFilters!) { search(pagination: $pagination, filters: $filters) { meta { currentPage totalPages totalResults } results { id nSeats isSpecial office { name } division { displayName } event { startDate type { name } } candidates { candidate { displayName pseudocandidate } nVotes isWriteIn party { name } party2 { name } party3 { name } party4 { name } } } } }";
-const body = (page: number): string => JSON.stringify({ query: QUERY, variables: { pagination: { page, size: 96 }, filters: { global: { years: { from: 2024, to: 2024 } }, contests: { offices: [{ id: 8 }, { id: 9 }], candidates: [], divisions: [] }, stages: [], ballotQuestions: { text: "", types: [], number: "", divisions: [] }, specialElectionsOnly: false, voterStats: false } } });
-const PAGES = 6;
+const body = (year: number, page: number): string => JSON.stringify({ query: QUERY, variables: { pagination: { page, size: 96 }, filters: { global: { years: { from: year, to: year } }, contests: { offices: [{ id: 8 }, { id: 9 }], candidates: [], divisions: [] }, stages: [], ballotQuestions: { text: "", types: [], number: "", divisions: [] }, specialElectionsOnly: false, voterStats: false } } });
+/** Retained pages per general-election year; a new year is one entry here plus its expected contest counts. */
+const YEARS: readonly Readonly<{ year: number; electionDate: string; pages: number }>[] = [{ year: 2024, electionDate: "2024-11-05", pages: 6 }];
+const pageId = (year: number, page: number): string => `vt-${year}-legislative-search-page-${page}-json`;
 
-const SOURCES: readonly StateGeneralSource[] = Array.from({ length: PAGES }, (_value, index) => ({
-  id: `vt-2024-legislative-search-page-${index + 1}-json`,
+const SOURCES: readonly StateGeneralSource[] = YEARS.flatMap(({ year, electionDate, pages }) => Array.from({ length: pages }, (_value, index) => ({
+  id: pageId(year, index + 1),
   url: ENDPOINT,
-  postBody: body(index + 1),
+  postBody: body(year, index + 1),
   postContentType: "application/json",
-  path: `data/source/rapid/state-general/vt/2024-legislative-search-page-${index + 1}.json`,
-  cycleYear: 2024,
-  electionDate: "2024-11-05",
-  note: `Page ${index + 1} of ${PAGES} of the 2024 State Representative and State Senate search, primaries included.`,
-}));
+  path: `data/source/rapid/state-general/vt/${year}-legislative-search-page-${index + 1}.json`,
+  cycleYear: year,
+  electionDate,
+  note: `Page ${index + 1} of ${pages} of the ${year} State Representative and State Senate search, primaries included.`,
+})));
 
 type Party = { name: string } | null;
 type Contest = { id: string; nSeats: number; isSpecial: boolean; office: { name: string }; division: { displayName: string }; event: { startDate: string; type: { name: string } }; candidates: { candidate: { displayName: string; pseudocandidate: string | null }; nVotes: number; isWriteIn: boolean; party: Party; party2: Party; party3: Party; party4: Party }[] };
@@ -42,7 +44,8 @@ function parse(bytes: Buffer, source: StateGeneralSource): RawGeneralContest[] {
   const document = JSON.parse(bytes.toString("utf8")) as { data?: { search: { meta: { currentPage: number; totalPages: number }; results: Contest[] } }; errors?: unknown };
   if (!document.data || document.errors) fail(`RESPONSE_INVALID:${source.id}`);
   const search = document.data!.search;
-  if (search.meta.totalPages !== PAGES || `vt-2024-legislative-search-page-${search.meta.currentPage}-json` !== source.id) fail(`PAGE_MISMATCH:${source.id}:${search.meta.currentPage}/${search.meta.totalPages}`);
+  const pages = YEARS.find((entry) => entry.year === source.cycleYear)?.pages ?? fail(`YEAR_UNKNOWN:${source.id}`);
+  if (search.meta.totalPages !== pages || pageId(source.cycleYear, search.meta.currentPage) !== source.id) fail(`PAGE_MISMATCH:${source.id}:${search.meta.currentPage}/${search.meta.totalPages}`);
   return search.results.flatMap((contest): RawGeneralContest[] => {
     if (contest.event.type.name !== "General Election" || contest.isSpecial) return [];
     const chamber = contest.office.name === "State Senate" ? "upper" as const : contest.office.name === "State Representative" ? "lower" as const : fail(`OFFICE_UNKNOWN:${contest.office.name}`);

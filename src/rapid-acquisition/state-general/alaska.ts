@@ -73,5 +73,6 @@ export const ALASKA_GENERAL: StateGeneralAdapter = {
   authority: "Alaska Division of Elections, official general election results (first-choice totals)",
   sources: SOURCES,
   expectedContests: { "ak-2024-general-enr-by-precinct-csv": 50, "ak-2022-general-summary-xml": 10 },
-  parse: (bytes, source) => source.id === "ak-2024-general-enr-by-precinct-csv" ? parse2024(bytes) : parse2022(bytes),
+  // Dispatch on the file format, so a later ENRbyPrecinct.csv parses like 2024 without a code change.
+  parse: (bytes, source) => source.path.endsWith(".csv") ? parse2024(bytes) : source.path.endsWith(".xml") ? parse2022(bytes) : fail(`FORMAT_UNKNOWN:${source.id}`),
 };

@@ -205,3 +205,24 @@ describe("state-legislative general results", () => {
     expect(pinned.packageSha256).toBe(buildStateLegislativeGeneralResults().packageSha256);
   });
 });
+
+describe("West Virginia Senate seat positions", () => {
+  it("files each cycle under the seat it refills", async () => {
+    const { senateSeatCycle } = await import("./state-general/west-virginia");
+    expect([2022, 2024, 2026, 2028, 2030].map(senateSeatCycle)).toEqual([2022, 2024, 2022, 2024, 2022]);
+  });
+});
+
+describe("unofficial returns", () => {
+  it("marks contests and the state summary when a source is unofficial", async () => {
+    const { WEST_VIRGINIA_GENERAL } = await import("./state-general/west-virginia");
+    const unofficial: StateGeneralAdapter = { ...WEST_VIRGINIA_GENERAL, sources: WEST_VIRGINIA_GENERAL.sources.map((source) => source.cycleYear === 2024 ? { ...source, resultStatus: "unofficial" as const } : source) };
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [unofficial]);
+    expect(value.states[0]?.unofficialSourceIds).toEqual(["wv-2024-general-clarity-summary-zip"]);
+    expect(value.contests.filter((contest) => contest.resultStatus === "unofficial").every((contest) => contest.cycleYear === 2024)).toBe(true);
+    expect(value.contests.filter((contest) => contest.resultStatus === "unofficial")).toHaveLength(117);
+    const certified = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [WEST_VIRGINIA_GENERAL]);
+    expect(certified.states[0]).not.toHaveProperty("unofficialSourceIds");
+    expect(certified.contests.some((contest) => "resultStatus" in contest)).toBe(false);
+  });
+});
