@@ -66,11 +66,12 @@ Two commands keep the Senate and state-legislative layers current without editin
 
 ```sh
 npm run rapid:refresh                       # retain today's FEC candidate summary and Open States rosters, pin them, rewrite data/metadata/refresh-inputs.json
+npm run rapid:refresh -- --cycle 2028       # move the FEC files to another cycle; without it the refresh keeps the pointer's cycle
 npm run rapid:publish -- --version v1.1     # re-derive every registered artifact, write and pin data/metadata/priority-index-release.json, write a review-note skeleton, verify the lock
 npm run rapid:publish -- --bump             # same, with the next minor version after the pinned descriptor (what the weekly workflow runs)
 ```
 
-The refresh pointer names dated snapshots (FEC candidate summary and master, Open States legislator CSVs and executive YAML files); builders read the pointer. The release descriptor is what the store and pages show as model version, publication date, and cutoffs. `.github/workflows/refresh.yml` runs both weekly and opens a pull request for review. The House layer is frozen at v0.9 and is only re-derived and re-verified by publish.
+The refresh pointer names dated snapshots (FEC candidate summary and master, the unitedstates/congress-legislators `legislators-current.json` roster, Open States legislator CSVs and executive YAML files); builders read the pointer. The Senate layer reads the Congress roster from the pointer and falls back to the 2026-08-04 file for pointers written before the roster was added (2026-10-20). The FEC cycle does not follow the calendar. Moving to 2028 means passing `--cycle 2028` (or the workflow's `cycle` input), and it is a model change: the House and Senate layers filter on the 2026 election year. The release descriptor is what the store and pages show as model version, publication date, and cutoffs. `.github/workflows/refresh.yml` runs both weekly and opens a pull request for review. The House layer is frozen at v0.9 and is only re-derived and re-verified by publish.
 
 Derived artifacts registered in `scripts/rapid/derived-artifacts.ts` may name their parents as a function of the lock when a parent is a dated snapshot.
 
@@ -91,6 +92,10 @@ The score layer joins the Open States roster to the latest retained contest for 
 Sources can declare four optional fields when a publisher needs them: `postBody` and `postContentType` for files served only in response to a POST (Florida's form, Vermont's GraphQL pages; the lock URL records the body), `userAgent` for sites whose bot filter refuses the project's own (Texas), and `pdfLayoutExtract` for PDFs. With `pdfLayoutExtract`, the retention script runs `pdftotext -layout` once and pins the text beside the PDF as a `derived_extract`; the results builder parses the extract, so no build or test needs pdftotext.
 
 Some publishers block the project's VPN egress. Files for those states were retained through a residential route: an existing network namespace on Kvant that reaches the ISP router over Ethernet, entered only for the retention command (`sudo -n ip netns exec discord_isp runuser -u onnwee -- npm run rapid:state-returns -- --state TX`). Host routing is not changed. Re-running retention for those states needs the same route.
+
+Returns retained before a state certifies its canvass carry `resultStatus: "unofficial"` on the source. The flag passes through to each contest, the state summary (`unofficialSourceIds`) and the score row (`baselineResultStatus`); when no source is unofficial these fields are absent, so earlier packages keep their digests. Once the state certifies, add the certified file under a new source id and remove the unofficial one.
+
+When a seat's contest was held after the roster snapshot and the roster's holder did not finish in the winning places, the seat is carried as `roster_predates_contest` rather than scored. This covers the weeks between the election and Open States seating the winners.
 
 Adding a state: write the adapter, run the three commands above, confirm the contest count and a few margins against the publisher's own summary page, then `npm run rapid:publish -- --bump`.
 
