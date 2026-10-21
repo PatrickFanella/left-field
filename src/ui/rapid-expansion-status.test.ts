@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 
+import { readRefreshInputs } from "@/rapid-acquisition/refresh-inputs";
+
 import { loadRapidExpansionStatus } from "./rapid-expansion-status";
 
 describe("rapid expansion status", () => {
@@ -44,10 +46,15 @@ describe("rapid expansion status", () => {
 
   it("carries the Senate projection and the state-legislative roster", async () => {
     const value = await loadRapidExpansionStatus();
-    expect(value?.senate).toMatchObject({ version: "v0.1", seats: 100, democraticCaucus: 47, republicanCaucus: 53, upIn2026: 35, cashValues: 98, alignmentValues: 47, stateContestationValues: 8, financeSnapshotId: "fec-candidate-summary-2026-20260924" });
+    const inputs = readRefreshInputs();
+    // Caucus sizes, cash coverage and the top seats move with each roster and FEC refresh.
+    expect(value?.senate).toMatchObject({ version: "v0.1", seats: 100, upIn2026: 35, stateContestationValues: 8, financeSnapshotId: inputs.fecCandidateSummaryId });
+    expect((value?.senate.democraticCaucus ?? 0) + (value?.senate.republicanCaucus ?? 0)).toBe(100);
+    expect(value?.senate.alignmentValues).toBe(value?.senate.democraticCaucus);
+    expect(value?.senate.cashValues).toBeGreaterThan(90);
     expect(value?.senate.topDemocratic).toHaveLength(5);
-    expect(value?.senate.topRepublican[0]?.seatLabel).toBe("WI-S3");
-    expect(value?.stateLegislative).toMatchObject({ snapshotDate: "2026-09-24", jurisdictions: 51, chambers: 100, catalogStates: 10, presidentialBaseline: "unavailable_no_open_nationwide_2024_legislative_district_file" });
+    expect(value?.senate.topRepublican).toHaveLength(5);
+    expect(value?.stateLegislative).toMatchObject({ snapshotDate: inputs.snapshotDate, jurisdictions: 51, chambers: 100, catalogStates: 10, presidentialBaseline: "unavailable_no_open_nationwide_2024_legislative_district_file" });
     expect(value?.stateLegislative.legislators).toBeGreaterThan(7000);
     expect(value?.stateLegislative.primaryMatched).toBeGreaterThan(300);
   });
