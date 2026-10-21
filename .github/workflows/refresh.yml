@@ -1,6 +1,6 @@
 name: Refresh priority index inputs
 
-# Weekly: retain the latest FEC candidate summary and Open States rosters,
+# Weekly: retain the latest FEC candidate summary, Congress roster and Open States rosters,
 # re-derive the Senate and state-legislative layers, and open a pull request
 # with the new pins. The House layer is frozen and only re-verified. A human
 # reviews the diff, fills in the review note, and merges. Runs on Gitea Actions
@@ -13,6 +13,10 @@ on:
     inputs:
       version:
         description: "Model version to publish (vX.Y); empty bumps the minor version"
+        required: false
+        default: ""
+      cycle:
+        description: "FEC two-year cycle (e.g. 2028); empty keeps the cycle the current pointer names"
         required: false
         default: ""
 
@@ -46,7 +50,8 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Retain dated snapshots
-        run: npm run rapid:refresh
+        run: |
+          if [ -n "${{ github.event.inputs.cycle }}" ]; then npm run rapid:refresh -- --cycle "${{ github.event.inputs.cycle }}"; else npm run rapid:refresh; fi
       - name: Publish release descriptor and re-derive artifacts
         run: |
           if [ -n "${{ github.event.inputs.version }}" ]; then npm run rapid:publish -- --version "${{ github.event.inputs.version }}"; else npm run rapid:publish -- --bump; fi
