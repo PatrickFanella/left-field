@@ -39,6 +39,10 @@ import { NORTH_CAROLINA_GENERAL } from "./state-general/north-carolina";
 import { WASHINGTON_GENERAL, washingtonPreference } from "./state-general/washington";
 import { VIRGINIA_GENERAL } from "./state-general/virginia";
 import { WISCONSIN_GENERAL } from "./state-general/wisconsin";
+import { MINNESOTA_GENERAL } from "./state-general/minnesota";
+import { NEW_MEXICO_GENERAL } from "./state-general/new-mexico";
+import { NORTH_DAKOTA_GENERAL } from "./state-general/north-dakota";
+import { SOUTH_DAKOTA_GENERAL } from "./state-general/south-dakota";
 
 describe("state-legislative general results", () => {
   it("maps source party labels to caucus families", () => {
@@ -198,6 +202,18 @@ describe("state-legislative general results", () => {
     expect(value.contests.find((contest) => contest.contestId === "ky:state-leg-general:2024:lower:66")?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes])).toEqual([["T. J. ROBERTS", "Republican", 16368], ["Peggy HOUSTON-NIENABER", "Democratic", 6861]]);
     expect(value.contests.find((contest) => contest.contestId === "or:state-leg-general:2024:lower:46")?.candidates.map((candidate) => [candidate.name, candidate.votes])).toEqual([["Willy Chotzen", 25542], ["John Mark Alexander", 4414], ["Kevin Levy", 1252], ["Austin Daniel", 1040], ["Misc.", 58]]);
     expect(value.contests.filter((contest) => contest.stateCode === "OR" && contest.chamber === "upper").map((contest) => contest.district).length).toBe(30);
+  });
+
+  it("reads Minnesota text files, New Mexico results JSON, North Dakota results pages and the South Dakota canvass", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [MINNESOTA_GENERAL, NEW_MEXICO_GENERAL, NORTH_DAKOTA_GENERAL, SOUTH_DAKOTA_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.cycles])).toEqual([["MN", 202, 134, 68, [2022, 2024]], ["ND", 119, 62, 57, [2022, 2024]], ["NM", 112, 70, 42, [2024]], ["SD", 72, 37, 35, [2024]]]);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes]);
+    expect(value.contests.find((contest) => contest.contestId === "mn:state-leg-general:2024:upper:45")).toMatchObject({ electionKind: "special_general", democraticVotes: 29791, republicanVotes: 26969 });
+    expect(votes("mn:state-leg-general:2024:lower:2a")).toEqual([["Bidal Duran Jr", "Republican", 11518], ["Reed Olson", "Democratic", 10667], ["Write-in", "Independent", 26]]);
+    expect(votes("nd:state-leg-general:2024:lower:4a")).toEqual([["Lisa Finley-DeVille", "Democratic", 1627], ["Ronald Brugh", "Republican", 919], ["Write-in", "Independent", 15]]);
+    // New Mexico House 57 takes the December 2024 automatic recount.
+    expect(votes("nm:state-leg-general:2024:lower:57")).toEqual([["CATHERINE JEANETTE CULLEN", "Republican", 8373], ["MICHELLE ELEANOR SANDOVAL", "Democratic", 8240]]);
+    expect(value.contests.find((contest) => contest.contestId === "sd:state-leg-general:2024:lower:15")).toMatchObject({ seats: 2, democraticVotes: 8915, republicanVotes: 8275 });
   });
 
   it("matches the pinned artifact", () => {

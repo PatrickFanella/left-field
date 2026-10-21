@@ -53,4 +53,4 @@ Adapter notes:
 
 ## Coverage gaps that remain
 
-These are not part of this update and stay uncovered after it: state legislatures in AL, AZ, LA, MI, MN, MS, NE, NH, NM, NV, ND, OH, OK and SD; statewide executives other than governor; and local offices beyond the IN, NC and NM primary catalogs.
+These are not part of this update and stay uncovered after it: state legislatures in AL, AZ, LA, MI, MS, NE, NH, NV, OH and OK (AZ, MI, NV and OH publishers block the VPN egress; see the v1.15 release note); statewide executives other than governor; and local offices beyond the IN, NC and NM primary catalogs.
