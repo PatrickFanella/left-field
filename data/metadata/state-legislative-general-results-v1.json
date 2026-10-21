@@ -11,6 +11,7 @@
   "sourceIds": [
     "ak-2024-general-enr-by-precinct-csv",
     "ak-2022-general-summary-xml",
+    "az-2024-general-canvass-signed-pdf",
     "ar-2024-general-precinct-results-workbook",
     "ca-2024-general-sov-candidates-workbook",
     "ca-2022-general-sov-candidates-workbook",
@@ -114,6 +115,20 @@
       "upperContests": 18,
       "uncontested": 57,
       "candidateVotes": 1623273
+    },
+    {
+      "stateCode": "AZ",
+      "sourceIds": [
+        "az-2024-general-canvass-signed-pdf"
+      ],
+      "cycles": [
+        2024
+      ],
+      "contests": 60,
+      "lowerContests": 30,
+      "upperContests": 30,
+      "uncontested": 11,
+      "candidateVotes": 8104866
     },
     {
       "stateCode": "CA",
@@ -6666,6 +6681,2379 @@
       "contested": false,
       "sourceId": "ar-2024-general-precinct-results-workbook",
       "contestSha256": "a1a30060bf5e9dfc6fe9f3965296a3a3a069b692a797acd816093ed656ad24fc"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:1",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "1",
+      "districtKey": "1",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Selina Bliss",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 88691,
+          "writeIn": false
+        },
+        {
+          "name": "Quang Nguyen",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 87726,
+          "writeIn": false
+        },
+        {
+          "name": "Marcia Smith",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 44199,
+          "writeIn": false
+        },
+        {
+          "name": "Jay Ruby",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 40911,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 261527,
+      "democraticVotes": 85110,
+      "republicanVotes": 176417,
+      "democraticMarginPercentagePoints": -34.9,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "73bb5de7909af4076825ed1923c0ea25071d6b41dfb149427a2f80e4838c19b4"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:10",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "10",
+      "districtKey": "10",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Justin Olson",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 65454,
+          "writeIn": false
+        },
+        {
+          "name": "Ralph Heap",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 63695,
+          "writeIn": false
+        },
+        {
+          "name": "Helen Hunter",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 40958,
+          "writeIn": false
+        },
+        {
+          "name": "Stephanie Simmons",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 40926,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 211033,
+      "democraticVotes": 81884,
+      "republicanVotes": 129149,
+      "democraticMarginPercentagePoints": -22.4,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "c5e11fa72bd6241062ef946e023d049a65ee219d2fdb11dd3f0d3e86293c72de"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:11",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "11",
+      "districtKey": "11",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Oscar De Los Santos",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 47727,
+          "writeIn": false
+        },
+        {
+          "name": "Junelle Cavero",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 44318,
+          "writeIn": false
+        },
+        {
+          "name": "Cesar Ivan Aleman",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 17786,
+          "writeIn": false
+        },
+        {
+          "name": "Joseph Charles Charles Dailey",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 17654,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 127485,
+      "democraticVotes": 92045,
+      "republicanVotes": 35440,
+      "democraticMarginPercentagePoints": 44.4,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "db832b2453e5874e953fbf2897f64e4add4fbfb90e5a6034165c880742a17e34"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:12",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "12",
+      "districtKey": "12",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Patricia \"Patty\" Contreras",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 65931,
+          "writeIn": false
+        },
+        {
+          "name": "Anastasia \"Stacey\" Travers",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 65115,
+          "writeIn": false
+        },
+        {
+          "name": "Lawrence Hudson",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 49932,
+          "writeIn": false
+        },
+        {
+          "name": "Marc Johnston",
+          "rawParty": "LBT",
+          "party": "Other",
+          "votes": 89,
+          "writeIn": true
+        },
+        {
+          "name": "Benjamin Wirtz",
+          "rawParty": "IND",
+          "party": "Independent",
+          "votes": 35,
+          "writeIn": true
+        }
+      ],
+      "totalVotes": 181102,
+      "democraticVotes": 131046,
+      "republicanVotes": 49932,
+      "democraticMarginPercentagePoints": 44.8,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "6a4ffeecea8bfd05c7b4b27ebb18e5277b48bbe34bb1d3abd245a208d65d0944"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:13",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "13",
+      "districtKey": "13",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Jeff Weninger",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 57486,
+          "writeIn": false
+        },
+        {
+          "name": "Julie Willoughby",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 56914,
+          "writeIn": false
+        },
+        {
+          "name": "Brandy Reese",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 52677,
+          "writeIn": false
+        },
+        {
+          "name": "Nicholas Gonzales",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 51133,
+          "writeIn": false
+        },
+        {
+          "name": "Cody Hannah",
+          "rawParty": "GRN",
+          "party": "Other",
+          "votes": 3361,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 221571,
+      "democraticVotes": 103810,
+      "republicanVotes": 114400,
+      "democraticMarginPercentagePoints": -4.8,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "bbefcb66f7702c4b7689100955b07bc4d5d8a00df1348fd65cf3defce0f551b1"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:14",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "14",
+      "districtKey": "14",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Laurin Hendrix",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 75359,
+          "writeIn": false
+        },
+        {
+          "name": "Khyl Powell",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 69985,
+          "writeIn": false
+        },
+        {
+          "name": "Scott Menor",
+          "rawParty": "GRN",
+          "party": "Other",
+          "votes": 28653,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 173997,
+      "democraticVotes": 0,
+      "republicanVotes": 145344,
+      "democraticMarginPercentagePoints": -83.5,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "ea20dbb843e83a29accf7757afc0428c68bfce365d9bcaaa80628a678b44d8d6"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:15",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "15",
+      "districtKey": "15",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Michael Way",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 78985,
+          "writeIn": false
+        },
+        {
+          "name": "Neal Carter",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 75419,
+          "writeIn": false
+        },
+        {
+          "name": "Barbara Beneitone",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 46368,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 200772,
+      "democraticVotes": 46368,
+      "republicanVotes": 154404,
+      "democraticMarginPercentagePoints": -53.8,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "f8035873d9eeb672b2823ad11d00019e2664242d778875168907e8cc12734968"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:16",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "16",
+      "districtKey": "16",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Teresa Martinez",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 53783,
+          "writeIn": false
+        },
+        {
+          "name": "Chris Lopez",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 49099,
+          "writeIn": false
+        },
+        {
+          "name": "Keith Seaman",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 45444,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 148326,
+      "democraticVotes": 45444,
+      "republicanVotes": 102882,
+      "democraticMarginPercentagePoints": -38.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "695668f8d73bf83e0473a1dc92f14e53bc8f737e595cfd3502dcd5c6b4b69c3d"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:17",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "17",
+      "districtKey": "17",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Kevin Volk",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 73985,
+          "writeIn": false
+        },
+        {
+          "name": "Rachel Jones",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 71620,
+          "writeIn": false
+        },
+        {
+          "name": "Cory McGarr",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 68904,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 214509,
+      "democraticVotes": 73985,
+      "republicanVotes": 140524,
+      "democraticMarginPercentagePoints": -31,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "d5e39399019bd1efe77e71fe0080e2f76050573a2fcf81b56862fa5283c148b3"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:18",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "18",
+      "districtKey": "18",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Nancy Gutierrez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 73290,
+          "writeIn": false
+        },
+        {
+          "name": "Chris Mathis",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 68197,
+          "writeIn": false
+        },
+        {
+          "name": "Leonard \"Len\" Rosenblum",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 48845,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 190332,
+      "democraticVotes": 141487,
+      "republicanVotes": 48845,
+      "democraticMarginPercentagePoints": 48.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "b63d14dff7c577e6f4b1873bd1c6482c7d1bc00342a3793d00e4ddf919aaacb3"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:19",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "19",
+      "districtKey": "19",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Gail Griffin",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 65504,
+          "writeIn": false
+        },
+        {
+          "name": "Lupe Diaz",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 59188,
+          "writeIn": false
+        },
+        {
+          "name": "Gregg Frostrom Jr.",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 42468,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 167160,
+      "democraticVotes": 42468,
+      "republicanVotes": 124692,
+      "democraticMarginPercentagePoints": -49.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "158c25647a7142165dd335d948a73bc475ec8fe4cda785e2a2b4b0ce0c8a846b"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:2",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "2",
+      "districtKey": "2",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Stephanie Simacek",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 47801,
+          "writeIn": false
+        },
+        {
+          "name": "Justin Wilmeth",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 46942,
+          "writeIn": false
+        },
+        {
+          "name": "Ari Daniel Bradshaw",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 46810,
+          "writeIn": false
+        },
+        {
+          "name": "Tom Simes",
+          "rawParty": "IND",
+          "party": "Independent",
+          "votes": 15946,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 157499,
+      "democraticVotes": 47801,
+      "republicanVotes": 93752,
+      "democraticMarginPercentagePoints": -29.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "85b4b7cd041a575d4b3f8d864e6f2e29a6f90009b5fcfbeda402368e7e295fc5"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:20",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "20",
+      "districtKey": "20",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Alma Hernandez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 53288,
+          "writeIn": false
+        },
+        {
+          "name": "Betty Villegas",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 49530,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 102818,
+      "democraticVotes": 102818,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "5227aaa95b2d5c4292349ea14efec9efbc811d1c54d7ab6a97d26ef2165171ad"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:21",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "21",
+      "districtKey": "21",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Consuelo Hernandez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 48283,
+          "writeIn": false
+        },
+        {
+          "name": "Stephanie Stahl Hamilton",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 43028,
+          "writeIn": false
+        },
+        {
+          "name": "Christopher Kibbey",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 33883,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 125194,
+      "democraticVotes": 91311,
+      "republicanVotes": 33883,
+      "democraticMarginPercentagePoints": 45.9,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "cfaf32bc19f81d0859dfcb24faebcf8b1943b3112bc1494c31030922d5cbb006"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:22",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "22",
+      "districtKey": "22",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Lupe Chavira Contreras",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 41626,
+          "writeIn": false
+        },
+        {
+          "name": "Elda Luna-Najera",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 36664,
+          "writeIn": false
+        },
+        {
+          "name": "Diana Jones",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 22086,
+          "writeIn": false
+        },
+        {
+          "name": "Blaine \"Bj\" Griffin Sr.",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 21499,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 121875,
+      "democraticVotes": 78290,
+      "republicanVotes": 43585,
+      "democraticMarginPercentagePoints": 28.5,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "9a41cafc85ec12ac8f262d777ad9e9c1065a500a8fb42be83166052ac8437d07"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:23",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "23",
+      "districtKey": "23",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Michele Pena",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 37967,
+          "writeIn": false
+        },
+        {
+          "name": "Mariana Sandoval",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 37375,
+          "writeIn": false
+        },
+        {
+          "name": "Matias Rosales",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 35788,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 111130,
+      "democraticVotes": 73163,
+      "republicanVotes": 37967,
+      "democraticMarginPercentagePoints": 31.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "800c2bcd769f72fdef0a28b855210def25dc737e4335f0da0293b5d1d9650f2e"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:24",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "24",
+      "districtKey": "24",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Lydia Hernandez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 31744,
+          "writeIn": false
+        },
+        {
+          "name": "Anna Abeytia",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 27183,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 58927,
+      "democraticVotes": 58927,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "0953680dc88d314917f5154d7e7589c0a7bb3b477093b69d32f68b0cd0029c54"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:25",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "25",
+      "districtKey": "25",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Michael Carbone",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 68427,
+          "writeIn": false
+        },
+        {
+          "name": "Nickolas \"Nick\" Kupper",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 63970,
+          "writeIn": false
+        },
+        {
+          "name": "William \"Bill\" Peter Olear",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 41577,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 173974,
+      "democraticVotes": 41577,
+      "republicanVotes": 132397,
+      "democraticMarginPercentagePoints": -52.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "9ecf7cccbf97a06bb5407667f4fca71bb73dde0191085c7063c62b78fe7fcf3b"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:26",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "26",
+      "districtKey": "26",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Cesar Aguilar",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 30035,
+          "writeIn": false
+        },
+        {
+          "name": "Quanta Crews",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 25976,
+          "writeIn": false
+        },
+        {
+          "name": "Frank Roberts",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 14359,
+          "writeIn": false
+        },
+        {
+          "name": "Skyla Edwards",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 13446,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 83816,
+      "democraticVotes": 56011,
+      "republicanVotes": 27805,
+      "democraticMarginPercentagePoints": 33.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "4a27ceba40f7e6279368d7d659b48f29077000fc73e85b78de11942c94dd543c"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:27",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "27",
+      "districtKey": "27",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Lisa Fink",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 51499,
+          "writeIn": false
+        },
+        {
+          "name": "Tony Rivero",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 50976,
+          "writeIn": false
+        },
+        {
+          "name": "Deborah Howard",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 45601,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 148076,
+      "democraticVotes": 45601,
+      "republicanVotes": 102475,
+      "democraticMarginPercentagePoints": -38.4,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "d2145d12b7df4b9d0fc1c863f9efabed961a1a12dc1126171bfd27e55943bd45"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:28",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "28",
+      "districtKey": "28",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Beverly Pingerelli",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 79618,
+          "writeIn": false
+        },
+        {
+          "name": "David Livingston",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 79333,
+          "writeIn": false
+        },
+        {
+          "name": "Barbara Jean Fike",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 51780,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 210731,
+      "democraticVotes": 51780,
+      "republicanVotes": 158951,
+      "democraticMarginPercentagePoints": -50.9,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "6e157c6bae3e58d4e3f9cd0073ec85cda760907f14c1acc59758eb1f1971ba7e"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:29",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "29",
+      "districtKey": "29",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Steve Montenegro",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 66301,
+          "writeIn": false
+        },
+        {
+          "name": "James Taylor",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 65431,
+          "writeIn": false
+        },
+        {
+          "name": "Tanairi Ochoa-Martinez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 44776,
+          "writeIn": false
+        },
+        {
+          "name": "Tom Tzitzura",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 42535,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 219043,
+      "democraticVotes": 87311,
+      "republicanVotes": 131732,
+      "democraticMarginPercentagePoints": -20.3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "6b926fc44bac8596e6118a14c11841f757c6381beaf38cacb57c58e5b8fb38ad"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:3",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "3",
+      "districtKey": "3",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Joseph Chaplik",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 93596,
+          "writeIn": false
+        },
+        {
+          "name": "Alexander Kolodin",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 88693,
+          "writeIn": false
+        },
+        {
+          "name": "Richard Corles",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 55372,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 237661,
+      "democraticVotes": 55372,
+      "republicanVotes": 182289,
+      "democraticMarginPercentagePoints": -53.4,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "85901640a0269d763d4e15253f683c159a5a24bd05effd8a801a4c805ec1c879"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:30",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "30",
+      "districtKey": "30",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Leo Biasiucci",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 77117,
+          "writeIn": false
+        },
+        {
+          "name": "John Gillette",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 76348,
+          "writeIn": false
+        },
+        {
+          "name": "Monica Timberlake",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 26698,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 180163,
+      "democraticVotes": 26698,
+      "republicanVotes": 153465,
+      "democraticMarginPercentagePoints": -70.4,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "fd9be52321e752383c24e15fc85e16d501132c949dcc5b4cf626a1a78bf5cb7f"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:4",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "4",
+      "districtKey": "4",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Matt Gress",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 75669,
+          "writeIn": false
+        },
+        {
+          "name": "Pamela Carter",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 69077,
+          "writeIn": false
+        },
+        {
+          "name": "Kelli Butler",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 66407,
+          "writeIn": false
+        },
+        {
+          "name": "Karen Gresham",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 64038,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 275191,
+      "democraticVotes": 130445,
+      "republicanVotes": 144746,
+      "democraticMarginPercentagePoints": -5.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "dc426c5adb8bfb96536f6da713b181b962b53fdee0165a56db19de5e2d13bfb6"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:5",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "5",
+      "districtKey": "5",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Sarah Liguori",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 61889,
+          "writeIn": false
+        },
+        {
+          "name": "Aaron Márquez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 59087,
+          "writeIn": false
+        },
+        {
+          "name": "Reina \"Reina\" Patocs",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 31601,
+          "writeIn": false
+        },
+        {
+          "name": "Arthur Gonzales Sr.",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 88,
+          "writeIn": true
+        }
+      ],
+      "totalVotes": 152665,
+      "democraticVotes": 120976,
+      "republicanVotes": 31689,
+      "democraticMarginPercentagePoints": 58.5,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "506db43804010b66babfcad0376227dbc25ac233422f36957b3195f5a70b4e43"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:6",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "6",
+      "districtKey": "6",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Myron Tsosie",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 56332,
+          "writeIn": false
+        },
+        {
+          "name": "Mae Peshlakai",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 54241,
+          "writeIn": false
+        },
+        {
+          "name": "Rich King",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 25743,
+          "writeIn": false
+        },
+        {
+          "name": "Lloyd Johnson",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 25685,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 162001,
+      "democraticVotes": 110573,
+      "republicanVotes": 51428,
+      "democraticMarginPercentagePoints": 36.5,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "eb224108274d803ca10fa4a5806e9315b940ec44d3590ffd6861a2fbed69a849"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:7",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "7",
+      "districtKey": "7",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Walter \"Walt\" Blackman",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 74128,
+          "writeIn": false
+        },
+        {
+          "name": "David Marshall Sr.",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 73162,
+          "writeIn": false
+        },
+        {
+          "name": "Nancy Hartl",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 41026,
+          "writeIn": false
+        },
+        {
+          "name": "Kevin Chiquete",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 37786,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 226102,
+      "democraticVotes": 78812,
+      "republicanVotes": 147290,
+      "democraticMarginPercentagePoints": -30.3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "e4a0df4dc45411c9642d1474657470f56c13a87762f4755c5f9af44c293332cc"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:8",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "8",
+      "districtKey": "8",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Janeen Connolly",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 49065,
+          "writeIn": false
+        },
+        {
+          "name": "Brian Garcia",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 47977,
+          "writeIn": false
+        },
+        {
+          "name": "Caden Darrow",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 35180,
+          "writeIn": false
+        },
+        {
+          "name": "Tre Rook",
+          "rawParty": "GRN",
+          "party": "Other",
+          "votes": 7559,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 139781,
+      "democraticVotes": 97042,
+      "republicanVotes": 35180,
+      "democraticMarginPercentagePoints": 44.3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "d5fda000ceb791694f6ceb08e54d2cee444d30c0302c361898c7b54d7cffea73"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:lower:9",
+      "stateCode": "AZ",
+      "chamber": "lower",
+      "district": "9",
+      "districtKey": "9",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 2,
+      "candidates": [
+        {
+          "name": "Lorena Austin",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 39041,
+          "writeIn": false
+        },
+        {
+          "name": "Seth Blattman",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 36823,
+          "writeIn": false
+        },
+        {
+          "name": "Kylie Barber",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 35895,
+          "writeIn": false
+        },
+        {
+          "name": "Mary Ann Mendoza",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 35553,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 147312,
+      "democraticVotes": 75864,
+      "republicanVotes": 71448,
+      "democraticMarginPercentagePoints": 3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "c9a8b3aa0ceba6b3237c0c6ee1e05c961b8a63870017c2a5bde34339988d84a9"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:1",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "1",
+      "districtKey": "1",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Mark Finchem",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 94947,
+          "writeIn": false
+        },
+        {
+          "name": "Mike S. Fogel",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 49108,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 144055,
+      "democraticVotes": 49108,
+      "republicanVotes": 94947,
+      "democraticMarginPercentagePoints": -31.8,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "4d9019dd2c1ca258a8a72f1e6c0b1f548cfab773e451a68ac461df63fe4d715a"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:10",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "10",
+      "districtKey": "10",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "David Christian Farnsworth",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 70561,
+          "writeIn": false
+        },
+        {
+          "name": "Robert Doyle",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 44170,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 114731,
+      "democraticVotes": 44170,
+      "republicanVotes": 70561,
+      "democraticMarginPercentagePoints": -23,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "f6d789e6b24737b16a11d06d132f8b987eb523a190e136b0e92dcd92eb55e05e"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:11",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "11",
+      "districtKey": "11",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Catherine Miranda",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 52106,
+          "writeIn": false
+        },
+        {
+          "name": "Joshua Ayala",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 20095,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 72201,
+      "democraticVotes": 52106,
+      "republicanVotes": 20095,
+      "democraticMarginPercentagePoints": 44.3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "9fa028df76c71bd6eff8a6360c13e626cce1121b7a7ef0ab1686c95877abfdfd"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:12",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "12",
+      "districtKey": "12",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Denise \"Mitzi\" Epstein",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 70499,
+          "writeIn": false
+        },
+        {
+          "name": "Cara Vicini",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 50796,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 121295,
+      "democraticVotes": 70499,
+      "republicanVotes": 50796,
+      "democraticMarginPercentagePoints": 16.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "401a06a35eb00ee4a02f2454601c8bdd9a352265cb7d16a1be2596ec4f421a83"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:13",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "13",
+      "districtKey": "13",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "J.D. Mesnard",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 62670,
+          "writeIn": false
+        },
+        {
+          "name": "Sharon Lee Winters",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 55287,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 117957,
+      "democraticVotes": 55287,
+      "republicanVotes": 62670,
+      "democraticMarginPercentagePoints": -6.3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "4927acc1bfecf670a8ecb939d5edcab9dde569d952c4547f32b1b6b2910f7fca"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:14",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "14",
+      "districtKey": "14",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Warren Petersen",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 76251,
+          "writeIn": false
+        },
+        {
+          "name": "Elizabeth Brown",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 50554,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 126805,
+      "democraticVotes": 50554,
+      "republicanVotes": 76251,
+      "democraticMarginPercentagePoints": -20.3,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "bbbab4ec8a2b6d41988122412b6566964b3a50feb14f04ed4b9df769ffb197e2"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:15",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "15",
+      "districtKey": "15",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Jake Hoffman",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 87580,
+          "writeIn": false
+        },
+        {
+          "name": "Alan Smith",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 43769,
+          "writeIn": false
+        },
+        {
+          "name": "Evan Olson",
+          "rawParty": "IND",
+          "party": "Independent",
+          "votes": 6061,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 137410,
+      "democraticVotes": 43769,
+      "republicanVotes": 87580,
+      "democraticMarginPercentagePoints": -31.9,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "3d46378cd7efc37b010491044b19f0c3a5f7e9cd6df2684e02fc24b4d1ad0b48"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:16",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "16",
+      "districtKey": "16",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Thomas \"T.J.\" Shope Jr.",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 58386,
+          "writeIn": false
+        },
+        {
+          "name": "Stacey Seaman",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 45888,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 104274,
+      "democraticVotes": 45888,
+      "republicanVotes": 58386,
+      "democraticMarginPercentagePoints": -12,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "f9154d6169bf1fa10bb5cdf56bdd1dac125a061b62e18288ed45b950b95f8233"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:17",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "17",
+      "districtKey": "17",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Venden \"Vince\" Leach",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 77714,
+          "writeIn": false
+        },
+        {
+          "name": "John McLean",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 74669,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 152383,
+      "democraticVotes": 74669,
+      "republicanVotes": 77714,
+      "democraticMarginPercentagePoints": -2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "c94108cf07f1b0d38a3053e2b9df0c78b4d0454ffe76b406861a6f1e7cbe1017"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:18",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "18",
+      "districtKey": "18",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Priya Sundareshan",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 89003,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 89003,
+      "democraticVotes": 89003,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "21f3f3375ca82001b272dc610b76d4036da3a339a659cd7c219ab93000f72476"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:19",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "19",
+      "districtKey": "19",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "David Gowan",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 71192,
+          "writeIn": false
+        },
+        {
+          "name": "Bob Karp",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 42555,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 113747,
+      "democraticVotes": 42555,
+      "republicanVotes": 71192,
+      "democraticMarginPercentagePoints": -25.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "5e69d52aa40cac7437c60d0e9fff916581da144c0f1d0ef6ea0c334a5eba9c8b"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:2",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "2",
+      "districtKey": "2",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Shawnna Bolick",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 52100,
+          "writeIn": false
+        },
+        {
+          "name": "Judy Schwiebert",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 48333,
+          "writeIn": false
+        },
+        {
+          "name": "Dennis Pugsley",
+          "rawParty": "GRN",
+          "party": "Other",
+          "votes": 2076,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 102509,
+      "democraticVotes": 48333,
+      "republicanVotes": 52100,
+      "democraticMarginPercentagePoints": -3.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "3212543b79c1fef495a2eb4005a8178037606fe81e7002f0e1c5a115ff8f22b5"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:20",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "20",
+      "districtKey": "20",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Sally Ann Gonzales",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 65214,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 65214,
+      "democraticVotes": 65214,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "25103a7f187ac5280d09405ef4b254e0a695d4162e355b79807f0e893b1ac52c"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:21",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "21",
+      "districtKey": "21",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Rosanna Gabaldon",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 64282,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 64282,
+      "democraticVotes": 64282,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "c2b87a9c49b007af653e29212a8ede0543ed3461039398deec6fc644e6b4919f"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:22",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "22",
+      "districtKey": "22",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Eva Diaz",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 45253,
+          "writeIn": false
+        },
+        {
+          "name": "Steve Robinson",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 24812,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 70065,
+      "democraticVotes": 45253,
+      "republicanVotes": 24812,
+      "democraticMarginPercentagePoints": 29.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "6c30a25d7dde142fcb36d4551c18355a0f5f47c9a19e914ece0c8d9cad513488"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:23",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "23",
+      "districtKey": "23",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Brian Fernandez",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 42658,
+          "writeIn": false
+        },
+        {
+          "name": "Michelle Altherr",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 36602,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 79260,
+      "democraticVotes": 42658,
+      "republicanVotes": 36602,
+      "democraticMarginPercentagePoints": 7.6,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "32b38718780ac0ca3e168c6cc0215c9ddadf70cf15fc1d08efff7d716a2e1911"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:24",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "24",
+      "districtKey": "24",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Analise Ortiz",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 38436,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 38436,
+      "democraticVotes": 38436,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "ca4e8d9336aa2581ff12e97f2df2713bc28f1286cf59ddaee0e6f9d7edff7c49"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:25",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "25",
+      "districtKey": "25",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Timothy \"Tim\" Dunn",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 88531,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 88531,
+      "democraticVotes": 0,
+      "republicanVotes": 88531,
+      "democraticMarginPercentagePoints": -100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "221f92c87959028475d0a2779c390e99586f37f8843047b949e730668a9803de"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:26",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "26",
+      "districtKey": "26",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Flavio Bravo",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 31198,
+          "writeIn": false
+        },
+        {
+          "name": "Victor \"Vic\" Harris",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 15826,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 47024,
+      "democraticVotes": 31198,
+      "republicanVotes": 15826,
+      "democraticMarginPercentagePoints": 32.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "1d6acaea0b05aa5aee8d5535059ef23c54453c44c9253c8108f8fc73d08c4921"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:27",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "27",
+      "districtKey": "27",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Kevin Payne",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 67274,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 67274,
+      "democraticVotes": 0,
+      "republicanVotes": 67274,
+      "democraticMarginPercentagePoints": -100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "a682d2dcc98de997e69c69525f4a5bb27efc7ff08b48dccfbcc57e9f0a5fbebf"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:28",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "28",
+      "districtKey": "28",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Frank Carroll",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 97174,
+          "writeIn": false
+        },
+        {
+          "name": "Shauna Wood Dempsey",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 1112,
+          "writeIn": true
+        }
+      ],
+      "totalVotes": 98286,
+      "democraticVotes": 1112,
+      "republicanVotes": 97174,
+      "democraticMarginPercentagePoints": -97.7,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "b888da4e1629daa70e401bdd2939a196bb4b8d93cf00990ac13b65760c12755c"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:29",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "29",
+      "districtKey": "29",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Janae Shamp",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 70924,
+          "writeIn": false
+        },
+        {
+          "name": "Eric Stafford",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 48608,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 119532,
+      "democraticVotes": 48608,
+      "republicanVotes": 70924,
+      "democraticMarginPercentagePoints": -18.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "e1e313729c9029b302fc2c4fcc2c0adae65824226bff97501629c931485faa96"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:3",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "3",
+      "districtKey": "3",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "John Kavanagh",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 110048,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 110048,
+      "democraticVotes": 0,
+      "republicanVotes": 110048,
+      "democraticMarginPercentagePoints": -100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "007c3c0a95402bab04a26f09a0174dcf1895e0fd3a78cb85a195a1ac5aee958b"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:30",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "30",
+      "districtKey": "30",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Hildy Angius",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 92213,
+          "writeIn": false
+        },
+        {
+          "name": "J'aime MorgAine",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 25295,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 117508,
+      "democraticVotes": 25295,
+      "republicanVotes": 92213,
+      "democraticMarginPercentagePoints": -56.9,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "fe74dcb8be617c03947fee67f3d571ad3fb9ef36008a3e44e3f490fda6b4d4da"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:4",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "4",
+      "districtKey": "4",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Carine Werner",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 76079,
+          "writeIn": false
+        },
+        {
+          "name": "Christine Marsh",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 70614,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 146693,
+      "democraticVotes": 70614,
+      "republicanVotes": 76079,
+      "democraticMarginPercentagePoints": -3.7,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "4603a78cc65625ef9bf783e8fdf7264f4ac71d93697d23c6a725778f76b1e77c"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:5",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "5",
+      "districtKey": "5",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Lela Alston",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 67425,
+          "writeIn": false
+        },
+        {
+          "name": "Joshua Ortega",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 31296,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 98721,
+      "democraticVotes": 67425,
+      "republicanVotes": 31296,
+      "democraticMarginPercentagePoints": 36.6,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "d27e9659e6bcc6ad682f747a2c9f5af609e06f69c8e34458bbc96633ceeac1f2"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:6",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "6",
+      "districtKey": "6",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Theresa Hatathlie",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 72721,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 72721,
+      "democraticVotes": 72721,
+      "republicanVotes": 0,
+      "democraticMarginPercentagePoints": 100,
+      "contested": false,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "a663edd48c7bb5f2b42d343161fd0f1ef811fd120d970d903f2396a8d40918f7"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:7",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "7",
+      "districtKey": "7",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Wendy Rogers",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 80750,
+          "writeIn": false
+        },
+        {
+          "name": "Haley Creighton",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 43406,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 124156,
+      "democraticVotes": 43406,
+      "republicanVotes": 80750,
+      "democraticMarginPercentagePoints": -30.1,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "85e7ad0a20c106a4cc877c88c341237cfd562c52aed3844997ff64c654373ddc"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:8",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "8",
+      "districtKey": "8",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Lauren Kuby",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 53111,
+          "writeIn": false
+        },
+        {
+          "name": "Roxana Holzapfel",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 34528,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 87639,
+      "democraticVotes": 53111,
+      "republicanVotes": 34528,
+      "democraticMarginPercentagePoints": 21.2,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "05b9357a5c0510d6d9282567dee1b34f92d04e2c6817cce284d0de260ffe2d4a"
+    },
+    {
+      "contestId": "az:state-leg-general:2024:upper:9",
+      "stateCode": "AZ",
+      "chamber": "upper",
+      "district": "9",
+      "districtKey": "9",
+      "position": null,
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "electionKind": "general",
+      "seats": 1,
+      "candidates": [
+        {
+          "name": "Eva Burch",
+          "rawParty": "DEM",
+          "party": "Democratic",
+          "votes": 42072,
+          "writeIn": false
+        },
+        {
+          "name": "Robert Scantlebury",
+          "rawParty": "REP",
+          "party": "Republican",
+          "votes": 39261,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 81333,
+      "democraticVotes": 42072,
+      "republicanVotes": 39261,
+      "democraticMarginPercentagePoints": 3.5,
+      "contested": true,
+      "sourceId": "az-2024-general-canvass-signed-pdf",
+      "contestSha256": "7e165fd02c75452522062a46b5ebf2f80c3d7d4e57fc9142f37b549ece268bf7"
     },
     {
       "contestId": "ca:state-leg-general:2022:lower:1",
@@ -252754,12 +255142,12 @@
     }
   ],
   "summary": {
-    "states": 40,
-    "contests": 7025,
-    "uncontested": 2297,
-    "candidateVotes": 266320074,
-    "multiMemberContests": 219
+    "states": 41,
+    "contests": 7085,
+    "uncontested": 2308,
+    "candidateVotes": 274424940,
+    "multiMemberContests": 249
   },
-  "rowSetSha256": "2e0466f0e74c629c872d77f0f38b20f46f1ad6e15199a2a5d057fa00481f46e4",
-  "packageSha256": "bb1c7fd2af2d74b56f4c265e54ba18858c886d65930bfdb7f4936aaca8e513c6"
+  "rowSetSha256": "f6ec283a6c5085c7fb76ec42642d100cdc3b1a401e9b63b20773d625c483dcf2",
+  "packageSha256": "8c1f3dcf0f27aac90fc43f152618708190bae13f76dff443a609b3da3f39c377"
 }

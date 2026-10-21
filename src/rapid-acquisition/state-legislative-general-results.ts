@@ -119,6 +119,12 @@ export interface StateGeneralSource {
    * pdftotext. The extract is retained beside the PDF with id `${id}-pdftotext-layout`.
    */
   readonly pdfLayoutExtract?: boolean;
+  /**
+   * For scanned PDFs with no text layer: parse a reviewed transcription retained beside the PDF instead, with id
+   * `${id}-transcription`, pinned with the PDF as its parent. The transcription is made by hand or by OCR and
+   * checked figure by figure; the adapter documents how.
+   */
+  readonly transcription?: boolean;
 }
 
 export interface StateGeneralAdapter {
@@ -134,12 +140,16 @@ export const STATE_LEGISLATIVE_GENERAL_RESULTS = {
   id: "state-legislative-general-results-v1",
   path: "data/metadata/state-legislative-general-results-v1.json",
   url: "urn:dsa-seats:state-legislative-general-results:v1",
-  parentIds: (): string[] => STATE_GENERAL_ADAPTERS.flatMap((adapter) => adapter.sources.flatMap((source) => source.pdfLayoutExtract ? [source.id, pdfLayoutExtractId(source.id)] : [source.id])),
+  parentIds: (): string[] => STATE_GENERAL_ADAPTERS.flatMap((adapter) => adapter.sources.flatMap((source) => source.pdfLayoutExtract ? [source.id, pdfLayoutExtractId(source.id)] : source.transcription ? [source.id, transcriptionId(source.id)] : [source.id])),
 } as const;
 
 const fail = (code: string): never => { throw new Error(`STATE_LEG_GENERAL_${code}`); };
 export const pdfLayoutExtractId = (sourceId: string): string => `${sourceId}-pdftotext-layout`;
 export const pdfLayoutExtractPath = (pdfPath: string): string => `${pdfPath.replace(/\.pdf$/i, "")}-layout.txt`;
+export const transcriptionId = (sourceId: string): string => `${sourceId}-transcription`;
+export const transcriptionPath = (pdfPath: string): string => `${pdfPath.replace(/\.pdf$/i, "")}-transcription.tsv`;
+/** The retained file an adapter parses: the source itself, its pdftotext extract, or its reviewed transcription. */
+export const parsedSourceId = (source: StateGeneralSource): string => source.pdfLayoutExtract ? pdfLayoutExtractId(source.id) : source.transcription ? transcriptionId(source.id) : source.id;
 const one = (value: number): number => Math.round(value * 10) / 10;
 
 /** Party from a source label: national parties and their state affiliates, everything else Independent or Other. */
@@ -189,7 +199,7 @@ export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: 
     const stateContests: StateGeneralContest[] = [];
     for (const source of adapter.sources) {
       readRetainedSource(lock, source.id, root);
-      const { bytes } = readRetainedSource(lock, source.pdfLayoutExtract ? pdfLayoutExtractId(source.id) : source.id, root);
+      const { bytes } = readRetainedSource(lock, parsedSourceId(source), root);
       const parsed = adapter.parse(bytes, source).map((raw) => normalize(raw, source, adapter.stateCode));
       const expected = adapter.expectedContests[source.id];
       if (expected === undefined) fail(`EXPECTED_COUNT_MISSING:${source.id}`);

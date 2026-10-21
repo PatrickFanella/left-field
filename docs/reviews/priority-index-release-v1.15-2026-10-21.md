@@ -2,12 +2,13 @@
 
 ## Outcome
 
-House layer v0.11, Senate and governor layers v0.1 unchanged. State-legislative layer v0.1 adds Minnesota, New Mexico, North Dakota and South Dakota, reaching forty states.
+House layer v0.11, Senate and governor layers v0.1 unchanged. State-legislative layer v0.1 adds Arizona, Minnesota, New Mexico, North Dakota and South Dakota, reaching forty-one states.
 
 ## State-legislative layer v0.1, eighth batch
 
 | State | Source | Contests | Cycles | Uncontested | Seats scored (D / R) | Unscored |
 |---|---|---|---|---|---|---|
+| AZ | Secretary of State 2024 general official canvass, signed (scanned PDF via the Internet Archive; reviewed transcription) | 60 | 2024 | 11 | 90 (40 / 50) | 0 |
 | MN | Secretary of State results text files: 2024 House, 2022 Senate, 2024 Senate District 45 special | 202 | 2022, 2024 | 13 | 200 (101 / 99) | 0 |
 | ND | Secretary of State statewide legislative results pages, 2024 and 2022 | 119 | 2022, 2024 | 55 | 141 (16 / 125) | 0 |
 | NM | Secretary of State results service (the JSON behind electionresults.sos.nm.gov), 2024 general and the House District 57 recount | 112 | 2024 | 65 | 110 (68 / 42) | 0 |
@@ -15,6 +16,7 @@ House layer v0.11, Senate and governor layers v0.1 unchanged. State-legislative 
 
 Reading rules:
 
+- **Arizona:** the Secretary of State's sites return HTTP 403 to the project's network, so the signed canvass is retained from the Internet Archive's capture of its official URL, byte for byte. It is a scan with no text. The build reads a transcription of pages 7 to 14 made with tesseract and checked against the county figures on the scan, the OpenElections county precinct files, and the scan itself where those disagreed; `src/rapid-acquisition/state-general/arizona.ts` lists each discrepancy and how it was settled. The transcription is pinned with the PDF as its parent. House districts elect two members together. Every seat in both chambers was on the 2024 ballot.
 - **Minnesota:** DFL is Democratic. Senate District 45 carries both its 2022 contest and the 2024 special; the score takes the special. Specials held in 2025 (House 34B and 40B, Senate 29 and 47) are in separate files and not read yet, so those holders are scored on their predecessors' last general.
 - **North Dakota:** each district takes its most recent general, 2024 or 2022. The 2024 page is served at the site's current-election address, which will switch to 2026 results; the retained bytes are the 2024 page. A 2024 single-seat House race for an unexpired term in District 23 is kept as its own position so it does not replace the 2022 two-seat race. The 2022 file's House 9A and 9B no longer exist after the 2023 remedial map and match no seat.
 - **New Mexico:** the results service is the Secretary of State's own backend, hosted on `azurewebsites.us`; the site's XLSX export needs a browser session. House District 57 takes the December 2024 automatic recount. The service lists no write-in votes.
@@ -22,9 +24,9 @@ Reading rules:
 
 SD House 27 is a new party mismatch: Open States lists Peri Pourier as Republican, and she ran as a Democrat in 2024. The score treats her as the roster says, as it does the five earlier mismatches.
 
-Arizona, Michigan, Nevada and Ohio were examined and deferred. Every official results host for those states returns a Cloudflare or Incapsula challenge to the project's VPN address, and the residential route needs an interactive sudo password on this host.
+Michigan, Nevada and Ohio were examined and deferred. Every official results host for those states returns a Cloudflare or Incapsula challenge to the project's VPN address, and the residential route needs an interactive sudo password on this host.
 
-Totals across forty states: 7,025 contests, 5,702 seats scored (2,629 Democratic, 3,073 Republican).
+Totals across forty-one states: 7,085 contests, 5,792 seats scored (2,669 Democratic, 3,123 Republican).
 
 ## Immutable outputs
 
@@ -38,8 +40,8 @@ Totals across forty states: 7,025 contests, 5,702 seats scored (2,629 Democratic
 - `house-score-v11-active-projection-v1`: 246,453 bytes; SHA-256 `b60f340316e371e4f288927e896145bc3e937c8c1e998e618df911a9977b85d4`; package `d4090aaeb4d8604de0e14479416b65268928ec61f40b914faf04b6dc49314834` (unchanged)
 - `governor-score-v01-projection-v1`: 100,920 bytes; SHA-256 `9828838a28751867768cf3704b965eddff106297e6f73bc4278e62c9f9e67e4d`; package `13d86586c6fb0ace141597cad1abfa0d5fe966368b872110991161473575aabb` (unchanged)
 - `state-legislative-roster-v1`: 6,093,010 bytes; SHA-256 `00be4090582f8b5b9e2a6cde80a767ded8b3a806bd6b469da1fff36c88d2264b`; package `aebf57452e4e6ad9eb0bc69b8886db2951e21f0cae5d50ad84cfd916d3477199` (unchanged)
-- `state-legislative-general-results-v1`: 7,157,064 bytes; SHA-256 `c65fab591e448569476fc7ca7c2d3560d6a1af1f08ff29284f583a229ec47ea7`; package `bb1c7fd2af2d74b56f4c265e54ba18858c886d65930bfdb7f4936aaca8e513c6` (unchanged)
-- `state-legislative-score-v01-projection-v1`: 13,310,153 bytes; SHA-256 `ca2c875d9201dc6960e75a99b6e81a5c6d8a20b2bad8204d888dac442d3830f7`; package `a5326ebef79221a1e456537fcfe10f3326894f2c618154ccd2b5b2e1c1c178cd`
+- `state-legislative-general-results-v1`: 7,223,670 bytes; SHA-256 `d5cf1e4e80f6b00daa450bc7375bce748755bfc11061dff3675598d1c01cc67b`; package `8c1f3dcf0f27aac90fc43f152618708190bae13f76dff443a609b3da3f39c377` (unchanged)
+- `state-legislative-score-v01-projection-v1`: 13,383,208 bytes; SHA-256 `41ef865c6b1e3c167e675af3f928276e57e5bb6648bcc10064fd95d8682de85e`; package `f62b6c5c4a96d72d933d230bad3457993ebe04bfbaf53a31ed7be4211ddb4906`
 
 ## Reproduction
 

@@ -9,6 +9,7 @@ import { NEW_YORK_GENERAL } from "./state-general/new-york";
 import { PENNSYLVANIA_GENERAL } from "./state-general/pennsylvania";
 import { COLORADO_GENERAL } from "./state-general/colorado";
 import { ALASKA_GENERAL } from "./state-general/alaska";
+import { ARIZONA_GENERAL } from "./state-general/arizona";
 import { ARKANSAS_GENERAL } from "./state-general/arkansas";
 import { HAWAII_GENERAL } from "./state-general/hawaii";
 import { VERMONT_GENERAL } from "./state-general/vermont";
@@ -214,6 +215,21 @@ describe("state-legislative general results", () => {
     // New Mexico House 57 takes the December 2024 automatic recount.
     expect(votes("nm:state-leg-general:2024:lower:57")).toEqual([["CATHERINE JEANETTE CULLEN", "Republican", 8373], ["MICHELLE ELEANOR SANDOVAL", "Democratic", 8240]]);
     expect(value.contests.find((contest) => contest.contestId === "sd:state-leg-general:2024:lower:15")).toMatchObject({ seats: 2, democraticVotes: 8915, republicanVotes: 8275 });
+  });
+
+  it("reads the reviewed transcription of Arizona's scanned canvass", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [ARIZONA_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.uncontested, state.cycles])).toEqual([["AZ", 60, 30, 30, 11, [2024]]]);
+    expect(value.contests.every((contest) => contest.seats === (contest.chamber === "lower" ? 2 : 1))).toBe(true);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes, candidate.writeIn]);
+    // Tom Simes is missing from the OpenElections precinct files; his total was confirmed from the scan.
+    expect(votes("az:state-leg-general:2024:lower:2")).toEqual([["Stephanie Simacek", "Democratic", 47801, false], ["Justin Wilmeth", "Republican", 46942, false], ["Ari Daniel Bradshaw", "Republican", 46810, false], ["Tom Simes", "Independent", 15946, false]]);
+    // OCR read this write-in's total as 1,152; the scan reads 1,112. A lone named candidate is uncontested.
+    expect(value.contests.find((contest) => contest.contestId === "az:state-leg-general:2024:upper:28")).toMatchObject({ contested: false, democraticVotes: 1112, republicanVotes: 97174 });
+    expect(votes("az:state-leg-general:2024:upper:30")).toEqual([["Hildy Angius", "Republican", 92213, false], ["J'aime MorgAine", "Democratic", 25295, false]]);
+    const source = ARIZONA_GENERAL.sources[0]!;
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("page\tchamber\tdistrict\tparty\tcandidate\twrite_in\tvotes\n7\tupper\t31\tREP\tX\tno\t1\n"), source)).toThrow("ARIZONA_GENERAL_ROW");
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("chamber\tdistrict\n"), source)).toThrow("ARIZONA_GENERAL_HEADER");
   });
 
   it("matches the pinned artifact", () => {
