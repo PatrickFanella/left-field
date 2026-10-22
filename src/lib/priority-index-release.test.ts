@@ -9,7 +9,7 @@ import { FilesystemPriorityIndexRepository, rankAcrossChambers } from "./priorit
 // The weekly refresh bumps the release and re-pins the dated inputs, so these
 // tests check the descriptor against the refresh pointer and the projections
 // rather than against one release's literal values.
-const COVERED_STATES_FLOOR = ["AK", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "MA", "MD", "ME", "MO", "MT", "NC", "NJ", "NY", "OR", "PA", "RI", "SC", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
+const COVERED_STATES_FLOOR = ["AK", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "MA", "MD", "ME", "MI", "MN", "MO", "MT", "NC", "ND", "NJ", "NM", "NV", "NY", "OH", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
 
 describe("priority index release and cross-chamber ranking", () => {
   it("reads the pinned release descriptor", () => {

@@ -18,7 +18,7 @@ import { derivedArtifactEntry, findSourceLockEntry, readSourceLock, upsertSource
 import { sha } from "@/rapid-acquisition/shared";
 import { assertPdfHeader, extractPdfText, PDF_EXTRACT_TAG } from "@/rapid-acquisition/intake/pdf";
 import { STATE_GENERAL_ADAPTERS } from "@/rapid-acquisition/state-general";
-import { pdfLayoutExtractId, pdfLayoutExtractPath } from "@/rapid-acquisition/state-legislative-general-results";
+import { pdfLayoutExtractId, pdfLayoutExtractPath, transcriptionId, transcriptionPath } from "@/rapid-acquisition/state-legislative-general-results";
 
 const args = process.argv.slice(2);
 const option = (name: string): string | undefined => { const index = args.indexOf(`--${name}`); return index >= 0 ? args[index + 1] : undefined; };
@@ -58,6 +58,17 @@ async function main(): Promise<void> {
   // A POST-served file is pinned under a URL that records its form body, so the lock says exactly what was requested.
   for (const adapter of adapters) for (const source of adapter.sources) {
     lock = await retain(lock, source.id, source.path, source.postBody === undefined ? source.url : `${source.url}#post:${source.postBody}`, source.postBody, source.postContentType, source.userAgent);
+    if (source.transcription) {
+      // A reviewed transcription of a scanned PDF is written by hand, not generated, so it must already exist beside the PDF.
+      assertPdfHeader(readFileSync(source.path));
+      const path = transcriptionPath(source.path), id = transcriptionId(source.id);
+      if (!existsSync(path)) throw new Error(`STATE_RETURNS_TRANSCRIPTION_MISSING:${path}`);
+      const bytes = readFileSync(path), existing = findSourceLockEntry(lock, id);
+      if (existing && existing.sha256 === sha(bytes) && existing.byteSize === bytes.length) { out(`${id}: retained transcription`); continue; }
+      if (checkOnly) throw new Error(`STATE_RETURNS_TRANSCRIPTION_UNPINNED:${id}`);
+      lock = upsertSourceLockEntry(lock, derivedArtifactEntry({ id, url: `urn:dsa-seats:reviewed-transcription:${source.id}`, retainedPath: path, bytes, kind: "derived_extract", parentIds: [source.id] }));
+      out(`${id}: pinned ${bytes.length} bytes sha256 ${sha(bytes)}`);
+    }
     if (source.pdfLayoutExtract) {
       // Extract once with pdftotext and pin the text, so builds and tests never need pdftotext.
       assertPdfHeader(readFileSync(source.path));

@@ -9,6 +9,10 @@ import { NEW_YORK_GENERAL } from "./state-general/new-york";
 import { PENNSYLVANIA_GENERAL } from "./state-general/pennsylvania";
 import { COLORADO_GENERAL } from "./state-general/colorado";
 import { ALASKA_GENERAL } from "./state-general/alaska";
+import { ARIZONA_GENERAL } from "./state-general/arizona";
+import { MICHIGAN_GENERAL } from "./state-general/michigan";
+import { NEVADA_GENERAL } from "./state-general/nevada";
+import { OHIO_GENERAL } from "./state-general/ohio";
 import { ARKANSAS_GENERAL } from "./state-general/arkansas";
 import { HAWAII_GENERAL } from "./state-general/hawaii";
 import { VERMONT_GENERAL } from "./state-general/vermont";
@@ -39,6 +43,10 @@ import { NORTH_CAROLINA_GENERAL } from "./state-general/north-carolina";
 import { WASHINGTON_GENERAL, washingtonPreference } from "./state-general/washington";
 import { VIRGINIA_GENERAL } from "./state-general/virginia";
 import { WISCONSIN_GENERAL } from "./state-general/wisconsin";
+import { MINNESOTA_GENERAL } from "./state-general/minnesota";
+import { NEW_MEXICO_GENERAL } from "./state-general/new-mexico";
+import { NORTH_DAKOTA_GENERAL } from "./state-general/north-dakota";
+import { SOUTH_DAKOTA_GENERAL } from "./state-general/south-dakota";
 
 describe("state-legislative general results", () => {
   it("maps source party labels to caucus families", () => {
@@ -198,6 +206,45 @@ describe("state-legislative general results", () => {
     expect(value.contests.find((contest) => contest.contestId === "ky:state-leg-general:2024:lower:66")?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes])).toEqual([["T. J. ROBERTS", "Republican", 16368], ["Peggy HOUSTON-NIENABER", "Democratic", 6861]]);
     expect(value.contests.find((contest) => contest.contestId === "or:state-leg-general:2024:lower:46")?.candidates.map((candidate) => [candidate.name, candidate.votes])).toEqual([["Willy Chotzen", 25542], ["John Mark Alexander", 4414], ["Kevin Levy", 1252], ["Austin Daniel", 1040], ["Misc.", 58]]);
     expect(value.contests.filter((contest) => contest.stateCode === "OR" && contest.chamber === "upper").map((contest) => contest.district).length).toBe(30);
+  });
+
+  it("reads Minnesota text files, New Mexico results JSON, North Dakota results pages and the South Dakota canvass", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [MINNESOTA_GENERAL, NEW_MEXICO_GENERAL, NORTH_DAKOTA_GENERAL, SOUTH_DAKOTA_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.cycles])).toEqual([["MN", 202, 134, 68, [2022, 2024]], ["ND", 119, 62, 57, [2022, 2024]], ["NM", 112, 70, 42, [2024]], ["SD", 72, 37, 35, [2024]]]);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes]);
+    expect(value.contests.find((contest) => contest.contestId === "mn:state-leg-general:2024:upper:45")).toMatchObject({ electionKind: "special_general", democraticVotes: 29791, republicanVotes: 26969 });
+    expect(votes("mn:state-leg-general:2024:lower:2a")).toEqual([["Bidal Duran Jr", "Republican", 11518], ["Reed Olson", "Democratic", 10667], ["Write-in", "Independent", 26]]);
+    expect(votes("nd:state-leg-general:2024:lower:4a")).toEqual([["Lisa Finley-DeVille", "Democratic", 1627], ["Ronald Brugh", "Republican", 919], ["Write-in", "Independent", 15]]);
+    // New Mexico House 57 takes the December 2024 automatic recount.
+    expect(votes("nm:state-leg-general:2024:lower:57")).toEqual([["CATHERINE JEANETTE CULLEN", "Republican", 8373], ["MICHELLE ELEANOR SANDOVAL", "Democratic", 8240]]);
+    expect(value.contests.find((contest) => contest.contestId === "sd:state-leg-general:2024:lower:15")).toMatchObject({ seats: 2, democraticVotes: 8915, republicanVotes: 8275 });
+  });
+
+  it("reads the reviewed transcription of Arizona's scanned canvass", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [ARIZONA_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.uncontested, state.cycles])).toEqual([["AZ", 60, 30, 30, 11, [2024]]]);
+    expect(value.contests.every((contest) => contest.seats === (contest.chamber === "lower" ? 2 : 1))).toBe(true);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes, candidate.writeIn]);
+    // Tom Simes is missing from the OpenElections precinct files; his total was confirmed from the scan.
+    expect(votes("az:state-leg-general:2024:lower:2")).toEqual([["Stephanie Simacek", "Democratic", 47801, false], ["Justin Wilmeth", "Republican", 46942, false], ["Ari Daniel Bradshaw", "Republican", 46810, false], ["Tom Simes", "Independent", 15946, false]]);
+    // OCR read this write-in's total as 1,152; the scan reads 1,112. A lone named candidate is uncontested.
+    expect(value.contests.find((contest) => contest.contestId === "az:state-leg-general:2024:upper:28")).toMatchObject({ contested: false, democraticVotes: 1112, republicanVotes: 97174 });
+    expect(votes("az:state-leg-general:2024:upper:30")).toEqual([["Hildy Angius", "Republican", 92213, false], ["J'aime MorgAine", "Democratic", 25295, false]]);
+    const source = ARIZONA_GENERAL.sources[0]!, noCompanion = (): Buffer => Buffer.alloc(0);
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("page\tchamber\tdistrict\tparty\tcandidate\twrite_in\tvotes\n7\tupper\t31\tREP\tX\tno\t1\n"), source, noCompanion)).toThrow("ARIZONA_GENERAL_ROW");
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("chamber\tdistrict\n"), source, noCompanion)).toThrow("ARIZONA_GENERAL_HEADER");
+  });
+
+  it("reads the archived Michigan Senate page, Nevada results with candidate-list parties, and Ohio canvass workbooks", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [MICHIGAN_GENERAL, NEVADA_GENERAL, OHIO_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.cycles])).toEqual([["MI", 38, 0, 38, [2022]], ["NV", 105, 84, 21, [2022, 2024]], ["OH", 232, 198, 34, [2022, 2024]]]);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes]);
+    expect(votes("mi:state-leg-general:2022:upper:1")).toEqual([["Geiss, Erika", "Democratic", 53475], ["Soderquist, Erik", "Republican", 21243]]);
+    // Nevada party comes from the Legislative Counsel Bureau list; No Political Party is Independent.
+    expect(votes("nv:state-leg-general:2024:upper:3")).toEqual([["NGUYEN, ROCHELLE", "Democratic", 28254], ["HOWARD, BRENT", "Republican", 21215], ["JONES, KEYA \"KJ\"", "Independent", 2078]]);
+    expect(votes("nv:state-leg-general:2022:lower:26")).toEqual([["DELONG, RICH", "Republican", 23964], ["MITCHELL, REED", "Other", 9455]]);
+    expect(value.contests.find((contest) => contest.contestId === "oh:state-leg-general:2024:upper:33")).toMatchObject({ electionKind: "special_general" });
+    expect(votes("oh:state-leg-general:2024:upper:2")).toEqual([["Theresa Gavarone", "Republican", 111096], ["Paloma De La Fuente", "Democratic", 68948]]);
   });
 
   it("matches the pinned artifact", () => {

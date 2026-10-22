@@ -14,10 +14,10 @@ describe("state-legislative score v0.1", () => {
 
   it("scores every seat in a covered state and carries the rest unscored with a reason", () => {
     const value = buildStateLegislativeScoreV01Projection();
-    expect(value.coveredStates).toEqual(["AK", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "MA", "MD", "ME", "MO", "MT", "NC", "NJ", "NY", "OR", "PA", "RI", "SC", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]);
+    expect(value.coveredStates).toEqual(["AK", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "MA", "MD", "ME", "MI", "MN", "MO", "MT", "NC", "ND", "NJ", "NM", "NV", "NY", "OH", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]);
     // Roster refreshes move the scored count as seats fall vacant and fill.
-    expect(value.summary).toMatchObject({ seats: value.rows.length, coveredStates: 36, noContestForDistrict: 121, noMajorPartyInContest: 8, partyMismatches: 5, holderPartyNotScored: 12 });
-    expect(value.summary.scored).toBeGreaterThan(5100);
+    expect(value.summary).toMatchObject({ seats: value.rows.length, coveredStates: 44, noContestForDistrict: 231, noMajorPartyInContest: 8, partyMismatches: 6, holderPartyNotScored: 12 });
+    expect(value.summary.scored).toBeGreaterThan(6000);
     expect(value.summary.democraticScored + value.summary.republicanScored).toBe(value.summary.scored);
     expect(value.summary.stateNotCovered + value.summary.scored + value.summary.noContestForDistrict + value.summary.noMajorPartyInContest + value.summary.holderPartyNotScored + (value.summary.rosterPredatesContest ?? 0)).toBe(value.summary.seats);
     const ga = value.rows.filter((row) => row.stateCode === "GA");
@@ -54,7 +54,7 @@ describe("state-legislative score v0.1", () => {
     expect(value.rows.filter((row) => row.stateCode === "UT" && row.status === "no_contest_for_district").every((row) => row.chamber === "upper")).toBe(true);
     expect(value.rows.filter((row) => row.stateCode === "ID" && row.chamber === "lower").every((row) => row.status === "scored" && /^\d+[AB]$/.test(row.district))).toBe(true);
     // Holders whose roster caucus differs from the line they won on are flagged, not re-scored.
-    expect(value.rows.filter((row) => row.partyMismatch).map((row) => [row.stateCode, row.district, row.incumbentParty, row.holderBaselineParty]).sort()).toEqual([["CA", "4", "Republican", "Democratic"], ["FL", "64", "Republican", "DEM"], ["HI", "14", "Republican", "D"], ["OR", "32", "Democratic", "R"], ["SC", "57", "Republican", "DEM"]]);
+    expect(value.rows.filter((row) => row.partyMismatch).map((row) => [row.stateCode, row.district, row.incumbentParty, row.holderBaselineParty]).sort()).toEqual([["CA", "4", "Republican", "Democratic"], ["FL", "64", "Republican", "DEM"], ["HI", "14", "Republican", "D"], ["OR", "32", "Democratic", "R"], ["SC", "57", "Republican", "DEM"], ["SD", "27", "Republican", "DEM"]]);
     // A contest with no Democratic or Republican candidate has no margin.
     expect(value.rows.filter((row) => row.status === "no_major_party_in_contest").every((row) => row.ownRaceDemocraticMargin === null)).toBe(true);
     // New Jersey Assembly districts elect two members from one contest; both holders share it.

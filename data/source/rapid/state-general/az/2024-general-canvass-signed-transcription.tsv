@@ -1,0 +1,160 @@
+page	chamber	district	party	candidate	write_in	votes
+7	upper	1	REP	Mark Finchem	no	94947
+7	upper	1	DEM	Mike S. Fogel	no	49108
+7	upper	2	REP	Shawnna Bolick	no	52100
+7	upper	2	DEM	Judy Schwiebert	no	48333
+7	upper	2	GRN	Dennis Pugsley	no	2076
+7	upper	3	REP	John Kavanagh	no	110048
+7	upper	4	REP	Carine Werner	no	76079
+7	upper	4	DEM	Christine Marsh	no	70614
+7	upper	5	REP	Joshua Ortega	no	31296
+7	upper	5	DEM	Lela Alston	no	67425
+7	upper	6	DEM	Theresa Hatathlie	no	72721
+7	upper	7	REP	Wendy Rogers	no	80750
+7	upper	7	DEM	Haley Creighton	no	43406
+7	upper	8	REP	Roxana Holzapfel	no	34528
+7	upper	8	DEM	Lauren Kuby	no	53111
+7	upper	9	REP	Robert Scantlebury	no	39261
+7	upper	9	DEM	Eva Burch	no	42072
+7	upper	10	REP	David Christian Farnsworth	no	70561
+7	upper	10	DEM	Robert Doyle	no	44170
+7	upper	11	REP	Joshua Ayala	no	20095
+7	upper	11	DEM	Catherine Miranda	no	52106
+8	upper	12	REP	Cara Vicini	no	50796
+8	upper	12	DEM	Denise "Mitzi" Epstein	no	70499
+8	upper	13	REP	J.D. Mesnard	no	62670
+8	upper	13	DEM	Sharon Lee Winters	no	55287
+8	upper	14	REP	Warren Petersen	no	76251
+8	upper	14	DEM	Elizabeth Brown	no	50554
+8	upper	15	REP	Jake Hoffman	no	87580
+8	upper	15	DEM	Alan Smith	no	43769
+8	upper	15	IND	Evan Olson	no	6061
+8	upper	16	REP	Thomas "T.J." Shope Jr.	no	58386
+8	upper	16	DEM	Stacey Seaman	no	45888
+8	upper	17	REP	Venden "Vince" Leach	no	77714
+8	upper	17	DEM	John McLean	no	74669
+8	upper	18	DEM	Priya Sundareshan	no	89003
+8	upper	19	REP	David Gowan	no	71192
+8	upper	19	DEM	Bob Karp	no	42555
+8	upper	20	DEM	Sally Ann Gonzales	no	65214
+8	upper	21	DEM	Rosanna Gabaldon	no	64282
+8	upper	22	REP	Steve Robinson	no	24812
+8	upper	22	DEM	Eva Diaz	no	45253
+9	upper	23	REP	Michelle Altherr	no	36602
+9	upper	23	DEM	Brian Fernandez	no	42658
+9	upper	24	DEM	Analise Ortiz	no	38436
+9	upper	25	REP	Timothy "Tim" Dunn	no	88531
+9	upper	26	REP	Victor "Vic" Harris	no	15826
+9	upper	26	DEM	Flavio Bravo	no	31198
+9	upper	27	REP	Kevin Payne	no	67274
+9	upper	28	REP	Frank Carroll	no	97174
+9	upper	28	DEM	Shauna Wood Dempsey	yes	1112
+9	upper	29	REP	Janae Shamp	no	70924
+9	upper	29	DEM	Eric Stafford	no	48608
+9	upper	30	REP	Hildy Angius	no	92213
+9	upper	30	DEM	J'aime MorgAine	no	25295
+9	lower	1	REP	Selina Bliss	no	88691
+9	lower	1	REP	Quang Nguyen	no	87726
+9	lower	1	DEM	Jay Ruby	no	40911
+9	lower	1	DEM	Marcia Smith	no	44199
+9	lower	2	REP	Ari Daniel Bradshaw	no	46810
+9	lower	2	REP	Justin Wilmeth	no	46942
+9	lower	2	DEM	Stephanie Simacek	no	47801
+9	lower	2	IND	Tom Simes	no	15946
+10	lower	3	REP	Joseph Chaplik	no	93596
+10	lower	3	REP	Alexander Kolodin	no	88693
+10	lower	3	DEM	Richard Corles	no	55372
+10	lower	4	REP	Pamela Carter	no	69077
+10	lower	4	REP	Matt Gress	no	75669
+10	lower	4	DEM	Kelli Butler	no	66407
+10	lower	4	DEM	Karen Gresham	no	64038
+10	lower	5	REP	Reina "Reina" Patocs	no	31601
+10	lower	5	DEM	Sarah Liguori	no	61889
+10	lower	5	DEM	Aaron Márquez	no	59087
+10	lower	5	REP	Arthur Gonzales Sr.	yes	88
+10	lower	6	REP	Lloyd Johnson	no	25685
+10	lower	6	REP	Rich King	no	25743
+10	lower	6	DEM	Mae Peshlakai	no	54241
+10	lower	6	DEM	Myron Tsosie	no	56332
+10	lower	7	REP	Walter "Walt" Blackman	no	74128
+10	lower	7	REP	David Marshall Sr.	no	73162
+10	lower	7	DEM	Kevin Chiquete	no	37786
+10	lower	7	DEM	Nancy Hartl	no	41026
+10	lower	8	REP	Caden Darrow	no	35180
+10	lower	8	DEM	Janeen Connolly	no	49065
+10	lower	8	DEM	Brian Garcia	no	47977
+10	lower	8	GRN	Tre Rook	no	7559
+11	lower	9	REP	Kylie Barber	no	35895
+11	lower	9	REP	Mary Ann Mendoza	no	35553
+11	lower	9	DEM	Lorena Austin	no	39041
+11	lower	9	DEM	Seth Blattman	no	36823
+11	lower	10	REP	Ralph Heap	no	63695
+11	lower	10	REP	Justin Olson	no	65454
+11	lower	10	DEM	Helen Hunter	no	40958
+11	lower	10	DEM	Stephanie Simmons	no	40926
+11	lower	11	REP	Cesar Ivan Aleman	no	17786
+11	lower	11	REP	Joseph Charles Charles Dailey	no	17654
+11	lower	11	DEM	Junelle Cavero	no	44318
+11	lower	11	DEM	Oscar De Los Santos	no	47727
+11	lower	12	REP	Lawrence Hudson	no	49932
+11	lower	12	DEM	Patricia "Patty" Contreras	no	65931
+11	lower	12	DEM	Anastasia "Stacey" Travers	no	65115
+11	lower	12	LBT	Marc Johnston	yes	89
+11	lower	12	IND	Benjamin Wirtz	yes	35
+11	lower	13	REP	Jeff Weninger	no	57486
+11	lower	13	REP	Julie Willoughby	no	56914
+11	lower	13	DEM	Nicholas Gonzales	no	51133
+11	lower	13	DEM	Brandy Reese	no	52677
+11	lower	13	GRN	Cody Hannah	no	3361
+11	lower	14	REP	Laurin Hendrix	no	75359
+11	lower	14	REP	Khyl Powell	no	69985
+11	lower	14	GRN	Scott Menor	no	28653
+12	lower	15	REP	Neal Carter	no	75419
+12	lower	15	REP	Michael Way	no	78985
+12	lower	15	DEM	Barbara Beneitone	no	46368
+12	lower	16	REP	Chris Lopez	no	49099
+12	lower	16	REP	Teresa Martinez	no	53783
+12	lower	16	DEM	Keith Seaman	no	45444
+12	lower	17	REP	Rachel Jones	no	71620
+12	lower	17	REP	Cory McGarr	no	68904
+12	lower	17	DEM	Kevin Volk	no	73985
+12	lower	18	REP	Leonard "Len" Rosenblum	no	48845
+12	lower	18	DEM	Nancy Gutierrez	no	73290
+12	lower	18	DEM	Chris Mathis	no	68197
+12	lower	19	REP	Lupe Diaz	no	59188
+12	lower	19	REP	Gail Griffin	no	65504
+12	lower	19	DEM	Gregg Frostrom Jr.	no	42468
+12	lower	20	DEM	Alma Hernandez	no	53288
+12	lower	20	DEM	Betty Villegas	no	49530
+12	lower	21	REP	Christopher Kibbey	no	33883
+12	lower	21	DEM	Consuelo Hernandez	no	48283
+12	lower	21	DEM	Stephanie Stahl Hamilton	no	43028
+12	lower	22	REP	Blaine "Bj" Griffin Sr.	no	21499
+12	lower	22	REP	Diana Jones	no	22086
+12	lower	22	DEM	Lupe Chavira Contreras	no	41626
+12	lower	22	DEM	Elda Luna-Najera	no	36664
+13	lower	23	REP	Michele Pena	no	37967
+13	lower	23	DEM	Matias Rosales	no	35788
+13	lower	23	DEM	Mariana Sandoval	no	37375
+13	lower	24	DEM	Anna Abeytia	no	27183
+13	lower	24	DEM	Lydia Hernandez	no	31744
+13	lower	25	REP	Michael Carbone	no	68427
+13	lower	25	REP	Nickolas "Nick" Kupper	no	63970
+13	lower	25	DEM	William "Bill" Peter Olear	no	41577
+13	lower	26	REP	Skyla Edwards	no	13446
+13	lower	26	REP	Frank Roberts	no	14359
+13	lower	26	DEM	Cesar Aguilar	no	30035
+13	lower	26	DEM	Quanta Crews	no	25976
+13	lower	27	REP	Lisa Fink	no	51499
+13	lower	27	REP	Tony Rivero	no	50976
+13	lower	27	DEM	Deborah Howard	no	45601
+13	lower	28	REP	David Livingston	no	79333
+13	lower	28	REP	Beverly Pingerelli	no	79618
+13	lower	28	DEM	Barbara Jean Fike	no	51780
+13	lower	29	REP	Steve Montenegro	no	66301
+13	lower	29	REP	James Taylor	no	65431
+13	lower	29	DEM	Tanairi Ochoa-Martinez	no	44776
+13	lower	29	DEM	Tom Tzitzura	no	42535
+14	lower	30	REP	Leo Biasiucci	no	77117
+14	lower	30	REP	John Gillette	no	76348
+14	lower	30	DEM	Monica Timberlake	no	26698
