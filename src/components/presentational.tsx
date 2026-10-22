@@ -136,6 +136,9 @@ export function Shell({
           <Link prefetch={false} href="/">
             Priority index
           </Link>
+          <Link prefetch={false} href="/map">
+            Map
+          </Link>
           <Link prefetch={false} href="/browse">
             Browse
           </Link>
