@@ -26,7 +26,7 @@ type LockedArtifact = { readonly bytes: Uint8Array; readonly url: string; readon
 
 const fail = (message: string): never => { throw new Error(message); };
 const isInside = (root: string, target: string): boolean => { const path = relative(root, target); return path !== "" && !path.startsWith("..") && !path.includes(`..${posix.sep}`); };
-const retainedPathIsExact = (path: string): boolean => path.startsWith("data/") && posix.normalize(path) === path && !path.includes("//") && !path.endsWith("/");
+const retainedPathIsExact = (path: string): boolean => (path.startsWith("data/") || path.startsWith("public/")) && posix.normalize(path) === path && !path.includes("//") && !path.endsWith("/");
 const lockPath = (entry: LockEntry): string => entry.retainedPath!.slice("data/".length);
 
 async function confinedFile(root: string, path: string): Promise<string> {
@@ -67,7 +67,7 @@ export async function verifyConfiguredSourceLock(env: NodeJS.ProcessEnv, project
 }
 async function locked(root: string, lock: SourceLock, id: string, override?: string): Promise<LockedArtifact> {
   const entry = lock.entries.find(value => value.id === id);
-  if (!entry || entry.retainedStatus !== "retained" || !entry.retainedPath) fail("SOURCE_LOCK_ENTRY_INVALID");
+  if (!entry || entry.retainedStatus !== "retained" || !entry.retainedPath?.startsWith("data/")) fail("SOURCE_LOCK_ENTRY_INVALID");
   const selected = entry as LockEntry & { readonly retainedPath: string };
   const target = await confinedFile(root, override ?? lockPath(selected));
   const bytes = await readFile(target);
