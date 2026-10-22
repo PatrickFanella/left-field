@@ -10,7 +10,7 @@ const copyRoot = () => {
   const root = mkdtempSync(join(tmpdir(), "house-primary-projection-")); temporary.push(root);
   cpSync("data/rapid-acquisition", join(root, "data/rapid-acquisition"), { recursive: true });
   cpSync("data/source-lock.json", join(root, "data/source-lock.json"));
-  cpSync("data/source/rapid", join(root, "data/source/rapid"), { recursive: true });
+  cpSync("data/source/rapid/house-primary", join(root, "data/source/rapid/house-primary"), { recursive: true });
   return root;
 };
 const rehash = (value: ReturnType<typeof buildHousePrimaryProjection>) => {
