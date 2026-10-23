@@ -102,14 +102,36 @@ write("national-map-v1", "public/map-data/national-v1.json", {
 }, [SOURCES.states, SOURCES.cd]);
 
 const upper = layer(SOURCES.sldu, STATES_ONLY, "20%"), lower = layer(SOURCES.sldl, STATES_ONLY, "20%");
+const nhFloterialId = "nh-house-floterial-2022-shapefile";
+const nhFloterial = layer(nhFloterialId, "FloatHse22.trim() !== ''", "20%");
+const nhCounties: Record<string, string> = { BE: "Belknap", CA: "Carroll", CH: "Cheshire", CO: "Coos", GR: "Grafton", HI: "Hillsborough", ME: "Merrimack", RO: "Rockingham", ST: "Strafford", SU: "Sullivan" };
 for (const { stateCode } of stateRows) {
   const chamber = (features: Feature[]) => features.filter((feature) => feature.properties.STUSPS === stateCode)
     .map((feature) => ({ name: feature.properties.NAME!, key: stateLegislativeDistrictKey(stateCode, feature.properties.NAME!), path: draw(feature, 2).path }))
     .sort((a, b) => a.key.localeCompare(b.key, "en-US", { numeric: true }));
   const value = { schema: "state-legislative-map-v1", stateCode, upper: chamber(upper), lower: chamber(lower) };
-  // DC has a council, not a legislature; Nebraska's unicameral is the upper layer only.
-  if (stateCode === "DC" || (!value.upper.length && !value.lower.length)) continue;
-  write(`state-legislative-map-${stateCode.toLowerCase()}-v1`, `public/map-data/state-legislative/${stateCode.toLowerCase()}-v1.json`, value, [SOURCES.sldu, SOURCES.sldl]);
+  // Census puts DC council wards in the upper layer. Citywide council
+  // positions use the retained DC state boundary, drawn before ward polygons.
+  if (stateCode === "DC") {
+    const city = stateRows.find(row => row.stateCode === "DC")!;
+    value.upper = [
+      { name: "At-Large", key: stateLegislativeDistrictKey("DC", "At-Large"), path: city.path },
+      { name: "Chairman", key: stateLegislativeDistrictKey("DC", "Chairman"), path: city.path },
+      ...value.upper.map(row => ({ ...row, name: `Ward ${row.name}`, key: stateLegislativeDistrictKey("DC", `Ward ${row.name}`) })),
+    ];
+    if (value.upper.length !== 10) throw new Error(`NATIONAL_MAP_DC_WARDS:${value.upper.length}`);
+  }
+  if (stateCode === "NH") {
+    for (const feature of nhFloterial) {
+      const code = feature.properties.FloatHse22!.trim(), match = code.match(/^([A-Z]{2})(\d+)$/);
+      if (!match || !nhCounties[match[1]!]) throw new Error(`NATIONAL_MAP_NH_FLOTERIAL:${code}`);
+      const name = `${nhCounties[match[1]!]} ${Number(match[2])}`;
+      value.lower.push({ name, key: stateLegislativeDistrictKey("NH", name), path: draw(feature, 2).path });
+    }
+    if (new Set(value.lower.map(row => row.key)).size !== value.lower.length) throw new Error("NATIONAL_MAP_NH_DUPLICATE");
+  }
+  if (!value.upper.length && !value.lower.length) continue;
+  write(`state-legislative-map-${stateCode.toLowerCase()}-v1`, `public/map-data/state-legislative/${stateCode.toLowerCase()}-v1.json`, value, stateCode === "DC" ? [SOURCES.sldu, SOURCES.states] : stateCode === "NH" ? [SOURCES.sldu, SOURCES.sldl, nhFloterialId] : [SOURCES.sldu, SOURCES.sldl]);
 }
 rmSync(work, { recursive: true, force: true });
 

@@ -9,7 +9,7 @@ import { formatPartisanMargin, type PriorityDriver, type PublicPriorityBrief } f
  * "state_house" or "state_senate" (Nebraska's unicameral counts as a senate).
  */
 const chamberOf = (row: StateLegislativeScoreV01Row): "state_house" | "state_senate" => row.chamber === "lower" ? "state_house" : "state_senate";
-const chamberLabel = (row: StateLegislativeScoreV01Row): string => row.chamber === "lower" ? "state House" : row.chamber === "unicameral" ? "Legislature" : "state Senate";
+const chamberLabel = (row: StateLegislativeScoreV01Row): string => row.stateCode === "DC" ? "Council" : row.chamber === "lower" ? "state House" : row.chamber === "unicameral" ? "Legislature" : "state Senate";
 
 function baselineSentence(row: StateLegislativeScoreV01Row): string {
   const margin = formatPartisanMargin(row.ownRaceDemocraticMargin ?? 0);

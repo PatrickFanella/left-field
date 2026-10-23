@@ -114,7 +114,7 @@ export const termYearsFor = (stateCode: string, chamber: StateChamber): number =
   chamber === "lower" ? (FOUR_YEAR_LOWER.has(stateCode) ? 4 : 2) : chamber === "unicameral" ? 4 : TWO_YEAR_UPPER.has(stateCode) ? 2 : 4;
 
 export const stateSeatLabel = (stateCode: string, chamber: StateChamber, district: string): string =>
-  `${stateCode} ${chamber === "lower" ? "House" : "Senate"} ${district}`;
+  `${stateCode} ${stateCode === "DC" ? "Council" : chamber === "lower" ? "House" : chamber === "unicameral" ? "Legislature" : "Senate"} ${district}`;
 
 export function buildStateLegislativeScoreV01Projection(root = process.cwd(), lock: SourceLock = readSourceLock(root)): StateLegislativeScoreV01Projection {
   const roster = readStateLegislativeRoster(root, lock);
