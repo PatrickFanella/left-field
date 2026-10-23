@@ -63,7 +63,7 @@ export default async function Priorities({ searchParams }: Props) {
   const senateSeats = briefs.filter((row) => row.chamber === "senate").length;
   const governorSeats = briefs.filter((row) => row.chamber === "governor").length;
   const stateRows = briefs.filter((row) => isStateChamber(row.chamber));
-  const stateCount = new Set(stateRows.map((row) => row.stateCode)).size;
+  const stateCount = new Set(stateRows.filter((row) => row.stateCode !== "DC").map((row) => row.stateCode)).size;
   const defaultViewSeats = briefs.filter((row) => measuredInputs(row) >= DEFAULT_MINIMUM_INPUTS).length;
   const singleInputSeats = briefs.filter((row) => measuredInputs(row) === 1).length;
 
@@ -79,7 +79,7 @@ export default async function Priorities({ searchParams }: Props) {
             <p className="eyebrow">{`PRIORITY INDEX · MODEL ${model.version} · PUBLISHED ${fmtDate(model.publishedAt)} · HOUSE SOURCE CUTOFF ${fmtDate(model.cutoffDate)}`}</p>
             <h1>Where the field bends.</h1>
             <p className="lede">
-              {fmtCount(houseSeats)} House seats, {fmtCount(senateSeats)} Senate seats, {fmtCount(governorSeats)} governorships{stateRows.length > 0 ? `, and ${fmtCount(stateRows.length)} state-legislative seats in ${stateCount} ${stateCount === 1 ? "state" : "states"}` : ""}, ordered
+              {fmtCount(houseSeats)} House seats, {fmtCount(senateSeats)} Senate seats, {fmtCount(governorSeats)} governorships{stateRows.length > 0 ? `, and ${fmtCount(stateRows.length)} state-legislative seats in ${stateCount} ${stateCount === 1 ? "state" : "states"}${stateRows.some((row) => row.stateCode === "DC") ? " and DC" : ""}` : ""}, ordered
               by how much reason the retained evidence gives to investigate
               each one. A score is a research priority, not a forecast.
             </p>
@@ -123,7 +123,7 @@ export default async function Priorities({ searchParams }: Props) {
               <option value="house">House</option>
               <option value="senate">Senate</option>
               <option value="governor">Governor</option>
-              <option value="state_senate">State Senate</option>
+              <option value="state_senate">State Senate / unicameral / DC Council</option>
               <option value="state_house">State House</option>
             </select>
           </label>

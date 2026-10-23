@@ -10,7 +10,7 @@ type LegislativeGeometry = { stateCode: string; upper: { name: string; key: stri
 type Mode = "party" | "score";
 type Load<T> = { state: "loading" } | { state: "loaded"; value: T } | { state: "unavailable" };
 
-export const LAYER_LABELS: Record<MapLayer, string> = { house: "U.S. House", senate: "U.S. Senate", governor: "Governor", state_senate: "State senate", state_house: "State house" };
+export const LAYER_LABELS: Record<MapLayer, string> = { house: "U.S. House", senate: "U.S. Senate", governor: "Governor", state_senate: "State senate / DC Council", state_house: "State house" };
 const FEC_PARTIES: Record<string, string> = { DEM: "Democratic", REP: "Republican", LIB: "Libertarian", GRE: "Green", IND: "Independent", NPA: "No party", NNE: "No party", UN: "Unaffiliated", CON: "Constitution", DFL: "Democratic-Farmer-Labor", WFP: "Working Families", OTH: "Other" };
 const ROUTES: Record<MapSeat["route"], string> = { deep_blue: "Deep blue", aipac_supported_blue: "AIPAC-supported blue", democratic_incumbent_primary: "Democratic incumbent", republican_fringe_general: "Republican-held flip" };
 const money = (value: number | null) => value === null ? "—" : new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", notation: value >= 1e6 ? "compact" : "standard", maximumFractionDigits: value >= 1e6 ? 1 : 0 }).format(value);
