@@ -15,6 +15,10 @@ permissions:
 jobs:
   static:
     runs-on: ubuntu-latest
+    # Cold Turbopack + TypeScript builds exceed the runner default of 4 GiB.
+    container:
+      image: docker.gitea.com/runner-images@sha256:58ea92624c7c09582e05594d95488331045053d3a3f34cf09649f2a32313a614
+      options: --memory=6g --memory-swap=6g --cpus=2
     timeout-minutes: 20
     steps:
       - name: Ensure Git LFS is available
@@ -42,3 +46,6 @@ jobs:
       - run: npm run data:verify
       - run: npm run test:fast
       - run: npm run build
+        env:
+          # Leave room for Turbopack and worker processes in the 6 GiB job.
+          NODE_OPTIONS: --max-old-space-size=2048

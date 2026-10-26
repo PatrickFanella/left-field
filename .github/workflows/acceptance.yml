@@ -11,6 +11,10 @@ permissions:
 jobs:
   acceptance:
     runs-on: ubuntu-latest
+    # Cold Turbopack + TypeScript builds exceed the runner default of 4 GiB.
+    container:
+      image: docker.gitea.com/runner-images@sha256:58ea92624c7c09582e05594d95488331045053d3a3f34cf09649f2a32313a614
+      options: --memory=6g --memory-swap=6g --cpus=2
     timeout-minutes: 30
     env:
       ACCEPTANCE_TESTS: "1"
@@ -111,6 +115,9 @@ jobs:
       - run: npm run db:migrate
       - run: docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -U dsa_seats -d postgres -c "CREATE ROLE acceptance_web LOGIN PASSWORD 'acceptance_web' NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS; GRANT dsa_seats_web TO acceptance_web;"
       - run: npm run test:acceptance
+        env:
+          # Inherited by the aggregate production build and its workers.
+          NODE_OPTIONS: --max-old-space-size=2048
       - name: Retain browser failure evidence
         if: failure()
         uses: https://gitea.com/actions/upload-artifact@c24449f33cd45d4826c6702db7e49f7cdb9b551d
