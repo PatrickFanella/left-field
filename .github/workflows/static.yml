@@ -19,6 +19,9 @@ jobs:
     container:
       image: docker.gitea.com/runner-images@sha256:58ea92624c7c09582e05594d95488331045053d3a3f34cf09649f2a32313a614
       options: --memory=6g --memory-swap=6g --cpus=2
+    defaults:
+      run:
+        shell: bash
     timeout-minutes: 20
     steps:
       - name: Ensure Git LFS is available
