@@ -40,6 +40,15 @@ approve a dataset for release.
 boundaries. [DEVELOPMENT.md](DEVELOPMENT.md) covers local setup, synthetic
 fixtures, verification and the original repository overview.
 
-Published by [SUBCULT](https://subcult.tv). No project-wide license has been
-declared. Public source data and derived artifacts retain their recorded
-provider conditions; check those before redistribution.
+Published by [SUBCULT](https://subcult.tv). Public source data and derived
+artifacts retain their recorded provider conditions; check those before redistribution.
+
+## License
+
+Original contributions in this repository are licensed under the GNU General
+Public License, version 3 or (at your option) any later version
+(`GPL-3.0-or-later`). See [LICENSE](LICENSE).
+
+Third-party code, documentation, fonts, data, and other assets retain their own
+licenses, copyright notices, and attribution. This license does not replace
+those terms or grant rights to upstream material that its authors have not granted.
