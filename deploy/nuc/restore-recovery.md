@@ -53,3 +53,8 @@ restore remain separate acceptance checks.
 Before restoring any snapshot, the drill checks the retained PostgreSQL, MinIO
 server and exact MinIO client images. Restore missing images from a checksum-
 verified recovery archive; do not substitute a floating client tag.
+
+Application recovery selects the immutable image ID stored in `deployment.csv`,
+not a tag derived from the source archive hash. Runtime-only patches may retain
+the same application source archive while having different image identities.
+A missing exact image remains a recovery failure; no tag fallback is allowed.

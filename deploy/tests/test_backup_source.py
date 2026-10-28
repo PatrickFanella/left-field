@@ -116,6 +116,36 @@ else: raise AssertionError(fmt)
 
 
 class RecoveryImageTests(unittest.TestCase):
+    def test_runtime_patch_restores_exact_image_without_source_tag(self):
+        self.check_identity('sha256:' + 'f' * 64, True)
+
+    def test_missing_exact_image_does_not_fall_back_to_source_tag(self):
+        self.check_identity('sha256:' + 'e' * 64, False)
+
+    def test_invalid_backed_up_identity_is_rejected(self):
+        self.check_identity('left-field:latest', False)
+
+    def check_identity(self, identity, success):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            mock = root / 'docker'
+            mock.write_text('''#!/usr/bin/env python3
+import sys
+assert sys.argv[1:3] == ['image','inspect'], sys.argv
+expected='sha256:'+'f'*64
+if sys.argv[3] != expected: sys.exit(1)
+print(expected)
+''')
+            mock.chmod(0o755)
+            helper = root / 'check.sh'
+            script = SCRIPT.with_name('restore-factual-drill.sh')
+            helper.write_text(script.read_text().rsplit('\nmain "$@"', 1)[0] + '\ntrap - EXIT\nresolve_recovery_image "$TEST_IDENTITY"\n')
+            env = {**os.environ, 'PATH': str(root) + os.pathsep + os.environ['PATH'], 'TEST_IDENTITY': identity}
+            result = subprocess.run(['bash', str(helper)], env=env, text=True, capture_output=True)
+            self.assertEqual(result.returncode == 0, success, result.stderr)
+            if success:
+                self.assertEqual(result.stdout.strip(), identity)
+
     def test_required_retained_images_are_checked_without_running_containers(self):
         self.check_images('', True)
 
