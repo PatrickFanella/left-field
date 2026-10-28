@@ -17,7 +17,11 @@ export function classifyNorthCarolinaLocalOffice(title: string): { office: strin
   return null;
 }
 
-export function parseNorthCarolinaLocalGeneral(bytes: Buffer, fail: (code: string) => never): readonly ParsedContest[] {
+export function parseNorthCarolinaLocalGeneral(
+  bytes: Buffer,
+  fail: (code: string) => never,
+  classifyOffice: typeof classifyNorthCarolinaLocalOffice = classifyNorthCarolinaLocalOffice,
+): readonly ParsedContest[] {
   let files: Record<string, Uint8Array>;
   try { files = unzipSync(bytes); } catch { return fail("ZIP_INVALID"); }
   const file = files["results_pct_20241105.txt"] ?? fail("RESULTS_MEMBER_MISSING");
@@ -33,7 +37,7 @@ export function parseNorthCarolinaLocalGeneral(bytes: Buffer, fail: (code: strin
     const cells = line.split("\t");
     if (cells.length !== header.length) fail("ROW_WIDTH_INVALID");
     const at = (name: string) => cells[columns[name]!]!.trim();
-    const title = at("Contest Name"), office = classifyNorthCarolinaLocalOffice(title);
+    const title = at("Contest Name"), office = classifyOffice(title);
     if (!office) continue;
     if (at("Election Date") !== "11/05/2024") fail("ELECTION_DATE_INVALID");
     const county = at("County"), name = at("Choice"), party = at("Choice Party");
