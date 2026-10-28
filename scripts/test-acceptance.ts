@@ -2,6 +2,7 @@
 import { spawnSync } from "node:child_process";
 import { basename, isAbsolute, relative, resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
+import { stripVTControlCharacters } from "node:util";
 
 export interface AcceptanceEnvironment {
   readonly integrationDatabaseUrl: string;
@@ -74,7 +75,14 @@ export interface CommandResult { readonly status: number | null; readonly output
 export type CommandRunner = (command: string, args: readonly string[], env: NodeJS.ProcessEnv) => CommandResult;
 export const spawnCommand: CommandRunner = (command, args, env) => { const result = spawnSync(command, args, { env, encoding: "utf8" }); return { status: result.status, output: `${result.stdout ?? ""}${result.stderr ?? ""}`, error: result.error }; };
 function isTestCommand(command: string, args: readonly string[]): boolean { return command === "npm" && args[0] === "run" && args[1]?.startsWith("test:"); }
-function hasSkippedOrPendingSummary(output: string): boolean { return /^(?:\s*(?:Test Files|Tests)\s+\d+\s+(?:skipped|pending)\b|\s*\d+\s+(?:skipped|pending)\b(?:\s*\(|\s*$))/im.test(output); }
+function hasSkippedOrPendingSummary(output: string): boolean {
+  return stripVTControlCharacters(output).split(/\r?\n/).some(line => {
+    const summary = line.trim().replace(/^(?:Test Files|Tests)\s+/i, "");
+    if (/^#\s+(?:skipped|pending)\s+0*[1-9]\d*\s*$/i.test(summary)) return true;
+    return /^\d+\s+(?:passed|failed|skipped|pending)\b/i.test(summary)
+      && /(?:^|\|)\s*0*[1-9]\d*\s+(?:skipped|pending)(?=\s*(?:\||\(|$))/i.test(summary);
+  });
+}
 
 export function runAcceptance(env: Readonly<Record<string, string | undefined>> = process.env, runner: CommandRunner = spawnCommand): void {
   const environment = assertAcceptanceEnvironment(env);
