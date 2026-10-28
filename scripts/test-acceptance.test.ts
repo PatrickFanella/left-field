@@ -35,10 +35,10 @@ describe("acceptance harness", () => {
     ]);
     const environments = new Map<string, NodeJS.ProcessEnv>();
     vi.spyOn(process.stdout, "write").mockImplementation(() => true);
-    runAcceptance(safe, (command, args, env) => { environments.set(`${command} ${args.join(" ")}`, env); return { status: 0, output: "passed\n" }; });
-    expect(environments.get("npm run test:integration")).toMatchObject({ DATABASE_URL: safe.DATABASE_URL, TEST_DATABASE_URL: safe.DATABASE_URL, WEB_DATABASE_URL: undefined });
-    expect(environments.get("npm run measure:task5-queries")).toMatchObject({ DATABASE_URL: safe.QUERY_DATABASE_URL, TEST_DATABASE_URL: safe.QUERY_DATABASE_URL, QUERY_EVIDENCE_MODE: "verify" });
-    expect(environments.get("npm run test:e2e:task13")).toMatchObject({ DATABASE_URL: safe.E2E_DATABASE_URL, TEST_DATABASE_URL: safe.E2E_DATABASE_URL, WEB_DATABASE_URL: safe.WEB_DATABASE_URL });
+    runAcceptance({ ...safe, OFFICE_UNIVERSE_DATABASE_URL: "postgresql://untrusted.example/production" }, (command, args, env) => { environments.set(`${command} ${args.join(" ")}`, env); return { status: 0, output: "passed\n" }; });
+    expect(environments.get("npm run test:integration")).toMatchObject({ DATABASE_URL: safe.DATABASE_URL, TEST_DATABASE_URL: safe.DATABASE_URL, OFFICE_UNIVERSE_DATABASE_URL: safe.DATABASE_URL, WEB_DATABASE_URL: undefined });
+    expect(environments.get("npm run measure:task5-queries")).toMatchObject({ DATABASE_URL: safe.QUERY_DATABASE_URL, TEST_DATABASE_URL: safe.QUERY_DATABASE_URL, QUERY_EVIDENCE_MODE: "verify", OFFICE_UNIVERSE_DATABASE_URL: undefined });
+    expect(environments.get("npm run test:e2e:task13")).toMatchObject({ DATABASE_URL: safe.E2E_DATABASE_URL, TEST_DATABASE_URL: safe.E2E_DATABASE_URL, WEB_DATABASE_URL: safe.WEB_DATABASE_URL, OFFICE_UNIVERSE_DATABASE_URL: undefined });
   });
   it("fails before later lanes can run when a test reports skips", () => {
     const calls: string[] = []; vi.spyOn(process.stdout, "write").mockImplementation(() => true);
