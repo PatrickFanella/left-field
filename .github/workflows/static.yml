@@ -46,6 +46,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Verify acceptance summary guards
+        run: npx --no-install vitest run scripts/test-acceptance.test.ts
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run data:verify

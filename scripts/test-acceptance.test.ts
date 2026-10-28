@@ -45,4 +45,31 @@ describe("acceptance harness", () => {
     expect(() => runAcceptance(safe, (command, args) => { calls.push(args.join(" ")); return { status: 0, output: args[1] === "test:integration" ? "Tests 1 skipped\n" : "passed\n" }; })).toThrow("skipped");
     expect(calls).toEqual(["run db:migrate", "run test:integration"]);
   });
+  it.each([
+    "Tests 2532 passed | 7 skipped (2539)",
+    "Test Files 420 passed | 2 skipped (422)",
+    "Tests 11 passed | 1 pending (12)",
+    "\u001b[32mTests\u001b[0m \u001b[33m1 skipped\u001b[0m (1)",
+    "\u001b[32mTests\u001b[0m 2532 passed | \u001b[33m7 skipped\u001b[0m (2539)\r\n",
+    "  1 skipped (2.0m)",
+    "# skipped 2",
+  ])("rejects positive omitted-test counts in real reporter summaries: %s", output => {
+    const calls: string[] = []; vi.spyOn(process.stdout, "write").mockImplementation(() => true);
+    expect(() => runAcceptance(safe, (_command, args) => {
+      calls.push(args.join(" "));
+      return { status: 0, output: args[1] === "test:integration" ? output : "passed\n" };
+    })).toThrow("skipped or pending");
+    expect(calls).toEqual(["run db:migrate", "run test:integration"]);
+  });
+  it.each([
+    "Tests 2539 passed (2539)",
+    "Tests 2539 passed | 0 skipped (2539)",
+    "Test Files 422 passed | 0 pending (422)",
+    "# skipped 0",
+    "stderr | checks > rejects skipped results\nordinary skipped-work diagnostic",
+  ])("accepts complete runs and ignores non-summary diagnostics: %s", output => {
+    vi.spyOn(process.stdout, "write").mockImplementation(() => true);
+    expect(() => runAcceptance(safe, () => ({ status: 0, output }))).not.toThrow();
+  });
+
 });
