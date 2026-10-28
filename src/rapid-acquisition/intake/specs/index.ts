@@ -1,5 +1,6 @@
 import type { IntakeSpec } from "../package";
 import { northCarolinaLocalGeneralSpec } from "./north-carolina-local-general";
+import { northCarolinaSoilWaterGeneralSpec } from "./north-carolina-soil-water-general";
 
 /**
  * Live intake specs. Adding a state is one entry here plus its spec module.
@@ -8,4 +9,4 @@ import { northCarolinaLocalGeneralSpec } from "./north-carolina-local-general";
  * Ohio v1 catalog through the shared builder; it is exercised by its test but
  * not registered, because the v1 artifact already covers those workbooks.
  */
-export const INTAKE_SPECS: readonly IntakeSpec[] = [northCarolinaLocalGeneralSpec];
+export const INTAKE_SPECS: readonly IntakeSpec[] = [northCarolinaLocalGeneralSpec, northCarolinaSoilWaterGeneralSpec];
