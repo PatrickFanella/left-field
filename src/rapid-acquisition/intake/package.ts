@@ -6,7 +6,7 @@ import {
 } from "./source-lock";
 
 /**
- * Generic state and local primary-result intake.
+ * Generic state and local election-result intake.
  *
  * A state contributes an `IntakeSpec`: the retained source ids, one parse
  * function that turns source bytes into normalised contests, and optional
@@ -33,6 +33,8 @@ export type OfficeLevel =
 
 export interface IntakeCandidate {
   readonly sourceName: string;
+  /** Candidate party in mixed-party general contests; never inferred from names. */
+  readonly rawParty?: string;
   readonly candidacyKind: CandidacyKind;
   readonly votes: number;
   /** Source-native key when the export supplies one; otherwise omitted. */
@@ -41,6 +43,10 @@ export interface IntakeCandidate {
 
 /** What a spec's `parse` returns for one contest. */
 export interface ParsedContest {
+  /** Source vote-for rule, including multi-seat contests. */
+  readonly seats?: number;
+  /** Reporting counties contributing to a cross-county contest. */
+  readonly reportingJurisdictions?: readonly string[];
   readonly officeLevel: OfficeLevel;
   /** Normalised office slug, e.g. `state_house`, `county_sheriff`. */
   readonly office: string;
@@ -215,6 +221,8 @@ function signContest(
   if (!parsed.candidates.length) fail("CANDIDATES_EMPTY");
   if (!parsed.rawOfficeTitle || !parsed.rawParty || !parsed.office)
     fail("CONTEST_LABELS_INVALID");
+  if (parsed.seats !== undefined && (!Number.isSafeInteger(parsed.seats) || parsed.seats < 1))
+    fail("SEATS_INVALID");
   for (const candidate of parsed.candidates) {
     if (!candidate.sourceName.trim()) fail("CANDIDATE_NAME_INVALID");
     if (!Number.isSafeInteger(candidate.votes) || candidate.votes < 0)
@@ -241,6 +249,8 @@ function signContest(
     jurisdiction: parsed.jurisdiction,
     rawOfficeTitle: parsed.rawOfficeTitle,
     rawParty: parsed.rawParty,
+    ...(parsed.seats !== undefined ? { seats: parsed.seats } : {}),
+    ...(parsed.reportingJurisdictions ? { reportingJurisdictions: parsed.reportingJurisdictions } : {}),
     candidates: parsed.candidates,
     totalVotes,
     ...(parsed.reconciliation ? { reconciliation: parsed.reconciliation } : {}),
