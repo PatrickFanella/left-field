@@ -281,8 +281,23 @@
       "packageSha256": "bb2f89293e6f85202cbb9106cee75a91ba3223db5fb4a9f0f85141f3c32eed51",
       "formulaEligibleCount": 0,
       "cyclesThrough": 2024
+    },
+    {
+      "id": "rapid-north-carolina-soil-water-general-results-v1",
+      "label": "North Carolina soil-and-water supervisor general results",
+      "scope": "2024 general election soil-and-water conservation district supervisor results",
+      "summary": {
+        "contests": 100,
+        "candidateRows": 510,
+        "candidateVotes": 4143641,
+        "contestedContests": 100,
+        "formulaEligibleContests": 0
+      },
+      "packageSha256": "d064f14246d41dc133df7350130ed1a5c35b9c87300db8fad340e540ddd04ac4",
+      "formulaEligibleCount": 0,
+      "cyclesThrough": 2024
     }
   ],
-  "artifactSetSha256": "045ae622153f3d6013d227376742bfab433e2e3b8f7640b5050bfeed98899285",
-  "packageSha256": "59fec64eb202790b25b59abb78939aa7b022eab8b318397be7391b89d7f1e4fa"
+  "artifactSetSha256": "858c093c2f049536c57c23fffbf633f564b71e96d23f6342e2fe16407a9ca014",
+  "packageSha256": "054c3ef6a40f2302384b0ccbc337167b636f44735d094d5bc66ad7e5ce1bfbb8"
 }

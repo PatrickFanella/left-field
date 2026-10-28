@@ -264,6 +264,8 @@ None of the state-legislative projections infers candidate identity, ideological
 
 ### Rapid county and local office context
 
+The next North Carolina 2024 batch adds 100 soil-and-water conservation district supervisor contests across 100 reporting counties, with 510 candidate rows and 4,143,641 candidate votes. Exact ballot titles and blank source party fields are retained. These historical results do not establish district boundaries, appointed membership, current holders or scores. See [the acquisition receipt](../reviews/north-carolina-soil-water-general-results-2026-10-28.md).
+
 The first general-election local-office batch adds 635 North Carolina 2024 contests across all 100 reporting counties, with 1,793 candidate rows and 22,219,489 candidate votes. It preserves 135 multi-seat contests and combines 12 cross-county municipal contests by exact source title. This is a retained result catalog, not a current-holder roster or local score. See [the acquisition receipt](../reviews/north-carolina-local-general-results-2026-10-28.md).
 
 Indiana's certified 2024 primary archive now contributes all 12 local result categories exposed by the official archive index: 682 office rows, 816 Democratic or Republican party contests, 1,520 candidate rows, 4,232,706 votes, and 1,049 source-marked winner candidates. The catalog preserves multi-seat counts and source winner markers, but does not treat those markers as current-holder identity. Current-holder identity, normalized township and municipal jurisdictions, and a local-office scoring method remain uncollected, so all 816 contests are formula-ineligible and do not alter the House Priority Index.
