@@ -1,5 +1,5 @@
 /** The acceptance gate consumes CI-provisioned disposable database lanes. */
-import { spawnSync } from "node:child_process";
+import { spawn } from "node:child_process";
 import { basename, isAbsolute, relative, resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
 import { stripVTControlCharacters } from "node:util";
@@ -71,9 +71,19 @@ export function acceptanceCommandEnvironment(base: Readonly<Record<string, strin
   return { ...base, DATABASE_URL: databaseUrl, TEST_DATABASE_URL: databaseUrl, OFFICE_UNIVERSE_DATABASE_URL: lane === "integration" ? environment.integrationDatabaseUrl : undefined, QUERY_DATABASE_URL: lane === "query" ? environment.queryDatabaseUrl : undefined, E2E_DATABASE_URL: lane === "browser" ? environment.e2eDatabaseUrl : undefined, WEB_DATABASE_URL: lane === "browser" ? environment.webDatabaseUrl : undefined, QUERY_EVIDENCE_MODE: lane === "query" ? "verify" : undefined, MAP_ARTIFACT_ROOT: environment.mapRoot, E2E_MAP_PROFILE_PATH: environment.profilePath, E2E_BASE_URL: undefined, E2E_SERVER_COMMAND: undefined } as unknown as NodeJS.ProcessEnv;
 }
 
-export interface CommandResult { readonly status: number | null; readonly output: string; readonly error?: Error; }
-export type CommandRunner = (command: string, args: readonly string[], env: NodeJS.ProcessEnv) => CommandResult;
-export const spawnCommand: CommandRunner = (command, args, env) => { const result = spawnSync(command, args, { env, encoding: "utf8" }); return { status: result.status, output: `${result.stdout ?? ""}${result.stderr ?? ""}`, error: result.error }; };
+export interface CommandResult { readonly status: number | null; readonly output: string; readonly error?: Error; readonly outputStreamed?: boolean; }
+export type CommandRunner = (command: string, args: readonly string[], env: NodeJS.ProcessEnv) => CommandResult | Promise<CommandResult>;
+export const spawnCommand: CommandRunner = (command, args, env) => new Promise(resolve => {
+  const child = spawn(command, args, { env, stdio: ["ignore", "pipe", "pipe"] });
+  const stdout: string[] = [], stderr: string[] = [];
+  let error: Error | undefined;
+  child.stdout.setEncoding("utf8");
+  child.stderr.setEncoding("utf8");
+  child.stdout.on("data", (chunk: string) => { stdout.push(chunk); process.stdout.write(chunk); });
+  child.stderr.on("data", (chunk: string) => { stderr.push(chunk); process.stderr.write(chunk); });
+  child.once("error", cause => { error = cause; });
+  child.once("close", status => resolve({ status, output: stdout.join("") + stderr.join(""), error, outputStreamed: true }));
+});
 function isTestCommand(command: string, args: readonly string[]): boolean { return command === "npm" && args[0] === "run" && args[1]?.startsWith("test:"); }
 function hasSkippedOrPendingSummary(output: string): boolean {
   return stripVTControlCharacters(output).split(/\r?\n/).some(line => {
@@ -84,14 +94,15 @@ function hasSkippedOrPendingSummary(output: string): boolean {
   });
 }
 
-export function runAcceptance(env: Readonly<Record<string, string | undefined>> = process.env, runner: CommandRunner = spawnCommand): void {
+export async function runAcceptance(env: Readonly<Record<string, string | undefined>> = process.env, runner: CommandRunner = spawnCommand): Promise<void> {
   const environment = assertAcceptanceEnvironment(env);
   for (const { lane, command, args } of acceptanceCommands) {
-    const result = runner(command, args, acceptanceCommandEnvironment(env, environment, lane));
-    process.stdout.write(result.output);
+    process.stdout.write(`[acceptance:${lane}] ${command} ${args.join(" ")}\n`);
+    const result = await runner(command, args, acceptanceCommandEnvironment(env, environment, lane));
+    if (!result.outputStreamed) process.stdout.write(result.output);
     if (result.error) throw result.error;
     if (result.status !== 0) throw new Error(`${command} ${args.join(" ")} failed with status ${result.status}`);
     if (isTestCommand(command, args) && hasSkippedOrPendingSummary(result.output)) throw new Error(`${command} ${args.join(" ")} reported skipped or pending work`);
   }
 }
-if (process.argv[1]?.endsWith("test-acceptance.ts")) { try { runAcceptance(); } catch (error) { console.error(error); process.exitCode = 1; } }
+if (process.argv[1]?.endsWith("test-acceptance.ts")) { void runAcceptance().catch(error => { console.error(error); process.exitCode = 1; }); }
