@@ -56,6 +56,26 @@ run_restic() {
   restic -r "$RESTIC_REPOSITORY" -o "sftp.args=$SFTP_ARGS" "$@"
 }
 
+require_recovery_images() {
+  local image
+  for image in \
+    postgis/postgis:16-3.4-alpine \
+    minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e \
+    sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727; do
+    docker image inspect "$image" >/dev/null 2>&1 \
+      || fatal "required retained recovery image is missing: $image; load the verified archive before retrying"
+  done
+}
+
+resolve_recovery_image() {
+  local identity=$1 resolved
+  [[ "$identity" =~ ^sha256:[a-f0-9]{64}$ ]] || fatal "backed-up application image ID is malformed"
+  resolved="$(docker image inspect "$identity" --format '{{.Id}}' 2>/dev/null)" \
+    || fatal "exact backed-up application image is missing"
+  [[ "$resolved" == "$identity" ]] || fatal "local recovery image does not match the backed-up image ID"
+  printf '%s\n' "$identity"
+}
+
 write_metrics() {
   local success=$1 completed_at=${2:-0} duration=${3:-0} temporary
   install -d -m 0755 "$(dirname "$METRIC_FILE")"
@@ -134,6 +154,7 @@ main() {
   for command in docker restic jq sha256sum diff flock; do
     command -v "$command" >/dev/null || fatal "missing command: $command"
   done
+  require_recovery_images
   [[ -r "$RESTIC_PASSWORD_FILE" ]] || fatal "restic password file is missing or unreadable"
   [[ -r "$ROUTER_BACKUP_SSH_KEY" ]] || fatal "router backup SSH key is missing or unreadable"
   export RESTIC_PASSWORD_FILE
@@ -179,12 +200,9 @@ main() {
   [[ "$(tar -xOf "$restored_backup/source.tar" ./data/source-lock.json | sha256sum | cut -d' ' -f1)" == "$source_lock_sha" ]] \
     || fatal "restored source archive does not contain the deployed source lock"
   [[ "$(sha256sum "$restored_backup/source-lock.json" | cut -d' ' -f1)" == "$source_lock_sha" ]] || fatal "restored source lock does not match deployment identity"
-  if docker image inspect "dsa-seats-r1:${source_tree_sha}" >/dev/null 2>&1; then
-    app_image="dsa-seats-r1:${source_tree_sha}"
-  else
-    app_image="dsa-seats-r1:${source_tree_sha:0:12}"
-  fi
-  [[ "$(docker image inspect "$app_image" --format '{{.Id}}')" == "$app_image_id" ]] || fatal "local recovery image does not match the backed-up image ID"
+  # Multiple runtime-patched images can share the same application source.
+  # Restore the recorded immutable image, never a source-hash tag alias.
+  app_image="$(resolve_recovery_image "$app_image_id")"
   append_evidence "source_tree_sha256=$source_tree_sha"
   append_evidence "source_lock_sha256=$source_lock_sha"
   append_evidence "git_revision=$git_revision"
