@@ -49,3 +49,7 @@ The NUC deployment retains its existing Kvant data2 Restic repository, SSH key
 path, two local staging generations and LAN-bound ntfy destination. Long-term Restic retention remains fourteen daily,
 eight weekly and twelve monthly snapshots. Backup success and an isolated
 restore remain separate acceptance checks.
+
+Before restoring any snapshot, the drill checks the retained PostgreSQL, MinIO
+server and exact MinIO client images. Restore missing images from a checksum-
+verified recovery archive; do not substitute a floating client tag.

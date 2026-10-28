@@ -115,5 +115,32 @@ else: raise AssertionError(fmt)
         self.run_preflight(False, 'receipt lock checksum differs')
 
 
+class RecoveryImageTests(unittest.TestCase):
+    def test_required_retained_images_are_checked_without_running_containers(self):
+        self.check_images('', True)
+
+    def test_missing_pinned_client_fails_before_restore(self):
+        self.check_images('sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727', False)
+
+    def check_images(self, missing, success):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            mock = root / 'docker'
+            mock.write_text('''#!/usr/bin/env python3
+import os,sys
+assert sys.argv[1:3] == ['image','inspect'], sys.argv
+sys.exit(1 if sys.argv[3] == os.environ.get('MISSING_IMAGE') else 0)
+''')
+            mock.chmod(0o755)
+            script = SCRIPT.with_name('restore-factual-drill.sh')
+            helper = root / 'check.sh'
+            helper.write_text(script.read_text().rsplit('\nmain "$@"', 1)[0] + '\ntrap - EXIT\nrequire_recovery_images\n')
+            env = {**os.environ, 'PATH': str(root) + os.pathsep + os.environ['PATH'], 'MISSING_IMAGE': missing}
+            result = subprocess.run(['bash', str(helper)], env=env, text=True, capture_output=True)
+            self.assertEqual(result.returncode == 0, success, result.stderr)
+            if not success:
+                self.assertIn('load the verified archive before retrying', result.stderr)
+
+
 if __name__ == '__main__':
     unittest.main()

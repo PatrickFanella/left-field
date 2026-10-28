@@ -56,6 +56,17 @@ run_restic() {
   restic -r "$RESTIC_REPOSITORY" -o "sftp.args=$SFTP_ARGS" "$@"
 }
 
+require_recovery_images() {
+  local image
+  for image in \
+    postgis/postgis:16-3.4-alpine \
+    minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e \
+    sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727; do
+    docker image inspect "$image" >/dev/null 2>&1 \
+      || fatal "required retained recovery image is missing: $image; load the verified archive before retrying"
+  done
+}
+
 write_metrics() {
   local success=$1 completed_at=${2:-0} duration=${3:-0} temporary
   install -d -m 0755 "$(dirname "$METRIC_FILE")"
@@ -134,6 +145,7 @@ main() {
   for command in docker restic jq sha256sum diff flock; do
     command -v "$command" >/dev/null || fatal "missing command: $command"
   done
+  require_recovery_images
   [[ -r "$RESTIC_PASSWORD_FILE" ]] || fatal "restic password file is missing or unreadable"
   [[ -r "$ROUTER_BACKUP_SSH_KEY" ]] || fatal "router backup SSH key is missing or unreadable"
   export RESTIC_PASSWORD_FILE
