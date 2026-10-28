@@ -2,7 +2,7 @@
 
 ## State legislative coverage, 2026-10-23
 
-Priority Index v1.16 retains official general-result sources for all 50 states plus DC: 8,163 contests and 6,829 scored members of the 7,344-member September 24 roster. The remaining 515 members carry explicit missing-contest, nonpartisan-baseline, or unsupported-holder-party reasons. Jurisdiction coverage does not establish a result baseline for every seat or exhaustive later-special/recount coverage. Louisiana includes the November 2023 general runoffs; seats decided earlier remain unscored. Nebraska's nonpartisan returns are retained without inferred partisan margins. Local-office expansion is deferred. See the [v1.16 source and limitation receipt](../reviews/priority-index-release-v1.16-2026-10-23.md) for the seven added jurisdictions, counts, reproduction, and source boundaries.
+Priority Index v1.16 retains official general-result sources for all 50 states plus DC: 8,163 contests and 6,829 scored members of the 7,344-member September 24 roster. The remaining 515 members carry explicit missing-contest, nonpartisan-baseline, or unsupported-holder-party reasons. Jurisdiction coverage does not establish a result baseline for every seat or exhaustive later-special/recount coverage. Louisiana includes the November 2023 general runoffs; seats decided earlier remain unscored. Nebraska's nonpartisan returns are retained without inferred partisan margins. Local-office expansion has begun with a separate North Carolina 2024 general-results catalog; these results remain outside the Priority Index. See the [v1.16 source and limitation receipt](../reviews/priority-index-release-v1.16-2026-10-23.md) for the seven added jurisdictions, counts, reproduction, and source boundaries.
 
 
 ## Meaning and scope
@@ -263,6 +263,8 @@ The state-legislative intake now covers ten official state systems. Alabama adds
 None of the state-legislative projections infers candidate identity, ideological alignment, or score applicability. The Alabama, Delaware, Hawaii, Kentucky, Missouri, Tennessee, Georgia, North Carolina, and Ohio result sources contain no parsed winner marker bound by these projections; where a stronger statewide certification document is retained, it still does not create a candidate identity bridge or score rule. All ten projections are exposed as factual context on Sources with zero formula-eligible contests and do not alter the House Priority Index.
 
 ### Rapid county and local office context
+
+The first general-election local-office batch adds 635 North Carolina 2024 contests across all 100 reporting counties, with 1,793 candidate rows and 22,219,489 candidate votes. It preserves 135 multi-seat contests and combines 12 cross-county municipal contests by exact source title. This is a retained result catalog, not a current-holder roster or local score. See [the acquisition receipt](../reviews/north-carolina-local-general-results-2026-10-28.md).
 
 Indiana's certified 2024 primary archive now contributes all 12 local result categories exposed by the official archive index: 682 office rows, 816 Democratic or Republican party contests, 1,520 candidate rows, 4,232,706 votes, and 1,049 source-marked winner candidates. The catalog preserves multi-seat counts and source winner markers, but does not treat those markers as current-holder identity. Current-holder identity, normalized township and municipal jurisdictions, and a local-office scoring method remain uncollected, so all 816 contests are formula-ineligible and do not alter the House Priority Index.
 

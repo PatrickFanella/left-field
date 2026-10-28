@@ -266,8 +266,23 @@
       "packageSha256": "45612e0ce2949555193c1372cc3a6302c110f1776a47e2da8a63b5b0896cee04",
       "formulaEligibleCount": 0,
       "cyclesThrough": 2026
+    },
+    {
+      "id": "rapid-north-carolina-local-office-general-results-v1",
+      "label": "North Carolina local-office general results",
+      "scope": "2024 general election county commissioner, school-board, register-of-deeds, court-clerk, sheriff, municipal council and mayor results",
+      "summary": {
+        "contests": 635,
+        "candidateRows": 1793,
+        "candidateVotes": 22219489,
+        "contestedContests": 417,
+        "formulaEligibleContests": 0
+      },
+      "packageSha256": "bb2f89293e6f85202cbb9106cee75a91ba3223db5fb4a9f0f85141f3c32eed51",
+      "formulaEligibleCount": 0,
+      "cyclesThrough": 2024
     }
   ],
-  "artifactSetSha256": "6ea29ae44dfa01b29b6e1be9c79909a6c7481e35cd450b37a37052a5877c1d03",
-  "packageSha256": "fec5fdc4a8d456cb1016c01ac7a08d5c73777b2a7503993058fd99deee2261f3"
+  "artifactSetSha256": "045ae622153f3d6013d227376742bfab433e2e3b8f7640b5050bfeed98899285",
+  "packageSha256": "59fec64eb202790b25b59abb78939aa7b022eab8b318397be7391b89d7f1e4fa"
 }
