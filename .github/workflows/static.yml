@@ -35,6 +35,8 @@ jobs:
           lfs: false
       - name: Verify LFS authentication boundaries
         run: python3 scripts/test-ci-lfs-checkout.py
+      - name: Verify backup source identity guards
+        run: python3 deploy/tests/test_backup_source.py
       - name: Fetch pinned LFS sources without conflicting headers
         env:
           CI_LFS_TOKEN: ${{ github.token }}

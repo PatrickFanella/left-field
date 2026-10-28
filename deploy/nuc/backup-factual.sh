@@ -10,10 +10,10 @@ readonly POSTGRES_VOLUME="${POSTGRES_VOLUME:-dsa-seats-r1_postgres_data}"
 readonly RAW_VOLUME="${RAW_VOLUME:-dsa-seats-r1_raw_objects}"
 readonly MAP_VOLUME="${MAP_VOLUME:-dsa-seats-r1_map_artifacts}"
 readonly FEC_V2_VOLUME="${FEC_V2_VOLUME:-dsa-seats-r1_fec_v2_objects}"
-readonly RESTIC_REPOSITORY="${RESTIC_REPOSITORY:-sftp:root@10.0.0.1:/tmp/mountd/disk1_part1/nuc-restic}"
+readonly RESTIC_REPOSITORY="${RESTIC_REPOSITORY:-sftp:onnwee@10.0.0.50:/mnt/data2/backups/nuc/restic}"
 readonly RESTIC_PASSWORD_FILE="${RESTIC_PASSWORD_FILE:-/etc/nuc-router-backup/restic-password}"
-readonly ROUTER_BACKUP_SSH_KEY="${ROUTER_BACKUP_SSH_KEY:-/root/.ssh/nuc_router_backup_ed25519}"
-readonly NTFY_URL="${NTFY_URL:-http://127.0.0.1:8085/backups}"
+readonly ROUTER_BACKUP_SSH_KEY="${ROUTER_BACKUP_SSH_KEY:-/home/onnwee/.ssh/id_ed25519}"
+readonly NTFY_URL="${NTFY_URL:-http://10.0.0.56:8085/backups}"
 readonly METRIC_FILE="${METRIC_FILE:-/srv/server/monitoring/data/node-exporter-textfile/dsa_seats_backup.prom}"
 readonly RESTORE_METRIC_FILE="${RESTORE_METRIC_FILE:-/srv/server/monitoring/data/node-exporter-textfile/dsa_seats_restore.prom}"
 readonly FACTUAL_METRIC_FILE="${FACTUAL_METRIC_FILE:-/srv/server/monitoring/data/node-exporter-textfile/dsa_seats_factual.prom}"
@@ -21,13 +21,20 @@ readonly PROMETHEUS_CONFIG="${PROMETHEUS_CONFIG:-/srv/server/monitoring/config/p
 readonly PROMETHEUS_ALERTS="${PROMETHEUS_ALERTS:-/srv/server/monitoring/config/prometheus/alerts/dsa-seats-alerts.yml}"
 readonly RESTORE_EVIDENCE_ROOT="${RESTORE_EVIDENCE_ROOT:-/srv/server/restore-evidence/dsa-seats}"
 readonly RELEASE_ROOT="${RELEASE_ROOT:-/srv/server/projects/dsa-seats-r1/releases}"
+readonly SOURCE_RECEIPT_FILE="${SOURCE_RECEIPT_FILE:-/srv/server/projects/dsa-seats-r1/runtime/backup-source.json}"
 readonly FEC_V2_TLS_DIR="${FEC_V2_TLS_DIR:-/srv/server/projects/dsa-seats-r1/runtime/fec-v2-tls}"
 readonly FEC_V2_RETENTION_EVIDENCE_FILE="${FEC_V2_RETENTION_EVIDENCE_FILE:-/srv/server/projects/dsa-seats-r1/runtime/evidence/fec-v2-store-current.txt}"
-readonly SFTP_ARGS="-i ${ROUTER_BACKUP_SSH_KEY} -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=no"
+readonly SFTP_ARGS="-i ${ROUTER_BACKUP_SSH_KEY} -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/root/.ssh/known_hosts"
 
 stage=""
 rawstore_stopped=0
 fecstore_stopped=0
+source_check_only=0
+case "${1:-}" in
+  '') [[ $# == 0 ]] || exit 64 ;;
+  --check-source-only) [[ $# == 1 ]] || exit 64; source_check_only=1 ;;
+  *) printf 'Usage: %s [--check-source-only]\n' "$0" >&2; exit 64 ;;
+esac
 
 log() { printf '[%s] %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" >&2; }
 fatal() { log "ERROR: $*"; exit 1; }
@@ -63,6 +70,7 @@ write_metrics() {
 
 cleanup() {
   local rc=$?
+  [[ "$source_check_only" == 1 ]] && return
   if [[ "$rawstore_stopped" == 1 ]]; then
     docker start "$RAWSTORE_CONTAINER" >/dev/null 2>&1 || true
   fi
@@ -100,9 +108,50 @@ run_restic() {
   restic -r "$RESTIC_REPOSITORY" -o "sftp.args=$SFTP_ARGS" "$@"
 }
 
+resolve_source() {
+  image_id="$(docker inspect --format '{{.Image}}' "$APP_CONTAINER")"
+  image_revision="$(docker inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "$APP_CONTAINER")"
+  source_tree_sha="$(docker inspect --format '{{index .Config.Labels "org.opencontainers.image.source-tree-sha256"}}' "$APP_CONTAINER")"
+  local receipt_used=0
+  if [[ ! "$source_tree_sha" =~ ^[a-f0-9]{64}$ ]]; then
+    [[ ! -L "$SOURCE_RECEIPT_FILE" && -f "$SOURCE_RECEIPT_FILE" && -r "$SOURCE_RECEIPT_FILE" ]] \
+      || fatal "application source-tree label is absent or malformed; an image-bound source receipt is required"
+    [[ "$(stat -c %u "$SOURCE_RECEIPT_FILE")" == 0 && "$(stat -c %a "$SOURCE_RECEIPT_FILE")" == 600 ]] \
+      || fatal "source receipt must be root-owned mode 0600"
+    [[ "$image_id" =~ ^sha256:[a-f0-9]{64}$ && "$image_revision" =~ ^[a-f0-9]{40}$ ]] \
+      || fatal "application image identity is malformed"
+    source_tree_sha="$(jq -er --arg image "$image_id" --arg revision "$image_revision" '
+      select(.schema_version == 1 and .source_kind == "immutable-image-filesystem" and
+             .image_id == $image and .git_revision == $revision) | .source_tree_sha256
+    ' "$SOURCE_RECEIPT_FILE")" || fatal "source receipt does not match the deployed image and revision"
+    [[ "$source_tree_sha" =~ ^[a-f0-9]{64}$ ]] || fatal "source receipt checksum is malformed"
+    receipt_used=1
+  fi
+  source_archive="$RELEASE_ROOT/$source_tree_sha/source.tar"
+  source_directory="$RELEASE_ROOT/$source_tree_sha/source"
+  [[ -r "$source_archive" ]] || fatal "exact application source archive is missing"
+  [[ "$(sha256sum "$source_archive" | cut -d' ' -f1)" == "$source_tree_sha" ]] \
+    || fatal "application source archive checksum does not match its identity"
+  [[ -r "$source_directory/data/source-lock.json" ]] || fatal "deployed source lock is missing"
+  source_lock_sha="$(sha256sum "$source_directory/data/source-lock.json" | cut -d' ' -f1)"
+  [[ "$(tar -xOf "$source_archive" ./data/source-lock.json | sha256sum | cut -d' ' -f1)" == "$source_lock_sha" ]] \
+    || fatal "source archive and deployed source lock differ"
+  if [[ "$receipt_used" == 1 ]]; then
+    [[ "$(jq -er '.source_lock_sha256' "$SOURCE_RECEIPT_FILE")" == "$source_lock_sha" ]] \
+      || fatal "source receipt lock checksum differs"
+  fi
+}
+
 main() {
   [[ $EUID -eq 0 ]] || fatal "run as root"
-  for command in docker restic flock sha256sum; do command -v "$command" >/dev/null || fatal "missing command: $command"; done
+  for command in docker jq stat sha256sum tar; do command -v "$command" >/dev/null || fatal "missing command: $command"; done
+  local source_tree_sha source_archive source_directory source_lock_sha image_id image_revision
+  resolve_source
+  if [[ "$source_check_only" == 1 ]]; then
+    printf 'image_id=%s\nsource_tree_sha256=%s\nsource_lock_sha256=%s\n' "$image_id" "$source_tree_sha" "$source_lock_sha"
+    return
+  fi
+  for command in restic flock; do command -v "$command" >/dev/null || fatal "missing command: $command"; done
   [[ -r "$RESTIC_PASSWORD_FILE" ]] || fatal "restic password file is missing or unreadable"
   [[ -r "$ROUTER_BACKUP_SSH_KEY" ]] || fatal "router backup SSH key is missing or unreadable"
   export RESTIC_PASSWORD_FILE
@@ -152,16 +201,6 @@ main() {
   docker start "$FECSTORE_CONTAINER" >/dev/null
   fecstore_stopped=0
 
-  local source_tree_sha source_archive source_directory source_lock_sha image_id image_revision
-  source_tree_sha="$(docker inspect --format '{{index .Config.Labels "org.opencontainers.image.source-tree-sha256"}}' "$APP_CONTAINER")"
-  [[ "$source_tree_sha" =~ ^[a-f0-9]{64}$ ]] || fatal "application source-tree label is absent or malformed"
-  source_archive="$RELEASE_ROOT/$source_tree_sha/source.tar"
-  source_directory="$RELEASE_ROOT/$source_tree_sha/source"
-  [[ -r "$source_archive" ]] || fatal "exact application source archive is missing"
-  [[ "$(sha256sum "$source_archive" | cut -d' ' -f1)" == "$source_tree_sha" ]] || fatal "application source archive checksum does not match its image label"
-  [[ -r "$source_directory/data/source-lock.json" ]] || fatal "deployed source lock is missing"
-  source_lock_sha="$(sha256sum "$source_directory/data/source-lock.json" | cut -d' ' -f1)"
-  [[ "$source_lock_sha" =~ ^[a-f0-9]{64}$ ]] || fatal "deployed source-lock checksum is malformed"
   cp --reflink=auto --preserve=mode,timestamps "$source_archive" "$stage/source.tar"
   cp --preserve=mode,timestamps "$source_directory/data/source-lock.json" "$stage/source-lock.json"
   [[ -r "$FEC_V2_RETENTION_EVIDENCE_FILE" && -r "$FEC_V2_TLS_DIR/CAs/root.crt" ]] || fatal "FEC v2 retention evidence or public CA is unavailable"
@@ -195,8 +234,8 @@ main() {
     printf 'dsa_seats_monitor_last_run_unixtime{project="dsa-seats",environment="factual-r1"} 0\n' > "$stage/dsa_seats_factual.prom"
   fi
 
-  image_id="$(docker inspect --format '{{.Image}}' "$APP_CONTAINER")"
-  image_revision="$(docker inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "$APP_CONTAINER")"
+  [[ "$(docker inspect --format '{{.Image}}' "$APP_CONTAINER")" == "$image_id" ]] \
+    || fatal "application image changed during backup"
   {
     printf 'source_tree_sha256,%s\n' "$source_tree_sha"
     printf 'source_lock_sha256,%s\n' "$source_lock_sha"
@@ -254,13 +293,13 @@ main() {
   chmod 0600 "$BACKUP_ROOT/LAST_SUCCESS"
   write_metrics 1 "$(date -u +%s)" "$(date -u -d "${timestamp:0:4}-${timestamp:4:2}-${timestamp:6:2} ${timestamp:9:2}:${timestamp:11:2}:${timestamp:13:2}" +%s)"
   # Restic owns the long-term 14-daily/8-weekly/12-monthly retention above.
-  # Keep only the seven newest local staging generations so a burst of manual
+  # Keep only the two newest local staging generations so a burst of manual
   # backups cannot exhaust /srv before age-based cleanup has a chance to run.
   mapfile -t expired_local_backups < <(
     find "$BACKUP_ROOT" -mindepth 1 -maxdepth 1 -type d \
       -name '20??????T??????Z' -printf '%f\n' \
       | LC_ALL=C sort \
-      | head -n -7
+      | head -n -2
   )
   if ((${#expired_local_backups[@]})); then
     printf '%s\0' "${expired_local_backups[@]}" \
