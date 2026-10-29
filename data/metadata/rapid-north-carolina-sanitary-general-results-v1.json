@@ -1,0 +1,777 @@
+{
+  "schema": "rapid-local-context-intake-v1",
+  "artifactId": "rapid-north-carolina-sanitary-general-results-v1",
+  "version": 1,
+  "state": "NC",
+  "label": "North Carolina sanitary-district general results",
+  "scope": "2024 general election sanitary-district board, commissioner and supervisor results",
+  "authority": "north_carolina_state_board_of_elections_precinct_results_archive",
+  "limitations": [
+    "retained_2024_archive_snapshot_not_current_holder_roster",
+    "source_does_not_mark_winners",
+    "no_rank_based_winner_inference",
+    "source_ballot_title_not_normalized_district_boundary_or_governing_body",
+    "appointed_positions_and_offices_not_on_this_ballot_not_enumerated",
+    "current_holder_identity_and_local_office_scoring_not_defined"
+  ],
+  "releaseRelationship": "separate_rapid_acquisition_excluded_from_released_score",
+  "cycles": [
+    {
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contests": 14,
+      "candidateRows": 51,
+      "candidateVotes": 24789
+    }
+  ],
+  "contests": [
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:carteret-harkers-island-sanitary-board-member:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "CARTERET - HARKERS ISLAND SANITARY BOARD MEMBER",
+      "rawOfficeTitle": "CARTERET - HARKERS ISLAND SANITARY BOARD MEMBER",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "CARTERET"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Arnold Asdenti",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 525
+        },
+        {
+          "sourceName": "Elizabeth Lewis (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 5
+        },
+        {
+          "sourceName": "Mike Lewis",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 563
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 26
+        }
+      ],
+      "totalVotes": 1119,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:4",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "7f9685593028bb2780b883ed1caed465e4d459565565cdc647fce3e375334107"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:columbus-reigelwood-sanitary-district-board:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "COLUMBUS - REIGELWOOD SANITARY DISTRICT BOARD",
+      "rawOfficeTitle": "COLUMBUS - REIGELWOOD SANITARY DISTRICT BOARD",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 5,
+      "reportingJurisdictions": [
+        "COLUMBUS"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Christian Wright",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 122
+        },
+        {
+          "sourceName": "James Edwin Horrell Hammond",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 115
+        },
+        {
+          "sourceName": "Joshua N. Simmons",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 125
+        },
+        {
+          "sourceName": "Kenneth Myers (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 9
+        },
+        {
+          "sourceName": "Miceal Lainer (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 7
+        },
+        {
+          "sourceName": "Nick Roberts (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 9
+        },
+        {
+          "sourceName": "Preston Porter (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 13
+        },
+        {
+          "sourceName": "Ronald McPherson (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 5
+        },
+        {
+          "sourceName": "Ronnie Russ (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 7
+        },
+        {
+          "sourceName": "Shonda Carroll",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 120
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 47
+        }
+      ],
+      "totalVotes": 579,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:11",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "8592a9b673f1e19c6d66ff992e8b6097872145a34c62bc7120d784b64a7b7b5b"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:first-craven-sanitary-district-board-member:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "FIRST CRAVEN SANITARY DISTRICT BOARD MEMBER",
+      "rawOfficeTitle": "FIRST CRAVEN SANITARY DISTRICT BOARD MEMBER",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 3,
+      "reportingJurisdictions": [
+        "CRAVEN"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Douglas Cowan",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 1461
+        },
+        {
+          "sourceName": "Mark Dunn",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 1572
+        },
+        {
+          "sourceName": "Paul Gaskins",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 1589
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 44
+        }
+      ],
+      "totalVotes": 4666,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:12",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "2eafa10339824a7bffc1b1d2bd1af8c1f07ea5365568688ec59e3b575d9b9678"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:handy-sanitary-district-supervisor:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HANDY SANITARY DISTRICT SUPERVISOR",
+      "rawOfficeTitle": "HANDY SANITARY DISTRICT SUPERVISOR",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "DAVIDSON",
+        "MONTGOMERY"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Dan Sexton",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 2688
+        },
+        {
+          "sourceName": "Leslie Howard Boswell (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 5
+        },
+        {
+          "sourceName": "Richard K. Smith",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 2489
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 62
+        }
+      ],
+      "totalVotes": 5244,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:46",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "3cb03a7f2a4cfc69b17f3537195e41b9377a04ee1e897445f55f36a38595f37d"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:haywood-junaluska-sanitary-district:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HAYWOOD - JUNALUSKA SANITARY DISTRICT",
+      "rawOfficeTitle": "HAYWOOD - JUNALUSKA SANITARY DISTRICT",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 3,
+      "reportingJurisdictions": [
+        "HAYWOOD"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Bill Barker",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 947
+        },
+        {
+          "sourceName": "Jan Nesbitt",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 1210
+        },
+        {
+          "sourceName": "Jim King",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 803
+        },
+        {
+          "sourceName": "Randy Cunningham",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 1244
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 37
+        }
+      ],
+      "totalVotes": 4241,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:40",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "586bbd326d918c60a31d39e228e42a7b12160bd69080848e3059f61548d2cfb0"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:haywood-junaluska-sanitary-district-unexpired:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HAYWOOD - JUNALUSKA SANITARY DISTRICT (UNEXPIRED)",
+      "rawOfficeTitle": "HAYWOOD - JUNALUSKA SANITARY DISTRICT (UNEXPIRED)",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 1,
+      "reportingJurisdictions": [
+        "HAYWOOD"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Chad McMahon",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 1586
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 33
+        }
+      ],
+      "totalVotes": 1619,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:16",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "1c7ffc13c8d5a17a4e5793b7576c4fa50bb1788f605e50a6b78c2880eff1c747"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:haywood-maggie-valley-sanitary-district:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HAYWOOD - MAGGIE VALLEY SANITARY DISTRICT",
+      "rawOfficeTitle": "HAYWOOD - MAGGIE VALLEY SANITARY DISTRICT",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "HAYWOOD"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Carroll Mehaffey",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 2972
+        },
+        {
+          "sourceName": "Neil A. Carpenter",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 2940
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 27
+        }
+      ],
+      "totalVotes": 5939,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:15",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "7f2676b6904ee9be52d40a208d6267edde39c947d2531e4eb54e67ae1032bf47"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:hyde-engelhard-sanitary-district-supervisors:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HYDE - ENGELHARD SANITARY DISTRICT SUPERVISORS",
+      "rawOfficeTitle": "HYDE - ENGELHARD SANITARY DISTRICT SUPERVISORS",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "HYDE"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Deanna Lewis (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 5
+        },
+        {
+          "sourceName": "Jay Eakes (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 5
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 21
+        }
+      ],
+      "totalVotes": 31,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:18",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "1d27e9f3d26127e06f70b39a1e3d591701550b342a1b6fd58169fddc87c0d04f"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:hyde-engelhard-sanitary-district-supervisors-unexpired:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HYDE - ENGELHARD SANITARY DISTRICT SUPERVISORS (UNEXPIRED)",
+      "rawOfficeTitle": "HYDE - ENGELHARD SANITARY DISTRICT SUPERVISORS (UNEXPIRED)",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "HYDE"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Drake Etheridge",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 86
+        },
+        {
+          "sourceName": "Michael Lee Gibbs",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 99
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 2
+        }
+      ],
+      "totalVotes": 187,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:18",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "d7cf1483153bfff0ba916ef9984dcb8b2240ee86ebca74c92d01c51d5176b702"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:hyde-ocracoke-sanitary-district-supervisors:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HYDE - OCRACOKE SANITARY DISTRICT SUPERVISORS",
+      "rawOfficeTitle": "HYDE - OCRACOKE SANITARY DISTRICT SUPERVISORS",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "HYDE"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Regina O'Neal Boor",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 503
+        },
+        {
+          "sourceName": "Scott Bradley",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 385
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 11
+        }
+      ],
+      "totalVotes": 899,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:18",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "1c6953ef2dfb46e457dad3f182ea382f533d2453f6a754e39747d088bab8397e"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:hyde-swan-quarter-sanitary-district-supervisors:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "HYDE - SWAN QUARTER SANITARY DISTRICT SUPERVISORS",
+      "rawOfficeTitle": "HYDE - SWAN QUARTER SANITARY DISTRICT SUPERVISORS",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 2,
+      "reportingJurisdictions": [
+        "HYDE"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Sallie Carter (Write-In)",
+          "rawParty": "",
+          "candidacyKind": "named_write_in",
+          "votes": 9
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 16
+        }
+      ],
+      "totalVotes": 25,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:12",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "d198be2bd7bd90da733f8863e8c315ed1fbb3063993137535975bdb1469f3ecd"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:perquimans-minzies-creek-sanitary-district-commissioner:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "PERQUIMANS - MINZIES CREEK SANITARY DISTRICT COMMISSIONER",
+      "rawOfficeTitle": "PERQUIMANS - MINZIES CREEK SANITARY DISTRICT COMMISSIONER",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 1,
+      "reportingJurisdictions": [
+        "PERQUIMANS"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Clay Helm",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 25
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 3
+        }
+      ],
+      "totalVotes": 28,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:10",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "bc42a0a0bdc95c50bdbe605901f99bd50d15289d260ba2c4072034dc725fc620"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:rutherford-county-cliffside-sanitary-district-commissioner:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "RUTHERFORD COUNTY - CLIFFSIDE SANITARY DISTRICT COMMISSIONER",
+      "rawOfficeTitle": "RUTHERFORD COUNTY - CLIFFSIDE SANITARY DISTRICT COMMISSIONER",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 3,
+      "reportingJurisdictions": [
+        "RUTHERFORD"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 15
+        }
+      ],
+      "totalVotes": 15,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:1",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "10377f779c8dfe3006094382c68954648a59df7d435f45e4e75757dbfe3137f2"
+    },
+    {
+      "contestId": "nc:north-carolina-sanitary-district-general-results:2024:sanitary_district_board:at-large:whittier-sanitary-district-board-members:all-source-parties",
+      "cycleYear": 2024,
+      "electionDate": "2024-11-05",
+      "officeLevel": "other_local",
+      "office": "sanitary_district_board",
+      "districtCode": null,
+      "jurisdiction": "WHITTIER SANITARY DISTRICT BOARD MEMBERS",
+      "rawOfficeTitle": "WHITTIER SANITARY DISTRICT BOARD MEMBERS",
+      "rawParty": "ALL_SOURCE_PARTIES",
+      "seats": 3,
+      "reportingJurisdictions": [
+        "JACKSON",
+        "SWAIN"
+      ],
+      "candidates": [
+        {
+          "sourceName": "Bo Hollifield",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 57
+        },
+        {
+          "sourceName": "Bridgit Parris Nations",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 71
+        },
+        {
+          "sourceName": "Randy Nations",
+          "rawParty": "",
+          "candidacyKind": "named_candidate",
+          "votes": 65
+        },
+        {
+          "sourceName": "Write-In (Miscellaneous)",
+          "rawParty": "",
+          "candidacyKind": "unnamed_write_in",
+          "votes": 4
+        }
+      ],
+      "totalVotes": 197,
+      "reconciliation": "all_vote_channels_equal_row_totals_then_sum_all_reporting_counties_and_precinct_types",
+      "notes": [
+        "precinct_candidate_rows:8",
+        "exact_source_title_is_contest_key_not_normalized_current_office_identity"
+      ],
+      "sourceWinnerStatus": "not_marked_by_source",
+      "currentHolderIdentity": null,
+      "formulaEligible": false,
+      "sourceLockIds": [
+        "nc-2024-general-results-pct-zip"
+      ],
+      "contestSha256": "f911ac97b03e935d33c9b51ebc6aa3ff5bd7ed51d0f0b8e4c805f0a8304607d3"
+    }
+  ],
+  "summary": {
+    "cycles": 1,
+    "contests": 14,
+    "candidateRows": 51,
+    "candidateVotes": 24789,
+    "contestedContests": 13,
+    "writeInCandidates": 25,
+    "contestsByOffice": {
+      "sanitary_district_board": 14
+    },
+    "contestsByParty": {
+      "ALL_SOURCE_PARTIES": 14
+    },
+    "formulaEligibleContests": 0
+  },
+  "contestSetSha256": "3c3fb923d3702080973715ef64a18ed9062bddf190e91ab79f058fb062bd236d",
+  "packageSha256": "55ffd1d22330e238c60e86002799f0f14e74054224e55ab6c9a16630493f6206"
+}

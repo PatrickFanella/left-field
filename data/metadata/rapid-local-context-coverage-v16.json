@@ -296,8 +296,23 @@
       "packageSha256": "d064f14246d41dc133df7350130ed1a5c35b9c87300db8fad340e540ddd04ac4",
       "formulaEligibleCount": 0,
       "cyclesThrough": 2024
+    },
+    {
+      "id": "rapid-north-carolina-sanitary-general-results-v1",
+      "label": "North Carolina sanitary-district general results",
+      "scope": "2024 general election sanitary-district board, commissioner and supervisor results",
+      "summary": {
+        "contests": 14,
+        "candidateRows": 51,
+        "candidateVotes": 24789,
+        "contestedContests": 13,
+        "formulaEligibleContests": 0
+      },
+      "packageSha256": "55ffd1d22330e238c60e86002799f0f14e74054224e55ab6c9a16630493f6206",
+      "formulaEligibleCount": 0,
+      "cyclesThrough": 2024
     }
   ],
-  "artifactSetSha256": "858c093c2f049536c57c23fffbf633f564b71e96d23f6342e2fe16407a9ca014",
-  "packageSha256": "054c3ef6a40f2302384b0ccbc337167b636f44735d094d5bc66ad7e5ce1bfbb8"
+  "artifactSetSha256": "8b725eb2e46d1303640a8f9a829c9db7a76f4a29a31e5e9dea147b6b872d457c",
+  "packageSha256": "332106a64cb039d1b6970ef91fb309bb74e293772ab742fd8b3c6313abcedc57"
 }

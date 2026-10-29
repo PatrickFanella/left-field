@@ -13,7 +13,8 @@ describe("rapid local-context coverage read model", () => {
   it("loads locked local-context coverage without rebuilding source archives", async () => {
     const value = await loadRapidLocalContextCoverage();
     expect(value?.schema).toBe("rapid-local-context-coverage-v16");
-    expect(value?.artifacts).toHaveLength(20);
+    expect(value?.artifacts).toHaveLength(21);
+    expect(value?.artifacts.find((artifact) => artifact.id === "rapid-north-carolina-sanitary-general-results-v1")).toMatchObject({ summary: { contests: 14, candidateRows: 51, candidateVotes: 24_789 }, formulaEligibleCount: 0, cyclesThrough: 2024 });
     expect(value?.artifacts.find((artifact) => artifact.id === "rapid-north-carolina-soil-water-general-results-v1")).toMatchObject({ summary: { contests: 100, candidateRows: 510, candidateVotes: 4_143_641 }, formulaEligibleCount: 0, cyclesThrough: 2024 });
     expect(value?.artifacts.find((artifact) => artifact.id === "rapid-north-carolina-local-office-general-results-v1")).toMatchObject({ summary: { contests: 635, candidateRows: 1793, candidateVotes: 22_219_489 }, formulaEligibleCount: 0, cyclesThrough: 2024 });
     expect(value?.artifacts.every((artifact) => artifact.formulaEligibleCount === 0)).toBe(true);

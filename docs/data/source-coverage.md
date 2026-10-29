@@ -264,6 +264,8 @@ None of the state-legislative projections infers candidate identity, ideological
 
 ### Rapid county and local office context
 
+North Carolina's retained 2024 sanitary-district ballot results add 14 contests, 51 candidate rows and 24,789 candidate votes across 11 reporting counties. Twelve contests preserve multi-seat rules; two combine county reports by exact title, and two retain unexpired terms separately. These are historical result records with no current-holder or scoring inference. See [the acquisition receipt](../reviews/north-carolina-sanitary-general-results-2026-10-29.md).
+
 The next North Carolina 2024 batch adds 100 soil-and-water conservation district supervisor contests across 100 reporting counties, with 510 candidate rows and 4,143,641 candidate votes. Exact ballot titles and blank source party fields are retained. These historical results do not establish district boundaries, appointed membership, current holders or scores. See [the acquisition receipt](../reviews/north-carolina-soil-water-general-results-2026-10-28.md).
 
 The first general-election local-office batch adds 635 North Carolina 2024 contests across all 100 reporting counties, with 1,793 candidate rows and 22,219,489 candidate votes. It preserves 135 multi-seat contests and combines 12 cross-county municipal contests by exact source title. This is a retained result catalog, not a current-holder roster or local score. See [the acquisition receipt](../reviews/north-carolina-local-general-results-2026-10-28.md).
