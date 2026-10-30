@@ -160,6 +160,6 @@ describe("Michigan primary geography compatibility candidate", () => {
         "tiger-cd118-26",
         "tiger-cd119-26",
       ],
-    }]);
+    license: "unknown", }]);
   });
 });

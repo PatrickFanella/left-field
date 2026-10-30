@@ -77,7 +77,7 @@ describe("Texas primary geography compatibility candidate", () => {
         "tiger-cd118-48",
         "tiger-cd119-48",
       ],
-    });
+    license: "unknown", });
   });
 
   it("closes the event universe without changing result dispositions", () => {

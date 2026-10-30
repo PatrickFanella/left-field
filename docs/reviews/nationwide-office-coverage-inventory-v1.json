@@ -1,0 +1,3565 @@
+{
+  "schema": "nationwide-office-coverage-inventory-v1",
+  "version": 1,
+  "methodology": {
+    "completenessRule": "no_jurisdiction_or_office_family_is_complete_without_a_sourced_seat_denominator",
+    "holderRule": "retained_roster_rows_are_not_current_holder_claims",
+    "discoveryRule": "configured_discovery_source_is_not_retained_government_unit_coverage"
+  },
+  "jurisdictions": [
+    {
+      "code": "AL",
+      "name": "Alabama",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 140,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "al-2022-general-certified-canvass-pdf"
+          ],
+          "historicalContestCount": 140,
+          "cycles": [
+            2022
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 140,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:AL",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 60,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ak-2024-general-enr-by-precinct-csv",
+            "ak-2022-general-summary-xml"
+          ],
+          "historicalContestCount": 60,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 60,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:AK",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "AZ",
+      "name": "Arizona",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 90,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "az-2024-general-canvass-signed-pdf"
+          ],
+          "historicalContestCount": 60,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 90,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:AZ",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "AR",
+      "name": "Arkansas",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 133,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ar-2024-general-precinct-results-workbook"
+          ],
+          "historicalContestCount": 118,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 135,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:AR",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "CA",
+      "name": "California",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 118,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ca-2024-general-sov-candidates-workbook",
+            "ca-2022-general-sov-candidates-workbook"
+          ],
+          "historicalContestCount": 200,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 120,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:CA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "CO",
+      "name": "Colorado",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 100,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "co-2024-general-clarity-summary-zip",
+            "co-2022-general-clarity-summary-zip"
+          ],
+          "historicalContestCount": 165,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 100,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:CO",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "CT",
+      "name": "Connecticut",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 187,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ct-2024-general-state-senator-csv",
+            "ct-2024-general-state-representative-csv"
+          ],
+          "historicalContestCount": 187,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 187,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:CT",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "DE",
+      "name": "Delaware",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 62,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "de-2024-general-results-csv",
+            "de-2022-general-results-csv"
+          ],
+          "historicalContestCount": 113,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 62,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:DE",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 155,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "florida-general-2024-results-extract-txt",
+            "florida-general-2022-results-extract-txt"
+          ],
+          "historicalContestCount": 136,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 160,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -5,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:FL",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "GA",
+      "name": "Georgia",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 235,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ga-2024-general-total-votes-workbook"
+          ],
+          "historicalContestCount": 236,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 236,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:GA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "HI",
+      "name": "Hawaii",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 76,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "hi-2024-general-summary-txt"
+          ],
+          "historicalContestCount": 43,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 76,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:HI",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "ID",
+      "name": "Idaho",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 105,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "id-2024-general-raw-races-workbook"
+          ],
+          "historicalContestCount": 105,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 105,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:ID",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "IL",
+      "name": "Illinois",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 177,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "il-2024-general-vote-totals-txt",
+            "il-2022-general-vote-totals-txt"
+          ],
+          "historicalContestCount": 319,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 177,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:IL",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "IN",
+      "name": "Indiana",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 150,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "in-2024-general-all-office-results-csv",
+            "in-2022-general-all-office-results-csv"
+          ],
+          "historicalContestCount": 250,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 150,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "retained",
+        "artifacts": [
+          {
+            "artifactId": "rapid-indiana-local-office-primary-results-v1",
+            "historicalContestCount": 816,
+            "cycles": [
+              2024
+            ],
+            "coverageFamilies": [
+              "county",
+              "local_judicial",
+              "municipal",
+              "township"
+            ],
+            "observedOfficeFamilies": [
+              "city_or_city_county_council_member",
+              "clerk_of_circuit_court",
+              "county_auditor",
+              "county_commissioner",
+              "county_coroner",
+              "county_council_member",
+              "county_recorder",
+              "county_surveyor",
+              "county_treasurer",
+              "town_clerk_treasurer",
+              "town_council_member",
+              "township_board_member"
+            ]
+          }
+        ],
+        "historicalContestCount": 816,
+        "note": "Each retained artifact remains distinct; local office-family and government-unit denominators remain unknown."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:IN",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "IA",
+      "name": "Iowa",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 149,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ia-2024-general-clarity-summary-zip",
+            "ia-2022-general-clarity-summary-zip"
+          ],
+          "historicalContestCount": 259,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 150,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:IA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "KS",
+      "name": "Kansas",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 165,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ks-2024-general-official-vote-totals-pdf"
+          ],
+          "historicalContestCount": 165,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 165,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:KS",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "KY",
+      "name": "Kentucky",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 138,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ky-2024-general-certification-pdf"
+          ],
+          "historicalContestCount": 119,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 138,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:KY",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "LA",
+      "name": "Louisiana",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 142,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "la-2023-general-runoff-workbook",
+            "la-2023-general-runoff-all-sheets-csv-zip"
+          ],
+          "historicalContestCount": 20,
+          "cycles": [
+            2023
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 144,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:LA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "ME",
+      "name": "Maine",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 188,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "me-2024-general-state-senator-workbook",
+            "me-2024-general-representative-workbook"
+          ],
+          "historicalContestCount": 186,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 186,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:ME",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MD",
+      "name": "Maryland",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 188,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "md-2022-general-legislative-breakdown-csv"
+          ],
+          "historicalContestCount": 118,
+          "cycles": [
+            2022
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 188,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MD",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MA",
+      "name": "Massachusetts",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 197,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ma-2024-general-house-search-html",
+            "ma-2024-general-senate-search-html"
+          ],
+          "historicalContestCount": 200,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 200,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -3,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MI",
+      "name": "Michigan",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 148,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "mi-2022-general-cenr-html"
+          ],
+          "historicalContestCount": 38,
+          "cycles": [
+            2022
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 148,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MI",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MN",
+      "name": "Minnesota",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 200,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "mn-2024-general-state-house-txt",
+            "mn-2024-special-general-state-senate-txt",
+            "mn-2022-general-state-senate-txt"
+          ],
+          "historicalContestCount": 202,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 201,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MN",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MS",
+      "name": "Mississippi",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 171,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ms-2023-general-certified-recap-pdf"
+          ],
+          "historicalContestCount": 174,
+          "cycles": [
+            2023
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 174,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -3,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MS",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MO",
+      "name": "Missouri",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 188,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "mo-2024-general-results-pdf",
+            "mo-2022-general-results-pdf"
+          ],
+          "historicalContestCount": 360,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 197,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -9,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MO",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "MT",
+      "name": "Montana",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 150,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "mt-2024-general-precinct-by-precinct-workbook",
+            "mt-2022-general-precinct-by-precinct-workbook"
+          ],
+          "historicalContestCount": 252,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 150,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:MT",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NE",
+      "name": "Nebraska",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 49,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ne-2024-general-canvass-pdf",
+            "ne-2022-general-canvass-pdf"
+          ],
+          "historicalContestCount": 50,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 49,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NE",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NV",
+      "name": "Nevada",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 63,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "nv-2024-general-election-summary-html",
+            "nv-2022-general-election-summary-html",
+            "nv-2024-general-legislative-candidates-pdf",
+            "nv-2022-general-legislative-candidates-pdf"
+          ],
+          "historicalContestCount": 105,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 63,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NV",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NH",
+      "name": "New Hampshire",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 407,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "nh-2024-house-belknap-workbook",
+            "nh-2024-house-carroll-workbook",
+            "nh-2024-house-cheshire-workbook",
+            "nh-2024-house-coos-workbook",
+            "nh-2024-house-grafton-workbook",
+            "nh-2024-house-hillsborough-workbook",
+            "nh-2024-house-merrimack-workbook",
+            "nh-2024-house-rockingham-workbook",
+            "nh-2024-house-strafford-workbook",
+            "nh-2024-house-sullivan-workbook",
+            "nh-2024-senate-workbook",
+            "nh-2024-general-all-sheets-csv-zip"
+          ],
+          "historicalContestCount": 226,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 424,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -17,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NH",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NJ",
+      "name": "New Jersey",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 120,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "nj-2025-general-assembly-pdf",
+            "nj-2023-general-state-senate-pdf"
+          ],
+          "historicalContestCount": 80,
+          "cycles": [
+            2023,
+            2025
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 120,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NJ",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NM",
+      "name": "New Mexico",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 110,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "nm-2024-general-senate-results-json",
+            "nm-2024-general-house-results-json",
+            "nm-2024-general-recount-house-results-json"
+          ],
+          "historicalContestCount": 112,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 112,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "retained",
+        "artifacts": [
+          {
+            "artifactId": "rapid-new-mexico-county-office-primary-results-v1",
+            "historicalContestCount": 581,
+            "cycles": [
+              2022,
+              2024,
+              2026
+            ],
+            "coverageFamilies": [
+              "county",
+              "local_judicial"
+            ],
+            "observedOfficeFamilies": [
+              "county_assessor",
+              "county_clerk",
+              "county_commissioner",
+              "county_sheriff",
+              "county_treasurer",
+              "probate_judge"
+            ]
+          }
+        ],
+        "historicalContestCount": 581,
+        "note": "Each retained artifact remains distinct; local office-family and government-unit denominators remain unknown."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NM",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 212,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ny-2024-general-legislative-contests-csv"
+          ],
+          "historicalContestCount": 213,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 213,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NY",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "NC",
+      "name": "North Carolina",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 170,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "nc-2024-general-results-pct-zip"
+          ],
+          "historicalContestCount": 170,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 170,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "retained",
+        "artifacts": [
+          {
+            "artifactId": "rapid-north-carolina-local-office-primary-results-v1",
+            "historicalContestCount": 1095,
+            "cycles": [
+              2022,
+              2024,
+              2026
+            ],
+            "coverageFamilies": [
+              "county",
+              "local_judicial",
+              "municipal",
+              "school_district"
+            ],
+            "observedOfficeFamilies": [
+              "board_of_education",
+              "clerk_of_superior_court",
+              "county_commissioner",
+              "county_sheriff",
+              "municipal_council",
+              "municipal_mayor",
+              "register_of_deeds"
+            ]
+          },
+          {
+            "artifactId": "rapid-north-carolina-local-office-general-results-v1",
+            "historicalContestCount": 635,
+            "cycles": [
+              2024
+            ],
+            "coverageFamilies": [
+              "county",
+              "local_judicial",
+              "municipal",
+              "school_district"
+            ],
+            "observedOfficeFamilies": [
+              "board_of_education",
+              "clerk_of_superior_court",
+              "county_commissioner",
+              "municipal_council",
+              "municipal_mayor",
+              "register_of_deeds"
+            ]
+          },
+          {
+            "artifactId": "rapid-north-carolina-soil-water-general-results-v1",
+            "historicalContestCount": 100,
+            "cycles": [
+              2024
+            ],
+            "coverageFamilies": [
+              "special_district"
+            ],
+            "observedOfficeFamilies": [
+              "soil_water_conservation_district_supervisor"
+            ]
+          },
+          {
+            "artifactId": "rapid-north-carolina-sanitary-general-results-v1",
+            "historicalContestCount": 14,
+            "cycles": [
+              2024
+            ],
+            "coverageFamilies": [
+              "special_district"
+            ],
+            "observedOfficeFamilies": [
+              "sanitary_district_board"
+            ]
+          }
+        ],
+        "historicalContestCount": 1844,
+        "note": "Each retained artifact remains distinct; local office-family and government-unit denominators remain unknown."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:NC",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "ND",
+      "name": "North Dakota",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 141,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "nd-2024-general-legislative-results-html",
+            "nd-2022-general-legislative-results-html"
+          ],
+          "historicalContestCount": 119,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 141,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:ND",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "OH",
+      "name": "Ohio",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 131,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "oh-2024-general-statewide-race-summary-xlsx",
+            "oh-2022-general-statewide-races-summary-xlsx"
+          ],
+          "historicalContestCount": 232,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 132,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:OH",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "OK",
+      "name": "Oklahoma",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 147,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ok-2024-general-state-results-csv",
+            "ok-2022-general-state-results-csv"
+          ],
+          "historicalContestCount": 82,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 149,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:OK",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "OR",
+      "name": "Oregon",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 90,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "or-2024-general-abstract-pdf",
+            "or-2022-general-abstract-pdf"
+          ],
+          "historicalContestCount": 150,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 90,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:OR",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "PA",
+      "name": "Pennsylvania",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 253,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "pa-2024-general-precinct-returns-txt",
+            "pa-2022-general-precinct-returns-txt"
+          ],
+          "historicalContestCount": 456,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 253,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:PA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "RI",
+      "name": "Rhode Island",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 112,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ri-2024-general-senator-json",
+            "ri-2024-general-representative-json"
+          ],
+          "historicalContestCount": 113,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 113,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:RI",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "SC",
+      "name": "South Carolina",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 170,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "sc-2024-general-clarity-summary-zip"
+          ],
+          "historicalContestCount": 170,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 170,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:SC",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "SD",
+      "name": "South Dakota",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 105,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "sd-2024-general-canvass-with-certificate-pdf"
+          ],
+          "historicalContestCount": 72,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 105,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:SD",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "TN",
+      "name": "Tennessee",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 131,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "tn-2024-general-all-by-precinct-workbook",
+            "tn-2022-general-all-by-precinct-workbook"
+          ],
+          "historicalContestCount": 231,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 132,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:TN",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 179,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "tx-2024-general-districted-json",
+            "tx-2022-general-districted-json"
+          ],
+          "historicalContestCount": 186,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 181,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -2,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:TX",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "UT",
+      "name": "Utah",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 104,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "ut-2024-general-ballot-items-json"
+          ],
+          "historicalContestCount": 90,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 104,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:UT",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "VT",
+      "name": "Vermont",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 180,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "vt-2024-legislative-search-page-1-json",
+            "vt-2024-legislative-search-page-2-json",
+            "vt-2024-legislative-search-page-3-json",
+            "vt-2024-legislative-search-page-4-json",
+            "vt-2024-legislative-search-page-5-json",
+            "vt-2024-legislative-search-page-6-json"
+          ],
+          "historicalContestCount": 125,
+          "cycles": [
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 180,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:VT",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "VA",
+      "name": "Virginia",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 139,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "va-2023-general-ballot-items-json",
+            "va-2025-general-ballot-items-json"
+          ],
+          "historicalContestCount": 240,
+          "cycles": [
+            2023,
+            2025
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 140,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": -1,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:VA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 147,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "wa-2024-general-legislative-csv",
+            "wa-2022-general-legislative-csv"
+          ],
+          "historicalContestCount": 246,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 147,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:WA",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "WV",
+      "name": "West Virginia",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 134,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "wv-2024-general-clarity-summary-zip",
+            "wv-2022-general-clarity-summary-zip"
+          ],
+          "historicalContestCount": 234,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 134,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:WV",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "WI",
+      "name": "Wisconsin",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 132,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "wi-2024-general-ward-by-ward-federal-state-workbook",
+            "wi-2022-general-county-by-county-state-senator-workbook"
+          ],
+          "historicalContestCount": 132,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 132,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:WI",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "WY",
+      "name": "Wyoming",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 93,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "wy-2024-general-results-zip",
+            "wy-2022-general-results-zip"
+          ],
+          "historicalContestCount": 93,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 93,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "configured_without_retained_rows",
+        "sourceStatus": "discontinued",
+        "sourceKey": "us-census-government-units:WY",
+        "nextStep": "Replace the discontinued GUS slot with a current Census government-organization source, retain a snapshot, then map elected bodies and office-selection methods."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    },
+    {
+      "code": "DC",
+      "name": "District of Columbia",
+      "stateLegislative": {
+        "roster": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-roster-v1"
+          ],
+          "rosterPeopleCount": 13,
+          "note": "Retained roster-person rows; neither seat records nor current-holder assertions."
+        },
+        "historicalResults": {
+          "status": "retained",
+          "artifactIds": [
+            "state-legislative-general-results-v1",
+            "dc-2024-general-certified-results-csv",
+            "dc-2022-general-certified-results-csv"
+          ],
+          "historicalContestCount": 11,
+          "cycles": [
+            2022,
+            2024
+          ],
+          "note": "Retained official general-election contests; cycle coverage does not prove every seat or election is present."
+        },
+        "authorizedSeatDenominator": {
+          "status": "retained",
+          "count": 13,
+          "sourceIds": [
+            "ncsl-state-legislative-partisan-composition-2025",
+            "ncsl-state-legislative-partisan-composition-2025-layout",
+            "dc-home-rule-act-council-membership"
+          ],
+          "referenceDate": "2025-04-30",
+          "rosterSnapshotDate": "2026-09-24",
+          "rosterPeopleDelta": 0,
+          "note": "Dated NCSL legislative membership count, with DC independently checked against its charter. The roster has a different date and may include nonvoting roles; this delta does not identify vacancies or prove completeness."
+        }
+      },
+      "localHistoricalResults": {
+        "status": "not_retained",
+        "artifacts": [],
+        "historicalContestCount": 0,
+        "note": "No retained local-office historical-results artifact is registered for this jurisdiction."
+      },
+      "governmentUnitDiscovery": {
+        "status": "not_registered",
+        "sourceStatus": "not_registered",
+        "sourceKey": null,
+        "nextStep": "Add DC to the nationwide discovery registry before making any unit-coverage claim."
+      },
+      "seatDenominator": {
+        "status": "unknown",
+        "count": null,
+        "note": "The state-legislative count above does not cover executive, judicial, county, municipal, school-district, special-district, or township offices."
+      },
+      "currentHolderIdentity": {
+        "status": "not_assessed",
+        "note": "This inventory does not promote roster names to current-holder identities."
+      },
+      "acquisitionGaps": [
+        "Retain a government-unit snapshot and identify elected bodies.",
+        "Retain state-specific official office, term, and election authority evidence.",
+        "Record a sourced full elected-office denominator before calculating completeness."
+      ]
+    }
+  ],
+  "separateScopes": [
+    {
+      "scope": "us_territories",
+      "jurisdictionCodes": [
+        "AS",
+        "GU",
+        "MP",
+        "PR",
+        "VI"
+      ],
+      "status": "separate_scope_not_in_this_inventory",
+      "nextStep": "Retain territorial charters, official rosters, and office-selection rules before claiming territorial completeness."
+    },
+    {
+      "scope": "tribal_nations",
+      "status": "separate_scope_not_in_this_inventory",
+      "nextStep": "Inventory each sovereign tribal government using its public office and election sources, distinct jurisdiction identifiers, and selection rules."
+    },
+    {
+      "scope": "federal_release",
+      "status": "separate_scope_not_in_this_inventory",
+      "nextStep": "Read the separately qualified federal release rather than projecting it into this state/local intake inventory."
+    }
+  ],
+  "officeFamilies": [
+    {
+      "family": "federal",
+      "level": "federal",
+      "coverageRule": "Outside this intake inventory; the federal release is separately qualified."
+    },
+    {
+      "family": "state_legislative",
+      "level": "state",
+      "coverageRule": "Roster people, historical contests, and authorized seat counts remain separate measures."
+    },
+    {
+      "family": "statewide_executive",
+      "level": "state",
+      "coverageRule": "Requires a retained state-office roster and a sourced office denominator."
+    },
+    {
+      "family": "statewide_judicial",
+      "level": "state",
+      "coverageRule": "Requires jurisdiction-specific election or appointment authority and a sourced office denominator."
+    },
+    {
+      "family": "county",
+      "level": "local",
+      "coverageRule": "Requires government-unit discovery before county seat coverage can be measured."
+    },
+    {
+      "family": "municipal",
+      "level": "local",
+      "coverageRule": "Requires government-unit discovery and local-office authority evidence before coverage can be measured."
+    },
+    {
+      "family": "school_district",
+      "level": "local",
+      "coverageRule": "Requires district discovery and election-authority evidence before coverage can be measured."
+    },
+    {
+      "family": "special_district",
+      "level": "local",
+      "coverageRule": "Requires special-district discovery and office-selection evidence before coverage can be measured."
+    },
+    {
+      "family": "township",
+      "level": "local",
+      "coverageRule": "Requires township discovery and selection-method evidence before coverage can be measured."
+    },
+    {
+      "family": "local_judicial",
+      "level": "local",
+      "coverageRule": "Requires local judicial office and selection-method evidence before coverage can be measured."
+    }
+  ],
+  "summary": {
+    "jurisdictionsTracked": 51,
+    "stateLegislativeRosterJurisdictions": 51,
+    "stateLegislativeHistoricalResultJurisdictions": 51,
+    "stateLegislativeAuthorizedSeatDenominatorJurisdictions": 51,
+    "localHistoricalResultJurisdictions": 3,
+    "fullOfficeDenominatorKnownJurisdictions": 0,
+    "governmentUnitDiscoveryConfiguredJurisdictions": 50,
+    "governmentUnitDiscoveryWithoutRetainedRows": 50,
+    "governmentUnitDiscoverySourcesRequiringReplacement": 50
+  }
+}

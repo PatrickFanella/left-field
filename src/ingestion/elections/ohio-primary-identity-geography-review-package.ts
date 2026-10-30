@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -68,7 +69,7 @@ export function buildOhioPrimaryJointReviewPackage(input: OhioPrimaryJointReview
   const identity = validateOhioPrimaryIdentityCandidate(parse<OhioPrimaryIdentityCandidate>(input.identityJson, "IDENTITY_JSON_INVALID"));
   const geography = validateOhioPrimaryGeographyCandidate(parse<OhioPrimaryGeographyCandidate>(input.geographyJson, "GEOGRAPHY_JSON_INVALID"));
   if (proposal.packageSha256 !== INPUTS.proposalPackage || identity.packageSha256 !== INPUTS.identityPackage || identity.observationSetSha256 !== INPUTS.identitySet || geography.packageSha256 !== INPUTS.geographyPackage || geography.rowSetSha256 !== INPUTS.geographySet || identity.review.resolution !== null || geography.review.resolution !== null || UNRESOLVED.some((id) => proposal.decisions.find((decision) => decision.decisionId === id)?.resolution !== null)) fail("PARENT_INVALID");
-  const sources = validateLock(input.sourceLockJson).filter((entry) => PARENTS.includes(entry.id as typeof PARENTS[number]));
+  const sources = (validateLock(input.sourceLockJson).filter((entry) => PARENTS.includes(entry.id as typeof PARENTS[number]))).map(sourceLockContent);
   const records = geography.rows.map((geo) => {
     const matches = identity.observations.filter((row) => row.observationId === geo.identityObservationId), identityRow = matches[0];
     if (matches.length !== 1 || identityRow === undefined || geo.identityRowSha256 !== identityRow.rowSha256 || geo.identityStatus !== identityRow.identityStatus || geo.contestId !== identityRow.contestId || geo.contestSha256 !== identityRow.contestSha256 || geo.resultAuthorityStatus !== identityRow.resultAuthorityStatus || geo.certificationStatus !== identityRow.certificationStatus || geo.sourceWinnerStatus !== identityRow.sourceWinnerStatus || geo.cycleYear !== identityRow.cycleYear || geo.electionDate !== identityRow.electionDate || geo.seatCycleId !== identityRow.seatCycleId || geo.districtCode !== identityRow.districtCode) fail("PARENT_JOIN_INVALID");

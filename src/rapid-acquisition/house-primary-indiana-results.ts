@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { byteCompare, hash, sha, exact } from "./shared";
@@ -16,7 +17,7 @@ export function buildIndianaPrimaryResults(root = process.cwd()): IndianaPrimary
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] }, results: IndianaPrimaryResult[] = [];
   for (const cycleYear of [2022, 2024] as const) {
     const pin = PINS[cycleYear], settingsBytes = readFileSync(join(root, pin.settings.path)), resultsBytes = readFileSync(join(root, pin.results.path));
-    for (const source of [pin.settings, pin.results]) { const bytes = source === pin.settings ? settingsBytes : resultsBytes, matches = lock.entries.filter((entry) => entry.id === source.id), expected = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [...source.parents] }; if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`INDIANA_SOURCE_BINDING_INVALID:${source.id}`); }
+    for (const source of [pin.settings, pin.results]) { const bytes = source === pin.settings ? settingsBytes : resultsBytes, matches = lock.entries.filter((entry) => entry.id === source.id), expected = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [...source.parents] }; if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`INDIANA_SOURCE_BINDING_INVALID:${source.id}`); }
     const settings = JSON.parse(settingsBytes.toString("utf8")) as { Root?: { CurrentElection?: string; ElectionType?: string; Certified?: string } }, parsed = JSON.parse(resultsBytes.toString("utf8")) as { Root?: { StatewideSummary?: { Race?: Race[] } } };
     if (settings.Root?.CurrentElection !== (cycleYear === 2022 ? "05/03/2022" : "05/07/2024") || settings.Root.ElectionType !== "P" || settings.Root.Certified !== pin.certified) throw new Error(`INDIANA_SETTINGS_INVALID:${cycleYear}`);
     const races = parsed.Root?.StatewideSummary?.Race; if (!Array.isArray(races) || races.length !== 9) throw new Error(`INDIANA_HOUSE_RACE_CLOSURE_INVALID:${cycleYear}`);

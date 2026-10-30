@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -124,7 +125,7 @@ export function buildNewMexicoPrimaryJointReviewPackage(input: Input) {
     decision("nm-primary:retain-progressive-classification-exclusion-v1", CONTROL[4], "progressive classification", "retain_all_records_outside_progressive_classification_until_separate_evidence"),
   ];
   const summary = { reviewRecords: 9 as const, identityAndGeographyCandidates: 6 as const, identityCandidateCd120GeographyPending: 3 as const, officialAuthorityRecords: 9 as const, identityCandidates: 9 as const, geographyCandidates: 6 as const, exactIdentityCandidates: 3 as const, derivedIdentityCandidates: 6 as const, proposedDecisions: 5 as const, jointApprovedRecords: 0 as const, scoreEligibleRecords: 0 as const };
-  const sources = entries.filter((entry) => PARENTS.includes(entry.id as typeof PARENTS[number]));
+  const sources = (entries.filter((entry) => PARENTS.includes(entry.id as typeof PARENTS[number]))).map(sourceLockContent);
   const unsigned = {
     schema: NEW_MEXICO_PRIMARY_JOINT_REVIEW_V1,
     version: 1 as const,

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -57,7 +58,7 @@ export function buildWisconsinPrimaryResults(root = process.cwd()): WisconsinPri
     const pdf = readFileSync(join(root, source.pdf.path)), text = readFileSync(join(root, source.text.path));
     const pdfLock = { id: source.pdf.id, url: source.pdf.url, retainedPath: source.pdf.path, retainedStatus: "retained", byteSize: source.pdf.bytes, sha256: source.pdf.sha256, kind: "official_canvass_report", parentIds: [] };
     const textLock = { id: source.text.id, url: source.text.url, retainedPath: source.text.path, retainedStatus: "retained", byteSize: source.text.bytes, sha256: source.text.sha256, kind: "derived_extract", parentIds: [source.pdf.id] };
-    if (!pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || pdf.length !== source.pdf.bytes || sha(pdf) !== source.pdf.sha256 || text.length !== source.text.bytes || sha(text) !== source.text.sha256 || lock.entries.filter((entry) => entry.id === source.pdf.id).length !== 1 || lock.entries.filter((entry) => entry.id === source.text.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === source.pdf.id), pdfLock) || !exact(lock.entries.find((entry) => entry.id === source.text.id), textLock)) throw new Error(`WISCONSIN_PRIMARY_SOURCE_BINDING_INVALID:${source.cycleYear}`);
+    if (!pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || pdf.length !== source.pdf.bytes || sha(pdf) !== source.pdf.sha256 || text.length !== source.text.bytes || sha(text) !== source.text.sha256 || lock.entries.filter((entry) => entry.id === source.pdf.id).length !== 1 || lock.entries.filter((entry) => entry.id === source.text.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.pdf.id)), pdfLock) || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.text.id)), textLock)) throw new Error(`WISCONSIN_PRIMARY_SOURCE_BINDING_INVALID:${source.cycleYear}`);
     const value = text.toString("utf8");
     if (!value.includes(`WEC Canvass Reporting System`) || !value.includes(`${source.cycleYear} Partisan Primary`) || !value.includes(`Report Generated - ${source.generated}`)) throw new Error(`WISCONSIN_PRIMARY_DOCUMENT_IDENTITY_INVALID:${source.cycleYear}`);
     sourceText.set(source.cycleYear, value);

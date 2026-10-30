@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -105,7 +106,7 @@ const PINS = {
 const cached = new Map<string, KansasPrimaryResults>();
 export function buildKansasPrimaryResults(root = process.cwd()): KansasPrimaryResults {
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] };
-  const sourceBytes = ([2022, 2024] as const).map((year) => { const pin = PINS[year], bytes = readFileSync(join(root, pin.path)), digest = createHash("sha256").update(bytes).digest("hex"), matches = lock.entries.filter((entry) => entry.id === pin.id); if (bytes.length !== pin.bytes || digest !== pin.sha256 || matches.length !== 1 || !exact(matches[0], { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: "source", parentIds: [] })) throw new Error(`KANSAS_SOURCE_BINDING_INVALID:${year}`); return bytes; });
+  const sourceBytes = ([2022, 2024] as const).map((year) => { const pin = PINS[year], bytes = readFileSync(join(root, pin.path)), digest = createHash("sha256").update(bytes).digest("hex"), matches = lock.entries.filter((entry) => entry.id === pin.id); if (bytes.length !== pin.bytes || digest !== pin.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: "source", parentIds: [] })) throw new Error(`KANSAS_SOURCE_BINDING_INVALID:${year}`); return bytes; });
   const cacheKey = `${root}:${PINS[2022].sha256}:${PINS[2024].sha256}`, prior = cached.get(cacheKey); if (prior) return prior;
   const results = [parseCycle(sourceBytes[0]!, 2022), parseCycle(sourceBytes[1]!, 2024)];
   const summary = { observations: 2 as const, candidateRows: 2 as const, candidateVotes: 141782 as const, scoreEligibleRows: 0 as const };

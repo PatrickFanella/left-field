@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { hash, sha } from "../shared";
+import { sourceLockMatches } from "./source-lock-content";
 
 /**
  * Read, verify, and upsert `data/source-lock.json` entries.
@@ -19,6 +20,16 @@ export interface SourceLockEntry {
   readonly sha256: string;
   readonly kind: string;
   readonly parentIds: readonly string[];
+  /** Optional only for legacy in-memory builders; serialized locks require it. */
+  readonly license?: string;
+  readonly licenseEvidence?: SourceLicenseEvidence;
+}
+export interface SourceLicenseEvidence {
+  readonly url: string;
+  readonly scope: "dataset" | "software" | "derived_artifact";
+  readonly reviewedAt: string;
+  readonly notes: string;
+  readonly retainedSourceId?: string;
 }
 export interface SourceLock {
   readonly version: 1;
@@ -97,18 +108,26 @@ export function upsertSourceLockEntry(
   );
   if (pathConflict) fail(`PATH_CONFLICT:${entry.retainedPath}`);
   const index = lock.entries.findIndex((existing) => existing.id === entry.id);
+  const existing = index === -1 ? undefined : lock.entries[index];
+  // Carry a review forward only while the source identity and content stay pinned.
+  const sameSource = sourceLockMatches(existing, entry);
+  const reviewedEntry = entry.license !== undefined ? entry : {
+    ...entry,
+    license: sameSource ? existing?.license ?? "unknown" : "unknown",
+    ...(sameSource && existing?.licenseEvidence ? { licenseEvidence: existing.licenseEvidence } : {}),
+  };
   const entries =
     index === -1
-      ? [...lock.entries, entry]
+      ? [...lock.entries, reviewedEntry]
       : lock.entries.map((existing, position) =>
-          position === index ? entry : existing,
+          position === index ? reviewedEntry : existing,
         );
   return { version: 1, entries };
 }
 
 /** Matches the committed layout: one compact entry per line, four-space indent. */
 export function serializeSourceLock(lock: SourceLock): string {
-  const lines = lock.entries.map((entry) => `    ${JSON.stringify(entry)}`);
+  const lines = lock.entries.map((entry) => `    ${JSON.stringify({ ...entry, license: entry.license ?? "unknown" })}`);
   return `{\n  "version": 1,\n  "entries": [\n${lines.join(",\n")}\n  ]\n}\n`;
 }
 

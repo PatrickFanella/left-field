@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../src/rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -52,7 +53,7 @@ async function main() {
     const sourceLockId = `medsl-2024-house-state-${state}`, path = `data/source/rapid/county-house-results/2024/${state}24.zip`;
     const bytes = await readFile(join(root, path)), entry = lock.entries.find((item) => item.id === sourceLockId);
     const expected = { id: sourceLockId, url: `https://raw.githubusercontent.com/MEDSL/2024-elections-official/${COMMIT}/individual_states/${state}24.zip`, retainedPath: path, retainedStatus: "retained", byteSize: bytes.length, sha256: sha(bytes), kind: "source", parentIds: [] };
-    if (!entry || canonical(entry) !== canonical(expected)) throw new Error(`COUNTY_HOUSE_SOURCE_BINDING_INVALID:${state}`);
+    if (!entry || canonical(sourceLockContent(entry)) !== canonical(expected)) throw new Error(`COUNTY_HOUSE_SOURCE_BINDING_INVALID:${state}`);
     let header: string[] | null = null, rowNumber = 0, strictTotalRows = 0;
     for await (const line of sourceRows(join(root, path))) {
       rowNumber++;

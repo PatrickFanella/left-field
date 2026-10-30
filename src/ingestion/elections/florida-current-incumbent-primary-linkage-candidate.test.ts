@@ -129,6 +129,6 @@ describe("Florida current-incumbent primary linkage candidate", () => {
         "congress-legislators-current-20260804",
         "florida-house-democratic-primary-results-2022-2026-v1",
       ],
-    }]);
+    license: "unknown", }]);
   });
 });

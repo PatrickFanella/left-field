@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
 import { validateConnecticutGeneralElectionCrosscheckReceipt } from "./connecticut-general-election-crosscheck-receipt";
@@ -39,9 +40,9 @@ const ROW_KEYS = ["approved", "cancellationTiming", "cycleYear", "districtCode",
 export function buildConnecticutPrimaryEvidenceReviewPackageV2(input: Input) {
   if (sha(input.jointBytes) !== FILES.joint || sha(input.generalBytes) !== FILES.general || sha(input.statutoryBytes) !== FILES.statutory) fail();
   const { joint, general, statutory, lock } = (() => { try { return { joint: validateConnecticutPrimaryJointReviewPackage(JSON.parse(input.jointBytes.toString("utf8"))), general: validateConnecticutGeneralElectionCrosscheckReceipt(JSON.parse(input.generalBytes.toString("utf8"))), statutory: validateConnecticutNominationStatutoryAuthorityReceipt(JSON.parse(input.statutoryBytes.toString("utf8"))), lock: JSON.parse(input.sourceLockBytes.toString("utf8")) as { entries?: Array<{ id: string }> } }; } catch { return fail(); } })();
-  const sources = sourceIds.map((id) => { const matches = lock.entries?.filter((entry: { id: string }) => entry.id === id) ?? []; if (matches.length !== 1) fail(); return matches[0]; });
+  const sources = sourceIds.map((id) => { const matches = lock.entries?.filter((entry: { id: string }) => entry.id === id) ?? []; if (matches.length !== 1) fail(); return sourceLockContent(matches[0]); });
   const outputMatches = lock.entries?.filter((entry: { id: string }) => entry.id === outputLockEntry.id) ?? [];
-  if (digest("dsa-seats:ct-primary-evidence-review-source-set:v2\0", sources) !== SOURCE_SET_SHA256 || outputMatches.length !== 1 || canonicalJson(outputMatches[0]) !== canonicalJson(outputLockEntry)) fail();
+  if (digest("dsa-seats:ct-primary-evidence-review-source-set:v2\0", sources) !== SOURCE_SET_SHA256 || outputMatches.length !== 1 || canonicalJson(sourceLockContent(outputMatches[0])) !== canonicalJson(sourceLockContent(outputLockEntry))) fail();
   const records: RecordRow[] = joint.records.map((jointRow, index) => {
     const generalRow = general.rows[index], statutoryRow = statutory.cycles.find((row) => row.cycleYear === jointRow.cycleYear);
     if (!generalRow || !statutoryRow) fail();

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -96,7 +97,7 @@ export function buildKentuckyPrimaryResultsV3(root = process.cwd()): KentuckyPri
       parentIds: [...pin.parentIds],
     };
     const matches = lock.entries.filter((entry) => entry.id === pin.id);
-    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(matches[0], expected)) {
+    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) {
       throw new Error(`KENTUCKY_2026_SOURCE_BINDING_INVALID:${pin.id}`);
     }
   }

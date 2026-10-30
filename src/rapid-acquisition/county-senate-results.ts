@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -74,7 +75,7 @@ export function buildCountySenateResultsProjection(root = process.cwd()): County
   const sourceBytes = readFileSync(join(root, SOURCE.path));
   const expectedLock = { id: SOURCE.id, url: SOURCE.url, retainedPath: SOURCE.path, retainedStatus: "retained", byteSize: SOURCE.bytes, sha256: SOURCE.sha256, kind: "source", parentIds: [] };
   const matches = lock.entries.filter((entry) => entry.id === SOURCE.id);
-  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || matches.length !== 1 || !exact(matches[0], expectedLock)) throw new Error("COUNTY_SENATE_RESULTS_SOURCE_BINDING_INVALID");
+  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expectedLock)) throw new Error("COUNTY_SENATE_RESULTS_SOURCE_BINDING_INVALID");
 
   const counties = new Map(validateCountyDemographicsProjection(JSON.parse(readFileSync(join(root, "data/metadata/rapid-county-demographics-projection-v1.json"), "utf8")), root).rows.map((row) => [row.countyFips, row]));
   const parsed = csv(sourceBytes.toString("utf8")), header = parsed[0]!, required = ["year", "state_po", "office", "county_name", "county_fips", "candidate", "party_detailed", "party_simplified", "writein", "mode", "votes", "totalvotes", "stage", "special", "unofficial", "version"];

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { type MissouriPrimaryResult, validateMissouriPrimaryResults } from "./house-primary-missouri-results";
@@ -39,7 +40,7 @@ export function buildMissouriPrimaryResultsV2(root = process.cwd()): MissouriPri
     const bytes = readFileSync(join(root, pin.path));
     if (pin === TEXT) text = bytes.toString("utf8");
     const expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: pin.kind, parentIds: [...pin.parentIds] };
-    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || lock.entries.filter((entry) => entry.id === pin.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === pin.id), expected)) throw new Error(`MISSOURI_2022_SOURCE_BINDING_INVALID:${pin.id}`);
+    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || lock.entries.filter((entry) => entry.id === pin.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === pin.id)), expected)) throw new Error(`MISSOURI_2022_SOURCE_BINDING_INVALID:${pin.id}`);
   }
   if (!/Missouri Office of Secretary of State\s+OFFICIAL RESULTS\s+Primary Election - August 2, 2022/.test(text)) throw new Error("MISSOURI_2022_DOCUMENT_IDENTITY_INVALID");
   if (!/U\.S\. Representative[\s\S]*?District 1[\s\S]*?Ron Harshaw Michael Daniels\s+Cori Bush Earl Childress Steve Roberts[\s\S]*?Total\s+5153\s+6937\s+4260\s+1065\s+1683\s+65326\s+929\s+25015/.test(text)) throw new Error("MISSOURI_2022_DISTRICT_01_INVALID");

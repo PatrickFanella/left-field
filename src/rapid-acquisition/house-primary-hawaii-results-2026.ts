@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -58,7 +59,7 @@ export function buildHawaiiPrimaryResults2026(root = process.cwd()): HawaiiPrima
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] };
   const sourceBytes = readFileSync(join(root, SOURCE.path));
   const expectedLock = { id: SOURCE.id, url: SOURCE.url, retainedPath: SOURCE.path, retainedStatus: "retained", byteSize: SOURCE.bytes, sha256: SOURCE.sha256, kind: "official_result_snapshot", parentIds: [] };
-  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === SOURCE.id), expectedLock)) throw new Error("HAWAII_2026_SOURCE_BINDING_INVALID");
+  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === SOURCE.id)), expectedLock)) throw new Error("HAWAII_2026_SOURCE_BINDING_INVALID");
 
   const rows = sourceBytes.toString("utf8").split(/\r?\n/).filter(Boolean).map((line) => line.split("\t").map(unquote));
   if (rows.length !== 295 || rows[0]?.[0] !== "#FormatVersion 1" || rows[1]?.[0] !== "#Contest ID" || rows[1]?.[20] !== "Total Votes" || rows.slice(2).some((row) => row.length !== 21)) throw new Error("HAWAII_2026_SCHEMA_INVALID");

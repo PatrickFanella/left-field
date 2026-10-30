@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
 import { validateHouseDemocraticPrimarySourceSelectionProposal } from "./house-democratic-primary-source-selection-proposal";
@@ -58,11 +59,11 @@ export function buildMinnesotaPrimaryJointReviewPackage(input: Input) {
   const lock = parse<{ entries?: Array<{ id?: string; url?: string; retainedPath?: string; retainedStatus?: string; byteSize?: number; sha256?: string; kind?: string; parentIds?: string[] }> }>(input.sourceLockJson, "SOURCE_LOCK_JSON_INVALID");
   if (!Array.isArray(lock.entries)) fail("SOURCE_LOCK_MISMATCH");
   const lockEntries = lock.entries ?? fail("SOURCE_LOCK_MISMATCH");
-  const sources = EXPECTED_SOURCES.map(([id, url, path, bytes, hash, kind, parents]) => {
+  const sources = (EXPECTED_SOURCES.map(([id, url, path, bytes, hash, kind, parents]) => {
     const matches = lockEntries.filter((entry) => entry.id === id), entry = matches[0];
     if (matches.length !== 1 || entry?.url !== url || entry.retainedPath !== path || entry.retainedStatus !== "retained" || entry.byteSize !== bytes || entry.sha256 !== hash || entry.kind !== kind || canonicalJson(entry.parentIds) !== canonicalJson(parents)) fail("SOURCE_LOCK_MISMATCH");
     return entry;
-  });
+  })).map(sourceLockContent);
   const outputMatches = lockEntries.filter((entry) => entry.id === MINNESOTA_PRIMARY_JOINT_REVIEW_V1), output = outputMatches[0];
   if (outputMatches.length !== 1 || output?.url !== "urn:dsa-seats:minnesota-primary-identity-geography-review-package:v1:2022-2024" || output.retainedPath !== "data/metadata/minnesota-primary-identity-geography-review-package-v1.json" || output.retainedStatus !== "retained" || output.byteSize !== MINNESOTA_PRIMARY_JOINT_OUTPUT_BYTE_SIZE || output.sha256 !== MINNESOTA_PRIMARY_JOINT_OUTPUT_FILE_SHA256 || output.kind !== "review_proposal" || canonicalJson(output.parentIds) !== canonicalJson(PARENTS)) fail("SOURCE_LOCK_MISMATCH");
   const records = geography.rows.map((geo) => {

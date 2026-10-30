@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -60,7 +61,7 @@ export function buildSouthCarolinaPrimaryResultsV3(root=process.cwd()):SouthCaro
     const data=readFileSync(join(root,source.path)); bytes.set(source.id,data);
     const expected={id:source.id,url:source.url,retainedPath:source.path,retainedStatus:"retained",byteSize:source.bytes,sha256:source.sha256,kind:"source",parentIds:[...source.parents]};
     const matches=lock.entries.filter((entry)=>entry.id===source.id);
-    if(data.length!==source.bytes||sha(data)!==source.sha256||matches.length!==1||!exact(matches[0],expected)) throw new Error(`SOUTH_CAROLINA_2026_SOURCE_BINDING_INVALID:${source.id}`);
+    if(data.length!==source.bytes||sha(data)!==source.sha256||matches.length!==1||!exact(sourceLockContent(matches[0]),expected)) throw new Error(`SOUTH_CAROLINA_2026_SOURCE_BINDING_INVALID:${source.id}`);
   }
   const landing=bytes.get("sc-2026-election-results-index")!.toString("utf8");
   if(!landing.includes('href="https://www.enr-scvotes.org/SC/126294/">Statewide Primaries</a>')||!landing.includes("June 9, 2026")) throw new Error("SOUTH_CAROLINA_2026_INDEX_INVALID");

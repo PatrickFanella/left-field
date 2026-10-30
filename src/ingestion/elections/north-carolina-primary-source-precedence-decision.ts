@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { z } from "zod";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -149,7 +150,7 @@ export function buildNcPrimarySourcePrecedenceDecision(input: Readonly<{
   const comparison = receipt.canvassComparisons.find((row: { cycleYear: number }) => row.cycleYear === 2022);
   if (!comparison || comparison.archiveVotes !== 424306 || comparison.canvassVotes !== 424321 || comparison.differenceCount !== 4 || canonicalJson(comparison.differences) !== canonicalJson(EXPECTED_DIFFERENCES)) fail("CONFLICT_EVIDENCE_MISMATCH");
   const relevantIds = new Set<string>([...SOURCE_IDS, "north-carolina-house-democratic-primary-results-2022-2026-v1"]);
-  const relevantEntries = input.sourceLockEntries.filter((entry) => relevantIds.has(entry.id));
+  const relevantEntries = (input.sourceLockEntries.filter((entry) => relevantIds.has(entry.id))).map(sourceLockContent);
   if (relevantEntries.length !== relevantIds.size || relevantEntries.some((entry, index) => relevantEntries.findIndex((candidate) => candidate.id === entry.id) !== index)) fail("SOURCE_LOCK_CLOSURE_MISMATCH");
   const entries = new Map(input.sourceLockEntries.map((entry) => [entry.id, entry]));
   const receiptEntry = entries.get("north-carolina-house-democratic-primary-results-2022-2026-v1");

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -55,7 +56,7 @@ const order = (left: string, right: string) => Buffer.compare(Buffer.from(left),
 const fail = (reason: string): never => { throw new Error(`CA_2026_PRIMARY_BLOCK_CROSSWALK_INVALID:${reason}`); };
 const exactEntry = (entries: LockEntry[], expected: LockEntry) => {
   const matches = entries.filter((entry) => entry.id === expected.id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
 };
 
 function parseBlocks(bytes: Buffer, source: "ab604" | "cd119") {

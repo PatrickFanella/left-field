@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 type Candidate = Readonly<{
   sourceCandidateName: string;
   candidacyKind: "named_candidate";
@@ -111,7 +112,7 @@ export function buildOhioPrimaryResultsReceiptV4(inputs: readonly CountyInput[],
   const countyResultSegments2022 = [...parent.countyResultSegments2022, ...additions];
   const contests = parent.contests;
   const contestSetSha256 = digest("dsa-seats:oh-house-democratic-primary-result-set:v4\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 })));
-  const sources = [...parent.sources, ...inputs.map((input) => input.entry)].sort((left, right) => left.id.localeCompare(right.id));
+  const sources = ([...parent.sources, ...inputs.map((input) => input.entry)].sort((left, right) => left.id.localeCompare(right.id))).map(sourceLockContent);
   const limitations = [
     "The official March 2, 2022 county-composition PDF renders at its Secretary of State URL, but direct byte retrieval remains blocked by Cloudflare; no 2022 district observation is emitted without retained authority bytes.",
     "OH-09 still lacks source-locked final county totals for Defiance and Lucas. Defiance's official precinct canvass is not summed, and Lucas's exact surviving payload is explicitly unofficial.",

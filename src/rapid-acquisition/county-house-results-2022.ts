@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { byteCompare, canonical, hash, sha } from "./shared";
@@ -32,7 +33,7 @@ export function validateCountyHouseResults2022Projection(value: unknown, root = 
     const state = String(row.stateCode).toLowerCase(), path = `data/source/rapid/county-house-results/2022/2022-${state}-local-precinct-general.zip`, bytes = readFileSync(join(root, path));
     const expected = { id: row.sourceLockId, url: `https://raw.githubusercontent.com/MEDSL/2022-elections-official/${COMMIT}/individual_states/2022-${state}-local-precinct-general.zip`, retainedPath: path, retainedStatus: "retained", byteSize: bytes.length, sha256: sha(bytes), kind: "source", parentIds: [] };
     const matches = lock.entries.filter((entry) => entry.id === row.sourceLockId);
-    if (matches.length !== 1 || canonical(matches[0]) !== canonical(expected)) throw new Error("COUNTY_HOUSE_2022_ARCHIVE_SOURCE_INVALID");
+    if (matches.length !== 1 || canonical(sourceLockContent(matches[0])) !== canonical(expected)) throw new Error("COUNTY_HOUSE_2022_ARCHIVE_SOURCE_INVALID");
   }
   const rows = projection.rows as Record<string, unknown>[], rowKeys = ["countyFips", "stateCode", "countyName", "cycleYear", "office", "districtRaw", "candidateName", "candidateParty", "candidatePartyDetailed", "specialElection", "writeIn", "votes", "suppressedSourceRows", "sourceRowCount", "sourceRowSetSha256", "sourceLockId", "authority", "winnerIdentity", "formulaEligible", "rowSha256"];
   const natural = new Set<string>(); let retainedSourceRows = 0, suppressedSourceRows = 0, blankDistrictSourceRows = 0;
@@ -56,7 +57,7 @@ export function validateCountyHouseResults2022Projection(value: unknown, root = 
   if (output.length === 1) {
     const expectedParents = [...coverage.map((row) => row.sourceLockId as string), "rapid-county-demographics-projection-v1"];
     const expectedOutput = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: outputBytes.length, sha256: sha(outputBytes), kind: "derived_artifact", parentIds: expectedParents };
-    if (canonical(output[0]) !== canonical(expectedOutput)) throw new Error("COUNTY_HOUSE_2022_OUTPUT_LOCK_INVALID");
+    if (canonical(sourceLockContent(output[0])) !== canonical(expectedOutput)) throw new Error("COUNTY_HOUSE_2022_OUTPUT_LOCK_INVALID");
   } else if (output.length !== 0) throw new Error("COUNTY_HOUSE_2022_OUTPUT_LOCK_INVALID");
   return value as CountyHouseResults2022Projection;
 }

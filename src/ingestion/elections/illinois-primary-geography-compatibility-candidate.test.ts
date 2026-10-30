@@ -70,7 +70,7 @@ describe("Illinois primary geography compatibility candidate", () => {
         "tiger-cd118-17",
         "tiger-cd119-17",
       ],
-    });
+    license: "unknown", });
   });
 
   it("closes all thirty-four retained contests while preserving all four evaluator gates", () => {
