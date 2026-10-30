@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -84,7 +85,7 @@ const sha = (bytes: Buffer | string) => createHash("sha256").update(bytes).diges
 const digest = (domain: string, value: unknown) => createHash("sha256").update(domain, "ascii").update(canonicalJson(value), "utf8").digest("hex");
 const exactEntry = (entries: readonly LockEntry[], id: string, expected: Omit<LockEntry, "id">): LockEntry => {
   const matches = entries.filter((entry) => entry.id === id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson({ id, ...expected })) fail("SOURCE_LOCK_INVALID");
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent({ id, ...expected }))) fail("SOURCE_LOCK_INVALID");
   return matches[0]!;
 };
 const fileEntry = (url: string, retainedPath: string, byteSize: number, sha256: string, kind: string, parentIds: readonly string[]) => ({ url, retainedPath, retainedStatus: "retained", byteSize, sha256, kind, parentIds });
@@ -119,7 +120,7 @@ export function buildNewYorkMetroPrimaryCountyAuthorityReceipt(input: NewYorkMet
   const v2Bytes = Buffer.from(input.dispositionV2Json); if (sha(v2Bytes) !== V2_FILE_SHA256) fail("DISPOSITION_V2_BYTES_INVALID");
   const v2 = validateNewYorkPrimaryDispositionsV2Receipt(JSON.parse(input.dispositionV2Json));
   if (v2.packageSha256 !== NEW_YORK_DISPOSITION_V2_PACKAGE_SHA256 || v2.rows.filter((row) => row.disposition === "unresolved_outside_retained_authority_scope").length !== 18 || v2.rows.find((row) => row.seatCycleId === "ny:2024:us-house:01:democratic")?.disposition !== "unresolved_outside_retained_authority_scope") fail("DISPOSITION_V2_SCOPE_INVALID");
-  const districtCountyFips = countyComposition(input.cd119Bytes), sources = checkSources(input);
+  const districtCountyFips = countyComposition(input.cd119Bytes), sources = (checkSources(input)).map(sourceLockContent);
   validateCountyNameAuthority(input.countyCodesBytes);
   exactEntry(input.sourceLock.entries, "new-york-house-democratic-primary-dispositions-2022-2024-v2", fileEntry("urn:dsa-seats:new-york-house-democratic-primary-dispositions:v2:2022-2024", "data/metadata/new-york-house-democratic-primary-dispositions-2022-2024-v2.json", 54_724, V2_FILE_SHA256, "review_candidate", ["new-york-house-democratic-primary-dispositions-2022-2024-v1", "new-york-city-house-democratic-primary-certified-results-2022-2024-v1"]));
   exactEntry(input.sourceLock.entries, "census-cd119-new-york-block-equivalency-extract-20260805", fileEntry("urn:dsa-seats:census-cd119-bef:36_NY_CD119.txt", "data/source/elections/primary-results/geography/new-york/current/36_NY_CD119.txt", 5_776_392, CD119_SHA256, "derived_extract", ["census-cd119-block-equivalency-bundle-20260805"]));

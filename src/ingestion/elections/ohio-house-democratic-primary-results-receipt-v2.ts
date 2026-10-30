@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -112,7 +113,7 @@ export function buildOhioPrimaryResultsReceiptV2(inputs: readonly CountyInput[],
   }));
   const contests: V2Contest[] = [...parent.contests].sort((left, right) => left.contestId.localeCompare(right.contestId));
   const contestSetSha256 = digest("dsa-seats:oh-house-democratic-primary-result-set:v2\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 })));
-  const sources = [...parent.sources, ...inputs.map((input) => input.entry)].sort((left, right) => left.id.localeCompare(right.id));
+  const sources = ([...parent.sources, ...inputs.map((input) => input.entry)].sort((left, right) => left.id.localeCompare(right.id))).map(sourceLockContent);
   const limitations = [
     "The Ohio Secretary of State March 2, 2022 county-population and filing-location PDF is verified at its official URL but its bytes remain unretained because the portal returned a Cloudflare 403; the exact 15-segment matrix is research-derived and is not a geography approval.",
     "No 2022 district observation is emitted because the controlling county-composition authority bytes are not retained. Even rows whose research-derived matrix has no missing county segment remain county-segment progress rather than district totals.",

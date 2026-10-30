@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { unzipSync } from "fflate";
@@ -78,7 +79,7 @@ function extract(bytes: Buffer, csvs: readonly (readonly [string, string])[], cy
 
 export function buildAlabamaPrimaryResults(root = process.cwd()): AlabamaPrimaryResults {
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] }; const extracted: Record<string, Record<string, readonly (readonly [string, number])[]>> = {};
-  for (const source of SOURCES) { const bytes = readFileSync(join(root, source.path)), matches = lock.entries.filter((entry) => entry.id === source.id), expectedLock = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [] }; if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || matches.length !== 1 || !exact(matches[0], expectedLock)) throw new Error(`ALABAMA_SOURCE_BINDING_INVALID:${source.id}`); extracted[source.cycle] = extract(bytes, readWorkbookCsvZipExtract(readSourceLock(root), workbookExtractId(source.id), source.id, root), source.cycle); }
+  for (const source of SOURCES) { const bytes = readFileSync(join(root, source.path)), matches = lock.entries.filter((entry) => entry.id === source.id), expectedLock = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [] }; if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expectedLock)) throw new Error(`ALABAMA_SOURCE_BINDING_INVALID:${source.id}`); extracted[source.cycle] = extract(bytes, readWorkbookCsvZipExtract(readSourceLock(root), workbookExtractId(source.id), source.id, root), source.cycle); }
   if (!exact(extracted, EXPECTED)) throw new Error("ALABAMA_EXTRACTED_RESULTS_INVALID");
   const results: AlabamaPrimaryResult[] = [];
   const configurations: readonly Readonly<{ cycleYear: 2022 | 2024; district: "02" | "07"; candidates: readonly (readonly [string, number])[] }>[] = [{ cycleYear: 2022, district: "02", candidates: EXPECTED["2022"]["02"] }, { cycleYear: 2024, district: "02", candidates: EXPECTED["2024"]["02"] }, { cycleYear: 2024, district: "07", candidates: EXPECTED["2024"]["07"] }];

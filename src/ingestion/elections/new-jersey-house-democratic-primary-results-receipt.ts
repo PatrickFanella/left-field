@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -65,7 +66,7 @@ function parse(input: NewJerseyPrimaryInput): readonly Contest[] {
 }
 
 export function buildNewJerseyPrimaryResultsReceipt(inputs: readonly NewJerseyPrimaryInput[]): NewJerseyPrimaryResultsReceipt {
-  if (inputs.length !== 3) fail("SOURCE_CLOSURE_INVALID"); const sources = inputs.flatMap((input) => [input.pdfEntry, input.textEntry]).sort((a, b) => bytewise(a.id, b.id)), contests = inputs.flatMap(parse).sort((a, b) => bytewise(a.contestId, b.contestId));
+  if (inputs.length !== 3) fail("SOURCE_CLOSURE_INVALID"); const sources = (inputs.flatMap((input) => [input.pdfEntry, input.textEntry]).sort((a, b) => bytewise(a.id, b.id))).map(sourceLockContent), contests = inputs.flatMap(parse).sort((a, b) => bytewise(a.contestId, b.contestId));
   if (new Set(sources.map((source) => source.id)).size !== 6 || contests.length !== 36 || new Set(contests.map((contest) => contest.contestId)).size !== 36) fail("PACKAGE_CLOSURE_INVALID");
   const contestSetSha256 = digest("dsa-seats:nj-house-democratic-primary-result-set:v1\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 }))); const sourceWinnerMarkedContests = contests.filter((contest) => contest.winnerSourceCandidateName !== null).length, sourceIncumbentMarkers = contests.reduce((sum, contest) => sum + contest.candidates.filter((candidate) => candidate.incumbentMarker).length, 0);
   const unsigned = { schema: NEW_JERSEY_HOUSE_DEMOCRATIC_PRIMARY_RESULTS_V1, version: 1 as const, generatedAt: "2026-08-05T23:00:00.000Z" as const, sourceCutoff: "2026-08-05" as const, reviewerOnly: true as const, publicationEligible: false as const, review: { status: "proposed" as const, reviewer: null, reviewedAt: null }, originalPublisher: "New Jersey Department of State, Division of Elections" as const, status: "official_result_candidate" as const, extraction: { tool: "pdftotext" as const, toolVersion: "26.07.0" as const, layoutMode: true as const, derivedExtractsSourceLocked: true as const, candidateAddressesExcludedFromReceipt: true as const }, sources, contests, summary: { contests: 36 as const, contests2022: 12 as const, contests2024: 12 as const, contests2026: 12 as const, candidates: 83 as const, candidateVotes: 1522601 as const, sourceWinnerMarkedContests: 36 as const, sourceWinnerUnmarkedContests: 0 as const, sourceIncumbentMarkers: 25 as const, contestSetSha256, evaluatorNumericValues: 0 as const, scoreEligibleContests: 0 as const }, limitations: LIMITATIONS, unresolvedGates: GATES };

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -36,13 +37,13 @@ const sha = (value: string | Buffer): string => createHash("sha256").update(valu
 const digest = (domain: string, value: unknown): string => createHash("sha256").update(domain, "ascii").update(canonicalJson(value), "utf8").digest("hex");
 const fail = (reason: string): never => { throw new Error(`MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_INVALID:${reason}`); };
 const parse = (value: string, reason: string): unknown => { try { return JSON.parse(value); } catch { return fail(reason); } };
-const exact = (entries: readonly LockEntry[], expected: LockEntry): void => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail("SOURCE_LOCK"); };
+const exact = (entries: readonly LockEntry[], expected: LockEntry): void => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail("SOURCE_LOCK"); };
 
 function parents(input: MainePrimaryGeographyCompatibilityCandidateInput) {
   if (input.sourceLock.version !== 1 || sha(input.proposalJson) !== INPUTS.proposalFile || sha(input.resultsReceiptJson) !== INPUTS.resultsFile || sha(input.identityCandidateJson) !== INPUTS.identityFile || sha(input.authorityReceiptJson) !== INPUTS.authorityFile) fail("INPUT_BYTES");
   for (const entry of REQUIRED) exact(input.sourceLock.entries, entry);
   const output = input.sourceLock.entries.filter((entry) => entry.id === MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_V1);
-  if (output.length !== 1 || canonicalJson(output[0]) !== canonicalJson({ id: MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_V1, url: "urn:dsa-seats:maine-primary-geography-compatibility-candidate:v1:2022-2026", retainedPath: "data/metadata/maine-primary-geography-compatibility-candidate-v1.json", retainedStatus: "retained", byteSize: MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_FILE_BYTES, sha256: MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_FILE_SHA256, kind: "review_candidate", parentIds: PARENTS })) fail("OUTPUT_LOCK");
+  if (output.length !== 1 || canonicalJson(sourceLockContent(output[0])) !== canonicalJson(sourceLockContent({ id: MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_V1, url: "urn:dsa-seats:maine-primary-geography-compatibility-candidate:v1:2022-2026", retainedPath: "data/metadata/maine-primary-geography-compatibility-candidate-v1.json", retainedStatus: "retained", byteSize: MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_FILE_BYTES, sha256: MAINE_PRIMARY_GEOGRAPHY_COMPATIBILITY_CANDIDATE_FILE_SHA256, kind: "review_candidate", parentIds: PARENTS }))) fail("OUTPUT_LOCK");
   const proposal = validateHouseDemocraticPrimarySourceSelectionProposal(parse(input.proposalJson, "PROPOSAL_JSON"));
   const results = validateMainePrimaryResultsReceipt(parse(input.resultsReceiptJson, "RESULTS_JSON") as MainePrimaryResultsReceipt);
   const identity = validateMainePrimaryIdentityCandidate(parse(input.identityCandidateJson, "IDENTITY_JSON") as MainePrimaryIdentityCandidate);

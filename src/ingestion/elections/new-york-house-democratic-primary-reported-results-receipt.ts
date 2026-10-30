@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -80,8 +81,8 @@ function parse(input: NewYorkReportedResultInput): NewYorkReportedContest {
 }
 
 export function buildNewYorkReportedResultsReceipt(input: Readonly<{ documents: readonly NewYorkSourceEntry[]; results: readonly NewYorkReportedResultInput[] }>): NewYorkReportedResultsReceipt {
-  const documents = [...input.documents].sort((a, b) => bytewise(a.id, b.id)); if (canonicalJson(documents.map((row) => row.id)) !== canonicalJson(["ny-2022-house-primary-official-results-document", "ny-2024-house-primary-official-results-document"])) fail("DOCUMENT_CLOSURE_INVALID");
-  const contests = input.results.map(parse).sort((a, b) => bytewise(a.contestId, b.contestId)), sources = input.results.map((row) => row.entry).sort((a, b) => bytewise(a.id, b.id));
+  const documents = ([...input.documents].sort((a, b) => bytewise(a.id, b.id))).map(sourceLockContent); if (canonicalJson(documents.map((row) => row.id)) !== canonicalJson(["ny-2022-house-primary-official-results-document", "ny-2024-house-primary-official-results-document"])) fail("DOCUMENT_CLOSURE_INVALID");
+  const contests = input.results.map(parse).sort((a, b) => bytewise(a.contestId, b.contestId)), sources = (input.results.map((row) => row.entry).sort((a, b) => bytewise(a.id, b.id))).map(sourceLockContent);
   const expectedIds = EXPECTED.map(([cycle, district, authority]) => `ny-${cycle}-house-democratic-primary-cd-${district}-contest-${authority}`).sort(bytewise); if (canonicalJson(sources.map((row) => row.id)) !== canonicalJson(expectedIds)) fail("RESULT_CLOSURE_INVALID");
   const contestSetSha256 = digest("dsa-seats:ny-house-democratic-primary-reported-set:v1\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 })));
   const candidateVotes = contests.reduce((sum, contest) => sum + contest.candidates.reduce((subtotal, candidate) => subtotal + candidate.votes, 0), 0), administrativeVotes = contests.reduce((sum, contest) => sum + contest.scattering + contest.blank + contest.void, 0);

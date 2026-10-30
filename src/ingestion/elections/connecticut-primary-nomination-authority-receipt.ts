@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
 
@@ -22,7 +23,7 @@ const unresolvedGates = ["retain_complete_final_democratic_primary_ballot_or_can
 
 export function buildConnecticutNominationAuthorityReceipt(lock: Lock) {
   if (lock.version !== 1) fail();
-  const sources = sourceIds.map((id) => { const matches = lock.entries.filter((entry) => entry.id === id); if (matches.length !== 1) fail(); return matches[0]!; });
+  const sources = sourceIds.map((id) => { const matches = lock.entries.filter((entry) => entry.id === id); if (matches.length !== 1) fail(); return sourceLockContent(matches[0]!); });
   if (digest("dsa-seats:ct-nomination-authority-source-set:v1\0", sources) !== SOURCE_SET_SHA256) fail();
   const observations: Observation[] = [];
   for (const cycleYear of [2022, 2024] as const) for (let district = 1; district <= 5; district++) {
@@ -30,7 +31,7 @@ export function buildConnecticutNominationAuthorityReceipt(lock: Lock) {
     const unsigned = { observationId: `ct-nomination:${cycleYear}:${districtCode}:democratic`, cycleYear, stateCode: "CT" as const, districtCode, office: "U.S. Representative" as const, party: "Democratic" as const, candidateName: names[district - 1]!, formSelection: "endorsed" as const, transcriptionMethod: "manual_visual_review" as const, sourcePage: 1 as const, sourceRecord: "democratic_endorsement_form" as const, sourceLockId: `ct-${cycleYear}-cd${districtCode}-endorsement-certificate-bundle`, nominationStatus: null, resultStatus: null, scoreEligible: false as const };
     observations.push({ ...unsigned, rowSha256: digest("dsa-seats:ct-nomination-authority-observation:v1\0", unsigned) });
   }
-  const unsigned = { schema: "connecticut-primary-nomination-authority-receipt-v1" as const, version: 1 as const, generatedAt: "2026-08-06T09:00:00.000Z" as const, sourceCutoff: "2026-08-06" as const, originalPublisher: "Connecticut Secretary of the State" as const, reviewerOnly: true as const, publicationEligible: false as const, review: { status: "proposed" as const, reviewer: null, reviewedAt: null }, licenseStatus: "unassessed" as const, sources, observations, candidateListEvidence, summary, limitations, unresolvedGates };
+  const unsigned = { schema: "connecticut-primary-nomination-authority-receipt-v1" as const, version: 1 as const, generatedAt: "2026-08-06T09:00:00.000Z" as const, sourceCutoff: "2026-08-06" as const, originalPublisher: "Connecticut Secretary of the State" as const, reviewerOnly: true as const, publicationEligible: false as const, review: { status: "proposed" as const, reviewer: null, reviewedAt: null }, licenseStatus: "unassessed" as const, sources: (sources).map(sourceLockContent), observations, candidateListEvidence, summary, limitations, unresolvedGates };
   return { ...unsigned, observationSetSha256: digest("dsa-seats:ct-nomination-authority-observation-set:v1\0", observations.map(({observationId,rowSha256}) => ({observationId,rowSha256}))), packageSha256: digest("dsa-seats:ct-nomination-authority-package:v1\0", unsigned) };
 }
 

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -18,7 +19,7 @@ const OUTPUT: LockEntry = { id: OREGON_2026_PLAN_AUTHORITY_RECEIPT, url: "urn:ds
 const sha = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex");
 const digest = (domain: string, value: unknown) => createHash("sha256").update(domain, "ascii").update(canonicalJson(value), "utf8").digest("hex");
 const fail = (reason: string): never => { throw new Error(`OREGON_2026_PLAN_AUTHORITY_INVALID:${reason}`); };
-const exactEntry = (entries: LockEntry[], expected: LockEntry) => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`); };
+const exactEntry = (entries: LockEntry[], expected: LockEntry) => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`); };
 
 function parseBlocks(bytes: Buffer) {
   const lines = bytes.toString("utf8").split(/\r?\n/);

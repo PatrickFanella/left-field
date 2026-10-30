@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -45,7 +46,7 @@ const sha = (value: string | Buffer) => createHash("sha256").update(value).diges
 const digest = (domain: string, value: unknown) => createHash("sha256").update(domain, "ascii").update(canonicalJson(value), "utf8").digest("hex");
 const order = (left: string, right: string) => Buffer.compare(Buffer.from(left), Buffer.from(right));
 const fail = (reason: string): never => { throw new Error(`TX_2026_PRIMARY_BLOCK_CROSSWALK_INVALID:${reason}`); };
-const exactEntry = (entries: LockEntry[], expected: LockEntry) => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`); return matches[0]!; };
+const exactEntry = (entries: LockEntry[], expected: LockEntry) => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`); return matches[0]!; };
 
 function parseBlocks(bytes: Buffer, source: "planc2333" | "cd119") {
   const expectedHash = source === "planc2333" ? HASHES.planBlocks : HASHES.currentBlocks;

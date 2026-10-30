@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 /* eslint-disable @typescript-eslint/no-explicit-any -- two independently validated persisted parent schemas are composed without widening their public APIs */
 import { createHash } from "node:crypto";
 
@@ -36,7 +37,7 @@ const digest = (domain: string, value: unknown) => createHash("sha256").update(d
 const fail = (reason: string): never => { throw new Error(`CA_PRIMARY_JOINT_REVIEW_V3_INVALID:${reason}`); };
 const exactEntry = (entries: LockEntry[], expected: LockEntry) => {
   const matches = entries.filter((entry) => entry.id === expected.id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
 };
 
 function assemble(input: CaliforniaPrimaryJointReviewV3Input) {
@@ -124,7 +125,7 @@ function assemble(input: CaliforniaPrimaryJointReviewV3Input) {
     publicationEligible: false as const,
     defaultUse: jointV2.defaultUse,
     review: jointV2.review,
-    sources: parents,
+    sources: (parents).map(sourceLockContent),
     methodology: {
       compositionOnly: true as const,
       allJointV2FieldsPreserved: true as const,

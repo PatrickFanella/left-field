@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { houseRoute } from "./shared";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -131,7 +132,7 @@ export function buildHouseScoreV08ActiveProjection(root = process.cwd()): HouseS
   const rowSetSha256 = hash("dsa-seats:house-score-v08-active-row-set:v1", rows), unsigned = { schema: "house-score-v08-active-projection-v1" as const, version: 1 as const, generatedAt: "2026-08-09T14:45:00.000Z" as const, methodology, parents, rows, summary, rowSetSha256 };
   const result = { ...unsigned, packageSha256: hash("dsa-seats:house-score-v08-active-package:v1", unsigned) };
   const output = lock.entries.filter((entry) => entry.id === OUTPUT.id);
-  if (output.length === 1) { const outputBytes = readFileSync(join(root, OUTPUT.path)), expected = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: outputBytes.length, sha256: sha(outputBytes), kind: "derived_artifact", parentIds: parents.map((row) => row.id) }; if (canonical(output[0]) !== canonical(expected)) throw new Error("HOUSE_V08_OUTPUT_LOCK_INVALID"); }
+  if (output.length === 1) { const outputBytes = readFileSync(join(root, OUTPUT.path)), expected = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: outputBytes.length, sha256: sha(outputBytes), kind: "derived_artifact", parentIds: parents.map((row) => row.id) }; if (canonical(sourceLockContent(output[0])) !== canonical(expected)) throw new Error("HOUSE_V08_OUTPUT_LOCK_INVALID"); }
   else if (output.length !== 0) throw new Error("HOUSE_V08_OUTPUT_LOCK_INVALID");
   return result;
 }

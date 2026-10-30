@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -157,7 +158,7 @@ export function buildHouseScoreV06ActiveProjection(root = process.cwd()): HouseS
   const output = lock.entries.filter((entry) => entry.id === OUTPUT.id);
   if (output.length === 1) {
     const outputBytes = readFileSync(join(root, OUTPUT.path)), expected = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: outputBytes.length, sha256: sha(outputBytes), kind: "derived_artifact", parentIds: parents.map((row) => row.id) };
-    if (!exact(output[0], expected)) throw new Error("HOUSE_V06_OUTPUT_LOCK_INVALID");
+    if (!exact(sourceLockContent(output[0]), expected)) throw new Error("HOUSE_V06_OUTPUT_LOCK_INVALID");
   } else if (output.length !== 0) throw new Error("HOUSE_V06_OUTPUT_LOCK_INVALID");
   return result;
 }

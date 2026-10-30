@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -53,7 +54,7 @@ function assemble(input: MainePrimaryIdentityGeographyReviewInput) {
   const identity = validateMainePrimaryIdentityCandidate(parse<MainePrimaryIdentityCandidate>(input.identityCandidateJson, "IDENTITY_JSON"));
   const geography = parse<MainePrimaryGeographyCompatibilityCandidate>(input.geographyCandidateJson, "GEOGRAPHY_JSON");
   if (proposal.packageSha256 !== INPUTS.proposalPackage || identity.packageSha256 !== INPUTS.identityPackage || identity.observationSetSha256 !== INPUTS.identitySet || geography.schema !== "maine-primary-geography-compatibility-candidate-v1" || geography.packageSha256 !== INPUTS.geographyPackage || geography.rowSetSha256 !== INPUTS.geographySet || identity.review.resolution !== null || geography.review.resolution !== null || DECISIONS.some((decisionId) => proposal.decisions.find((decision) => decision.decisionId === decisionId)?.resolution !== null)) fail("PARENT_INVARIANT");
-  const sources = validateSourceLock(input.sourceLockJson).filter((entry) => PARENTS.includes(entry.id as typeof PARENTS[number]));
+  const sources = (validateSourceLock(input.sourceLockJson).filter((entry) => PARENTS.includes(entry.id as typeof PARENTS[number]))).map(sourceLockContent);
   const identityById = new Map(identity.observations.map((row) => [row.observationId, row]));
   if (identityById.size !== 6 || geography.rows.length !== 6) fail("PARENT_ROW_CLOSURE");
   const records = geography.rows.map((geo) => {

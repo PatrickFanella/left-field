@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -56,7 +57,7 @@ export function buildCountyElectionContextProjection(root = process.cwd()): Coun
   const rows: CountyElectionContextRow[] = [];
   for (const cycleYear of [2022, 2024] as const) {
     const source = SOURCES[cycleYear], bytes = readFileSync(join(root, source.path)), matches = lock.entries.filter((entry) => entry.id === source.id), expected = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [] };
-    if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`COUNTY_ELECTION_CONTEXT_SOURCE_BINDING_INVALID:${source.id}`);
+    if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`COUNTY_ELECTION_CONTEXT_SOURCE_BINDING_INVALID:${source.id}`);
     const archive = unzipSync(bytes); if (Object.keys(archive).length !== 1 || !archive[source.member]) throw new Error("COUNTY_ELECTION_CONTEXT_ARCHIVE_INVALID");
     const parsed = csv(new TextDecoder().decode(archive[source.member])), headers = parsed[0]!, required = ["FIPSCode", "Jurisdiction_Name", "State_Abbr", "A1a", "F1a"];
     for (const field of required) if (!headers.includes(field)) throw new Error(`COUNTY_ELECTION_CONTEXT_COLUMN_MISSING:${field}`);

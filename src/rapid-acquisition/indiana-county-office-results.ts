@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { byteCompare, hash, sha, exact } from "./shared";
@@ -49,7 +50,7 @@ export function buildIndianaCountyOfficeResults(root = process.cwd()): IndianaCo
     const bytes = readFileSync(join(root, path));
     const expected = { id, url, retainedPath: path, retainedStatus: "retained", byteSize: size, sha256: digest, kind: "source", parentIds: parents };
     const matches = lock.entries.filter((entry) => entry.id === id);
-    if (bytes.length !== size || sha(bytes) !== digest || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`INDIANA_COUNTY_OFFICE_SOURCE_INVALID:${id}`);
+    if (bytes.length !== size || sha(bytes) !== digest || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`INDIANA_COUNTY_OFFICE_SOURCE_INVALID:${id}`);
     sourceBytes.set(id, bytes);
   }
   const demographicsBytes = readFileSync(join(root, DEMOGRAPHICS[1]));

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 /* eslint-disable @typescript-eslint/no-explicit-any -- immutable persisted v2 and assessment schemas are composed without widening their public types */
 import { createHash } from "node:crypto";
 
@@ -25,7 +26,7 @@ const fail = (reason: string): never => { throw new Error(`NJ_PA_PRIMARY_JOINT_R
 
 function exactEntry(input: NjPaPrimaryJointV3Input, expected: LockEntry): void {
   const matches = input.sourceLock.entries.filter((entry) => entry.id === expected.id), entry = matches[0];
-  if (matches.length !== 1 || !entry || canonicalJson(entry) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || !entry || canonicalJson(sourceLockContent(entry)) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
 }
 
 function validateLocks(input: NjPaPrimaryJointV3Input): void {

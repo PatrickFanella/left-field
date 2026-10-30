@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 /* eslint-disable @typescript-eslint/no-explicit-any -- three independently validated persisted parent schemas are joined without widening their public APIs */
 import { createHash } from "node:crypto";
 
@@ -82,7 +83,7 @@ function assemble(input: CaliforniaSplitCrosswalkPolicyDossierInput) {
   if (byteStreams.some((bytes, index) => sha(bytes) !== PARENTS[index]!.fileSha256)) fail("parent_bytes");
   const locks = PARENTS.map((parent) => exactParentLock(input.sourceLock.entries, parent));
   const outputMatches = input.sourceLock.entries.filter((entry) => entry.id === OUTPUT_LOCK.id);
-  if (outputMatches.length !== 1 || canonicalJson(outputMatches[0]) !== canonicalJson(OUTPUT_LOCK)) fail("source_lock:output");
+  if (outputMatches.length !== 1 || canonicalJson(sourceLockContent(outputMatches[0])) !== canonicalJson(sourceLockContent(OUTPUT_LOCK))) fail("source_lock:output");
   const crosswalk = JSON.parse(input.crosswalkJson) as any;
   const geography = JSON.parse(input.geographyJson) as any;
   const joint = JSON.parse(input.jointJson) as any;

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { byteCompare, hash, sha, exact } from "./shared";
@@ -75,7 +76,7 @@ export function buildCountyCvapProjection(root = process.cwd()): CountyCvapProje
   const demographicsBytes = readFileSync(join(root, DEMOGRAPHICS.path));
   const sourceEntry = { id: SOURCE.id, url: SOURCE.url, retainedPath: SOURCE.path, retainedStatus: "retained", byteSize: SOURCE.bytes, sha256: SOURCE.sha256, kind: "source", parentIds: [] };
   const lockMatches = lock.entries.filter((entry) => entry.id === SOURCE.id);
-  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || lockMatches.length !== 1 || !exact(lockMatches[0], sourceEntry)) throw new Error("COUNTY_CVAP_SOURCE_BINDING_INVALID");
+  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || lockMatches.length !== 1 || !exact(sourceLockContent(lockMatches[0]), sourceEntry)) throw new Error("COUNTY_CVAP_SOURCE_BINDING_INVALID");
   if (demographicsBytes.length !== DEMOGRAPHICS.bytes || sha(demographicsBytes) !== DEMOGRAPHICS.sha256) throw new Error("COUNTY_CVAP_DEMOGRAPHICS_BINDING_INVALID");
   const demographics = JSON.parse(demographicsBytes.toString("utf8")) as { rows: readonly { countyFips: string; stateCode: string; countyName: string }[] };
   const values = parseTable(sourceBytes);

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -39,7 +40,7 @@ const fail = (reason: string): never => { throw new Error(`CT_PRIMARY_EVIDENCE_R
 
 function exactEntry(entries: LockEntry[], expected: LockEntry) {
   const matches = entries.filter((entry) => entry.id === expected.id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
 }
 
 function checkedInputs(input: Input) {
@@ -138,7 +139,7 @@ function assemble(input: Input) {
     publicationEligible: false as const,
     defaultUse: "exclude_from_evaluator_until_event_scope_corpus_scope_statutory_and_publication_review" as const,
     review: { status: "proposed" as const, reviewer: null, reviewedAt: null, resolution: null },
-    sources: parentEntries,
+    sources: (parentEntries).map(sourceLockContent),
     methodology: {
       eventJoinKey: "cycle_year_and_district_code" as const,
       completeOfficialEventEnumerationClaimed: true as const,

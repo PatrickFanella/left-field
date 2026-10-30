@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { unzipSync } from "fflate";
@@ -125,7 +126,7 @@ export function buildAlabamaStateLegislativeResults(root = process.cwd()): Alaba
   const bytes = readFileSync(join(root, SOURCE.path));
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] };
   const expectedLock = { id: SOURCE.id, url: SOURCE.url, retainedPath: SOURCE.path, retainedStatus: "retained", byteSize: SOURCE.bytes, sha256: SOURCE.sha256, kind: "source", parentIds: [] };
-  if (bytes.length !== SOURCE.bytes || sha(bytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === SOURCE.id), expectedLock)) throw new Error("ALABAMA_STATE_LEGISLATIVE_SOURCE_INVALID");
+  if (bytes.length !== SOURCE.bytes || sha(bytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === SOURCE.id)), expectedLock)) throw new Error("ALABAMA_STATE_LEGISLATIVE_SOURCE_INVALID");
   const contests = parseArchive(bytes, readWorkbookCsvZipExtract(readSourceLock(root), workbookExtractId(SOURCE.id), SOURCE.id, root));
   const summary = { sourceCountyWorkbooks: 67 as const, reportedPartyContests: 60 as const, upperChamberContests: 14 as const, lowerChamberContests: 46 as const, democraticContests: 17 as const, republicanContests: 43 as const, candidateRows: 148 as const, candidateVotes: 564383 as const, countyWorkbookCandidateRows: 310 as const, populatedVoteCells: 5516 as const, inferredNoContestRows: 0 as const, formulaEligibleContests: 0 as const };
   const actual = { sourceCountyWorkbooks: 67, reportedPartyContests: contests.length, upperChamberContests: contests.filter((row) => row.chamber === "upper").length, lowerChamberContests: contests.filter((row) => row.chamber === "lower").length, democraticContests: contests.filter((row) => row.rawParty === "DEM").length, republicanContests: contests.filter((row) => row.rawParty === "REP").length, candidateRows: contests.reduce((sum, row) => sum + row.candidates.length, 0), candidateVotes: contests.reduce((sum, row) => sum + row.totalVotes, 0), countyWorkbookCandidateRows: contests.reduce((sum, row) => sum + row.countyWorkbookRows, 0), populatedVoteCells: contests.reduce((sum, row) => sum + row.populatedVoteCells, 0), inferredNoContestRows: 0, formulaEligibleContests: contests.filter((row) => row.formulaEligible).length };

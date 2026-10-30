@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { byteCompare, hash, sha, exact } from "./shared";
@@ -48,7 +49,7 @@ export function buildIndianaStateLegislativeResults(root = process.cwd()): India
     const setting = SETTINGS[source.cycleYear], settingBytes = readFileSync(join(root, setting.path)), sourceBytes = readFileSync(join(root, source.path));
     const settingsExpected = { id: setting.id, url: setting.url, retainedPath: setting.path, retainedStatus: "retained", byteSize: setting.bytes, sha256: setting.sha256, kind: "source", parentIds: [] };
     const sourceExpected = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [setting.id] };
-    if (settingBytes.length !== setting.bytes || sha(settingBytes) !== setting.sha256 || sourceBytes.length !== source.bytes || sha(sourceBytes) !== source.sha256 || lock.entries.filter((entry) => entry.id === setting.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === setting.id), settingsExpected) || lock.entries.filter((entry) => entry.id === source.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === source.id), sourceExpected)) throw new Error(`INDIANA_STATE_LEGISLATIVE_SOURCE_INVALID:${source.id}`);
+    if (settingBytes.length !== setting.bytes || sha(settingBytes) !== setting.sha256 || sourceBytes.length !== source.bytes || sha(sourceBytes) !== source.sha256 || lock.entries.filter((entry) => entry.id === setting.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === setting.id)), settingsExpected) || lock.entries.filter((entry) => entry.id === source.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.id)), sourceExpected)) throw new Error(`INDIANA_STATE_LEGISLATIVE_SOURCE_INVALID:${source.id}`);
     const settings = JSON.parse(settingBytes.toString("utf8")) as { Root?: { ElectionType?: string; Certified?: string } }; if (settings.Root?.ElectionType !== "P" || settings.Root.Certified !== setting.certified) throw new Error("INDIANA_STATE_LEGISLATIVE_SETTINGS_INVALID");
     const parsed = JSON.parse(sourceBytes.toString("utf8")) as { Root?: { StatewideSummary?: { Race?: RawRace | RawRace[] } } }, raw = parsed.Root?.StatewideSummary?.Race, races = Array.isArray(raw) ? raw : raw ? [raw] : [];
     if (races.length !== source.races) throw new Error("INDIANA_STATE_LEGISLATIVE_RACE_CLOSURE_INVALID");

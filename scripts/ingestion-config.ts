@@ -16,6 +16,9 @@ import { runSource, type RunSourceResult } from "@/ingestion/core/run-source";
 import { getRuntimeOperationalSignalSink } from "@/operations/runtime-signals";
 import { ACS_ADAPTER_VERSION, ACS_SOURCE_LIMITS, createAcsAdapter } from "@/ingestion/acs/adapter";
 import { ACS_INDICATOR_DICTIONARY } from "@/ingestion/acs/indicator-dictionary";
+import { sourceLockContent } from "@/rapid-acquisition/intake/source-lock-content";
+import { validateSourceRights } from "./lib/source-license.mjs";
+import type { SourceLockEntry as ReviewedLockEntry } from "@/rapid-acquisition/intake/source-lock";
 
 export type ConfiguredSource = "identity" | "tiger" | "acs";
 const sha = (bytes: Uint8Array): string => createHash("sha256").update(bytes).digest("hex");
@@ -42,7 +45,7 @@ export function parseSourceLock(bytes: Uint8Array): SourceLock {
   if (Object.keys(record).length !== 2 || !("version" in record) || !("entries" in record) || record.version !== 1 || !Array.isArray(record.entries)) return fail("SOURCE_LOCK_INVALID");
   const entries = record.entries.map((value): LockEntry => {
     if (!value || typeof value !== "object" || Array.isArray(value)) return fail("SOURCE_LOCK_INVALID");
-    const entry = value as Record<string, unknown>;
+    const entry = sourceLockContent(value as Record<string, unknown>);
     if (Object.keys(entry).length !== 8 || !["id", "url", "retainedPath", "retainedStatus", "byteSize", "sha256", "kind", "parentIds"].every(key => key in entry)) return fail("SOURCE_LOCK_INVALID");
     const retained = entry.retainedStatus === "retained";
     if (typeof entry.id !== "string" || !entry.id || typeof entry.url !== "string" || !entry.url || typeof entry.kind !== "string" || !entry.kind || !Number.isSafeInteger(entry.byteSize) || (entry.byteSize as number) < 0 || typeof entry.sha256 !== "string" || !hashPattern.test(entry.sha256) || !Array.isArray(entry.parentIds) || entry.parentIds.some(id => typeof id !== "string" || !id) || new Set(entry.parentIds).size !== entry.parentIds.length || (!retained && entry.retainedStatus !== "nonretained") || (retained ? typeof entry.retainedPath !== "string" || !retainedPathIsExact(entry.retainedPath) : entry.retainedPath !== null)) return fail("SOURCE_LOCK_INVALID");
@@ -50,6 +53,10 @@ export function parseSourceLock(bytes: Uint8Array): SourceLock {
   });
   if (new Set(entries.map(entry => entry.id)).size !== entries.length || new Set(entries.flatMap(entry => entry.retainedPath ? [entry.retainedPath] : [])).size !== entries.filter(entry => entry.retainedPath).length || entries.some(entry => entry.parentIds.includes(entry.id) || entry.parentIds.some(parent => !entries.some(candidate => candidate.id === parent)))) return fail("SOURCE_LOCK_INVALID");
   const visiting = new Set<string>(); const visited = new Set<string>(); const visit = (id: string): void => { if (visiting.has(id)) fail("SOURCE_LOCK_INVALID"); if (visited.has(id)) return; visiting.add(id); for (const parent of entries.find(entry => entry.id === id)!.parentIds) visit(parent); visiting.delete(id); visited.add(id); }; for (const entry of entries) visit(entry.id);
+  // Legacy byte-only fixtures remain readable; provided rights are still validated.
+  try {
+    validateSourceRights({ version: 1, entries: record.entries.map((entry) => ({ ...entry, license: entry.license ?? "unknown" }) as ReviewedLockEntry) });
+  } catch { return fail("SOURCE_LOCK_INVALID"); }
   return { version: 1, entries };
 }
 export async function loadSourceLock(dataRoot: string, env: NodeJS.ProcessEnv): Promise<{ readonly root: string; readonly lock: SourceLock; readonly sha256: string }> {

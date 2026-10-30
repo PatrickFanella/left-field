@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -512,7 +513,7 @@ export function buildNewMexicoCountyOfficeResults(
       bytes.length !== source.bytes ||
       sha(bytes) !== source.sha256 ||
       matches.length !== 1 ||
-      canonical(matches[0]) !== canonical(expected)
+      canonical(sourceLockContent(matches[0])) !== canonical(expected)
     )
       fail(`SOURCE_INVALID:${source.year}`);
     const parsed = parseSource(bytes, source, counties);

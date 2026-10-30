@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -121,8 +122,8 @@ function validateListings(listings: readonly IllinoisSourceLockEntry[]): readonl
 }
 
 export function buildIllinoisHouseDemocraticPrimaryResultsReceipt(input: Readonly<{ listings: readonly IllinoisSourceLockEntry[]; results: readonly IllinoisResultInput[] }>): IllinoisHouseDemocraticPrimaryResultsReceipt {
-  const sourceListings = validateListings(input.listings), contests = input.results.map(parseContest).sort((left, right) => bytewise(left.contestId, right.contestId));
-  const sources = input.results.map(({ entry }) => entry).sort((left, right) => bytewise(left.id, right.id));
+  const sourceListings = (validateListings(input.listings)).map(sourceLockContent), contests = input.results.map(parseContest).sort((left, right) => bytewise(left.contestId, right.contestId));
+  const sources = (input.results.map(({ entry }) => entry).sort((left, right) => bytewise(left.id, right.id))).map(sourceLockContent);
   if (contests.length !== 34 || sources.length !== 34 || canonicalJson(sources.map(({ id }) => id)) !== canonicalJson(RESULT_SOURCE_IDS) || new Set(contests.map(({ contestId }) => contestId)).size !== 34) fail("RESULT_SOURCE_CLOSURE_INVALID");
   const contestSetSha256 = hash("dsa-seats:il-house-democratic-primary-contest-set:v1\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 })));
   const administrativeVotes = contests.reduce((sum, contest) => sum + Object.values(contest.administrativeVotes).reduce((subtotal, votes) => subtotal + votes, 0), 0);
