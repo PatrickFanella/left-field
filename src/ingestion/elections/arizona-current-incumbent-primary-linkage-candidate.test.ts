@@ -112,6 +112,7 @@ describe("Arizona current-incumbent primary linkage candidate", () => {
     const matches = persisted.entries.filter((entry: any) => entry.id === "arizona-current-incumbent-primary-linkage-candidate-v1");
     expect(matches).toHaveLength(1);
     expect(matches[0]).toEqual({
+      license: "unknown",
       id: "arizona-current-incumbent-primary-linkage-candidate-v1",
       url: "urn:dsa-seats:arizona-current-incumbent-primary-linkage-candidate:v1:2026-08-06",
       retainedPath: "data/metadata/arizona-current-incumbent-primary-linkage-candidate-v1.json",

@@ -128,6 +128,6 @@ describe("Maryland current-incumbent primary linkage candidate", () => {
         "congress-legislators-current-20260804",
         "maryland-house-democratic-primary-results-2022-2024-v1",
       ],
-    }]);
+    license: "unknown", }]);
   });
 });

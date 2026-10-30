@@ -1,0 +1,1848 @@
+{
+  "schema": "arizona-2024-general-openelections-crosscheck-v1",
+  "electionDate": "2024-11-05",
+  "comparisonDate": "2026-10-30",
+  "reviewerOnly": true,
+  "publicationEligible": false,
+  "controllingSource": "Arizona Secretary of State signed general canvass",
+  "comparisonSource": "OpenElections Arizona 2024 general precinct CSVs",
+  "provenance": [
+    {
+      "id": "az-2024-general-canvass-signed-pdf",
+      "url": "https://web.archive.org/web/20251231153438id_/https://apps.azsos.gov/election/2024/ge/canvass/20241105_GeneralCanvass_Signed.pdf",
+      "retainedPath": "data/source/rapid/state-general/az/2024-general-canvass-signed.pdf",
+      "sha256": "2c08341131d940e5efbb92631a23d24d2c3d0b3007145ad0ad3da7547d84c53c"
+    },
+    {
+      "id": "az-2024-general-canvass-signed-pdf-transcription",
+      "url": "urn:dsa-seats:reviewed-transcription:az-2024-general-canvass-signed-pdf",
+      "retainedPath": "data/source/rapid/state-general/az/2024-general-canvass-signed-transcription.tsv",
+      "sha256": "16d4dcd04c22780df21f6c3516ba2a8ece21a7325797a02be4dd5b9477440a5a"
+    },
+    {
+      "id": "openelections-az-2024-general-apache-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__apache__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__apache__precinct.csv",
+      "sha256": "cbc2bbff008f008b61cd955876665aee572aef873b1083208cd72450b3b56f5b"
+    },
+    {
+      "id": "openelections-az-2024-general-cochise-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__cochise__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__cochise__precinct.csv",
+      "sha256": "184a997b1a3ce2a6f208a17f96d06d385c64a94ce5009d6f6a000befd69826b2"
+    },
+    {
+      "id": "openelections-az-2024-general-coconino-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__coconino__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__coconino__precinct.csv",
+      "sha256": "45e8137cd555ddb1d6b7f7782af990d1c6226285b58cde71a6aebb26d2ddf532"
+    },
+    {
+      "id": "openelections-az-2024-general-gila-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__gila__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__gila__precinct.csv",
+      "sha256": "d3df64ccd2be37093c10ecb05ceee4f7071be65813b486f68df17529dbf4e934"
+    },
+    {
+      "id": "openelections-az-2024-general-graham-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__graham__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__graham__precinct.csv",
+      "sha256": "c76fa2d222fe9aadda2bf916215dc5894259a336790a2822c1bbb25774d01613"
+    },
+    {
+      "id": "openelections-az-2024-general-greenlee-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__greenlee__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__greenlee__precinct.csv",
+      "sha256": "64e29aefd4c25390bde7bd1ed0e1c14e664b70e3d1998a202d59dcafdb79af60"
+    },
+    {
+      "id": "openelections-az-2024-general-la-paz-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__la%20paz__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__la paz__precinct.csv",
+      "sha256": "ce23ac0e3ee18c2b9dd9891aa0143c1776fd6f119621569160061b30c20277ab"
+    },
+    {
+      "id": "openelections-az-2024-general-maricopa-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__maricopa__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__maricopa__precinct.csv",
+      "sha256": "d338c70e939df068e85c80fe7800732462a2673b09fbc128755c8bca6c486a8a"
+    },
+    {
+      "id": "openelections-az-2024-general-mohave-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__mohave__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__mohave__precinct.csv",
+      "sha256": "4d37598f9200c19864a2f329c69291a78ed07d4e487597c6a5cef88eeddf1582"
+    },
+    {
+      "id": "openelections-az-2024-general-navajo-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__navajo__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__navajo__precinct.csv",
+      "sha256": "4cc92e0acbf9d708351e2373efc4eb35a45312e4728409cb07f0cc10ca01b6fb"
+    },
+    {
+      "id": "openelections-az-2024-general-pima-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__pima__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__pima__precinct.csv",
+      "sha256": "54d3da9afa91ff75489e6ad7e7b8b8bf97c7dafce63c96814fac5c61ab76c683"
+    },
+    {
+      "id": "openelections-az-2024-general-pinal-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__pinal__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__pinal__precinct.csv",
+      "sha256": "8318bcd03666fe8a33b2c2bc50725929b10fbdb6ac208348855ac0c29e12baae"
+    },
+    {
+      "id": "openelections-az-2024-general-santa-cruz-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__santa_cruz__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__santa_cruz__precinct.csv",
+      "sha256": "2d96337de51647a2e2bf1e0b193cb9ba12d0aaf6dbfc14fdffb2ef9ae8d9c96a"
+    },
+    {
+      "id": "openelections-az-2024-general-yavapai-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__yavapai__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__yavapai__precinct.csv",
+      "sha256": "767994edb9110770e05e3e8169ac4f2d60cb3712e5195f28445e5e722b2f54f5"
+    },
+    {
+      "id": "openelections-az-2024-general-yuma-precinct",
+      "url": "https://raw.githubusercontent.com/openelections/openelections-data-az/bf14331521f62f74cb17848ab11ca3dfd27f4f82/2024/General/20241105__az__general__yuma__precinct.csv",
+      "retainedPath": "data/source/crosschecks/az/2024/openelections/20241105__az__general__yuma__precinct.csv",
+      "sha256": "2af7e45ada3405a3caf74ed94ad9ee7d60dc1e6e21b366b1dab61bff822868e5"
+    }
+  ],
+  "rows": [
+    {
+      "chamber": "lower",
+      "district": "1",
+      "party": "DEM",
+      "candidate": "Jay Ruby",
+      "officialVotes": 40911,
+      "openElectionsVotes": 40911,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "1",
+      "party": "DEM",
+      "candidate": "Marcia Smith",
+      "officialVotes": 44199,
+      "openElectionsVotes": 44199,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "1",
+      "party": "REP",
+      "candidate": "Quang Nguyen",
+      "officialVotes": 87726,
+      "openElectionsVotes": 87726,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "1",
+      "party": "REP",
+      "candidate": "Selina Bliss",
+      "officialVotes": 88691,
+      "openElectionsVotes": 88691,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "2",
+      "party": "DEM",
+      "candidate": "Stephanie Simacek",
+      "officialVotes": 47801,
+      "openElectionsVotes": 47801,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "2",
+      "party": "IND",
+      "candidate": "Tom Simes",
+      "officialVotes": 15946,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "2",
+      "party": "REP",
+      "candidate": "Ari Daniel Bradshaw",
+      "officialVotes": 46810,
+      "openElectionsVotes": 46810,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "2",
+      "party": "REP",
+      "candidate": "Justin Wilmeth",
+      "officialVotes": 46942,
+      "openElectionsVotes": 46942,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "3",
+      "party": "DEM",
+      "candidate": "Richard Corles",
+      "officialVotes": 55372,
+      "openElectionsVotes": 55371,
+      "voteDifference": -1,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "3",
+      "party": "REP",
+      "candidate": "Alexander Kolodin",
+      "officialVotes": 88693,
+      "openElectionsVotes": 88683,
+      "voteDifference": -10,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "3",
+      "party": "REP",
+      "candidate": "Joseph CHAPLICK",
+      "officialVotes": null,
+      "openElectionsVotes": 93584,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "3",
+      "party": "REP",
+      "candidate": "Joseph Chaplik",
+      "officialVotes": 93596,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "4",
+      "party": "DEM",
+      "candidate": "Karen Gresham",
+      "officialVotes": 64038,
+      "openElectionsVotes": 64038,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "4",
+      "party": "DEM",
+      "candidate": "Kelli Butler",
+      "officialVotes": 66407,
+      "openElectionsVotes": 66407,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "4",
+      "party": "REP",
+      "candidate": "Matt Gress",
+      "officialVotes": 75669,
+      "openElectionsVotes": 75669,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "4",
+      "party": "REP",
+      "candidate": "Pamela Carter",
+      "officialVotes": 69077,
+      "openElectionsVotes": 69077,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "5",
+      "party": "DEM",
+      "candidate": "Aaron Márquez",
+      "officialVotes": 59087,
+      "openElectionsVotes": 59087,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "5",
+      "party": "DEM",
+      "candidate": "Sarah Liguori",
+      "officialVotes": 61889,
+      "openElectionsVotes": 61889,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "5",
+      "party": "REP",
+      "candidate": "Arthur Gonzales Sr.",
+      "officialVotes": 88,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "5",
+      "party": "REP",
+      "candidate": "Reina \"Reina\" Patocs",
+      "officialVotes": 31601,
+      "openElectionsVotes": 31601,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "6",
+      "party": "DEM",
+      "candidate": "Mae Peshlakai",
+      "officialVotes": 54241,
+      "openElectionsVotes": 54241,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "6",
+      "party": "DEM",
+      "candidate": "Myron Tsosie",
+      "officialVotes": 56332,
+      "openElectionsVotes": 56332,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "6",
+      "party": "REP",
+      "candidate": "Lloyd Johnson",
+      "officialVotes": 25685,
+      "openElectionsVotes": 25685,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "6",
+      "party": "REP",
+      "candidate": "Rich King",
+      "officialVotes": 25743,
+      "openElectionsVotes": 25743,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "7",
+      "party": "DEM",
+      "candidate": "Kevin Chiquete",
+      "officialVotes": 37786,
+      "openElectionsVotes": 37786,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "7",
+      "party": "DEM",
+      "candidate": "Nancy Hartl",
+      "officialVotes": 41026,
+      "openElectionsVotes": 41026,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "7",
+      "party": "REP",
+      "candidate": "David Marshall Sr.",
+      "officialVotes": 73162,
+      "openElectionsVotes": 73162,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "7",
+      "party": "REP",
+      "candidate": "Walter \"Walt\" Blackman",
+      "officialVotes": 74128,
+      "openElectionsVotes": 74128,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "8",
+      "party": "DEM",
+      "candidate": "Brian Garcia",
+      "officialVotes": 47977,
+      "openElectionsVotes": 47974,
+      "voteDifference": -3,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "8",
+      "party": "DEM",
+      "candidate": "Janeen Connolly",
+      "officialVotes": 49065,
+      "openElectionsVotes": 49058,
+      "voteDifference": -7,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "8",
+      "party": "GRN",
+      "candidate": "Tre Rook",
+      "officialVotes": 7559,
+      "openElectionsVotes": 7555,
+      "voteDifference": -4,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "8",
+      "party": "REP",
+      "candidate": "Caden Darrow",
+      "officialVotes": 35180,
+      "openElectionsVotes": 35167,
+      "voteDifference": -13,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "9",
+      "party": "DEM",
+      "candidate": "Lorena AUSTEN",
+      "officialVotes": null,
+      "openElectionsVotes": 39041,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "9",
+      "party": "DEM",
+      "candidate": "Lorena Austin",
+      "officialVotes": 39041,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "9",
+      "party": "DEM",
+      "candidate": "Seth Blattman",
+      "officialVotes": 36823,
+      "openElectionsVotes": 36823,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "9",
+      "party": "REP",
+      "candidate": "Kylie Barber",
+      "officialVotes": 35895,
+      "openElectionsVotes": 35895,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "9",
+      "party": "REP",
+      "candidate": "Mary Ann Mendoza",
+      "officialVotes": 35553,
+      "openElectionsVotes": 35553,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "10",
+      "party": "DEM",
+      "candidate": "Helen Hunter",
+      "officialVotes": 40958,
+      "openElectionsVotes": 40958,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "10",
+      "party": "DEM",
+      "candidate": "Stephanie Simmons",
+      "officialVotes": 40926,
+      "openElectionsVotes": 40926,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "10",
+      "party": "REP",
+      "candidate": "Justin Olson",
+      "officialVotes": 65454,
+      "openElectionsVotes": 65454,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "10",
+      "party": "REP",
+      "candidate": "Ralph Heap",
+      "officialVotes": 63695,
+      "openElectionsVotes": 63695,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "11",
+      "party": "DEM",
+      "candidate": "Junelle Cavero",
+      "officialVotes": 44318,
+      "openElectionsVotes": 44318,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "11",
+      "party": "DEM",
+      "candidate": "Oscar De Los Santos",
+      "officialVotes": 47727,
+      "openElectionsVotes": 47727,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "11",
+      "party": "REP",
+      "candidate": "Cesar Ivan Aleman",
+      "officialVotes": 17786,
+      "openElectionsVotes": 17786,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "11",
+      "party": "REP",
+      "candidate": "Joseph Charles Charles Dailey",
+      "officialVotes": 17654,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "11",
+      "party": "REP",
+      "candidate": "Joseph Charles DAILEY",
+      "officialVotes": null,
+      "openElectionsVotes": 17654,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "12",
+      "party": "DEM",
+      "candidate": "Anastasia \"Stacey\" Travers",
+      "officialVotes": 65115,
+      "openElectionsVotes": 65114,
+      "voteDifference": -1,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "12",
+      "party": "DEM",
+      "candidate": "Patricia \"Patty\" Contreras",
+      "officialVotes": 65931,
+      "openElectionsVotes": 65930,
+      "voteDifference": -1,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "12",
+      "party": "IND",
+      "candidate": "Benjamin Wirtz",
+      "officialVotes": 35,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "12",
+      "party": "LBT",
+      "candidate": "Marc Johnston",
+      "officialVotes": 89,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "12",
+      "party": "REP",
+      "candidate": "Lawrence Hudson",
+      "officialVotes": 49932,
+      "openElectionsVotes": 49931,
+      "voteDifference": -1,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "13",
+      "party": "DEM",
+      "candidate": "Brandy Reese",
+      "officialVotes": 52677,
+      "openElectionsVotes": 52677,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "13",
+      "party": "DEM",
+      "candidate": "Nicholas Gonzales",
+      "officialVotes": 51133,
+      "openElectionsVotes": 51133,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "13",
+      "party": "GRN",
+      "candidate": "Cody Hannah",
+      "officialVotes": 3361,
+      "openElectionsVotes": 3361,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "13",
+      "party": "REP",
+      "candidate": "Jeff Weninger",
+      "officialVotes": 57486,
+      "openElectionsVotes": 57486,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "13",
+      "party": "REP",
+      "candidate": "Julie Willoughby",
+      "officialVotes": 56914,
+      "openElectionsVotes": 56914,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "14",
+      "party": "GRN",
+      "candidate": "Scott Menor",
+      "officialVotes": 28653,
+      "openElectionsVotes": 28653,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "14",
+      "party": "REP",
+      "candidate": "Khyl Powell",
+      "officialVotes": 69985,
+      "openElectionsVotes": 69985,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "14",
+      "party": "REP",
+      "candidate": "Laurin Hendrix",
+      "officialVotes": 75359,
+      "openElectionsVotes": 75359,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "15",
+      "party": "DEM",
+      "candidate": "Barbara Beneitone",
+      "officialVotes": 46368,
+      "openElectionsVotes": 46368,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "15",
+      "party": "REP",
+      "candidate": "Michael Way",
+      "officialVotes": 78985,
+      "openElectionsVotes": 78985,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "15",
+      "party": "REP",
+      "candidate": "Neal Carter",
+      "officialVotes": 75419,
+      "openElectionsVotes": 30313,
+      "voteDifference": -45106,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "15",
+      "party": "REP",
+      "candidate": "Neil CARTER",
+      "officialVotes": null,
+      "openElectionsVotes": 45106,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "16",
+      "party": "DEM",
+      "candidate": "Keith Seaman",
+      "officialVotes": 45444,
+      "openElectionsVotes": 45444,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "16",
+      "party": "REP",
+      "candidate": "Chris Lopez",
+      "officialVotes": 49099,
+      "openElectionsVotes": 49099,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "16",
+      "party": "REP",
+      "candidate": "Teresa Martinez",
+      "officialVotes": 53783,
+      "openElectionsVotes": 8351,
+      "voteDifference": -45432,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "16",
+      "party": "REP",
+      "candidate": "Theresa MARTINEZ",
+      "officialVotes": null,
+      "openElectionsVotes": 45432,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "17",
+      "party": "DEM",
+      "candidate": "Kevin Volk",
+      "officialVotes": 73985,
+      "openElectionsVotes": 73985,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "17",
+      "party": "REP",
+      "candidate": "Cory McGarr",
+      "officialVotes": 68904,
+      "openElectionsVotes": 68904,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "17",
+      "party": "REP",
+      "candidate": "Rachel Jones",
+      "officialVotes": 71620,
+      "openElectionsVotes": 71620,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "18",
+      "party": "DEM",
+      "candidate": "Chris Mathis",
+      "officialVotes": 68197,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "18",
+      "party": "DEM",
+      "candidate": "Nancy Gutierrez",
+      "officialVotes": 73290,
+      "openElectionsVotes": 73290,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "18",
+      "party": "REP",
+      "candidate": "Leonard \"Len\" Rosenblum",
+      "officialVotes": 48845,
+      "openElectionsVotes": 48845,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "19",
+      "party": "DEM",
+      "candidate": "Gregg FROMSTROM JR.",
+      "officialVotes": null,
+      "openElectionsVotes": 973,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "19",
+      "party": "DEM",
+      "candidate": "Gregg Frostrom Jr.",
+      "officialVotes": 42468,
+      "openElectionsVotes": 41495,
+      "voteDifference": -973,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "19",
+      "party": "REP",
+      "candidate": "Gail Griffin",
+      "officialVotes": 65504,
+      "openElectionsVotes": 65504,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "19",
+      "party": "REP",
+      "candidate": "Lupe Diaz",
+      "officialVotes": 59188,
+      "openElectionsVotes": 59188,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "20",
+      "party": "DEM",
+      "candidate": "Alma Hernandez",
+      "officialVotes": 53288,
+      "openElectionsVotes": 53288,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "20",
+      "party": "DEM",
+      "candidate": "Betty Villegas",
+      "officialVotes": 49530,
+      "openElectionsVotes": 49530,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "21",
+      "party": "DEM",
+      "candidate": "Consuelo Hernandez",
+      "officialVotes": 48283,
+      "openElectionsVotes": 48283,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "21",
+      "party": "DEM",
+      "candidate": "Stephanie Stahl Hamilton",
+      "officialVotes": 43028,
+      "openElectionsVotes": 43028,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "21",
+      "party": "REP",
+      "candidate": "Christopher Kibbey",
+      "officialVotes": 33883,
+      "openElectionsVotes": 33883,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "22",
+      "party": "DEM",
+      "candidate": "Elda Luna-Najera",
+      "officialVotes": 36664,
+      "openElectionsVotes": 36664,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "22",
+      "party": "DEM",
+      "candidate": "Lupe Chavira Contreras",
+      "officialVotes": 41626,
+      "openElectionsVotes": 41626,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "22",
+      "party": "REP",
+      "candidate": "Blaine \"Bj\" Griffin Sr.",
+      "officialVotes": 21499,
+      "openElectionsVotes": 21499,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "22",
+      "party": "REP",
+      "candidate": "Diana Jones",
+      "officialVotes": 22086,
+      "openElectionsVotes": 22086,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "23",
+      "party": "DEM",
+      "candidate": "Mariana Sandoval",
+      "officialVotes": 37375,
+      "openElectionsVotes": 37375,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "23",
+      "party": "DEM",
+      "candidate": "Matias Rosales",
+      "officialVotes": 35788,
+      "openElectionsVotes": 35788,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "23",
+      "party": "REP",
+      "candidate": "Michele Pena",
+      "officialVotes": 37967,
+      "openElectionsVotes": 37967,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "24",
+      "party": "DEM",
+      "candidate": "Anna Abeytia",
+      "officialVotes": 27183,
+      "openElectionsVotes": 27183,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "24",
+      "party": "DEM",
+      "candidate": "Lydia Hernandez",
+      "officialVotes": 31744,
+      "openElectionsVotes": 31744,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "25",
+      "party": "DEM",
+      "candidate": "William \"Bill\" Peter Olear",
+      "officialVotes": 41577,
+      "openElectionsVotes": 41577,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "25",
+      "party": "REP",
+      "candidate": "Michael Carbone",
+      "officialVotes": 68427,
+      "openElectionsVotes": 68427,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "25",
+      "party": "REP",
+      "candidate": "Nicholas \"Nick\" KUPPER",
+      "officialVotes": null,
+      "openElectionsVotes": 43277,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "25",
+      "party": "REP",
+      "candidate": "Nickolas \"Nick\" Kupper",
+      "officialVotes": 63970,
+      "openElectionsVotes": 20693,
+      "voteDifference": -43277,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "26",
+      "party": "DEM",
+      "candidate": "Cesar Aguilar",
+      "officialVotes": 30035,
+      "openElectionsVotes": 30035,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "26",
+      "party": "DEM",
+      "candidate": "Quanta Crews",
+      "officialVotes": 25976,
+      "openElectionsVotes": 25976,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "26",
+      "party": "REP",
+      "candidate": "Frank Roberts",
+      "officialVotes": 14359,
+      "openElectionsVotes": 14359,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "26",
+      "party": "REP",
+      "candidate": "Skyla Edwards",
+      "officialVotes": 13446,
+      "openElectionsVotes": 13446,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "27",
+      "party": "DEM",
+      "candidate": "Deborah Howard",
+      "officialVotes": 45601,
+      "openElectionsVotes": 45601,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "27",
+      "party": "REP",
+      "candidate": "Lisa Fink",
+      "officialVotes": 51499,
+      "openElectionsVotes": 51499,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "27",
+      "party": "REP",
+      "candidate": "Tony Rivero",
+      "officialVotes": 50976,
+      "openElectionsVotes": 50976,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "28",
+      "party": "DEM",
+      "candidate": "Barbara Jean Fike",
+      "officialVotes": 51780,
+      "openElectionsVotes": 51780,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "28",
+      "party": "REP",
+      "candidate": "Beverly Pingerelli",
+      "officialVotes": 79618,
+      "openElectionsVotes": 79618,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "28",
+      "party": "REP",
+      "candidate": "David Livingston",
+      "officialVotes": 79333,
+      "openElectionsVotes": 79333,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "29",
+      "party": "DEM",
+      "candidate": "Tanairi OCH0A-MARTINEZ",
+      "officialVotes": null,
+      "openElectionsVotes": 44776,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "29",
+      "party": "DEM",
+      "candidate": "Tanairi Ochoa-Martinez",
+      "officialVotes": 44776,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "lower",
+      "district": "29",
+      "party": "DEM",
+      "candidate": "Tom Tzitzura",
+      "officialVotes": 42535,
+      "openElectionsVotes": 42535,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "29",
+      "party": "REP",
+      "candidate": "James Taylor",
+      "officialVotes": 65431,
+      "openElectionsVotes": 65431,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "29",
+      "party": "REP",
+      "candidate": "Steve Montenegro",
+      "officialVotes": 66301,
+      "openElectionsVotes": 66301,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "30",
+      "party": "DEM",
+      "candidate": "Monica Timberlake",
+      "officialVotes": 26698,
+      "openElectionsVotes": 26698,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "30",
+      "party": "REP",
+      "candidate": "John Gillette",
+      "officialVotes": 76348,
+      "openElectionsVotes": 76348,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "lower",
+      "district": "30",
+      "party": "REP",
+      "candidate": "Leo Biasiucci",
+      "officialVotes": 77117,
+      "openElectionsVotes": 77117,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "1",
+      "party": "DEM",
+      "candidate": "Mike FOGEL",
+      "officialVotes": null,
+      "openElectionsVotes": 48164,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "upper",
+      "district": "1",
+      "party": "DEM",
+      "candidate": "Mike S. Fogel",
+      "officialVotes": 49108,
+      "openElectionsVotes": 944,
+      "voteDifference": -48164,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "1",
+      "party": "REP",
+      "candidate": "Mark Finchem",
+      "officialVotes": 94947,
+      "openElectionsVotes": 94947,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "2",
+      "party": "DEM",
+      "candidate": "Judy Schwiebert",
+      "officialVotes": 48333,
+      "openElectionsVotes": 48333,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "2",
+      "party": "GRN",
+      "candidate": "Dennis Pugsley",
+      "officialVotes": 2076,
+      "openElectionsVotes": 2076,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "2",
+      "party": "REP",
+      "candidate": "Shawnna Bolick",
+      "officialVotes": 52100,
+      "openElectionsVotes": 52100,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "3",
+      "party": "REP",
+      "candidate": "John Kavanagh",
+      "officialVotes": 110048,
+      "openElectionsVotes": 110034,
+      "voteDifference": -14,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "4",
+      "party": "DEM",
+      "candidate": "Christine Marsh",
+      "officialVotes": 70614,
+      "openElectionsVotes": 70614,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "4",
+      "party": "REP",
+      "candidate": "Carine Werner",
+      "officialVotes": 76079,
+      "openElectionsVotes": 76079,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "5",
+      "party": "DEM",
+      "candidate": "Lela Alston",
+      "officialVotes": 67425,
+      "openElectionsVotes": 67425,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "5",
+      "party": "REP",
+      "candidate": "Joshua Ortega",
+      "officialVotes": 31296,
+      "openElectionsVotes": 31296,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "6",
+      "party": "DEM",
+      "candidate": "Teresa HATATHLIE",
+      "officialVotes": null,
+      "openElectionsVotes": 55250,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "upper",
+      "district": "6",
+      "party": "DEM",
+      "candidate": "Theresa Hatathlie",
+      "officialVotes": 72721,
+      "openElectionsVotes": 17471,
+      "voteDifference": -55250,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "7",
+      "party": "DEM",
+      "candidate": "Haley Creighton",
+      "officialVotes": 43406,
+      "openElectionsVotes": 43406,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "7",
+      "party": "REP",
+      "candidate": "Wendy Rogers",
+      "officialVotes": 80750,
+      "openElectionsVotes": 80750,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "8",
+      "party": "DEM",
+      "candidate": "Lauren Kuby",
+      "officialVotes": 53111,
+      "openElectionsVotes": 53105,
+      "voteDifference": -6,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "8",
+      "party": "REP",
+      "candidate": "Roxana Holzapfel",
+      "officialVotes": 34528,
+      "openElectionsVotes": 34515,
+      "voteDifference": -13,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "9",
+      "party": "DEM",
+      "candidate": "Eva Burch",
+      "officialVotes": 42072,
+      "openElectionsVotes": 42072,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "9",
+      "party": "REP",
+      "candidate": "Robert Scantlebury",
+      "officialVotes": 39261,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "upper",
+      "district": "9",
+      "party": "REP",
+      "candidate": "Robert SCANTLENURY",
+      "officialVotes": null,
+      "openElectionsVotes": 39261,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "upper",
+      "district": "10",
+      "party": "DEM",
+      "candidate": "Robert Doyle",
+      "officialVotes": 44170,
+      "openElectionsVotes": 44170,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "10",
+      "party": "REP",
+      "candidate": "David Christian Farnsworth",
+      "officialVotes": 70561,
+      "openElectionsVotes": 67404,
+      "voteDifference": -3157,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "10",
+      "party": "REP",
+      "candidate": "David FARNSWORTH",
+      "officialVotes": null,
+      "openElectionsVotes": 3157,
+      "voteDifference": null,
+      "status": "openelections_only"
+    },
+    {
+      "chamber": "upper",
+      "district": "11",
+      "party": "DEM",
+      "candidate": "Catherine Miranda",
+      "officialVotes": 52106,
+      "openElectionsVotes": 52106,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "11",
+      "party": "REP",
+      "candidate": "Joshua Ayala",
+      "officialVotes": 20095,
+      "openElectionsVotes": 20095,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "12",
+      "party": "DEM",
+      "candidate": "Denise \"Mitzi\" Epstein",
+      "officialVotes": 70499,
+      "openElectionsVotes": 70498,
+      "voteDifference": -1,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "12",
+      "party": "REP",
+      "candidate": "Cara Vicini",
+      "officialVotes": 50796,
+      "openElectionsVotes": 50795,
+      "voteDifference": -1,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "13",
+      "party": "DEM",
+      "candidate": "Sharon Lee Winters",
+      "officialVotes": 55287,
+      "openElectionsVotes": 55287,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "13",
+      "party": "REP",
+      "candidate": "J.D. Mesnard",
+      "officialVotes": 62670,
+      "openElectionsVotes": 62670,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "14",
+      "party": "DEM",
+      "candidate": "Elizabeth Brown",
+      "officialVotes": 50554,
+      "openElectionsVotes": 50554,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "14",
+      "party": "REP",
+      "candidate": "Warren Petersen",
+      "officialVotes": 76251,
+      "openElectionsVotes": 76251,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "15",
+      "party": "DEM",
+      "candidate": "Alan Smith",
+      "officialVotes": 43769,
+      "openElectionsVotes": 43769,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "15",
+      "party": "IND",
+      "candidate": "Evan Olson",
+      "officialVotes": 6061,
+      "openElectionsVotes": 6061,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "15",
+      "party": "REP",
+      "candidate": "Jake Hoffman",
+      "officialVotes": 87580,
+      "openElectionsVotes": 87580,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "16",
+      "party": "DEM",
+      "candidate": "Stacey Seaman",
+      "officialVotes": 45888,
+      "openElectionsVotes": 45888,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "16",
+      "party": "REP",
+      "candidate": "Thomas \"T.J.\" Shope Jr.",
+      "officialVotes": 58386,
+      "openElectionsVotes": 58386,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "17",
+      "party": "DEM",
+      "candidate": "John McLean",
+      "officialVotes": 74669,
+      "openElectionsVotes": 74669,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "17",
+      "party": "REP",
+      "candidate": "Venden \"Vince\" Leach",
+      "officialVotes": 77714,
+      "openElectionsVotes": 77714,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "18",
+      "party": "DEM",
+      "candidate": "Priya Sundareshan",
+      "officialVotes": 89003,
+      "openElectionsVotes": 89003,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "19",
+      "party": "DEM",
+      "candidate": "Bob Karp",
+      "officialVotes": 42555,
+      "openElectionsVotes": 41591,
+      "voteDifference": -964,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "19",
+      "party": "REP",
+      "candidate": "David Gowan",
+      "officialVotes": 71192,
+      "openElectionsVotes": 71192,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "20",
+      "party": "DEM",
+      "candidate": "Sally Ann Gonzales",
+      "officialVotes": 65214,
+      "openElectionsVotes": 65214,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "21",
+      "party": "DEM",
+      "candidate": "Rosanna Gabaldon",
+      "officialVotes": 64282,
+      "openElectionsVotes": 64282,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "22",
+      "party": "DEM",
+      "candidate": "Eva Diaz",
+      "officialVotes": 45253,
+      "openElectionsVotes": 45253,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "22",
+      "party": "REP",
+      "candidate": "Steve Robinson",
+      "officialVotes": 24812,
+      "openElectionsVotes": 24812,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "23",
+      "party": "DEM",
+      "candidate": "Brian Fernandez",
+      "officialVotes": 42658,
+      "openElectionsVotes": 42658,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "23",
+      "party": "REP",
+      "candidate": "Michelle Altherr",
+      "officialVotes": 36602,
+      "openElectionsVotes": 36602,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "24",
+      "party": "DEM",
+      "candidate": "Analise Ortiz",
+      "officialVotes": 38436,
+      "openElectionsVotes": 38436,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "25",
+      "party": "REP",
+      "candidate": "Timothy \"Tim\" Dunn",
+      "officialVotes": 88531,
+      "openElectionsVotes": 88531,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "26",
+      "party": "DEM",
+      "candidate": "Flavio Bravo",
+      "officialVotes": 31198,
+      "openElectionsVotes": 31198,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "26",
+      "party": "REP",
+      "candidate": "Victor \"Vic\" Harris",
+      "officialVotes": 15826,
+      "openElectionsVotes": 15826,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "27",
+      "party": "REP",
+      "candidate": "Kevin Payne",
+      "officialVotes": 67274,
+      "openElectionsVotes": 67274,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "28",
+      "party": "DEM",
+      "candidate": "Shauna Wood Dempsey",
+      "officialVotes": 1112,
+      "openElectionsVotes": null,
+      "voteDifference": null,
+      "status": "official_only"
+    },
+    {
+      "chamber": "upper",
+      "district": "28",
+      "party": "REP",
+      "candidate": "Frank Carroll",
+      "officialVotes": 97174,
+      "openElectionsVotes": 97174,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "29",
+      "party": "DEM",
+      "candidate": "Eric Stafford",
+      "officialVotes": 48608,
+      "openElectionsVotes": 48608,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "29",
+      "party": "REP",
+      "candidate": "Janae Shamp",
+      "officialVotes": 70924,
+      "openElectionsVotes": 70924,
+      "voteDifference": 0,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "30",
+      "party": "DEM",
+      "candidate": "J'aime MorgAine",
+      "officialVotes": 25295,
+      "openElectionsVotes": 23361,
+      "voteDifference": -1934,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "30",
+      "party": "REP",
+      "candidate": "Hildy Angius",
+      "officialVotes": 92213,
+      "openElectionsVotes": 83302,
+      "voteDifference": -8911,
+      "status": "matched"
+    },
+    {
+      "chamber": "upper",
+      "district": "30",
+      "party": "REP",
+      "candidate": "Hildy ANGUS",
+      "officialVotes": null,
+      "openElectionsVotes": 3632,
+      "voteDifference": null,
+      "status": "openelections_only"
+    }
+  ],
+  "summary": {
+    "matched": 148,
+    "exactMatches": 124,
+    "voteDifferences": 24,
+    "officialOnly": 11,
+    "openElectionsOnly": 13
+  },
+  "limitations": [
+    "The Arizona signed canvass is controlling; this report does not correct it.",
+    "Rows only match after chamber, district, normalized party, and normalized candidate-name equality.",
+    "OpenElections precinct rows are aggregated statewide; source-only rows and nonzero differences are retained as review findings.",
+    "This artifact is excluded from score, factual-record, and activation inputs."
+  ]
+}

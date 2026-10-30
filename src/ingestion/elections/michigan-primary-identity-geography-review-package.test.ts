@@ -116,7 +116,7 @@ describe("Michigan primary identity/geography joint reviewer package", () => {
         "michigan-current-incumbent-primary-linkage-candidate-v1",
         "michigan-primary-geography-compatibility-candidate-v1",
       ],
-    }]);
+    license: "unknown", }]);
     const drifted = structuredClone(lock);
     drifted.entries.find((entry: any) => entry.id === "michigan-primary-identity-geography-review-package-v1").parentIds = [];
     expect(() => build({ sourceLockJson: `${JSON.stringify(drifted, null, 2)}\n` })).toThrow("SOURCE_LOCK_MISMATCH");
