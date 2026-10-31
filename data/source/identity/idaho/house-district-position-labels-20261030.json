@@ -1,0 +1,287 @@
+{
+  "schema": "idaho-house-district-position-labels-v1",
+  "sourceId": "idaho-house-membership-20261030",
+  "sourceSha256": "7999754e7b1411cfe74c14a233f5b6199c05e77ff1e2c56f434a33bf7ba44635",
+  "positions": [
+    {
+      "district": 1,
+      "position": "A"
+    },
+    {
+      "district": 1,
+      "position": "B"
+    },
+    {
+      "district": 2,
+      "position": "A"
+    },
+    {
+      "district": 2,
+      "position": "B"
+    },
+    {
+      "district": 3,
+      "position": "A"
+    },
+    {
+      "district": 3,
+      "position": "B"
+    },
+    {
+      "district": 4,
+      "position": "A"
+    },
+    {
+      "district": 4,
+      "position": "B"
+    },
+    {
+      "district": 5,
+      "position": "A"
+    },
+    {
+      "district": 5,
+      "position": "B"
+    },
+    {
+      "district": 6,
+      "position": "A"
+    },
+    {
+      "district": 6,
+      "position": "B"
+    },
+    {
+      "district": 7,
+      "position": "A"
+    },
+    {
+      "district": 7,
+      "position": "B"
+    },
+    {
+      "district": 8,
+      "position": "A"
+    },
+    {
+      "district": 8,
+      "position": "B"
+    },
+    {
+      "district": 9,
+      "position": "A"
+    },
+    {
+      "district": 9,
+      "position": "B"
+    },
+    {
+      "district": 10,
+      "position": "A"
+    },
+    {
+      "district": 10,
+      "position": "B"
+    },
+    {
+      "district": 11,
+      "position": "A"
+    },
+    {
+      "district": 11,
+      "position": "B"
+    },
+    {
+      "district": 12,
+      "position": "A"
+    },
+    {
+      "district": 12,
+      "position": "B"
+    },
+    {
+      "district": 13,
+      "position": "A"
+    },
+    {
+      "district": 13,
+      "position": "B"
+    },
+    {
+      "district": 14,
+      "position": "A"
+    },
+    {
+      "district": 14,
+      "position": "B"
+    },
+    {
+      "district": 15,
+      "position": "A"
+    },
+    {
+      "district": 15,
+      "position": "B"
+    },
+    {
+      "district": 16,
+      "position": "A"
+    },
+    {
+      "district": 16,
+      "position": "B"
+    },
+    {
+      "district": 17,
+      "position": "A"
+    },
+    {
+      "district": 17,
+      "position": "B"
+    },
+    {
+      "district": 18,
+      "position": "A"
+    },
+    {
+      "district": 18,
+      "position": "B"
+    },
+    {
+      "district": 19,
+      "position": "A"
+    },
+    {
+      "district": 19,
+      "position": "B"
+    },
+    {
+      "district": 20,
+      "position": "A"
+    },
+    {
+      "district": 20,
+      "position": "B"
+    },
+    {
+      "district": 21,
+      "position": "A"
+    },
+    {
+      "district": 21,
+      "position": "B"
+    },
+    {
+      "district": 22,
+      "position": "A"
+    },
+    {
+      "district": 22,
+      "position": "B"
+    },
+    {
+      "district": 23,
+      "position": "A"
+    },
+    {
+      "district": 23,
+      "position": "B"
+    },
+    {
+      "district": 24,
+      "position": "A"
+    },
+    {
+      "district": 24,
+      "position": "B"
+    },
+    {
+      "district": 25,
+      "position": "A"
+    },
+    {
+      "district": 25,
+      "position": "B"
+    },
+    {
+      "district": 26,
+      "position": "A"
+    },
+    {
+      "district": 26,
+      "position": "B"
+    },
+    {
+      "district": 27,
+      "position": "A"
+    },
+    {
+      "district": 27,
+      "position": "B"
+    },
+    {
+      "district": 28,
+      "position": "A"
+    },
+    {
+      "district": 28,
+      "position": "B"
+    },
+    {
+      "district": 29,
+      "position": "A"
+    },
+    {
+      "district": 29,
+      "position": "B"
+    },
+    {
+      "district": 30,
+      "position": "A"
+    },
+    {
+      "district": 30,
+      "position": "B"
+    },
+    {
+      "district": 31,
+      "position": "A"
+    },
+    {
+      "district": 31,
+      "position": "B"
+    },
+    {
+      "district": 32,
+      "position": "A"
+    },
+    {
+      "district": 32,
+      "position": "B"
+    },
+    {
+      "district": 33,
+      "position": "A"
+    },
+    {
+      "district": 33,
+      "position": "B"
+    },
+    {
+      "district": 34,
+      "position": "A"
+    },
+    {
+      "district": 34,
+      "position": "B"
+    },
+    {
+      "district": 35,
+      "position": "A"
+    },
+    {
+      "district": 35,
+      "position": "B"
+    }
+  ]
+}

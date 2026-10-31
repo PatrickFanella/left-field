@@ -3,8 +3,8 @@
   "version": 1,
   "interpretation": "Recorded terms are evidence for review, not legal approval. Unknown terms remain unknown; derived licenses do not remove upstream terms. Published roots come from the byte-verified active release descriptor, not its empty parentIds.",
   "summary": {
-    "entries": 1672,
-    "unknownLicenses": 1363,
+    "entries": 1675,
+    "unknownLicenses": 1366,
     "unknownMedslLicenses": 103,
     "publishedOutputs": 4,
     "publishedOutputsWithUnknownTerms": 4,
@@ -578,6 +578,9 @@
     {"id":"ia-2022-general-clarity-summary-zip","url":"https://electionresults.iowa.gov/IA/115641/316303/reports/summary.zip","sha256":"f7caade3ef8a237d78180ba373e9e82bd92d761047513113fdda2c4ffe0e2be6","byteSize":11197,"kind":"official_state_returns","medsl":false},
     {"id":"ia-2024-general-clarity-summary-zip","url":"https://electionresults.iowa.gov/IA/122322/356043/reports/summary.zip","sha256":"0722fdeeaedcf29f5e1db4f5a40c56114edd20e4fcb2ce66b913a438c38d726c","byteSize":12903,"kind":"official_state_returns","medsl":false},
     {"id":"id-2024-general-raw-races-workbook","url":"https://archive.sos.idaho.gov/elections/data/results/2024/raw_races_general.xlsx","sha256":"7bb35774f2521b3b75f8bc0c7b188c0cccde2399700841210c67d050e84fc65e","byteSize":2429561,"kind":"official_state_returns","medsl":false},
+    {"id":"idaho-house-membership-20261030","url":"https://legislature.idaho.gov/house/membership/","sha256":"7999754e7b1411cfe74c14a233f5b6199c05e77ff1e2c56f434a33bf7ba44635","byteSize":352435,"kind":"official_membership_source","medsl":false},
+    {"id":"idaho-house-position-labels-20261030","url":"urn:left-field:idaho-house-membership:district-position-labels:20261030","sha256":"80cb3a1567e9e62f072efc2656ec062caf6be47215f6cac9e3525f57d71f34b5","byteSize":4186,"kind":"derived_extract","medsl":false},
+    {"id":"idaho-legislative-position-statute-20261030","url":"https://legislature.idaho.gov/statutesrules/idstat/Title34/T34CH6/SECT34-614A/","sha256":"687aa4feb03951edd0aafa2f9590092a7e138049928f9ae7250df3fbcb7b1ced","byteSize":91944,"kind":"official_selection_authority","medsl":false},
     {"id":"il-2022-general-vote-totals-txt","url":"https://elections.il.gov/NewDocDisplay.aspx?khDtbt6dhc8zLboSZnz8zqVh5SQVox7uAOAe2nieWDAlNyd4%2btjArHsz9xVXIJ4p6Y57u3FvWw0%2bgnNWdT3uKyV44EJPSNKJqSNPoTMrt%2fmA2Vga9kq1ZSMw8T%2bTP0Bu5MYScFngpt7DT1jIISrO8vbwEz2j1UaUFk4Ught6jyKPD0J6ZjQaef6%2fy5lLn0i%2brhqAS%2fOCDIRvrRtL96BN5g%3d%3d","sha256":"a9181c39fcad7334839bd5fbe7c5f3202b163d9c6b160595087c6c701dfa2d99","byteSize":61355,"kind":"official_state_returns","medsl":false},
     {"id":"il-2022-house-primary-district-01","url":"https://www.elections.il.gov/Downloads/ElectionOperations/ElectionResults/ByOffice/61/61-250-1ST%20CONGRESS-2022GP.csv","sha256":"894e4c5c416b2a6676b1fa3265a6d3006f3b41e15d286662ad6c3f8d28969005","byteSize":1408550,"kind":"source","medsl":false},
     {"id":"il-2022-house-primary-district-02","url":"https://www.elections.il.gov/Downloads/ElectionOperations/ElectionResults/ByOffice/61/61-260-2ND%20CONGRESS-2022GP.csv","sha256":"987ea4091c08333602d7b3afaaa815bd6c9947ddaa7b41d06bd86f67f49f5a6f","byteSize":470048,"kind":"source","medsl":false},
@@ -1465,7 +1468,7 @@
     {"id":"wy-2022-general-results-zip","url":"https://sos.wyo.gov/Elections/Docs/2022/Results/General/2022_Wyoming_General_Results.zip","sha256":"86694fc9c4cb405d100a2f43aa81de84945b6858cd55b793b4436461791aca36","byteSize":728465,"kind":"official_state_returns","medsl":false},
     {"id":"wy-2024-general-results-zip","url":"https://sos.wyo.gov/Elections/Docs/2024/Results/General/2024_Wyoming_General_Results.zip","sha256":"71d1918528e25f2c39e4274b57b6ca608a4463776d5ab29079a6456ce7a22541","byteSize":771175,"kind":"official_state_returns","medsl":false}
   ],
-  "sourceLockSha256": "30f2a6f3fd43f4dff285b127e6c376e46129e60ded84510a48d592f45b83c96c",
+  "sourceLockSha256": "135a073fe4768f0f9d2dfb2566e6cf397a66673d1f9115b4744fc00625acd7ca",
   "activeRelease": {
     "id": "priority-index-release-v1",
     "modelVersion": "v1.16",
