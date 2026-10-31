@@ -148,6 +148,12 @@ function normalizedCandidates(openStatesDistrict: string, mappings: readonly Ocd
   const normalized = normalizedOpenStatesDistrictId(openStatesDistrict);
   const direct = mappings.filter((mapping) => normalizedOpenStatesDistrictId(mapping.openStatesDistrict) === normalized);
   if (direct.length > 0) return direct;
+  if (/^ma-(lower|upper)-/.test(normalized)) {
+    // Retained Massachusetts role labels omit the standalone conjunction `and`.
+    // Keep county order and ordinals: reordered or renamed districts need other evidence.
+    const withoutConjunction = (label: string): string => label.split("-").filter((part) => part !== "and").join("-");
+    return mappings.filter((mapping) => withoutConjunction(normalizedOpenStatesDistrictId(mapping.openStatesDistrict)) === withoutConjunction(normalized));
+  }
   if (normalized.startsWith("nh-lower-")) {
     // NH roster labels omit the explicit `County No.` words used in the pinned OpenStates roles.
     return mappings.filter((mapping) => normalizedOpenStatesDistrictId(mapping.openStatesDistrict.replace("-county-no-", "-")) === normalized);

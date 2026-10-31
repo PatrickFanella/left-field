@@ -76,6 +76,34 @@ describe("state-legislative OCD division identities", () => {
     ])).toMatchObject({ status: "ambiguous", labelMatchMethod: "ambiguous" });
   });
 
+  it("matches Massachusetts conjunction omissions without losing county order or district ordinals", () => {
+    const mappings = parseOcdOpenStatesRoleCsv(readFileSync(join(process.cwd(), "data/source/identity/ocd/ocd-division-ids-f1ab837/state-ma-openstates.csv"), "utf8"));
+    const match = (district: string, chamber: "lower" | "upper" = "upper") => matchStateSeatOcdDivision({ stateCode: "MA", chamber, district, seatSlot: 1 }, mappings);
+    expect(match("First Essex and Middlesex")).toMatchObject({ status: "mapped", labelMatchMethod: "normalized", divisionId: "ocd-division/country:us/state:ma/sldu:1st_essex_and_middlesex" });
+    expect(match("Second Essex and Middlesex")).toMatchObject({ status: "mapped", divisionId: "ocd-division/country:us/state:ma/sldu:2nd_essex_and_middlesex" });
+    expect(match("Barnstable, Dukes and Nantucket", "lower")).toMatchObject({ status: "mapped", divisionId: "ocd-division/country:us/state:ma/sldl:barnstable_dukes_and_nantucket" });
+    expect(match("Cape and Islands")).toMatchObject({ status: "mapped", district: "Cape and Islands" });
+    for (const district of ["Islands and Cape", "Berkshire, Hampden, Franklin and Hampshire", "Third Suffolk", "First Plymouth and Norfolk"]) {
+      expect(match(district)).toMatchObject({ status: "unmapped" });
+    }
+    expect(match("First Essex and Middlesex", "lower")).toMatchObject({ status: "unmapped" });
+    const seat = { stateCode: "MA", chamber: "upper" as const, district: "Cape and Islands", seatSlot: 1 };
+    expect(matchStateSeatOcdDivision(seat, [
+      { divisionId: "ocd-division/country:us/state:ma/sldu:one", openStatesDistrict: "ma-upper-cape-islands" },
+      { divisionId: "ocd-division/country:us/state:ma/sldu:two", openStatesDistrict: "ma-upper-cape-and-islands-" },
+    ])).toMatchObject({ status: "mapped", divisionId: "ocd-division/country:us/state:ma/sldu:two" });
+    expect(matchStateSeatOcdDivision({ ...seat, district: "Cape, and Islands" }, [
+      { divisionId: "ocd-division/country:us/state:ma/sldu:one", openStatesDistrict: "ma-upper-cape-islands" },
+      { divisionId: "ocd-division/country:us/state:ma/sldu:two", openStatesDistrict: "ma-upper-cape--islands" },
+    ])).toMatchObject({ status: "ambiguous" });
+    expect(matchStateSeatOcdDivision({ ...seat, district: "Andover and Islands" }, [
+      { divisionId: "ocd-division/country:us/state:ma/sldu:one", openStatesDistrict: "ma-upper-over-islands" },
+    ])).toMatchObject({ status: "unmapped" });
+    expect(matchStateSeatOcdDivision({ ...seat, stateCode: "NH" }, [
+      { divisionId: "ocd-division/country:us/state:nh/sldu:one", openStatesDistrict: "nh-upper-cape-islands" },
+    ])).toMatchObject({ status: "unmapped" });
+  });
+
   it("rejects changed source URLs and digests instead of trusting local mapping files", () => {
     const lock = readSourceLock(), id = "ocd-division-ids-nc-openstates-f1ab837";
     const changedUrl = { ...lock, entries: lock.entries.map((entry) => entry.id === id ? { ...entry, url: "https://example.test/unpinned" } : entry) };
