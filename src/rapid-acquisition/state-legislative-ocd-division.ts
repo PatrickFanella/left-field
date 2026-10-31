@@ -2,6 +2,7 @@ import type { StateChamber } from "./state-legislative-roster";
 import { readStateLegislativeRoster } from "./state-legislative-roster";
 import { readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { US_STATE_NAMES } from "./us-states";
+import { IDAHO_HOUSE_AUTHORITY_IDS, verifyIdahoHouseSeatAuthority } from "./idaho-house-seat-authority";
 
 /**
  * An exact mapping from an OpenStates role identifier to an OCD division.
@@ -46,6 +47,7 @@ export type StateLegislativeOcdCrosswalkRow = StateSeatOcdDivisionMatch & Readon
   readonly openStatesId: string;
   /** OCD role mappings do not carry plan dates or geometry. */
   readonly planCompatibility: "unreviewed";
+  readonly districtSeatPosition?: "A" | "B";
 }>;
 
 export interface StateLegislativeOcdCrosswalkChamberSummary {
@@ -68,6 +70,7 @@ export interface StateLegislativeOcdCrosswalk {
     identity: "exact_then_conservative_normalized_openstates_role_label_to_ocd_division";
     planCompatibility: "unreviewed";
     historicalGeography: "not_inferred_from_identifier_equality";
+    idahoHouseAuthoritySourceIds: readonly string[];
   }>;
   readonly source: Readonly<{
     repository: "https://github.com/opencivicdata/ocd-division-ids";
@@ -157,6 +160,11 @@ function normalizedCandidates(openStatesDistrict: string, mappings: readonly Ocd
     // The pinned SC roles prefix House district numbers with `hd-`.
     return mappings.filter((mapping) => normalizedOpenStatesDistrictId(mapping.openStatesDistrict).replace("sc-lower-hd-", "sc-lower-") === normalized);
   }
+  const idaho = /^id-lower-([1-9]|[12]\d|3[0-5])[ab]$/.exec(normalized);
+  if (idaho) {
+    // Idaho positions A/B elect separate members from the entire shared district.
+    return mappings.filter((mapping) => normalizedOpenStatesDistrictId(mapping.openStatesDistrict) === `id-lower-${idaho[1]}`);
+  }
   return [];
 }
 
@@ -217,6 +225,7 @@ function verifyOcdLicense(root: string, lock: SourceLock): void {
 export function buildStateLegislativeOcdCrosswalk(root = process.cwd(), lock: SourceLock = readSourceLock(root)): StateLegislativeOcdCrosswalk {
   const roster = readStateLegislativeRoster(root, lock);
   verifyOcdLicense(root, lock);
+  verifyIdahoHouseSeatAuthority(root, lock);
   const stateCodes = Object.keys(US_STATE_NAMES).sort();
   const available = new Map(stateCodes.map((stateCode) => [stateCode, mappingsForState(root, lock, stateCode)]));
   const rows = roster.rows.map((seat): StateLegislativeOcdCrosswalkRow => ({
@@ -224,6 +233,7 @@ export function buildStateLegislativeOcdCrosswalk(root = process.cwd(), lock: So
     seatId: seat.seatId,
     openStatesId: seat.openStatesId,
     planCompatibility: "unreviewed",
+    ...(seat.stateCode === "ID" && seat.chamber === "lower" && /^[1-9]\d?[AB]$/.test(seat.district) ? { districtSeatPosition: seat.district.slice(-1) as "A" | "B" } : {}),
   })).sort((left, right) => left.seatId.localeCompare(right.seatId));
   if (new Set(rows.map((row) => row.seatId)).size !== rows.length) fail("SEAT_ID_DUPLICATE");
   const chamberGroups = new Map<string, StateLegislativeOcdCrosswalkRow[]>();
@@ -254,6 +264,7 @@ export function buildStateLegislativeOcdCrosswalk(root = process.cwd(), lock: So
       identity: "exact_then_conservative_normalized_openstates_role_label_to_ocd_division",
       planCompatibility: "unreviewed",
       historicalGeography: "not_inferred_from_identifier_equality",
+      idahoHouseAuthoritySourceIds: IDAHO_HOUSE_AUTHORITY_IDS,
     },
     source: {
       repository: OCD_REPOSITORY,
