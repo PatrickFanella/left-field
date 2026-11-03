@@ -1,31 +1,31 @@
 {
   "schema": "priority-index-release-v1",
   "version": 1,
-  "modelVersion": "v1.16",
-  "publishedAt": "2026-10-23",
+  "modelVersion": "v1.17",
+  "publishedAt": "2026-11-03",
   "sourceCutoff": "2026-08-04",
   "chambers": {
     "house": {
       "artifactId": "house-score-v11-active-projection-v1",
       "modelVersion": "v0.11",
       "sourceCutoff": "2026-08-04",
-      "financeAsOf": "2026-09-24"
+      "financeAsOf": "2026-11-03"
     },
     "senate": {
       "artifactId": "senate-score-v01-projection-v1",
       "modelVersion": "v0.1",
-      "sourceCutoff": "2026-09-24",
-      "financeAsOf": "2026-09-24"
+      "sourceCutoff": "2026-11-03",
+      "financeAsOf": "2026-11-03"
     },
     "governor": {
       "artifactId": "governor-score-v01-projection-v1",
       "modelVersion": "v0.1",
-      "sourceCutoff": "2026-09-24"
+      "sourceCutoff": "2026-11-03"
     },
     "stateLegislative": {
       "artifactId": "state-legislative-score-v01-projection-v1",
       "modelVersion": "v0.1",
-      "sourceCutoff": "2026-09-24",
+      "sourceCutoff": "2026-11-03",
       "coveredStates": [
         "AK",
         "AL",

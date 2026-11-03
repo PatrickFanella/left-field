@@ -1,0 +1,29 @@
+id: ocd-person/4cd3e60f-3830-4121-965f-f29d9b5ec6e7
+name: Ned Lamont
+given_name: Ned
+family_name: Lamont
+birth_date: 1954-01-03
+image: https://portal.ct.gov/-/media/Office-of-the-Governor/About/govlamont.jpg
+party:
+- name: Democratic
+roles:
+- start_date: '2019-01-09'
+  end_date: '2023-01-04'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:ct/government
+- start_date: '2023-01-04'
+  end_date: '2027-01-06'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:ct/government
+offices:
+- classification: capitol
+  address: Office of Governor Ned Lamont; State Capitol; 210 Capitol Avenue; Hartford, CT 06106
+  voice: 860-566-4840
+links:
+- url: https://portal.ct.gov/Office-of-the-Governor/
+- url: https://portal.ct.gov/Office-of-the-Governor/Contact/Email-Governor-Lamont
+  note: webform
+ids:
+  twitter: GovNedLamont
+sources:
+- url: https://portal.ct.gov/Office-of-the-Governor/

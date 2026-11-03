@@ -1,0 +1,21 @@
+id: ocd-person/c40b88ef-ba7b-415f-a6d4-581bfecf0ea7
+name: Greg Gianforte
+given_name: Greg
+family_name: Gianforte
+birth_date: 1961-04-17
+image: https://governor.mt.gov/_images/portrait_gianforte.jpg
+party:
+- name: Republican
+roles:
+- start_date: '2021-01-04'
+  end_date: '2029-01-01'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:mt/government
+links:
+- url: https://governor.mt.gov/
+- url: https://svc.mt.gov/gov/contact/shareopinion
+  note: webform
+ids:
+  twitter: GregForMontana
+sources:
+- url: https://governor.mt.gov/
