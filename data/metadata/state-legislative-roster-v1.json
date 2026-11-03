@@ -1,7 +1,7 @@
 {
   "schema": "state-legislative-roster-v1",
   "version": 1,
-  "snapshotDate": "2026-09-24",
+  "snapshotDate": "2026-11-03",
   "methodology": {
     "source": "openstates_people_current_csv_cc0",
     "identityGate": "exact_normalized_given_and_family_name_in_latest_retained_democratic_primary",
@@ -23,57 +23,57 @@
     "rapid-kentucky-state-legislative-primary-results-v1",
     "rapid-ohio-state-legislative-democratic-primary-results-v1",
     "rapid-tennessee-state-legislative-primary-results-v1",
-    "openstates-people-al-20260924",
-    "openstates-people-ak-20260924",
-    "openstates-people-az-20260924",
-    "openstates-people-ar-20260924",
-    "openstates-people-ca-20260924",
-    "openstates-people-co-20260924",
-    "openstates-people-ct-20260924",
-    "openstates-people-de-20260924",
-    "openstates-people-fl-20260924",
-    "openstates-people-ga-20260924",
-    "openstates-people-hi-20260924",
-    "openstates-people-id-20260924",
-    "openstates-people-il-20260924",
-    "openstates-people-in-20260924",
-    "openstates-people-ia-20260924",
-    "openstates-people-ks-20260924",
-    "openstates-people-ky-20260924",
-    "openstates-people-la-20260924",
-    "openstates-people-me-20260924",
-    "openstates-people-md-20260924",
-    "openstates-people-ma-20260924",
-    "openstates-people-mi-20260924",
-    "openstates-people-mn-20260924",
-    "openstates-people-ms-20260924",
-    "openstates-people-mo-20260924",
-    "openstates-people-mt-20260924",
-    "openstates-people-ne-20260924",
-    "openstates-people-nv-20260924",
-    "openstates-people-nh-20260924",
-    "openstates-people-nj-20260924",
-    "openstates-people-nm-20260924",
-    "openstates-people-ny-20260924",
-    "openstates-people-nc-20260924",
-    "openstates-people-nd-20260924",
-    "openstates-people-oh-20260924",
-    "openstates-people-ok-20260924",
-    "openstates-people-or-20260924",
-    "openstates-people-pa-20260924",
-    "openstates-people-ri-20260924",
-    "openstates-people-sc-20260924",
-    "openstates-people-sd-20260924",
-    "openstates-people-tn-20260924",
-    "openstates-people-tx-20260924",
-    "openstates-people-ut-20260924",
-    "openstates-people-vt-20260924",
-    "openstates-people-va-20260924",
-    "openstates-people-wa-20260924",
-    "openstates-people-wv-20260924",
-    "openstates-people-wi-20260924",
-    "openstates-people-wy-20260924",
-    "openstates-people-dc-20260924"
+    "openstates-people-ak-20261103",
+    "openstates-people-al-20261103",
+    "openstates-people-ar-20261103",
+    "openstates-people-az-20261103",
+    "openstates-people-ca-20261103",
+    "openstates-people-co-20261103",
+    "openstates-people-ct-20261103",
+    "openstates-people-dc-20261103",
+    "openstates-people-de-20261103",
+    "openstates-people-fl-20261103",
+    "openstates-people-ga-20261103",
+    "openstates-people-hi-20261103",
+    "openstates-people-ia-20261103",
+    "openstates-people-id-20261103",
+    "openstates-people-il-20261103",
+    "openstates-people-in-20261103",
+    "openstates-people-ks-20261103",
+    "openstates-people-ky-20261103",
+    "openstates-people-la-20261103",
+    "openstates-people-ma-20261103",
+    "openstates-people-md-20261103",
+    "openstates-people-me-20261103",
+    "openstates-people-mi-20261103",
+    "openstates-people-mn-20261103",
+    "openstates-people-mo-20261103",
+    "openstates-people-ms-20261103",
+    "openstates-people-mt-20261103",
+    "openstates-people-nc-20261103",
+    "openstates-people-nd-20261103",
+    "openstates-people-ne-20261103",
+    "openstates-people-nh-20261103",
+    "openstates-people-nj-20261103",
+    "openstates-people-nm-20261103",
+    "openstates-people-nv-20261103",
+    "openstates-people-ny-20261103",
+    "openstates-people-oh-20261103",
+    "openstates-people-ok-20261103",
+    "openstates-people-or-20261103",
+    "openstates-people-pa-20261103",
+    "openstates-people-ri-20261103",
+    "openstates-people-sc-20261103",
+    "openstates-people-sd-20261103",
+    "openstates-people-tn-20261103",
+    "openstates-people-tx-20261103",
+    "openstates-people-ut-20261103",
+    "openstates-people-va-20261103",
+    "openstates-people-vt-20261103",
+    "openstates-people-wa-20261103",
+    "openstates-people-wi-20261103",
+    "openstates-people-wv-20261103",
+    "openstates-people-wy-20261103"
   ],
   "rows": [
     {
@@ -8059,32 +8059,6 @@
       "rowSha256": "86ec90b65918d52efa4ad94f29aef79dedced02d10392b5fae253b1002fad575"
     },
     {
-      "seatId": "seat_state_ar_upper_18_1",
-      "stateCode": "AR",
-      "chamber": "upper",
-      "district": "18",
-      "districtKey": "18",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/75b8a2ef-c463-4317-ba03-a368a2f203f2",
-      "name": "Jonathan Dismang",
-      "givenName": "Jonathan",
-      "familyName": "Dismang",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "c0ef8009d91ec7636300d50d98943cf759857712602cd1f7de0aa1c3a542b687"
-    },
-    {
       "seatId": "seat_state_ar_upper_19_1",
       "stateCode": "AR",
       "chamber": "upper",
@@ -14799,10 +14773,10 @@
       "district": "32",
       "districtKey": "32",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/ce4bd827-c1bc-4736-a580-f4f0215e727d",
-      "name": "Manny Rutinel",
-      "givenName": "Manny",
-      "familyName": "Rutinel",
+      "openStatesId": "ocd-person/135499ed-a471-4567-afcc-53c16112f0d6",
+      "name": "María González",
+      "givenName": "María",
+      "familyName": "González",
       "party": "Democratic",
       "rawParty": "Democratic",
       "primaryEvidence": {
@@ -14816,7 +14790,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "a8f94b1c1185bf8c8b8a84903e94a6f7dfc500b071df6ae60585a98b030d20bc"
+      "rowSha256": "02f52551ed7d23074c8900fe07ce37f53a77831c8fb2990cda5785e5b12f415c"
     },
     {
       "seatId": "seat_state_co_lower_33_1",
@@ -32343,6 +32317,32 @@
       "rowSha256": "906cc36d55d23babe26f67ad96cfccd55f0ad08eba325906364b8ae782effa26"
     },
     {
+      "seatId": "seat_state_ga_upper_12_1",
+      "stateCode": "GA",
+      "chamber": "upper",
+      "district": "12",
+      "districtKey": "12",
+      "seatSlot": 1,
+      "openStatesId": "ocd-person/a0bfdc0d-4110-4cd2-b83c-834bba4300f5",
+      "name": "Freddie Sims",
+      "givenName": "Freddie",
+      "familyName": "Sims",
+      "party": "Democratic",
+      "rawParty": "Democratic",
+      "primaryEvidence": {
+        "status": "holder_not_in_latest_primary",
+        "catalogId": "rapid-georgia-state-legislative-primary-results-v1",
+        "cycleYear": 2026,
+        "contestId": "ga:state-leg-primary:2026:upper:12:D",
+        "incumbentVotes": null,
+        "contestVotes": 14670,
+        "incumbentVoteShare": null,
+        "primaryFeasibility": null,
+        "namedCandidates": 3
+      },
+      "rowSha256": "41308ee64e09ec345e5645379c271805e0dbe8d15b3dfea0c6665339f4f32090"
+    },
+    {
       "seatId": "seat_state_ga_upper_13_1",
       "stateCode": "GA",
       "chamber": "upper",
@@ -36501,32 +36501,6 @@
         "namedCandidates": null
       },
       "rowSha256": "9d2511a568cbebe7e18aeebe0dd6a85c3ba40dbd48f344a6cd2775cb0c3d80c7"
-    },
-    {
-      "seatId": "seat_state_ia_lower_38_1",
-      "stateCode": "IA",
-      "chamber": "lower",
-      "district": "38",
-      "districtKey": "38",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/7a97018b-eb0e-46cf-8bd8-26520ff0d1e0",
-      "name": "Jon Dunwell",
-      "givenName": "Jon",
-      "familyName": "Dunwell",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "38abd6f1ecb601544c0a948d12b5b4e968f9671bbf9b43eea209e69a829eba94"
     },
     {
       "seatId": "seat_state_ia_lower_39_1",
@@ -60733,32 +60707,6 @@
         "namedCandidates": null
       },
       "rowSha256": "63500ae60ab3b11df96334d75e739369e20714f7c24f8114e4976fb2c92e56b5"
-    },
-    {
-      "seatId": "seat_state_la_lower_77_1",
-      "stateCode": "LA",
-      "chamber": "lower",
-      "district": "77",
-      "districtKey": "77",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/d3ecec03-0408-46f0-8c82-b775f787e6e1",
-      "name": "Mark Wright",
-      "givenName": "Mark",
-      "familyName": "Wright",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "eec61811a8ae9bdef2d99458111494c178bd5d565f8f8e43272f4baf9ea2a897"
     },
     {
       "seatId": "seat_state_la_lower_78_1",
@@ -96284,8 +96232,8 @@
       "districtKey": "31",
       "seatSlot": 1,
       "openStatesId": "ocd-person/e9b6d4cf-9585-4cc4-8802-598065431e0e",
-      "name": "Frank Smith",
-      "givenName": "Frank",
+      "name": "Frank J. Smith",
+      "givenName": "Frank J.",
       "familyName": "Smith",
       "party": "Democratic",
       "rawParty": "Democratic",
@@ -96300,7 +96248,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "6987c7b1aa8deb958e9f383574b92e9be980b2864648ac4b15dc09c2be761b2b"
+      "rowSha256": "5e562416b91f74682df43ad3df26bdc11375d44a23c8c27162df55b6e86b858a"
     },
     {
       "seatId": "seat_state_mt_lower_32_1",
@@ -117363,32 +117311,6 @@
       "rowSha256": "ad8f2730c57fdf6ae198e81d286446bc3b33c3db73d5af5bd443439d5f5e4857"
     },
     {
-      "seatId": "seat_state_nh_lower_rockingham-5_2",
-      "stateCode": "NH",
-      "chamber": "lower",
-      "district": "Rockingham 5",
-      "districtKey": "rockingham 5",
-      "seatSlot": 2,
-      "openStatesId": "ocd-person/1aa8819a-e1bd-4569-93ec-305ad61e8ea4",
-      "name": "Michael Vose",
-      "givenName": "Michael",
-      "familyName": "Vose",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "8368a3bbb5023148b6cb9a235242f4ec374828e4e13625e8e67cd78f886c1b5e"
-    },
-    {
       "seatId": "seat_state_nh_lower_rockingham-6_1",
       "stateCode": "NH",
       "chamber": "lower",
@@ -124095,32 +124017,6 @@
         "namedCandidates": null
       },
       "rowSha256": "d599a87b8b5ba9466c6f6123cc61b1c7ce0619a428e9bc800ed9de88bfb37331"
-    },
-    {
-      "seatId": "seat_state_nm_lower_64_1",
-      "stateCode": "NM",
-      "chamber": "lower",
-      "district": "64",
-      "districtKey": "64",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/c4caca3c-faa3-445f-91e0-cce9edd53a5a",
-      "name": "Andi Reeb",
-      "givenName": "Andi",
-      "familyName": "Reeb",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "14208f0dcb6a7ceb20a522a18ceec106b04e841d762fa2e7d134cc8d139ac26a"
     },
     {
       "seatId": "seat_state_nm_lower_65_1",
@@ -132246,7 +132142,7 @@
       "givenName": "Pam",
       "familyName": "Helming",
       "party": "Republican",
-      "rawParty": "Republican/Conservative/Independence",
+      "rawParty": "Republican/Conservative",
       "primaryEvidence": {
         "status": "no_catalog_for_state",
         "catalogId": null,
@@ -132258,7 +132154,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "aadb9799ff2024cea4ecb01318c80d2782fd3f6c226398428dc95276fbeed387"
+      "rowSha256": "760f48233d57fffb0dd1e3477ddb604e1fb460a7adf8e1353c2ee8de6f22b7de"
     },
     {
       "seatId": "seat_state_ny_upper_55_1",
@@ -134217,10 +134113,10 @@
       "district": "66",
       "districtKey": "66",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/352d7ee9-256c-4195-a673-17b7ee200948",
-      "name": "Sharon Ray",
-      "givenName": "Sharon",
-      "familyName": "Ray",
+      "openStatesId": "ocd-person/f578440a-e5ea-4775-bb41-94adad15fa73",
+      "name": "Sean Hutson",
+      "givenName": "Sean",
+      "familyName": "Hutson",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -134234,7 +134130,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "adfe680f2c655f5ab952db075f33f1b6255ce6639e8fdc34411936825353d0c7"
+      "rowSha256": "1ff0618d3efab77c74a4c932fd64e8d04512e2c1d88ed9ef171bccbc02a1dc73"
     },
     {
       "seatId": "seat_state_oh_lower_67_1",
@@ -134859,32 +134755,6 @@
         "namedCandidates": null
       },
       "rowSha256": "46234efd11096a8a1feb73a9aedf06289143f1c52aaee9075be43208648fd368"
-    },
-    {
-      "seatId": "seat_state_oh_lower_89_1",
-      "stateCode": "OH",
-      "chamber": "lower",
-      "district": "89",
-      "districtKey": "89",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/cb2ddd04-e5b0-4c96-b217-d02b732eb896",
-      "name": "D.J. Swearingen",
-      "givenName": "D.J.",
-      "familyName": "Swearingen",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "not_democratic_holder",
-        "catalogId": "rapid-ohio-state-legislative-democratic-primary-results-v1",
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "b6b8b48f02e98042ecb1af50445aa0668f4571b4eacd51eac0dc7701f3caa698"
     },
     {
       "seatId": "seat_state_oh_lower_9_1",
@@ -137979,32 +137849,6 @@
         "namedCandidates": null
       },
       "rowSha256": "0dae30cb44f7887fa252dd264424dfeadf8bae585a2d41e67b59d6980f8e9fcb"
-    },
-    {
-      "seatId": "seat_state_ok_lower_77_1",
-      "stateCode": "OK",
-      "chamber": "lower",
-      "district": "77",
-      "districtKey": "77",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/6a662cc1-492b-4c65-a77c-9b8b202b1ae5",
-      "name": "John Waldron",
-      "givenName": "John",
-      "familyName": "Waldron",
-      "party": "Democratic",
-      "rawParty": "Democratic",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "d38f54e11cbbb32de9e92d663d80d645544bd75ac820a8316d4f08cf387dba1e"
     },
     {
       "seatId": "seat_state_ok_lower_78_1",
@@ -162213,32 +162057,6 @@
       "rowSha256": "aa8b1fb69074befdde68eba409416c0ebd945de77e29fdd288a5fcc349513f0e"
     },
     {
-      "seatId": "seat_state_tx_lower_1_1",
-      "stateCode": "TX",
-      "chamber": "lower",
-      "district": "1",
-      "districtKey": "1",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/26617394-4276-4aa7-878c-d20552b260a4",
-      "name": "Gary VanDeaver",
-      "givenName": "Gary",
-      "familyName": "VanDeaver",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "9272b466e48b450c0680597717286e065c038f3b038d30de271c3c8c5f492a5f"
-    },
-    {
       "seatId": "seat_state_tx_lower_10_1",
       "stateCode": "TX",
       "chamber": "lower",
@@ -165756,9 +165574,9 @@
       "districtKey": "87",
       "seatSlot": 1,
       "openStatesId": "ocd-person/5c40c2b0-07c1-4c73-b15b-14d0ef6df40e",
-      "name": "Caroline Fairly",
+      "name": "Caroline Dunmoyer",
       "givenName": "Caroline",
-      "familyName": "Fairly",
+      "familyName": "Dunmoyer",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -165772,7 +165590,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "e84fb18d9c70e13a16300495a95587e98b936943c84388353a7c339c848d6473"
+      "rowSha256": "944d336dae23f650dd4fdfe3236b8e00de763b524bcfec699cbde512818ec739"
     },
     {
       "seatId": "seat_state_tx_lower_88_1",
@@ -167047,32 +166865,6 @@
         "namedCandidates": null
       },
       "rowSha256": "2219437b98004fa1c039c5e600ad74ad652444d53ab172ad3fc965d30873f9c7"
-    },
-    {
-      "seatId": "seat_state_ut_lower_16_1",
-      "stateCode": "UT",
-      "chamber": "lower",
-      "district": "16",
-      "districtKey": "16",
-      "seatSlot": 1,
-      "openStatesId": "ocd-person/3187c9ea-c509-45f3-9eb4-a8ba2d8fd7d9",
-      "name": "Trevor Lee",
-      "givenName": "Trevor",
-      "familyName": "Lee",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "c36a75840385284ff72bb1af244212504aae2d21521ad519864f40b2cccc4e99"
     },
     {
       "seatId": "seat_state_ut_lower_17_1",
@@ -173321,12 +173113,12 @@
       "district": "Addison-4",
       "districtKey": "addison 4",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/1f501dde-37ba-49b3-ac83-0c77102ed8c3",
-      "name": "Mari Cordes",
-      "givenName": "Mari",
-      "familyName": "Cordes",
+      "openStatesId": "ocd-person/337c5ad5-3e6d-483b-949f-fd0e2dbe985c",
+      "name": "Karen Lueders",
+      "givenName": "Karen",
+      "familyName": "Lueders",
       "party": "Democratic",
-      "rawParty": "Democratic/Progressive",
+      "rawParty": "Democratic",
       "primaryEvidence": {
         "status": "no_catalog_for_state",
         "catalogId": null,
@@ -173338,7 +173130,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "7c90e03c5dac6bc52145c7eb97ed4374ac095997f4aa26539eb4d00267de6621"
+      "rowSha256": "a460a6fb323fb3a1ff7931f6316354731eaa9c5bb570602a15b4f468a111bee5"
     },
     {
       "seatId": "seat_state_vt_lower_addison-4_2",
@@ -174179,32 +173971,6 @@
       "district": "Chittenden-18",
       "districtKey": "chittenden 18",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/dec4c236-1cd1-465f-969c-0bb4b8a04992",
-      "name": "Bob Hooper",
-      "givenName": "Bob",
-      "familyName": "Hooper",
-      "party": "Democratic",
-      "rawParty": "Democratic",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "d2c4b1c656194c99d5ebddcb6af47b37e95b30283d170181e23588dadb9b649e"
-    },
-    {
-      "seatId": "seat_state_vt_lower_chittenden-18_2",
-      "stateCode": "VT",
-      "chamber": "lower",
-      "district": "Chittenden-18",
-      "districtKey": "chittenden 18",
-      "seatSlot": 2,
       "openStatesId": "ocd-person/e9036574-9eac-4f0c-9bd2-1b425e96bb8c",
       "name": "Carol Ode",
       "givenName": "Carol",
@@ -174222,7 +173988,33 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "8c2d334e99eed781a88de2d564d6e802718c4f1666d7ec2dd74a356c7297f160"
+      "rowSha256": "3ee931353131988f9d75829b092b5d77113bdf61afdc603b3ad69d88218be0b9"
+    },
+    {
+      "seatId": "seat_state_vt_lower_chittenden-18_2",
+      "stateCode": "VT",
+      "chamber": "lower",
+      "district": "Chittenden-18",
+      "districtKey": "chittenden 18",
+      "seatSlot": 2,
+      "openStatesId": "ocd-person/c2b1d69e-f1d6-43a6-acb5-d980fdf1ed8c",
+      "name": "Kevin Scully",
+      "givenName": "Kevin",
+      "familyName": "Scully",
+      "party": "Democratic",
+      "rawParty": "Democratic",
+      "primaryEvidence": {
+        "status": "no_catalog_for_state",
+        "catalogId": null,
+        "cycleYear": null,
+        "contestId": null,
+        "incumbentVotes": null,
+        "contestVotes": null,
+        "incumbentVoteShare": null,
+        "primaryFeasibility": null,
+        "namedCandidates": null
+      },
+      "rowSha256": "31c622b7e5f9202a8dd8d35c6831a8174125e123d351f831d87d6110acbd8c42"
     },
     {
       "seatId": "seat_state_vt_lower_chittenden-19_1",
@@ -174803,6 +174595,32 @@
       "district": "Chittenden-Franklin",
       "districtKey": "chittenden franklin",
       "seatSlot": 1,
+      "openStatesId": "ocd-person/89c4edc3-e069-4f8f-a0b4-f57986aff04f",
+      "name": "Kumulia Long",
+      "givenName": "Kumulia",
+      "familyName": "Long",
+      "party": "Republican",
+      "rawParty": "Republican",
+      "primaryEvidence": {
+        "status": "no_catalog_for_state",
+        "catalogId": null,
+        "cycleYear": null,
+        "contestId": null,
+        "incumbentVotes": null,
+        "contestVotes": null,
+        "incumbentVoteShare": null,
+        "primaryFeasibility": null,
+        "namedCandidates": null
+      },
+      "rowSha256": "e56cac25701cfc8c31aac300097f41874e4166f6207fcfba074567e34613a0db"
+    },
+    {
+      "seatId": "seat_state_vt_lower_chittenden-franklin_2",
+      "stateCode": "VT",
+      "chamber": "lower",
+      "district": "Chittenden-Franklin",
+      "districtKey": "chittenden franklin",
+      "seatSlot": 2,
       "openStatesId": "ocd-person/9a5bf877-6bb2-4135-a3de-fc344e84c1c6",
       "name": "Tony Micklus",
       "givenName": "Tony",
@@ -174820,33 +174638,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "afd0980e1d37519daf3cd458c4abb964bb8041dab1818f8a58b4fd19b6e02098"
-    },
-    {
-      "seatId": "seat_state_vt_lower_chittenden-franklin_2",
-      "stateCode": "VT",
-      "chamber": "lower",
-      "district": "Chittenden-Franklin",
-      "districtKey": "chittenden franklin",
-      "seatSlot": 2,
-      "openStatesId": "ocd-person/8a7c0a35-c3bc-4b94-a1c3-c726c8ecaaae",
-      "name": "Chris Taylor",
-      "givenName": "Chris",
-      "familyName": "Taylor",
-      "party": "Republican",
-      "rawParty": "Republican",
-      "primaryEvidence": {
-        "status": "no_catalog_for_state",
-        "catalogId": null,
-        "cycleYear": null,
-        "contestId": null,
-        "incumbentVotes": null,
-        "contestVotes": null,
-        "incumbentVoteShare": null,
-        "primaryFeasibility": null,
-        "namedCandidates": null
-      },
-      "rowSha256": "a72684d76d7fa11471f164b10e67f6228bcff8b8c539eea68e66f03f0092e82a"
+      "rowSha256": "ddcba9c87eda0c4eb68608d6cec5110e99bf68fcd5966f24cf8bd089ca4603ec"
     },
     {
       "seatId": "seat_state_vt_lower_essex-caledonia_1",
@@ -175167,10 +174959,10 @@
       "district": "Franklin-8",
       "districtKey": "franklin 8",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/704de547-43b6-4dfa-bf95-c4137f263e00",
-      "name": "Casey Toof",
-      "givenName": "Casey",
-      "familyName": "Toof",
+      "openStatesId": "ocd-person/20e614c9-dd9b-46ed-a3d4-aa1606f0a561",
+      "name": "Jack Brigham",
+      "givenName": "Jack",
+      "familyName": "Brigham",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -175184,7 +174976,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "f657ddd44fb80efd575374f690ef77f49172d0ffde86d517b1843c3c1d9d5ace"
+      "rowSha256": "a3847811b30ca006f1d03296f6f1aa415949dac9feb87d2e21079e6e3c3fa360"
     },
     {
       "seatId": "seat_state_vt_lower_grand-isle-chittenden_1",
@@ -175765,10 +175557,10 @@
       "district": "Rutland-11",
       "districtKey": "rutland 11",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/bd5d142d-90c3-41f6-b8af-7591316951da",
-      "name": "Jim Harrison",
-      "givenName": "Jim",
-      "familyName": "Harrison",
+      "openStatesId": "ocd-person/70ab2e29-6232-4074-9539-2a514aa21dcf",
+      "name": "Valorie Taylor",
+      "givenName": "Valorie",
+      "familyName": "Taylor",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -175782,7 +175574,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "a67ba5f8f2ea573912364be9fe48dc3623e960ee34f42f0949fcbde139b18854"
+      "rowSha256": "1f8604e4bfe7e6401cb740d29066c0a61397336a428a8d32abcccb62e328dff7"
     },
     {
       "seatId": "seat_state_vt_lower_rutland-2_1",
@@ -176415,10 +176207,10 @@
       "district": "Washington-Orange",
       "districtKey": "washington orange",
       "seatSlot": 2,
-      "openStatesId": "ocd-person/a7c7d0f6-8795-4f50-928b-15b6c3831ac4",
-      "name": "Topper McFaun",
-      "givenName": "Topper",
-      "familyName": "McFaun",
+      "openStatesId": "ocd-person/f1771de2-3410-4df0-8f0f-20aeb127a8f0",
+      "name": "David Soucy",
+      "givenName": "David",
+      "familyName": "Soucy",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -176432,7 +176224,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "a65b4f7cc10e0820b3bf3237593ba2b36210c9bc1b890996c7f8e718b2b2089a"
+      "rowSha256": "4d42f78ce25dd9426382795a5dbcab7552cc666068d926b7e23e1af60ddb0aa5"
     },
     {
       "seatId": "seat_state_vt_lower_windham-1_1",
@@ -176857,10 +176649,10 @@
       "district": "Windsor-4",
       "districtKey": "windsor 4",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/a424d253-1d98-4865-a5b7-998d3ffd1bc8",
-      "name": "Heather Surprenant",
-      "givenName": "Heather",
-      "familyName": "Surprenant",
+      "openStatesId": "ocd-person/d799cf20-3603-4035-88b8-20d7bb45f627",
+      "name": "Michael Hoyt",
+      "givenName": "Michael",
+      "familyName": "Hoyt",
       "party": "Democratic",
       "rawParty": "Democratic",
       "primaryEvidence": {
@@ -176874,7 +176666,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "7583c514cf7fdcc69b4039a442e83c3a4fc7897a033e4bf87f40159b7df77c6c"
+      "rowSha256": "f65ca4346b77b6755b73316ba971acddb1b4565788266174ce741ef65361fadc"
     },
     {
       "seatId": "seat_state_vt_lower_windsor-5_1",
@@ -177533,10 +177325,10 @@
       "district": "Orange",
       "districtKey": "orange",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/c5bca102-7637-45de-90fb-183c2c024f43",
-      "name": "Larry Hart",
-      "givenName": "Larry",
-      "familyName": "Hart",
+      "openStatesId": "ocd-person/b2efb3b2-d580-404c-ace4-313fc17a1952",
+      "name": "John Benson",
+      "givenName": "John",
+      "familyName": "Benson",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -177550,7 +177342,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "d0eaca51568a15657c4a067a6457b9dc2182ba2c604cd165e51ab183039c5331"
+      "rowSha256": "c9cdc204fb848d5e732ac7abb6cb1355e3740df1aaad5286ed514f9a9bff828e"
     },
     {
       "seatId": "seat_state_vt_upper_orleans_1",
@@ -177559,10 +177351,10 @@
       "district": "Orleans",
       "districtKey": "orleans",
       "seatSlot": 1,
-      "openStatesId": "ocd-person/a7824782-070e-47c0-992e-2a508f3da243",
-      "name": "Sam Douglass",
-      "givenName": "Sam",
-      "familyName": "Douglass",
+      "openStatesId": "ocd-person/3925fa66-5990-42d3-b3d0-5ee83143d931",
+      "name": "John S Morley",
+      "givenName": "John",
+      "familyName": "Morley",
       "party": "Republican",
       "rawParty": "Republican",
       "primaryEvidence": {
@@ -177576,7 +177368,7 @@
         "primaryFeasibility": null,
         "namedCandidates": null
       },
-      "rowSha256": "997152a5180d0a0f78bd3a21a0ac10ce7bc29b99b441919c5c5e71533e8ab7d8"
+      "rowSha256": "5ca1c388db11768b73170093600717fa43ac26a2f6e9d56f9cf75d952729fa29"
     },
     {
       "seatId": "seat_state_vt_upper_rutland_1",
@@ -191023,18 +190815,18 @@
   ],
   "summary": {
     "jurisdictions": 51,
-    "legislators": 7344,
+    "legislators": 7336,
     "chambers": 100,
     "democraticHolders": 3236,
-    "republicanHolders": 4032,
+    "republicanHolders": 4024,
     "independentHolders": 75,
     "otherHolders": 1,
-    "multiMemberDistricts": 406,
+    "multiMemberDistricts": 405,
     "catalogStates": 10,
     "primaryMatched": 339,
-    "holdersNotInLatestPrimary": 74,
+    "holdersNotInLatestPrimary": 75,
     "matchedContestVotes": 2713283
   },
-  "rowSetSha256": "0f66cfa2afc4d3028f09917135e88419de30faa805dee0764ff2b92f56121d5f",
-  "packageSha256": "aebf57452e4e6ad9eb0bc69b8886db2951e21f0cae5d50ad84cfd916d3477199"
+  "rowSetSha256": "9260babc2867b6d00f18a748c01b3bbfc8a9d69752add713c6200ae9303ccf0f",
+  "packageSha256": "0ec93fa6639223a8956943caea296d94e7be6fef556b7de1362f9c07f90dccf9"
 }

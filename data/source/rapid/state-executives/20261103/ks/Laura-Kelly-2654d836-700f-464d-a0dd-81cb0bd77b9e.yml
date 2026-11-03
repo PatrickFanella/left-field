@@ -1,0 +1,25 @@
+id: ocd-person/2654d836-700f-464d-a0dd-81cb0bd77b9e
+name: Laura Kelly
+given_name: Laura
+family_name: Kelly
+birth_date: 1950-01-24
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Laura_Kelly_official_photo.jpg/960px-Laura_Kelly_official_photo.jpg
+party:
+- name: Democratic
+roles:
+- start_date: '2019-01-14'
+  end_date: '2027-01-11'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:ks/government
+offices:
+- classification: capitol
+  address: Capitol, 300 SW 10th Ave., Ste. 241S; Topeka, KS 66612-1590
+  voice: 785-368-8500
+links:
+- url: https://www.governor.ks.gov/
+- url: https://www.governor.ks.gov/serving-kansans/constituent-services/share-your-opinion
+  note: webform
+ids:
+  twitter: GovLauraKelly
+sources:
+- url: https://www.governor.ks.gov/

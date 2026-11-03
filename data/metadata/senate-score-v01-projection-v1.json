@@ -19,18 +19,18 @@
       "packageSha256": "0da8bd2a52533aa29995b477b4df70f485b810f6021c2ef796a7e4f6745d7658"
     },
     {
-      "id": "fec-candidate-summary-2026-20260924",
+      "id": "fec-candidate-summary-2026-20261103",
       "packageSha256": null
     }
   ],
   "sourceIds": [
-    "congress-legislators-current-20260804",
+    "congress-legislators-current-20261103",
     "congressional-democrat-left-tracker-119th-house-20260804",
     "congressional-democrat-palestine-tracker-119th-house-20260730",
     "refresh-inputs-v1",
     "statewide-presidential-2024-v1",
     "rapid-state-legislative-primary-context-v1",
-    "fec-candidate-summary-2026-20260924"
+    "fec-candidate-summary-2026-20261103"
   ],
   "rows": [
     {
@@ -51,10 +51,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -13.14,
       "fecCandidateId": "S4AK00214",
-      "cashOnHand": 7295069.2,
-      "receipts": 9136966.96,
-      "disbursements": 3932802.55,
-      "financeCoverageThrough": "2026-07-29",
+      "cashOnHand": 2839757.54,
+      "receipts": 11508274.16,
+      "disbursements": 10759421.41,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -62,11 +62,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 28.2,
+      "score": 31.5,
       "blueBaseline": null,
       "competitiveness": 47.4,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 12.3,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -79,7 +79,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 12.3,
           "weight": 0.2
         },
         {
@@ -96,7 +96,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "c2f2b74d27ae088ba58c03cc0750eea43dbabe3a428c30ab44415f1b8db84a29"
+      "rowSha256": "4ae9f34fc1fef5e367cba778c83d94233c5e49077498008240a308e3bd941112"
     },
     {
       "seatId": "seat_senate_ak_3_current",
@@ -116,10 +116,10 @@
       "cumulativeSenateServiceYears": 23.6,
       "presidentialDemocraticMargin2024": -13.14,
       "fecCandidateId": "S4AK00099",
-      "cashOnHand": 1523263.88,
-      "receipts": 1287064.23,
-      "disbursements": 380960.6,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1564309.85,
+      "receipts": 1380020.21,
+      "disbursements": 432870.61,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -127,11 +127,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 35.1,
+      "score": 34.9,
       "blueBaseline": null,
       "competitiveness": 47.4,
       "structuralBaseline": null,
-      "cashVulnerability": 25.8,
+      "cashVulnerability": 25.2,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -144,7 +144,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 25.8,
+          "score": 25.2,
           "weight": 0.2
         },
         {
@@ -161,7 +161,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "40326964afffb0cbfc7269469129514bd537b06787da9e86c0774aee5fe12cc3"
+      "rowSha256": "17a5aa5c9f00df8cab634521ced6267febd1914aecdb109a04c50f64c58b4477"
     },
     {
       "seatId": "seat_senate_al_2_current",
@@ -181,10 +181,10 @@
       "cumulativeSenateServiceYears": 5.6,
       "presidentialDemocraticMargin2024": -30.47,
       "fecCandidateId": "S0AL00230",
-      "cashOnHand": 66589.77,
+      "cashOnHand": 49413.75,
       "receipts": 726222.5,
-      "disbursements": 1191963.2,
-      "financeCoverageThrough": "2026-06-30",
+      "disbursements": 1209139.22,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -192,11 +192,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 24.9,
+      "score": 26.5,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 93.8,
+      "cashVulnerability": 100,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -209,7 +209,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 93.8,
+          "score": 100,
           "weight": 0.2
         },
         {
@@ -226,7 +226,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "e205b5d520932e6a349dab60f0150c160321453b8f5b4f50fe510349580ae289"
+      "rowSha256": "c47414be4bc91928d1c965f5573fe26d2b69bbcf1d0f58d7aed0651058b6326f"
     },
     {
       "seatId": "seat_senate_al_3_current",
@@ -246,10 +246,10 @@
       "cumulativeSenateServiceYears": 3.6,
       "presidentialDemocraticMargin2024": -30.47,
       "fecCandidateId": "S2AL00145",
-      "cashOnHand": 5235186.81,
-      "receipts": 2706560.51,
-      "disbursements": 1580922.4,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 5134688.53,
+      "receipts": 2978134.8,
+      "disbursements": 1952994.97,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -291,7 +291,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "24b15f54d637904181b8145b927a32bb98968ab28f9d08adac6b1e8708701b32"
+      "rowSha256": "2b31a46ed5ae2daeaa5cfbd48299f1b5ec506c126fb40d80c150edf94df462a3"
     },
     {
       "seatId": "seat_senate_ar_2_current",
@@ -311,10 +311,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -30.64,
       "fecCandidateId": "S4AR00103",
-      "cashOnHand": 9931884.93,
-      "receipts": 6233116.56,
-      "disbursements": 3752101.46,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 5129927.81,
+      "receipts": 7149643.47,
+      "disbursements": 9470585.49,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -356,7 +356,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "b8ff472c7a60241dde3fda0ef0cb47f107dc4c0f1af4ee439a46c58c13388d52"
+      "rowSha256": "57aaca5a2d90b4edbed2be14b64249280bf410e50024c605729751ae1279c5b8"
     },
     {
       "seatId": "seat_senate_ar_3_current",
@@ -376,10 +376,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": -30.64,
       "fecCandidateId": "S0AR00150",
-      "cashOnHand": 1371011.11,
-      "receipts": 507948.8,
-      "disbursements": 247714.19,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1387943.15,
+      "receipts": 579216.18,
+      "disbursements": 302049.53,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -391,7 +391,7 @@
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 28.1,
+      "cashVulnerability": 27.8,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -404,7 +404,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 28.1,
+          "score": 27.8,
           "weight": 0.2
         },
         {
@@ -421,7 +421,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "6903685c40be0155364be1f07d88206cf847fea2af8a3268a6e322a2892b7dd9"
+      "rowSha256": "808bf1c8380b42ac086823b298f675665daf463205bd389dad8842571dc21bea"
     },
     {
       "seatId": "seat_senate_az_1_current",
@@ -441,10 +441,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -5.53,
       "fecCandidateId": "S4AZ00139",
-      "cashOnHand": 2081170.73,
-      "receipts": 4345411.03,
-      "disbursements": 2475393,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2243415.18,
+      "receipts": 4841014.45,
+      "disbursements": 2808751.97,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4006410256,
       "palestineScore": 0.2222222222,
       "alignmentGap": 68.9,
@@ -452,11 +452,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 16.6,
+      "score": 16.4,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 19,
+      "cashVulnerability": 17.4,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -481,12 +481,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 19,
+          "score": 17.4,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "74a2d0714e73e6c1e4321362e1a8b4875ea78a2094cf23afab07676c32918f63"
+      "rowSha256": "0599d0e819613e4e6add89c682ce446c7cca3f75810ec72380d266bafab7f6bc"
     },
     {
       "seatId": "seat_senate_az_3_current",
@@ -506,10 +506,10 @@
       "cumulativeSenateServiceYears": 5.7,
       "presidentialDemocraticMargin2024": -5.53,
       "fecCandidateId": "S0AZ00350",
-      "cashOnHand": 24287638.18,
-      "receipts": 40775022.69,
-      "disbursements": 20889818.08,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 26498148.59,
+      "receipts": 47539201.61,
+      "disbursements": 25443486.59,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.3372703412,
       "palestineScore": 0.1812865497,
       "alignmentGap": 74.1,
@@ -551,7 +551,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "a24a56da58df74b774d3681d88eb0892788a327434b618c44f68c3c53121a559"
+      "rowSha256": "240b5bfbc43a3613b8c09805179e445646dcc6f5ae7d40374d95b1024a729e93"
     },
     {
       "seatId": "seat_senate_ca_1_current",
@@ -571,10 +571,10 @@
       "cumulativeSenateServiceYears": 1.7,
       "presidentialDemocraticMargin2024": 20.13,
       "fecCandidateId": "S4CA00555",
-      "cashOnHand": 10252461.04,
-      "receipts": 8832154.09,
-      "disbursements": 4960719.67,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 11127588.76,
+      "receipts": 10403471.65,
+      "disbursements": 5656909.51,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.7711864407,
       "palestineScore": 0.3333333333,
       "alignmentGap": 44.8,
@@ -616,7 +616,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "26601c4a3dd89a1f0935ca80dfd4479852e583fb5f4501045189722fd6f16b76"
+      "rowSha256": "1696bdc48d3c3459b1cf8997e1a1ff08cf34a37e71dd6046f05ba2e2e77ca82f"
     },
     {
       "seatId": "seat_senate_ca_3_current",
@@ -636,10 +636,10 @@
       "cumulativeSenateServiceYears": 5.5,
       "presidentialDemocraticMargin2024": 20.13,
       "fecCandidateId": "S2CA00955",
-      "cashOnHand": 7290814.38,
-      "receipts": 1502700.32,
-      "disbursements": 854740.96,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 7312467.54,
+      "receipts": 1623990.09,
+      "disbursements": 954377.57,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.6804347826,
       "palestineScore": 0.216374269,
       "alignmentGap": 55.2,
@@ -681,7 +681,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "51447dff168d8563938b97f408cbeda33a1cd7b8f07c86365e5d23d3aeaa5037"
+      "rowSha256": "3e51fc947161c05f76799937d3e1350fb34e3bbcf5acbda39a0d9c4b90dee8e5"
     },
     {
       "seatId": "seat_senate_co_2_current",
@@ -701,10 +701,10 @@
       "cumulativeSenateServiceYears": 5.6,
       "presidentialDemocraticMargin2024": 10.98,
       "fecCandidateId": "S0CO00575",
-      "cashOnHand": 2083870.46,
-      "receipts": 8119380.12,
-      "disbursements": 7471142.64,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1558827.9,
+      "receipts": 9529276.87,
+      "disbursements": 9406081.95,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.2380952381,
       "palestineScore": 0.1812865497,
       "alignmentGap": 79,
@@ -712,11 +712,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 34.2,
+      "score": 35.1,
       "blueBaseline": 23.9,
       "competitiveness": null,
       "structuralBaseline": 23.9,
-      "cashVulnerability": 19,
+      "cashVulnerability": 25.3,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -741,12 +741,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 19,
+          "score": 25.3,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "7a8b4348e8fef03e8bb6761e686aca371c77b71969cf3f96fe20e6a1bf8a4cbc"
+      "rowSha256": "d2a4af580fcc159e80233d2de31c7bf2002f722fac63fc65dd857372ded4f8a5"
     },
     {
       "seatId": "seat_senate_co_3_current",
@@ -766,10 +766,10 @@
       "cumulativeSenateServiceYears": 17.5,
       "presidentialDemocraticMargin2024": 10.98,
       "fecCandidateId": "S0CO00211",
-      "cashOnHand": 201759.71,
-      "receipts": 213775,
-      "disbursements": 478870.83,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 192712.12,
+      "receipts": 226248.44,
+      "disbursements": 500391.86,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.2596153846,
       "palestineScore": 0.216374269,
       "alignmentGap": 76.2,
@@ -777,11 +777,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 41.2,
+      "score": 41.4,
       "blueBaseline": 23.9,
       "competitiveness": null,
       "structuralBaseline": 23.9,
-      "cashVulnerability": 69.7,
+      "cashVulnerability": 70.7,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -806,12 +806,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 69.7,
+          "score": 70.7,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "3abb7a9e58797ea5dd4c2d2e783fdb0cd2d7881549f3347af2971c7ee889af34"
+      "rowSha256": "0bf91bbc5a148352867785f3872a10009beb664f229dcc638d01eef1fe6ee024"
     },
     {
       "seatId": "seat_senate_ct_1_current",
@@ -831,10 +831,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 14.5,
       "fecCandidateId": "S2CT00132",
-      "cashOnHand": 11457846.37,
-      "receipts": 13308354.14,
-      "disbursements": 7377282.63,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 11517904.26,
+      "receipts": 14020487.66,
+      "disbursements": 8029358.26,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.6460970464,
       "palestineScore": 0.4269005848,
       "alignmentGap": 46.4,
@@ -876,7 +876,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "0238831088c4c643c41acb28e3984fc452d3e42a063fcb5f7fd9d55c3c8632e0"
+      "rowSha256": "5a6f8003ba812a8a8d020ab30e520ee8e85a8a94ff111c8b546d371a46415f6d"
     },
     {
       "seatId": "seat_senate_ct_3_current",
@@ -896,10 +896,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": 14.5,
       "fecCandidateId": "S0CT00177",
-      "cashOnHand": 1476933.19,
-      "receipts": 612252.45,
-      "disbursements": 373460.79,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1533368.3,
+      "receipts": 771465.29,
+      "disbursements": 476238.52,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5734375,
       "palestineScore": 0.1111111111,
       "alignmentGap": 65.8,
@@ -907,11 +907,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 41.8,
+      "score": 41.7,
       "blueBaseline": 38,
       "competitiveness": null,
       "structuralBaseline": 38,
-      "cashVulnerability": 26.5,
+      "cashVulnerability": 25.7,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -936,12 +936,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 26.5,
+          "score": 25.7,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "39efda10f2e73e3d3c3c218dcce2453f78dbc738c4979a243c9b383892593e01"
+      "rowSha256": "fd6a8ceb41a88006f5f7135251dabc97d3a70a81e1ddfb98c9a86673c1cc270b"
     },
     {
       "seatId": "seat_senate_de_1_current",
@@ -961,10 +961,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": 14.7,
       "fecCandidateId": "S4DE00060",
-      "cashOnHand": 120948.42,
-      "receipts": 1016908.07,
-      "disbursements": 1040416.83,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 104100.1,
+      "receipts": 1225181.85,
+      "disbursements": 1265538.93,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.6426553672,
       "palestineScore": 0.5555555556,
       "alignmentGap": 40.1,
@@ -972,11 +972,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 45.4,
+      "score": 45.9,
       "blueBaseline": 38.8,
       "competitiveness": null,
       "structuralBaseline": 38.8,
-      "cashVulnerability": 80.8,
+      "cashVulnerability": 84.1,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -1001,12 +1001,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 80.8,
+          "score": 84.1,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "df027c86680887314db1b2ba4cc837c5866faeadcd408407f8c5c75dafdf94b7"
+      "rowSha256": "491f03ddfda2be3cb0abe562e37ffdc6dc6781c96f6386995dcfbb6cfe8566a7"
     },
     {
       "seatId": "seat_senate_de_2_current",
@@ -1026,10 +1026,10 @@
       "cumulativeSenateServiceYears": 15.7,
       "presidentialDemocraticMargin2024": 14.7,
       "fecCandidateId": "S0DE00092",
-      "cashOnHand": 4793384.05,
-      "receipts": 4168081.31,
-      "disbursements": 1559897.11,
-      "financeCoverageThrough": "2026-08-26",
+      "cashOnHand": 5031711.21,
+      "receipts": 4956015.33,
+      "disbursements": 2109503.97,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.3804112554,
       "palestineScore": 0.1111111111,
       "alignmentGap": 75.4,
@@ -1037,11 +1037,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 40.4,
+      "score": 40.3,
       "blueBaseline": 38.8,
       "competitiveness": null,
       "structuralBaseline": 38.8,
-      "cashVulnerability": 0.9,
+      "cashVulnerability": 0,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -1066,12 +1066,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0.9,
+          "score": 0,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "d142f015acf063164f714d4347b9485b73073be01fe52d5417e3fc15f847d8f1"
+      "rowSha256": "0f3915b2a8afaa63dbead61c2400448c6b27877f06e1f6af1decbda72d238493"
     },
     {
       "seatId": "seat_senate_fl_1_current",
@@ -1091,10 +1091,10 @@
       "cumulativeSenateServiceYears": 7.6,
       "presidentialDemocraticMargin2024": -13.1,
       "fecCandidateId": "S8FL00273",
-      "cashOnHand": 690447.65,
-      "receipts": 1582501.06,
-      "disbursements": 1690416.98,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 647090.18,
+      "receipts": 1816461.9,
+      "disbursements": 1967735.29,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1102,11 +1102,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 39.7,
+      "score": 40.1,
       "blueBaseline": null,
       "competitiveness": 47.6,
       "structuralBaseline": null,
-      "cashVulnerability": 43,
+      "cashVulnerability": 44.4,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -1119,7 +1119,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 43,
+          "score": 44.4,
           "weight": 0.2
         },
         {
@@ -1136,7 +1136,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "58292bfa674341369073e487b0aa0e1ec4b0882285846900bbc159f83731f7e2"
+      "rowSha256": "6f624193ff571bf603f16e5ac6061b4b63aa2825bd40b760f1454ed5c7836341"
     },
     {
       "seatId": "seat_senate_fl_3_current",
@@ -1156,10 +1156,10 @@
       "cumulativeSenateServiceYears": 1.5,
       "presidentialDemocraticMargin2024": -13.1,
       "fecCandidateId": "S6FL00640",
-      "cashOnHand": 8491175.43,
-      "receipts": 11270804.54,
-      "disbursements": 2779629.11,
-      "financeCoverageThrough": "2026-07-29",
+      "cashOnHand": 816355.11,
+      "receipts": 14524031.96,
+      "disbursements": 13707676.85,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1167,11 +1167,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 28.4,
+      "score": 38.8,
       "blueBaseline": null,
       "competitiveness": 47.6,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 39.4,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -1184,7 +1184,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 39.4,
           "weight": 0.2
         },
         {
@@ -1201,7 +1201,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "484c334d3e98d755a24f2213c0f265c3ea4023cc7c52fa4688c009146f6ed670"
+      "rowSha256": "e0461e2c2e494cc1855f25e72d3aaecc3997910b03c27a8d13150718281273c2"
     },
     {
       "seatId": "seat_senate_ga_2_current",
@@ -1221,10 +1221,10 @@
       "cumulativeSenateServiceYears": 5.5,
       "presidentialDemocraticMargin2024": -2.19,
       "fecCandidateId": "S8GA00180",
-      "cashOnHand": 42587451,
-      "receipts": 77279766.48,
-      "disbursements": 39682882.19,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 15134335.92,
+      "receipts": 115904485.77,
+      "disbursements": 105760716.56,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.2780172414,
       "palestineScore": 0.2865497076,
       "alignmentGap": 71.8,
@@ -1266,7 +1266,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "251154c4a0b669746734064ef13c49365405390fe79e8754e841a98c8f3e847d"
+      "rowSha256": "8959c3502287c98f04171e943f024a3c1ed56f2f7f983234ac069b8bdf37d3fa"
     },
     {
       "seatId": "seat_senate_ga_3_current",
@@ -1286,10 +1286,10 @@
       "cumulativeSenateServiceYears": 5.5,
       "presidentialDemocraticMargin2024": -2.19,
       "fecCandidateId": "S0GA00559",
-      "cashOnHand": 4101705.27,
-      "receipts": 2595782.22,
-      "disbursements": 3232651.94,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 4104890.59,
+      "receipts": 3559332.91,
+      "disbursements": 4193017.31,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4403202329,
       "palestineScore": 0.4678362573,
       "alignmentGap": 54.6,
@@ -1331,7 +1331,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "56359dfe64d3a3f5c1811ac1d763238e0f888dc925a98c524c4c1ea8684af496"
+      "rowSha256": "ee580aae0549d790c26c51b13780d4ad36837023bebc3fee3b661955d7bff52f"
     },
     {
       "seatId": "seat_senate_hi_1_current",
@@ -1351,10 +1351,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 22.86,
       "fecCandidateId": "S2HI00106",
-      "cashOnHand": 1420216.75,
-      "receipts": 562722.93,
-      "disbursements": 548381.03,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1362853.49,
+      "receipts": 616935.38,
+      "disbursements": 659956.74,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.6354166667,
       "palestineScore": 0.5730994152,
       "alignmentGap": 39.6,
@@ -1362,11 +1362,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 58.4,
+      "score": 58.6,
       "blueBaseline": 71.4,
       "competitiveness": null,
       "structuralBaseline": 71.4,
-      "cashVulnerability": 27.3,
+      "cashVulnerability": 28.2,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -1391,12 +1391,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 27.3,
+          "score": 28.2,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "0b763a888b6d5d12344aef88da7dd3ace4ec5f4326233ee289141facad49ff3b"
+      "rowSha256": "5df59c7964d8728c6c63bc7d21d77936d1eb2ca9b9369ab517d5f4a8e1089e58"
     },
     {
       "seatId": "seat_senate_hi_3_current",
@@ -1416,10 +1416,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 22.86,
       "fecCandidateId": "S4HI00136",
-      "cashOnHand": 2527559.84,
-      "receipts": 1484359.04,
-      "disbursements": 613423.62,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2727357.78,
+      "receipts": 1794749.41,
+      "disbursements": 724016.05,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5657051282,
       "palestineScore": 0.4444444444,
       "alignmentGap": 49.5,
@@ -1427,11 +1427,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 58.5,
+      "score": 58.3,
       "blueBaseline": 71.4,
       "competitiveness": null,
       "structuralBaseline": 71.4,
-      "cashVulnerability": 14.8,
+      "cashVulnerability": 13.2,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -1456,12 +1456,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 14.8,
+          "score": 13.2,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "319247fb7cb08aeb68fd68bdb19bf294e63a9a5591e873b9b045fa15d7795a15"
+      "rowSha256": "5806fb5da5fc67518dc661a06a4a1cfc0e905748bfb93c53052a11c2e4ebf682"
     },
     {
       "seatId": "seat_senate_ia_2_current",
@@ -1481,10 +1481,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -13.21,
       "fecCandidateId": "S4IA00129",
-      "cashOnHand": 1934477.68,
-      "receipts": 2002592.02,
-      "disbursements": 2307957.08,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1801802.09,
+      "receipts": 2006940.15,
+      "disbursements": 2444980.8,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1492,11 +1492,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 33.5,
+      "score": 34,
       "blueBaseline": null,
       "competitiveness": 47.2,
       "structuralBaseline": null,
-      "cashVulnerability": 20.6,
+      "cashVulnerability": 22.2,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -1509,7 +1509,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 20.6,
+          "score": 22.2,
           "weight": 0.2
         },
         {
@@ -1526,7 +1526,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "e31c20aa8909135ed5474eaf5b938469e749546b30a941abe751619fa11a605c"
+      "rowSha256": "91b9fa03a7b0aa82eafbdf04e391e88a2b639e0b45ea7909203f16f4ef28e2b6"
     },
     {
       "seatId": "seat_senate_ia_3_current",
@@ -1546,10 +1546,10 @@
       "cumulativeSenateServiceYears": 45.5,
       "presidentialDemocraticMargin2024": -13.21,
       "fecCandidateId": "S0IA00028",
-      "cashOnHand": 360213.14,
-      "receipts": 328050.45,
-      "disbursements": 300738.25,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 487400.19,
+      "receipts": 527998.07,
+      "disbursements": 373498.82,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1557,11 +1557,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 43.2,
+      "score": 41.5,
       "blueBaseline": null,
       "competitiveness": 47.2,
       "structuralBaseline": null,
-      "cashVulnerability": 57.1,
+      "cashVulnerability": 50.6,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -1574,7 +1574,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 57.1,
+          "score": 50.6,
           "weight": 0.2
         },
         {
@@ -1591,7 +1591,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "4a378a94980466991d5b127e2360dab7236372be1d5fb4d55955dd43209bc003"
+      "rowSha256": "fceb404785bfc86c745250ba3e11ff481ebf23df6f9a548503ee8ca9e3e218cd"
     },
     {
       "seatId": "seat_senate_id_2_current",
@@ -1611,10 +1611,10 @@
       "cumulativeSenateServiceYears": 17.6,
       "presidentialDemocraticMargin2024": -36,
       "fecCandidateId": "S8ID00092",
-      "cashOnHand": 3535956.11,
-      "receipts": 3357516.42,
-      "disbursements": 2241924.87,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2122234.76,
+      "receipts": 3935512.15,
+      "disbursements": 4233641.95,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1622,11 +1622,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 2,
+      "score": 4.9,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 7.5,
+      "cashVulnerability": 18.6,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -1639,7 +1639,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 7.5,
+          "score": 18.6,
           "weight": 0.2
         },
         {
@@ -1656,7 +1656,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "e6dce7062a7e42030fa57c9959714878ce96f9639652e4bbed600b2b9fa53506"
+      "rowSha256": "c1cf64419a8e74b69134436afbd96ccf7e681edb6821e2d1b86720bc408f696e"
     },
     {
       "seatId": "seat_senate_id_3_current",
@@ -1676,10 +1676,10 @@
       "cumulativeSenateServiceYears": 27.6,
       "presidentialDemocraticMargin2024": -36,
       "fecCandidateId": "S8ID00027",
-      "cashOnHand": 2989963.86,
-      "receipts": 1090241.69,
-      "disbursements": 671871.64,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3063123.96,
+      "receipts": 1306491.6,
+      "disbursements": 814961.45,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1687,11 +1687,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 2.9,
+      "score": 2.8,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 11.2,
+      "cashVulnerability": 10.6,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -1704,7 +1704,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 11.2,
+          "score": 10.6,
           "weight": 0.2
         },
         {
@@ -1721,7 +1721,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "cf439a6e0accd70e50f47ec095ead8f5f683f66a39f0094873a8db1836b8bd7d"
+      "rowSha256": "89d93b016978f74a8a1ebec0073637aed14e899dcc21760f8aaabfa08d1239c9"
     },
     {
       "seatId": "seat_senate_il_2_current",
@@ -1741,10 +1741,10 @@
       "cumulativeSenateServiceYears": 29.5,
       "presidentialDemocraticMargin2024": 10.9,
       "fecCandidateId": "S6IL00151",
-      "cashOnHand": 1001532.73,
-      "receipts": 80463.14,
-      "disbursements": 753717.63,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 840651.61,
+      "receipts": 84084.45,
+      "disbursements": 918220.06,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5,
       "palestineScore": 0.5380116959,
       "alignmentGap": 48.1,
@@ -1752,11 +1752,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 30.2,
+      "score": 30.8,
       "blueBaseline": 23.6,
       "competitiveness": null,
       "structuralBaseline": 23.6,
-      "cashVulnerability": 34.9,
+      "cashVulnerability": 38.7,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -1781,12 +1781,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 34.9,
+          "score": 38.7,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "5195c19c1325b645fa209ec9b078f08098a1aa029b17738637545c3f8af27c01"
+      "rowSha256": "c3628f4c20042c2aa187b6077638a4c0dacf7c980fb0f2683fa78a819bb98426"
     },
     {
       "seatId": "seat_senate_il_3_current",
@@ -1806,10 +1806,10 @@
       "cumulativeSenateServiceYears": 9.6,
       "presidentialDemocraticMargin2024": 10.9,
       "fecCandidateId": "S6IL00292",
-      "cashOnHand": 4131816.17,
-      "receipts": 5148750,
-      "disbursements": 3760886.79,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 4229806.34,
+      "receipts": 6054541.04,
+      "disbursements": 4568687.66,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4737442922,
       "palestineScore": 0.3625730994,
       "alignmentGap": 58.2,
@@ -1817,11 +1817,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 27.6,
+      "score": 27.5,
       "blueBaseline": 23.6,
       "competitiveness": null,
       "structuralBaseline": 23.6,
-      "cashVulnerability": 4.1,
+      "cashVulnerability": 3.6,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -1846,12 +1846,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 4.1,
+          "score": 3.6,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "5c5f1d3edd868e850c0026b386957b8881466403aca0ccfd1c870c62f782c168"
+      "rowSha256": "034e3b8abcfabf317bedffbff534b4adc6303f3c3ee9589f648f2a762b98be30"
     },
     {
       "seatId": "seat_senate_in_1_current",
@@ -1871,10 +1871,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -18.96,
       "fecCandidateId": "S4IN00196",
-      "cashOnHand": 3120254.43,
-      "receipts": 2291158.59,
-      "disbursements": 1784260.88,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3354100.91,
+      "receipts": 2683209.62,
+      "disbursements": 1942465.43,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1882,11 +1882,11 @@
       "stateContestation": 24.5,
       "stateContestationCycleYear": 2024,
       "route": "republican_fringe_general",
-      "score": 19.7,
+      "score": 19.4,
       "blueBaseline": null,
       "competitiveness": 24.2,
       "structuralBaseline": null,
-      "cashVulnerability": 10.2,
+      "cashVulnerability": 8.7,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -1899,7 +1899,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 10.2,
+          "score": 8.7,
           "weight": 0.2
         },
         {
@@ -1916,7 +1916,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "5ef7974a7a7889042014735fabc55ecf2b5cf8bdb7b9d14f04987cf3b5d22920"
+      "rowSha256": "5771fd45071dcda0211e1672d0329f49cbefd4b07557e7233a31e415d8db5ba9"
     },
     {
       "seatId": "seat_senate_in_3_current",
@@ -1936,10 +1936,10 @@
       "cumulativeSenateServiceYears": 9.6,
       "presidentialDemocraticMargin2024": -18.96,
       "fecCandidateId": "S6IN00191",
-      "cashOnHand": 7205565.85,
-      "receipts": 4401018.38,
-      "disbursements": 1621395.17,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 7416630.15,
+      "receipts": 5078129.48,
+      "disbursements": 2087441.97,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -1981,7 +1981,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "d876a6eec35682ca9614398289e1aaa2ae9368866445ff128abe0d6413e9c0a6"
+      "rowSha256": "84b2353406341ad065f33435877675bd10bd7fc78e9aa0e1e354147d5a2a55b4"
     },
     {
       "seatId": "seat_senate_ks_2_current",
@@ -2001,10 +2001,10 @@
       "cumulativeSenateServiceYears": 5.6,
       "presidentialDemocraticMargin2024": -16.12,
       "fecCandidateId": "S0KS00315",
-      "cashOnHand": 5388078.28,
-      "receipts": 4009074.73,
-      "disbursements": 326015.09,
-      "financeCoverageThrough": "2026-07-15",
+      "cashOnHand": 809806.46,
+      "receipts": 5350063.53,
+      "disbursements": 6245275.71,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2012,11 +2012,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 21.2,
+      "score": 31.6,
       "blueBaseline": null,
       "competitiveness": 35.5,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 39.5,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -2029,7 +2029,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 39.5,
           "weight": 0.2
         },
         {
@@ -2046,7 +2046,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "8a8315a957f15c0ed495b5c5d83f18c3c509c4e82976979488cbd47ec1991176"
+      "rowSha256": "73efd0b206f379c2e060c2acbe27312c32da14ff6a2cfe826f4c5072c2c031a1"
     },
     {
       "seatId": "seat_senate_ks_3_current",
@@ -2066,10 +2066,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": -16.12,
       "fecCandidateId": "S0KS00091",
-      "cashOnHand": 5757899.7,
-      "receipts": 1301304.17,
-      "disbursements": 312788.77,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 5960785.54,
+      "receipts": 1558967.13,
+      "disbursements": 367565.89,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2111,7 +2111,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "259c76e89417822532e818961c20f3299be100db7438c68298f925014644d8d3"
+      "rowSha256": "96f37d0e360000412876af46d00c2eb143431986148f94484bfd9fde71060840"
     },
     {
       "seatId": "seat_senate_ky_2_current",
@@ -2131,10 +2131,10 @@
       "cumulativeSenateServiceYears": 41.5,
       "presidentialDemocraticMargin2024": -30.53,
       "fecCandidateId": "S2KY00012",
-      "cashOnHand": 7341791.94,
-      "receipts": 217446.91,
-      "disbursements": 969119.37,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 7385931.53,
+      "receipts": 278697.13,
+      "disbursements": 986230,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2176,7 +2176,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "4f2653495dd7d18011d1d0eb7adbcd1993f9229b755e72f1cfe0cb73e2ce5ebe"
+      "rowSha256": "1bc110b3cbaa5a55e8e17d0d48827990410b62efc504b08c0951ac87e06e2d5d"
     },
     {
       "seatId": "seat_senate_ky_3_current",
@@ -2196,10 +2196,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": -30.53,
       "fecCandidateId": "S0KY00156",
-      "cashOnHand": 6744711.14,
-      "receipts": 3928653.8,
-      "disbursements": 3877540.03,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 6775333.25,
+      "receipts": 4570589.39,
+      "disbursements": 4488853.51,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2241,7 +2241,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "8c6c71436060199ddba59efc9042d48d8d611e97fa7549923a7c78b8cff56959"
+      "rowSha256": "eca62e2a44998649843f86c2246418011af919a2d5fbcb9783d91f2bc69ad5e8"
     },
     {
       "seatId": "seat_senate_la_2_current",
@@ -2261,10 +2261,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -22.01,
       "fecCandidateId": "S4LA00107",
-      "cashOnHand": 4827334,
-      "receipts": 7000079.3,
-      "disbursements": 8753163.58,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 685196.15,
+      "receipts": 6701121.15,
+      "disbursements": 12596343.28,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2272,11 +2272,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 7.4,
+      "score": 18.6,
       "blueBaseline": null,
       "competitiveness": 12,
       "structuralBaseline": null,
-      "cashVulnerability": 0.8,
+      "cashVulnerability": 43.2,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -2289,7 +2289,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0.8,
+          "score": 43.2,
           "weight": 0.2
         },
         {
@@ -2306,7 +2306,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "5782abfcd6d51d1d62f6b9042fa1b7eeb037f8c8dcce2da9712c0b8303fe93d4"
+      "rowSha256": "abac281995e5a2173eaae5f47bbdf378969882fe0ff48c8066a5e426df62a20b"
     },
     {
       "seatId": "seat_senate_la_3_current",
@@ -2326,10 +2326,10 @@
       "cumulativeSenateServiceYears": 9.6,
       "presidentialDemocraticMargin2024": -22.01,
       "fecCandidateId": "S4LA00065",
-      "cashOnHand": 18589497.03,
-      "receipts": 9951156.42,
-      "disbursements": 7291841.09,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 19528264.98,
+      "receipts": 11883071.11,
+      "disbursements": 8284987.83,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2371,7 +2371,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "2129acb5060171a897a2d738f0c3715889ab65e129d9b388974b106df4d43422"
+      "rowSha256": "639844f8ff77b89b17b623151257bf17b3d9a75569a96554124d4d9678d9a5e1"
     },
     {
       "seatId": "seat_senate_ma_1_current",
@@ -2391,10 +2391,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 24.91,
       "fecCandidateId": "S2MA00170",
-      "cashOnHand": 3754333.02,
-      "receipts": 4413931.4,
-      "disbursements": 4109645.05,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3028669.03,
+      "receipts": 4965731.1,
+      "disbursements": 5387108.74,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.9182692308,
       "palestineScore": 0.6023391813,
       "alignmentGap": 24,
@@ -2402,11 +2402,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 57.5,
+      "score": 58.2,
       "blueBaseline": 79.6,
       "competitiveness": null,
       "structuralBaseline": 79.6,
-      "cashVulnerability": 6.2,
+      "cashVulnerability": 10.9,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2431,12 +2431,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 6.2,
+          "score": 10.9,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "1cb50595d6e0d28002db35272ef3515d60f32a4396365cb8b50dc16c3b445e86"
+      "rowSha256": "ee786662d2de2d3279e0312318bde5fe741c3824572e742a141ca35c3d57a8de"
     },
     {
       "seatId": "seat_senate_ma_2_current",
@@ -2456,10 +2456,10 @@
       "cumulativeSenateServiceYears": 13,
       "presidentialDemocraticMargin2024": 24.91,
       "fecCandidateId": "S4MA00028",
-      "cashOnHand": 1348676.08,
-      "receipts": 5352148.33,
-      "disbursements": 5814159.22,
-      "financeCoverageThrough": "2026-08-12",
+      "cashOnHand": 799912.74,
+      "receipts": 5985385.37,
+      "disbursements": 6996159.6,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.929245283,
       "palestineScore": 0.567251462,
       "alignmentGap": 25.2,
@@ -2467,11 +2467,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 61.1,
+      "score": 62.7,
       "blueBaseline": 79.6,
       "competitiveness": null,
       "structuralBaseline": 79.6,
-      "cashVulnerability": 28.5,
+      "cashVulnerability": 39.8,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2496,12 +2496,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 28.5,
+          "score": 39.8,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "05c39aba9acf0f2d987b50f2c175c2490662fc6b549230e8b3a7ede3614ef069"
+      "rowSha256": "6ee0bd74683cf3089c77c38c1a721b280aa9677168d63f846b3e51c266f2421f"
     },
     {
       "seatId": "seat_senate_md_1_current",
@@ -2521,10 +2521,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": 28.54,
       "fecCandidateId": "S4MD00327",
-      "cashOnHand": 686548.88,
-      "receipts": 1768461.2,
-      "disbursements": 1131757.7,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 800210.62,
+      "receipts": 2045994.33,
+      "disbursements": 1295629.09,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5359195402,
       "palestineScore": 0.5555555556,
       "alignmentGap": 45.4,
@@ -2532,11 +2532,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 76.8,
+      "score": 76.3,
       "blueBaseline": 94.2,
       "competitiveness": null,
       "structuralBaseline": 94.2,
-      "cashVulnerability": 43.1,
+      "cashVulnerability": 39.8,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2561,12 +2561,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 43.1,
+          "score": 39.8,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "bf3b3b74960f1de8afe039a0972804f91179d0f3a2d73f7ee3267ed39abacd0a"
+      "rowSha256": "1fb70323971822421662909f50abf5848b9d4740d74edfaa4d0119b4c95bbb5b"
     },
     {
       "seatId": "seat_senate_md_3_current",
@@ -2586,10 +2586,10 @@
       "cumulativeSenateServiceYears": 9.6,
       "presidentialDemocraticMargin2024": 28.54,
       "fecCandidateId": "S6MD03441",
-      "cashOnHand": 3298739.02,
-      "receipts": 1973280.44,
-      "disbursements": 627943.59,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3641970,
+      "receipts": 2503116.41,
+      "disbursements": 814548.58,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.7482876712,
       "palestineScore": 0.6842105263,
       "alignmentGap": 28.4,
@@ -2597,11 +2597,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 68.3,
+      "score": 67.9,
       "blueBaseline": 94.2,
       "competitiveness": null,
       "structuralBaseline": 94.2,
-      "cashVulnerability": 9,
+      "cashVulnerability": 6.9,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2626,12 +2626,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 9,
+          "score": 6.9,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "ec1324a5dd21be054e97123e100c6abfd1e8ba9b6dfe7acdfafaed544456fce2"
+      "rowSha256": "2b1a05cad6140ad0c13ba42089aa43ebf4d5f4b21a9da4d14a0b68d4f82f5bd0"
     },
     {
       "seatId": "seat_senate_me_1_current",
@@ -2651,10 +2651,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 6.83,
       "fecCandidateId": "S2ME00109",
-      "cashOnHand": 62611.85,
-      "receipts": 64111.13,
-      "disbursements": 240216.05,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 59272.45,
+      "receipts": 72269.42,
+      "disbursements": 251713.74,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.2563291139,
       "palestineScore": 0.3567251462,
       "alignmentGap": 69.3,
@@ -2662,11 +2662,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 32.9,
+      "score": 33.1,
       "blueBaseline": 7.3,
       "competitiveness": null,
       "structuralBaseline": 7.3,
-      "cashVulnerability": 95.1,
+      "cashVulnerability": 96.3,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2691,12 +2691,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 95.1,
+          "score": 96.3,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "cc96f8cf7f0370daa4409a4ea3d43585edae414ebea7eac1b64a7131d8fb9cca"
+      "rowSha256": "9f0dcf05f213fbb294722b66f2c6b3530b96434bab2949fb3a2a5443cabacecb"
     },
     {
       "seatId": "seat_senate_me_2_current",
@@ -2716,10 +2716,10 @@
       "cumulativeSenateServiceYears": 29.5,
       "presidentialDemocraticMargin2024": 6.83,
       "fecCandidateId": "S6ME00159",
-      "cashOnHand": 11038115.42,
-      "receipts": 16169827.43,
-      "disbursements": 7708020.91,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2689882.54,
+      "receipts": 22465217.83,
+      "disbursements": 22351644.19,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -2727,11 +2727,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 59.5,
+      "score": 63.1,
       "blueBaseline": null,
       "competitiveness": 100,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 13.5,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -2744,7 +2744,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 13.5,
           "weight": 0.2
         },
         {
@@ -2761,7 +2761,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "3f68ebbd14ab3caed1cdccafea23274f3b46ef2ca92365e5fc8036ab8bd96794"
+      "rowSha256": "9522557ab7b913ec192d209aa1816b1d1c3680d928f233c108b509da97a5067a"
     },
     {
       "seatId": "seat_senate_mi_1_current",
@@ -2781,10 +2781,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -1.41,
       "fecCandidateId": "S4MI00470",
-      "cashOnHand": 2662579.65,
-      "receipts": 5242246.82,
-      "disbursements": 2862382.55,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2938227,
+      "receipts": 6023063.09,
+      "disbursements": 3367551.47,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.3807471264,
       "palestineScore": 0.5555555556,
       "alignmentGap": 53.2,
@@ -2792,11 +2792,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 12.7,
+      "score": 12.4,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 13.7,
+      "cashVulnerability": 11.5,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2821,12 +2821,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 13.7,
+          "score": 11.5,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "67c7beb767ef2f883cc82cddbbab860f4d1bbe0c32fe35669e506db1aae146d8"
+      "rowSha256": "d37dd9fc4e0bc7f99fab69e993fdec80c0905d59035efbdad6e6e4c13fad39a2"
     },
     {
       "seatId": "seat_senate_mi_2_current",
@@ -2846,10 +2846,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -1.41,
       "fecCandidateId": "S4MI00355",
-      "cashOnHand": 6546332.44,
-      "receipts": 248405.08,
-      "disbursements": 830402.11,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 6559468.71,
+      "receipts": 303094.43,
+      "disbursements": 871955.19,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.3381410256,
       "palestineScore": 0.0350877193,
       "alignmentGap": 81.3,
@@ -2891,7 +2891,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "b4866f54701a40794e8983188f0e6b970558bed547521b1c2adafa07645a6759"
+      "rowSha256": "d417aa119ab95b9d0fea64ec8aabf9475a3fe9822f20ca422b40a56694c8f356"
     },
     {
       "seatId": "seat_senate_mn_1_current",
@@ -2911,10 +2911,10 @@
       "cumulativeSenateServiceYears": 19.6,
       "presidentialDemocraticMargin2024": 4.24,
       "fecCandidateId": "S6MN00267",
-      "cashOnHand": 1201700.94,
-      "receipts": 2516029.34,
-      "disbursements": 3095885.42,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1153299.47,
+      "receipts": 2519524.84,
+      "disbursements": 3151537.87,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.3986199575,
       "palestineScore": 0.3625730994,
       "alignmentGap": 61.9,
@@ -2922,11 +2922,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 17,
+      "score": 17.2,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 31,
+      "cashVulnerability": 31.9,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -2951,12 +2951,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 31,
+          "score": 31.9,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "40af23c13f827bbd973b9aabe2d5761aa6cfb3c35a9b52adeb0548dc47af72af"
+      "rowSha256": "e0dccad806be5c7dd7be0a1ba2f4ad1f61fb7300f6a685b2a5a753a91499109e"
     },
     {
       "seatId": "seat_senate_mn_2_current",
@@ -2976,10 +2976,10 @@
       "cumulativeSenateServiceYears": 8.6,
       "presidentialDemocraticMargin2024": 4.24,
       "fecCandidateId": "S8MN00578",
-      "cashOnHand": 200915.14,
-      "receipts": 48764.24,
-      "disbursements": 575582.94,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 118870.17,
+      "receipts": 48878.44,
+      "disbursements": 657742.11,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5967365967,
       "palestineScore": 0.5380116959,
       "alignmentGap": 43.3,
@@ -2987,11 +2987,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 19.1,
+      "score": 20.8,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 69.8,
+      "cashVulnerability": 81.2,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -3016,12 +3016,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 69.8,
+          "score": 81.2,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "b6a2d55b4984fa08de84a7549d1b928952c7658a7e627c0765c3bd5a909ec49c"
+      "rowSha256": "592a3f30b20ca8baddd3311ab38c5f5db0c5ab7241461b1c063a0bb8a0557dfa"
     },
     {
       "seatId": "seat_senate_mo_1_current",
@@ -3041,10 +3041,10 @@
       "cumulativeSenateServiceYears": 7.6,
       "presidentialDemocraticMargin2024": -18.41,
       "fecCandidateId": "S8MO00160",
-      "cashOnHand": 855924.75,
-      "receipts": 1696757.65,
-      "disbursements": 1139095.78,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 821335.74,
+      "receipts": 1905255.26,
+      "disbursements": 1382182.4,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3052,11 +3052,11 @@
       "stateContestation": 32,
       "stateContestationCycleYear": 2024,
       "route": "republican_fringe_general",
-      "score": 28.7,
+      "score": 28.9,
       "blueBaseline": null,
       "competitiveness": 26.4,
       "structuralBaseline": null,
-      "cashVulnerability": 38.3,
+      "cashVulnerability": 39.2,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -3069,7 +3069,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 38.3,
+          "score": 39.2,
           "weight": 0.2
         },
         {
@@ -3086,7 +3086,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "898c6d77c70690180d55164c5cb777d24266e70d4ef5266ef1092184881ceed6"
+      "rowSha256": "ff11f5aefee681b75d596948ec39631da1c1786c74744df27a12094933694362"
     },
     {
       "seatId": "seat_senate_mo_3_current",
@@ -3106,10 +3106,10 @@
       "cumulativeSenateServiceYears": 3.6,
       "presidentialDemocraticMargin2024": -18.41,
       "fecCandidateId": "S2MO00544",
-      "cashOnHand": 1567747.13,
-      "receipts": 3340312.22,
-      "disbursements": 2293128.77,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1811713.22,
+      "receipts": 4180607.29,
+      "disbursements": 2889457.75,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3117,11 +3117,11 @@
       "stateContestation": 32,
       "stateContestationCycleYear": 2024,
       "route": "republican_fringe_general",
-      "score": 25.8,
+      "score": 25.1,
       "blueBaseline": null,
       "competitiveness": 26.4,
       "structuralBaseline": null,
-      "cashVulnerability": 25.2,
+      "cashVulnerability": 22,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -3134,7 +3134,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 25.2,
+          "score": 22,
           "weight": 0.2
         },
         {
@@ -3151,7 +3151,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "7da33553d38557b57a3bab4fd513f2800bffe1ffb4a6fceac872fe645620fd13"
+      "rowSha256": "07b2a7ae3aed108b1e07c79862cad904e13b43876af37afcebe73aabdc764505"
     },
     {
       "seatId": "seat_senate_ms_1_current",
@@ -3171,10 +3171,10 @@
       "cumulativeSenateServiceYears": 18.6,
       "presidentialDemocraticMargin2024": -22.89,
       "fecCandidateId": "S8MS00196",
-      "cashOnHand": 2739159.13,
-      "receipts": 224073.35,
-      "disbursements": 479663.03,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2650229.94,
+      "receipts": 306823.35,
+      "disbursements": 651342.22,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3182,11 +3182,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 8.4,
+      "score": 8.7,
       "blueBaseline": null,
       "competitiveness": 8.4,
       "structuralBaseline": null,
-      "cashVulnerability": 13.1,
+      "cashVulnerability": 13.8,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3199,7 +3199,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 13.1,
+          "score": 13.8,
           "weight": 0.2
         },
         {
@@ -3216,7 +3216,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "78ce9ce3cbea052486d8169823f87ad305f0ab1ad3889846e948cb6c58492189"
+      "rowSha256": "e0e1e9a5344ccaca30c800e619bf965d5a55e8e2f9a8d2ad73f78abc74247cb1"
     },
     {
       "seatId": "seat_senate_ms_2_current",
@@ -3236,10 +3236,10 @@
       "cumulativeSenateServiceYears": 8.3,
       "presidentialDemocraticMargin2024": -22.89,
       "fecCandidateId": "S8MS00261",
-      "cashOnHand": 2535895.72,
-      "receipts": 3825454.97,
-      "disbursements": 1759323.1,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1395723.78,
+      "receipts": 4646802.99,
+      "disbursements": 3720843.06,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3247,11 +3247,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 8.9,
+      "score": 12.3,
       "blueBaseline": null,
       "competitiveness": 8.4,
       "structuralBaseline": null,
-      "cashVulnerability": 14.7,
+      "cashVulnerability": 27.7,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3264,7 +3264,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 14.7,
+          "score": 27.7,
           "weight": 0.2
         },
         {
@@ -3281,7 +3281,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "267786828270965cac808843e7f0bcde76d4549333c8a700efeafb8e06cc3271"
+      "rowSha256": "d2b7f2390a89c42e3810a1d1dff4a41ce37db10d789c125fa00e9dcaaf63002c"
     },
     {
       "seatId": "seat_senate_mt_1_current",
@@ -3301,10 +3301,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -19.93,
       "fecCandidateId": "S4MT00183",
-      "cashOnHand": 746029.14,
-      "receipts": 1524206.08,
-      "disbursements": 2167184.88,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1036322.4,
+      "receipts": 1921040.01,
+      "disbursements": 2273725.55,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3312,11 +3312,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 23,
+      "score": 21.2,
       "blueBaseline": null,
       "competitiveness": 20.3,
       "structuralBaseline": null,
-      "cashVulnerability": 41.3,
+      "cashVulnerability": 34.2,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3329,7 +3329,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 41.3,
+          "score": 34.2,
           "weight": 0.2
         },
         {
@@ -3346,7 +3346,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "f68c78bcb499c7c1bb40bfab68f65412e7cda4d733fd361cefc3b34828177a38"
+      "rowSha256": "84d03cd966536a56cec20906abf86798ea5d42a93b6327e99a73baba769a5f5b"
     },
     {
       "seatId": "seat_senate_mt_2_current",
@@ -3366,10 +3366,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -19.93,
       "fecCandidateId": "S2MT00096",
-      "cashOnHand": 2614137.48,
-      "receipts": 4728811.11,
-      "disbursements": 3872916.55,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2579268.49,
+      "receipts": 4779230.01,
+      "disbursements": 3958204.44,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3377,11 +3377,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 15.8,
+      "score": 15.9,
       "blueBaseline": null,
       "competitiveness": 20.3,
       "structuralBaseline": null,
-      "cashVulnerability": 14.1,
+      "cashVulnerability": 14.4,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3394,7 +3394,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 14.1,
+          "score": 14.4,
           "weight": 0.2
         },
         {
@@ -3411,7 +3411,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "71ed67d0653fd5b15940b1b0e2ea3df11c612c6e78271aba343e6839d2ea290f"
+      "rowSha256": "7593a8309f8bacde98d7995e4231424398c35580578e1d4b0cee7c996ca95ddc"
     },
     {
       "seatId": "seat_senate_nc_2_current",
@@ -3431,10 +3431,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -3.21,
       "fecCandidateId": "S4NC00162",
-      "cashOnHand": 3646199.6,
+      "cashOnHand": 3579202.56,
       "receipts": 4707959.82,
-      "disbursements": 3299846.71,
-      "financeCoverageThrough": "2026-06-30",
+      "disbursements": 3366843.75,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3446,7 +3446,7 @@
       "blueBaseline": null,
       "competitiveness": 87.2,
       "structuralBaseline": null,
-      "cashVulnerability": 6.9,
+      "cashVulnerability": 7.3,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3459,7 +3459,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 6.9,
+          "score": 7.3,
           "weight": 0.2
         },
         {
@@ -3476,7 +3476,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "69da02e0ed5104e1085126bb8fc6d91571406f0f9d772cf7ca3b98b8dd6b4930"
+      "rowSha256": "4aad2acf52576b4f2438166a45c45b3685ae254d8158da63e252b88e4617c647"
     },
     {
       "seatId": "seat_senate_nc_3_current",
@@ -3496,10 +3496,10 @@
       "cumulativeSenateServiceYears": 3.6,
       "presidentialDemocraticMargin2024": -3.21,
       "fecCandidateId": "S2NC00505",
-      "cashOnHand": 471372.93,
-      "receipts": 1307989.26,
-      "disbursements": 1118974.6,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 728188.68,
+      "receipts": 1827202.72,
+      "disbursements": 1381372.31,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3507,11 +3507,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 65.5,
+      "score": 63,
       "blueBaseline": null,
       "competitiveness": 87.2,
       "structuralBaseline": null,
-      "cashVulnerability": 51.3,
+      "cashVulnerability": 41.8,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3524,7 +3524,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 51.3,
+          "score": 41.8,
           "weight": 0.2
         },
         {
@@ -3541,7 +3541,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "90217cfaca9cd1cc0fdb5dced96d15350973a7574501ed02bb40ff055f6c7042"
+      "rowSha256": "7b8eb3c97cdfad76ff3efaeaf4997e08955f9ddbe9c15d3293a5f9a488c9302c"
     },
     {
       "seatId": "seat_senate_nd_1_current",
@@ -3561,10 +3561,10 @@
       "cumulativeSenateServiceYears": 7.6,
       "presidentialDemocraticMargin2024": -36.45,
       "fecCandidateId": "S8ND00120",
-      "cashOnHand": 2291363.6,
-      "receipts": 1139407.09,
-      "disbursements": 1202932.86,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2265135.48,
+      "receipts": 1331451.93,
+      "disbursements": 1421205.82,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3572,11 +3572,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 4.5,
+      "score": 4.6,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 16.9,
+      "cashVulnerability": 17.2,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3589,7 +3589,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 16.9,
+          "score": 17.2,
           "weight": 0.2
         },
         {
@@ -3606,7 +3606,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "4ed99d69a2d399b9258dbdfb48218227e51790837a5df80c288e050de33111b2"
+      "rowSha256": "c30c5a19b501b4887f3c09a86759f08adeae4dc4e81e391c19f16f068ff566c3"
     },
     {
       "seatId": "seat_senate_nd_3_current",
@@ -3626,10 +3626,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": -36.45,
       "fecCandidateId": "S0ND00093",
-      "cashOnHand": 674824.36,
-      "receipts": 389847.03,
-      "disbursements": 282326.62,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 725400.84,
+      "receipts": 523195.3,
+      "disbursements": 365098.41,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3637,11 +3637,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 11.5,
+      "score": 11.1,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 43.5,
+      "cashVulnerability": 41.9,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3654,7 +3654,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 43.5,
+          "score": 41.9,
           "weight": 0.2
         },
         {
@@ -3671,7 +3671,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "7aaa76102d6cd3bbb512ea6c5303f085f8b44dd87d651b7b3a6a070f9f0e684e"
+      "rowSha256": "5cd5a80be0c410ebb9698e5709dec7633393c8df8e72726c742b7994c734a266"
     },
     {
       "seatId": "seat_senate_ne_1_current",
@@ -3691,10 +3691,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": -20.46,
       "fecCandidateId": "S2NE00094",
-      "cashOnHand": 408031.22,
-      "receipts": 831699.62,
-      "disbursements": 448880.23,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 505473.72,
+      "receipts": 976128.89,
+      "disbursements": 495867,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3702,11 +3702,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 25.2,
+      "score": 24,
       "blueBaseline": null,
       "competitiveness": 18.2,
       "structuralBaseline": null,
-      "cashVulnerability": 54.4,
+      "cashVulnerability": 49.8,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3719,7 +3719,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 54.4,
+          "score": 49.8,
           "weight": 0.2
         },
         {
@@ -3736,7 +3736,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "f085e15495846a8a6628658efb455a113f6f097fc7ec20be5a348389d0cbbb5c"
+      "rowSha256": "b20a7baab3c0e2aae65a6d747f3757816602d52c90bbf224de397e96f2711977"
     },
     {
       "seatId": "seat_senate_ne_2_current",
@@ -3756,10 +3756,10 @@
       "cumulativeSenateServiceYears": 3.5,
       "presidentialDemocraticMargin2024": -20.46,
       "fecCandidateId": "S6NE00129",
-      "cashOnHand": 6910969.9,
-      "receipts": 11233506.7,
-      "disbursements": 4809505.91,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1218138.97,
+      "receipts": 14546959.4,
+      "disbursements": 13815789.54,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -3767,11 +3767,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 10.8,
+      "score": 18.9,
       "blueBaseline": null,
       "competitiveness": 18.2,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 30.7,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -3784,7 +3784,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 30.7,
           "weight": 0.2
         },
         {
@@ -3801,7 +3801,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "3ef561fa3b4451de2d4040ebd05ed221b20d1f1f6a93f115092d522dfe5e8fe3"
+      "rowSha256": "30baf9ffa5b14787f11405dbaffb13b973f52b3d1599166101219d506a475439"
     },
     {
       "seatId": "seat_senate_nh_2_current",
@@ -3821,10 +3821,10 @@
       "cumulativeSenateServiceYears": 17.6,
       "presidentialDemocraticMargin2024": 2.76,
       "fecCandidateId": "S0NH00219",
-      "cashOnHand": 871922.99,
-      "receipts": 172666.96,
-      "disbursements": 756829.29,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 808003.84,
+      "receipts": 176809.69,
+      "disbursements": 824891.17,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.246835443,
       "palestineScore": 0.3567251462,
       "alignmentGap": 69.8,
@@ -3832,11 +3832,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 19.6,
+      "score": 19.9,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 37.9,
+      "cashVulnerability": 39.6,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -3861,12 +3861,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 37.9,
+          "score": 39.6,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "e18b55e277314a95d0f56da622670e965347ae85cf557eebf7262d355bbd78eb"
+      "rowSha256": "382acb65c5cd619fb41f21f60f3bf6ef3db1d424f778bd1d8998f2f98b727e93"
     },
     {
       "seatId": "seat_senate_nh_3_current",
@@ -3886,10 +3886,10 @@
       "cumulativeSenateServiceYears": 9.6,
       "presidentialDemocraticMargin2024": 2.76,
       "fecCandidateId": "S6NH00091",
-      "cashOnHand": 1742249.94,
-      "receipts": 2539768.24,
-      "disbursements": 1748252.67,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2003014.48,
+      "receipts": 3178839.91,
+      "disbursements": 2126559.8,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.1810344828,
       "palestineScore": 0.1812865497,
       "alignmentGap": 81.9,
@@ -3897,11 +3897,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 19.8,
+      "score": 19.4,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 22.9,
+      "cashVulnerability": 19.9,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -3926,12 +3926,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 22.9,
+          "score": 19.9,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "0ae9c9fa463aef37f2c77c4fd1348f58a90bdb541c6d6267a059c5f47fe049de"
+      "rowSha256": "a5c214cf6dec05ae6b59bfcf885092c48535daf0f18647965024aa2aeeecb487"
     },
     {
       "seatId": "seat_senate_nj_1_current",
@@ -3951,10 +3951,10 @@
       "cumulativeSenateServiceYears": 1.7,
       "presidentialDemocraticMargin2024": 5.91,
       "fecCandidateId": "S4NJ00466",
-      "cashOnHand": 1192513.73,
-      "receipts": 1659590.26,
-      "disbursements": 1088776.61,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1262054.98,
+      "receipts": 1897774.63,
+      "disbursements": 1257419.73,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.6120218579,
       "palestineScore": 0.8888888889,
       "alignmentGap": 25,
@@ -3962,11 +3962,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 12,
+      "score": 11.8,
       "blueBaseline": 3.6,
       "competitiveness": null,
       "structuralBaseline": 3.6,
-      "cashVulnerability": 31.1,
+      "cashVulnerability": 29.9,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -3991,12 +3991,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 31.1,
+          "score": 29.9,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "54db7bcf003ec2fcba6522cfad37956835ddac58defdb4caf90b0a71aa840862"
+      "rowSha256": "93ff258993c9911c132ce85d1304ffb0960e8ee32d0150d84fd52895ffe28e27"
     },
     {
       "seatId": "seat_senate_nj_2_current",
@@ -4016,10 +4016,10 @@
       "cumulativeSenateServiceYears": 12.8,
       "presidentialDemocraticMargin2024": 5.91,
       "fecCandidateId": "S4NJ00185",
-      "cashOnHand": 23060940.12,
-      "receipts": 18869341.39,
-      "disbursements": 7000887.26,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 22899410.72,
+      "receipts": 21275162.52,
+      "disbursements": 9568237.79,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.7418831169,
       "palestineScore": 0.1403508772,
       "alignmentGap": 55.9,
@@ -4061,7 +4061,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "b6ea76f232456bab7057e4916845299dd5a7df0a9325176545202c219fc7e1f0"
+      "rowSha256": "105c2e5c5b6c9889bbbb06eca07842432923053f1dafa1dcd268f3113b78689f"
     },
     {
       "seatId": "seat_senate_nm_1_current",
@@ -4081,10 +4081,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 6,
       "fecCandidateId": "S2NM00088",
-      "cashOnHand": 547929.47,
-      "receipts": 1459066.06,
-      "disbursements": 1230687.74,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 585063.26,
+      "receipts": 1707571.31,
+      "disbursements": 1442059.2,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4203586498,
       "palestineScore": 0.4619883041,
       "alignmentGap": 55.9,
@@ -4092,11 +4092,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 21,
+      "score": 20.8,
       "blueBaseline": 4,
       "competitiveness": null,
       "structuralBaseline": 4,
-      "cashVulnerability": 48,
+      "cashVulnerability": 46.6,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4121,12 +4121,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 48,
+          "score": 46.6,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "5012ced553ba0e503a3400303785d503e9c08de52faeb7e3f33ab53f2c5989ad"
+      "rowSha256": "7a91bfc432a26cd6dcf309ee55a2b30e782d498e2fc0835a8b9be697a3a87911"
     },
     {
       "seatId": "seat_senate_nm_2_current",
@@ -4146,10 +4146,10 @@
       "cumulativeSenateServiceYears": 5.6,
       "presidentialDemocraticMargin2024": 6,
       "fecCandidateId": "S0NM00058",
-      "cashOnHand": 4396754.26,
-      "receipts": 5626629.31,
-      "disbursements": 2443667.94,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2843276.35,
+      "receipts": 6460521.86,
+      "disbursements": 4831038.4,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.4642857143,
       "palestineScore": 0.4619883041,
       "alignmentGap": 53.7,
@@ -4157,11 +4157,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 13.8,
+      "score": 15.2,
       "blueBaseline": 4,
       "competitiveness": null,
       "structuralBaseline": 4,
-      "cashVulnerability": 2.8,
+      "cashVulnerability": 12.3,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4186,12 +4186,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 2.8,
+          "score": 12.3,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "79854c055b986bbebb85c6ba181d0475ee1fe5bd76a15d8d4b663d715e869a15"
+      "rowSha256": "dbec9e3840bd99be5a156b66a2e522e6b3c1b0ef647c6d198b589cb2ef5b7e38"
     },
     {
       "seatId": "seat_senate_nv_1_current",
@@ -4211,10 +4211,10 @@
       "cumulativeSenateServiceYears": 7.6,
       "presidentialDemocraticMargin2024": -3.1,
       "fecCandidateId": "S8NV00156",
-      "cashOnHand": 1106850.27,
-      "receipts": 1473353.35,
-      "disbursements": 2146598.88,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1253577.6,
+      "receipts": 1799602.24,
+      "disbursements": 2326120.44,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.1618705036,
       "palestineScore": 0,
       "alignmentGap": 91.9,
@@ -4222,11 +4222,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 23.3,
+      "score": 22.9,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 32.7,
+      "cashVulnerability": 30,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4251,12 +4251,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 32.7,
+          "score": 30,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "e9eb93a69ec9d6d5b8ecfdec924ed117d57bf17c128acac4d0403aea34e6ef7c"
+      "rowSha256": "94a59434226cadab80b3539a14b8d875dd1925cd33f1222166bd098f35b5dc33"
     },
     {
       "seatId": "seat_senate_nv_3_current",
@@ -4276,10 +4276,10 @@
       "cumulativeSenateServiceYears": 9.6,
       "presidentialDemocraticMargin2024": -3.1,
       "fecCandidateId": "S6NV00200",
-      "cashOnHand": 3357244.11,
-      "receipts": 2219394.25,
-      "disbursements": 2358196.16,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3483496.23,
+      "receipts": 2625969.9,
+      "disbursements": 2638519.69,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.1902173913,
       "palestineScore": 0,
       "alignmentGap": 90.5,
@@ -4287,11 +4287,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 19.4,
+      "score": 19.3,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 8.6,
+      "cashVulnerability": 7.8,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4316,12 +4316,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 8.6,
+          "score": 7.8,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "4ba3aa08057dea4e5aec5dd5e850e71e54aa3961e6276a122a68017f131328ec"
+      "rowSha256": "943b28aca1288a486c60c275e8c3dee0e2723c6be13533abf2f58b6f34575137"
     },
     {
       "seatId": "seat_senate_ny_1_current",
@@ -4341,10 +4341,10 @@
       "cumulativeSenateServiceYears": 17.5,
       "presidentialDemocraticMargin2024": 12.94,
       "fecCandidateId": "S0NY00410",
-      "cashOnHand": 2304536.88,
-      "receipts": 2803029.34,
-      "disbursements": 1214219.37,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2713529.6,
+      "receipts": 3526563.67,
+      "disbursements": 1528760.98,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5297239915,
       "palestineScore": 0,
       "alignmentGap": 73.5,
@@ -4352,11 +4352,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 37.9,
+      "score": 37.4,
       "blueBaseline": 31.8,
       "competitiveness": null,
       "structuralBaseline": 31.8,
-      "cashVulnerability": 16.8,
+      "cashVulnerability": 13.3,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4381,12 +4381,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 16.8,
+          "score": 13.3,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "d98299bf160780619c45683d54a4698d592802a2677b6550a6ebe8eb60ff49c4"
+      "rowSha256": "6e794c965b5f6e1477e6c8baeaab46896300e5b0be984ae10864edb366365c99"
     },
     {
       "seatId": "seat_senate_ny_3_current",
@@ -4406,10 +4406,10 @@
       "cumulativeSenateServiceYears": 27.6,
       "presidentialDemocraticMargin2024": 12.94,
       "fecCandidateId": "S8NY00082",
-      "cashOnHand": 8001240.58,
-      "receipts": 990635.71,
-      "disbursements": 2313026.69,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 7853430.04,
+      "receipts": 1159715.69,
+      "disbursements": 2629917.21,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.3234375,
       "palestineScore": 0.1111111111,
       "alignmentGap": 78.3,
@@ -4451,7 +4451,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "c6bd9567f9a4034d057f1afc2cbf53ae63fb1a3b80cd6b17fff7710c468c388e"
+      "rowSha256": "1b11c69d3c8c0767c0f507c8ce35493ec3fbccb54b71ee5d6e45e77bbec1bc64"
     },
     {
       "seatId": "seat_senate_oh_1_current",
@@ -4471,10 +4471,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -11.21,
       "fecCandidateId": "S4OH00192",
-      "cashOnHand": 639132.67,
-      "receipts": 2734380.58,
-      "disbursements": 2473567.62,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 783771.74,
+      "receipts": 3244299.27,
+      "disbursements": 2838847.24,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -4482,11 +4482,11 @@
       "stateContestation": 51,
       "stateContestationCycleYear": 2026,
       "route": "republican_fringe_general",
-      "score": 48.6,
+      "score": 47.7,
       "blueBaseline": null,
       "competitiveness": 55.2,
       "structuralBaseline": null,
-      "cashVulnerability": 44.7,
+      "cashVulnerability": 40.2,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -4499,7 +4499,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 44.7,
+          "score": 40.2,
           "weight": 0.2
         },
         {
@@ -4516,7 +4516,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "6d67b0d75345dd3f5f70280ab5527248e94500d8758087b304d4d2c018ecb661"
+      "rowSha256": "b430cee3cebf36681483ebfad8e586ead9ad8d011fc949bf667d9328b186f56e"
     },
     {
       "seatId": "seat_senate_oh_3_current",
@@ -4536,10 +4536,10 @@
       "cumulativeSenateServiceYears": 1.5,
       "presidentialDemocraticMargin2024": -11.21,
       "fecCandidateId": "S6OH00304",
-      "cashOnHand": 9419311.2,
-      "receipts": 14360027.53,
-      "disbursements": 4940716.33,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 4239096.57,
+      "receipts": 19894785.94,
+      "disbursements": 15655689.37,
+      "financeCoverageThrough": "2026-10-22",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -4547,11 +4547,11 @@
       "stateContestation": 51,
       "stateContestationCycleYear": 2026,
       "route": "republican_fringe_general",
-      "score": 38.7,
+      "score": 39.6,
       "blueBaseline": null,
       "competitiveness": 55.2,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 3.6,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -4564,7 +4564,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 3.6,
           "weight": 0.2
         },
         {
@@ -4581,7 +4581,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "ddc792bc987cf2a9fb33ca63b08195170abbc1bb6e642c892879fcbc62db320a"
+      "rowSha256": "3315a237ec596e5d91d7e0f97c069d93c52ba214c0dc3b1bc9e78ab2689d0b34"
     },
     {
       "seatId": "seat_senate_ok_2_current",
@@ -4666,10 +4666,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -34.26,
       "fecCandidateId": "S4OK00232",
-      "cashOnHand": 2773392.5,
-      "receipts": 988742.02,
-      "disbursements": 553387.78,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2844001.87,
+      "receipts": 1169357.12,
+      "disbursements": 663393.51,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -4677,11 +4677,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 3.4,
+      "score": 3.3,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 12.8,
+      "cashVulnerability": 12.3,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -4694,7 +4694,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 12.8,
+          "score": 12.3,
           "weight": 0.2
         },
         {
@@ -4711,7 +4711,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "b30207c5768d26d31d0c901beb63b0b73e2ebecc1070dc4d2c7035238bac69be"
+      "rowSha256": "89260f9e13c6230fc327c6afaf72c320fad1381c854972378dbf4da3cfee39dd"
     },
     {
       "seatId": "seat_senate_or_2_current",
@@ -4731,10 +4731,10 @@
       "cumulativeSenateServiceYears": 17.6,
       "presidentialDemocraticMargin2024": 14.31,
       "fecCandidateId": "S8OR00207",
-      "cashOnHand": 6828403.72,
-      "receipts": 4540973.95,
-      "disbursements": 1979568.88,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 6621250.26,
+      "receipts": 5376935.12,
+      "disbursements": 3022683.51,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.929245283,
       "palestineScore": 0.8947368421,
       "alignmentGap": 8.8,
@@ -4776,7 +4776,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "d665f145bfc1da565f02070d909da622eb037692150901079e19491c53838ae9"
+      "rowSha256": "ef0852136de1bd103a68bbcc088e7d4e1d9eae350fba2f83a4fcc8755a7d625e"
     },
     {
       "seatId": "seat_senate_or_3_current",
@@ -4796,10 +4796,10 @@
       "cumulativeSenateServiceYears": 30.5,
       "presidentialDemocraticMargin2024": 14.31,
       "fecCandidateId": "S6OR00110",
-      "cashOnHand": 1499076.85,
-      "receipts": 1615078.4,
-      "disbursements": 1886760.99,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1522558.58,
+      "receipts": 1923549.09,
+      "disbursements": 2171749.95,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.6326963907,
       "palestineScore": 0.2514619883,
       "alignmentGap": 55.8,
@@ -4807,11 +4807,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 39.3,
+      "score": 39.2,
       "blueBaseline": 37.2,
       "competitiveness": null,
       "structuralBaseline": 37.2,
-      "cashVulnerability": 26.2,
+      "cashVulnerability": 25.8,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4836,12 +4836,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 26.2,
+          "score": 25.8,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "311d71ae3e860a1258e90d8a084721247030dabb991b991d9fe0384c052a7363"
+      "rowSha256": "e05e2e91887b49129b2d921a5dbf7e594fe94c467ae3c765047625b04d41b151"
     },
     {
       "seatId": "seat_senate_pa_1_current",
@@ -4861,10 +4861,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -1.71,
       "fecCandidateId": "S2PA00661",
-      "cashOnHand": 1128537.93,
-      "receipts": 5402323.53,
-      "disbursements": 4879263.48,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1898382.49,
+      "receipts": 6695301.67,
+      "disbursements": 5402397.06,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -4872,11 +4872,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 64.1,
+      "score": 61.1,
       "blueBaseline": null,
       "competitiveness": 93.2,
       "structuralBaseline": null,
-      "cashVulnerability": 32.3,
+      "cashVulnerability": 21,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -4889,7 +4889,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 32.3,
+          "score": 21,
           "weight": 0.2
         },
         {
@@ -4906,7 +4906,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "cff735c92fbc7afa554f293e8b3b82d9a31c45e72f3f2173e942ded0e2006790"
+      "rowSha256": "4babdfbfcac893f8a6e4d6412a954b9c9f30958bd1f3696f39a7b905749621ec"
     },
     {
       "seatId": "seat_senate_pa_3_current",
@@ -4926,10 +4926,10 @@
       "cumulativeSenateServiceYears": 3.6,
       "presidentialDemocraticMargin2024": -1.71,
       "fecCandidateId": "S6PA00274",
-      "cashOnHand": 2057644.31,
-      "receipts": 2313557.84,
-      "disbursements": 2570600.12,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2254397.6,
+      "receipts": 2960756.56,
+      "disbursements": 3021045.55,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.205615942,
       "palestineScore": 0,
       "alignmentGap": 89.7,
@@ -4937,11 +4937,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 20.8,
+      "score": 20.5,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 19.3,
+      "cashVulnerability": 17.3,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -4966,12 +4966,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 19.3,
+          "score": 17.3,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "223799f971125bb13b999f9b6a21ce3ba52877be21db6ea6ec04bb301fa788ed"
+      "rowSha256": "90ad8d534f7e7294a037b356dabea334f0f6de29df6a18bdc5ec79dc64734358"
     },
     {
       "seatId": "seat_senate_ri_1_current",
@@ -4991,10 +4991,10 @@
       "cumulativeSenateServiceYears": 19.6,
       "presidentialDemocraticMargin2024": 13.78,
       "fecCandidateId": "S6RI00221",
-      "cashOnHand": 1059878.69,
-      "receipts": 500288.3,
-      "disbursements": 705797.33,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1116523.28,
+      "receipts": 652855.86,
+      "disbursements": 801720.3,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4799578059,
       "palestineScore": 0.1812865497,
       "alignmentGap": 66.9,
@@ -5002,11 +5002,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 41.3,
+      "score": 41.1,
       "blueBaseline": 35.1,
       "competitiveness": null,
       "structuralBaseline": 35.1,
-      "cashVulnerability": 33.7,
+      "cashVulnerability": 32.6,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -5031,12 +5031,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 33.7,
+          "score": 32.6,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "6b22ff6fea3187f8b1afc5b83597a42a512cb244c605a6f2d39cae63b94f4ed4"
+      "rowSha256": "34a4877208c1b3478b88739671a9efd5a1723262ed1a6de2d1dc5edfc2aea912"
     },
     {
       "seatId": "seat_senate_ri_2_current",
@@ -5056,10 +5056,10 @@
       "cumulativeSenateServiceYears": 29.5,
       "presidentialDemocraticMargin2024": 13.78,
       "fecCandidateId": "S6RI00163",
-      "cashOnHand": 3093683.6,
-      "receipts": 3381651.34,
-      "disbursements": 1876159.78,
-      "financeCoverageThrough": "2026-08-20",
+      "cashOnHand": 1883532.16,
+      "receipts": 3727368.44,
+      "disbursements": 3432028.32,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.4302083333,
       "palestineScore": 0.2923976608,
       "alignmentGap": 63.9,
@@ -5067,11 +5067,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 37.2,
+      "score": 38.8,
       "blueBaseline": 35.1,
       "competitiveness": null,
       "structuralBaseline": 35.1,
-      "cashVulnerability": 10.4,
+      "cashVulnerability": 21.2,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -5096,12 +5096,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 10.4,
+          "score": 21.2,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "630b13c126b6fa91986a06659c96bf3d75f74bb74c6fba6730e07df5dcddc783"
+      "rowSha256": "e5608850a1d45ea935c3c7bed0616e9cb5ba794aeb18ef0e73f05c03505d3cf0"
     },
     {
       "seatId": "seat_senate_sc_2_current",
@@ -5186,10 +5186,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": -17.91,
       "fecCandidateId": "S4SC00240",
-      "cashOnHand": 4871210.34,
-      "receipts": 5328235.86,
-      "disbursements": 6174548.07,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 4855184.01,
+      "receipts": 6683594.81,
+      "disbursements": 7545933.35,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5231,7 +5231,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "2826cddd8c8d3b8f9e8c8323caeb1ecdd955ed14323442954f9cbb82f7afa9c5"
+      "rowSha256": "184d545a3749e99da9ea0fd623abeecbee52bfa62708e458970c59d48685afbd"
     },
     {
       "seatId": "seat_senate_sd_2_current",
@@ -5251,10 +5251,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -29.19,
       "fecCandidateId": "S4SD00049",
-      "cashOnHand": 2736663.91,
-      "receipts": 3176450.98,
-      "disbursements": 2309816.14,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1295542.92,
+      "receipts": 3810748.34,
+      "disbursements": 4385234.49,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5262,11 +5262,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 3.4,
+      "score": 7.7,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 13.1,
+      "cashVulnerability": 29.3,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -5279,7 +5279,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 13.1,
+          "score": 29.3,
           "weight": 0.2
         },
         {
@@ -5296,7 +5296,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "dd6b749131a5647b7c8e954d29f5645c0d00166019956d4420bbfc22dcf00bef"
+      "rowSha256": "fffc54927da5e8dec29d83c7a9d9e9098048c71a8335716970165d189b9facf7"
     },
     {
       "seatId": "seat_senate_sd_3_current",
@@ -5316,10 +5316,10 @@
       "cumulativeSenateServiceYears": 21.6,
       "presidentialDemocraticMargin2024": -29.19,
       "fecCandidateId": "S2SD00068",
-      "cashOnHand": 17713891.65,
-      "receipts": 4141899.89,
-      "disbursements": 1812345.51,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 17917154.51,
+      "receipts": 4679035.63,
+      "disbursements": 2146218.39,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5361,7 +5361,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "e50f94716ba50a6b848cfb14f1a1767a6fc8940126b02413af39e25f33f18a73"
+      "rowSha256": "294f3d07bc8a8935b4dbcdf813c1bbfb5e38669ff294f716320eeaf43df53285"
     },
     {
       "seatId": "seat_senate_tn_1_current",
@@ -5381,10 +5381,10 @@
       "cumulativeSenateServiceYears": 7.6,
       "presidentialDemocraticMargin2024": -29.72,
       "fecCandidateId": "S8TN00337",
-      "cashOnHand": 433700.53,
-      "receipts": 3087690.15,
-      "disbursements": 7792604.4,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 377784.32,
+      "receipts": 3215323.74,
+      "disbursements": 7976154.2,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5392,11 +5392,11 @@
       "stateContestation": 40.3,
       "stateContestationCycleYear": 2024,
       "route": "republican_fringe_general",
-      "score": 20.7,
+      "score": 21.3,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 53.1,
+      "cashVulnerability": 56.1,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -5409,7 +5409,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 53.1,
+          "score": 56.1,
           "weight": 0.2
         },
         {
@@ -5426,7 +5426,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "a04b64e2fadcf7f11c3e494f172f083cd21ccb2518add3d8bfefb2f58250937c"
+      "rowSha256": "6d7de33fdd726acbcb68e9d16252a4642378b7ca833ae949d13f7494a8cfac8c"
     },
     {
       "seatId": "seat_senate_tn_2_current",
@@ -5446,10 +5446,10 @@
       "cumulativeSenateServiceYears": 5.6,
       "presidentialDemocraticMargin2024": -29.72,
       "fecCandidateId": "S0TN00169",
-      "cashOnHand": 5234429.36,
-      "receipts": 7162897.1,
-      "disbursements": 3855936.81,
-      "financeCoverageThrough": "2026-07-17",
+      "cashOnHand": 4956454.97,
+      "receipts": 8422210.63,
+      "disbursements": 5393224.73,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5461,7 +5461,7 @@
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 0,
+      "cashVulnerability": 0.2,
       "availableWeight": 0.85,
       "coverageMultiplier": 0.94,
       "drivers": [
@@ -5474,7 +5474,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 0,
+          "score": 0.2,
           "weight": 0.2
         },
         {
@@ -5491,7 +5491,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.85)",
-      "rowSha256": "761420f696a66d6f9eb748d3925f6565314b932200728ce376846550f2f1c254"
+      "rowSha256": "4848bfdbdae3704b8cc71e959a6e180532320b1a2e49cb523b63b5ab3babc987"
     },
     {
       "seatId": "seat_senate_tx_1_current",
@@ -5511,10 +5511,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": -13.68,
       "fecCandidateId": "S2TX00312",
-      "cashOnHand": 2964804.69,
-      "receipts": 10228279.58,
-      "disbursements": 9050182.09,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3239647,
+      "receipts": 12422145.1,
+      "disbursements": 10969205.3,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5522,11 +5522,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 29.9,
+      "score": 29.5,
       "blueBaseline": null,
       "competitiveness": 45.3,
       "structuralBaseline": null,
-      "cashVulnerability": 11.3,
+      "cashVulnerability": 9.4,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -5539,7 +5539,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 11.3,
+          "score": 9.4,
           "weight": 0.2
         },
         {
@@ -5556,7 +5556,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "a57fe90953826eb3a6b265960dad9ece8e6ad48e35a94c0bda4fe4b49cb85763"
+      "rowSha256": "4b5406fff6bc7acf429fea7c3c62c769bee960b6a671371051a3dadcb035e699"
     },
     {
       "seatId": "seat_senate_tx_2_current",
@@ -5576,10 +5576,10 @@
       "cumulativeSenateServiceYears": 23.6,
       "presidentialDemocraticMargin2024": -13.68,
       "fecCandidateId": "S2TX00106",
-      "cashOnHand": 542119.97,
-      "receipts": 8604233.81,
-      "disbursements": 12184396.5,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 496092.37,
+      "receipts": 8608609.91,
+      "disbursements": 12234800.2,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5587,11 +5587,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 39.7,
+      "score": 40.2,
       "blueBaseline": null,
       "competitiveness": 45.3,
       "structuralBaseline": null,
-      "cashVulnerability": 48.2,
+      "cashVulnerability": 50.2,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -5604,7 +5604,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 48.2,
+          "score": 50.2,
           "weight": 0.2
         },
         {
@@ -5621,7 +5621,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "cdee250c9f641d871b5c63572aa0257882fa73f967678fc1127ea711a435ea24"
+      "rowSha256": "71af5be8ff85c268f923aba49ad754f29a0bee472b9c0676f701c8a16520572a"
     },
     {
       "seatId": "seat_senate_ut_1_current",
@@ -5641,10 +5641,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -21.58,
       "fecCandidateId": "S4UT00282",
-      "cashOnHand": 674751.12,
-      "receipts": 737002.94,
-      "disbursements": 850934.48,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 698570.01,
+      "receipts": 862032.94,
+      "disbursements": 952145.59,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5652,11 +5652,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 19.7,
+      "score": 19.4,
       "blueBaseline": null,
       "competitiveness": 13.7,
       "structuralBaseline": null,
-      "cashVulnerability": 43.5,
+      "cashVulnerability": 42.7,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -5669,7 +5669,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 43.5,
+          "score": 42.7,
           "weight": 0.2
         },
         {
@@ -5686,7 +5686,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "57a728fb9ba97bffe86c6f9ccb58d31f838d89826f50c35204b4fec44f0a750a"
+      "rowSha256": "7f39dadfad77e9e3a8381cdaa870204341bde4222f9d50f5b5df79b765c252f7"
     },
     {
       "seatId": "seat_senate_ut_3_current",
@@ -5706,10 +5706,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": -21.58,
       "fecCandidateId": "S0UT00165",
-      "cashOnHand": 740995.04,
-      "receipts": 2255168.97,
-      "disbursements": 2422941.82,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 712113.69,
+      "receipts": 2530363.19,
+      "disbursements": 2727017.39,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -5717,11 +5717,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 19.2,
+      "score": 19.4,
       "blueBaseline": null,
       "competitiveness": 13.7,
       "structuralBaseline": null,
-      "cashVulnerability": 41.5,
+      "cashVulnerability": 42.3,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -5734,7 +5734,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 41.5,
+          "score": 42.3,
           "weight": 0.2
         },
         {
@@ -5751,7 +5751,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "2a822c723c5d97599a5cc2d13c334c9f94794367eeb2feade00b3df66528c6f2"
+      "rowSha256": "18773ed3a3d192d146e2eb4d80b43da2e3ad79b49a94a90f0e3b528e9b803327"
     },
     {
       "seatId": "seat_senate_va_1_current",
@@ -5771,10 +5771,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": 5.78,
       "fecCandidateId": "S2VA00142",
-      "cashOnHand": 2165456.22,
-      "receipts": 787827.87,
-      "disbursements": 1421881.65,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2178565.26,
+      "receipts": 903435.97,
+      "disbursements": 1524380.71,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4135220126,
       "palestineScore": 0.4269005848,
       "alignmentGap": 58,
@@ -5786,7 +5786,7 @@
       "blueBaseline": 3.1,
       "competitiveness": null,
       "structuralBaseline": 3.1,
-      "cashVulnerability": 18.2,
+      "cashVulnerability": 18,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -5811,12 +5811,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 18.2,
+          "score": 18,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "046c85aeca96ca0e38c7c0d16edae0ffef60a7b2e0820a6e27e9c80b0eb65f15"
+      "rowSha256": "70fb6b8bd1125a5cad228bcf1c2ea39b757392b6517ccb8fb7be1d4020f98a9c"
     },
     {
       "seatId": "seat_senate_va_2_current",
@@ -5836,10 +5836,10 @@
       "cumulativeSenateServiceYears": 17.6,
       "presidentialDemocraticMargin2024": 5.78,
       "fecCandidateId": "S6VA00093",
-      "cashOnHand": 16114725.24,
-      "receipts": 17889335.15,
-      "disbursements": 7327843.73,
-      "financeCoverageThrough": "2026-07-15",
+      "cashOnHand": 6217677.32,
+      "receipts": 20222105.45,
+      "disbursements": 19557661.95,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.2149681529,
       "palestineScore": 0.0350877193,
       "alignmentGap": 87.5,
@@ -5881,7 +5881,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "87013b23240e0c7d7be1c9e7a5c8ab8c54206c1577261a23b3f6bdcb6ca6ac09"
+      "rowSha256": "6e305828b957fb2f63adcf60cad29909bd286b0004fec9719e26ef0ac2061870"
     },
     {
       "seatId": "seat_senate_vt_1_current",
@@ -5901,10 +5901,10 @@
       "cumulativeSenateServiceYears": 19.6,
       "presidentialDemocraticMargin2024": 31.21,
       "fecCandidateId": "S4VT00033",
-      "cashOnHand": 22835011.22,
-      "receipts": 24928186.19,
-      "disbursements": 12833935.63,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 21692072.46,
+      "receipts": 26476152.82,
+      "disbursements": 15524841.02,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": 0.9851973684,
       "palestineScore": 1,
       "alignmentGap": 0.7,
@@ -5946,7 +5946,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "50b27d890977785480c564ea00b98fd266702f514e23c66b40e3fc16ecd062ec"
+      "rowSha256": "a4311ef086f64c20475eeff57ab099748c52c9f6d94018b7da0a9e8ae3d8f73e"
     },
     {
       "seatId": "seat_senate_vt_3_current",
@@ -5966,10 +5966,10 @@
       "cumulativeSenateServiceYears": 3.6,
       "presidentialDemocraticMargin2024": 31.21,
       "fecCandidateId": "S2VT00235",
-      "cashOnHand": 1616347.87,
-      "receipts": 218689.73,
-      "disbursements": 315593.86,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1605729.82,
+      "receipts": 248839.28,
+      "disbursements": 356361.46,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.8357142857,
       "palestineScore": 0.8431372549,
       "alignmentGap": 16.1,
@@ -5981,7 +5981,7 @@
       "blueBaseline": 100,
       "competitiveness": null,
       "structuralBaseline": 100,
-      "cashVulnerability": 24.5,
+      "cashVulnerability": 24.7,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -6006,12 +6006,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 24.5,
+          "score": 24.7,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "9fc33d0b0ac6489e87ee7c2126b591b8a973b0511d7fcbd3c11ef77064a55116"
+      "rowSha256": "676c89c6872a263ad92ea3576256e7ed86a9ec223c2bd194757246b6b855fa45"
     },
     {
       "seatId": "seat_senate_wa_1_current",
@@ -6031,10 +6031,10 @@
       "cumulativeSenateServiceYears": 25.6,
       "presidentialDemocraticMargin2024": 18.22,
       "fecCandidateId": "S8WA00194",
-      "cashOnHand": 136799.69,
-      "receipts": 789840.99,
-      "disbursements": 1264252.49,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 231954.7,
+      "receipts": 985139.34,
+      "disbursements": 1364395.83,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4678270042,
       "palestineScore": 0.1812865497,
       "alignmentGap": 67.5,
@@ -6042,11 +6042,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 59.6,
+      "score": 57.9,
       "blueBaseline": 52.9,
       "competitiveness": null,
       "structuralBaseline": 52.9,
-      "cashVulnerability": 78.1,
+      "cashVulnerability": 66.7,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -6071,12 +6071,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 78.1,
+          "score": 66.7,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "10a975c18e3a121682707c166342b0e8ba2c4960a62b4348d7e952692a236915"
+      "rowSha256": "3f4ae811730019061dc4d9f3fc5ae83d4de5ddb59179bd02c5bdaf8783180ccf"
     },
     {
       "seatId": "seat_senate_wa_3_current",
@@ -6096,10 +6096,10 @@
       "cumulativeSenateServiceYears": 33.6,
       "presidentialDemocraticMargin2024": 18.22,
       "fecCandidateId": "S2WA00189",
-      "cashOnHand": 1718051.28,
-      "receipts": 2800143.55,
-      "disbursements": 1965553.41,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 2170413.17,
+      "receipts": 3591671.12,
+      "disbursements": 2304719.09,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.4946236559,
       "palestineScore": 0.2679738562,
       "alignmentGap": 61.9,
@@ -6107,11 +6107,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 50.2,
+      "score": 49.5,
       "blueBaseline": 52.9,
       "competitiveness": null,
       "structuralBaseline": 52.9,
-      "cashVulnerability": 23.2,
+      "cashVulnerability": 18.1,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -6136,12 +6136,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 23.2,
+          "score": 18.1,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "615bd6921062f176b8a8e8923cc4647a3475a7b73aa2100435bdf3ea5a3d4978"
+      "rowSha256": "3a93b53e38a67383bfa3cf40cbb67e16498d27bea2e95fa1ca4ffa6d67f7660d"
     },
     {
       "seatId": "seat_senate_wi_1_current",
@@ -6161,10 +6161,10 @@
       "cumulativeSenateServiceYears": 13.6,
       "presidentialDemocraticMargin2024": -0.86,
       "fecCandidateId": "S2WI00219",
-      "cashOnHand": 647880.22,
-      "receipts": 2823440.81,
-      "disbursements": 2200827.44,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 845583.99,
+      "receipts": 3479827.95,
+      "disbursements": 2659510.81,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": 0.5907880724,
       "palestineScore": 0.4502923977,
       "alignmentGap": 47.9,
@@ -6172,11 +6172,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "democratic_incumbent_primary",
-      "score": 16.2,
+      "score": 15.4,
       "blueBaseline": 0,
       "competitiveness": null,
       "structuralBaseline": 0,
-      "cashVulnerability": 44.4,
+      "cashVulnerability": 38.6,
       "availableWeight": 1,
       "coverageMultiplier": 1,
       "drivers": [
@@ -6201,12 +6201,12 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 44.4,
+          "score": 38.6,
           "weight": 0.15
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 1)",
-      "rowSha256": "53d7583620eac1887414929ede311a3d67e3e62a4565a14eb58f1f3de0f9cc3a"
+      "rowSha256": "e34f367b132a1a1ff525ed31a05e8e8e22204d7192f589b91658a86e0a7907c5"
     },
     {
       "seatId": "seat_senate_wi_3_current",
@@ -6226,10 +6226,10 @@
       "cumulativeSenateServiceYears": 15.6,
       "presidentialDemocraticMargin2024": -0.86,
       "fecCandidateId": "S0WI00197",
-      "cashOnHand": 1181533.2,
-      "receipts": 1087713.28,
-      "disbursements": 814225.84,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 1067075.58,
+      "receipts": 1227611.02,
+      "disbursements": 1068581.2,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -6237,11 +6237,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 65.8,
+      "score": 66.4,
       "blueBaseline": null,
       "competitiveness": 96.6,
       "structuralBaseline": null,
-      "cashVulnerability": 31.3,
+      "cashVulnerability": 33.5,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -6254,7 +6254,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 31.3,
+          "score": 33.5,
           "weight": 0.2
         },
         {
@@ -6271,7 +6271,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "0988176f0e4109454d7dade516356579f6cf77722e3995548e617a8181ccc487"
+      "rowSha256": "daefa6d7190f8ff864df404baaa20737cecc293583e67589268c0d04e07b38e0"
     },
     {
       "seatId": "seat_senate_wv_1_current",
@@ -6291,10 +6291,10 @@
       "cumulativeSenateServiceYears": 1.6,
       "presidentialDemocraticMargin2024": -41.86,
       "fecCandidateId": "S4WV00332",
-      "cashOnHand": 196360.61,
-      "receipts": 79577.55,
-      "disbursements": 577157.51,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 133969.4,
+      "receipts": 87370.2,
+      "disbursements": 647341.37,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -6302,11 +6302,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 18.6,
+      "score": 20.8,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 70.3,
+      "cashVulnerability": 78.6,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -6319,7 +6319,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 70.3,
+          "score": 78.6,
           "weight": 0.2
         },
         {
@@ -6336,7 +6336,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "97c5be342151ca27e81f642db922e2dca12829f57db7d37a25e2c891d6788766"
+      "rowSha256": "0a0e4a0895c3c916fb69d0e442c755494fb54ab35ac12f4e28388de1c30efe5d"
     },
     {
       "seatId": "seat_senate_wv_2_current",
@@ -6356,10 +6356,10 @@
       "cumulativeSenateServiceYears": 11.6,
       "presidentialDemocraticMargin2024": -41.86,
       "fecCandidateId": "S4WV00159",
-      "cashOnHand": 4377200.52,
-      "receipts": 4624145.47,
-      "disbursements": 2558310.16,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 3071076.35,
+      "receipts": 5449866,
+      "disbursements": 4690154.86,
+      "financeCoverageThrough": "2026-10-14",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -6367,11 +6367,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 0.8,
+      "score": 2.8,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 2.9,
+      "cashVulnerability": 10.6,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -6384,7 +6384,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 2.9,
+          "score": 10.6,
           "weight": 0.2
         },
         {
@@ -6401,7 +6401,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "48be0c0e381938f4ed7ebc7626c620d5f352b8b9830c69a47e57b69bb2215cb2"
+      "rowSha256": "50f4f5f8ecdeaf76ef28aafae54df6c2f38123fc710138b67ff78436a82baab8"
     },
     {
       "seatId": "seat_senate_wy_1_current",
@@ -6421,10 +6421,10 @@
       "cumulativeSenateServiceYears": 19.1,
       "presidentialDemocraticMargin2024": -45.41,
       "fecCandidateId": "S6WY00068",
-      "cashOnHand": 8408868.14,
-      "receipts": 1554351.61,
-      "disbursements": 873912.06,
-      "financeCoverageThrough": "2026-06-30",
+      "cashOnHand": 8567838.4,
+      "receipts": 1844877.79,
+      "disbursements": 1005467.98,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -6466,7 +6466,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "5d690cd5c4226786ac75497252dd41613830dee2dcc42eb212868d0ebc936ea9"
+      "rowSha256": "098213935908d21a646ac44ba5bb5c62cfea0c49b683d162da727b80a1dc702f"
     },
     {
       "seatId": "seat_senate_wy_2_current",
@@ -6486,10 +6486,10 @@
       "cumulativeSenateServiceYears": 5.6,
       "presidentialDemocraticMargin2024": -45.41,
       "fecCandidateId": "S0WY00137",
-      "cashOnHand": 835049.18,
+      "cashOnHand": 815391.08,
       "receipts": 1493103.64,
-      "disbursements": 1335394.19,
-      "financeCoverageThrough": "2026-07-29",
+      "disbursements": 1355052.29,
+      "financeCoverageThrough": "2026-09-30",
       "leftScore": null,
       "palestineScore": null,
       "alignmentGap": null,
@@ -6497,11 +6497,11 @@
       "stateContestation": null,
       "stateContestationCycleYear": null,
       "route": "republican_fringe_general",
-      "score": 10.3,
+      "score": 10.4,
       "blueBaseline": null,
       "competitiveness": 0,
       "structuralBaseline": null,
-      "cashVulnerability": 38.9,
+      "cashVulnerability": 39.4,
       "availableWeight": 0.65,
       "coverageMultiplier": 0.86,
       "drivers": [
@@ -6514,7 +6514,7 @@
         {
           "key": "cash_vulnerability",
           "label": "Cash vulnerability",
-          "score": 38.9,
+          "score": 39.4,
           "weight": 0.2
         },
         {
@@ -6531,7 +6531,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "0705d646aab753c026505bd4c1c8cfb3d08be9c0887872940a0b0b97a0552713"
+      "rowSha256": "ba88544273c77a7772125048f0499a3cc51a1007aed1e619154505bd74796e04"
     }
   ],
   "summary": {
@@ -6542,9 +6542,9 @@
     "cashValues": 98,
     "alignmentValues": 47,
     "stateContestationValues": 8,
-    "democraticMaxScore": 76.8,
-    "republicanMaxScore": 65.8
+    "democraticMaxScore": 76.3,
+    "republicanMaxScore": 66.4
   },
-  "rowSetSha256": "1d97bb72b0cd24e45803eb9603bb5eb8e1046cb4682d73455bb56b6ad8985b7d",
-  "packageSha256": "ee06b046168eff55867bbb916b201dca58998808d2aba5ec851b7e26ecfe2c2d"
+  "rowSetSha256": "64ec86443573f591965e9bc4e0d224d760d21e7091ae1a2c64df92e21cbaa4cd",
+  "packageSha256": "ffe81fa7f79b3b208cc1d662652c3f3d90953c36c9733d070292f9493127e375"
 }

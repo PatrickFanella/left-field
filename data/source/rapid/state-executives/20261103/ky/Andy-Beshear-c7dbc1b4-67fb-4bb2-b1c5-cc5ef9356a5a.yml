@@ -1,0 +1,26 @@
+id: ocd-person/c7dbc1b4-67fb-4bb2-b1c5-cc5ef9356a5a
+name: Andy Beshear
+given_name: Andy
+family_name: Beshear
+birth_date: 1977-11-29
+image: https://governor.ky.gov/PublishingImages/Governor-Beshear_Official-Picture.jpg
+party:
+- name: Democratic
+roles:
+- start_date: '2019-12-10'
+  end_date: '2027-12-14'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:ky/government
+offices:
+- classification: capitol
+  address: 700 Capitol Avenue, Suite 100; Frankfort, Kentucky 40601
+  voice: 502-564-2611
+  fax: 502-564-2517
+links:
+- url: https://governor.ky.gov/
+- url: https://governor.ky.gov/contact/contact-us
+  note: webform
+ids:
+  twitter: govandybeshear
+sources:
+- url: https://governor.ky.gov/

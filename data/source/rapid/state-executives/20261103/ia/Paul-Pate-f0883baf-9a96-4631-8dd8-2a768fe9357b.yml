@@ -1,0 +1,22 @@
+id: ocd-person/f0883baf-9a96-4631-8dd8-2a768fe9357b
+name: Paul Pate
+given_name: Paul
+family_name: Pate
+email: sos@sos.iowa.gov
+party:
+- name: Republican
+roles:
+- end_date: '2027-01-01'
+  type: secretary of state
+  jurisdiction: ocd-jurisdiction/country:us/state:ia/government
+offices:
+- classification: capitol
+  address: Lucas Bldg. 1st Fl.; 321 E. 12th St.; Des Moines, IA 50319-
+  voice: 515-281-6230
+  fax: 515-281-4682
+links:
+- url: https://sos.iowa.gov
+ids:
+  twitter: IowaSOS
+sources:
+- url: https://sos.iowa.gov

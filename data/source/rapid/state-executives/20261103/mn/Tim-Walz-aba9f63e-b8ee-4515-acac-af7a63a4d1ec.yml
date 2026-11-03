@@ -1,0 +1,24 @@
+id: ocd-person/aba9f63e-b8ee-4515-acac-af7a63a4d1ec
+name: Tim Walz
+given_name: Tim
+family_name: Walz
+birth_date: 1964-04-06
+party:
+- name: Democratic-Farmer-Labor
+roles:
+- start_date: '2019-01-07'
+  end_date: '2027-01-04'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:mn/government
+offices:
+- classification: capitol
+  address: 130 State Capitol; 75 Rev Dr. Martin Luther King Jr. Blvd.; St. Paul, MN 55155
+  voice: 651-201-3400
+links:
+- url: https://mn.gov/governor/about/
+- url: https://mn.gov/governor/contact/
+  note: webform
+ids:
+  twitter: GovTimWalz
+sources:
+- url: https://mn.gov/governor/about/

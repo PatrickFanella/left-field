@@ -13,7 +13,7 @@
   "parents": [
     {
       "id": "state-legislative-roster-v1",
-      "packageSha256": "aebf57452e4e6ad9eb0bc69b8886db2951e21f0cae5d50ad84cfd916d3477199"
+      "packageSha256": "0ec93fa6639223a8956943caea296d94e7be6fef556b7de1362f9c07f90dccf9"
     },
     {
       "id": "state-legislative-general-results-v1",
@@ -18541,67 +18541,6 @@
       "rowSha256": "f891c87bead170d12c55feaa03baf6c90b55a35cb1b822384c03953c03daf4e3"
     },
     {
-      "seatId": "seat_state_ar_upper_18_1",
-      "seatLabel": "AR Senate 18",
-      "stateCode": "AR",
-      "chamber": "upper",
-      "district": "18",
-      "seatSlot": 1,
-      "holderName": "Jonathan Dismang",
-      "openStatesId": "ocd-person/75b8a2ef-c463-4317-ba03-a368a2f203f2",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 4,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "REP",
-      "partyMismatch": false,
-      "baselineContestId": "ar:state-leg-general:2024:upper:18",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": false,
-      "baselineSeats": 1,
-      "ownRaceDemocraticMargin": -100,
-      "stateContestation": null,
-      "nextElectionYear": 2028,
-      "route": "republican_fringe_general",
-      "score": 0,
-      "blueBaseline": null,
-      "competitiveness": 0,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 0,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "b25cd2d50758363a6d8c41dfea5b28336a6afeaca4b21e310e30677106eaab90"
-    },
-    {
       "seatId": "seat_state_ar_upper_19_1",
       "seatLabel": "AR Senate 19",
       "stateCode": "AR",
@@ -34010,15 +33949,15 @@
       "chamber": "lower",
       "district": "32",
       "seatSlot": 1,
-      "holderName": "Manny Rutinel",
-      "openStatesId": "ocd-person/ce4bd827-c1bc-4736-a580-f4f0215e727d",
+      "holderName": "María González",
+      "openStatesId": "ocd-person/135499ed-a471-4567-afcc-53c16112f0d6",
       "incumbentParty": "Democratic",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Democratic",
       "status": "scored",
-      "holderBaselineParty": "DEM",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "co:state-leg-general:2024:lower:32",
       "baselineCycleYear": 2024,
@@ -34062,7 +34001,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "f86c7f77fe11d3c53b41dfc092a528acb802dce4f3b20461ec8c659df7af5a28"
+      "rowSha256": "1bfa66d7371a3ca3e3d38ccad6b7d9c9b349690f4a4712f3d34b0e54c1699073"
     },
     {
       "seatId": "seat_state_co_lower_33_1",
@@ -74504,6 +74443,67 @@
       "rowSha256": "abfa0f3a4332eab61aacbe277ecf5c34001e17106576383cf0d6b64fd60798dc"
     },
     {
+      "seatId": "seat_state_ga_upper_12_1",
+      "seatLabel": "GA Senate 12",
+      "stateCode": "GA",
+      "chamber": "upper",
+      "district": "12",
+      "seatSlot": 1,
+      "holderName": "Freddie Sims",
+      "openStatesId": "ocd-person/a0bfdc0d-4110-4cd2-b83c-834bba4300f5",
+      "incumbentParty": "Democratic",
+      "primaryFeasibility": null,
+      "primaryEvidenceStatus": "holder_not_in_latest_primary",
+      "termYears": 2,
+      "caucus": "Democratic",
+      "status": "scored",
+      "holderBaselineParty": "Dem",
+      "partyMismatch": false,
+      "baselineContestId": "ga:state-leg-general:2024:upper:12",
+      "baselineCycleYear": 2024,
+      "baselineElectionDate": "2024-11-05",
+      "baselineContested": false,
+      "baselineSeats": 1,
+      "ownRaceDemocraticMargin": 100,
+      "stateContestation": null,
+      "nextElectionYear": 2026,
+      "route": "democratic_incumbent_primary",
+      "score": 86,
+      "blueBaseline": 100,
+      "competitiveness": null,
+      "structuralBaseline": 100,
+      "availableWeight": 0.65,
+      "coverageMultiplier": 0.86,
+      "drivers": [
+        {
+          "key": "blue_baseline",
+          "label": "Blue baseline",
+          "score": 100,
+          "weight": 0.45499999999999996
+        },
+        {
+          "key": "primary_feasibility",
+          "label": "Primary feasibility",
+          "score": null,
+          "weight": 0.195
+        },
+        {
+          "key": "incumbent_alignment_gap",
+          "label": "Incumbent alignment gap",
+          "score": null,
+          "weight": 0.2
+        },
+        {
+          "key": "cash_vulnerability",
+          "label": "Cash vulnerability",
+          "score": null,
+          "weight": 0.15
+        }
+      ],
+      "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
+      "rowSha256": "d9d90e5757e037928229d792ed2597f25d7a6f36d710255ac5db211a68fb0faf"
+    },
+    {
       "seatId": "seat_state_ga_upper_13_1",
       "seatLabel": "GA Senate 13",
       "stateCode": "GA",
@@ -83437,67 +83437,6 @@
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
       "rowSha256": "53743647f5ce056ad1c01917a5f5ab230d5c6268bc2423fa404fad93e665c4bd"
-    },
-    {
-      "seatId": "seat_state_ia_lower_38_1",
-      "seatLabel": "IA House 38",
-      "stateCode": "IA",
-      "chamber": "lower",
-      "district": "38",
-      "seatSlot": 1,
-      "holderName": "Jon Dunwell",
-      "openStatesId": "ocd-person/7a97018b-eb0e-46cf-8bd8-26520ff0d1e0",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "REP",
-      "partyMismatch": false,
-      "baselineContestId": "ia:state-leg-general:2024:lower:38",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": true,
-      "baselineSeats": 1,
-      "ownRaceDemocraticMargin": -11.5,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 42.1,
-      "blueBaseline": null,
-      "competitiveness": 54,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 54,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "2bcd8a2c6cff677412b9684ec043113755031530c393ac8ef75404bc09ed66c3"
     },
     {
       "seatId": "seat_state_ia_lower_39_1",
@@ -138189,42 +138128,6 @@
       "drivers": [],
       "formula": null,
       "rowSha256": "e64f44d559add6ca7566f7dddd8ef4b5056e56a0a15b7f6479db53e408a5ff17"
-    },
-    {
-      "seatId": "seat_state_la_lower_77_1",
-      "seatLabel": "LA House 77",
-      "stateCode": "LA",
-      "chamber": "lower",
-      "district": "77",
-      "seatSlot": 1,
-      "holderName": "Mark Wright",
-      "openStatesId": "ocd-person/d3ecec03-0408-46f0-8c82-b775f787e6e1",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 4,
-      "caucus": "Republican",
-      "status": "no_contest_for_district",
-      "holderBaselineParty": null,
-      "partyMismatch": false,
-      "baselineContestId": null,
-      "baselineCycleYear": null,
-      "baselineElectionDate": null,
-      "baselineContested": null,
-      "baselineSeats": null,
-      "ownRaceDemocraticMargin": null,
-      "stateContestation": null,
-      "nextElectionYear": null,
-      "route": null,
-      "score": null,
-      "blueBaseline": null,
-      "competitiveness": null,
-      "structuralBaseline": null,
-      "availableWeight": null,
-      "coverageMultiplier": null,
-      "drivers": [],
-      "formula": null,
-      "rowSha256": "ae8a2e3965ac203638103f78968598af431888e52d562df6126585f54e1e71e7"
     },
     {
       "seatId": "seat_state_la_lower_78_1",
@@ -217134,7 +217037,7 @@
       "chamber": "lower",
       "district": "31",
       "seatSlot": 1,
-      "holderName": "Frank Smith",
+      "holderName": "Frank J. Smith",
       "openStatesId": "ocd-person/e9b6d4cf-9585-4cc4-8802-598065431e0e",
       "incumbentParty": "Democratic",
       "primaryFeasibility": null,
@@ -217186,7 +217089,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "f12fc6df1a132ae18718a8c58e51b863d69c22c65e42b08debcdfd90cc16e709"
+      "rowSha256": "8eae63e624667f490dfda94f14447944c5f079f017fc67b27591805e3d6634ec"
     },
     {
       "seatId": "seat_state_mt_lower_32_1",
@@ -265185,67 +265088,6 @@
       "rowSha256": "f604201e9bcefc163763bb1edabf3a505efffa6f47b166835d7f0036e3072246"
     },
     {
-      "seatId": "seat_state_nh_lower_rockingham-5_2",
-      "seatLabel": "NH House Rockingham 5",
-      "stateCode": "NH",
-      "chamber": "lower",
-      "district": "Rockingham 5",
-      "seatSlot": 2,
-      "holderName": "Michael Vose",
-      "openStatesId": "ocd-person/1aa8819a-e1bd-4569-93ec-305ad61e8ea4",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "R",
-      "partyMismatch": false,
-      "baselineContestId": "nh:state-leg-general:2024:lower:rockingham-5",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": true,
-      "baselineSeats": 2,
-      "ownRaceDemocraticMargin": -8.9,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 50.2,
-      "blueBaseline": null,
-      "competitiveness": 64.4,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 64.4,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "e75f7dfbaab0574e494ce3bbf0078f0dc7da6f12194a258bb642fce0ea97689a"
-    },
-    {
       "seatId": "seat_state_nh_lower_rockingham-6_1",
       "seatLabel": "NH House Rockingham 6",
       "stateCode": "NH",
@@ -280871,67 +280713,6 @@
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
       "rowSha256": "827db1307caf965ac3a0b8291bad6a566bbb2f9ea79a037536c0fd553ee73593"
-    },
-    {
-      "seatId": "seat_state_nm_lower_64_1",
-      "seatLabel": "NM House 64",
-      "stateCode": "NM",
-      "chamber": "lower",
-      "district": "64",
-      "seatSlot": 1,
-      "holderName": "Andi Reeb",
-      "openStatesId": "ocd-person/c4caca3c-faa3-445f-91e0-cce9edd53a5a",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "Republican",
-      "partyMismatch": false,
-      "baselineContestId": "nm:state-leg-general:2024:lower:64",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": false,
-      "baselineSeats": 1,
-      "ownRaceDemocraticMargin": -100,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 0,
-      "blueBaseline": null,
-      "competitiveness": 0,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 0,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "7dd15b25557bbc2a3183d7a49aac3ec351dd78471916fbc4851377457855531d"
     },
     {
       "seatId": "seat_state_nm_lower_65_1",
@@ -299974,7 +299755,7 @@
       "seatSlot": 1,
       "holderName": "Pam Helming",
       "openStatesId": "ocd-person/fb2db4c8-a730-4fe7-b5e3-4d0156e46a1d",
-      "incumbentParty": "Republican/Conservative/Independence",
+      "incumbentParty": "Republican/Conservative",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
@@ -300024,7 +299805,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "74604dce263ee9cfd63db9a2ae64a736d7d39663bd1c71583b1a5ea05acb2562"
+      "rowSha256": "59108cd59c407d1f31b574436c244b1fdc05674f5005c1a53a6a8fbd70f3dc4b"
     },
     {
       "seatId": "seat_state_ny_upper_55_1",
@@ -304608,15 +304389,15 @@
       "chamber": "lower",
       "district": "66",
       "seatSlot": 1,
-      "holderName": "Sharon Ray",
-      "openStatesId": "ocd-person/352d7ee9-256c-4195-a673-17b7ee200948",
+      "holderName": "Sean Hutson",
+      "openStatesId": "ocd-person/f578440a-e5ea-4775-bb41-94adad15fa73",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "not_democratic_holder",
       "termYears": 2,
       "caucus": "Republican",
       "status": "scored",
-      "holderBaselineParty": "R",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "oh:state-leg-general:2024:lower:66",
       "baselineCycleYear": 2024,
@@ -304660,7 +304441,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "0fe4f421ce576da99682f7887d03333b6d6ad675c0563c4fe3eb1ec9f1801e53"
+      "rowSha256": "e1325c3e9ae4d57bda41bdb7d8efb47b0c88841c72856cbe54bb0c6e3e1792a0"
     },
     {
       "seatId": "seat_state_oh_lower_67_1",
@@ -306125,67 +305906,6 @@
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
       "rowSha256": "5f2f00470b4dc1f71c1c216a201241769d1af4b345851447b3345153755f0c93"
-    },
-    {
-      "seatId": "seat_state_oh_lower_89_1",
-      "seatLabel": "OH House 89",
-      "stateCode": "OH",
-      "chamber": "lower",
-      "district": "89",
-      "seatSlot": 1,
-      "holderName": "D.J. Swearingen",
-      "openStatesId": "ocd-person/cb2ddd04-e5b0-4c96-b217-d02b732eb896",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "not_democratic_holder",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "R",
-      "partyMismatch": false,
-      "baselineContestId": "oh:state-leg-general:2024:lower:89",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": true,
-      "baselineSeats": 1,
-      "ownRaceDemocraticMargin": -17.3,
-      "stateContestation": 51,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 31.8,
-      "blueBaseline": null,
-      "competitiveness": 30.8,
-      "structuralBaseline": null,
-      "availableWeight": 0.65,
-      "coverageMultiplier": 0.86,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 30.8,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": 51,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "b6c21031b7e2f9f3c07a5a3376f6ced32d7a50e17487f887b171340ce8a5654c"
     },
     {
       "seatId": "seat_state_oh_lower_8_1",
@@ -312270,42 +311990,6 @@
       "drivers": [],
       "formula": null,
       "rowSha256": "111fbf96229269801e97e37690a667bdc2dbe5afe58bae80cba93496a9167bd2"
-    },
-    {
-      "seatId": "seat_state_ok_lower_77_1",
-      "seatLabel": "OK House 77",
-      "stateCode": "OK",
-      "chamber": "lower",
-      "district": "77",
-      "seatSlot": 1,
-      "holderName": "John Waldron",
-      "openStatesId": "ocd-person/6a662cc1-492b-4c65-a77c-9b8b202b1ae5",
-      "incumbentParty": "Democratic",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Democratic",
-      "status": "no_contest_for_district",
-      "holderBaselineParty": null,
-      "partyMismatch": false,
-      "baselineContestId": null,
-      "baselineCycleYear": null,
-      "baselineElectionDate": null,
-      "baselineContested": null,
-      "baselineSeats": null,
-      "ownRaceDemocraticMargin": null,
-      "stateContestation": null,
-      "nextElectionYear": null,
-      "route": null,
-      "score": null,
-      "blueBaseline": null,
-      "competitiveness": null,
-      "structuralBaseline": null,
-      "availableWeight": null,
-      "coverageMultiplier": null,
-      "drivers": [],
-      "formula": null,
-      "rowSha256": "db63632e8bffa36237157d012252f12ddd11fc079ae69a58a7ddb6b3daa60da2"
     },
     {
       "seatId": "seat_state_ok_lower_78_1",
@@ -371906,67 +371590,6 @@
       "rowSha256": "03124afc0273d734f1bd657303ce7065da577d6ac0d09f388c4714af3e5ae3c0"
     },
     {
-      "seatId": "seat_state_tx_lower_1_1",
-      "seatLabel": "TX House 1",
-      "stateCode": "TX",
-      "chamber": "lower",
-      "district": "1",
-      "seatSlot": 1,
-      "holderName": "Gary VanDeaver",
-      "openStatesId": "ocd-person/26617394-4276-4aa7-878c-d20552b260a4",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "REP",
-      "partyMismatch": false,
-      "baselineContestId": "tx:state-leg-general:2024:lower:1",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": false,
-      "baselineSeats": 1,
-      "ownRaceDemocraticMargin": -100,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 0,
-      "blueBaseline": null,
-      "competitiveness": 0,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 0,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "d36e8d3598d4951c784b668fa8144a43559179fec85ce5695ae26b7c46dffb8c"
-    },
-    {
       "seatId": "seat_state_tx_lower_20_1",
       "seatLabel": "TX House 20",
       "stateCode": "TX",
@@ -376426,7 +376049,7 @@
       "chamber": "lower",
       "district": "87",
       "seatSlot": 1,
-      "holderName": "Caroline Fairly",
+      "holderName": "Caroline Dunmoyer",
       "openStatesId": "ocd-person/5c40c2b0-07c1-4c73-b15b-14d0ef6df40e",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
@@ -376434,7 +376057,7 @@
       "termYears": 2,
       "caucus": "Republican",
       "status": "scored",
-      "holderBaselineParty": "REP",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "tx:state-leg-general:2024:lower:87",
       "baselineCycleYear": 2024,
@@ -376478,7 +376101,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "b616d0612455a93e7fbf45de4a22e0e950d6c5ed9e5026b138bb007cf5c9f927"
+      "rowSha256": "04408059bac318c2735c5fadf073baee2963e05c285222a3f0b64d9d58e64098"
     },
     {
       "seatId": "seat_state_tx_lower_88_1",
@@ -379343,67 +378966,6 @@
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
       "rowSha256": "d17282c42c4c1b73abdf31cf46277926224c6f4aa182783a4c94e99c26e161eb"
-    },
-    {
-      "seatId": "seat_state_ut_lower_16_1",
-      "seatLabel": "UT House 16",
-      "stateCode": "UT",
-      "chamber": "lower",
-      "district": "16",
-      "seatSlot": 1,
-      "holderName": "Trevor Lee",
-      "openStatesId": "ocd-person/3187c9ea-c509-45f3-9eb4-a8ba2d8fd7d9",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "REP",
-      "partyMismatch": false,
-      "baselineContestId": "ut:state-leg-general:2024:lower:16",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": true,
-      "baselineSeats": 1,
-      "ownRaceDemocraticMargin": -30.6,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 0,
-      "blueBaseline": null,
-      "competitiveness": 0,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 0,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "6dca73e3833314a9a3b1e899dfe3aa7505da62238b2417805002f228a6fac18f"
     },
     {
       "seatId": "seat_state_ut_lower_17_1",
@@ -393763,15 +393325,15 @@
       "chamber": "lower",
       "district": "Addison-4",
       "seatSlot": 1,
-      "holderName": "Mari Cordes",
-      "openStatesId": "ocd-person/1f501dde-37ba-49b3-ac83-0c77102ed8c3",
-      "incumbentParty": "Democratic/Progressive",
+      "holderName": "Karen Lueders",
+      "openStatesId": "ocd-person/337c5ad5-3e6d-483b-949f-fd0e2dbe985c",
+      "incumbentParty": "Democratic",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Democratic",
       "status": "scored",
-      "holderBaselineParty": "Democratic",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "vt:state-leg-general:2024:lower:addison-4",
       "baselineCycleYear": 2024,
@@ -393815,7 +393377,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "469d24c2bc1993ca73a1c719ff0edaedde3e70ef7746edeef75d70109246fc06"
+      "rowSha256": "bda1c251ea6cfcc34841d8b1fd4792fd6be4555050e4db1931107cac7daa0506"
     },
     {
       "seatId": "seat_state_vt_lower_addison-4_2",
@@ -395665,67 +395227,6 @@
       "chamber": "lower",
       "district": "Chittenden-18",
       "seatSlot": 1,
-      "holderName": "Bob Hooper",
-      "openStatesId": "ocd-person/dec4c236-1cd1-465f-969c-0bb4b8a04992",
-      "incumbentParty": "Democratic",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Democratic",
-      "status": "scored",
-      "holderBaselineParty": null,
-      "partyMismatch": false,
-      "baselineContestId": "vt:state-leg-general:2024:lower:chittenden-18",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": false,
-      "baselineSeats": 2,
-      "ownRaceDemocraticMargin": 98.1,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "democratic_incumbent_primary",
-      "score": 86,
-      "blueBaseline": 100,
-      "competitiveness": null,
-      "structuralBaseline": 100,
-      "availableWeight": 0.65,
-      "coverageMultiplier": 0.86,
-      "drivers": [
-        {
-          "key": "blue_baseline",
-          "label": "Blue baseline",
-          "score": 100,
-          "weight": 0.45499999999999996
-        },
-        {
-          "key": "primary_feasibility",
-          "label": "Primary feasibility",
-          "score": null,
-          "weight": 0.195
-        },
-        {
-          "key": "incumbent_alignment_gap",
-          "label": "Incumbent alignment gap",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.15
-        }
-      ],
-      "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "2a0853c90af7a3d77b84372b6b6f2b9b2a6d24e3e2293f92884e8741ccb614b5"
-    },
-    {
-      "seatId": "seat_state_vt_lower_chittenden-18_2",
-      "seatLabel": "VT House Chittenden-18",
-      "stateCode": "VT",
-      "chamber": "lower",
-      "district": "Chittenden-18",
-      "seatSlot": 2,
       "holderName": "Carol Ode",
       "openStatesId": "ocd-person/e9036574-9eac-4f0c-9bd2-1b425e96bb8c",
       "incumbentParty": "Democratic",
@@ -395778,7 +395279,68 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "3781c7e0ec675576a4400fcbc80d16d9f557742d9f91a764babd51f51b7aa32e"
+      "rowSha256": "0f4907e24cfc1f3bd7a2173672e5b0ef5f9ebcc62636586b1f4f2681ac3c4bb6"
+    },
+    {
+      "seatId": "seat_state_vt_lower_chittenden-18_2",
+      "seatLabel": "VT House Chittenden-18",
+      "stateCode": "VT",
+      "chamber": "lower",
+      "district": "Chittenden-18",
+      "seatSlot": 2,
+      "holderName": "Kevin Scully",
+      "openStatesId": "ocd-person/c2b1d69e-f1d6-43a6-acb5-d980fdf1ed8c",
+      "incumbentParty": "Democratic",
+      "primaryFeasibility": null,
+      "primaryEvidenceStatus": "no_catalog_for_state",
+      "termYears": 2,
+      "caucus": "Democratic",
+      "status": "scored",
+      "holderBaselineParty": null,
+      "partyMismatch": false,
+      "baselineContestId": "vt:state-leg-general:2024:lower:chittenden-18",
+      "baselineCycleYear": 2024,
+      "baselineElectionDate": "2024-11-05",
+      "baselineContested": false,
+      "baselineSeats": 2,
+      "ownRaceDemocraticMargin": 98.1,
+      "stateContestation": null,
+      "nextElectionYear": 2026,
+      "route": "democratic_incumbent_primary",
+      "score": 86,
+      "blueBaseline": 100,
+      "competitiveness": null,
+      "structuralBaseline": 100,
+      "availableWeight": 0.65,
+      "coverageMultiplier": 0.86,
+      "drivers": [
+        {
+          "key": "blue_baseline",
+          "label": "Blue baseline",
+          "score": 100,
+          "weight": 0.45499999999999996
+        },
+        {
+          "key": "primary_feasibility",
+          "label": "Primary feasibility",
+          "score": null,
+          "weight": 0.195
+        },
+        {
+          "key": "incumbent_alignment_gap",
+          "label": "Incumbent alignment gap",
+          "score": null,
+          "weight": 0.2
+        },
+        {
+          "key": "cash_vulnerability",
+          "label": "Cash vulnerability",
+          "score": null,
+          "weight": 0.15
+        }
+      ],
+      "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
+      "rowSha256": "cb3f0e5b574bf58daa30bf4c141fd507a29df5b830dc747371c2be22e1876629"
     },
     {
       "seatId": "seat_state_vt_lower_chittenden-19_1",
@@ -397190,6 +396752,67 @@
       "chamber": "lower",
       "district": "Chittenden-Franklin",
       "seatSlot": 1,
+      "holderName": "Kumulia Long",
+      "openStatesId": "ocd-person/89c4edc3-e069-4f8f-a0b4-f57986aff04f",
+      "incumbentParty": "Republican",
+      "primaryFeasibility": null,
+      "primaryEvidenceStatus": "no_catalog_for_state",
+      "termYears": 2,
+      "caucus": "Republican",
+      "status": "scored",
+      "holderBaselineParty": null,
+      "partyMismatch": false,
+      "baselineContestId": "vt:state-leg-general:2024:lower:chittenden-franklin",
+      "baselineCycleYear": 2024,
+      "baselineElectionDate": "2024-11-05",
+      "baselineContested": true,
+      "baselineSeats": 2,
+      "ownRaceDemocraticMargin": -22.9,
+      "stateContestation": null,
+      "nextElectionYear": 2026,
+      "route": "republican_fringe_general",
+      "score": 6.6,
+      "blueBaseline": null,
+      "competitiveness": 8.4,
+      "structuralBaseline": null,
+      "availableWeight": 0.45,
+      "coverageMultiplier": 0.78,
+      "drivers": [
+        {
+          "key": "general_election_competitiveness",
+          "label": "General-election competitiveness",
+          "score": 8.4,
+          "weight": 0.45
+        },
+        {
+          "key": "cash_vulnerability",
+          "label": "Cash vulnerability",
+          "score": null,
+          "weight": 0.2
+        },
+        {
+          "key": "local_context",
+          "label": "Local context",
+          "score": null,
+          "weight": 0.15
+        },
+        {
+          "key": "state_primary_contestation",
+          "label": "State Democratic primary contestation",
+          "score": null,
+          "weight": 0.2
+        }
+      ],
+      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
+      "rowSha256": "0309d3da626c990185bf07ac83df7ea22c6b3851ccdfa8bf84e9211c5e6e0648"
+    },
+    {
+      "seatId": "seat_state_vt_lower_chittenden-franklin_2",
+      "seatLabel": "VT House Chittenden-Franklin",
+      "stateCode": "VT",
+      "chamber": "lower",
+      "district": "Chittenden-Franklin",
+      "seatSlot": 2,
       "holderName": "Tony Micklus",
       "openStatesId": "ocd-person/9a5bf877-6bb2-4135-a3de-fc344e84c1c6",
       "incumbentParty": "Republican",
@@ -397242,68 +396865,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "e89f037984290c54c7ff6834e561c081463ab73e8cbc5a4f1428f9e05b6e0f89"
-    },
-    {
-      "seatId": "seat_state_vt_lower_chittenden-franklin_2",
-      "seatLabel": "VT House Chittenden-Franklin",
-      "stateCode": "VT",
-      "chamber": "lower",
-      "district": "Chittenden-Franklin",
-      "seatSlot": 2,
-      "holderName": "Chris Taylor",
-      "openStatesId": "ocd-person/8a7c0a35-c3bc-4b94-a1c3-c726c8ecaaae",
-      "incumbentParty": "Republican",
-      "primaryFeasibility": null,
-      "primaryEvidenceStatus": "no_catalog_for_state",
-      "termYears": 2,
-      "caucus": "Republican",
-      "status": "scored",
-      "holderBaselineParty": "Republican",
-      "partyMismatch": false,
-      "baselineContestId": "vt:state-leg-general:2024:lower:chittenden-franklin",
-      "baselineCycleYear": 2024,
-      "baselineElectionDate": "2024-11-05",
-      "baselineContested": true,
-      "baselineSeats": 2,
-      "ownRaceDemocraticMargin": -22.9,
-      "stateContestation": null,
-      "nextElectionYear": 2026,
-      "route": "republican_fringe_general",
-      "score": 6.6,
-      "blueBaseline": null,
-      "competitiveness": 8.4,
-      "structuralBaseline": null,
-      "availableWeight": 0.45,
-      "coverageMultiplier": 0.78,
-      "drivers": [
-        {
-          "key": "general_election_competitiveness",
-          "label": "General-election competitiveness",
-          "score": 8.4,
-          "weight": 0.45
-        },
-        {
-          "key": "cash_vulnerability",
-          "label": "Cash vulnerability",
-          "score": null,
-          "weight": 0.2
-        },
-        {
-          "key": "local_context",
-          "label": "Local context",
-          "score": null,
-          "weight": 0.15
-        },
-        {
-          "key": "state_primary_contestation",
-          "label": "State Democratic primary contestation",
-          "score": null,
-          "weight": 0.2
-        }
-      ],
-      "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "92cc098c44c5cff6701d6e9a61a4fc97e33d6d615aa447c0eb4865fdce0ec081"
+      "rowSha256": "2687a295f36f1a1a8e651a74b9db718a8a29aff532b842b3b59a83b58204fb40"
     },
     {
       "seatId": "seat_state_vt_lower_essex-caledonia_1",
@@ -398044,15 +397606,15 @@
       "chamber": "lower",
       "district": "Franklin-8",
       "seatSlot": 1,
-      "holderName": "Casey Toof",
-      "openStatesId": "ocd-person/704de547-43b6-4dfa-bf95-c4137f263e00",
+      "holderName": "Jack Brigham",
+      "openStatesId": "ocd-person/20e614c9-dd9b-46ed-a3d4-aa1606f0a561",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Republican",
       "status": "scored",
-      "holderBaselineParty": "Republican",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "vt:state-leg-general:2024:lower:franklin-8",
       "baselineCycleYear": 2024,
@@ -398096,7 +397658,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "a1491d7e4d60668de9b25f23796286473e37baa31da80e826e9aa9d77505ad8c"
+      "rowSha256": "dc394fa3356f20551ef2d4ee5fa30d655237f5180ce8b95e7fc94b9412ce021b"
     },
     {
       "seatId": "seat_state_vt_lower_grand-isle-chittenden_1",
@@ -399361,15 +398923,15 @@
       "chamber": "lower",
       "district": "Rutland-11",
       "seatSlot": 1,
-      "holderName": "Jim Harrison",
-      "openStatesId": "ocd-person/bd5d142d-90c3-41f6-b8af-7591316951da",
+      "holderName": "Valorie Taylor",
+      "openStatesId": "ocd-person/70ab2e29-6232-4074-9539-2a514aa21dcf",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Republican",
       "status": "scored",
-      "holderBaselineParty": "Republican",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "vt:state-leg-general:2024:lower:rutland-11",
       "baselineCycleYear": 2024,
@@ -399413,7 +398975,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "0707ed3a0b4defeb312019568b1bb4359ee8e3d752d8c6403c4eab2820ddd809"
+      "rowSha256": "636e9a591928fe0291c1903f96dbfb568e6b7b3049af917339fc7b8bbd9fcf5a"
     },
     {
       "seatId": "seat_state_vt_lower_rutland-1_1",
@@ -400947,8 +400509,8 @@
       "chamber": "lower",
       "district": "Washington-Orange",
       "seatSlot": 2,
-      "holderName": "Topper McFaun",
-      "openStatesId": "ocd-person/a7c7d0f6-8795-4f50-928b-15b6c3831ac4",
+      "holderName": "David Soucy",
+      "openStatesId": "ocd-person/f1771de2-3410-4df0-8f0f-20aeb127a8f0",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
@@ -400999,7 +400561,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "3a9babf3da964dccac766160286398339b4d1f0907ff9b7bb8f9b18f0aeed016"
+      "rowSha256": "d9580f1acdd8efee1e524c4144bc8a6b576104e835457998dbbfe2b58a40d4fa"
     },
     {
       "seatId": "seat_state_vt_lower_windham-1_1",
@@ -401959,15 +401521,15 @@
       "chamber": "lower",
       "district": "Windsor-4",
       "seatSlot": 1,
-      "holderName": "Heather Surprenant",
-      "openStatesId": "ocd-person/a424d253-1d98-4865-a5b7-998d3ffd1bc8",
+      "holderName": "Michael Hoyt",
+      "openStatesId": "ocd-person/d799cf20-3603-4035-88b8-20d7bb45f627",
       "incumbentParty": "Democratic",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Democratic",
       "status": "scored",
-      "holderBaselineParty": "Democratic",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "vt:state-leg-general:2024:lower:windsor-4",
       "baselineCycleYear": 2024,
@@ -402011,7 +401573,7 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "rowSha256": "3e8db4be83359b91c15fdd303c801c19574d8eaf69a972b6726fea19f0ee04ab"
+      "rowSha256": "bce10496ba7dfecd039caa1ec64f26b4e395e7090a57ef6fef87da646e04b838"
     },
     {
       "seatId": "seat_state_vt_lower_windsor-5_1",
@@ -403545,15 +403107,15 @@
       "chamber": "upper",
       "district": "Orange",
       "seatSlot": 1,
-      "holderName": "Larry Hart",
-      "openStatesId": "ocd-person/c5bca102-7637-45de-90fb-183c2c024f43",
+      "holderName": "John Benson",
+      "openStatesId": "ocd-person/b2efb3b2-d580-404c-ace4-313fc17a1952",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Republican",
       "status": "scored",
-      "holderBaselineParty": "Republican",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "vt:state-leg-general:2024:upper:orange",
       "baselineCycleYear": 2024,
@@ -403597,7 +403159,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "85d9ba7c5e6b8f70f2b1e88cd5f44119f59e446e618372426d98402679114c9e"
+      "rowSha256": "7883052749cc7f19f21761127d95475e163878838ec4de87bdb6accf371c48e5"
     },
     {
       "seatId": "seat_state_vt_upper_orleans_1",
@@ -403606,15 +403168,15 @@
       "chamber": "upper",
       "district": "Orleans",
       "seatSlot": 1,
-      "holderName": "Sam Douglass",
-      "openStatesId": "ocd-person/a7824782-070e-47c0-992e-2a508f3da243",
+      "holderName": "John S Morley",
+      "openStatesId": "ocd-person/3925fa66-5990-42d3-b3d0-5ee83143d931",
       "incumbentParty": "Republican",
       "primaryFeasibility": null,
       "primaryEvidenceStatus": "no_catalog_for_state",
       "termYears": 2,
       "caucus": "Republican",
       "status": "scored",
-      "holderBaselineParty": "Republican",
+      "holderBaselineParty": null,
       "partyMismatch": false,
       "baselineContestId": "vt:state-leg-general:2024:upper:orleans",
       "baselineCycleYear": 2024,
@@ -403658,7 +403220,7 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "rowSha256": "3909b757d34f211e2f01188504ea5e2893fb33033f15189ce6cb95f3f4fbdca5"
+      "rowSha256": "c08801885569c73cf50e145af263ee2964518effea0890414fe45a61f71ecffa"
     },
     {
       "seatId": "seat_state_vt_upper_rutland_1",
@@ -435199,21 +434761,21 @@
     }
   ],
   "summary": {
-    "seats": 7344,
+    "seats": 7336,
     "coveredStates": 51,
-    "scored": 6829,
+    "scored": 6823,
     "stateNotCovered": 0,
-    "noContestForDistrict": 440,
+    "noContestForDistrict": 438,
     "noMajorPartyInContest": 58,
     "partyMismatches": 8,
     "holderPartyNotScored": 17,
-    "democraticScored": 3076,
-    "republicanScored": 3753,
+    "democraticScored": 3077,
+    "republicanScored": 3746,
     "primaryFeasibilityValues": 317,
-    "uncontestedBaselines": 2148,
+    "uncontestedBaselines": 2146,
     "democraticMaxScore": 86,
     "republicanMaxScore": 86
   },
-  "rowSetSha256": "532be7e7460bc3034e7c658497b1cfc446d158333d73b7b0b22ff391f156d413",
-  "packageSha256": "17baaf8157b8d031084bdab4c048301e37072fb6c011f24f735175f22dbf6ab0"
+  "rowSetSha256": "de634726378c86b0d185ab58fe0be79e84793fd21a80f31f5ffefb6b0e3548a7",
+  "packageSha256": "20a680a3c2055e5d56a27848c97ca15c1424e34cc5e443a06c68ff8cea86c927"
 }

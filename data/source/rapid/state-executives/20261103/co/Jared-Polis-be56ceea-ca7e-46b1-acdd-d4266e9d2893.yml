@@ -1,0 +1,28 @@
+id: ocd-person/be56ceea-ca7e-46b1-acdd-d4266e9d2893
+name: Jared Polis
+given_name: Jared
+family_name: Polis
+email: Governorpolis@state.co.us
+birth_date: 1975-05-12
+image: https://www.colorado.gov/governor/sites/default/files/2019-04/Jared-Polis_0.jpeg
+party:
+- name: Democratic
+roles:
+- start_date: '2023-01-10'
+  end_date: '2027-01-12'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:co/government
+- start_date: '2019-01-08'
+  end_date: '2023-01-10'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:co/government
+offices:
+- classification: capitol
+  address: State Capitol Building; 200 E. Colfax Ave., Rm. 136; Denver, CO 80203
+  voice: 303-866-2471
+links:
+- url: https://www.colorado.gov/governor
+ids:
+  twitter: govofco
+sources:
+- url: https://www.colorado.gov/governor
