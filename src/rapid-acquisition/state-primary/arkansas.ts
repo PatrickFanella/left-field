@@ -10,8 +10,16 @@ import type { RawPrimaryContest, StatePrimaryAdapter } from "../state-primary-re
  * flagged official by the publisher.
  *
  * Contest names carry the party ("REP State Senate District 10", "DEM State Representative Dist. 35"). Arkansas
- * prints no primary for a party with a single filer, and the Secretary of State's candidate search
- * (candidates.arkansas.gov) returns no records now, so unopposed nominations are not covered.
+ * prints no primary for a party with a single filer. Those nominations are read from the same site's November 3,
+ * 2026 general election ballot listing: its contest list (every candidate on the ballot per office) and its
+ * election info (the party table the candidates' party ids refer to). The Secretary of State's candidate search
+ * (candidates.arkansas.gov) refuses this network (HTTP 403) and earlier returned no records, and its own uploads
+ * carry no 2026 general candidate list. The general election's votes are not read; the publisher had not yet
+ * flagged them official when retained. For each Democratic or Republican candidate on the November ballot for
+ * U.S. Senate, governor, U.S. House, State Senate or State Representative whose party held no printed 2026
+ * primary (regular or special, either round) for that office and district, the candidate is reported as an
+ * unopposed nomination dated the March 3 primary. Names drop the ballot's party prefix ("REP Tom Cotton"), which
+ * must agree with the party id. The State Representative District 8 special general (unexpired term) is not read.
  *
  * Special primaries: the June 2 House 44 special primary held two contests, "VIO" (vacancy in office, the
  * unexpired term; runoff June 30) and "VIN" (vacancy in nomination, the party's nominee for the 2027 term); the
@@ -32,13 +40,20 @@ const ELECTIONS: readonly Election[] = [
 
 const listId = (election: Election): string => `ar-2026-${election.slug}-contest-list-json`;
 const resultsId = (election: Election): string => `ar-2026-${election.slug}-contest-results-json`;
-const SOURCES: readonly StateGeneralSource[] = ELECTIONS.flatMap((election): StateGeneralSource[] => {
-  const common = { cycleYear: 2026, electionDate: election.date };
-  return [
-    { ...common, id: listId(election), url: `${API}/Contest/GetContestSearchList?cId=arkansas&electionID=${election.electionId}`, path: `data/source/rapid/state-primary/ar/2026-${election.slug}-contest-list.json`, note: `${election.note} Contest and candidate names.` },
-    { ...common, id: resultsId(election), url: `${API}/Contest/GetContestResults?cId=arkansas&electionID=${election.electionId}`, path: `data/source/rapid/state-primary/ar/2026-${election.slug}-contest-results.json`, note: `${election.note} Vote totals.` },
-  ];
-});
+const GENERAL_ID = "11b07106-031e-4d7c-911a-d01fb473d6dd";
+const GENERAL_LIST = "ar-2026-general-ballot-contest-list-json";
+const GENERAL_INFO = "ar-2026-general-ballot-election-info-json";
+const SOURCES: readonly StateGeneralSource[] = [
+  ...ELECTIONS.flatMap((election): StateGeneralSource[] => {
+    const common = { cycleYear: 2026, electionDate: election.date };
+    return [
+      { ...common, id: listId(election), url: `${API}/Contest/GetContestSearchList?cId=arkansas&electionID=${election.electionId}`, path: `data/source/rapid/state-primary/ar/2026-${election.slug}-contest-list.json`, note: `${election.note} Contest and candidate names.` },
+      { ...common, id: resultsId(election), url: `${API}/Contest/GetContestResults?cId=arkansas&electionID=${election.electionId}`, path: `data/source/rapid/state-primary/ar/2026-${election.slug}-contest-results.json`, note: `${election.note} Vote totals.` },
+    ];
+  }),
+  { id: GENERAL_LIST, url: `${API}/Contest/GetContestSearchList?cId=arkansas&electionID=${GENERAL_ID}`, path: "data/source/rapid/state-primary/ar/2026-general-ballot-contest-list.json", cycleYear: 2026, electionDate: "2026-11-03", note: "November 3, 2026 general election ballot listing (contest list, every candidate with party id), read for nominations with no printed primary; not yet flagged official by the publisher, and no votes are read." },
+  { id: GENERAL_INFO, url: `${API}/Election/GetElectionInfo?cId=arkansas&electionID=${GENERAL_ID}`, path: "data/source/rapid/state-primary/ar/2026-general-ballot-election-info.json", cycleYear: 2026, electionDate: "2026-11-03", note: "Same election: election info with the party table for the listing's party ids." },
+];
 
 const fail = (code: string): never => { throw new Error(`ARKANSAS_PRIMARY_${code}`); };
 const PARTIES: Readonly<Record<string, string>> = { REP: "Republican", DEM: "Democratic", LIB: "Libertarian" };
@@ -49,12 +64,49 @@ type ResultContest = { choices: Choice[]; writeInChoices?: Choice[]; locations?:
 type Envelope<T> = { electionID: string; isOfficial: boolean; response: T };
 
 /** Arkansas ballots may print an office title before a name ("State Representative Tara Shephard"); it is not part of the name. */
-const TITLE = /^(?:State Representative|State Senator|Senator|School Board Director) /;
+const TITLE = /^(?:State Representative|Representative|State Senator|Senator|School Board Director) /;
 const CONTEST = /^(REP|DEM|LIB) (VIO )?(U\.S\. Senate|Governor|U\.S\. Congress District (\d+)|State Senate District (\d+)|State Representative (?:Dist\.|District) (\d+))( VIN| VIO)?$/i;
+const GENERAL_CONTEST = /^(?:(U\.S\. Senate)|(Governor)|U\.S\. Congress District (\d+)|State Senate,? (?:Dist\.?|District) (\d+)|State Representative,? (?:Dist\.?|District) (\d+))$/i;
+const BALLOT_PREFIX = /^(REP|DEM|LIB|IND|GRN) /;
+const BALLOT_PARTIES: Readonly<Record<string, string>> = { Republican: "REP", Democratic: "DEM" };
+
+type GeneralChoice = { name: string; partyID: string; isWriteIn: boolean };
+function parseGeneral(bytes: Buffer, readSource: (sourceId: string) => Buffer): RawPrimaryContest[] {
+  const list = JSON.parse(bytes.toString("utf8")) as Envelope<{ contests: Record<string, { contestName: string; voteFor: number; choices: Record<string, GeneralChoice> }> }>;
+  const info = JSON.parse(readSource(GENERAL_INFO).toString("utf8")) as { response: { id: string; date: string; parties: Record<string, { partyName: string }> } };
+  if (list.electionID !== GENERAL_ID || info.response.id !== GENERAL_ID || !info.response.date.startsWith("2026-11-03")) fail("GENERAL_ELECTION");
+  const key = (office: string, district: string | null, party: string): string => `${office}|${district === null ? "" : String(Number(district))}|${party}`;
+  const contested = new Set(ELECTIONS.flatMap((election) => parseElection(election, readSource(resultsId(election)), readSource)).map((contest) => key(contest.office, contest.district, contest.rawParty!)));
+  return Object.values(list.response.contests).flatMap((contest): RawPrimaryContest[] => {
+    const match = contest.contestName.replace(/\s+/g, " ").trim().match(GENERAL_CONTEST);
+    if (!match) return [];
+    if (contest.voteFor !== 1) fail(`GENERAL_VOTE_FOR:${contest.contestName}`);
+    const office = match[1] ? { office: "us_senate" as const, district: null } : match[2] ? { office: "governor" as const, district: null }
+      : match[3] ? { office: "us_house" as const, district: String(Number(match[3])) } : match[4] ? { office: "state_upper" as const, district: String(Number(match[4])) } : { office: "state_lower" as const, district: String(Number(match[5])) };
+    return Object.values(contest.choices).flatMap((choice): RawPrimaryContest[] => {
+      if (choice.isWriteIn) return [];
+      const partyName = info.response.parties[choice.partyID]?.partyName ?? fail(`GENERAL_PARTY:${contest.contestName}:${choice.name}`);
+      const code = BALLOT_PARTIES[partyName];
+      const prefix = choice.name.match(BALLOT_PREFIX)?.[1];
+      if (prefix !== undefined && code !== undefined && prefix !== code) fail(`GENERAL_PARTY_PREFIX:${contest.contestName}:${choice.name}`);
+      if (code === undefined) return [];
+      const rawParty = PARTIES[code]!;
+      if (contested.has(key(office.office, office.district, rawParty))) return [];
+      return [{ ...office, rawParty, electionDate: "2026-03-03", candidates: [{ name: choice.name.replace(BALLOT_PREFIX, "").replace(TITLE, ""), votes: null, winner: true }] }];
+    });
+  });
+}
 
 function parse(bytes: Buffer, source: StateGeneralSource, readSource: (sourceId: string) => Buffer): RawPrimaryContest[] {
+  if (source.id === GENERAL_LIST) return parseGeneral(bytes, readSource);
+  if (source.id === GENERAL_INFO) return [];
   const election = ELECTIONS.find((candidate) => resultsId(candidate) === source.id);
   if (!election) return ELECTIONS.some((candidate) => listId(candidate) === source.id) ? [] : fail(`SOURCE:${source.id}`);
+  return parseElection(election, bytes, readSource);
+}
+
+function parseElection(election: Election, bytes: Buffer, readSource: (sourceId: string) => Buffer): RawPrimaryContest[] {
+  const source = { id: resultsId(election) };
   const list = JSON.parse(readSource(listId(election)).toString("utf8")) as Envelope<{ contests: Record<string, ListContest> }>;
   const results = JSON.parse(bytes.toString("utf8")) as Envelope<{ contests: Record<string, ResultContest> }>;
   if (list.electionID !== election.electionId || results.electionID !== election.electionId) fail(`ELECTION:${source.id}`);
@@ -88,6 +140,6 @@ export const ARKANSAS_PRIMARY: StatePrimaryAdapter = {
   system: "partisan",
   sources: SOURCES,
   // The contest list is read only as the results' companion and yields no contests of its own.
-  expectedContests: Object.fromEntries(ELECTIONS.flatMap((election) => [[listId(election), 0], [resultsId(election), election.contests]])),
+  expectedContests: { ...Object.fromEntries(ELECTIONS.flatMap((election) => [[listId(election), 0], [resultsId(election), election.contests]])), [GENERAL_LIST]: 130, [GENERAL_INFO]: 0 },
   parse,
 };

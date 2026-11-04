@@ -1,0 +1,20 @@
+Contest             REP Governor
+Jurisdiction        Statewide
+Office              REP Governor
+Date
+Winner(s)           Charles, Robert B.
+Threshold                        49687
+
+Rounds               Round 1             Round 2             Round 3         Round 4           Round 5             Round 6            Round 7
+Eliminated           Libby, James D.     Wessels, Robert J. Jones, David J. McCarthy, Owen Z. Mason, Garrett Paul Bush, Jonathan J.
+Elected                                                                                                                               Charles, Robert B.
+Charles, Robert B.                 49129              49294           49780              50342               50916            53246                59873
+Midgley, Benjamin T.               25880              25967           26550              27243               28536            31553                39499
+Bush, Jonathan J.                  25449              25703           26092              26744               27768            31104                      0
+Mason, Garrett Paul                14820              15005           15342              15761               16438                  0                    0
+McCarthy, Owen Z.                   5033                5258           5528               5769                   0                  0                    0
+Jones, David J.                     3740                3874           4048                  0                   0                  0                    0
+Wessels, Robert J.                  3525                3637               0                 0                   0                  0                    0
+Libby, James D.                     1831                   0               0                 0                   0                  0                    0
+Exhausted Ballots                   8574                9243          10641              12122               14323            22078                38609
+

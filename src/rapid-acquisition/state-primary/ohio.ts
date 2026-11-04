@@ -9,14 +9,17 @@ import type { RawPrimaryContest, StatePrimaryAdapter } from "../state-primary-re
  * is retained so far, from an earlier retention of the same URL. The
  * Republican and Libertarian workbooks (same directory, "---republican.xlsx"
  * and "---libertarian.xlsx") have no usable Internet Archive capture (the
- * archive holds only 404 captures of a double-encoded URL); add them as
+ * archive holds only 404 captures of a double-encoded URL, rechecked
+ * November 4, 2026 under the plain, "+" and "%2B" spellings); add them as
  * sources once retained. Until then Republican holders read "no contest".
  * Sheets "Statewide Offices", "U.S. Congress" and
  * "General Assembly" share the layout of the general-election canvass: row 1
  * names the contest over each candidate column, row 2 the candidate as
  * "Name (D)" (write-ins "Name (WI)* (D)"), row 3 the statewide total. The U.S.
  * Senate contest is the special primary for the term ending January 3, 2029.
- * Nothing marks a nominee. Unopposed candidates are printed.
+ * Nothing marks a nominee. Unopposed candidates are printed. A certified
+ * write-in is printed by name and read as an ordinary candidate, so a party
+ * whose only candidate was a write-in still has a contest (House 41).
  */
 const DIR = "https://publicfiles.ohiosos.gov/election-results/past-elections/2026/Primary%2BSpecial%20Election%20-%20May%205%2C%202026/group1";
 const SOURCES: readonly StateGeneralSource[] = [
@@ -49,12 +52,12 @@ function parse(bytes: Buffer): RawPrimaryContest[] {
       if (!/^\d+$/.test(votes)) fail(`VOTES:${title}:${label}`);
       const key = `${title}|${candidate[3]}`;
       const contest = contests.get(key) ?? { ...base, rawParty: candidate[3]!, candidates: [] };
-      contest.candidates.push({ name: candidate[1]!, votes: Number(votes), ...(candidate[2] ? { writeIn: true } : {}) });
+      // A certified write-in is printed by name, so it is an ordinary line, not an unnamed write-in aggregate.
+      contest.candidates.push({ name: candidate[1]!, votes: Number(votes) });
       contests.set(key, contest);
     }
   }
-  // A party whose only candidate was a write-in printed no name on the ballot; the contract needs a named candidate.
-  return [...contests.values()].filter((contest) => contest.candidates.some((candidate) => !candidate.writeIn));
+  return [...contests.values()];
 }
 
 export const OHIO_PRIMARY: StatePrimaryAdapter = {
@@ -62,6 +65,6 @@ export const OHIO_PRIMARY: StatePrimaryAdapter = {
   authority: "Ohio Secretary of State, official canvass",
   system: "partisan",
   sources: SOURCES,
-  expectedContests: { "oh-2026-primary-democratic-summary-xlsx": 123 },
+  expectedContests: { "oh-2026-primary-democratic-summary-xlsx": 130 },
   parse: (bytes) => parse(bytes),
 };

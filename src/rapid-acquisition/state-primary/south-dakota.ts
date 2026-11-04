@@ -22,12 +22,10 @@ import type { RawPrimaryContest, StatePrimaryAdapter } from "../state-primary-re
  * the page serves only in answer to its ASP.NET postback (the body below
  * carries the page's view state). Names annotated "(Withdrawn ...)" or
  * "(Successful Challenge - Decertified ...)" are dropped. A party with no
- * canvass contest in a district and exactly one remaining candidate is
- * reported as an unopposed nomination. Where two candidates filed for a
- * two-seat House district and so had no primary, both were nominated, but
- * the contract allows one uncounted nominee per contest, so those districts
- * are left out and named by the check. The list also carries mailing
- * addresses, which the adapter does not read.
+ * canvass contest in a district and no more remaining candidates than seats
+ * is reported as an unopposed nomination: one nominee, or both where two
+ * candidates filed for a two-seat House district and so had no primary. The
+ * list also carries mailing addresses, which the adapter does not read.
  *
  * The governor's primary went to a July 28 runoff (no candidate reached 35
  * percent). The certified runoff canvass is a 162 MB scan, over the 25 MB
@@ -442,9 +440,7 @@ function parseCandidateList(text: string, contested: ReadonlySet<string>): RawPr
     if (contested.has(groupKey)) return [];
     const seats = seatsOf(group.office, group.district);
     if (group.names.length > seats) fail(`UNCONTESTED_OVERFILLED:${groupKey}`);
-    // Two nominees for a two-seat district cannot be reported as uncounted contests (one nominee each); see above.
-    if (group.names.length !== 1) return [];
-    return [{ office: group.office, district: group.district, rawParty: group.party, seats, candidates: [{ name: group.names[0]!, votes: null, winner: true }] }];
+    return [{ office: group.office, district: group.district, rawParty: group.party, seats, candidates: group.names.map((name) => ({ name, votes: null, winner: true as const })) }];
   });
 }
 
@@ -460,6 +456,6 @@ export const SOUTH_DAKOTA_PRIMARY: StatePrimaryAdapter = {
   authority: "South Dakota Secretary of State, official primary canvass and candidate list",
   system: "partisan",
   sources: SOURCES,
-  expectedContests: { [CANVASS]: 53, [CANDIDATE_LIST]: 52 },
+  expectedContests: { [CANVASS]: 53, [CANDIDATE_LIST]: 64 },
   parse,
 };

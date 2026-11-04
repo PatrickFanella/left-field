@@ -1,0 +1,16 @@
+Contest                 REP State Senator
+Jurisdiction            District 4
+Office                  REP State Senator
+Date
+Winner(s)               Perkins, Chad Richard
+Threshold                                   2557
+
+Rounds                  Round 1                    Round 2                Round 3
+Eliminated              Pierce, Gregory            Wood, Zachary Anders
+Elected                                                                   Perkins, Chad Richard
+Perkins, Chad Richard                       2831                     2865                    3014
+Guerin, Joseph P.                           1889                     1947                    2098
+Wood, Zachary Anders                         924                      945                       0
+Pierce, Gregory                              229                        0                       0
+Exhausted Ballots                            526                      642                    1287
+
