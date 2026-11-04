@@ -5,10 +5,15 @@ import type { HolderName } from "./holder-name-match";
 import { readPinnedPackage, readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { PRE_ELECTION_SNAPSHOT_2026, readPreElectionSnapshot2026, type PreElectionSeatRow, type PreElectionSnapshot2026 } from "./pre-election-snapshot-2026";
 import { CONGRESS_LEGISLATORS_BASELINE_ID, readRefreshInputs } from "./refresh-inputs";
-import { CERTIFIED_COUNT_STATUSES, HOUSE_INCUMBENT_CANDIDACY_ID, HOUSE_PRIMARY_2026_ARTIFACT_IDS, readHouseCandidacyEvidence, readHousePrimaryEvidence2026, readStateLegislativePrimaryEvidence2026, readSuccessors, STATE_LEGISLATIVE_PRIMARY_CONTEXT_ID, stateLegislativePrimaryCatalogIds2026, type Legislator } from "./seat-outcome-evidence";
+import {
+  buildPrimaryEvidenceIndex, CERTIFIED_COUNT_STATUSES, HOUSE_INCUMBENT_CANDIDACY_ID, HOUSE_PRIMARY_2026_ARTIFACT_IDS, houseLabelEntries, primaryEvidenceForSeat, readHouseCandidacyEvidence, readHousePrimaryEvidence2026,
+  readReviewedHousePrimaryEvidence2026, readStateLegislativePrimaryEvidence2026, readSuccessors, REVIEWED_HOUSE_PRIMARY_2026_IDS, STATE_LEGISLATIVE_PRIMARY_CONTEXT_ID, stateDistrictEntries, stateLegislativePrimaryCatalogIds2026,
+  statePrimaryEntries, type Legislator,
+} from "./seat-outcome-evidence";
 import { OUTCOMES, RESOLUTION_ORDER, resolveOutcome, type Outcome, type Resolution } from "./seat-outcome-resolver";
 import { byteCompare, hash } from "./shared";
 import { readStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER } from "./state-legislative-roster";
+import { readStatePrimaryResults2026, STATE_PRIMARY_RESULTS_2026 } from "./state-primary-results-2026";
 
 /**
  * The seat outcome ledger: every seat the pre-election index carried, joined
@@ -24,7 +29,8 @@ export const SEAT_OUTCOME_LEDGER = {
   path: "data/metadata/seat-outcome-ledger-v1.json",
   url: "urn:dsa-seats:seat-outcome-ledger:v1",
   parentIds: (root: string, lock: SourceLock): readonly string[] => [
-    PRE_ELECTION_SNAPSHOT_2026.id, HOUSE_INCUMBENT_CANDIDACY_ID, ...HOUSE_PRIMARY_2026_ARTIFACT_IDS, STATE_LEGISLATIVE_PRIMARY_CONTEXT_ID, ...stateLegislativePrimaryCatalogIds2026(root, lock),
+    PRE_ELECTION_SNAPSHOT_2026.id, HOUSE_INCUMBENT_CANDIDACY_ID, ...HOUSE_PRIMARY_2026_ARTIFACT_IDS, ...REVIEWED_HOUSE_PRIMARY_2026_IDS, STATE_PRIMARY_RESULTS_2026.id,
+    STATE_LEGISLATIVE_PRIMARY_CONTEXT_ID, ...stateLegislativePrimaryCatalogIds2026(root, lock),
     STATE_LEGISLATIVE_ROSTER.id, GOVERNOR_SCORE_V01.id, CONGRESS_LEGISLATORS_BASELINE_ID, congressRosterId(root, lock),
   ],
 } as const;
@@ -65,7 +71,7 @@ const countOutcomes = (rows: readonly SeatOutcomeRow[]): OutcomeCounts => Object
 const splitName = (name: string): HolderName => { const tokens = name.trim().split(/\s+/); return { familyName: tokens.at(-1) ?? "", givenName: tokens.length > 1 ? tokens[0]! : "" }; };
 
 /** Family and given names for every frozen holder, from the rosters that name them; a holder no roster names falls back to splitting the display name. */
-function holderNames(root: string, lock: SourceLock, snapshot: PreElectionSnapshot2026): ReadonlyMap<string, HolderName> {
+export function holderNames(root: string, lock: SourceLock, snapshot: PreElectionSnapshot2026): ReadonlyMap<string, HolderName> {
   const congress = new Map<string, HolderName>();
   for (const id of [congressRosterId(root, lock), CONGRESS_LEGISLATORS_BASELINE_ID]) {
     for (const person of JSON.parse(readRetainedSource(lock, id, root).bytes.toString("utf8")) as (Legislator & { name?: { first?: string; last?: string } })[]) {
@@ -77,26 +83,25 @@ function holderNames(root: string, lock: SourceLock, snapshot: PreElectionSnapsh
   return new Map(snapshot.rows.map((row) => [row.seatId, (row.chamber === "house" || row.chamber === "senate" ? congress.get(row.holderId) : legislators.get(row.holderId)) ?? splitName(row.holderName)]));
 }
 
-/** `${state}|${chamber}|${districtKey}` for a state-legislative seat id, matching the primary-evidence keys. */
-const stateDistrictKey = (seatId: string): string | null => {
-  const match = seatId.match(/^seat_state_([a-z]{2})_(lower|upper|unicameral)_(.+)_(\d+)$/);
-  return match ? `${match[1]!.toUpperCase()}|${match[2]}|${match[3]!.replace(/-/g, " ")}` : null;
-};
-
 export function buildSeatOutcomeLedger(root = process.cwd(), lock: SourceLock = readSourceLock(root)): SeatOutcomeLedger {
   const snapshot = readPreElectionSnapshot2026(root, lock);
   const observedAt = readRefreshInputs(root, lock).snapshotDate;
   const candidacy = readHouseCandidacyEvidence(root, lock);
-  const housePrimaries = readHousePrimaryEvidence2026(root, lock);
-  const statePrimaries = readStateLegislativePrimaryEvidence2026(root, lock);
+  // The statewide primary layer speaks for every office it covers in a state; the earlier per-office files fill
+  // in only where it has no contest for that office yet.
+  const statewide = statePrimaryEntries(readStatePrimaryResults2026(root, lock));
+  const covered = new Set(statewide.map((entry) => `${entry.stateCode}|${entry.office}`));
+  const earlier = [
+    ...houseLabelEntries(readHousePrimaryEvidence2026(root, lock)), ...houseLabelEntries(readReviewedHousePrimaryEvidence2026(root, lock)), ...stateDistrictEntries(readStateLegislativePrimaryEvidence2026(root, lock)),
+  ].filter((entry) => !covered.has(`${entry.stateCode}|${entry.office}`));
+  const primaries = buildPrimaryEvidenceIndex([...statewide, ...earlier]);
   const successors = readSuccessors(root, lock, snapshot);
   const names = holderNames(root, lock, snapshot);
   const rows = snapshot.rows.map((frozen): SeatOutcomeRow => {
-    const key = stateDistrictKey(frozen.seatId);
+    const holder = names.get(frozen.seatId) ?? fail(`HOLDER_NAME_MISSING:${frozen.seatId}`);
     const resolution = resolveOutcome({
-      row: frozen, holder: names.get(frozen.seatId) ?? fail(`HOLDER_NAME_MISSING:${frozen.seatId}`),
-      candidacy: frozen.chamber === "house" ? candidacy.get(frozen.seatId) ?? null : null,
-      primaries: frozen.chamber === "house" ? housePrimaries.get(frozen.seatLabel) ?? [] : key ? statePrimaries.get(key) ?? [] : [],
+      row: frozen, holder, candidacy: frozen.chamber === "house" ? candidacy.get(frozen.seatId) ?? null : null,
+      primaries: frozen.nextElectionYear === 2026 ? primaryEvidenceForSeat(primaries, frozen, holder) : [],
       generals: [], successor: successors.get(frozen.seatId) ?? null,
     });
     // The frozen row's own hash is not carried; the ledger row signs the joined record.

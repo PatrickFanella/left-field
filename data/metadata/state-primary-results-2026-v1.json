@@ -1,0 +1,5229 @@
+{
+  "schema": "state-primary-results-2026-v1",
+  "version": 1,
+  "methodology": {
+    "source": "official_state_election_authority_returns_per_state",
+    "winnerInference": false,
+    "unopposed": "nominee_named_by_official_candidate_list_when_the_state_prints_no_contest"
+  },
+  "sourceIds": [
+    "co-2026-primary-state-results-xlsx"
+  ],
+  "states": [
+    {
+      "stateCode": "CO",
+      "system": "partisan",
+      "sourceIds": [
+        "co-2026-primary-state-results-xlsx"
+      ],
+      "contests": 178,
+      "byOffice": {
+        "us_house": 16,
+        "us_senate": 2,
+        "governor": 3,
+        "state_lower": 116,
+        "state_upper": 41
+      }
+    }
+  ],
+  "contests": [
+    {
+      "contestId": "co:primary:2026:governor:statewide:democratic:primary",
+      "stateCode": "CO",
+      "office": "governor",
+      "district": null,
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Phil Weiser",
+          "votes": 505459,
+          "writeIn": false
+        },
+        {
+          "name": "Michael Bennet",
+          "votes": 383138,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 888597,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "ce52cc5b86e74448b7e5a9511125043df14bd95114659806aae8487d46849ce9"
+    },
+    {
+      "contestId": "co:primary:2026:governor:statewide:republican:primary",
+      "stateCode": "CO",
+      "office": "governor",
+      "district": null,
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Victor Marx",
+          "votes": 208458,
+          "writeIn": false
+        },
+        {
+          "name": "Barb Kirkmeyer",
+          "votes": 205992,
+          "writeIn": false
+        },
+        {
+          "name": "Scott Bottoms",
+          "votes": 108535,
+          "writeIn": false
+        },
+        {
+          "name": "Kelvin \"K-Man\" Wimberly",
+          "votes": 93,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 523078,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "049f52f40baa6a9d93309d0a31cf8b7051fe8346a7fad64916be63fac54a83c6"
+    },
+    {
+      "contestId": "co:primary:2026:governor:statewide:unity:primary",
+      "stateCode": "CO",
+      "office": "governor",
+      "district": null,
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Unity",
+      "party": null,
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jeff Peckman",
+          "votes": 146,
+          "writeIn": false
+        },
+        {
+          "name": "Paul Noël Fiorino",
+          "votes": 126,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 272,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "11b668af86ca6a3e7133bf58658d4421585e13fc88e88390c4bd16c63f50b12f"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:10:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "10",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Junie Joseph",
+          "votes": 14385,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14385,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f29d969146703ed27ed9344d1213372f0151caca2fa3949e0b82a48833db7243"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:11:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "11",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Karen McCormick",
+          "votes": 15480,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 15480,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "15ee490ea4c599addba4e79809e55468466c7b5f1a6c889b22ae3d03afc29d2c"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:12:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "12",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kyle Brown",
+          "votes": 19596,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 19596,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "08aaaa1d9da0fe33f68e8873930d2c11b8823bbd4b54f03a5de54aff0c0d6075"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:12:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "12",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ryan Rhatigan",
+          "votes": 2999,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2999,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "658d6fc0c58d1375c33b4f574d7831ebc47217c5924d75135815a7316257f002"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:13:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "13",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Consuelo Redhorse",
+          "votes": 7217,
+          "writeIn": false
+        },
+        {
+          "name": "Chris Floyd",
+          "votes": 7046,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14263,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "abf29117bc73ac013f48855fda0f4e3e1fc5679771335e8e9d3734868f086d20"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:13:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "13",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Miguel Martinez",
+          "votes": 7959,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7959,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "44f8b24288b4cc36dd66cc2003005ad8d56ae5e5681e9fe8a85fc30a3ef7e48a"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:14:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "14",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Sarah Emery",
+          "votes": 10317,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10317,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2beae51f65602f8de76f1d51489e92cdf80f7af4d72a463cb819c26c4a6ee899"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:14:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "14",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ava Flanell",
+          "votes": 11007,
+          "writeIn": false
+        },
+        {
+          "name": "Troy Vanderhule",
+          "votes": 4001,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 15008,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "71e02ed6a9d6f71370bc9d562f38887c84987f6802dc421d54de8496eb28ddf9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:15:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "15",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jeff K. Livingston",
+          "votes": 7481,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7481,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3b70a05bdf320539c6beb8aead4e4a273786b7d817fb29a63c1b6920c9e93b3c"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:15:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "15",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Pricella Tiegen",
+          "votes": 8359,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8359,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "d591397997aa1a25c93f4e5c956bc6224bd2c83ccdd4d6c4cc553de957fea6b9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:16:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "16",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Steph Vigil",
+          "votes": 9541,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9541,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "66a748047201e096d56a36ead4afaebc2bcde5ae85c06701d568c64e5143a6af"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:16:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "16",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jill Haffley",
+          "votes": 5126,
+          "writeIn": false
+        },
+        {
+          "name": "Jamie Koch",
+          "votes": 2830,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7956,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c6ed1988cfd8a3b23042e528c98d28061e798dc33301804f6e72be45e572c669"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:17:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "17",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Regina English",
+          "votes": 3701,
+          "writeIn": false
+        },
+        {
+          "name": "Chauncy Johnson",
+          "votes": 2232,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 5933,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "34bbce01b3a24a1af7d3a979aed83a7dc29eb7091e4c7372caf857f4d4137edf"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:17:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "17",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Laura Martin",
+          "votes": 2982,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2982,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "fd7ec8f69bfe1354bd86c97808a793222ff7bdde3725315ec80b7fac52d705fe"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:18:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "18",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Amy T Paschal",
+          "votes": 10954,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10954,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "33fd02336bd92aabae687c3a7edd4297c4aadc7183b2587a37feb951dffbbdb4"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:18:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "18",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Adriana Cuva",
+          "votes": 7888,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7888,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c3930776d1925b9cc5ea8a3a7fdb9fcaf97e7807b5e2ec7e3f8dc87afd676571"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:19:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "19",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jillaire McMillan",
+          "votes": 7714,
+          "writeIn": false
+        },
+        {
+          "name": "Anil Pesaramelli",
+          "votes": 5413,
+          "writeIn": false
+        },
+        {
+          "name": "Colton Jonjak Plahn",
+          "votes": 2665,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 15792,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "aec86f982d402a2077360ec6dc2e7d89560033b621162a989b5e8c56052ee3c8"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:19:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "19",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Dan Woog",
+          "votes": 7709,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7709,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "aeb19c2cfd5749f5b81882f006434aa5da94658640296b12f14c6e0daa89c24f"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:1:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "1",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Javier Mabrey",
+          "votes": 10908,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10908,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "d03e59173c341c75746dafa0dc958639d20c79da3df980dcb7c59a8755af7d35"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:1:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "1",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Joseph Montoya",
+          "votes": 2963,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2963,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "6f790f03c4c2dc033f7edb0f663975d1ca7bac8955e04b667c7303a42656c353"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:20:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "20",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jarvis Caldwell",
+          "votes": 16169,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16169,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "27b4bcbd10bd65ac3f4f52363fbb8b03221d6e1c97fa4149273f64dbff019ba7"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:21:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "21",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michelle Tweed",
+          "votes": 4735,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 4735,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a24f84b57bbae3406508b8514936ae09c46b76e0c0ad887dac77f2e6abcf6b7a"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:21:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "21",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Brenda Miller",
+          "votes": 4107,
+          "writeIn": false
+        },
+        {
+          "name": "Alexander M. Africa",
+          "votes": 1420,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 5527,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f990a6af97ab573166e00825773f810a358c829a99b72477cb61336f93ac3b91"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:22:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "22",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michael Pierson",
+          "votes": 8003,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8003,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "8a17b3d6b5864cc6e742c8788b02cccde392c9850eb40cb36a3babc59b407587"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:22:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "22",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ken deGraaf",
+          "votes": 9970,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9970,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "dee9f9e1e20dda6f861d125ee71139a1847588282f2a1c8fc762cfd8b820814c"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:23:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "23",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Alexis Hoffkling",
+          "votes": 13881,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 13881,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "995f611d9189fc6422699ef564271b3c418067a8efd5a67eb6b5184281a47a86"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:24:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "24",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lisa Feret",
+          "votes": 14250,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14250,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "60ce23c89e39b15fdfc2d1ca7c85690cbb5af926a0cc214cba8e3d1be45ab90b"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:24:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "24",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kristopher Johnson",
+          "votes": 7095,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7095,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "510f28ace2514a183cff3c9a2f3bf641d7c97b8e00dbcf7d7edac20afbd971a9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:25:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "25",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tammy Story",
+          "votes": 14252,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14252,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7a3c97dc733980c3eb2ccaee1a56b31133ae66c4862507843b63ac615398eac3"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:25:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "25",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Mark Herzfeld",
+          "votes": 8948,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8948,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "1261bfbc09c14a923bae0eb697e6b457afad113d1cfa3646f7707abe6a18ec9c"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:26:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "26",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Meghan Lukens",
+          "votes": 9602,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9602,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "e6650fe1f2b84c2f7eb39a918ec8180e266686018af8e0c34337d52e450ac0fc"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:26:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "26",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "James Kellogg",
+          "votes": 6458,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6458,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b55a7a3976a113369853adba4154c3441816893c199d84068b5c1e547be0dbf8"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:27:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "27",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Danielle Varda",
+          "votes": 14042,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14042,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2d7e4500472beea2a977037e55f26db039460eef84a8ca8b4117f9b6a6f509fa"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:27:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "27",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Eric Bodenstab",
+          "votes": 6556,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6556,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "437b20008f1b5a69954a6ac7e6d553abc6c4da8772970aa5c992bd271bb5f194"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:28:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "28",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "David Rein",
+          "votes": 11962,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11962,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "197e498429f28bfcd14eaaa11212f50a86b0247ae456dec12c56ed30ae390b43"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:29:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "29",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lori Goldstein",
+          "votes": 13548,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 13548,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f14886d31cb3b4fdb1435ba9494bd5f85f186e34a1bd9c5c9b95808b1f8dfd8e"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:29:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "29",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kristine Ireland",
+          "votes": 5836,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 5836,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "1ee54fec2a294098da8cfb248e3725480721ec4710329a9019b1b6832fc1b0f0"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:2:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "2",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Scott Baldermann",
+          "votes": 18916,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 18916,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "aa15e01f09a55e70571a036e60f0956719dd9fe25d72892decbbe760a0c3f002"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:2:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "2",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Carey Marin",
+          "votes": 2730,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2730,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "055c5f0e0abe9b26be53c80155a9150d66ddb5c071c6cdb34aa000a2e5b89a24"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:30:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "30",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Rebekah Stewart",
+          "votes": 11739,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11739,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c8476b9e3b5073f27ee098d8ca4e52400ea10f692900437878332aa3658362b4"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:30:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "30",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "William Tyler Switzer",
+          "votes": 4234,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 4234,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "9921fb78604c4e07aae3c8dab0b34f2091b7bdf97750c7348d447c06a3ee7744"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:31:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "31",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Gabriel Cervantes",
+          "votes": 4892,
+          "writeIn": false
+        },
+        {
+          "name": "Jacqueline ''Jacque'' Phillips",
+          "votes": 4089,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8981,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "712b7a63b7dfeee223d3a783d2a26489f56eb9f99d000a8bb66c0e351a4e9258"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:31:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "31",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ray Roll",
+          "votes": 3266,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 3266,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "e75a7542ed0797554d7ae0943504ce98ba2d18e7b584d9f23589546a85130a60"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:32:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "32",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Chris VanDijk",
+          "votes": 7380,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7380,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "95a9f3e774138faf1d67717a0b81ab0a5afa5d71692bbdf1d72edcb11813dfc4"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:32:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "32",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michelle D. Lee",
+          "votes": 2265,
+          "writeIn": false
+        },
+        {
+          "name": "Damon L Scordo",
+          "votes": 1186,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 3451,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b310cd5d2015a19e6e750c84232e7a8af8e00bffc1ce4689c2c6f6bec5c45b72"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:33:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "33",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kenny Van Nguyen",
+          "votes": 10261,
+          "writeIn": false
+        },
+        {
+          "name": "Heidi Henkel",
+          "votes": 8656,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 18917,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2f6173dadbbd3372b57acbca5c1030d818f3dd0e478d0b99b4908aa3da8c5171"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:33:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "33",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Nate Jorgensen",
+          "votes": 6952,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6952,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "9573968f7dab48733da4af033ac72b958b67407914fcae7fe12e0c1956b6c01f"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:34:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "34",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jenny Willford",
+          "votes": 10454,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10454,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "fde42efdc641e2db4984fb32d9ff0efca8f0d2dd91c7f229601cb835bcb9e2cd"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:34:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "34",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Craig Sullivan",
+          "votes": 5430,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 5430,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "ef9c2d887ac7b1556773a32e53d40af8cf1234158e3a7faa8f71b320e4cd3500"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:35:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "35",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lorena Garcia",
+          "votes": 8582,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8582,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "1ee44b529425005667b5e14f63d0eea6ee81043d1a6ee0370eef36caa8dde2fd"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:36:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "36",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michael Carter",
+          "votes": 8478,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8478,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "40f2232ac2342170f23ea9ee6e01f0791d37b2d0320ab535cb1cda124009933b"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:36:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "36",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Paul E. Nelson",
+          "votes": 2795,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2795,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "6f05ef9ad72a4d8d79aab88af5307af8874e796eae9e7e3b805c9095145f2ed3"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:37:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "37",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Chad Clifford",
+          "votes": 11980,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11980,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "938245ce8feb75e9694bdf6fa35bdfddc200fb787a9c1e68431a0a566cd8e971"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:37:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "37",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jill Thompson",
+          "votes": 6094,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6094,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "eb1a1d73fb46d0294e39c13598e1a7a9ec1da2f61f82becad53b22dade7a7ae7"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:38:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "38",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Gretchen Rydin",
+          "votes": 14182,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14182,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "27f1ae19d81e66e1dc2c4a0f9961bede943e31a18f1740437292540bb382012c"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:39:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "39",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Christian Schilder",
+          "votes": 10758,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10758,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "9b1c725fd30059032a969a5fbb0f1ef4d8cba3a797ecf401310c64769274d272"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:39:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "39",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Brandi Bradley",
+          "votes": 12338,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12338,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2610c374bc1ab3e19230866a58f919fc2da5dd35b3a5f43ca90b93c7cc31a4ea"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:3:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "3",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Gena Ozols",
+          "votes": 11775,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11775,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b622be2ef0a2fabfb8872c9628562e8356e2d0e803edd77e6f2544d77c0ba01e"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:3:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "3",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Rebecca Winegar",
+          "votes": 3386,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 3386,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "247cc47bcb1c7e82244d3e6045e3b6647be8d7df67f7bdd6a278b98b2d7a796f"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:40:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "40",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Naquetta Ricks",
+          "votes": 10869,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10869,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "05c41d3d4d8ad83cb99f6380c499a30f7f438eb48e8f86b50294d36cbda3b7e4"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:40:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "40",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Clinton Porter",
+          "votes": 4489,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 4489,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "fac693e1e7ed85f445c6912f2e67cb1040cffaf93c0543df0083b004cd9d2e96"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:41:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "41",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jamie Jackson",
+          "votes": 6549,
+          "writeIn": false
+        },
+        {
+          "name": "Anne Keke",
+          "votes": 5479,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12028,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2d10dd8d45394f2d81805046815bd19103d8efd965d1306c4e9d2af076d4676a"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:42:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "42",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Sarah Amelia Woodson",
+          "votes": 4825,
+          "writeIn": false
+        },
+        {
+          "name": "Mandy Lindsay",
+          "votes": 2422,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7247,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "209a450a0c39743e3b90dca52e201072f6c2037a31d7eae23245316edfdb7ee3"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:43:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "43",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Robert ''Bob'' Marshall",
+          "votes": 12041,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12041,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "439c52c905cf20c6a9a72b5ba6e7a51e80bc9202b64a05b8c527e35f3cc8cb6f"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:43:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "43",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Nate Marsh",
+          "votes": 9020,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9020,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "743e0ae1bc277e330ac2b6aeedf4f9ade5e49ec4325a7c5c4dd07b0e0815fe32"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:44:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "44",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Richard Bowness",
+          "votes": 8523,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8523,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "be7bf618727d6d424f2da0e939be513e49dd9187a0b72d191433de5b1590c6ab"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:44:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "44",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Anthony Hartsook",
+          "votes": 6081,
+          "writeIn": false
+        },
+        {
+          "name": "Bob Davis",
+          "votes": 4541,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10622,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b8dcb734e20f3ecafd170129daec4aae3e8d38ce28ec0631feddcd87a5f32350"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:45:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "45",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michael Clarkson",
+          "votes": 9682,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9682,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3ce712f44a80e6c4085926efa65f05732ba8365e6a01778fa9d72ca92dae42f9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:45:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "45",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Max Brooks",
+          "votes": 12578,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12578,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "80d120289998244c28d4031475be8d0698fed2d24da462bcb063d31d198b5b85"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:46:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "46",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tisha Mauro",
+          "votes": 11521,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11521,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "aa14bdc32319cb64fe32873195415282cddafb94496d2ac95705fe621e0e8ee9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:46:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "46",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jonathan Post",
+          "votes": 6917,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6917,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "0be03aabbca2c55ea5bf14b4debf1eecea1baf0d2b62a9cde6d2789ed8b49c12"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:47:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "47",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Vic Meyers",
+          "votes": 7113,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7113,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "1432a6303a30ad891f5ece9da776c0d3693f46f4e4fa20c7c1d66426c4f5501b"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:47:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "47",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ty Winter",
+          "votes": 11370,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11370,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "59ad6780036dc00686d5c36b570fef846731c4b85fdbb69fcc9e6c85b19815a8"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:48:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "48",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Dez Packard",
+          "votes": 6342,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6342,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7ca012a1339c9bfa8034f6420c3c593f139e44f16759a22aa81234e94bc597f6"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:48:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "48",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Carlos Barron",
+          "votes": 7862,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7862,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "ff530060350dfd35e9f945e84b151293e4baf14a569209c1fc704e10ad5baa11"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:49:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "49",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lesley Smith",
+          "votes": 16866,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16866,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "cbf79bb7eaef752c943efbb4bcd953f94356b995e2fece4564fad59d8a0ad514"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:49:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "49",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michael Sheperek",
+          "votes": 6300,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6300,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a89bc31a49ff5cb8de5480487c83b62e55f543a3423a49cfaa32a837a787b866"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:4:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "4",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Cecelia Espenoza",
+          "votes": 15021,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 15021,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "9189b7e365844adb8d81a09a98d6ecf39caf329b6713881670f57610cf549052"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:4:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "4",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ellwood Ervin",
+          "votes": 1345,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 1345,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7334e3c211773c255270028299011f059d03849ff00a36c367f8ad43b31a9338"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:50:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "50",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tommy Butler",
+          "votes": 4316,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 4316,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "cdb5db718763f3d4f206129c17b28d7951f7364c432dd7a4c9579783f7d3bac0"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:50:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "50",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Ryan Gonzalez",
+          "votes": 3319,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 3319,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f4a999e630b029a57a2d9cb578bc99955f897189e656f99a26abcc9a339076b4"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:51:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "51",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jacki Marsh",
+          "votes": 11691,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11691,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "bc4ddc394951541900ce1b98a0213ef12c3f3a8ef6607c71f8b4894ee6ae7c67"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:51:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "51",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Amy Parks",
+          "votes": 7255,
+          "writeIn": false
+        },
+        {
+          "name": "Nancy Rumfelt",
+          "votes": 4096,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11351,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "57a18d27fa4c4f39a77c11c074e282ba8de5d26f44f0205f4d88da9d5b0ed240"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:52:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "52",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Yara Zokaie",
+          "votes": 14271,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14271,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b91727ef3dcc15b56f01a9abc2b48b41a0e53184730380efb8f2eb94424d921f"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:53:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "53",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Andy Boesenecker",
+          "votes": 12243,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12243,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "12d5bee8df484c884cbe6e592ee9d3204a599cf8f3f00f2be8acb5c42c732c97"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:53:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "53",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Daniel Frick",
+          "votes": 2691,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2691,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "59b9e55800afb08d490b6d522fa1918e85c0332413009a654ace4822b5b4abb9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:54:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "54",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Mallory Martin",
+          "votes": 6485,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6485,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "970f5f4de7a259cb4c42414671a35b07b14bb194c6ebd874da974f2e0ff31caa"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:54:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "54",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jason Bias",
+          "votes": 8644,
+          "writeIn": false
+        },
+        {
+          "name": "Nina Anderson",
+          "votes": 8106,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16750,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "247ad401e3e2a3c0f493b9a848c48b17c1ccddbc019e40d66ed4ac5831dbf37d"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:55:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "55",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Brittni Packard",
+          "votes": 8418,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8418,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3eb32c64abdb0479fa89cd9746ce1f631b64205a659b046a8a6775832cfae4d9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:55:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "55",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Rick Taggart",
+          "votes": 11564,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11564,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "79cb06c5b40c6dacbb53628306df4a28a8002beaadcf392ed0deec9c6486e50d"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:56:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "56",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Chris Richardson",
+          "votes": 16454,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16454,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "735c0144200f5039d2b31139011923308b56c7864891ebaf78b0260ebb9367d9"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:57:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "57",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Elizabeth Velasco",
+          "votes": 9604,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9604,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "96ed4b233f364a643772b4a8682dee422bfa744b9d0e34e5b3a994d4a2bbb648"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:57:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "57",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Russ Andrews",
+          "votes": 6754,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6754,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "304433e9761f374450831dc0836ad7587e809646cbef8a8529c22fa063ee6039"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:58:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "58",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Susannah Smith",
+          "votes": 9146,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9146,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b17fe2aaa55b4d90614c62d92e33119048e1881c04c2eb6682c3beea825be158"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:58:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "58",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Larry Don Suckla",
+          "votes": 11609,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11609,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "4173807bafac49d107efbb08881adba2e77a63670a542ec0c73392a4c00c9fb1"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:59:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "59",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Katie Stewart",
+          "votes": 12123,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12123,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "82967abe2309db614eb7592fb5d9f5bbf29aa128dff9f066d4598e6befb0e854"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:59:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "59",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Naomi Riess",
+          "votes": 8978,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8978,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a52450901cb2b10bd5cbfcd92b9bba58952dcd8123623ea4608a3bd2e2de2610"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:5:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "5",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Justine Sandoval",
+          "votes": 11994,
+          "writeIn": false
+        },
+        {
+          "name": "Sterling Thomas Simms",
+          "votes": 3623,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 15617,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a7da4f2f582d701615b04a8eb1f95f40f1b5808a20bc11fc0eb4249a271783d7"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:5:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "5",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Johnnie W. Johnson",
+          "votes": 1030,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 1030,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "722c1f9890f87dff1277e1a11d698d9185b236fb8d03c4cc7e26de70264d09b5"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:60:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "60",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kathryn Kester Green",
+          "votes": 7739,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7739,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "cde0173c02eef2d58911008d4bb2c8a6d1f105ce05ebcbbb790fa2dd8a90765a"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:60:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "60",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Matt Alexander",
+          "votes": 8700,
+          "writeIn": false
+        },
+        {
+          "name": "Michelle Gray",
+          "votes": 8450,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 17150,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "15d70d2f665fbff2ce59e819c9336e84108aaf035b3c22a8963c10a955eba72d"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:61:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "61",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Eliza Hamrick",
+          "votes": 11708,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11708,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "e21efe07535eb9d9cd4ec2e5ea2ee0d25db85c9d9dd139b1f9487a04397a85a6"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:61:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "61",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Scott Shamblin",
+          "votes": 7417,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7417,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3dbf699ad5a6bff05d5de552d0229ac0003537a8c5df4d26a9758e9beb1dc6f5"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:62:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "62",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Matthew Martinez",
+          "votes": 9832,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9832,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "60c0deba193895e0ed74843a23c2d844687ced08ab41b21ed71476b8b35eb6e3"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:62:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "62",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Steven Rodriguez",
+          "votes": 6176,
+          "writeIn": false
+        },
+        {
+          "name": "Evans Gonzalez",
+          "votes": 52,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6228,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c63af08140f618838796fe173f7b354d6f1e2ee15b2a8892980a69028cc61158"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:63:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "63",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Dusty Johnson",
+          "votes": 14056,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 14056,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a975cdee3df716a12b1e1d53da644a03a21b10374b4808122b637b4f64db2f43"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:64:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "64",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Maureen (Mo) Dower",
+          "votes": 8462,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8462,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "9541e86a1789309d90c1cfbcae3f9e9f15d9a2633269f4634e1f6b28d69dec44"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:64:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "64",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Scott L. Slaugh",
+          "votes": 10846,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10846,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "122ea4476b7b663e51dca20b395d790414198a97fa19fdcd517f5bf093e16925"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:65:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "65",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lori Garcia Sander",
+          "votes": 11449,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11449,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "0029dacdc5e974e659d4383a8410ebd04fc024a7c36b739a6e71cb9a9ff4c311"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:6:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "6",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Iris Halpern",
+          "votes": 12420,
+          "writeIn": false
+        },
+        {
+          "name": "Sean Camacho",
+          "votes": 10123,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 22543,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "de5e20dc06705b2a3d579981eb0699a118207d21222c84e5ec228c2be4d27035"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:6:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "6",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kathleen Angel",
+          "votes": 1431,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 1431,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b62648098d81567a2ffdc64f168af13fe1d7fa2ad74523d0fca2c4c6603da959"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:7:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "7",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jennifer Bacon",
+          "votes": 9888,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9888,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f1d5d7e217602b8cc757d5a965b41ce8a7041440c7602a033384df9f1cbbe887"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:8:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "8",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lindsay Gilchrist",
+          "votes": 20449,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 20449,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "de5b67fd92bb05fb260f4e29cb29e9a311dec5da00f864999988e9d1b0f43354"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:8:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "8",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Carolyn Barnes",
+          "votes": 1036,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 1036,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "84074a32cfeb068b12608fa42e43ac56f335cea2aef2f28081629a0202ef39da"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:9:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "9",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Monica VanBuskirk",
+          "votes": 9572,
+          "writeIn": false
+        },
+        {
+          "name": "Neal Walia",
+          "votes": 6670,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16242,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "15c74ce5408f6e4a22911cf6bf855949d39c4a27225aaecf1c4a1f95ea32c8db"
+    },
+    {
+      "contestId": "co:primary:2026:state_lower:9:republican:primary",
+      "stateCode": "CO",
+      "office": "state_lower",
+      "district": "9",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tom Cowhick",
+          "votes": 2479,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2479,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "377e2f74467cae53a1fbd6c706e94310e6d5c4d0222493beefd43ca0df5b6d4b"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:11:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "11",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tony Exum Sr",
+          "votes": 11519,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11519,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "757e740bc879855df8753f5231e9109e6ff64e78fd4a294c66fad7b85dd8b4f1"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:11:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "11",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Levon Stilson",
+          "votes": 7739,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7739,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "d947a1bdadc4b2095dcd8db8d6f1c5fb5348708d61ab292f5ec7f8a39b9aad94"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:15:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "15",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Janice Marchman",
+          "votes": 22952,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 22952,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7ae562116b0801a39755dff439a23d5832fe810f9e08963ea9786201454e9262"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:15:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "15",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Rob Woodward",
+          "votes": 16655,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16655,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "80ce1db78516ecb655cece26a521d82d0296556c8f71d7fcca72c2fe05d967d3"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:17:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "17",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Katie Wallace",
+          "votes": 31454,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 31454,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a9dab116f5fe2af7ada59ce8a0d94eff5a056143fae7d3105c40f793fbe1e68f"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:17:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "17",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Pat Miller",
+          "votes": 8426,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8426,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "e57c01ee6f40d333a3400d4a8c2c8f9819527d4c01c3bd2a2010c739f2323eeb"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:1:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "1",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jamie Jeffery",
+          "votes": 8930,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 8930,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "644c24075c94130425fff92097c50fec32fc1a398f388a18bd9413ed9e545919"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:1:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "1",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Byron Pelton",
+          "votes": 23402,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 23402,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "bff359208f86b52fb1a7bc5434dd0739d072c937236607b36ed19826822d7e24"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:20:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "20",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Sheila Lieder",
+          "votes": 25585,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 25585,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "15a7606011f407239d3bdf373a3cd8b3a68eadeb42e492a4185f90478a1d9f4e"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:20:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "20",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Richard (Rich) Mancuso",
+          "votes": 13792,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 13792,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7f229c059fe25f5defacaa2471f5b23c9272faad616f1f94ea43b421c3f0aaf6"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:21:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "21",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Adrienne Benavidez",
+          "votes": 10783,
+          "writeIn": false
+        },
+        {
+          "name": "Alex Ryckman",
+          "votes": 6059,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 16842,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c1aea2723b03b5ba9ebdf705ead5c0b3cacf089b52acc5399bff0c4b5672b9f1"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:21:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "21",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Frederick Alfred Jr",
+          "votes": 7839,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7839,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f83084e931f263f14ed02996507fba5399b5f1ebff5ffe8bd6ffe7bd553d09f1"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:22:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "22",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Monica Irasema Duran",
+          "votes": 23454,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 23454,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f88f56930109f483d3b88d7e0ba40f5b6f99e6ddbd5e94a52d992aace1f3bb94"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:22:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "22",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Steve Harkess",
+          "votes": 7890,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 7890,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "ce2c52f25a87ecb5754bce826bf221607251d65be1fd4385661a7184c7d54a80"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:24:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "24",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kyle Mullica",
+          "votes": 17928,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 17928,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "19fc130a6e1a1dd622d137c2ecb81b448af32d2192e8c77e485e9a44a25ade43"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:24:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "24",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kevin Allen",
+          "votes": 9500,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 9500,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "ea5ed613dad802387dcfa002b2685f20b30be21ea29e5fb164f747f52f8edf86"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:25:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "25",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "William Lindstedt",
+          "votes": 25171,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 25171,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "8ad22a0fe5bc9fb24df7f9a4988b2083eaa528f0902cc46fc6cb171f447b58cd"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:25:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "25",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Rich Guggenheim",
+          "votes": 10387,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 10387,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "500fe8723b1bf7a9056bd88e70a4c4a5e561788208969a2c083c0e7b572ed57a"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:27:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "27",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tom Sullivan",
+          "votes": 21199,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 21199,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2be890a840f8410a22507a31c51fc9106364a52d42d5d3e2242fc4d35d6a0f4a"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:27:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "27",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Danielle Lammon",
+          "votes": 6650,
+          "writeIn": false
+        },
+        {
+          "name": "Darryl Gibbs",
+          "votes": 6261,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 12911,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "e5c4bf2489286394da93b29b66a391f7821ebb156c3c459b2062d18799d94215"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:29:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "29",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Iman M. Jodeh",
+          "votes": 18117,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 18117,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "627deaee8069f80a98c0b616ca8380a3db49cc7c90c4113f18489944973667b3"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:29:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "29",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Robert McKenna",
+          "votes": 6341,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 6341,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "297d44b22149c99d092a12892a8deab1a009b3e6aa4ec3cf7a8acfe50a21a117"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:30:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "30",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kevin Leung",
+          "votes": 21989,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 21989,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "1e39626ac618ce8a55fdd1a3ee16c18c9d335f305a94db0add623e645a638086"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:30:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "30",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "John Carson",
+          "votes": 18744,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 18744,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "70a5bdfd183395df7bd7066732286c2fea15e553778f3f80f168da0700822ce5"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:31:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "31",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Matt Ball",
+          "votes": 35419,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 35419,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "4071d28460660d8011b5a340ba68fc007a8cf9055324b9928452c736de7f166b"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:31:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "31",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Michael F. DiManna",
+          "votes": 3411,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 3411,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "04413299e176422c666ad16453acc6fededed99687bf5c56796e6c9f9d623579"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:32:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "32",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Emily Sirota",
+          "votes": 25701,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 25701,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "2d7cbcd9ea99ec4783799cc6a7ba3942b75d12c3f7574938b58e1222ea0e434f"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:32:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "32",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Sydnnia Wulff",
+          "votes": 4413,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 4413,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a7e13701cbc93d39384dc5d39601ad23f727c829505c2f6c4c2fed24e08c68d3"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:34:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "34",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Chela Garcia Irlando",
+          "votes": 22015,
+          "writeIn": false
+        },
+        {
+          "name": "Andrés Carrera",
+          "votes": 9754,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 31769,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "376d38407de2be1121edf7d40cefdda518a862ffc8f3040898099ef084efa23e"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:34:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "34",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jack Daus",
+          "votes": 2278,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 2278,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "f742e009f9bfe814e67dde4609c7bef14a0a4e749a1a111912b7988c8487857f"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:35:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "35",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Duane L Gurule",
+          "votes": 11669,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11669,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "876167837a274e9e9b6d23f1aa32a9dee86a667ddfeed83170d6899f4a8bc996"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:35:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "35",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Rod Pelton",
+          "votes": 29601,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 29601,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "476e90c335c7dbcbe7850e7c4540442b13e4d65b54a37c88ac31c656ad6f6ac4"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:3:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "3",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Aaron Gutierrez",
+          "votes": 12445,
+          "writeIn": false
+        },
+        {
+          "name": "Taylor Voss",
+          "votes": 9740,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 22185,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7e7c00b915cdeeee602c10c7d6136d08020c6e2806e2fb521dd88df6d06a0832"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:3:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "3",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Dana Charles",
+          "votes": 13424,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 13424,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "fbd950add66ae6a6b38007f407dbe6ef1b550004dcefadaba60064737aa59ac9"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:4:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "4",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Justin Kurth",
+          "votes": 18958,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 18958,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3fe875c03ee5e7bc0b14d2609ac45ca4531eb80819bd5cd14da018a059937d21"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:4:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "4",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Teddy Collins",
+          "votes": 25665,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 25665,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "4684d43a530cad6805d29f569e4c68b2befdf862c2316f929c5a3483dc20effd"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:7:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "7",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Janice Rich",
+          "votes": 23597,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 23597,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3f67f13e7e580147855b9ad6e56291051acf61d0c114924002a683dbfb47267e"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:8:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "8",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Dylan Roberts",
+          "votes": 17993,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 17993,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "3dbd56e34166be208ef924acd8064ac54a737ec3d0ab7d7bb9e6b7a9f34a1d4c"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:8:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "8",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Corey Marshall",
+          "votes": 11794,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 11794,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "8196b01d19a1306295e74477b5428fb2b3599cea8537fc098438b6294d160c71"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:9:democratic:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "9",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "William Delano Moses III",
+          "votes": 17270,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 17270,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "dca3cba1596f66132a68be743ac8d9f968851017893a6da63aa1ca49d52bf532"
+    },
+    {
+      "contestId": "co:primary:2026:state_upper:9:republican:primary",
+      "stateCode": "CO",
+      "office": "state_upper",
+      "district": "9",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Terri Carver",
+          "votes": 18163,
+          "writeIn": false
+        },
+        {
+          "name": "Lynda Zamora Wilson",
+          "votes": 9620,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 27783,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "78dc9765c02505d72bb74647f5a2415cd29f2232244c93412253c42de885373f"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:01:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "01",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Melat Kiros",
+          "votes": 83855,
+          "writeIn": false
+        },
+        {
+          "name": "Diana DeGette",
+          "votes": 62715,
+          "writeIn": false
+        },
+        {
+          "name": "Wanda James",
+          "votes": 11075,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 157645,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "165df9e52e550085ef6ec1a73109311e1dd31391dea3ec3a837e66826895250b"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:01:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "01",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Christy Peterson",
+          "votes": 15010,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 15010,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "df9344d818ab28229fa0b33ce89206c097940a7a88e83f8b8237e9535725b081"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:02:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "02",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Joe Neguse",
+          "votes": 136146,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 136146,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "fbbb52d6aad81e1c5a27933142d420b6ca42c886b78afca19573cced04eb304f"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:02:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "02",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Kelley Anne Dennison",
+          "votes": 21584,
+          "writeIn": false
+        },
+        {
+          "name": "Christina Blunt (Ducommun)",
+          "votes": 15666,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 37250,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "7eafe6e91722060bdd66b08f87f75f525559257ecb732ffd7d36ba244123ce45"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:03:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "03",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Dwayne L. Romero",
+          "votes": 47848,
+          "writeIn": false
+        },
+        {
+          "name": "Alex Kelloff",
+          "votes": 39394,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 87242,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c5a1132c3d78a81144270ae31667524630e5d9dff9e4a2e17416c2ee83a406f7"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:03:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "03",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jeff Hurd",
+          "votes": 62536,
+          "writeIn": false
+        },
+        {
+          "name": "Ron Hanks",
+          "votes": 31715,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 94251,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b823efecc9db230682d0ec09553a5fac4004ccf563a35441f59ee9260de009a2"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:04:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "04",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Eileen Laubacher",
+          "votes": 72483,
+          "writeIn": false
+        },
+        {
+          "name": "Jenna Preston",
+          "votes": 566,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 73049,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "bd00720360af2da0a421ee740e463ab974a34c536d13f9003bc0ba931a25e953"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:04:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "04",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Lauren Boebert",
+          "votes": 92651,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 92651,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "1a921f281d4dfacefb622752b27cde40328ec0a9781c0e77739e4111ca738caf"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:05:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "05",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jessica Killin",
+          "votes": 45511,
+          "writeIn": false
+        },
+        {
+          "name": "Joe Reagan",
+          "votes": 28864,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 74375,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "85b41b6ffee0c04cb34289bcb0213e1f8987722dfc0b831150322c142e633da9"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:05:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "05",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jeff Crank",
+          "votes": 76547,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 76547,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "8872f6bae0c2aef0ccc360d99736baca8db98c267593e9b669e4a4f25a841ace"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:06:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "06",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jason Crow",
+          "votes": 94207,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 94207,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "a608944a52ae6945f6f7b397727148666576064c12dd6de40ff20aed4d33e2fe"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:06:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "06",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Jason Clark",
+          "votes": 38437,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 38437,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "b13bbfa8ff1c73fe607fd92e508bc7eb229c0b39abe239040084307d854a1905"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:07:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "07",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Brittany Pettersen",
+          "votes": 113707,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 113707,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "38d68494b9904027ba259f53fc49b2dd7fda4252cb2ec30be7d90d302a297b1b"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:07:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "07",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Tim Bennett",
+          "votes": 58806,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 58806,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c9bd3f6d46c7e525894e4dd4f0584ec8302c148b77864747ca48f5dd33647297"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:08:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "08",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Manny Rutinel",
+          "votes": 50435,
+          "writeIn": false
+        },
+        {
+          "name": "Shannon Bird",
+          "votes": 26122,
+          "writeIn": false
+        },
+        {
+          "name": "Evan Munsing",
+          "votes": 3717,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 80274,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "5c726653a22c152eb3ed90d445999ac9bcedef4b4178f4e78a05d6846b292c02"
+    },
+    {
+      "contestId": "co:primary:2026:us_house:08:republican:primary",
+      "stateCode": "CO",
+      "office": "us_house",
+      "district": "08",
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Gabe Evans",
+          "votes": 48012,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 48012,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "c42a4c66586a91a148c76ab0b6a56e3e63cd53f42f3e907e87c7d0e4aceb7592"
+    },
+    {
+      "contestId": "co:primary:2026:us_senate:statewide:democratic:primary",
+      "stateCode": "CO",
+      "office": "us_senate",
+      "district": null,
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Democratic",
+      "party": "Democratic",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "John Hickenlooper",
+          "votes": 472870,
+          "writeIn": false
+        },
+        {
+          "name": "Julie Gonzales",
+          "votes": 422488,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 895358,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "80ed6238c7e28f269acf37b2a78ace4cde7b4f87222aeb2158cf5c31c96053a6"
+    },
+    {
+      "contestId": "co:primary:2026:us_senate:statewide:republican:primary",
+      "stateCode": "CO",
+      "office": "us_senate",
+      "district": null,
+      "position": null,
+      "system": "partisan",
+      "rawParty": "Republican",
+      "party": "Republican",
+      "stage": "primary",
+      "special": false,
+      "electionDate": "2026-06-30",
+      "seats": 1,
+      "advance": 1,
+      "candidates": [
+        {
+          "name": "Mark Baisley",
+          "votes": 445352,
+          "writeIn": false
+        }
+      ],
+      "totalVotes": 445352,
+      "sourceMarkedWinners": null,
+      "unopposedWithoutCount": false,
+      "countStatus": "certified",
+      "sourceId": "co-2026-primary-state-results-xlsx",
+      "contestSha256": "8e768a44a4a8c77ab2c816d14b3de15821d2b13d8dcff9c8148e42cd5b9a02e9"
+    }
+  ],
+  "summary": {
+    "states": 1,
+    "contests": 178,
+    "byOffice": {
+      "us_house": 16,
+      "us_senate": 2,
+      "governor": 3,
+      "state_lower": 116,
+      "state_upper": 41,
+      "state_unicameral": 0
+    }
+  },
+  "rowSetSha256": "90711f035712392a63d0e92bf597dcff6d0442ef40c98306ffbc5c55c342d8e7",
+  "packageSha256": "2ceed94f51f3b729bfa1704eeb34d573f93a2d9037da51d80187267cb852c606"
+}

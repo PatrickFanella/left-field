@@ -11,7 +11,7 @@ const row = (overrides: Partial<PreElectionSeatRow> = {}): PreElectionSeatRow =>
 const holder = { familyName: "Cohen", givenName: "Steve" };
 const filed: HolderCandidacy = { status: "filed_for_seat", sourceIds: ["house-incumbent-candidacy-v1"] };
 const primary = (overrides: Partial<PrimaryEvidence> = {}): PrimaryEvidence => ({
-  contestId: "tn:primary:2026:09:democratic", sourceIds: ["tn-2026-primary"], party: "Democratic", electionDate: "2026-08-06", seats: 1,
+  contestId: "tn:primary:2026:09:democratic", sourceIds: ["tn-2026-primary"], party: "Democratic", electionDate: "2026-08-06", seats: 1, advance: 1,
   candidates: [{ name: "Steve Cohen", votes: 30000 }, { name: "Justin J. Pearson", votes: 20000 }], sourceMarkedWinners: null, countStatus: "certified", ...overrides,
 });
 const resolve = (input: Partial<Parameters<typeof resolveOutcome>[0]> = {}) => resolveOutcome({ row: row(), holder, candidacy: filed, primaries: [], generals: [], successor: null, ...input });
@@ -127,6 +127,18 @@ describe("resolveOutcome", () => {
     expect(georgia([{ name: "Alvin Payton, Jr.", votes: 2000 }, { name: "Elsie Cason Napier", votes: 1025 }]).primary).toMatchObject({ status: "won", evidence: "primary_vote_order_certified" });
     // Kentucky has no runoff: second place is a loss.
     expect(resolve({ row: row({ stateCode: "KY" }), primaries: [primary({ candidates: [{ name: "Kenya Wade", votes: 2465 }, { name: "Steve Cohen", votes: 2460 }, { name: "Jesten Slaw", votes: 711 }] })] })).toMatchObject({ outcome: "incumbent_lost_primary" });
+  });
+
+  it("reads a top-two ballot as advancing or not, for any holder party and with no runoff", () => {
+    const topTwo = (candidates: readonly { name: string; votes: number }[], holderParty: PreElectionSeatRow["holderParty"] = "Democratic") =>
+      resolve({ row: row({ stateCode: "CA", holderParty }), primaries: [primary({ party: null, advance: 2, candidates })] });
+    // Second place advances, even in a state whose party primaries go to runoffs.
+    expect(topTwo([{ name: "Mai Vang", votes: 31 }, { name: "Steve Cohen", votes: 29 }, { name: "Third", votes: 20 }]).primary).toMatchObject({ status: "won", evidence: "primary_vote_order_certified" });
+    expect(resolve({ row: row({ stateCode: "GA" }), primaries: [primary({ party: null, advance: 2, candidates: [{ name: "A", votes: 40 }, { name: "Steve Cohen", votes: 35 }, { name: "B", votes: 25 }] })] }).primary.status).toBe("won");
+    // Third place does not.
+    expect(topTwo([{ name: "Mai Vang", votes: 31 }, { name: "Third", votes: 30 }, { name: "Steve Cohen", votes: 29 }])).toMatchObject({ outcome: "incumbent_lost_primary" });
+    // An independent holder faces the same ballot.
+    expect(topTwo([{ name: "Steve Cohen", votes: 50 }, { name: "Other", votes: 10 }], "Independent").primary.status).toBe("won");
   });
 
   it("reports unknown with no evidence at all", () => {

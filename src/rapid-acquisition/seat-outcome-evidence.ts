@@ -2,7 +2,9 @@ import { GOVERNOR_SCORE_V01, readGovernorScoreV01Projection, type GovernorScoreV
 import { readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { holderPartyOf, type HolderParty, type PreElectionSeatRow, type PreElectionSnapshot2026 } from "./pre-election-snapshot-2026";
 import { CONGRESS_LEGISLATORS_BASELINE_ID, readRefreshInputs } from "./refresh-inputs";
+import { familyMatches, holderMatches, type HolderName } from "./holder-name-match";
 import { byteCompare } from "./shared";
+import { STATE_PRIMARY_RESULTS_2026, type PrimaryOffice, type StatePrimaryResults2026 } from "./state-primary-results-2026";
 import { districtKey, readStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER, type StateChamber, type StateLegislativeRosterRow } from "./state-legislative-roster";
 
 /**
@@ -19,9 +21,12 @@ export type EvidenceParty = "Democratic" | "Republican";
 export interface ContestEvidence {
   readonly contestId: string;
   readonly sourceIds: readonly string[];
-  readonly party: EvidenceParty;
+  /** The party whose nominee this contest chooses; null on a top-two or top-four ballot open to every party. */
+  readonly party: EvidenceParty | null;
   readonly electionDate: string;
   readonly seats: number;
+  /** Places that win or advance: the seats in a partisan primary, two or four on an all-party ballot. */
+  readonly advance: number;
   /** `party` is set when the source records one per candidate (general-election returns); primaries leave it out. */
   readonly candidates: readonly Readonly<{ name: string; votes: number; party?: HolderParty | null }>[];
   /** Names the source itself marks as winners; null when the source marks none. */
@@ -41,6 +46,16 @@ export const CERTIFIED_COUNT_STATUSES: readonly string[] = [
   "official_results_flag_retained_no_separate_signed_certificate",
   "official_canvass_workbook_separate_certificate_not_retained",
   "official_statewide_vote_totals_certification_pdf_retained",
+  // The House primary files retained for review, each an official canvass, statement of vote or abstract.
+  "certified_statement_of_vote",
+  "signed_secretary_certificate_bound_to_abstract",
+  "official_canvass_report_retained_certification_not_separately_bound",
+  "division_labeled_official_result_not_separate_seal",
+  "state_canvass_certification_announcement_retained_exact_certificate_bytes_not_retained",
+  "final_labeled_workbook_retained_separate_signed_certification_not_retained",
+  "rcv_central_count_summary_retained_separate_signed_certification_not_retained",
+  "official_statewide_abstract_retained",
+  "official_statewide_archive_retained_certification_instrument_not_retained",
 ];
 
 export const countStatusOf = (certificationStatus: string | null | undefined): CountStatus =>
@@ -80,7 +95,7 @@ export function readHousePrimaryEvidence2026(root = process.cwd(), lock: SourceL
       if (result.sourceCandidateNames.length !== result.candidateVotes.length) fail(`CANDIDATE_ROWS:${result.resultId}`);
       const marked = result.sourceWinnerStatus === "marked_by_source" ? result.sourceWinnerNames ?? (result.sourceWinnerCandidateName ? [result.sourceWinnerCandidateName] : null) : null;
       const evidence: PrimaryEvidence = {
-        contestId: result.resultId, sourceIds: result.sourceLockIds ?? [id], party: evidencePartyOf(result.rawParty ?? "D") ?? "Democratic", electionDate: result.electionDate, seats: 1,
+        contestId: result.resultId, sourceIds: result.sourceLockIds ?? [id], party: evidencePartyOf(result.rawParty ?? "D") ?? "Democratic", electionDate: result.electionDate, seats: 1, advance: 1,
         candidates: result.sourceCandidateNames.map((name, index) => ({ name, votes: result.candidateVotes[index]! })),
         sourceMarkedWinners: marked, countStatus: countStatusOf(result.certificationStatus),
       };
@@ -118,7 +133,7 @@ export function readStateLegislativePrimaryEvidence2026(root = process.cwd(), lo
       // No retained state-legislative catalog marks winners; a future one needs its winner field read here, not guessed.
       if (contest.sourceWinnerStatus === "marked_by_source") fail(`WINNER_MARK_UNHANDLED:${contest.contestId}`);
       const evidence: PrimaryEvidence = {
-        contestId: contest.contestId, sourceIds: contest.sourceLockIds ?? [id], party, electionDate: contest.electionDate, seats: contest.seats ?? 1,
+        contestId: contest.contestId, sourceIds: contest.sourceLockIds ?? [id], party, electionDate: contest.electionDate, seats: contest.seats ?? 1, advance: contest.seats ?? 1,
         candidates: contest.candidates.map((candidate) => ({ name: candidate.sourceName, votes: candidate.votes })),
         sourceMarkedWinners: null, countStatus: countStatusOf(contest.certificationStatus),
       };
@@ -126,6 +141,122 @@ export function readStateLegislativePrimaryEvidence2026(root = process.cwd(), lo
     }
   }
   return byDistrict;
+}
+
+/**
+ * The 2026 House primary files retained for review, approved on 2026-11-04 for the outcome ledger only, not for
+ * scoring. Each is the latest version for its state; a state with a statewide primary adapter reads that instead.
+ * CA is a top-two ballot; every other file is the Democratic primary.
+ */
+export const REVIEWED_HOUSE_PRIMARY_2026_IDS: readonly string[] = [
+  "california-house-top-two-results-2022-2026-v1",
+  "colorado-house-democratic-primary-results-2022-2026-v1",
+  "georgia-house-democratic-primary-results-2022-2026-v1",
+  "maine-house-democratic-primary-results-2022-2026-v1",
+  "new-jersey-house-democratic-primary-results-2022-2026-v1",
+  "new-mexico-house-democratic-primary-results-2022-2026-v1",
+  "north-carolina-house-democratic-primary-results-2022-2026-v1",
+  "ohio-house-democratic-primary-results-2022-2026-v4",
+  "oregon-house-democratic-primary-results-2022-2026-v1",
+  "texas-house-democratic-primary-results-2022-2026-v1",
+  "virginia-house-democratic-primary-results-2022-2026-v1",
+];
+
+type ReviewedCandidate = { sourceCandidateName: string; votes?: number; workbookFirstChoiceVotes?: number; winnerMarker?: boolean; sourceNomineeMarker?: boolean; sourceWinnerMarker?: boolean };
+type ReviewedContest = {
+  contestId: string; cycleYear?: number; electionDate: string; stateCode: string; districtCode: string; party?: string; rawParty?: string; electionStage?: string; eventKind?: string;
+  certificationStatus?: string; resultAuthorityStatus?: string; sourceLockId?: string; sourceLockIds?: string[]; sourceWinnerStatus?: string; winnerSourceCandidateName?: string | null; candidates: ReviewedCandidate[];
+};
+
+/** The 2026 contests of the reviewed House primary files, keyed by district label ("TX-18"). */
+export function readReviewedHousePrimaryEvidence2026(root = process.cwd(), lock: SourceLock = readSourceLock(root)): ReadonlyMap<string, readonly PrimaryEvidence[]> {
+  const byDistrict = new Map<string, PrimaryEvidence[]>();
+  for (const id of REVIEWED_HOUSE_PRIMARY_2026_IDS) {
+    const topTwo = id.startsWith("california-");
+    for (const contest of readJson<{ contests: ReviewedContest[] }>(lock, id, root).contests) {
+      if (!(contest.cycleYear === 2026 || contest.electionDate.startsWith("2026"))) continue;
+      const party = topTwo ? null : evidencePartyOf(contest.party ?? contest.rawParty) ?? fail(`REVIEWED_PARTY:${contest.contestId}`);
+      const marks = contest.candidates.filter((candidate) => candidate.winnerMarker === true || candidate.sourceNomineeMarker === true || candidate.sourceWinnerMarker === true).map((candidate) => candidate.sourceCandidateName);
+      const explicit = (contest.sourceWinnerStatus === "marked_by_source" || contest.sourceWinnerStatus === "explicit_rcv_summary_winner") && contest.winnerSourceCandidateName ? [contest.winnerSourceCandidateName] : [];
+      const marked = [...new Set([...marks, ...explicit])];
+      const label = `${contest.stateCode}-${/^(0+|al)$/i.test(contest.districtCode) ? "AL" : contest.districtCode.padStart(2, "0")}`;
+      const evidence: PrimaryEvidence = {
+        contestId: contest.contestId, sourceIds: [id, ...(contest.sourceLockIds ?? (contest.sourceLockId ? [contest.sourceLockId] : []))], party, electionDate: contest.electionDate,
+        seats: 1, advance: topTwo ? 2 : 1,
+        candidates: contest.candidates.map((candidate) => ({ name: candidate.sourceCandidateName, votes: candidate.votes ?? candidate.workbookFirstChoiceVotes ?? fail(`REVIEWED_VOTES:${contest.contestId}`) })),
+        sourceMarkedWinners: marked.length > 0 ? marked : null, countStatus: countStatusOf(contest.certificationStatus ?? contest.resultAuthorityStatus),
+      };
+      byDistrict.set(label, [...(byDistrict.get(label) ?? []), evidence]);
+    }
+  }
+  return byDistrict;
+}
+
+/** Primary evidence by `${state}|${office}|${district}`, and by `${state}|${office}` for a holder who ran elsewhere. */
+export interface PrimaryEvidenceIndex {
+  readonly byDistrict: ReadonlyMap<string, readonly PrimaryEvidence[]>;
+  readonly byOffice: ReadonlyMap<string, readonly PrimaryEvidence[]>;
+}
+export type PrimaryEvidenceEntry = Readonly<{ stateCode: string; office: PrimaryOffice; district: string | null; evidence: PrimaryEvidence }>;
+
+export function buildPrimaryEvidenceIndex(entries: Iterable<PrimaryEvidenceEntry>): PrimaryEvidenceIndex {
+  const byDistrict = new Map<string, PrimaryEvidence[]>(), byOffice = new Map<string, PrimaryEvidence[]>();
+  for (const { stateCode, office, district, evidence } of entries) {
+    const districtKeyed = `${stateCode}|${office}|${district ?? ""}`, officeKeyed = `${stateCode}|${office}`;
+    byDistrict.set(districtKeyed, [...(byDistrict.get(districtKeyed) ?? []), evidence]);
+    byOffice.set(officeKeyed, [...(byOffice.get(officeKeyed) ?? []), evidence]);
+  }
+  return { byDistrict, byOffice };
+}
+
+/** The statewide layer's contests as index entries. A third party's primary never decides a major-party holder's nomination, so it is left out. */
+export function statePrimaryEntries(results: Pick<StatePrimaryResults2026, "contests">): PrimaryEvidenceEntry[] {
+  return results.contests.filter((contest) => contest.system !== "partisan" || contest.party !== null).map((contest) => ({
+    stateCode: contest.stateCode, office: contest.office, district: contest.district,
+    evidence: {
+      contestId: contest.contestId, sourceIds: [STATE_PRIMARY_RESULTS_2026.id, contest.sourceId], party: contest.party, electionDate: contest.electionDate, seats: contest.seats, advance: contest.advance,
+      candidates: contest.candidates.filter((candidate) => !candidate.writeIn).map((candidate) => ({ name: candidate.name, votes: candidate.votes })),
+      sourceMarkedWinners: contest.sourceMarkedWinners, countStatus: contest.countStatus,
+    },
+  }));
+}
+
+/** House evidence keyed by district label ("TX-18") as index entries. */
+export const houseLabelEntries = (byLabel: ReadonlyMap<string, readonly PrimaryEvidence[]>): PrimaryEvidenceEntry[] =>
+  [...byLabel].flatMap(([label, list]) => list.map((evidence) => ({ stateCode: label.slice(0, 2), office: "us_house" as const, district: label.slice(3), evidence })));
+
+/** State-legislative evidence keyed `${state}|${chamber}|${districtKey}` as index entries. */
+export const stateDistrictEntries = (byKey: ReadonlyMap<string, readonly PrimaryEvidence[]>): PrimaryEvidenceEntry[] =>
+  [...byKey].flatMap(([key, list]) => {
+    const [stateCode, chamber, district] = key.split("|") as [string, StateChamber, string];
+    const office: PrimaryOffice = chamber === "lower" ? "state_lower" : chamber === "upper" ? "state_upper" : "state_unicameral";
+    return list.map((evidence) => ({ stateCode, office, district, evidence }));
+  });
+
+/** The primary office that fills a frozen seat, and its district in the statewide layer's terms (null statewide). */
+export function seatPrimaryKey(row: Pick<PreElectionSeatRow, "seatId" | "chamber" | "seatLabel">): Readonly<{ office: PrimaryOffice; district: string | null }> {
+  if (row.chamber === "house") return { office: "us_house", district: row.seatLabel.split("-")[1] ?? fail(`HOUSE_LABEL:${row.seatLabel}`) };
+  if (row.chamber === "senate") return { office: "us_senate", district: null };
+  if (row.chamber === "governor") return { office: "governor", district: null };
+  const match = row.seatId.match(/^seat_state_[a-z]{2}_(lower|upper|unicameral)_(.+)_\d+$/) ?? fail(`SEAT_ID_UNRECOGNISED:${row.seatId}`);
+  return { office: match[1] === "lower" ? "state_lower" : match[1] === "upper" ? "state_upper" : "state_unicameral", district: match[2]!.replace(/-/g, " ") };
+}
+
+/**
+ * The contests that speak to one holder: the holder's own party (or the all-party ballot) in the seat's district,
+ * plus any contest for the same office elsewhere in the state that names the holder, since a redrawn map can move
+ * a holder to another district number. When any of those carries the holder's family name only those are kept,
+ * so a district the holder left is not read as a retirement; otherwise the district's contests stand as evidence
+ * that the holder was not on that ballot.
+ */
+export function primaryEvidenceForSeat(index: PrimaryEvidenceIndex, row: Pick<PreElectionSeatRow, "seatId" | "chamber" | "stateCode" | "seatLabel" | "holderParty">, holder: HolderName): readonly PrimaryEvidence[] {
+  const { office, district } = seatPrimaryKey(row);
+  const own = (contest: PrimaryEvidence): boolean => contest.party === null || contest.party === row.holderParty;
+  const local = (index.byDistrict.get(`${row.stateCode}|${office}|${district ?? ""}`) ?? []).filter(own);
+  if (district === null) return local;
+  const elsewhere = (index.byOffice.get(`${row.stateCode}|${office}`) ?? []).filter((contest) => own(contest) && !local.includes(contest) && contest.candidates.some((candidate) => holderMatches(holder, candidate.name)));
+  const named = local.filter((contest) => contest.candidates.some((candidate) => familyMatches(holder, candidate.name)));
+  return named.length + elsewhere.length > 0 ? [...named, ...elsewhere] : local;
 }
 
 export type CandidacyStatus = "filed_for_seat" | "filed_for_other_office" | "not_on_primary_ballot" | "not_observed" | "not_applicable";

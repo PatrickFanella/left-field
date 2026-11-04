@@ -72,7 +72,11 @@ async function retain(lock: SourceLock, source: StateGeneralSource, root: string
   return pin(bytes);
 }
 
-export async function retainStateReturns(adapters: readonly StateGeneralAdapter[], options: Readonly<{ checkOnly?: boolean }> = {}, runtime: StateReturnsRuntime = {}): Promise<SourceLock> {
+/** What retention and probing read from an adapter: general-election and primary adapters both qualify. */
+export type ReturnsAdapter = Pick<StateGeneralAdapter, "stateCode" | "sources">;
+
+/** `downloadOnly` fetches missing files and leaves the lock untouched, so several adapters can be written at once and pinned together later. */
+export async function retainStateReturns(adapters: readonly ReturnsAdapter[], options: Readonly<{ checkOnly?: boolean; downloadOnly?: boolean }> = {}, runtime: StateReturnsRuntime = {}): Promise<SourceLock> {
   const root = runtime.workingDirectory ?? process.cwd(), fetchImpl = runtime.fetch ?? fetch, log = runtime.log ?? (() => {}), checkOnly = options.checkOnly ?? false;
   let lock = readSourceLock(root);
   for (const adapter of adapters) for (const source of adapter.sources) {
@@ -100,12 +104,12 @@ export async function retainStateReturns(adapters: readonly StateGeneralAdapter[
       log(`${extractId}: extracted ${bytes.length} bytes sha256 ${sha(bytes)}`);
     }
   }
-  writeSourceLock(lock, root);
+  if (!options.downloadOnly) writeSourceLock(lock, root);
   return lock;
 }
 
 /** Re-fetch every declared source and compare it with its pin. Nothing is written; an unreachable publisher is reported, not fatal. */
-export async function probeStateReturns(adapters: readonly StateGeneralAdapter[], runtime: StateReturnsRuntime = {}): Promise<readonly ProbeResult[]> {
+export async function probeStateReturns(adapters: readonly ReturnsAdapter[], runtime: StateReturnsRuntime = {}): Promise<readonly ProbeResult[]> {
   const root = runtime.workingDirectory ?? process.cwd(), fetchImpl = runtime.fetch ?? fetch, log = runtime.log ?? (() => {});
   const lock = readSourceLock(root);
   const results: ProbeResult[] = [];
