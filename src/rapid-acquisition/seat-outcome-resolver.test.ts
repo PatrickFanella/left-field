@@ -87,6 +87,22 @@ describe("resolveOutcome", () => {
     expect(resolve({ primaries: [primary()], generals: [{ ...general, candidates: [{ name: "Other Party", votes: 100 }, { name: "Steve Cohen", votes: 50 }] }] })).toMatchObject({ outcome: "incumbent_lost_general", evidence: "general_vote_order_certified" });
   });
 
+  it("holds a majority-state primary as pending while a runoff is possible", () => {
+    const georgia = (candidates: readonly { name: string; votes: number }[]) => resolve({ row: row({ stateCode: "GA", seatLabel: "GA House 177", holderName: "Alvin Payton" }), holder: { familyName: "Payton", givenName: "Alvin" }, primaries: [primary({ contestId: "ga:state-leg-primary:2026:lower:177:D", candidates })] });
+    // Leader short of a majority, holder second: the runoff decides.
+    expect(georgia([{ name: "Elsie Cason Napier", votes: 1197 }, { name: "Alvin Payton, Jr.", votes: 1025 }, { name: "Kristina Cheek McBride", votes: 747 }]).primary).toMatchObject({ status: "pending", evidence: "none", countStatus: "certified" });
+    // Holder third: cannot reach the runoff.
+    expect(georgia([{ name: "Elsie Cason Napier", votes: 1197 }, { name: "Kristina Cheek McBride", votes: 1100 }, { name: "Alvin Payton, Jr.", votes: 1025 }])).toMatchObject({ outcome: "incumbent_lost_primary", evidence: "primary_vote_order_certified" });
+    // Someone else took a majority outright.
+    expect(georgia([{ name: "Bradley B. Anderson", votes: 5138 }, { name: "Alvin Payton, Jr.", votes: 2618 }])).toMatchObject({ outcome: "incumbent_lost_primary" });
+    // Holder leads without a majority: still a runoff.
+    expect(georgia([{ name: "Alvin Payton, Jr.", votes: 1197 }, { name: "Elsie Cason Napier", votes: 1025 }, { name: "Kristina Cheek McBride", votes: 747 }]).primary.status).toBe("pending");
+    // Holder leads with a majority.
+    expect(georgia([{ name: "Alvin Payton, Jr.", votes: 2000 }, { name: "Elsie Cason Napier", votes: 1025 }]).primary).toMatchObject({ status: "won", evidence: "primary_vote_order_certified" });
+    // Kentucky has no runoff: second place is a loss.
+    expect(resolve({ row: row({ stateCode: "KY" }), primaries: [primary({ candidates: [{ name: "Kenya Wade", votes: 2465 }, { name: "Steve Cohen", votes: 2460 }, { name: "Jesten Slaw", votes: 711 }] })] })).toMatchObject({ outcome: "incumbent_lost_primary" });
+  });
+
   it("reports unknown with no evidence at all", () => {
     expect(resolve({ candidacy: null })).toMatchObject({ stage: "up_in_2026", candidacy: "not_observed", outcome: "unknown", evidence: "none", evidenceSourceIds: [] });
   });

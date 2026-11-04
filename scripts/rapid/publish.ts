@@ -20,6 +20,7 @@ import { sha } from "@/rapid-acquisition/shared";
 import { GOVERNOR_SCORE_V01 } from "@/rapid-acquisition/governor-score-v01";
 import { HOUSE_SCORE_V11 } from "@/rapid-acquisition/house-score-v11-active";
 import { SENATE_SCORE_V01 } from "@/rapid-acquisition/senate-score-v01";
+import { readSeatOutcomeLedger } from "@/rapid-acquisition/seat-outcome-ledger";
 import { readStateLegislativeGeneralResults, stateReturnsStatus } from "@/rapid-acquisition/state-legislative-general-results";
 import { buildStateLegislativeScoreV01Projection, STATE_LEGISLATIVE_SCORE_V01 } from "@/rapid-acquisition/state-legislative-score-v01";
 import { PRIORITY_INDEX_RELEASE, readPriorityIndexRelease, serializePriorityIndexRelease, type PriorityIndexRelease } from "@/lib/priority-index-release";
@@ -83,6 +84,10 @@ function main(): void {
     ...digests,
     "",
     ...formatResultStatusNote(returns),
+    "",
+    "## 2026 outcomes",
+    "",
+    ((ledger) => `${ledger.summary.upIn2026.toLocaleString("en-US")} seats up in 2026 as of ${ledger.observedAt}: ${ledger.summary.byOutcome.unknown.toLocaleString("en-US")} without retained evidence, ${ledger.summary.byOutcome.incumbent_lost_primary} lost a primary, ${ledger.summary.byOutcome.incumbent_ran_for_other_office} ran for another office, ${ledger.summary.byOutcome.incumbent_lost_general} lost the general, ${ledger.summary.byOutcome.incumbent_won} won, ${ledger.summary.byOutcome.open_seat_held + ledger.summary.byOutcome.open_seat_flipped} open seats settled.`)(readSeatOutcomeLedger(root)),
     "",
     "## Reproduction",
     "",

@@ -99,12 +99,16 @@ type StateLegislativePrimaryContest = {
 
 const chamberOf = (raw: string): StateChamber | null => raw === "lower" || raw === "state_house" ? "lower" : raw === "upper" || raw === "state_senate" ? "upper" : raw === "unicameral" ? "unicameral" : null;
 
+/** The 2026 state-legislative primary catalogs the primary context lists (GA, KY, NC, OH), eligible for the formula or not. */
+export function stateLegislativePrimaryCatalogIds2026(root = process.cwd(), lock: SourceLock = readSourceLock(root)): readonly string[] {
+  const context = readJson<{ rows: { cycleYear: number; sourceArtifactId?: string }[] }>(lock, STATE_LEGISLATIVE_PRIMARY_CONTEXT_ID, root);
+  return [...new Set(context.rows.filter((row) => row.cycleYear === 2026).map((row) => row.sourceArtifactId).filter((id): id is string => typeof id === "string" && id.includes("-state-legislative-")))].sort(byteCompare);
+}
+
 /** The 2026 state-legislative primaries in the retained catalogs (GA, KY, NC, OH), keyed by `${state}|${chamber}|${districtKey}`. */
 export function readStateLegislativePrimaryEvidence2026(root = process.cwd(), lock: SourceLock = readSourceLock(root)): ReadonlyMap<string, readonly PrimaryEvidence[]> {
-  const context = readJson<{ rows: { cycleYear: number; sourceArtifactId?: string }[] }>(lock, STATE_LEGISLATIVE_PRIMARY_CONTEXT_ID, root);
-  const catalogIds = [...new Set(context.rows.filter((row) => row.cycleYear === 2026).map((row) => row.sourceArtifactId).filter((id): id is string => typeof id === "string" && id.includes("-state-legislative-")))].sort(byteCompare);
   const byDistrict = new Map<string, PrimaryEvidence[]>();
-  for (const id of catalogIds) {
+  for (const id of stateLegislativePrimaryCatalogIds2026(root, lock)) {
     const catalog = readJson<{ contests: StateLegislativePrimaryContest[] }>(lock, id, root);
     for (const contest of catalog.contests.filter((row) => row.cycleYear === 2026)) {
       const party = evidencePartyOf(contest.rawParty), chamber = chamberOf(contest.chamber);

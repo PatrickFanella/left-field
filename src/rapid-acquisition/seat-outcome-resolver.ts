@@ -61,22 +61,37 @@ interface Assessment {
   readonly sourceIds: readonly string[];
 }
 
-function assess(kind: "primary" | "general", contests: readonly ContestEvidence[], holder: HolderName): Assessment {
+/**
+ * States whose primaries send the top two to a runoff unless the leader clears
+ * a share of the vote. A certified first-round count there settles the holder
+ * only when the leader clears it or the holder finishes outside the top two.
+ */
+export const PRIMARY_RUNOFF_THRESHOLDS: Readonly<Record<string, number>> = { AL: 0.5, AR: 0.5, GA: 0.5, MS: 0.5, OK: 0.5, SC: 0.5, TX: 0.5, NC: 0.3, SD: 0.35 };
+
+function assess(kind: "primary" | "general", contests: readonly ContestEvidence[], holder: HolderName, runoffThreshold: number | null): Assessment {
   if (contests.length === 0) return { resolution: unknown, holderOnBallot: null, winnerParty: null, grade: "none", sourceIds: [] };
   const contest = [...contests].sort((left, right) => right.electionDate.localeCompare(left.electionDate))[0]!;
   const base = { contestId: contest.contestId, countStatus: contest.countStatus };
   const matching = contest.candidates.filter((candidate) => holderMatches(holder, candidate.name));
   const marked = contest.sourceMarkedWinners;
+  const sorted = [...contest.candidates].sort((left, right) => right.votes - left.votes);
+  const total = sorted.reduce((sum, candidate) => sum + candidate.votes, 0);
+  // A first round in a runoff state is open while the leader is at or under the threshold.
+  const runoffOpen = marked === null && contest.countStatus === "certified" && runoffThreshold !== null && contest.seats === 1 && (total === 0 || (sorted[0]?.votes ?? 0) / total <= runoffThreshold);
   const winners = marked !== null
     ? contest.candidates.filter((candidate) => marked.some((winner) => normalizeName(winner) === normalizeName(candidate.name)))
-    : contest.countStatus === "certified" ? [...contest.candidates].sort((left, right) => right.votes - left.votes).slice(0, contest.seats) : null;
+    : contest.countStatus === "certified" && !runoffOpen ? sorted.slice(0, contest.seats) : null;
   const grade: EvidenceGrade = marked !== null ? `${kind}_source_marked_winner` : contest.countStatus === "certified" ? `${kind}_vote_order_certified` : "none";
   const winnerParty = winners !== null && winners.length > 0 ? winners[0]!.party ?? null : null;
-  if (matching.length === 0) return { resolution: { ...base, status: "not_applicable", evidence: "none" }, holderOnBallot: false, winnerParty, grade, sourceIds: contest.sourceIds };
-  if (matching.length > 1) return { resolution: { ...base, status: "unknown", evidence: "none" }, holderOnBallot: null, winnerParty: null, grade, sourceIds: contest.sourceIds };
-  if (winners === null) return { resolution: { ...base, status: "pending", evidence: "none" }, holderOnBallot: true, winnerParty: null, grade, sourceIds: contest.sourceIds };
-  const won = marked !== null ? marked.some((winner) => holderMatches(holder, winner)) : winners.includes(matching[0]!);
-  return { resolution: { ...base, status: won ? "won" : "lost", evidence: grade }, holderOnBallot: true, winnerParty, grade, sourceIds: contest.sourceIds };
+  const settled = (status: ContestStatus, evidence: EvidenceGrade, holderOnBallot: boolean | null, party: HolderParty | null = winnerParty): Assessment => ({ resolution: { ...base, status, evidence }, holderOnBallot, winnerParty: party, grade, sourceIds: contest.sourceIds });
+  if (matching.length === 0) return settled("not_applicable", "none", false);
+  if (matching.length > 1) return settled("unknown", "none", null, null);
+  const line = matching[0]!;
+  // Outside the runoff places, the holder is out whatever the runoff decides.
+  if (runoffOpen) return sorted.indexOf(line) >= 2 ? settled("lost", grade, true, null) : settled("pending", "none", true, null);
+  if (winners === null) return settled("pending", "none", true, null);
+  const won = marked !== null ? marked.some((winner) => holderMatches(holder, winner)) : winners.includes(line);
+  return settled(won ? "won" : "lost", grade, true);
 }
 
 export function resolveOutcome(input: ResolveInput): Resolution {
@@ -92,12 +107,12 @@ export function resolveOutcome(input: ResolveInput): Resolution {
   if (candidacy === "filed_for_other_office") return done("incumbent_ran_for_other_office", "fec_filing", notApplicable, notApplicable);
 
   const ownPrimaries = row.holderParty === "Democratic" || row.holderParty === "Republican" ? input.primaries.filter((contest) => contest.party === row.holderParty) : [];
-  const primary = assess("primary", ownPrimaries, holder);
+  const primary = assess("primary", ownPrimaries, holder, PRIMARY_RUNOFF_THRESHOLDS[row.stateCode] ?? null);
   cite(primary.sourceIds);
   if (primary.holderOnBallot === false) candidacy = "not_on_primary_ballot";
   if (primary.resolution.status === "lost") return done("incumbent_lost_primary", primary.resolution.evidence, primary.resolution, notApplicable);
 
-  const general = assess("general", input.generals, holder);
+  const general = assess("general", input.generals, holder, null);
   cite(general.sourceIds);
   if (general.resolution.status === "lost") return done("incumbent_lost_general", general.resolution.evidence, primary.resolution, general.resolution);
   if (general.resolution.status === "won") return done("incumbent_won", general.resolution.evidence, primary.resolution, general.resolution);
