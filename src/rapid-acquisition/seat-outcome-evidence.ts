@@ -22,7 +22,8 @@ export interface ContestEvidence {
   readonly party: EvidenceParty;
   readonly electionDate: string;
   readonly seats: number;
-  readonly candidates: readonly Readonly<{ name: string; votes: number }>[];
+  /** `party` is set when the source records one per candidate (general-election returns); primaries leave it out. */
+  readonly candidates: readonly Readonly<{ name: string; votes: number; party?: HolderParty | null }>[];
   /** Names the source itself marks as winners; null when the source marks none. */
   readonly sourceMarkedWinners: readonly string[] | null;
   readonly countStatus: CountStatus;
