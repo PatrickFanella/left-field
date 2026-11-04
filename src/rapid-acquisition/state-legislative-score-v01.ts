@@ -3,7 +3,7 @@ import { scoreSeat, type SeatRoute, type SeatScoreDriver } from "@/lib/seat-scor
 import { readPinnedPackage, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { REFRESH_INPUTS } from "./refresh-inputs";
 import { byteCompare, hash } from "./shared";
-import { readStateLegislativeGeneralResults, STATE_LEGISLATIVE_GENERAL_RESULTS, type StateGeneralContest } from "./state-legislative-general-results";
+import { readStateLegislativeGeneralResults, STATE_LEGISLATIVE_GENERAL_RESULTS, type StateGeneralContest, type StateLegislativeGeneralResults } from "./state-legislative-general-results";
 import { STATE_LEGISLATIVE_PRIMARY_CONTEXT, type StateLegislativePrimaryContext } from "./state-legislative-primary-context";
 import { readStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER, type StateChamber, type StateLegislativeRosterRow } from "./state-legislative-roster";
 
@@ -116,9 +116,8 @@ export const termYearsFor = (stateCode: string, chamber: StateChamber): number =
 export const stateSeatLabel = (stateCode: string, chamber: StateChamber, district: string): string =>
   `${stateCode} ${stateCode === "DC" ? "Council" : chamber === "lower" ? "House" : chamber === "unicameral" ? "Legislature" : "Senate"} ${district}`;
 
-export function buildStateLegislativeScoreV01Projection(root = process.cwd(), lock: SourceLock = readSourceLock(root)): StateLegislativeScoreV01Projection {
+export function buildStateLegislativeScoreV01Projection(root = process.cwd(), lock: SourceLock = readSourceLock(root), general: StateLegislativeGeneralResults = readStateLegislativeGeneralResults(root, lock)): StateLegislativeScoreV01Projection {
   const roster = readStateLegislativeRoster(root, lock);
-  const general = readStateLegislativeGeneralResults(root, lock);
   const context = readPinnedPackage<StateLegislativePrimaryContext>(lock, STATE_LEGISLATIVE_PRIMARY_CONTEXT.id, "dsa-seats:rapid-state-legislative-primary-context-package:v1", root).value;
   const contestation = new Map(context.stateContext.map((row) => [row.state, row.contestationScore]));
   const covered = new Set(general.states.map((state) => state.stateCode));

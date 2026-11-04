@@ -52,6 +52,12 @@ jobs:
       - name: Retain dated snapshots
         run: |
           if [ -n "${{ github.event.inputs.cycle }}" ]; then npm run rapid:refresh -- --cycle "${{ github.event.inputs.cycle }}"; else npm run rapid:refresh; fi
+      - name: Probe state returns against their pins
+        # Re-fetches every declared state-returns URL and reports which files the
+        # publisher has changed since they were pinned (a re-issued canvass, a
+        # recount). It writes nothing and exits 0; the report goes into the pull
+        # request. Publishers that refuse the runner's egress show as unreachable.
+        run: npm run --silent rapid:state-returns -- --probe > "$RUNNER_TEMP/state-returns-probe.md"
       - name: Publish release descriptor and re-derive artifacts
         run: |
           if [ -n "${{ github.event.inputs.version }}" ]; then npm run rapid:publish -- --version "${{ github.event.inputs.version }}"; else npm run rapid:publish -- --bump; fi
@@ -72,14 +78,16 @@ jobs:
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "Refresh priority index inputs ${date}"
           git push origin "$branch"
+          pr_body="$RUNNER_TEMP/pr-body.md"
+          { echo "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging. A changed state-returns file below means the publisher re-issued it since it was pinned: retain it under a new source id with \`supersedes\` (see docs/operations/post-election-runbook.md)."; echo; cat "$RUNNER_TEMP/state-returns-probe.md"; } > "$pr_body"
           if [ "$GITHUB_SERVER_URL" = https://git.subcult.tv ]; then
             pr_payload=$(mktemp)
             pr_response=$(mktemp)
             trap 'rm -f "$pr_payload" "$pr_response"' EXIT
-            REFRESH_BRANCH="$branch" REFRESH_DATE="$date" python3 - > "$pr_payload" <<'PYTHON'
+            REFRESH_BRANCH="$branch" REFRESH_DATE="$date" PR_BODY="$pr_body" python3 - > "$pr_payload" <<'PYTHON'
           import json, os
           print(json.dumps({"title": "Refresh priority index inputs " + os.environ["REFRESH_DATE"],
-                            "body": "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging.",
+                            "body": open(os.environ["PR_BODY"], encoding="utf-8").read(),
                             "base": "main", "head": os.environ["REFRESH_BRANCH"]}))
           PYTHON
             curl --fail --silent --show-error \
@@ -88,5 +96,5 @@ jobs:
               "$GITHUB_SERVER_URL/api/v1/repos/$GITHUB_REPOSITORY/pulls" > "$pr_response"
             python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["html_url"])' "$pr_response"
           else
-            gh pr create --title "Refresh priority index inputs ${date}" --body "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging." --base main --head "$branch"
+            gh pr create --title "Refresh priority index inputs ${date}" --body-file "$pr_body" --base main --head "$branch"
           fi

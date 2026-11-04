@@ -16,7 +16,7 @@ describe("state-legislative score v0.1", () => {
     const value = buildStateLegislativeScoreV01Projection();
     expect(value.coveredStates).toEqual(["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"]);
     // Roster refreshes move the scored count as seats fall vacant and fill.
-    expect(value.summary).toMatchObject({ seats: value.rows.length, coveredStates: 51, stateNotCovered: 0, noContestForDistrict: 440, noMajorPartyInContest: 58, partyMismatches: 8, holderPartyNotScored: 17 });
+    expect(value.summary).toMatchObject({ seats: value.rows.length, coveredStates: 51, stateNotCovered: 0, noContestForDistrict: 438, noMajorPartyInContest: 58, partyMismatches: 8, holderPartyNotScored: 17 });
     expect(value.summary.scored).toBeGreaterThan(6000);
     expect(value.summary.democraticScored + value.summary.republicanScored).toBe(value.summary.scored);
     expect(value.summary.stateNotCovered + value.summary.scored + value.summary.noContestForDistrict + value.summary.noMajorPartyInContest + value.summary.holderPartyNotScored + (value.summary.rosterPredatesContest ?? 0)).toBe(value.summary.seats);
@@ -77,5 +77,24 @@ describe("state-legislative score v0.1", () => {
 
   it("matches the pinned artifact", () => {
     expect(readStateLegislativeScoreV01Projection().packageSha256).toBe(buildStateLegislativeScoreV01Projection().packageSha256);
+  });
+});
+
+describe("result status through the score layer", () => {
+  it("carries an unofficial baseline onto every row it scores, and drops it once the certified file replaces it", async () => {
+    const { WEST_VIRGINIA_GENERAL } = await import("./state-general/west-virginia");
+    const { buildStateLegislativeGeneralResults } = await import("./state-legislative-general-results");
+    const { readSourceLock } = await import("./intake/source-lock");
+    const lock = readSourceLock();
+    const unofficial = buildStateLegislativeGeneralResults(process.cwd(), lock, [{ ...WEST_VIRGINIA_GENERAL, sources: WEST_VIRGINIA_GENERAL.sources.map((source) => source.cycleYear === 2024 ? { ...source, resultStatus: "unofficial" as const } : source) }]);
+    const before = buildStateLegislativeScoreV01Projection(process.cwd(), lock, unofficial);
+    const scored2024 = before.rows.filter((row) => row.stateCode === "WV" && row.baselineCycleYear === 2024);
+    expect(scored2024.length).toBeGreaterThan(50);
+    expect(scored2024.every((row) => row.baselineResultStatus === "unofficial")).toBe(true);
+    expect(before.rows.filter((row) => row.stateCode === "WV" && row.baselineCycleYear === 2022).some((row) => "baselineResultStatus" in row)).toBe(false);
+    const certified = buildStateLegislativeGeneralResults(process.cwd(), lock, [WEST_VIRGINIA_GENERAL]);
+    const after = buildStateLegislativeScoreV01Projection(process.cwd(), lock, certified);
+    expect(after.rows.filter((row) => row.stateCode === "WV").some((row) => "baselineResultStatus" in row)).toBe(false);
+    expect(after.rows.filter((row) => row.stateCode === "WV").map((row) => [row.seatId, row.status, row.score])).toEqual(before.rows.filter((row) => row.stateCode === "WV").map((row) => [row.seatId, row.status, row.score]));
   });
 });
