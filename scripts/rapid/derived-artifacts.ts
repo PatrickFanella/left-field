@@ -11,6 +11,7 @@ import { buildStateLegislativePrimaryContext, STATE_LEGISLATIVE_PRIMARY_CONTEXT 
 import { buildStateLegislativeGeneralResults, STATE_LEGISLATIVE_GENERAL_RESULTS } from "@/rapid-acquisition/state-legislative-general-results";
 import { buildStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER } from "@/rapid-acquisition/state-legislative-roster";
 import { buildStateLegislativeScoreV01Projection, STATE_LEGISLATIVE_SCORE_V01 } from "@/rapid-acquisition/state-legislative-score-v01";
+import { buildStatePrimaryResults2026, STATE_PRIMARY_RESULTS_2026 } from "@/rapid-acquisition/state-primary-results-2026";
 import { buildStatewidePresidential2024, STATEWIDE_PRESIDENTIAL_2024 } from "@/rapid-acquisition/statewide-presidential-2024";
 
 /**
@@ -139,7 +140,16 @@ export const DERIVED_ARTIFACTS: readonly DerivedArtifact[] = [
     describe: summaryLine,
   },
   {
-    // Last: it joins the frozen pre-election snapshot to the rosters and candidacy artifact rebuilt above.
+    id: STATE_PRIMARY_RESULTS_2026.id,
+    path: STATE_PRIMARY_RESULTS_2026.path,
+    url: STATE_PRIMARY_RESULTS_2026.url,
+    kind: "derived_artifact",
+    parentIds: STATE_PRIMARY_RESULTS_2026.parentIds,
+    build: (root, lock) => buildStatePrimaryResults2026(root, lock),
+    describe: summaryLine,
+  },
+  {
+    // Last: it joins the frozen pre-election snapshot to the rosters, candidacy and primary artifacts rebuilt above.
     ...SEAT_OUTCOME_LEDGER,
     kind: "derived_artifact",
     build: (root, lock) => buildSeatOutcomeLedger(root, lock),

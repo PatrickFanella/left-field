@@ -51,7 +51,8 @@ Adapter notes:
 - **Michigan, Nevada, Ohio**: the official hosts block the VPN egress, and the 2022 and 2024 files came from Internet Archive captures. For 2026, retain the certified file the same way once a capture taken after certification exists (or through the residential route), with the archive URL as the source URL. Michigan's House and Senate are both on the 2026 ballot; its results now come from `mvic.sos.state.mi.us`, which needs a new parser. Nevada's results pages give no party, so add that cycle's Legislative Counsel Bureau candidate list as a companion source; its 2022 list sits at a generic address that the Research Division reuses.
 - **Florida**: the POST body carries `ElectionDate`.
 - **Texas, Pennsylvania**: the adapters carry year-specific rules (a 2022 skip in Texas, a candidate override in Pennsylvania). Check that they still hold for 2026.
-- Publishers that block the VPN egress need the residential route described in `docs/data/rapid-intake.md`.
+- Publishers that block the VPN egress need the residential route described in `docs/data/rapid-intake.md`. On 2026-11-04 that network namespace no longer existed on Kvant, and Kvant's own egress was refused too; NH, AZ, MI and Ohio's Republican primary files wait on it (see `docs/data/state-primaries-2026.md`).
+- 2026 primaries for every office come from `state-primary-results-2026-v1`, one adapter per state under `src/rapid-acquisition/state-primary/`; the outcome ledger reads it on every publish.
 
 ## When a retained file changes
 

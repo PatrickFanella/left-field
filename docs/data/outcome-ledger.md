@@ -7,7 +7,8 @@ Status: active, 2026-11-04. Two artifacts answer what the Priority Index covered
 | Artifact | Built by | Rebuilt | Parents |
 |---|---|---|---|
 | `priority-index-pre-election-2026-v1` | `npm run rapid:freeze-pre-election`, once | never; the script refuses to run again | the four v1.17 projections and the release descriptor |
-| `seat-outcome-ledger-v1` | `rapid:intake derive seat-outcome-ledger-v1`; every `rapid:publish` | weekly | the snapshot, `house-incumbent-candidacy-v1`, the 2026 House primary artifacts, the 2026 state-legislative primary catalogs, the state-legislative roster, the governor projection, and the Congress rosters |
+| `state-primary-results-2026-v1` | `npm run rapid:state-primaries`, then `rapid:intake derive state-primary-results-2026-v1`; every `rapid:publish` | when an adapter changes | the official 2026 primary files each state adapter declares (`src/rapid-acquisition/state-primary/`) |
+| `seat-outcome-ledger-v1` | `rapid:intake derive seat-outcome-ledger-v1`; every `rapid:publish` | weekly | the snapshot, `state-primary-results-2026-v1`, `house-incumbent-candidacy-v1`, the earlier 2026 House primary artifacts and reviewed House files, the 2026 state-legislative primary catalogs, the state-legislative roster, the governor projection, and the Congress rosters |
 
 The snapshot holds every seat of the v1.17 release (7,916: 430 House, 100 Senate, 50 governors, 7,336 state legislative) with holder, party, score status, route, score, cross-chamber and chamber rank, and the unscored reason where there is one. Its test reproduces it from its parents; its digest never changes, so `/outcomes` always compares the same pre-election scores with the latest evidence.
 
@@ -35,10 +36,20 @@ The rules run in this order and a later rule never overrides an earlier one: sta
 
 - An unofficial count. `countStatusOf` accepts only the certification statuses listed in `CERTIFIED_COUNT_STATUSES` (`src/rapid-acquisition/seat-outcome-evidence.ts`); anything else, including an absent status, is unofficial and leaves the contest `pending`.
 - A first round in a state with primary runoffs (`PRIMARY_RUNOFF_THRESHOLDS` in `seat-outcome-resolver.ts`: AL, AR, GA, MS, OK, SC, TX at 50%; NC 30%; SD 35%) while the leader is at or under the threshold and the holder is in the top two. A holder outside the top two is out whatever the runoff decides.
-- A holder matched to no candidate, or to more than one. The match is the roster rule: every family-name token present, and the given name absent, first, or present. A `LAST, First` ballot name is reordered; `(I)` and `*` markers are stripped.
+- A holder matched to no candidate, or to more than one. The match (`src/rapid-acquisition/holder-name-match.ts`) needs every family-name token, and a given name that is absent, equal, an initial, a prefix either way ("Ed", "Edward"), a common nickname ("Bill", "William") or the Congress roster's recorded nickname. One word of a compound family name matches only on a full first-name match. A `LAST, First` ballot name is reordered (not at a comma before "Jr."); `(I)` and `*` markers are stripped. A candidate who shares only the family name leaves the holder unknown, never absent.
 - Vote totals alone. Winners come from a source mark, a certified count, or the roster; the artifact's methodology records `winnerInference: false`.
 
+## Primary evidence
+
+`state-primary-results-2026-v1` is the primary evidence for every state with an adapter: every office the ledger follows (House, Senate, governor, both chambers, the Nebraska legislature and DC Council), every party, runoffs and special primaries. Each contest records its office, district, party (none on an all-party ballot), round, candidates with votes, and the names the source itself marks as nominees. CA and WA are top-two ballots and AK top-four: there the holder of any party has lost the primary when outside the advancing places, and no runoff rule applies. Where a state prints no contest for an unopposed nomination (NC, VA, DE, FL, CT, NY, AR, UT, NV, MN, KY, SC, AL, OK, SD), the adapter reads an official candidate or nominee list and reports those nominations as uncounted contests with the nominee marked.
+
+For each seat the ledger takes the holder's own-party (or all-party) contest in the seat's district, and any contest for the same office elsewhere in the state that names the holder, so a holder moved by a redrawn map (TX-09 into TX-18) is followed. When either names the holder's family name, only those count; otherwise the district's contests stand as evidence the holder was not on that ballot. A holder the roster lists outside the major parties counts a party primary that names them.
+
+The state's adapter replaces, for each office it covers, the earlier per-office files: the five rapid House artifacts (HI, IN, MS, SC, TN), the four state-legislative catalogs (GA, KY, NC, OH), and the eleven House primary files retained for review (`REVIEWED_HOUSE_PRIMARY_2026_IDS`), which the owner approved on 2026-11-04 for ledger use only, not for scoring. Coverage and the remaining gaps are in `docs/data/state-primaries-2026.md`.
+
 ## Adding evidence
+
+- **A state primary adapter.** Write `src/rapid-acquisition/state-primary/<state>.ts` against the contract in `state-primary-results-2026.ts`, fetch with `npm run rapid:state-primaries -- --state XX --download-only`, and check with `npm run rapid:check-state-primary -- --state XX`, which prints the contest counts for `expectedContests`, every holder who lost, and the seats still unsettled. Then pin with `npm run rapid:state-primaries -- --state XX` and derive the artifact and the ledger.
 
 - **A certified state-legislative general file.** Add it to the state's adapter (see `docs/operations/post-election-runbook.md`); `readStateLegislativeGeneralResults` carries it, and the next step is to feed those 2026 contests into the ledger as `GeneralEvidence` with per-candidate `party` so the open-seat rule can compare parties. That reader is not written yet; until it is, generals resolve through the roster.
 - **A House, Senate or governor canvass.** Needs a per-state adapter like the state-legislative ones; none exists.

@@ -1,0 +1,239 @@
+June 23, 2026 Primary Election Statewide Canvass
+This spreadsheet contains the final results of the June 23, 2026, Primary Election for multi-county federal,
+statewide, legislative, and State Board of Education offices. Final election results for county and local board of
+education offices are available through the appropriate county clerk's office.
+
+
+You can navigate this spreadsheet by using the tabs at the bottom of the screen or clicking on a link below to
+jump to that section:
+
+Total Ballots Cast
+Multi-County Federal Offices - U.S. House
+Multi-County Legislative - Senate
+Multi-County Legislative - House
+Multi-County State School Board
+                                                           REPUBLICAN                                                                       DEMOCRATIC
+
+                        *Active Registered Voters         Total Ballots Cast               Turnout             *Active Registered Voters   Total Ballots Cast   Turnout
+Beaver County                     2,880                        2,022                        70.2%
+Box Elder County                  21,802                       9,428                        43.2%
+Cache County                      40,465                       14,636                       36.2%
+Carbon County                     5,809                        3,048                        52.5%
+Daggett County                     495                          227                         45.9%
+Davis County                     109,816                       45,369                       41.3%                       1,240                     428           34.5%
+Duchesne County                   7,910                        3,503                        44.3%
+Emery County                      4,034                        2,139                        53.0%
+Garfield County                   2,377                        1,523                        64.1%
+Grand County                      2,119                         901                         42.5%
+Iron County                       21,379                       7,943                        37.2%
+Juab County                       5,441                        2,494                        45.8%
+Kane County                       3,409                        1,821                        53.4%
+Millard County                    5,503                        3,077                        55.9%
+Morgan County                     5,680                        2,217                        39.0%                        191                      79            41.4%
+Piute County                       902                          368                         40.8%
+Rich County                       1,250                         888                         71.0%
+Salt Lake County                 118,552                       34,215                       28.9%                      135,136                  67,601          50.0%
+San Juan County                   3,475                        1,811                        52.1%
+Sanpete County                    10,731                       4,174                        38.9%
+Sevier County                     9,135                        3,198                        35.0%
+Summit County                     11,001                       3,804                        34.6%                       3,482                    1,530          43.9%
+Tooele County                     10,553                       3,045                        28.9%
+Uintah County                     13,205                       5,026                        38.1%
+Utah County                      219,527                       59,861                       27.3%
+Wasatch County                    11,725                       5,522                        47.1%
+Washington County                 71,524                       27,716                       38.8%
+Wayne County                      1,304                         903                         69.2%
+Weber County                      64,980                       24,010                       36.9%                       6,964                   3,206           46.0%
+Total                            786,983                      274,889                       34.9%                      147,013                  72,844          49.5%
+
+
+*As of June 19, 2026. Includes only active registered voters residing in districts for which an election was held.
+                                  U.S. House District 2                    U.S. House District 3
+
+                                    Republican                              Republican
+                       BLAKE D. MOORE      KARIANNE LISONBEE    CELESTE MALOY          PHIL LYMAN
+Beaver County                                                       1,425                  542
+Box Elder County           4,615                      4,674
+Cache County               8,650                      5,876
+Carbon County                                                       1,991                          956
+Daggett County                                                       157                            56
+Davis County               25,338                    19,244
+Duchesne County                                                     2,240                      1,208
+Emery County                                                        1,292                       773
+Garfield County                                                     1,188                       294
+Grand County                                                         510                        356
+Iron County                                                         5,366                      2,499
+Juab County
+Kane County                                                         1,238                          534
+Millard County
+Morgan County                                                       1,442                          733
+Piute County                                                         296                            71
+Rich County                 565                           306
+Salt Lake County
+San Juan County                                                      536                       1,259
+Sanpete County
+Sevier County
+Summit County                                                       2,327                      1,411
+Tooele County
+Uintah County                                                      3,405                      1,489
+Utah County                                                        22,157                     10,704
+Wasatch County                                                     3,213                      2,087
+Washington County                                                  17,707                     9,756
+Wayne County                                                        589                        289
+Weber County               13,505                    10,171          56                         17
+Total Votes Cast Per
+                           52,673                    40,271        67,135                     35,034
+Candidate
+% of Votes                 56.7%                      43.3%         65.7%                      34.3%
+Total Votes Cast in
+                                        92,944                                   102,169
+Contest
+                                  Utah Senate District 5                            Utah Senate District 7                              Utah Senate District 18
+
+                                       Democratic                                        Republican                                          Republican
+                       DAKOTA WURTH       "CJ" CHRISTINA HERNANDEZ   STUART ADAMS       BRADEN HESS          STEPHANIE HOLLIST   DANIEL MCCAY           DOUG FIEFIA
+Beaver County
+Box Elder County
+Cache County
+Carbon County
+Daggett County
+Davis County               250                         178              5,938               3,975                  7,519
+Duchesne County
+Emery County
+Garfield County
+Grand County
+Iron County
+Juab County
+Kane County
+Millard County
+Morgan County               28                             51            175                 99                    207
+Piute County
+Rich County
+Salt Lake County                                                                                                                     2,956                   6,762
+San Juan County
+Sanpete County
+Sevier County
+Summit County
+Tooele County
+Uintah County
+Utah County                                                                                                                          132                      276
+Wasatch County
+Washington County
+Wayne County
+Weber County              1,302                       1,891
+Total Votes Cast Per
+                          1,580                       2,120             6,113               4,074                  7,726             3,088                   7,038
+Candidate
+% of Votes                42.7%                       57.3%             34.1%              22.7%                  43.1%             30.5%                    69.5%
+Total Votes Cast in
+                                          3,700                                            17,913                                               10,126
+Contest
+                                 Utah House District 29               Utah House District 59            Utah House District 67                  Utah House District 69
+
+                                    Republican                             Republican                         Republican                            Republican
+                       ALEXIS WHEELER        SHELDON BIRCH    JEFFREY PIERCE          LUKE SEARLE   JR BIRD           YVONNE H JENSEN   DANIEL GARDNER      LOGAN J. MONSON
+Beaver County
+Box Elder County
+Cache County
+Carbon County                                                                                       2,057                    883
+Daggett County
+Davis County
+Duchesne County                                                                                     1,943                    376
+Emery County                                                                                         662                     959             213                     248
+Garfield County                                                                                                                              702                     725
+Grand County                                                                                                                                 353                     530
+Iron County
+Juab County                  6                            5
+Kane County                                                                                                                                  563                    1,141
+Millard County             1,131                     1,702
+Morgan County
+Piute County
+Rich County
+Salt Lake County
+San Juan County                                                                                                                              311                    1,474
+Sanpete County
+Sevier County
+Summit County                                                      523                     261
+Tooele County               943                      2,082
+Uintah County
+Utah County
+Wasatch County                                                    2,247                   3,136
+Washington County
+Wayne County                                                                                                                                 450                     412
+Weber County
+Total Votes Cast Per
+                           2,080                     3,789        2,770                   3,397     4,662                   2,218           2,592                   4,530
+Candidate
+% of Votes                 35.4%                     64.6%        44.9%                   55.1%     67.8%                   32.2%           36.4%                   63.6%
+Total Votes Cast in
+                                         5,869                                6,167                             6,880                                   7,122
+Contest
+                          State Board of Education District 11     State Board of Education District 14
+
+                                     Republican                                Republican
+                       TRACY J. NUTTALL    TERRY L. HUTCHINSON   LINDA HANKS        NICHOLE BEECHER ISOM
+Beaver County                                                        1,381                   421
+Box Elder County
+Cache County
+Carbon County                                                       1,895                      913
+Daggett County
+Davis County
+Duchesne County
+Emery County                                                        1,461                      501
+Garfield County
+Grand County                                                         600                       211
+Iron County                                                         4,052                     3,068
+Juab County                                                         1,961                      451
+Kane County
+Millard County                                                      2,066                      750
+Morgan County
+Piute County
+Rich County
+Salt Lake County            1,056                    1,133
+San Juan County
+Sanpete County                                                      2,961                     1,068
+Sevier County                                                       2,273                      831
+Summit County
+Tooele County
+Uintah County
+Utah County                 9,241                    8,887          2,996                     1,616
+Wasatch County
+Washington County
+Wayne County
+Weber County
+Total Votes Cast Per
+                           10,297                    10,020        21,646                     9,830
+Candidate
+% of Votes                  50.7%                    49.3%          68.8%                     31.2%
+Total Votes Cast in
+                                        20,317                                   31,476
+Contest
+June 23, 2026 Primary Election Single-County Races
+
+The following races are single-county races. These results were certified at the county level and are included here for informational purposes
+only. Final election results for single county races are available through the appropriate county clerk's office.
+
+                                         Federal Offices
+        U.S. House District 1                Democratic             BEN MCADAMS
+
+                                       Legislative - Senate
+       Utah Senate District 6                  Republican             TAMI TRAN
+       Utah Senate District 13                 Democratic           SILVIA CATTEN
+       Utah Senate District 14                Democratic          STEPHANIE PITCHER
+       Utah Senate District 21                Republican           BRADY BRAMMER
+
+                                       Legislative - House
+       Utah House District 14                  Republican             JOHN TAYLOR
+       Utah House District 16                  Republican          BOB J STEVENSON
+       Utah House District 17                  Republican              LILI BITNER
+       Utah House District 21                  Democratic       STEPHEN OTTERSTROM
+       Utah House District 34                  Democratic            JULIE JACKSON
+       Utah House District 38                  Republican        CHRIS MCCONNEHEY
+       Utah House District 40                  Democratic        ANDREW STODDARD
+       Utah House District 41                  Republican            DARREN CROFT
+       Utah House District 44                  Republican         JORDAN TEUSCHER
+       Utah House District 48                  Republican           JAKE HUNSAKER
+
+                                     State Board of Education
+  State Board of Education District 8          Republican        NICOLE MCDERMOTT
+

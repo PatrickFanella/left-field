@@ -387,6 +387,8 @@
     "rapid:publish": "tsx scripts/rapid/publish.ts",
     "seed:nationwide-office-universe-registry": "tsx scripts/seed-nationwide-office-universe-registry.ts",
     "rapid:state-returns": "tsx scripts/rapid/retain-state-returns.ts",
+    "rapid:state-primaries": "tsx scripts/rapid/retain-state-primaries.ts",
+    "rapid:check-state-primary": "tsx scripts/rapid/check-state-primary.ts",
     "rapid:freeze-pre-election": "tsx scripts/rapid/freeze-pre-election-snapshot.ts"
   },
   "dependencies": {
