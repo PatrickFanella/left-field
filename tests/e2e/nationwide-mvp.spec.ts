@@ -16,7 +16,7 @@ test.beforeEach(() => {
 });
 
 test("browses the seeded nationwide record and public ledger routes", async ({ page }) => {
-  for (const [path, heading] of [["/", "Where the field bends."], ["/browse", "Browse the active record"], [profilePath!, "Synthetic 0"], ["/sources", "What we have, and what we do not."], ["/methodology", "How the Priority Index works"], ["/about", "Who publishes this"]] as const) {
+  for (const [path, heading] of [["/", "Where the field bends."], ["/browse", "Browse the active record"], [profilePath!, "Synthetic 0"], ["/sources", "What we have, and what we do not."], ["/methodology", "How the Priority Index works"], ["/outcomes", "How the index did in 2026"], ["/about", "Who publishes this"]] as const) {
     const response = await navigate(page, path);
     expect(response?.status(), path).toBeLessThan(500);
     await expect(page.getByRole("heading", { name: heading })).toBeVisible();

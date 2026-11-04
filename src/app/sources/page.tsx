@@ -2,6 +2,7 @@ import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { loadSourcesPage } from "@/ui/server-data";
+import { ledgerSources, loadOutcomeLedger } from "@/lib/outcome-ledger-view";
 import type { SourcesPageViewModel } from "@/ui/view-models";
 import {
   Shell,
@@ -32,6 +33,7 @@ export default async function Sources() {
   if (!result.ok) return <RouteState code={result.code} />;
   const { value: page } = result;
   const indexRows = housePriorityBriefsV11();
+  const outcomeLedger = loadOutcomeLedger();
   const priorityRepository = getDefaultPriorityRepository();
   const rankedRows = priorityRepository.getBriefs();
   const model = priorityRepository.getModelRelease();
@@ -584,6 +586,26 @@ export default async function Sources() {
                   {expansionStatus.stateLegislative.scored
                     ? `${expansionStatus.stateLegislative.scored.seats} seats in ${expansionStatus.stateLegislative.scored.coveredStates.join(", ")} are ranked from ${expansionStatus.stateLegislative.scored.generalContests} official general-election contests retained from each state's election authority; the seat's own most recent margin is the district baseline. ${expansionStatus.stateLegislative.scored.stateNotCovered.toLocaleString("en-US")} seats in other states wait for their returns.${expansionStatus.stateLegislative.scored.unofficialStates.length > 0 ? ` Returns for ${expansionStatus.stateLegislative.scored.unofficialStates.join(", ")} are unofficial and will be replaced by the certified canvass.` : ""}`
                     : "No state-legislative seats are ranked yet: no open nationwide file gives presidential results by legislative district, and no state returns are retained."}
+                </small>
+              </article>
+              <article>
+                <div>
+                  <h3>2026 outcomes</h3>
+                  <strong>{outcomeLedger.summary.upIn2026.toLocaleString("en-US")} seats on the ballot</strong>
+                </div>
+                <p>
+                  {outcomeLedger.summary.byOutcome.unknown.toLocaleString("en-US")} without retained evidence ·{" "}
+                  {outcomeLedger.summary.byOutcome.incumbent_lost_primary} lost a primary ·{" "}
+                  {outcomeLedger.summary.byOutcome.incumbent_ran_for_other_office} ran for another office ·{" "}
+                  evidence as of {outcomeLedger.observedAt}
+                </p>
+                <small>
+                  {ledgerSources().map((artifact) => (
+                    <span key={artifact.id}>
+                      <code>{artifact.id}</code> — {artifact.label}; {artifact.byteSize.toLocaleString("en-US")} bytes; SHA-256 <code>{artifact.sha256}</code>.{" "}
+                    </span>
+                  ))}
+                  Outcomes rest on FEC filings, the retained 2026 primary files, and the current rosters; nothing is inferred from a count that is not certified. <Link href="/outcomes">How the index did</Link>
                 </small>
               </article>
             </div>

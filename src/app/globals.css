@@ -169,3 +169,11 @@ footer nav { gap:1.1rem; font-size:.72rem; }
 .map-source { margin-top:1.4rem; color:var(--muted); font-family:Arial,sans-serif; font-size:.75rem; }
 @media (max-width:1000px) { .map-body { grid-template-columns:1fr; }.map-panel { border-left:0; border-top:3px solid var(--ink); padding:1rem 0 0; }.map-jump { margin-left:0; } }
 .map-canvas .map-highlight { fill:none; stroke:var(--ink); stroke-width:2.5; pointer-events:none; }
+/* 2026 outcomes */
+.outcome-list { list-style:none; margin:0; padding:0; border-top:3px solid var(--ink); }
+.outcome-entry { display:grid; grid-template-columns:130px minmax(240px,1.2fr) minmax(220px,1fr); gap:1.2rem; align-items:center; padding:1rem .7rem; border-bottom:1px solid var(--rule); }
+.outcome-entry h3 { margin:0; font-size:1.05rem; } .outcome-entry p { margin:.25rem 0 0; color:var(--muted); font-size:.85rem; }
+.outcome-cell small { display:block; margin-top:.3rem; color:var(--muted); line-height:1.4; }
+.outcome-line { margin-top:.6rem; padding:.6rem .7rem; border-left:3px solid var(--signal); background:var(--paper-2,transparent); font-size:.92rem; }
+.status-unknown { color:var(--muted); } .status-incumbent-lost-primary,.status-incumbent-lost-general,.status-open-seat-flipped { color:#8a4126; } .status-incumbent-won,.status-open-seat-held { color:#245e46; } .status-incumbent-ran-for-other-office,.status-not-up-in-2026 { color:#754f13; }
+@media (max-width:1000px) { .outcome-entry { grid-template-columns:max-content minmax(0,1fr); } .outcome-cell { grid-column:2; } }

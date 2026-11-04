@@ -97,6 +97,10 @@ Returns retained before a state certifies its canvass carry `resultStatus: "unof
 
 `supersedes` is the record of a replacement: the certified file that replaces unofficial returns, or the amended canvass or recount that replaces a certified file. The replaced source must stay pinned in the lock and must no longer be declared; the build fails `SUPERSEDED_STILL_DECLARED` or `SUPERSEDED_NOT_RETAINED` otherwise, and records the pair in the state summary (`supersessions`). `npm run rapid:state-returns -- --probe` re-fetches every declared URL and reports which pinned files the publisher has changed, writing nothing; the weekly refresh attaches that report to its pull request. See `docs/operations/post-election-runbook.md`.
 
+## 2026 outcomes (added 2026-11-04)
+
+`priority-index-pre-election-2026-v1` freezes the v1.17 index once; `seat-outcome-ledger-v1`, rebuilt by every publish, joins each frozen seat to the retained 2026 evidence (FEC filings, the 2026 primary files, the current rosters) and resolves an outcome with its evidence grade, never from an unofficial count. `/outcomes` and each brief read it. See `docs/data/outcome-ledger.md`.
+
 When a seat's contest was held after the roster snapshot and the roster's holder did not finish in the winning places, the seat is carried as `roster_predates_contest` rather than scored. This covers the weeks between the election and Open States seating the winners.
 
 Adding a state: write the adapter, run the three commands above, confirm the contest count and a few margins against the publisher's own summary page, then `npm run rapid:publish -- --bump`.

@@ -148,6 +148,9 @@ export function Shell({
           <Link prefetch={false} href="/methodology">
             Method
           </Link>
+          <Link prefetch={false} href="/outcomes">
+            2026 outcomes
+          </Link>
         </nav>
       </header>
       {release && <ReleaseStrip release={release} />}
@@ -167,6 +170,9 @@ export function Shell({
           </Link>
           <Link prefetch={false} href="/sources">
             Source ledger
+          </Link>
+          <Link prefetch={false} href="/outcomes">
+            2026 outcomes
           </Link>
           <Link prefetch={false} href="/corrections">
             Corrections
