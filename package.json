@@ -386,7 +386,8 @@
     "rapid:refresh": "tsx scripts/rapid/refresh.ts",
     "rapid:publish": "tsx scripts/rapid/publish.ts",
     "seed:nationwide-office-universe-registry": "tsx scripts/seed-nationwide-office-universe-registry.ts",
-    "rapid:state-returns": "tsx scripts/rapid/retain-state-returns.ts"
+    "rapid:state-returns": "tsx scripts/rapid/retain-state-returns.ts",
+    "rapid:freeze-pre-election": "tsx scripts/rapid/freeze-pre-election-snapshot.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1017.0",
