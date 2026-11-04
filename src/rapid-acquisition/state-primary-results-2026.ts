@@ -183,7 +183,9 @@ export function parseStatePrimaryAdapter(adapter: StatePrimaryAdapter, readBytes
 
 const countByOffice = (contests: readonly StatePrimaryContest[]): Record<PrimaryOffice, number> => Object.fromEntries(PRIMARY_OFFICES.map((office) => [office, contests.filter((contest) => contest.office === office).length])) as Record<PrimaryOffice, number>;
 
-export function buildStatePrimaryResults2026(root = process.cwd(), lock: SourceLock = readSourceLock(root), adapters: readonly StatePrimaryAdapter[] = STATE_PRIMARY_ADAPTERS): StatePrimaryResults2026 {
+export function buildStatePrimaryResults2026(root = process.cwd(), lock: SourceLock = readSourceLock(root), registered: readonly StatePrimaryAdapter[] = STATE_PRIMARY_ADAPTERS): StatePrimaryResults2026 {
+  // A state whose adapter declares no source yet is not covered, not covered with zero contests.
+  const adapters = registered.filter((adapter) => adapter.sources.length > 0);
   const contests: StatePrimaryContest[] = [];
   const states: StatePrimaryStateSummary[] = [];
   const codes = adapters.map((adapter) => adapter.stateCode);
