@@ -88,7 +88,7 @@ describe("resolveOutcome", () => {
   });
 
   it("treats a family-name match with a different given name as unknown, never as absence", () => {
-    const value = resolve({ holder: { familyName: "Campbell", givenName: "Joe" }, primaries: [primary({ candidates: [{ name: "Joseph M. Campbell", votes: 5 }, { name: "Neal Howell", votes: 2 }] })] });
+    const value = resolve({ holder: { familyName: "Campbell", givenName: "Jim" }, primaries: [primary({ candidates: [{ name: "Joseph M. Campbell", votes: 5 }, { name: "Neal Howell", votes: 2 }] })] });
     expect(value).toMatchObject({ candidacy: "filed_for_seat", primary: { status: "unknown", contestId: "tn:primary:2026:09:democratic" }, outcome: "unknown" });
   });
 

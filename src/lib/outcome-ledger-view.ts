@@ -4,6 +4,7 @@ import { readSeatOutcomeLedger, SEAT_OUTCOME_LEDGER, type SeatOutcomeLedger, typ
 import type { CandidacyStatus } from "@/rapid-acquisition/seat-outcome-evidence";
 import type { ContestStatus, EvidenceGrade, Outcome } from "@/rapid-acquisition/seat-outcome-resolver";
 import type { StateLegislativeScoreStatus } from "@/rapid-acquisition/state-legislative-score-v01";
+import { STATE_PRIMARY_RESULTS_2026 } from "@/rapid-acquisition/state-primary-results-2026";
 
 import type { PriorityChamber } from "./house-priority-index";
 
@@ -101,6 +102,7 @@ export function ledgerSources(): readonly Readonly<{ id: string; label: string; 
   const lock = readSourceLock();
   return [
     { id: PRE_ELECTION_SNAPSHOT_2026.id, label: "Pre-election index, frozen 2026-11-03" },
+    { id: STATE_PRIMARY_RESULTS_2026.id, label: "Official 2026 primary returns, one adapter per state" },
     { id: SEAT_OUTCOME_LEDGER.id, label: "Seat outcome ledger, rebuilt by each publish" },
   ].map((artifact) => {
     const entry = findSourceLockEntry(lock, artifact.id);
