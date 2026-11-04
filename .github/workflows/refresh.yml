@@ -61,6 +61,13 @@ jobs:
       - name: Publish release descriptor and re-derive artifacts
         run: |
           if [ -n "${{ github.event.inputs.version }}" ]; then npm run rapid:publish -- --version "${{ github.event.inputs.version }}"; else npm run rapid:publish -- --bump; fi
+      - name: Regenerate the committed reports that follow the new pins
+        # The acceptance suite reproduces these three from the lock and the
+        # rosters; a refresh that re-pins inputs without them leaves main red.
+        run: |
+          npm run data:coverage
+          npm run data:licenses
+          npm run data:identity:state-seats
       - run: npm run data:verify
       - run: npm run typecheck
       - run: npm run test:fast
