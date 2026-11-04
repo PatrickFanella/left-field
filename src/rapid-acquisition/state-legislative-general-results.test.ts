@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { readSourceLock } from "./intake/source-lock";
-import { buildStateLegislativeGeneralResults, generalPartyOf, readStateLegislativeGeneralResults, type StateGeneralAdapter } from "./state-legislative-general-results";
+import { buildStateLegislativeGeneralResults, generalPartyOf, readStateLegislativeGeneralResults, stateReturnsStatus, type StateGeneralAdapter } from "./state-legislative-general-results";
 import { CALIFORNIA_GENERAL } from "./state-general/california";
 import { GEORGIA_GENERAL } from "./state-general/georgia";
 import { ILLINOIS_GENERAL } from "./state-general/illinois";
@@ -271,5 +271,38 @@ describe("unofficial returns", () => {
     const certified = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [WEST_VIRGINIA_GENERAL]);
     expect(certified.states[0]).not.toHaveProperty("unofficialSourceIds");
     expect(certified.contests.some((contest) => "resultStatus" in contest)).toBe(false);
+  });
+});
+
+describe("source supersession", () => {
+  const westVirginia = async () => {
+    const { WEST_VIRGINIA_GENERAL } = await import("./state-general/west-virginia");
+    return { adapter: WEST_VIRGINIA_GENERAL, certified: WEST_VIRGINIA_GENERAL.sources.find((source) => source.cycleYear === 2024)!, replaced: WEST_VIRGINIA_GENERAL.sources.find((source) => source.cycleYear === 2022)! };
+  };
+
+  it("records which retained source a declared source replaces", async () => {
+    const { adapter, certified, replaced } = await westVirginia();
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, supersedes: replaced.id }] }]);
+    expect(value.states[0]?.supersessions).toEqual([{ sourceId: certified.id, supersedes: replaced.id }]);
+    expect(value.states[0]?.sourceIds).toEqual([certified.id]);
+    expect(value.contests.every((contest) => contest.sourceId === certified.id)).toBe(true);
+    expect(buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [adapter]).states[0]).not.toHaveProperty("supersessions");
+  });
+
+  it("refuses a replacement whose predecessor is still declared", async () => {
+    const { adapter, certified, replaced } = await westVirginia();
+    expect(() => buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, supersedes: replaced.id }, replaced] }])).toThrow(`STATE_LEG_GENERAL_SUPERSEDED_STILL_DECLARED:WV:${replaced.id}`);
+  });
+
+  it("refuses a replacement whose predecessor was never retained", async () => {
+    const { adapter, certified } = await westVirginia();
+    expect(() => buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, supersedes: "wv-2022-general-never-retained" }] }])).toThrow("STATE_LEG_GENERAL_SUPERSEDED_NOT_RETAINED:WV:wv-2022-general-never-retained");
+  });
+
+  it("summarises unofficial states and replacements for the release", async () => {
+    const { adapter, certified, replaced } = await westVirginia();
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, resultStatus: "unofficial", supersedes: replaced.id }] }, GEORGIA_GENERAL]);
+    expect(stateReturnsStatus(value)).toEqual({ unofficialStates: ["WV"], supersessions: [{ stateCode: "WV", sourceId: certified.id, supersedes: replaced.id }] });
+    expect(stateReturnsStatus(buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [GEORGIA_GENERAL]))).toEqual({ unofficialStates: [], supersessions: [] });
   });
 });

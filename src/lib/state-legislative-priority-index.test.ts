@@ -16,6 +16,16 @@ describe("state-legislative priority briefs", () => {
     expect(va1?.districtSummary).toContain("own race");
   });
 
+  it("says when a baseline rests on unofficial returns", () => {
+    const scored = readStateLegislativeScoreV01Projection().rows.find((row) => row.status === "scored" && row.baselineContested)!;
+    const certified = stateLegislativePriorityBrief(scored);
+    expect(certified.districtSummary).not.toContain("unofficial");
+    const unofficial = stateLegislativePriorityBrief({ ...scored, baselineResultStatus: "unofficial" });
+    expect(unofficial.districtSummary).toContain(`unofficial returns from the ${scored.baselineCycleYear} general election for this seat; the state has not certified`);
+    expect(unofficial.scoreDrivers[0]?.explanation).toContain("unofficial returns");
+    expect(unofficial.limitations).toContain("unofficial");
+  });
+
   it("refuses an unscored row", () => {
     const unscored = readStateLegislativeScoreV01Projection().rows.find((row) => row.status !== "scored")!;
     expect(() => stateLegislativePriorityBrief(unscored)).toThrow("STATE_LEG_BRIEF_UNSCORED");

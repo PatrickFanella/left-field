@@ -1,4 +1,4 @@
-import { readPinnedPackage, readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
+import { findSourceLockEntry, readPinnedPackage, readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { byteCompare, hash } from "./shared";
 import { districtKey, type RosterParty, type StateChamber } from "./state-legislative-roster";
 import { STATE_GENERAL_ADAPTERS } from "./state-general";
@@ -63,6 +63,8 @@ export interface StateGeneralStateSummary {
   readonly candidateVotes: number;
   /** Sources still carrying unofficial returns; absent when every source is certified. */
   readonly unofficialSourceIds?: readonly string[];
+  /** Declared sources that replace an earlier retained file for the same returns; absent when none does. */
+  readonly supersessions?: readonly Readonly<{ sourceId: string; supersedes: string }>[];
 }
 
 export interface StateLegislativeGeneralResults {
@@ -108,6 +110,12 @@ export interface StateGeneralSource {
    * id, once the state certifies.
    */
   readonly resultStatus?: "certified" | "unofficial";
+  /**
+   * The id of the retained source this one replaces: the unofficial file a certified canvass supersedes, or a
+   * certified file an amended canvass or recount supersedes. Say why in `note`. The replaced source must stay
+   * pinned in the lock and must no longer be declared by the adapter; the build records the pair.
+   */
+  readonly supersedes?: string;
   /** Request body when the publisher serves the file only in response to a POST; the retained bytes are that response. */
   readonly postBody?: string;
   /** Content type of postBody; form encoding when absent. */
@@ -196,11 +204,28 @@ function normalize(raw: RawGeneralContest, source: StateGeneralSource, stateCode
   return { ...unsigned, contestSha256: hash("dsa-seats:state-legislative-general-contest:v1", unsigned) };
 }
 
+/** The result-status facts a release records: states still on unofficial returns, and every source replacement. */
+export type StateReturnsStatus = Readonly<{ unofficialStates: readonly string[]; supersessions: readonly Readonly<{ stateCode: string; sourceId: string; supersedes: string }>[] }>;
+
+export function stateReturnsStatus(results: StateLegislativeGeneralResults): StateReturnsStatus {
+  return {
+    unofficialStates: results.states.filter((state) => (state.unofficialSourceIds?.length ?? 0) > 0).map((state) => state.stateCode),
+    supersessions: results.states.flatMap((state) => (state.supersessions ?? []).map((pair) => ({ stateCode: state.stateCode, ...pair }))),
+  };
+}
+
 export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: SourceLock = readSourceLock(root), adapters: readonly StateGeneralAdapter[] = STATE_GENERAL_ADAPTERS): StateLegislativeGeneralResults {
   const contests: StateGeneralContest[] = [];
   const states: StateGeneralStateSummary[] = [];
   for (const adapter of [...adapters].sort((left, right) => byteCompare(left.stateCode, right.stateCode))) {
     const stateContests: StateGeneralContest[] = [];
+    const declared = new Set(adapter.sources.map((source) => source.id));
+    const supersessions = adapter.sources.flatMap((source) => {
+      if (source.supersedes === undefined) return [];
+      if (declared.has(source.supersedes)) fail(`SUPERSEDED_STILL_DECLARED:${adapter.stateCode}:${source.supersedes}`);
+      if (!findSourceLockEntry(lock, source.supersedes)) fail(`SUPERSEDED_NOT_RETAINED:${adapter.stateCode}:${source.supersedes}`);
+      return [{ sourceId: source.id, supersedes: source.supersedes }];
+    });
     for (const source of adapter.sources) {
       readRetainedSource(lock, source.id, root);
       const { bytes } = readRetainedSource(lock, parsedSourceId(source), root);
@@ -221,6 +246,7 @@ export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: 
       contests: stateContests.length, lowerContests: stateContests.filter((contest) => contest.chamber === "lower").length, upperContests: stateContests.filter((contest) => contest.chamber !== "lower").length,
       uncontested: stateContests.filter((contest) => !contest.contested).length, candidateVotes: stateContests.reduce((sum, contest) => sum + contest.totalVotes, 0),
       ...(adapter.sources.some((source) => source.resultStatus === "unofficial") ? { unofficialSourceIds: adapter.sources.filter((source) => source.resultStatus === "unofficial").map((source) => source.id) } : {}),
+      ...(supersessions.length > 0 ? { supersessions } : {}),
     });
     contests.push(...stateContests);
   }

@@ -57,6 +57,8 @@ describe("rapid expansion status", () => {
     expect(value?.stateLegislative).toMatchObject({ snapshotDate: inputs.snapshotDate, jurisdictions: 51, chambers: 100, catalogStates: 10, presidentialBaseline: "unavailable_no_open_nationwide_2024_legislative_district_file" });
     expect(value?.stateLegislative.legislators).toBeGreaterThan(7000);
     expect(value?.stateLegislative.primaryMatched).toBeGreaterThan(300);
+    // Every retained general-election source is a certified canvass today; a state on election-night returns would be listed here.
+    expect(value?.stateLegislative.scored?.unofficialStates).toEqual([]);
   });
 
   it("returns null when the lock or artifacts are unavailable", async () => {

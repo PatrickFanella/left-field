@@ -25,8 +25,8 @@ Picked up without code changes:
 
 ## Timeline
 
-1. **November 3–4: election night.** No action is required. If unofficial returns are retained for a state, mark the source `resultStatus: "unofficial"` (see `docs/data/rapid-intake.md`).
-2. **November–December: certification.** States certify on their own schedules, from a few days to several weeks after the election. For each covered state, add the certified file as a new source with its contest count, then run `npm run rapid:state-returns -- --state XX` and `npm run rapid:publish -- --bump`. Before Open States seats the winners, a seat whose holder lost is carried as `roster_predates_contest`, not scored. That is expected until the roster catches up.
+1. **November 3–4: election night.** No action is required. The project waits for each state's certified canvass (decided 2026-11-03). If unofficial returns are retained for a state as an exception, mark the source `resultStatus: "unofficial"` (see `docs/data/rapid-intake.md`): every affected seat brief then says the baseline is unofficial, the methodology and sources pages name the state, the release descriptor lists it under `unofficialStates`, and the review note records it.
+2. **November–December: certification.** States certify on their own schedules, from a few days to several weeks after the election. For each covered state, add the certified file as a new source with its contest count, then run `npm run rapid:state-returns -- --state XX` and `npm run rapid:publish -- --bump`. If the state had an unofficial source, remove that entry from the adapter and set `supersedes` on the certified one to its id (the build refuses both at once). Before Open States seats the winners, a seat whose holder lost is carried as `roster_predates_contest`, not scored. That is expected until the roster catches up.
 3. **December–January: swearing-in.** The weekly refresh picks up roster changes. Watch the `roster_predates_contest` count in the state-legislative summary fall toward zero.
 4. **January 3, 2027: 120th Congress.** The Senate layer follows the next refresh. The House needs the new model before it reflects the new members.
 5. **January 2027: governors take office** (most states). The governor layer follows the next refresh.
@@ -36,7 +36,7 @@ Picked up without code changes:
 For each covered state:
 
 1. Find the certified general-election file at the same publisher used for 2024.
-2. Add a source entry with a new id, the HTTPS URL, path, `cycleYear: 2026` and `electionDate: "2026-11-03"`. Set `resultStatus: "unofficial"` if the state has not certified.
+2. Add a source entry with a new id, the HTTPS URL, path, `cycleYear: 2026` and `electionDate: "2026-11-03"`. Set `resultStatus: "unofficial"` if the state has not certified. If the entry replaces one already retained for the same returns, remove the old entry and set `supersedes` to its id.
 3. Add its contest count to `expectedContests`. Check the count against the publisher's own summary page.
 4. Run `npm run rapid:state-returns -- --state XX`, then `npm run rapid:publish -- --bump`.
 
@@ -52,6 +52,14 @@ Adapter notes:
 - **Florida**: the POST body carries `ElectionDate`.
 - **Texas, Pennsylvania**: the adapters carry year-specific rules (a 2022 skip in Texas, a candidate override in Pennsylvania). Check that they still hold for 2026.
 - Publishers that block the VPN egress need the residential route described in `docs/data/rapid-intake.md`.
+
+## When a retained file changes
+
+Results change after retention in three ways: a certified canvass replaces unofficial returns, an amended canvass or recount replaces a certified file, or a publisher silently re-issues a file at the same URL. The handling is the same for all three.
+
+- A retained file is never overwritten. `rapid:state-returns` verifies a file on disk against the lock, and restores a missing file only from identical bytes; anything else fails `STATE_RETURNS_EXISTING_MISMATCH`.
+- Retain the new file under a new source id, remove the old entry from the adapter, set `supersedes` on the new entry to the old id, and say why in `note`. The build refuses a replacement whose predecessor is still declared or was never pinned. The old bytes stay pinned in the lock, the state summary records the pair, and `rapid:publish` lists it in the review note under "Result status".
+- The weekly refresh runs `npm run rapid:state-returns -- --probe`, which re-fetches every declared URL and reports `changed`, `unreachable`, `unpinned` or `unchanged` per source, writing nothing. The report is in the refresh pull request body. A `changed` row is the signal to go through the steps above; `unreachable` is expected for the publishers that refuse the runner's egress (AZ, MI, NV, OH). Run the probe by hand with `--state XX` to check one state.
 
 ## Coverage gaps that remain
 

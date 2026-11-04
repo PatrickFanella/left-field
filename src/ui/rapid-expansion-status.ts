@@ -3,7 +3,7 @@ import { INCUMBENT_EVIDENCE_V2, type HousePrimaryIncumbentEvidenceV2 } from "@/r
 import { readPinnedPackage, readRetainedSource, readSourceLock } from "@/rapid-acquisition/intake/source-lock";
 import { readSenateScoreV01Projection } from "@/rapid-acquisition/senate-score-v01";
 import { STATE_LEGISLATIVE_PRIMARY_CONTEXT, type StateLegislativePrimaryContext } from "@/rapid-acquisition/state-legislative-primary-context";
-import { readStateLegislativeGeneralResults } from "@/rapid-acquisition/state-legislative-general-results";
+import { readStateLegislativeGeneralResults, stateReturnsStatus } from "@/rapid-acquisition/state-legislative-general-results";
 import { readStateLegislativeRoster } from "@/rapid-acquisition/state-legislative-roster";
 import { readStateLegislativeScoreV01Projection, STATE_LEGISLATIVE_SCORE_V01 } from "@/rapid-acquisition/state-legislative-score-v01";
 
@@ -97,6 +97,8 @@ export type RapidExpansionStatus = Readonly<{
     scored: Readonly<{
       version: "v0.1";
       coveredStates: readonly string[];
+      /** Covered states whose retained returns are still unofficial; empty once every source is a certified canvass. */
+      unofficialStates: readonly string[];
       generalContests: number;
       seats: number;
       democraticSeats: number;
@@ -158,6 +160,7 @@ export async function loadRapidExpansionStatus(root = process.cwd()): Promise<Ra
     const senate = readSenateScoreV01Projection(root, lock);
     const roster = readStateLegislativeRoster(root, lock);
     const stateScore = lock.entries.some((entry) => entry.id === STATE_LEGISLATIVE_SCORE_V01.id) ? readStateLegislativeScoreV01Projection(root, lock) : null;
+    const general = stateScore && readStateLegislativeGeneralResults(root, lock);
     const top = (caucus: "Democratic" | "Republican") => senate.rows.filter((row) => row.caucus === caucus).sort((left, right) => right.score - left.score || left.seatId.localeCompare(right.seatId)).slice(0, 5).map((row) => ({ seatLabel: row.seatLabel, officialName: row.officialName, score: row.score, nextElectionYear: row.nextElectionYear }));
     const coverageDates = senate.rows.map((row) => row.financeCoverageThrough).filter((value): value is string => value !== null).sort();
 
@@ -189,10 +192,11 @@ export async function loadRapidExpansionStatus(root = process.cwd()): Promise<Ra
         primaryMatched: roster.summary.primaryMatched,
         holdersNotInLatestPrimary: roster.summary.holdersNotInLatestPrimary,
         presidentialBaseline: roster.methodology.presidentialBaseline,
-        scored: stateScore ? {
+        scored: stateScore && general ? {
           version: "v0.1",
           coveredStates: stateScore.coveredStates,
-          generalContests: readStateLegislativeGeneralResults(root, lock).summary.contests,
+          unofficialStates: stateReturnsStatus(general).unofficialStates,
+          generalContests: general.summary.contests,
           seats: stateScore.summary.scored,
           democraticSeats: stateScore.summary.democraticScored,
           republicanSeats: stateScore.summary.republicanScored,

@@ -24,6 +24,15 @@ describe("priority index release and cross-chamber ranking", () => {
     expect(() => validatePriorityIndexRelease({ ...release, modelVersion: "1.0" })).toThrow("PRIORITY_INDEX_RELEASE_VERSION_INVALID");
   });
 
+  it("accepts the states still on unofficial returns only as a list of state codes", () => {
+    const release = readPriorityIndexRelease();
+    const withStates = (unofficialStates: unknown) => ({ ...release, chambers: { ...release.chambers, stateLegislative: { ...release.chambers.stateLegislative!, unofficialStates } } });
+    expect(release.chambers.stateLegislative).not.toHaveProperty("unofficialStates");
+    expect(validatePriorityIndexRelease(withStates(["WV"])).chambers.stateLegislative?.unofficialStates).toEqual(["WV"]);
+    expect(() => validatePriorityIndexRelease(withStates(["wv"]))).toThrow("PRIORITY_INDEX_RELEASE_CHAMBER_INVALID:stateLegislative");
+    expect(() => validatePriorityIndexRelease(withStates("WV"))).toThrow("PRIORITY_INDEX_RELEASE_CHAMBER_INVALID:stateLegislative");
+  });
+
   it("ranks House, Senate, governor and state-legislative briefs in one list", () => {
     const repo = new FilesystemPriorityIndexRepository();
     const briefs = repo.getBriefs();
