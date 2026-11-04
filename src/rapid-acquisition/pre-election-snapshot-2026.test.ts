@@ -1,9 +1,26 @@
 import { describe, expect, it } from "vitest";
 
-import { buildPreElectionSnapshot2026, readPreElectionSnapshot2026 } from "./pre-election-snapshot-2026";
+import { readPriorityIndexRelease } from "@/lib/priority-index-release";
+
+import { buildPreElectionSnapshot2026, PRE_ELECTION_MODEL_VERSION, readPreElectionSnapshot2026 } from "./pre-election-snapshot-2026";
+
+// The builder reads the live release and refuses any model but v1.17. After the weekly refresh
+// bumps the version, the rebuild comparison no longer applies; the pin's own digest still does.
+const liveIsFrozenRelease = readPriorityIndexRelease().modelVersion === PRE_ELECTION_MODEL_VERSION;
 
 describe("pre-election 2026 snapshot", () => {
-  it("freezes every seat of the v1.17 release with its rank", () => {
+  it("reads the pin whatever the live release is", () => {
+    const value = readPreElectionSnapshot2026();
+    expect(value.modelVersion).toBe("v1.17");
+    expect(value.summary.seats).toBe(7916);
+    expect(value.rows).toHaveLength(7916);
+  });
+
+  it.skipIf(liveIsFrozenRelease)("refuses to rebuild from a later release", () => {
+    expect(() => buildPreElectionSnapshot2026()).toThrow("PRE_ELECTION_MODEL_VERSION");
+  });
+
+  it.skipIf(!liveIsFrozenRelease)("freezes every seat of the v1.17 release with its rank", () => {
     const value = buildPreElectionSnapshot2026();
     expect(value.modelVersion).toBe("v1.17");
     expect(value.publishedAt).toBe("2026-11-03");
@@ -26,7 +43,7 @@ describe("pre-election 2026 snapshot", () => {
     expect(value.rows.map((row) => `${row.chamber}|${row.seatId}`)).toEqual([...value.rows.map((row) => `${row.chamber}|${row.seatId}`)].sort());
   });
 
-  it("matches the pinned artifact", () => {
+  it.skipIf(!liveIsFrozenRelease)("matches the pinned artifact", () => {
     expect(readPreElectionSnapshot2026().packageSha256).toBe(buildPreElectionSnapshot2026().packageSha256);
   });
 });

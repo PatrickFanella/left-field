@@ -1,10 +1,11 @@
 import Link from "next/link";
 
-import { candidacyLabel, CHAMBER_ORDER, contestStatusLabel, coverageTable, evidenceLabel, filterOutcomeRows, outcomeLabel } from "@/lib/outcome-ledger-view";
+import { CHAMBER_ORDER, coverageTable, evidenceLabel, filterOutcomeRows, outcomeLabel } from "@/lib/outcome-ledger-view";
 import { paginate } from "@/lib/priority-index-view";
 import type { SeatOutcomeLedger, SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
 import { OUTCOMES, type Outcome } from "@/rapid-acquisition/seat-outcome-resolver";
 
+import { outcomeNotes } from "./outcome-line";
 import { fmtCount, fmtDate, words } from "./presentational";
 
 /**
@@ -158,11 +159,7 @@ export function OutcomesView({ ledger, params, modelVersion, publishedAt }: { le
 }
 
 function OutcomeRow({ row }: { row: SeatOutcomeRow }) {
-  const notes = [
-    row.candidacy !== "filed_for_seat" && row.candidacy !== "not_applicable" ? `holder ${candidacyLabel(row.candidacy)}` : null,
-    row.primary.status === "pending" || row.primary.status === "won" ? `primary ${contestStatusLabel(row.primary.status)}` : null,
-    row.successorParty !== null ? `roster now names a ${row.successorParty} holder` : null,
-  ].filter((note): note is string => note !== null);
+  const notes = outcomeNotes(row);
   return (
     <li className={`outcome-entry outcome-${row.outcome}`}>
       <div className="rank-lockup">

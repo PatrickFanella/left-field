@@ -88,6 +88,17 @@ describe("OutcomeLine", () => {
     expect(screen.getByText(/as of 2026-11-03/)).toBeTruthy();
   });
 
+  it("names the pre-election holder when the brief now belongs to someone else", () => {
+    render(<OutcomeLine row={rowOf({ outcome: "seat_changed_hands", evidence: "roster_change", successorParty: "Republican" })} currentHolderId="N000001" />);
+    expect(screen.getByText(/pre-election holder Steve Cohen/)).toBeTruthy();
+    expect(screen.getByText(/New holder seated/)).toBeTruthy();
+  });
+
+  it("does not call an office without a filing source unobserved", () => {
+    render(<OutcomeLine row={rowOf({ chamber: "governor", candidacy: "not_observed" })} currentHolderId="C001068" />);
+    expect(screen.queryByText(/no filing observed/)).toBeNull();
+  });
+
   it("says a seat is not on the ballot, or that nothing is retained yet", () => {
     render(<OutcomeLine row={rowOf({ stage: "not_up_in_2026", nextElectionYear: 2028, outcome: "not_up_in_2026" })} />);
     expect(screen.getByText(/Not on the 2026 ballot/)).toBeTruthy();

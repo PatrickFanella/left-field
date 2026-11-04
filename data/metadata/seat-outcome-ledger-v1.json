@@ -49005,11 +49005,11 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ga:state-leg-primary:2026:lower:100:R",
         "countStatus": "certified",
-        "status": "not_applicable",
+        "status": "unknown",
         "evidence": "none"
       },
       "general": {
@@ -49025,7 +49025,7 @@
         "ga-2026-general-primary-total-votes-workbook"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "e2069c1ccc3d156956cf55d0c1d3d24a67371d5f46403b5b6a43d2c84a3125ea"
+      "rowSha256": "ebcc8c9b3568e4c3b1a838eb8b42f43231b9e003148e5e2209e786d05eaab519"
     },
     {
       "chamber": "state_house",
@@ -50791,12 +50791,12 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ga:state-leg-primary:2026:lower:143:D",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "won",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
         "status": "unknown",
@@ -50811,7 +50811,7 @@
         "ga-2026-general-primary-total-votes-workbook"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "c1d3bf8cea01470524b14b78ce6ba95aff346a38dc468c16adaf5ac4094c9f53"
+      "rowSha256": "5e8b47b263b031c5311649fa0a26411b304fc0129d3f38afa3c1fbfd8b94bfc8"
     },
     {
       "chamber": "state_house",
@@ -51969,12 +51969,12 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ga:state-leg-primary:2026:lower:171:R",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "won",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
         "status": "unknown",
@@ -51989,7 +51989,7 @@
         "ga-2026-general-primary-total-votes-workbook"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "d3f8b8cb2f57ea17c0579982b654ba91fb3aec6f814537b0b4d174c739a85b3b"
+      "rowSha256": "3652813d2012ba70d401faffdd7ccbeea14b04394315e2a8a6839c40541ef90e"
     },
     {
       "chamber": "state_house",
@@ -55617,12 +55617,12 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ga:state-leg-primary:2026:lower:095:D",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "won",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
         "status": "unknown",
@@ -55637,7 +55637,7 @@
         "ga-2026-general-primary-total-votes-workbook"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "6c864d54ab744deb0a6985bcf7ebf8cf8fbc1bacff478d7c46a430e640d07027"
+      "rowSha256": "8a545b8c532966f7885f397747c1b31d3fade1335b685ebc1ee4bab11e325cbe"
     },
     {
       "chamber": "state_house",
@@ -78312,12 +78312,12 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ky:state-leg-primary:2026:lower:064:REP",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "won",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
         "status": "unknown",
@@ -78333,7 +78333,7 @@
         "ky-2026-primary-certification-vote-totals-tsv-text"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "48a95583e77025839248662c8c8d36b9da45290d8447a41706fac4f0da495b30"
+      "rowSha256": "cae0a8193b6a8d6665a1b8eed401d92321cffff83c55c4f2488f309d6d1b9970"
     },
     {
       "chamber": "state_house",
@@ -123103,11 +123103,11 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "nc:state-leg-primary:2026:lower:001:R",
         "countStatus": "unofficial",
-        "status": "not_applicable",
+        "status": "pending",
         "evidence": "none"
       },
       "general": {
@@ -123123,7 +123123,7 @@
         "nc-2026-primary-official-results-archive"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "aa9670880fe4d4937d1237b11d413337f8d93a5e221d764ac2b745be8c038f23"
+      "rowSha256": "7edb6fdae238ea676b46e4b10d5790a5b51aac18b5ef82fd34cb66f3eafd18d5"
     },
     {
       "chamber": "state_house",
@@ -156237,12 +156237,12 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "oh:state-leg-primary:2026:state_house:023:democratic",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "won",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
         "status": "unknown",
@@ -156258,7 +156258,7 @@
         "oh-election-results-files-index-20260806"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "365fd03322af88e2f03c0a783eb24dd0603c2f30177780df6f1ec6aa975e639e"
+      "rowSha256": "5545bfa2cc1454c8a5b94c22cad7a05138222d787994bfdc141a27dc00cc5a8e"
     },
     {
       "chamber": "state_house",
@@ -226441,27 +226441,27 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ga:state-leg-primary:2026:upper:15:D",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "lost",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
-        "status": "unknown",
+        "status": "not_applicable",
         "contestId": null,
         "countStatus": null,
         "evidence": "none"
       },
       "successorParty": null,
-      "outcome": "unknown",
-      "evidence": "none",
+      "outcome": "incumbent_lost_primary",
+      "evidence": "primary_vote_order_certified",
       "evidenceSourceIds": [
         "ga-2026-general-primary-total-votes-workbook"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "e6b6442e6d43fb7fb18420b4387000b91482bdbefd4fa26b96e1b85e895ac4b1"
+      "rowSha256": "1edc1f7c681341c960415879493e2f8e377fd6ae6cdcc63b5c1e8d12624cbc47"
     },
     {
       "chamber": "state_senate",
@@ -227087,12 +227087,12 @@
       "nextElectionYear": 2026,
       "openSeatSignal": null,
       "stage": "up_in_2026",
-      "candidacy": "not_on_primary_ballot",
+      "candidacy": "not_observed",
       "primary": {
         "contestId": "ga:state-leg-primary:2026:upper:30:R",
         "countStatus": "certified",
-        "status": "not_applicable",
-        "evidence": "none"
+        "status": "won",
+        "evidence": "primary_vote_order_certified"
       },
       "general": {
         "status": "unknown",
@@ -227107,7 +227107,7 @@
         "ga-2026-general-primary-total-votes-workbook"
       ],
       "observedAt": "2026-11-03",
-      "rowSha256": "b4bbb1c9bd084b9f05e7cc1089fc61108081e9e85cf12bd02b259c583a55e059"
+      "rowSha256": "86df2880723e73d410f2e61876e76ef7f1042511e3aa437a652652fc0e4f2eff"
     },
     {
       "chamber": "state_senate",
@@ -286620,12 +286620,13 @@
     "byOutcome": {
       "not_up_in_2026": 1645,
       "incumbent_ran_for_other_office": 16,
-      "incumbent_lost_primary": 4,
+      "incumbent_lost_primary": 5,
       "incumbent_lost_general": 0,
       "incumbent_won": 0,
       "open_seat_held": 0,
       "open_seat_flipped": 0,
-      "unknown": 6251
+      "seat_changed_hands": 0,
+      "unknown": 6250
     },
     "byChamber": {
       "house": {
@@ -286636,6 +286637,7 @@
         "incumbent_won": 0,
         "open_seat_held": 0,
         "open_seat_flipped": 0,
+        "seat_changed_hands": 0,
         "unknown": 414
       },
       "senate": {
@@ -286646,6 +286648,7 @@
         "incumbent_won": 0,
         "open_seat_held": 0,
         "open_seat_flipped": 0,
+        "seat_changed_hands": 0,
         "unknown": 35
       },
       "governor": {
@@ -286656,6 +286659,7 @@
         "incumbent_won": 0,
         "open_seat_held": 0,
         "open_seat_flipped": 0,
+        "seat_changed_hands": 0,
         "unknown": 36
       },
       "state_house": {
@@ -286666,17 +286670,19 @@
         "incumbent_won": 0,
         "open_seat_held": 0,
         "open_seat_flipped": 0,
+        "seat_changed_hands": 0,
         "unknown": 4694
       },
       "state_senate": {
         "not_up_in_2026": 902,
         "incumbent_ran_for_other_office": 0,
-        "incumbent_lost_primary": 0,
+        "incumbent_lost_primary": 1,
         "incumbent_lost_general": 0,
         "incumbent_won": 0,
         "open_seat_held": 0,
         "open_seat_flipped": 0,
-        "unknown": 1072
+        "seat_changed_hands": 0,
+        "unknown": 1071
       }
     }
   },
@@ -286699,6 +286705,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 23
         }
       },
@@ -286714,6 +286721,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 61
         }
       },
@@ -286729,6 +286737,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 33
         }
       },
@@ -286744,6 +286753,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 17
         }
       },
@@ -286759,6 +286769,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 53
         }
       },
@@ -286774,6 +286785,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 18
         }
       },
@@ -286789,6 +286801,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 4
         }
       },
@@ -286804,6 +286817,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 25
         }
       },
@@ -286819,6 +286833,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 180
         }
       },
@@ -286834,6 +286849,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 0
         }
       },
@@ -286849,6 +286865,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 2
         }
       },
@@ -286864,6 +286881,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 20
         }
       },
@@ -286879,6 +286897,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 0
         }
       },
@@ -286894,6 +286913,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1
         }
       },
@@ -286909,6 +286929,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 12
         }
       },
@@ -286924,6 +286945,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 3
         }
       },
@@ -286939,6 +286961,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1
         }
       },
@@ -286954,6 +286977,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 14
         }
       },
@@ -286969,6 +286993,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1
         }
       },
@@ -286984,6 +287009,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 3
         }
       },
@@ -286999,6 +287025,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 14
         }
       },
@@ -287014,6 +287041,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 92
         }
       },
@@ -287029,6 +287057,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 174
         }
       },
@@ -287044,6 +287073,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 2301
         }
       },
@@ -287059,6 +287089,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1214
         }
       },
@@ -287074,6 +287105,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 273
         }
       },
@@ -287089,6 +287121,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 621
         }
       },
@@ -287104,6 +287137,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 14
         }
       },
@@ -287119,6 +287153,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 46
         }
       },
@@ -287134,6 +287169,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 482
         }
       },
@@ -287144,12 +287180,13 @@
         "counts": {
           "not_up_in_2026": 160,
           "incumbent_ran_for_other_office": 0,
-          "incumbent_lost_primary": 0,
+          "incumbent_lost_primary": 1,
           "incumbent_lost_general": 0,
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
-          "unknown": 282
+          "seat_changed_hands": 0,
+          "unknown": 281
         }
       },
       {
@@ -287164,6 +287201,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 63
         }
       },
@@ -287179,6 +287217,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 159
         }
       }
@@ -287189,12 +287228,13 @@
         "counts": {
           "not_up_in_2026": 294,
           "incumbent_ran_for_other_office": 3,
-          "incumbent_lost_primary": 2,
+          "incumbent_lost_primary": 3,
           "incumbent_lost_general": 0,
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
-          "unknown": 1551
+          "seat_changed_hands": 0,
+          "unknown": 1550
         }
       },
       {
@@ -287207,6 +287247,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1608
         }
       },
@@ -287220,6 +287261,7 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1595
         }
       },
@@ -287233,11 +287275,12 @@
           "incumbent_won": 0,
           "open_seat_held": 0,
           "open_seat_flipped": 0,
+          "seat_changed_hands": 0,
           "unknown": 1452
         }
       }
     ]
   },
-  "rowSetSha256": "655e3f9b9eaea50d3cc6fe04ab0371ea036927ff7e80affd00d2338358c3cac9",
-  "packageSha256": "45d775fd15e5f1104a0591e761a81e0efb85dff50d90733a878559dd6255b4f0"
+  "rowSetSha256": "80a525c61bd3a78f30e9811bd3b847d2254434f65210b22e1949486902056586",
+  "packageSha256": "44eb0e37290f1a1ecea1a59635ddfffc5ee06bc7d89400e5b3d10ddbaf702dde"
 }

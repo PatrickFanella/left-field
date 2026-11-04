@@ -72,8 +72,34 @@ describe("resolveOutcome", () => {
     const successor: Successor = { holderId: "P000001", holderName: "Justin Pearson", party: "Democratic", sourceId: "congress-legislators-current-20270104" };
     expect(resolve({ primaries: [primary({ sourceMarkedWinners: ["Justin J. Pearson"] })], successor })).toMatchObject({ outcome: "incumbent_lost_primary" });
     expect(resolve({ primaries: [primary({ candidates: [{ name: "Justin J. Pearson", votes: 1 }] })], successor })).toMatchObject({ candidacy: "not_on_primary_ballot", outcome: "open_seat_held", evidence: "roster_change", successorParty: "Democratic", evidenceSourceIds: ["house-incumbent-candidacy-v1", "tn-2026-primary", "congress-legislators-current-20270104"] });
-    expect(resolve({ successor: { ...successor, party: "Republican" } })).toMatchObject({ outcome: "incumbent_lost_general", evidence: "roster_change", general: { status: "lost", evidence: "roster_change" }, successorParty: "Republican" });
+    // The holder won the primary, so was on the general ballot: a new holder means a general-election loss.
+    expect(resolve({ primaries: [primary()], successor: { ...successor, party: "Republican" } })).toMatchObject({ outcome: "incumbent_lost_general", evidence: "roster_change", general: { status: "lost", evidence: "roster_change" }, successorParty: "Republican" });
     expect(resolve({ successor: { ...successor, holderId: "C001068" } })).toMatchObject({ outcome: "incumbent_won", evidence: "roster_change", general: { status: "won", evidence: "roster_change" } });
+  });
+
+  it("reports a seat changed hands, not a defeat, when nothing shows the holder on the ballot", () => {
+    const successor: Successor = { holderId: "N000001", holderName: "New Member", party: "Republican", sourceId: "congress-legislators-current-20270104" };
+    // A filing alone does not put the holder on the general ballot: a retirement after filing or an unretained primary loss look the same here.
+    expect(resolve({ successor })).toMatchObject({ outcome: "seat_changed_hands", evidence: "roster_change", successorParty: "Republican", general: { status: "unknown", evidence: "none" }, evidenceSourceIds: ["house-incumbent-candidacy-v1", "congress-legislators-current-20270104"] });
+    // A term-limited governor with no candidacy source at all.
+    const governor = row({ chamber: "governor", seatId: "seat_governor_tn_current", seatLabel: "TN-Gov", holderName: "Bill Lee", holderId: "ocd-person/lee", holderParty: "Republican", route: "republican_fringe_general" });
+    expect(resolve({ row: governor, holder: { familyName: "Lee", givenName: "Bill" }, candidacy: null, successor: { ...successor, party: "Democratic" } })).toMatchObject({ candidacy: "not_observed", outcome: "seat_changed_hands", successorParty: "Democratic" });
+    expect(resolve({ primaries: [primary({ countStatus: "unofficial" })], successor })).toMatchObject({ outcome: "seat_changed_hands", primary: { status: "pending" } });
+  });
+
+  it("treats a family-name match with a different given name as unknown, never as absence", () => {
+    const value = resolve({ holder: { familyName: "Campbell", givenName: "Joe" }, primaries: [primary({ candidates: [{ name: "Joseph M. Campbell", votes: 5 }, { name: "Neal Howell", votes: 2 }] })] });
+    expect(value).toMatchObject({ candidacy: "filed_for_seat", primary: { status: "unknown", contestId: "tn:primary:2026:09:democratic" }, outcome: "unknown" });
+  });
+
+  it("settles a loss from an earlier certified round when a later runoff file is retained", () => {
+    const first = primary({ contestId: "ga:first", electionDate: "2026-05-19", candidates: [{ name: "Elsie Cason Napier", votes: 1197 }, { name: "Kristina Cheek McBride", votes: 1100 }, { name: "Alvin Payton, Jr.", votes: 1025 }] });
+    const runoff = primary({ contestId: "ga:runoff", electionDate: "2026-06-16", candidates: [{ name: "Elsie Cason Napier", votes: 2000 }, { name: "Kristina Cheek McBride", votes: 1500 }] });
+    const value = resolve({ row: row({ stateCode: "GA" }), holder: { familyName: "Payton", givenName: "Alvin" }, primaries: [runoff, first] });
+    expect(value).toMatchObject({ outcome: "incumbent_lost_primary", evidence: "primary_vote_order_certified", primary: { status: "lost", contestId: "ga:first" } });
+    // In the runoff the holder is settled by the runoff count itself.
+    const inRunoff = resolve({ row: row({ stateCode: "GA" }), holder: { familyName: "Napier", givenName: "Elsie" }, primaries: [runoff, first] });
+    expect(inRunoff.primary).toMatchObject({ status: "won", contestId: "ga:runoff" });
   });
 
   it("flags a retired holder once the roster names someone else", () => {

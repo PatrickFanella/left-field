@@ -14,12 +14,13 @@ import type { PriorityChamber } from "./house-priority-index";
  */
 const OUTCOME_LABELS: Readonly<Record<Outcome, string>> = {
   not_up_in_2026: "Not on the 2026 ballot",
-  incumbent_ran_for_other_office: "Ran for another office",
+  incumbent_ran_for_other_office: "Filed for another office (FEC)",
   incumbent_lost_primary: "Lost the primary",
   incumbent_lost_general: "Lost the general",
   incumbent_won: "Won re-election",
   open_seat_held: "Open seat held by the same party",
   open_seat_flipped: "Open seat changed party",
+  seat_changed_hands: "New holder seated; how is not retained",
   unknown: "No retained evidence yet",
 };
 
@@ -36,7 +37,7 @@ const EVIDENCE_LABELS: Readonly<Record<EvidenceGrade, string>> = {
 const CONTEST_STATUS_LABELS: Readonly<Record<ContestStatus, string>> = {
   won: "won",
   lost: "lost",
-  pending: "pending (count not certified or runoff ahead)",
+  pending: "pending (count not certified, or runoff result not retained)",
   unknown: "no retained contest",
   not_applicable: "not on this ballot",
 };

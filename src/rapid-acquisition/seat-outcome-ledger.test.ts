@@ -27,8 +27,12 @@ describe("seat outcome ledger", () => {
     expect(value.rows.find((row) => row.seatLabel === "HI-01")).toMatchObject({ primary: { status: "pending", countStatus: "unofficial" } });
     expect(value.rows.filter((row) => row.outcome === "incumbent_ran_for_other_office")).toHaveLength(16);
     expect(value.rows.filter((row) => row.outcome === "incumbent_ran_for_other_office").every((row) => row.evidence === "fec_filing" && row.evidenceSourceIds.includes("house-incumbent-candidacy-v1"))).toBe(true);
-    // Certified first rounds: Kentucky (plurality) settles three losses; Georgia House 157 lost to a majority, while 117 and 177 went to runoffs the May workbook cannot decide.
-    expect(value.rows.filter((row) => row.outcome === "incumbent_lost_primary").map((row) => row.seatLabel).sort()).toEqual(["GA House 157", "KY House 30", "KY House 44", "KY House 63"]);
+    // Certified first rounds: Kentucky (plurality) settles three losses; Georgia House 157 and Senate 15 lost to majorities, while House 117 and 177 went to runoffs the May workbook cannot decide.
+    expect(value.rows.filter((row) => row.outcome === "incumbent_lost_primary").map((row) => row.seatLabel).sort()).toEqual(["GA House 157", "GA Senate 15", "KY House 30", "KY House 44", "KY House 63"]);
+    // Ballot names that differ from the roster (nickname, apostrophe, incumbent marker) still match; absence is claimed only when no candidate shares the family name.
+    expect(value.rows.find((row) => row.seatLabel === "GA House 95")).toMatchObject({ holderName: "Dar'shun Kendrick", primary: { status: "won" } });
+    expect(value.rows.find((row) => row.seatLabel === "GA House 143")).toMatchObject({ holderName: "Nissa Jones", primary: { status: "won" } });
+    expect(value.rows.find((row) => row.seatLabel === "GA Senate 15")).toMatchObject({ holderName: "Ed Harbison", evidence: "primary_vote_order_certified" });
     expect(value.rows.find((row) => row.seatLabel === "GA House 177")).toMatchObject({ outcome: "unknown", primary: { status: "pending", countStatus: "certified" } });
     const georgia = value.rows.filter((row) => row.stateCode === "GA" && row.chamber === "state_house" && row.primary.contestId !== null);
     expect(georgia.length).toBeGreaterThan(100);

@@ -22,7 +22,10 @@ The ledger joins each frozen row to the evidence retained at the refresh snapsho
 | `incumbent_lost_primary` | the holder's own-party primary names the holder and the state marks another winner, or a certified count puts the holder outside the winning places |
 | `incumbent_lost_general`, `incumbent_won` | the same rule on a retained general, or the roster after the election names a new holder (`roster_change`) |
 | `open_seat_held`, `open_seat_flipped` | the holder was not on the ballot and the winner's party, from a retained general or the roster, matches or differs from the holder's |
+| `seat_changed_hands` | the roster names a new holder but nothing shows whether the old holder was on the general ballot: a filing alone does not, so a retirement after filing and an unretained primary loss both read this way, never as a defeat |
 | `unknown` | nothing settling is retained |
+
+`incumbent_lost_general` by roster change needs the holder known on the general ballot (a won primary); the site labels `incumbent_ran_for_other_office` "Filed for another office (FEC)" because it rests on a Senate statement of candidacy matched by name, not on a campaign.
 
 Every settled row carries `evidence` (one of `fec_filing`, `primary_source_marked_winner`, `primary_vote_order_certified`, `general_source_marked_winner`, `general_vote_order_certified`, `roster_change`), `evidenceSourceIds` (lock ids) and `observedAt`. `candidacy` says what the filings and the primary ballot showed (`filed_for_seat`, `filed_for_other_office`, `not_on_primary_ballot`, `not_observed`); `primary` and `general` carry their own status, contest id, count status and grade.
 

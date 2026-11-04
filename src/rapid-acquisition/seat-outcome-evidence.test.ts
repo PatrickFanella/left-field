@@ -47,6 +47,21 @@ describe("roster successors", () => {
     expect(value.get("seat_state_vt_upper_orleans_1")).toBeNull();
   });
 
+  it("pairs departures with arrivals of the same party before the rest", () => {
+    const snapshot = { ...readPreElectionSnapshot2026(), rows: [
+      seat({ seatId: "seat_state_vt_lower_chittenden-18_1", holderId: "ocd-person/a", holderName: "Ann Dem", holderParty: "Democratic" }),
+      seat({ seatId: "seat_state_vt_lower_chittenden-18_2", holderId: "ocd-person/b", holderName: "Bob Rep", holderParty: "Republican" }),
+    ] };
+    // Ids sort c before d, which would pair the Democrat with the Republican arrival and invent two party flips.
+    const roster = [
+      { stateCode: "VT", chamber: "lower" as const, districtKey: "chittenden 18", openStatesId: "ocd-person/c", name: "Carl Rep", party: "Republican" as const },
+      { stateCode: "VT", chamber: "lower" as const, districtKey: "chittenden 18", openStatesId: "ocd-person/d", name: "Dana Dem", party: "Democratic" as const },
+    ];
+    const value = readSuccessors(process.cwd(), readSourceLock(), snapshot, { congress: [], governors: [], stateLegislative: roster });
+    expect(value.get("seat_state_vt_lower_chittenden-18_1")).toMatchObject({ holderId: "ocd-person/d", party: "Democratic" });
+    expect(value.get("seat_state_vt_lower_chittenden-18_2")).toMatchObject({ holderId: "ocd-person/c", party: "Republican" });
+  });
+
   it("reads House and Senate successors from the Congress roster by district and class", () => {
     const snapshot = { ...readPreElectionSnapshot2026(), rows: [
       seat({ chamber: "house", seatId: "seat_house_ak_al_current", seatLabel: "AK-AL", stateCode: "AK", holderId: "A000001" }),

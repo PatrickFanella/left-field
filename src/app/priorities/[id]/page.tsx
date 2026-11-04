@@ -71,7 +71,7 @@ export default async function PriorityBrief({ params }: Props) {
             <p className="eyebrow">{row.chamber === "house" || row.chamber === "state_house" || row.chamber === "state_senate" ? "THE DISTRICT" : "THE STATE"}</p>
             <h2>{row.districtLabel}</h2>
             <p>{row.districtSummary}</p>
-            <OutcomeLine row={outcomeFor(row.seatCycleId)} />
+            <OutcomeLine row={outcomeFor(row.seatCycleId)} currentHolderId={row.bioguideId} />
             <dl className="brief-facts">
               <dt>{row.chamber === "state_house" || row.chamber === "state_senate" ? "Own-race margin" : "2024 presidential margin"}</dt>
               <dd>{formatPartisanMargin(row.presidentialDemocraticMargin2024)}</dd>

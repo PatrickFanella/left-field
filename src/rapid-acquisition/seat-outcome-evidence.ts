@@ -212,10 +212,18 @@ export function readSuccessors(root = process.cwd(), lock: SourceLock = readSour
     const departed = frozen.filter((row) => !currentIds.has(row.holderId)).sort((left, right) => byteCompare(left.holderId, right.holderId));
     const arrivals = current.filter((row) => !frozenIds.has(row.openStatesId)).sort((left, right) => byteCompare(left.openStatesId, right.openStatesId));
     for (const row of frozen) result.set(row.seatId, null);
-    departed.forEach((row, index) => {
-      const arrival = arrivals[index];
+    // Pair each departure with an arrival of the same party first, so a district that swapped one Democrat and
+    // one Republican for another pair is not read as two party flips; the rest pair in id order.
+    const unpaired = [...arrivals];
+    const take = (party: HolderParty | null) => {
+      const index = unpaired.findIndex((arrival) => party === null || holderPartyOf(arrival.party) === party);
+      return index >= 0 ? unpaired.splice(index, 1)[0]! : undefined;
+    };
+    const paired = new Map(departed.map((row) => [row.seatId, take(row.holderParty)] as const));
+    for (const row of departed) {
+      const arrival = paired.get(row.seatId) ?? take(null);
       result.set(row.seatId, arrival ? { holderId: arrival.openStatesId, holderName: arrival.name, party: holderPartyOf(arrival.party), sourceId: STATE_LEGISLATIVE_ROSTER.id } : null);
-    });
+    }
   }
   return result;
 }

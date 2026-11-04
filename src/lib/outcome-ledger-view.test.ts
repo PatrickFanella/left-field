@@ -24,7 +24,9 @@ describe("outcome ledger labels", () => {
     expect(evidenceLabel("none")).toBe("no settling evidence");
     const statuses: ContestStatus[] = ["won", "lost", "pending", "unknown", "not_applicable"];
     for (const status of statuses) expect(contestStatusLabel(status).length).toBeGreaterThan(2);
-    expect(contestStatusLabel("pending")).toBe("pending (count not certified or runoff ahead)");
+    expect(contestStatusLabel("pending")).toBe("pending (count not certified, or runoff result not retained)");
+    expect(outcomeLabel("seat_changed_hands")).toBe("New holder seated; how is not retained");
+    expect(outcomeLabel("incumbent_ran_for_other_office")).toBe("Filed for another office (FEC)");
     expect(candidacyLabel("not_on_primary_ballot")).toBe("not on the primary ballot");
     expect(candidacyLabel("filed_for_other_office")).toBe("filed for another office");
   });
