@@ -1,0 +1,55 @@
+MN;;;0194;State Representative District 4A;4A;0301;Andrew Rockhold;;;R;13;13;1171;100.00;1171
+MN;;;0194;State Representative District 4A;4A;0401;Shelly Carlson;;;DFL;13;13;1491;34.31;4346
+MN;;;0194;State Representative District 4A;4A;0402;Erika Yoney;;;DFL;13;13;2855;65.69;4346
+MN;;;0199;State Representative District 6B;6B;0301;Josh Heintzeman;;;R;25;25;3796;88.82;4274
+MN;;;0199;State Representative District 6B;6B;0302;Matthew Eric Zinda;;;R;25;25;478;11.18;4274
+MN;;;0199;State Representative District 6B;6B;0401;Nicky Hardy;;;DFL;25;25;2686;100.00;2686
+MN;;;0205;State Representative District 9B;9B;0301;Craig Horlocker;;;R;77;77;612;11.45;5345
+MN;;;0205;State Representative District 9B;9B;0302;Tom Murphy;;;R;77;77;4733;88.55;5345
+MN;;;0205;State Representative District 9B;9B;0401;Owen Werner;;;DFL;77;77;2458;100.00;2458
+MN;;;0206;State Representative District 10A;10A;0301;Mark Striemer;;;R;73;73;3619;57.19;6328
+MN;;;0206;State Representative District 10A;10A;0302;Brian Lindquist;;;R;73;73;2709;42.81;6328
+MN;;;0206;State Representative District 10A;10A;0401;Melissa Maertens;;;DFL;73;73;2572;100.00;2572
+MN;;;0214;State Representative District 14A;14A;0301;Mike Conway;;;R;18;18;1822;62.25;2927
+MN;;;0214;State Representative District 14A;14A;0302;John Jose;;;R;18;18;1105;37.75;2927
+MN;;;0214;State Representative District 14A;14A;0401;Abdi Daisane;;;DFL;18;18;2262;62.52;3618
+MN;;;0214;State Representative District 14A;14A;0402;Paul R. F. Schumacher;;;DFL;18;18;1356;37.48;3618
+MN;;;0217;State Representative District 15B;15B;0301;Geri Theis;;;R;77;77;3825;100.00;3825
+MN;;;0217;State Representative District 15B;15B;0401;Lydell Sik;;;DFL;77;77;477;19.13;2494
+MN;;;0217;State Representative District 15B;15B;0402;Keith R. Klawitter;;;DFL;77;77;2017;80.87;2494
+MN;;;0220;State Representative District 17A;17A;0301;Wayne Olson;;;R;36;36;898;22.52;3987
+MN;;;0220;State Representative District 17A;17A;0302;Dawn Gillman;;;R;36;36;3089;77.48;3987
+MN;;;0220;State Representative District 17A;17A;0401;Mali Anderson;;;DFL;36;36;2002;100.00;2002
+MN;;;0227;State Representative District 20B;20B;0301;Brady Rouhoff;;;R;51;51;1493;35.85;4165
+MN;;;0227;State Representative District 20B;20B;0302;Sara Bertschinger;;;R;51;51;2672;64.15;4165
+MN;;;0227;State Representative District 20B;20B;0401;Mark Alvin Thoreson;;;DFL;51;51;663;26.10;2540
+MN;;;0227;State Representative District 20B;20B;0402;Steve Holm;;;DFL;51;51;1877;73.90;2540
+MN;;;0232;State Representative District 23A;23A;0301;Nick Ronnenberg;;;R;70;70;3399;100.00;3399
+MN;;;0232;State Representative District 23A;23A;0401;Colin J. Minehart;;;DFL;70;70;638;23.34;2733
+MN;;;0232;State Representative District 23A;23A;0402;Joe Staloch;;;DFL;70;70;2095;76.66;2733
+MN;;;0245;State Representative District 29B;29B;0301;Marion (O'Neill) Rarick;;;R;14;14;3230;100.00;3230
+MN;;;0245;State Representative District 29B;29B;0401;Marcus D. Claxton;;;DFL;14;14;931;39.13;2379
+MN;;;0245;State Representative District 29B;29B;0402;Colton Kratky;;;DFL;14;14;1448;60.87;2379
+MN;;;0262;State Representative District 38A;38A;0301;Charlie Kistler;;;R;12;12;979;90.23;1085
+MN;;;0262;State Representative District 38A;38A;0302;Yelena S. Kurdyumova;;;R;12;12;106;9.77;1085
+MN;;;0262;State Representative District 38A;38A;0401;Richard A. Klatte;;;DFL;12;12;351;9.40;3734
+MN;;;0262;State Representative District 38A;38A;0402;Wynfred Russell;;;DFL;12;12;1561;41.81;3734
+MN;;;0262;State Representative District 38A;38A;0403;Huldah Momanyi-Hiltsley;;;DFL;12;12;1822;48.79;3734
+MN;;;0265;State Representative District 39B;39B;0301;KT Jacobs;;;R;14;14;1228;100.00;1228
+MN;;;0265;State Representative District 39B;39B;0401;Justice Spriggs;;;DFL;14;14;2133;32.46;6572
+MN;;;0265;State Representative District 39B;39B;0402;Amáda Márquez Simula;;;DFL;14;14;4439;67.54;6572
+MN;;;0266;State Representative District 40A;40A;0301;Luis Withrow;;;R;14;14;1867;100.00;1867
+MN;;;0266;State Representative District 40A;40A;0401;Murwo S Mohamed;;;DFL;14;14;439;7.27;6040
+MN;;;0266;State Representative District 40A;40A;0402;Aisha Elmquist;;;DFL;14;14;5601;92.73;6040
+MN;;;0295;State Representative District 54B;54B;0301;Chris Steward;;;R;18;18;1244;33.35;3730
+MN;;;0295;State Representative District 54B;54B;0302;Natalie Barnes;;;R;18;18;2486;66.65;3730
+MN;;;0295;State Representative District 54B;54B;0401;Christopher Kartschoke;;;DFL;18;18;3157;100.00;3157
+MN;;;0297;State Representative District 55B;55B;0301;Todd Buchwald;;;R;11;11;1856;100.00;1856
+MN;;;0297;State Representative District 55B;55B;0401;Adam Silkey;;;DFL;11;11;674;13.51;4990
+MN;;;0297;State Representative District 55B;55B;0402;Kriystauhl Fitchett;;;DFL;11;11;619;12.40;4990
+MN;;;0297;State Representative District 55B;55B;0403;Yusuf Haji;;;DFL;11;11;646;12.95;4990
+MN;;;0297;State Representative District 55B;55B;0404;Hunter Cantrell;;;DFL;11;11;3051;61.14;4990
+MN;;;0307;State Representative District 60B;60B;0401;Mohamud Noor;;;DFL;10;10;3381;84.63;3995
+MN;;;0307;State Representative District 60B;60B;0402;Abdurrahman Mahmud;;;DFL;10;10;614;15.37;3995
+MN;;;0317;State Representative District 65B;65B;0401;Elena Mena;;;DFL;12;12;2602;41.31;6298
+MN;;;0317;State Representative District 65B;65B;0402;Sebastian Ellefson;;;DFL;12;12;3696;58.69;6298

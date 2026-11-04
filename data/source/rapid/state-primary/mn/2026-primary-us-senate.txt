@@ -1,0 +1,15 @@
+MN;;;0102;U.S. Senator;;0301;Adam Schwarze;;;R;4105;4105;97470;23.96;406823
+MN;;;0102;U.S. Senator;;0302;Bob "Again" Carney Jr.;;;R;4105;4105;5678;1.40;406823
+MN;;;0102;U.S. Senator;;0303;Ahmad R. (Raafat) Hassan;;;R;4105;4105;1742;0.43;406823
+MN;;;0102;U.S. Senator;;0304;Patrick Munro;;;R;4105;4105;7096;1.74;406823
+MN;;;0102;U.S. Senator;;0305;Joyce Lacey;;;R;4105;4105;7474;1.84;406823
+MN;;;0102;U.S. Senator;;0306;Tom Weiler;;;R;4105;4105;24247;5.96;406823
+MN;;;0102;U.S. Senator;;0307;Cynthia Gail;;;R;4105;4105;5929;1.46;406823
+MN;;;0102;U.S. Senator;;0309;Michele Tafoya;;;R;4105;4105;211813;52.07;406823
+MN;;;0102;U.S. Senator;;0310;Royce White;;;R;4105;4105;45374;11.15;406823
+MN;;;0102;U.S. Senator;;0401;Peggy Flanagan;;;DFL;4105;4105;411853;59.01;697927
+MN;;;0102;U.S. Senator;;0402;Peter John Murgic;;;DFL;4105;4105;1661;0.24;697927
+MN;;;0102;U.S. Senator;;0403;George H Kalberer;;;DFL;4105;4105;2076;0.30;697927
+MN;;;0102;U.S. Senator;;0404;Kurt Michael Anderson;;;DFL;4105;4105;4521;0.65;697927
+MN;;;0102;U.S. Senator;;0405;Angie Craig;;;DFL;4105;4105;274920;39.39;697927
+MN;;;0102;U.S. Senator;;0406;Billy Nord;;;DFL;4105;4105;2896;0.41;697927

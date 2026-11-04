@@ -1,0 +1,48 @@
+MN;;;0125;State Senator District 5;5;0301;Mike Wiener;;;R;143;143;5803;50.84;11414
+MN;;;0125;State Senator District 5;5;0302;Paul Utke;;;R;143;143;5611;49.16;11414
+MN;;;0125;State Senator District 5;5;0401;Skylar Fynboh;;;DFL;143;143;4537;100.00;4537
+MN;;;0130;State Senator District 10;10;0301;Nathan Wesenberg;;;R;123;123;9069;74.21;12221
+MN;;;0130;State Senator District 10;10;0302;Deb Holthaus;;;R;123;123;3152;25.79;12221
+MN;;;0130;State Senator District 10;10;0401;Tara Killen;;;DFL;123;123;4086;100.00;4086
+MN;;;0133;State Senator District 13;13;0301;Jared J. Gapinski;;;R;49;49;6449;65.87;9790
+MN;;;0133;State Senator District 13;13;0302;Aaron Brutger;;;R;49;49;3341;34.13;9790
+MN;;;0133;State Senator District 13;13;0401;Trent C Dilks;;;DFL;49;49;4639;100.00;4639
+MN;;;0139;State Senator District 19;19;0301;John R. Jasinski;;;R;53;53;6088;88.22;6901
+MN;;;0139;State Senator District 19;19;0302;Crystal Alan;;;R;53;53;813;11.78;6901
+MN;;;0139;State Senator District 19;19;0401;Sam Powell;;;DFL;53;53;3856;79.24;4866
+MN;;;0139;State Senator District 19;19;0402;Adama Youhn Doumbouya;;;DFL;53;53;1010;20.76;4866
+MN;;;0140;State Senator District 20;20;0301;Theodore "Teddy" Kimble;;;R;91;91;1308;16.57;7894
+MN;;;0140;State Senator District 20;20;0302;Steven E Jacob;;;R;91;91;6586;83.43;7894
+MN;;;0140;State Senator District 20;20;0401;Jason Lohmann;;;DFL;91;91;6596;100.00;6596
+MN;;;0143;State Senator District 23;23;0301;Gene Dornink;;;R;113;113;5764;100.00;5764
+MN;;;0143;State Senator District 23;23;0401;Angie Hanson;;;DFL;113;113;4667;86.55;5392
+MN;;;0143;State Senator District 23;23;0402;Jennifer Ney;;;DFL;113;113;725;13.45;5392
+MN;;;0149;State Senator District 29;29;0301;Michael Holmstrom Jr;;;R;37;37;7275;100.00;7275
+MN;;;0149;State Senator District 29;29;0401;Dan Fiskum;;;DFL;37;37;2100;41.44;5067
+MN;;;0149;State Senator District 29;29;0402;Louis McNutt;;;DFL;37;37;2967;58.56;5067
+MN;;;0157;State Senator District 37;37;0301;Brady Hoag;;;R;23;23;5809;100.00;5809
+MN;;;0157;State Senator District 37;37;0401;Austin Chanen;;;DFL;23;23;1593;15.83;10061
+MN;;;0157;State Senator District 37;37;0402;Kristy Janigo;;;DFL;23;23;8468;84.17;10061
+MN;;;0158;State Senator District 38;38;0301;Brad Olson;;;R;21;21;1751;100.00;1751
+MN;;;0158;State Senator District 38;38;0401;Nehemiah Garley;;;DFL;21;21;1885;25.11;7508
+MN;;;0158;State Senator District 38;38;0402;Susan Pha;;;DFL;21;21;5623;74.89;7508
+MN;;;0164;State Senator District 44;44;0301;James Tacheny;;;R;27;27;3440;100.00;3440
+MN;;;0164;State Senator District 44;44;0401;Teresa Miller;;;DFL;27;27;4260;48.10;8856
+MN;;;0164;State Senator District 44;44;0402;Sam Rosemark;;;DFL;27;27;4596;51.90;8856
+MN;;;0166;State Senator District 46;46;0301;Kayla Wright;;;R;22;22;2490;100.00;2490
+MN;;;0166;State Senator District 46;46;0401;Ron Latz;;;DFL;22;22;10876;59.77;18197
+MN;;;0166;State Senator District 46;46;0402;Lynette Lungay Dumalag;;;DFL;22;22;7321;40.23;18197
+MN;;;0170;State Senator District 50;50;0301;Owen Michaelson;;;R;28;28;4214;100.00;4214
+MN;;;0170;State Senator District 50;50;0401;John McClellan;;;DFL;28;28;2103;13.07;16088
+MN;;;0170;State Senator District 50;50;0402;Amal Ibrahim;;;DFL;28;28;1046;6.50;16088
+MN;;;0170;State Senator District 50;50;0403;Nelly Korman;;;DFL;28;28;3467;21.55;16088
+MN;;;0170;State Senator District 50;50;0404;Karla Hult;;;DFL;28;28;9472;58.88;16088
+MN;;;0176;State Senator District 56;56;0301;Julida Alter;;;R;24;24;2013;40.66;4951
+MN;;;0176;State Senator District 56;56;0302;Raymond David Petersen;;;R;24;24;2938;59.34;4951
+MN;;;0176;State Senator District 56;56;0401;Erin Maye Quade;;;DFL;24;24;10270;100.00;10270
+MN;;;0182;State Senator District 62;62;0401;Omar Fateh;;;DFL;26;26;12827;78.29;16384
+MN;;;0182;State Senator District 62;62;0402;Jeanelle Austin;;;DFL;26;26;2355;14.37;16384
+MN;;;0182;State Senator District 62;62;0403;Brenda Short;;;DFL;26;26;1202;7.34;16384
+MN;;;0185;State Senator District 65;65;0301;_ Rocco;;;R;24;24;960;100.00;960
+MN;;;0185;State Senator District 65;65;0401;Natasha Bennett;;;DFL;24;24;3173;29.31;10825
+MN;;;0185;State Senator District 65;65;0402;Robyn Gulley;;;DFL;24;24;7652;70.69;10825
