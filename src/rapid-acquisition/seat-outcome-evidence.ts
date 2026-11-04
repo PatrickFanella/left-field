@@ -67,7 +67,7 @@ const readJson = <T,>(lock: SourceLock, id: string, root: string): T => JSON.par
 /** A major party from a source label; null for anything else. */
 export const evidencePartyOf = (raw: string | undefined): EvidenceParty | null => {
   const key = (raw ?? "").trim().toLowerCase();
-  if (/^(d|dem|democrat|democratic)\b/.test(key) || key.startsWith("democratic")) return "Democratic";
+  if (/^(d|dem|democrat|democratic|dfl)\b/.test(key) || key.startsWith("democratic")) return "Democratic";
   if (/^(r|rep|gop|republican)\b/.test(key)) return "Republican";
   return null;
 };
@@ -251,7 +251,9 @@ export function seatPrimaryKey(row: Pick<PreElectionSeatRow, "seatId" | "chamber
  */
 export function primaryEvidenceForSeat(index: PrimaryEvidenceIndex, row: Pick<PreElectionSeatRow, "seatId" | "chamber" | "stateCode" | "seatLabel" | "holderParty">, holder: HolderName): readonly PrimaryEvidence[] {
   const { office, district } = seatPrimaryKey(row);
-  const own = (contest: PrimaryEvidence): boolean => contest.party === null || contest.party === row.holderParty;
+  // A holder the roster lists outside the two major parties still counts a major-party primary that names them.
+  const major = row.holderParty === "Democratic" || row.holderParty === "Republican";
+  const own = (contest: PrimaryEvidence): boolean => contest.party === null || contest.party === row.holderParty || (!major && contest.candidates.some((candidate) => holderMatches(holder, candidate.name)));
   const local = (index.byDistrict.get(`${row.stateCode}|${office}|${district ?? ""}`) ?? []).filter(own);
   if (district === null) return local;
   const elsewhere = (index.byOffice.get(`${row.stateCode}|${office}`) ?? []).filter((contest) => own(contest) && !local.includes(contest) && contest.candidates.some((candidate) => holderMatches(holder, candidate.name)));

@@ -38,8 +38,37 @@ describe("holder name match", () => {
   it("takes the source's incumbent marker as identity when the family name matches", () => {
     expect(holderMatches({ familyName: "Jones", givenName: "Nissa" }, "Anissa M. Jones (I)")).toBe(true);
     expect(holderMatches({ familyName: "Campbell", givenName: "Joe" }, "Joseph M. Campbell (I)")).toBe(true);
-    expect(holderMatches({ familyName: "Campbell", givenName: "Joe" }, "Joseph M. Campbell")).toBe(false);
+    expect(holderMatches({ familyName: "Campbell", givenName: "Jim" }, "Joseph M. Campbell")).toBe(false);
     expect(holderMatches({ familyName: "Smith", givenName: "Joe" }, "Joseph M. Campbell (I)")).toBe(false);
+  });
+
+  it("matches common nicknames both ways, and the roster's own nickname", () => {
+    expect(holderMatches({ familyName: "Campbell", givenName: "Joe" }, "Joseph M. Campbell")).toBe(true);
+    expect(holderMatches({ familyName: "Ogles", givenName: "Andrew" }, "Andy Ogles")).toBe(true);
+    expect(holderMatches({ familyName: "Rogers", givenName: "Harold" }, "Hal Rogers")).toBe(true);
+    expect(holderMatches({ familyName: "Cook", givenName: "Bill" }, "William Cook")).toBe(true);
+    expect(holderMatches({ familyName: "Schwanke", givenName: "Becky" }, "Rebecca A. Schwanke")).toBe(true);
+    expect(holderMatches({ familyName: "Begich", givenName: "Nicholas" }, "Nick Begich")).toBe(true);
+    // A nickname is not any name: Bill is not Robert.
+    expect(holderMatches({ familyName: "Cook", givenName: "Bill" }, "Robert Cook")).toBe(false);
+    // The Congress roster records "Charles (Chuck)" and a nickname field.
+    expect(holderMatches({ familyName: "Hill", givenName: "J.", nickname: "French" }, "French Hill")).toBe(true);
+    expect(holderMatches({ familyName: "Correa", givenName: "J.", nickname: "Lou" }, "Lou Correa")).toBe(true);
+    expect(holderMatches({ familyName: "Edwards", givenName: "Charles (Chuck)" }, "Chuck Edwards")).toBe(true);
+  });
+
+  it("does not read a comma before a suffix as LAST, First", () => {
+    expect(holderMatches({ familyName: "Long", givenName: "Jeff" }, "Jeffrie E. Long, Jr.")).toBe(true);
+    expect(holderMatches({ familyName: "Lombardo", givenName: "Joe" }, "LOMBARDO, JOSEPH")).toBe(true);
+  });
+
+  it("matches one word of a compound family name only on a full first-name match", () => {
+    const holder = { familyName: "Graham Nordone", givenName: "Darline" };
+    expect(holderMatches(holder, "Darline Graham")).toBe(true);
+    expect(holderMatches(holder, "D. Graham")).toBe(false);
+    expect(holderMatches(holder, "Lindsey Graham")).toBe(false);
+    // Still a possible match, so the holder is never read as absent from that ballot.
+    expect(familyMatches(holder, "Lindsey Graham")).toBe(true);
   });
 
   it("tells a family-name match apart from no match at all", () => {

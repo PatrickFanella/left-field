@@ -45,7 +45,11 @@ export interface RawPrimaryContest {
   readonly seats?: number;
   /** Overrides the adapter's system for this contest, e.g. Nebraska's nonpartisan legislature in a partisan state. */
   readonly system?: PrimarySystem;
-  /** `votes` is null only for a nominee named by a candidate list without a count (an unopposed primary not printed). */
+  /**
+   * `votes` is null only for nominees named by a candidate list without a count (an unopposed primary not
+   * printed); then every line is such a nominee, marked `winner`, no more than `seats`. `writeIn` marks an
+   * unnamed write-in or "all others" line; a candidate written in by name is an ordinary line.
+   */
   readonly candidates: readonly Readonly<{ name: string; votes: number | null; winner?: boolean; writeIn?: boolean }>[];
 }
 
@@ -144,14 +148,16 @@ export function normalizePrimaryContest(raw: RawPrimaryContest, source: StateGen
   const where = `${stateCode}:${raw.office}:${district ?? "statewide"}:${raw.rawParty ?? "all"}`;
   if (system === "partisan" && (raw.rawParty === null || raw.rawParty.trim() === "")) fail(`PARTY_MISSING:${where}`);
   if (system !== "partisan" && raw.rawParty !== null) fail(`PARTY_ON_ALL_PARTY_BALLOT:${where}`);
+  // Nominees named without a count: every line uncounted and marked, no more of them than seats.
   const uncounted = raw.candidates.filter((candidate) => candidate.votes === null);
-  if (uncounted.length > 0 && (raw.candidates.length !== 1 || raw.candidates[0]!.winner !== true)) fail(`UNCOUNTED_NOT_A_SOLE_NOMINEE:${where}`);
+  if (uncounted.length > 0 && (uncounted.length !== raw.candidates.length || raw.candidates.some((candidate) => candidate.winner !== true) || raw.candidates.length > (raw.seats ?? 1))) fail(`UNCOUNTED_NOT_UNOPPOSED_NOMINEES:${where}`);
   const candidates = raw.candidates.map((candidate) => {
     const votes = candidate.votes ?? 0;
     if (!Number.isSafeInteger(votes) || votes < 0) fail(`VOTES_INVALID:${where}:${candidate.name}`);
     return { name: candidate.name.replace(/\s+/g, " ").trim(), votes, writeIn: candidate.writeIn ?? false };
   }).sort((left, right) => right.votes - left.votes || byteCompare(left.name, right.name));
-  if (candidates.filter((candidate) => !candidate.writeIn).length === 0) fail(`NO_NAMED_CANDIDATE:${where}`);
+  // A primary with only an unnamed write-in line is kept: it shows the party fielded no filed candidate.
+  if (candidates.length === 0) fail(`NO_CANDIDATE_LINE:${where}`);
   const marked = raw.candidates.filter((candidate) => candidate.winner === true).map((candidate) => candidate.name.replace(/\s+/g, " ").trim());
   const stage = raw.stage ?? "primary", special = raw.special ?? false, seats = raw.seats ?? 1;
   const partySlug = raw.rawParty === null ? "all" : raw.rawParty.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");

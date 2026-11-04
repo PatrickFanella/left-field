@@ -48,8 +48,11 @@ async function request(source: StateGeneralSource, fetchImpl: typeof fetch): Pro
 
 async function download(source: StateGeneralSource, fetchImpl: typeof fetch): Promise<Buffer> {
   const response = await request(source, fetchImpl);
-  if (!response.ok) throw new Error(`STATE_RETURNS_DOWNLOAD_FAILED:${response.status}:${source.url}`);
-  return Buffer.from(await response.arrayBuffer());
+  // A bot filter can answer 202 with an empty challenge page; neither that nor an empty body is the file.
+  if (!response.ok || response.status === 202) throw new Error(`STATE_RETURNS_DOWNLOAD_FAILED:${response.status}:${source.url}`);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  if (bytes.length === 0) throw new Error(`STATE_RETURNS_DOWNLOAD_EMPTY:${source.url}`);
+  return bytes;
 }
 
 async function retain(lock: SourceLock, source: StateGeneralSource, root: string, fetchImpl: typeof fetch, checkOnly: boolean, log: (line: string) => void): Promise<SourceLock> {

@@ -125,9 +125,10 @@ export function resolveOutcome(input: ResolveInput): Resolution {
 
   if (candidacy === "filed_for_other_office") return done("incumbent_ran_for_other_office", "fec_filing", notApplicable, notApplicable);
 
-  // The holder's own party primary, or the all-party ballot every holder faces whatever their party.
+  // The holder's own party primary, or the all-party ballot every holder faces whatever their party. A holder the
+  // roster lists outside the major parties counts a major-party primary only where it names them.
   const majorParty = row.holderParty === "Democratic" || row.holderParty === "Republican";
-  const ownPrimaries = input.primaries.filter((contest) => contest.party === null || (majorParty && contest.party === row.holderParty));
+  const ownPrimaries = input.primaries.filter((contest) => contest.party === null || (majorParty ? contest.party === row.holderParty : contest.candidates.some((candidate) => holderMatches(holder, candidate.name))));
   const primary = assess("primary", ownPrimaries, holder, PRIMARY_RUNOFF_THRESHOLDS[row.stateCode] ?? null);
   cite(primary.sourceIds);
   if (primary.holderOnBallot === false) candidacy = "not_on_primary_ballot";

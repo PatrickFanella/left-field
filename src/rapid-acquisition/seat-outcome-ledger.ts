@@ -74,9 +74,9 @@ const splitName = (name: string): HolderName => { const tokens = name.trim().spl
 export function holderNames(root: string, lock: SourceLock, snapshot: PreElectionSnapshot2026): ReadonlyMap<string, HolderName> {
   const congress = new Map<string, HolderName>();
   for (const id of [congressRosterId(root, lock), CONGRESS_LEGISLATORS_BASELINE_ID]) {
-    for (const person of JSON.parse(readRetainedSource(lock, id, root).bytes.toString("utf8")) as (Legislator & { name?: { first?: string; last?: string } })[]) {
+    for (const person of JSON.parse(readRetainedSource(lock, id, root).bytes.toString("utf8")) as (Legislator & { name?: { first?: string; last?: string; nickname?: string } })[]) {
       const bioguide = person.id?.bioguide;
-      if (bioguide && !congress.has(bioguide) && person.name?.last) congress.set(bioguide, { familyName: person.name.last, givenName: person.name.first ?? "" });
+      if (bioguide && !congress.has(bioguide) && person.name?.last) congress.set(bioguide, { familyName: person.name.last, givenName: person.name.first ?? "", ...(person.name.nickname ? { nickname: person.name.nickname } : {}) });
     }
   }
   const legislators = new Map(readStateLegislativeRoster(root, lock).rows.map((row) => [row.openStatesId, { familyName: row.familyName, givenName: row.givenName }]));
