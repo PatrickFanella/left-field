@@ -1,6 +1,9 @@
+import { GOVERNOR_SCORE_V01, readGovernorScoreV01Projection, type GovernorScoreV01Row } from "./governor-score-v01";
 import { readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
+import { holderPartyOf, type HolderParty, type PreElectionSeatRow, type PreElectionSnapshot2026 } from "./pre-election-snapshot-2026";
+import { CONGRESS_LEGISLATORS_BASELINE_ID, readRefreshInputs } from "./refresh-inputs";
 import { byteCompare } from "./shared";
-import { districtKey, type StateChamber } from "./state-legislative-roster";
+import { districtKey, readStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER, type StateChamber, type StateLegislativeRosterRow } from "./state-legislative-roster";
 
 /**
  * Evidence readers for the seat outcome ledger.
@@ -118,4 +121,96 @@ export function readStateLegislativePrimaryEvidence2026(root = process.cwd(), lo
     }
   }
   return byDistrict;
+}
+
+export type CandidacyStatus = "filed_for_seat" | "filed_for_other_office" | "not_on_primary_ballot" | "not_observed" | "not_applicable";
+export interface HolderCandidacy {
+  readonly status: CandidacyStatus;
+  readonly sourceIds: readonly string[];
+}
+
+export const HOUSE_INCUMBENT_CANDIDACY_ID = "house-incumbent-candidacy-v1";
+
+/** What the FEC candidate master says about each House holder's 2026 filing. Retirement is not observable here. */
+export function readHouseCandidacyEvidence(root = process.cwd(), lock: SourceLock = readSourceLock(root)): ReadonlyMap<string, HolderCandidacy> {
+  const artifact = readJson<{ rows: { seatCycleId: string; houseStatutoryCandidate2026: boolean; openSeatSignal: string | null }[] }>(lock, HOUSE_INCUMBENT_CANDIDACY_ID, root);
+  return new Map(artifact.rows.map((row) => [row.seatCycleId, {
+    status: row.openSeatSignal !== null ? "filed_for_other_office" : row.houseStatutoryCandidate2026 ? "filed_for_seat" : "not_observed",
+    sourceIds: [HOUSE_INCUMBENT_CANDIDACY_ID],
+  }]));
+}
+
+export interface Successor {
+  readonly holderId: string;
+  readonly holderName: string;
+  readonly party: HolderParty;
+  readonly sourceId: string;
+}
+
+export type Legislator = Readonly<{ id?: { bioguide?: string }; name?: { first?: string; last?: string; official_full?: string }; terms: readonly Readonly<{ type: string; state: string; district?: number; class?: number; party?: string }>[] }>;
+export type SuccessorRosters = Readonly<{
+  congress?: readonly Legislator[];
+  governors?: readonly Pick<GovernorScoreV01Row, "stateCode" | "openStatesId" | "governorName" | "incumbentParty">[];
+  stateLegislative?: readonly Pick<StateLegislativeRosterRow, "stateCode" | "chamber" | "districtKey" | "openStatesId" | "name" | "party">[];
+}>;
+
+const legislatorName = (person: Legislator): string => person.name?.official_full ?? `${person.name?.first ?? ""} ${person.name?.last ?? ""}`.trim();
+
+/**
+ * For every frozen seat, the holder the current rosters name in its place, or
+ * null while the frozen holder is still there (or the seat is vacant). In a
+ * multi-member district the departed holders and the arrivals are paired in
+ * holder-id order; a district with more departures than arrivals leaves the
+ * rest null. The pairing carries a party, which is what the resolver reads.
+ */
+export function readSuccessors(root = process.cwd(), lock: SourceLock = readSourceLock(root), snapshot: PreElectionSnapshot2026, rosters: SuccessorRosters = {}): ReadonlyMap<string, Successor | null> {
+  const congressId = readRefreshInputs(root, lock).congressLegislatorsId ?? CONGRESS_LEGISLATORS_BASELINE_ID;
+  const congress = rosters.congress ?? readJson<Legislator[]>(lock, congressId, root);
+  const governors = rosters.governors ?? readGovernorScoreV01Projection(root, lock).rows;
+  const legislators = rosters.stateLegislative ?? readStateLegislativeRoster(root, lock).rows;
+  const reps = new Map<string, Legislator>(), senators = new Map<string, Legislator>();
+  for (const person of congress) {
+    const term = person.terms.at(-1);
+    if (!term) continue;
+    if (term.type === "rep") reps.set(`${term.state}|${term.district ?? 0}`, person);
+    else if (term.type === "sen") senators.set(`${term.state}|${term.class ?? ""}`, person);
+  }
+  const governorsByState = new Map(governors.map((row) => [row.stateCode, row]));
+  const districts = new Map<string, NonNullable<SuccessorRosters["stateLegislative"]>[number][]>();
+  for (const row of legislators) {
+    const key = `${row.stateCode}|${row.chamber}|${row.districtKey}`;
+    districts.set(key, [...(districts.get(key) ?? []), row]);
+  }
+  const fromCongress = (person: Legislator | undefined, frozen: PreElectionSeatRow): Successor | null => {
+    const bioguide = person?.id?.bioguide;
+    if (!bioguide || bioguide === frozen.holderId) return null;
+    return { holderId: bioguide, holderName: legislatorName(person!), party: holderPartyOf(person!.terms.at(-1)?.party ?? ""), sourceId: congressId };
+  };
+
+  const result = new Map<string, Successor | null>();
+  const frozenDistricts = new Map<string, PreElectionSeatRow[]>();
+  for (const row of snapshot.rows) {
+    const house = row.seatId.match(/^seat_house_([a-z]{2})_(al|\d{2})_current$/), senate = row.seatId.match(/^seat_senate_([a-z]{2})_(\d)_current$/), governor = row.seatId.match(/^seat_governor_([a-z]{2})_current$/), state = row.seatId.match(/^seat_state_([a-z]{2})_(lower|upper|unicameral)_(.+)_(\d+)$/);
+    if (house) result.set(row.seatId, fromCongress(reps.get(`${house[1]!.toUpperCase()}|${house[2] === "al" ? 0 : Number(house[2])}`), row));
+    else if (senate) result.set(row.seatId, fromCongress(senators.get(`${senate[1]!.toUpperCase()}|${senate[2]}`), row));
+    else if (governor) {
+      const current = governorsByState.get(governor[1]!.toUpperCase());
+      result.set(row.seatId, !current || current.openStatesId === row.holderId ? null : { holderId: current.openStatesId, holderName: current.governorName, party: holderPartyOf(current.incumbentParty), sourceId: GOVERNOR_SCORE_V01.id });
+    } else if (state) {
+      const key = `${state[1]!.toUpperCase()}|${state[2]}|${state[3]!.replace(/-/g, " ")}`;
+      frozenDistricts.set(key, [...(frozenDistricts.get(key) ?? []), row]);
+    } else fail(`SEAT_ID_UNRECOGNISED:${row.seatId}`);
+  }
+  for (const [key, frozen] of frozenDistricts) {
+    const current = districts.get(key) ?? [];
+    const currentIds = new Set(current.map((row) => row.openStatesId)), frozenIds = new Set(frozen.map((row) => row.holderId));
+    const departed = frozen.filter((row) => !currentIds.has(row.holderId)).sort((left, right) => byteCompare(left.holderId, right.holderId));
+    const arrivals = current.filter((row) => !frozenIds.has(row.openStatesId)).sort((left, right) => byteCompare(left.openStatesId, right.openStatesId));
+    for (const row of frozen) result.set(row.seatId, null);
+    departed.forEach((row, index) => {
+      const arrival = arrivals[index];
+      result.set(row.seatId, arrival ? { holderId: arrival.openStatesId, holderName: arrival.name, party: holderPartyOf(arrival.party), sourceId: STATE_LEGISLATIVE_ROSTER.id } : null);
+    });
+  }
+  return result;
 }

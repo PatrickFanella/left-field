@@ -69,7 +69,7 @@ const fail = (code: string): never => { throw new Error(`PRE_ELECTION_${code}`);
 /** The holder's party as the roster names it: a state affiliate counts as its national party; anything else is Independent or Other. */
 export const holderPartyOf = (raw: string): HolderParty => {
   const value = raw.trim().toLowerCase();
-  if (value.startsWith("democratic")) return "Democratic";
+  if (value.startsWith("democrat")) return "Democratic";
   if (value.startsWith("republican")) return "Republican";
   if (value.startsWith("independent")) return "Independent";
   return "Other";

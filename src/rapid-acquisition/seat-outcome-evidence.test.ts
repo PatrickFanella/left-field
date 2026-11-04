@@ -1,6 +1,66 @@
 import { describe, expect, it } from "vitest";
 
-import { countStatusOf, readHousePrimaryEvidence2026, readStateLegislativePrimaryEvidence2026 } from "./seat-outcome-evidence";
+import { readSourceLock } from "./intake/source-lock";
+import { readPreElectionSnapshot2026, type PreElectionSeatRow } from "./pre-election-snapshot-2026";
+import { countStatusOf, readHouseCandidacyEvidence, readHousePrimaryEvidence2026, readStateLegislativePrimaryEvidence2026, readSuccessors } from "./seat-outcome-evidence";
+
+const seat = (overrides: Partial<PreElectionSeatRow>): PreElectionSeatRow => ({
+  chamber: "state_house", seatId: "seat", seatLabel: "VT House Chittenden-18", stateCode: "VT", holderName: "", holderId: "", holderParty: "Democratic", scoreStatus: "scored",
+  route: null, score: null, rank: null, chamberRank: null, nextElectionYear: 2026, openSeatSignal: null, rowSha256: "", ...overrides,
+});
+
+describe("House candidacy evidence", () => {
+  it("reads the FEC-filing signal for every House seat", () => {
+    const value = readHouseCandidacyEvidence();
+    expect(value.size).toBe(430);
+    const statuses = [...value.values()].map((row) => row.status);
+    expect(statuses.filter((status) => status === "filed_for_other_office")).toHaveLength(16);
+    expect(statuses.filter((status) => status === "not_observed")).toHaveLength(3);
+    expect(statuses.filter((status) => status === "filed_for_seat")).toHaveLength(411);
+    expect([...value.values()].every((row) => row.sourceIds.includes("house-incumbent-candidacy-v1"))).toBe(true);
+  });
+});
+
+describe("roster successors", () => {
+  it("finds few successors while the rosters predate seating", () => {
+    const snapshot = readPreElectionSnapshot2026();
+    const value = readSuccessors(process.cwd(), readSourceLock(), snapshot);
+    expect(value.size).toBe(snapshot.rows.length);
+    const changed = [...value.entries()].filter(([, successor]) => successor !== null);
+    expect(changed.length).toBeLessThan(40);
+    expect(changed.every(([seatId]) => seatId.startsWith("seat_house_") || seatId.startsWith("seat_senate_"))).toBe(true);
+  });
+
+  it("pairs a departed holder in a multi-member district with the arriving one", () => {
+    const snapshot = { ...readPreElectionSnapshot2026(), rows: [
+      seat({ seatId: "seat_state_vt_lower_chittenden-18_1", holderId: "ocd-person/a", holderName: "Ann Kept" }),
+      seat({ seatId: "seat_state_vt_lower_chittenden-18_2", holderId: "ocd-person/b", holderName: "Bob Gone" }),
+      seat({ chamber: "state_senate", seatId: "seat_state_vt_upper_orleans_1", holderId: "ocd-person/d", holderName: "Dee Vacant" }),
+    ] };
+    const roster = [
+      { stateCode: "VT", chamber: "lower" as const, districtKey: "chittenden 18", openStatesId: "ocd-person/a", name: "Ann Kept", party: "Democratic" as const },
+      { stateCode: "VT", chamber: "lower" as const, districtKey: "chittenden 18", openStatesId: "ocd-person/c", name: "Carol New", party: "Republican" as const },
+    ];
+    const value = readSuccessors(process.cwd(), readSourceLock(), snapshot, { congress: [], governors: [], stateLegislative: roster });
+    expect(value.get("seat_state_vt_lower_chittenden-18_1")).toBeNull();
+    expect(value.get("seat_state_vt_lower_chittenden-18_2")).toEqual({ holderId: "ocd-person/c", holderName: "Carol New", party: "Republican", sourceId: "state-legislative-roster-v1" });
+    expect(value.get("seat_state_vt_upper_orleans_1")).toBeNull();
+  });
+
+  it("reads House and Senate successors from the Congress roster by district and class", () => {
+    const snapshot = { ...readPreElectionSnapshot2026(), rows: [
+      seat({ chamber: "house", seatId: "seat_house_ak_al_current", seatLabel: "AK-AL", stateCode: "AK", holderId: "A000001" }),
+      seat({ chamber: "senate", seatId: "seat_senate_ak_2_current", seatLabel: "AK Senate class 2", stateCode: "AK", holderId: "S000001" }),
+    ] };
+    const congress = [
+      { id: { bioguide: "N000001" }, name: { first: "New", last: "Rep", official_full: "New Rep" }, terms: [{ type: "rep", state: "AK", district: 0, party: "Democrat" }] },
+      { id: { bioguide: "S000001" }, name: { first: "Same", last: "Senator" }, terms: [{ type: "sen", state: "AK", class: 2, party: "Republican" }] },
+    ];
+    const value = readSuccessors(process.cwd(), readSourceLock(), snapshot, { congress, governors: [], stateLegislative: [] });
+    expect(value.get("seat_house_ak_al_current")).toEqual({ holderId: "N000001", holderName: "New Rep", party: "Democratic", sourceId: expect.stringMatching(/^congress-legislators-current-\d{8}$/) });
+    expect(value.get("seat_senate_ak_2_current")).toBeNull();
+  });
+});
 
 describe("count status", () => {
   it("grades counts fail-closed", () => {
