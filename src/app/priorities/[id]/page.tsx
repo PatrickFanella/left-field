@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { OutcomeLine } from "@/components/outcome-line";
 import { Shell, fmtCount, fmtDate, fmtMoney } from "@/components/presentational";
 import { formatPartisanMargin } from "@/lib/house-priority-index";
+import { outcomeFor } from "@/lib/outcome-ledger-view";
 import { getDefaultPriorityRepository } from "@/lib/priority-index-store";
 import { measuredInputs, priorityStandings } from "@/lib/priority-index-view";
 
@@ -69,6 +71,7 @@ export default async function PriorityBrief({ params }: Props) {
             <p className="eyebrow">{row.chamber === "house" || row.chamber === "state_house" || row.chamber === "state_senate" ? "THE DISTRICT" : "THE STATE"}</p>
             <h2>{row.districtLabel}</h2>
             <p>{row.districtSummary}</p>
+            <OutcomeLine row={outcomeFor(row.seatCycleId)} />
             <dl className="brief-facts">
               <dt>{row.chamber === "state_house" || row.chamber === "state_senate" ? "Own-race margin" : "2024 presidential margin"}</dt>
               <dd>{formatPartisanMargin(row.presidentialDemocraticMargin2024)}</dd>

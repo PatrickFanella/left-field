@@ -64,11 +64,12 @@ describe("roster successors", () => {
 
 describe("count status", () => {
   it("grades counts fail-closed", () => {
-    expect(countStatusOf("settings_certified_true_no_separate_certificate", "x")).toBe("certified");
-    expect(countStatusOf("official_statewide_vote_totals_certification_pdf_retained", "x")).toBe("certified");
-    expect(countStatusOf("final_unofficial_no_separate_certification_instrument_retained", "x")).toBe("unofficial");
-    expect(countStatusOf(undefined, "official_statewide_democratic_recap_pdf_retained_no_separate_certification_instrument")).toBe("unofficial");
-    expect(countStatusOf(null, "anything")).toBe("unofficial");
+    expect(countStatusOf("settings_certified_true_no_separate_certificate")).toBe("certified");
+    expect(countStatusOf("official_statewide_vote_totals_certification_pdf_retained")).toBe("certified");
+    expect(countStatusOf("final_unofficial_no_separate_certification_instrument_retained")).toBe("unofficial");
+    // Mississippi's recap carries no certification status at all: an official recap is not a certified count.
+    expect(countStatusOf(undefined)).toBe("unofficial");
+    expect(countStatusOf(null)).toBe("unofficial");
   });
 });
 

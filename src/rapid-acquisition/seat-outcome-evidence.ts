@@ -43,7 +43,7 @@ export const CERTIFIED_COUNT_STATUSES: readonly string[] = [
   "official_statewide_vote_totals_certification_pdf_retained",
 ];
 
-export const countStatusOf = (certificationStatus: string | null | undefined, _resultAuthorityStatus: string): CountStatus =>
+export const countStatusOf = (certificationStatus: string | null | undefined): CountStatus =>
   certificationStatus !== null && certificationStatus !== undefined && CERTIFIED_COUNT_STATUSES.includes(certificationStatus) ? "certified" : "unofficial";
 
 const fail = (code: string): never => { throw new Error(`OUTCOME_EVIDENCE_${code}`); };
@@ -82,7 +82,7 @@ export function readHousePrimaryEvidence2026(root = process.cwd(), lock: SourceL
       const evidence: PrimaryEvidence = {
         contestId: result.resultId, sourceIds: result.sourceLockIds ?? [id], party: evidencePartyOf(result.rawParty ?? "D") ?? "Democratic", electionDate: result.electionDate, seats: 1,
         candidates: result.sourceCandidateNames.map((name, index) => ({ name, votes: result.candidateVotes[index]! })),
-        sourceMarkedWinners: marked, countStatus: countStatusOf(result.certificationStatus, result.resultAuthorityStatus),
+        sourceMarkedWinners: marked, countStatus: countStatusOf(result.certificationStatus),
       };
       byDistrict.set(result.districtLabel, [...(byDistrict.get(result.districtLabel) ?? []), evidence]);
     }
@@ -120,7 +120,7 @@ export function readStateLegislativePrimaryEvidence2026(root = process.cwd(), lo
       const evidence: PrimaryEvidence = {
         contestId: contest.contestId, sourceIds: contest.sourceLockIds ?? [id], party, electionDate: contest.electionDate, seats: contest.seats ?? 1,
         candidates: contest.candidates.map((candidate) => ({ name: candidate.sourceName, votes: candidate.votes })),
-        sourceMarkedWinners: null, countStatus: countStatusOf(contest.certificationStatus, contest.resultAuthorityStatus),
+        sourceMarkedWinners: null, countStatus: countStatusOf(contest.certificationStatus),
       };
       byDistrict.set(key, [...(byDistrict.get(key) ?? []), evidence]);
     }

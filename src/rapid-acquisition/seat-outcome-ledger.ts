@@ -99,7 +99,9 @@ export function buildSeatOutcomeLedger(root = process.cwd(), lock: SourceLock = 
       primaries: frozen.chamber === "house" ? housePrimaries.get(frozen.seatLabel) ?? [] : key ? statePrimaries.get(key) ?? [] : [],
       generals: [], successor: successors.get(frozen.seatId) ?? null,
     });
-    const { rowSha256: _frozenHash, ...seat } = frozen;
+    // The frozen row's own hash is not carried; the ledger row signs the joined record.
+    const { rowSha256, ...seat } = frozen;
+    void rowSha256;
     const unsigned = { ...seat, ...resolution, observedAt };
     return { ...unsigned, rowSha256: hash("dsa-seats:seat-outcome-row:v1", unsigned) };
   }).sort((left, right) => byteCompare(left.chamber, right.chamber) || byteCompare(left.seatId, right.seatId));

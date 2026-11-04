@@ -1,4 +1,6 @@
-import { readSeatOutcomeLedger, type SeatOutcomeLedger, type SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
+import { findSourceLockEntry, readSourceLock } from "@/rapid-acquisition/intake/source-lock";
+import { PRE_ELECTION_SNAPSHOT_2026 } from "@/rapid-acquisition/pre-election-snapshot-2026";
+import { readSeatOutcomeLedger, SEAT_OUTCOME_LEDGER, type SeatOutcomeLedger, type SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
 import type { CandidacyStatus } from "@/rapid-acquisition/seat-outcome-evidence";
 import type { ContestStatus, EvidenceGrade, Outcome } from "@/rapid-acquisition/seat-outcome-resolver";
 import type { StateLegislativeScoreStatus } from "@/rapid-acquisition/state-legislative-score-v01";
@@ -93,6 +95,18 @@ export interface CoverageRow {
 }
 
 /** Seats and scored seats per chamber, with the unscored reasons the index recorded. */
+/** The two outcome artifacts as the lock pins them, for the sources page. */
+export function ledgerSources(): readonly Readonly<{ id: string; label: string; sha256: string; byteSize: number }>[] {
+  const lock = readSourceLock();
+  return [
+    { id: PRE_ELECTION_SNAPSHOT_2026.id, label: "Pre-election index, frozen 2026-11-03" },
+    { id: SEAT_OUTCOME_LEDGER.id, label: "Seat outcome ledger, rebuilt by each publish" },
+  ].map((artifact) => {
+    const entry = findSourceLockEntry(lock, artifact.id);
+    return { ...artifact, sha256: entry?.sha256 ?? "not pinned", byteSize: entry?.byteSize ?? 0 };
+  });
+}
+
 export function coverageTable(ledger: SeatOutcomeLedger): CoverageRow[] {
   return CHAMBER_ORDER.map((chamber) => {
     const rows = ledger.rows.filter((row) => row.chamber === chamber);
