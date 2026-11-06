@@ -8,7 +8,7 @@ import re
 import shutil
 import subprocess
 import tarfile
-import urllib.request
+import gzip
 import uuid
 
 STATE = Path.home() / '.local/state/fleet-deploy/left-field'
@@ -77,15 +77,23 @@ def retain_source(image, digest):
     staging = None
     try:
         if not target.exists():
-            size = int(run(['docker', 'run', '--rm', '--network', 'none', '--read-only', '--entrypoint', 'stat', image, '-c', '%s', '/app/deploy/ci/source.tar']))
+            size = int(run(['docker', 'run', '--rm', '--network', 'none', '--read-only', '--entrypoint', 'stat', image, '-c', '%s', '/app/deploy/ci/source.tar.gz']))
             assert 0 < size <= 2 * 1024**3 and shutil.disk_usage(RELEASES).free > 2 * size + 4 * 1024**3
             staging = RELEASES / ('.ci-' + uuid.uuid4().hex)
             run(['sudo', '-n', 'install', '-d', '-m', '0700', '-o', str(os.getuid()), '-g', str(os.getgid()), str(staging)])
             archive = staging / 'source.tar'
-            with archive.open('wb') as output:
+            compressed = staging / 'source.tar.gz'
+            with compressed.open('wb') as output:
                 result = subprocess.run(['docker', 'run', '--rm', '--init', '--network', 'none', '--read-only', '--log-driver', 'none', '--entrypoint', '/usr/bin/timeout',
-                                         image, '-s', 'TERM', '-k', '5', '60', 'cat', '/app/deploy/ci/source.tar'], stdout=output, stderr=subprocess.DEVNULL, timeout=45)
+                                         image, '-s', 'TERM', '-k', '5', '60', 'cat', '/app/deploy/ci/source.tar.gz'], stdout=output, stderr=subprocess.DEVNULL, timeout=45)
             assert result.returncode == 0
+            with gzip.open(compressed, 'rb') as input_stream, archive.open('wb') as output:
+                total = 0
+                while block := input_stream.read(1024 * 1024):
+                    total += len(block)
+                    assert total <= 2 * 1024**3
+                    output.write(block)
+            compressed.unlink()
             with archive.open('rb') as source:
                 assert hashlib.file_digest(source, 'sha256').hexdigest() == digest
             source = staging / 'source'
@@ -107,6 +115,7 @@ def retain_source(image, digest):
         if staging:
             shutil.rmtree(staging / 'source', ignore_errors=True)
             (staging / 'source.tar').unlink(missing_ok=True)
+            (staging / 'source.tar.gz').unlink(missing_ok=True)
             run(['sudo', '-n', 'rmdir', '--', str(staging)])
 
 
@@ -120,8 +129,9 @@ def main():
     assert api['HostConfig'].get('Tmpfs', {}) == registration['tmpfs']
     revision = run(['git', 'ls-remote', SOURCE + '.git', 'refs/heads/main']).decode().split()[0]
     assert re.fullmatch(r'[0-9a-f]{40}', revision)
-    with urllib.request.urlopen(SOURCE.replace('https://git.subcult.tv/', 'https://git.subcult.tv/api/v1/repos/') + '/commits/' + revision + '/status', timeout=10) as response:
-        checks = json.load(response)['statuses']
+    assert json.loads(run(['/usr/local/bin/tea', 'api', '--login', 'subcult-agent', '/user']))['login'] == 'subcult-agent'
+    checks = json.loads(run(['/usr/local/bin/tea', 'api', '--login', 'subcult-agent',
+                             '/repos/subculture-collective/left-field/commits/' + revision + '/status']))['statuses']
     required = ['static / static (push)', 'acceptance / acceptance (push)']
     for name in required:
         matching = [s for s in checks if s['context'] in [name, name.replace('(push)', '(workflow_dispatch)')]]

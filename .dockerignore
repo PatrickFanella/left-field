@@ -11,3 +11,8 @@ data/fec-local*.json
 data/fec-local*.artifacts
 *.log
 *.tsbuildinfo
+
+# The image transports the compressed copy; native recovery retains source.tar.
+deploy/ci/source.tar
+deploy/ci/source.tmp
+deploy/ci/source.gz.tmp

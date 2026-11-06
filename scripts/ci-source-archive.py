@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Retain the exact tracked, LFS-materialized build input for native recovery."""
 import hashlib
+import gzip
+import shutil
 import os
 from pathlib import Path
 import subprocess
@@ -16,10 +18,13 @@ def main():
     root = Path(git('rev-parse', '--show-toplevel').decode().strip())
     os.chdir(root)
     assert not git('status', '--porcelain', '--untracked-files=no'), 'Commit the reviewed build inputs first'
+    assert shutil.disk_usage(root).free > 8 * 1024**3
     revision = git('rev-parse', 'HEAD')
     destination = root / 'deploy/ci/source.tar'
     destination.parent.mkdir(exist_ok=True)
     temporary = destination.with_suffix('.tmp')
+    compressed = destination.with_suffix('.tar.gz')
+    compressed_temporary = destination.with_suffix('.gz.tmp')
     try:
         with tarfile.open(temporary, 'w', format=tarfile.PAX_FORMAT) as archive:
             for record in git('ls-files', '--stage', '-z').split(b'\0'):
@@ -48,11 +53,17 @@ def main():
                         archive.addfile(info, source)
         assert git('rev-parse', 'HEAD') == revision
         assert not git('status', '--porcelain', '--untracked-files=no')
+        assert temporary.stat().st_size <= 2 * 1024**3
         os.replace(temporary, destination)
+        with destination.open('rb') as source, compressed_temporary.open('wb') as output:
+            with gzip.GzipFile(filename='', mode='wb', fileobj=output, mtime=0) as gzip_output:
+                shutil.copyfileobj(source, gzip_output, length=1024 * 1024)
+        os.replace(compressed_temporary, compressed)
         with destination.open('rb') as source:
             print(hashlib.file_digest(source, 'sha256').hexdigest())
     finally:
         temporary.unlink(missing_ok=True)
+        compressed_temporary.unlink(missing_ok=True)
 
 
 if __name__ == '__main__':

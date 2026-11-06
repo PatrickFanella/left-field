@@ -14,6 +14,7 @@ POSTGRES = 'postgis/postgis@sha256:681931a625df344215e9b8998bf34daf146b6a395ceac
 def run(args, timeout=120, data=None):
     result = subprocess.run(args, input=data, capture_output=True, timeout=timeout)
     if result.returncode:
+        sys.stderr.buffer.write(result.stdout[-8192:] + result.stderr[-8192:])
         raise RuntimeError('Disposable image-check command failed')
     return result.stdout
 
@@ -47,7 +48,7 @@ def main(image, revision):
         run(['docker', 'run', '--name', seed, '--rm', '--init', '--network', network, '--memory', '4g', '--cpus', '2',
                     '--pids-limit', '256', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges:true',
                     '-e', 'NODE_ENV=test', '-e', 'DATABASE_URL=postgresql://dsa_seats:dsa_seats@postgres:5432/dsa_seats_ci_test',
-                    '-e', 'MAP_ARTIFACT_ROOT=/tmp/task13/task10-maps', '-v', volume + ':/tmp/task13/task10-maps',
+                    '-e', 'MAP_ARTIFACT_ROOT=/tmp/task13/task10-maps', '-v', volume + ':/tmp/task13',
                     '--entrypoint', '/usr/bin/timeout', image, '-s', 'TERM', '-k', '5', '150',
                     '/bin/sh', '-c', 'npm run db:migrate && npx --no-install tsx scripts/seed-task10-map-e2e.ts'], timeout=170)
         sql = b"CREATE ROLE dsa_seats_web_login LOGIN PASSWORD 'disposable-ci-only' NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS INHERIT; GRANT dsa_seats_web TO dsa_seats_web_login;"
@@ -55,7 +56,7 @@ def main(image, revision):
         app = run(['docker', 'run', '--rm', '-d', '--init', '--network', network, '--memory', '1536m', '--cpus', '2',
                    '--pids-limit', '256', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges:true',
                    '-e', 'NODE_ENV=production', '-e', 'WEB_DATABASE_URL=postgresql://dsa_seats_web_login:disposable-ci-only@postgres:5432/dsa_seats_ci_test',
-                   '-e', 'MAP_ARTIFACT_ROOT=/tmp/task13/task10-maps', '-v', volume + ':/tmp/task13/task10-maps:ro',
+                   '-e', 'MAP_ARTIFACT_ROOT=/tmp/task13/task10-maps', '-v', volume + ':/tmp/task13:ro',
                    '--entrypoint', '/usr/bin/timeout', image, '-s', 'TERM', '-k', '5', '240',
                    '/app/deploy/nuc/run-with-secrets.sh', 'npm', 'run', 'start', '--', '-H', '0.0.0.0']).decode().strip()
         fetch_js = "const r=await fetch('http://127.0.0.1:3000'+process.argv[1]);const b=Buffer.from(await r.arrayBuffer());console.log(JSON.stringify({status:r.status,headers:Object.fromEntries(r.headers),sha256:(await import('node:crypto')).createHash('sha256').update(b).digest('hex'),body:b.toString('base64')}));"
@@ -81,10 +82,18 @@ def main(image, revision):
         for name, expected in files.items():
             response = fetch('/' + name)
             assert response['status'] == 200 and response['sha256'] == expected, name
-        for path in ['/seats', '/seats/seat_0', '/sources', '/coverage', '/method']:
+        for path in ['/browse', '/seats/seat_0', '/sources', '/methodology', '/outcomes', '/about', '/lookup', '/corrections']:
             response = fetch(path)
             assert response['status'] == 200 and b'Left Field' in base64.b64decode(response['body']), path
-        print(json.dumps({'result': 'PASS', 'public_assets': len(files), 'marker_uncached_all_queries': True,
+            if path in ['/lookup', '/corrections']:
+                assert response['headers']['cache-control'] == 'no-store'
+                assert response['headers']['referrer-policy'] == 'no-referrer'
+        compiled_listing = listing.replace('/app/public', '/app/.next/static')
+        compiled = json.loads(run(['docker', 'run', '--rm', '--read-only', '--network', 'none', '--entrypoint', 'node', image, '-e', compiled_listing]))
+        for name, expected in compiled.items():
+            response = fetch('/_next/static/' + name)
+            assert response['status'] == 200 and response['sha256'] == expected, name
+        print(json.dumps({'result': 'PASS', 'public_assets': len(files), 'compiled_assets': len(compiled), 'marker_uncached_all_queries': True,
                           'native_fixture_only': True, 'read_only_web_role': True, 'production_credentials_used': False}))
     finally:
         for owned in [app, seed, pg]:

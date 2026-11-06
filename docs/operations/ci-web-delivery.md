@@ -4,7 +4,8 @@ The existing required `static / static` and `acceptance / acceptance` jobs retai
 their source checks, typecheck, lint, tests, audit, database/query/browser gates
 and production builds. A dependent `acceptance / Web image` job qualifies the
 actual native image after acceptance succeeds. Promotion additionally checks
-successful static and acceptance statuses for the exact current main commit.
+successful static and acceptance statuses for the exact current main commit,
+read through the host’s existing explicit `subcult-agent` CLI login.
 Only canonical Gitea main pushes or workflow dispatches can activate an image.
 Pull requests run image qualification without deployment credentials.
 
@@ -35,9 +36,9 @@ the pinned LFS input, then `scripts/ci-source-archive.py` packages only committe
 tracked build inputs with deterministic metadata. It refuses dirty source,
 unmaterialized LFS pointers and source symlinks escaping the repository. Untracked
 runtime files are omitted. The archive SHA-256 is the native source-tree label;
-the image retains the archive in `/app/deploy/ci/source.tar`.
+the image transports its deterministic gzip copy in `/app/deploy/ci/source.tar.gz`.
 
-Before activation, the hook verifies the archive bytes and source lock, extracts
+Before activation, the hook decompresses with a size limit, verifies the archive bytes and source lock, and extracts
 it with safe path filtering into a new private native release directory, and
 atomically installs the archive/tree at
 `/srv/server/projects/dsa-seats-r1/releases/<archive-sha256>/`. Existing source
