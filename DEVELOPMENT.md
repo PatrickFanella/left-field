@@ -93,3 +93,8 @@ All Next.js, React, accessibility, and TypeScript lint rules remain enabled.
 brace, array, and normalized Windows-style roots and still rejects internal
 HTML links. Remove the override when the upstream plugin has a safe dependency
 chain, and retain the compatibility check when upgrading it.
+
+
+## Automatic factual web delivery
+
+[CI web delivery](docs/operations/ci-web-delivery.md) documents the required gates, exact-source backup identity, web-only scope and recovery. Data publication retains the [release runbook](docs/operations/release-runbook.md).
