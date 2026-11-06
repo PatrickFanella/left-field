@@ -5,6 +5,7 @@ import { CONGRESS_LEGISLATORS_BASELINE_ID, readRefreshInputs } from "./refresh-i
 import { familyMatches, holderMatches, type HolderName } from "./holder-name-match";
 import { byteCompare } from "./shared";
 import { STATE_PRIMARY_RESULTS_2026, type PrimaryOffice, type StatePrimaryResults2026 } from "./state-primary-results-2026";
+import { STATE_LEGISLATIVE_GENERAL_RESULTS, type StateLegislativeGeneralResults } from "./state-legislative-general-results";
 import { districtKey, readStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER, type StateChamber, type StateLegislativeRosterRow } from "./state-legislative-roster";
 
 /**
@@ -219,6 +220,32 @@ export function statePrimaryEntries(results: Pick<StatePrimaryResults2026, "cont
       sourceMarkedWinners: contest.sourceMarkedWinners, countStatus: contest.countStatus,
     },
   }));
+}
+
+export const GENERAL_ELECTION_DATE_2026 = "2026-11-03";
+
+/**
+ * The November 2026 state-legislative generals the general-results layer retains, as index entries for the
+ * general. Specials held earlier in 2026 are left out: the holder seated by one is the holder the frozen snapshot
+ * already names. A contest whose write-in line reaches the winning places is left out too, since the line may
+ * stand for several people and the order cannot say who won.
+ */
+export function stateLegislativeGeneralEntries(results: Pick<StateLegislativeGeneralResults, "contests">): PrimaryEvidenceEntry[] {
+  return results.contests.filter((contest) => contest.cycleYear === 2026 && contest.electionKind === "general" && contest.electionDate === GENERAL_ELECTION_DATE_2026).flatMap((contest) => {
+    const named = contest.candidates.filter((candidate) => !candidate.writeIn);
+    const lastWinningVotes = [...named].sort((left, right) => right.votes - left.votes)[contest.seats - 1]?.votes ?? 0;
+    if (contest.candidates.some((candidate) => candidate.writeIn && candidate.votes > 0 && candidate.votes >= lastWinningVotes)) return [];
+    const office: PrimaryOffice = contest.chamber === "lower" ? "state_lower" : contest.chamber === "upper" ? "state_upper" : "state_unicameral";
+    return [{
+      stateCode: contest.stateCode, office, district: contest.districtKey,
+      evidence: {
+        contestId: contest.contestId, sourceIds: [STATE_LEGISLATIVE_GENERAL_RESULTS.id, contest.sourceId], party: null, electionDate: contest.electionDate, seats: contest.seats, advance: contest.seats,
+        candidates: named.map((candidate) => ({ name: candidate.name, votes: candidate.votes, party: candidate.party })),
+        // The layer's contract: a contest without `resultStatus` comes from the certified canvass.
+        sourceMarkedWinners: null, countStatus: contest.resultStatus === "unofficial" ? "unofficial" : "certified",
+      },
+    }];
+  });
 }
 
 /** House evidence keyed by district label ("TX-18") as index entries. */
