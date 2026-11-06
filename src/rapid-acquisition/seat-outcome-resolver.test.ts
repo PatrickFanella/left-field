@@ -113,6 +113,29 @@ describe("resolveOutcome", () => {
     expect(resolve({ primaries: [primary()], generals: [{ ...general, candidates: [{ name: "Other Party", votes: 100 }, { name: "Steve Cohen", votes: 50 }] }] })).toMatchObject({ outcome: "incumbent_lost_general", evidence: "general_vote_order_certified" });
   });
 
+  it("holds a Georgia general as pending while a general runoff is possible", () => {
+    const general = (candidates: readonly { name: string; votes: number; party?: "Democratic" | "Republican" | "Independent" }[]) => resolve({
+      row: row({ stateCode: "GA", seatLabel: "GA House 1", holderName: "Ann Smith" }), holder: { familyName: "Smith", givenName: "Ann" }, candidacy: null,
+      primaries: [primary({ contestId: "ga:primary", candidates: [{ name: "Ann Smith", votes: 10 }] })],
+      generals: [primary({ contestId: "ga:general", party: null, electionDate: "2026-11-03", candidates })],
+    });
+    expect(general([{ name: "Ann Smith", votes: 49, party: "Democratic" }, { name: "Bob Jones", votes: 45, party: "Republican" }, { name: "Cal Lee", votes: 6, party: "Independent" }])).toMatchObject({ outcome: "unknown", general: { status: "pending", countStatus: "certified" } });
+    expect(general([{ name: "Ann Smith", votes: 51, party: "Democratic" }, { name: "Bob Jones", votes: 49, party: "Republican" }])).toMatchObject({ outcome: "incumbent_won", general: { status: "won" } });
+    // Outside the top two, the holder is out whatever the runoff decides.
+    expect(general([{ name: "Bob Jones", votes: 45, party: "Republican" }, { name: "Cal Lee", votes: 40, party: "Independent" }, { name: "Ann Smith", votes: 15, party: "Democratic" }])).toMatchObject({ outcome: "incumbent_lost_general" });
+  });
+
+  it("names an open seat's party only when every winner of the holder's contests shares it", () => {
+    const off = { candidacy: null, primaries: [primary({ candidates: [{ name: "Justin J. Pearson", votes: 1 }] })] };
+    const contest = (contestId: string, seats: number, candidates: readonly { name: string; votes: number; party: "Democratic" | "Republican" }[]) => primary({ contestId, party: null, electionDate: "2026-11-03", seats, advance: seats, candidates });
+    // A two-seat district that elected one of each party says nothing about the departed holder's seat.
+    expect(resolve({ ...off, generals: [contest("x:2", 2, [{ name: "A Dem", votes: 60, party: "Democratic" }, { name: "B Rep", votes: 55, party: "Republican" }, { name: "C Rep", votes: 40, party: "Republican" }])] })).toMatchObject({ outcome: "unknown" });
+    expect(resolve({ ...off, generals: [contest("x:2", 2, [{ name: "A Dem", votes: 60, party: "Democratic" }, { name: "B Dem", votes: 55, party: "Democratic" }, { name: "C Rep", votes: 40, party: "Republican" }])] })).toMatchObject({ outcome: "open_seat_held", evidence: "general_vote_order_certified", successorParty: "Democratic" });
+    // Two position contests on the same day, neither naming the holder: the same rule across both.
+    const positions = [contest("x:pos-1", 1, [{ name: "A Dem", votes: 60, party: "Democratic" }, { name: "B Rep", votes: 40, party: "Republican" }]), contest("x:pos-2", 1, [{ name: "C Rep", votes: 60, party: "Republican" }, { name: "D Dem", votes: 40, party: "Democratic" }])];
+    expect(resolve({ ...off, generals: positions })).toMatchObject({ outcome: "unknown" });
+  });
+
   it("holds a majority-state primary as pending while a runoff is possible", () => {
     const georgia = (candidates: readonly { name: string; votes: number }[]) => resolve({ row: row({ stateCode: "GA", seatLabel: "GA House 177", holderName: "Alvin Payton" }), holder: { familyName: "Payton", givenName: "Alvin" }, primaries: [primary({ contestId: "ga:state-leg-primary:2026:lower:177:D", candidates })] });
     // Leader short of a majority, holder second: the runoff decides.

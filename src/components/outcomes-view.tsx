@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { CHAMBER_ORDER, coverageTable, evidenceLabel, filterOutcomeRows, outcomeLabel } from "@/lib/outcome-ledger-view";
+import { CHAMBER_ORDER, coverageTable, evidenceLabel, filterOutcomeRows, outcomeLabel, primaryLossShare, primaryStageLabel } from "@/lib/outcome-ledger-view";
 import { paginate } from "@/lib/priority-index-view";
 import type { SeatOutcomeLedger, SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
 import { OUTCOMES, type Outcome } from "@/rapid-acquisition/seat-outcome-resolver";
@@ -37,6 +37,7 @@ export function OutcomesView({ ledger, params, modelVersion, publishedAt }: { le
     return search ? `/outcomes?${search}` : "/outcomes";
   };
   const chambersWithRoutes = CHAMBER_ORDER.filter((chamber) => ledger.comparison.byChamberRoute.some((cell) => cell.chamber === chamber));
+  const chambersWithPrimaries = CHAMBER_ORDER.filter((chamber) => ledger.primaryComparison.byChamberRoute.some((cell) => cell.chamber === chamber));
 
   return (
     <main id="content" className="page outcomes-page">
@@ -127,6 +128,31 @@ export function OutcomesView({ ledger, params, modelVersion, publishedAt }: { le
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="record-section">
+        <div className="section-heading-pair"><div><p className="eyebrow">PRIMARY RECORD</p><h2>How holders fared in their 2026 primaries</h2></div><p>A won primary settles no outcome, so the tables above count it as unknown. Here it counts, which gives each band a settled base. The last column is lost primaries out of the settled ones (won or lost). It says the holder lost, not who beat them or on what platform, and small bands swing on one seat.</p></div>
+        {chambersWithPrimaries.map((chamber) => (
+          <div className="table-wrap" tabIndex={0} role="region" aria-label={`Scroll horizontally to view all columns of the ${CHAMBER_LABELS[chamber]} primary record table`} key={chamber}>
+            <table aria-label={`${CHAMBER_LABELS[chamber]} primary record by score band and route`}>
+              <caption>{CHAMBER_LABELS[chamber]}</caption>
+              <thead><tr><th scope="col">Route</th><th scope="col">Score band</th>{ledger.primaryComparison.stages.map((stage) => <th scope="col" key={stage}>{primaryStageLabel(stage)}</th>)}<th scope="col">Lost, of settled</th></tr></thead>
+              <tbody>
+                {ledger.primaryComparison.byChamberRoute.filter((cell) => cell.chamber === chamber).map((cell) => {
+                  const share = primaryLossShare(cell.counts);
+                  return (
+                    <tr key={`${cell.route}-${cell.band}`}>
+                      <th scope="row">{ROUTE_LABELS[cell.route] ?? cell.route}</th>
+                      <td>{cell.band}</td>
+                      {ledger.primaryComparison.stages.map((stage) => <td key={stage}>{fmtCount(cell.counts[stage])}</td>)}
+                      <td>{share === null ? "—" : `${(share * 100).toFixed(1)}% (${fmtCount(cell.counts.lost)} of ${fmtCount(cell.counts.won + cell.counts.lost)})`}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        ))}
       </section>
 
       <section className="record-section">

@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { readSourceLock } from "./intake/source-lock";
 import { readPreElectionSnapshot2026, type PreElectionSeatRow } from "./pre-election-snapshot-2026";
-import { countStatusOf, readHouseCandidacyEvidence, readHousePrimaryEvidence2026, readStateLegislativePrimaryEvidence2026, readSuccessors } from "./seat-outcome-evidence";
+import { buildPrimaryEvidenceIndex, countStatusOf, primaryEvidenceForSeat, readHouseCandidacyEvidence, readHousePrimaryEvidence2026, readStateLegislativePrimaryEvidence2026, readSuccessors, stateLegislativeGeneralEntries } from "./seat-outcome-evidence";
+import type { StateGeneralContest } from "./state-legislative-general-results";
 
 const seat = (overrides: Partial<PreElectionSeatRow>): PreElectionSeatRow => ({
   chamber: "state_house", seatId: "seat", seatLabel: "VT House Chittenden-18", stateCode: "VT", holderName: "", holderId: "", holderParty: "Democratic", scoreStatus: "scored",
@@ -116,5 +117,40 @@ describe("2026 state-legislative primary evidence", () => {
     expect(value.get("NC|lower|1")![0]).toMatchObject({ party: "Republican", countStatus: "unofficial" });
     expect([...value.keys()].every((key) => /^(GA|KY|NC|OH)\|(lower|upper)\|/.test(key))).toBe(true);
     expect([...value.values()].flat().every((contest) => contest.electionDate.startsWith("2026-"))).toBe(true);
+  });
+});
+
+describe("2026 state-legislative general evidence", () => {
+  const contest = (overrides: Partial<StateGeneralContest>): StateGeneralContest => ({
+    contestId: "vt:state-leg-general:2026:lower:chittenden-18", stateCode: "VT", chamber: "lower", district: "Chittenden-18", districtKey: "chittenden 18", position: null, cycleYear: 2026,
+    electionDate: "2026-11-03", electionKind: "general", seats: 2,
+    candidates: [
+      { name: "Ann Smith", rawParty: "D", party: "Democratic", votes: 900, writeIn: false }, { name: "Bea Jones", rawParty: "D", party: "Democratic", votes: 800, writeIn: false },
+      { name: "Cal Lee", rawParty: "R", party: "Republican", votes: 500, writeIn: false }, { name: "Write-ins", rawParty: "", party: "Independent", votes: 12, writeIn: true },
+    ],
+    totalVotes: 2212, democraticVotes: 1700, republicanVotes: 500, democraticMarginPercentagePoints: 54.3, contested: true, sourceId: "vt-2026-general", contestSha256: "", ...overrides,
+  });
+
+  it("keeps November 2026 generals only, grades their count and leaves write-in lines out", () => {
+    const entries = stateLegislativeGeneralEntries({ contests: [
+      contest({}), contest({ contestId: "old", cycleYear: 2024, electionDate: "2024-11-05" }), contest({ contestId: "special", electionKind: "special_general", electionDate: "2026-04-07" }),
+      contest({ contestId: "night", resultStatus: "unofficial" }),
+    ] });
+    expect(entries.map((entry) => entry.evidence.contestId)).toEqual(["vt:state-leg-general:2026:lower:chittenden-18", "night"]);
+    expect(entries[0]).toMatchObject({ stateCode: "VT", office: "state_lower", district: "chittenden 18", evidence: { party: null, seats: 2, advance: 2, countStatus: "certified", sourceMarkedWinners: null, sourceIds: ["state-legislative-general-results-v1", "vt-2026-general"] } });
+    expect(entries[0]!.evidence.candidates.map((candidate) => candidate.name)).toEqual(["Ann Smith", "Bea Jones", "Cal Lee"]);
+    expect(entries[0]!.evidence.candidates[2]).toEqual({ name: "Cal Lee", votes: 500, party: "Republican" });
+    expect(entries[1]!.evidence.countStatus).toBe("unofficial");
+  });
+
+  it("leaves out a contest whose write-in line reaches the winning places", () => {
+    const candidates = [{ name: "Ann Smith", rawParty: "D", party: "Democratic" as const, votes: 40, writeIn: false }, { name: "Write-ins", rawParty: "", party: "Independent" as const, votes: 60, writeIn: true }];
+    expect(stateLegislativeGeneralEntries({ contests: [contest({ seats: 1, candidates })] })).toHaveLength(0);
+  });
+
+  it("finds the holder's district contest through the seat id", () => {
+    const index = buildPrimaryEvidenceIndex(stateLegislativeGeneralEntries({ contests: [contest({})] }));
+    const found = primaryEvidenceForSeat(index, seat({ seatId: "seat_state_vt_lower_chittenden-18_1", holderParty: "Republican" }), { familyName: "Lee", givenName: "Cal" });
+    expect(found.map((evidence) => evidence.contestId)).toEqual(["vt:state-leg-general:2026:lower:chittenden-18"]);
   });
 });

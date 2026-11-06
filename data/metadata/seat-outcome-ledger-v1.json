@@ -302924,6 +302924,447 @@
       }
     ]
   },
+  "primaryComparison": {
+    "stages": [
+      "unknown",
+      "won",
+      "lost",
+      "pending",
+      "not_on_ballot",
+      "other_office"
+    ],
+    "byChamberRoute": [
+      {
+        "chamber": "house",
+        "route": "deep_blue",
+        "band": "70+",
+        "counts": {
+          "unknown": 2,
+          "won": 12,
+          "lost": 3,
+          "pending": 0,
+          "not_on_ballot": 6,
+          "other_office": 2
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "deep_blue",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 4,
+          "won": 51,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 5,
+          "other_office": 1
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "deep_blue",
+        "band": "<50",
+        "counts": {
+          "unknown": 2,
+          "won": 31,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 1
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "aipac_supported_blue",
+        "band": "70+",
+        "counts": {
+          "unknown": 0,
+          "won": 14,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 2,
+          "other_office": 1
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "aipac_supported_blue",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 3,
+          "won": 48,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 1
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "aipac_supported_blue",
+        "band": "<50",
+        "counts": {
+          "unknown": 1,
+          "won": 17,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 1
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "republican_fringe_general",
+        "band": "70+",
+        "counts": {
+          "unknown": 2,
+          "won": 1,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "republican_fringe_general",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 6,
+          "won": 17,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "house",
+        "route": "republican_fringe_general",
+        "band": "<50",
+        "counts": {
+          "unknown": 24,
+          "won": 131,
+          "lost": 3,
+          "pending": 0,
+          "not_on_ballot": 22,
+          "other_office": 9
+        }
+      },
+      {
+        "chamber": "senate",
+        "route": "republican_fringe_general",
+        "band": "70+",
+        "counts": {
+          "unknown": 0,
+          "won": 0,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "senate",
+        "route": "republican_fringe_general",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 0,
+          "won": 1,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "senate",
+        "route": "republican_fringe_general",
+        "band": "<50",
+        "counts": {
+          "unknown": 2,
+          "won": 10,
+          "lost": 2,
+          "pending": 0,
+          "not_on_ballot": 6,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "senate",
+        "route": "democratic_incumbent_primary",
+        "band": "70+",
+        "counts": {
+          "unknown": 0,
+          "won": 0,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "senate",
+        "route": "democratic_incumbent_primary",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 0,
+          "won": 1,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "senate",
+        "route": "democratic_incumbent_primary",
+        "band": "<50",
+        "counts": {
+          "unknown": 2,
+          "won": 8,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 2,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "governor",
+        "route": "republican_fringe_general",
+        "band": "70+",
+        "counts": {
+          "unknown": 1,
+          "won": 1,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "governor",
+        "route": "republican_fringe_general",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 0,
+          "won": 1,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "governor",
+        "route": "republican_fringe_general",
+        "band": "<50",
+        "counts": {
+          "unknown": 1,
+          "won": 4,
+          "lost": 0,
+          "pending": 1,
+          "not_on_ballot": 8,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "governor",
+        "route": "democratic_incumbent_primary",
+        "band": "70+",
+        "counts": {
+          "unknown": 0,
+          "won": 1,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 0,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "governor",
+        "route": "democratic_incumbent_primary",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 0,
+          "won": 2,
+          "lost": 0,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "governor",
+        "route": "democratic_incumbent_primary",
+        "band": "<50",
+        "counts": {
+          "unknown": 2,
+          "won": 5,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 6,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_house",
+        "route": "republican_fringe_general",
+        "band": "70+",
+        "counts": {
+          "unknown": 21,
+          "won": 54,
+          "lost": 2,
+          "pending": 0,
+          "not_on_ballot": 15,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_house",
+        "route": "republican_fringe_general",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 55,
+          "won": 97,
+          "lost": 3,
+          "pending": 0,
+          "not_on_ballot": 19,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_house",
+        "route": "republican_fringe_general",
+        "band": "<50",
+        "counts": {
+          "unknown": 254,
+          "won": 1650,
+          "lost": 73,
+          "pending": 1,
+          "not_on_ballot": 325,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_house",
+        "route": "democratic_incumbent_primary",
+        "band": "70+",
+        "counts": {
+          "unknown": 117,
+          "won": 927,
+          "lost": 27,
+          "pending": 0,
+          "not_on_ballot": 145,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_house",
+        "route": "democratic_incumbent_primary",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 11,
+          "won": 233,
+          "lost": 5,
+          "pending": 0,
+          "not_on_ballot": 24,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_house",
+        "route": "democratic_incumbent_primary",
+        "band": "<50",
+        "counts": {
+          "unknown": 87,
+          "won": 437,
+          "lost": 7,
+          "pending": 0,
+          "not_on_ballot": 90,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_senate",
+        "route": "republican_fringe_general",
+        "band": "70+",
+        "counts": {
+          "unknown": 4,
+          "won": 8,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 1,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_senate",
+        "route": "republican_fringe_general",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 8,
+          "won": 29,
+          "lost": 2,
+          "pending": 0,
+          "not_on_ballot": 7,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_senate",
+        "route": "republican_fringe_general",
+        "band": "<50",
+        "counts": {
+          "unknown": 52,
+          "won": 325,
+          "lost": 25,
+          "pending": 0,
+          "not_on_ballot": 80,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_senate",
+        "route": "democratic_incumbent_primary",
+        "band": "70+",
+        "counts": {
+          "unknown": 23,
+          "won": 215,
+          "lost": 7,
+          "pending": 0,
+          "not_on_ballot": 37,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_senate",
+        "route": "democratic_incumbent_primary",
+        "band": "50-69.9",
+        "counts": {
+          "unknown": 6,
+          "won": 48,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 8,
+          "other_office": 0
+        }
+      },
+      {
+        "chamber": "state_senate",
+        "route": "democratic_incumbent_primary",
+        "band": "<50",
+        "counts": {
+          "unknown": 14,
+          "won": 119,
+          "lost": 1,
+          "pending": 0,
+          "not_on_ballot": 25,
+          "other_office": 0
+        }
+      }
+    ]
+  },
   "rowSetSha256": "ec27a666155a7072380a3f2046d492125fef03c9d773d357d027e6f11e03c0ce",
-  "packageSha256": "9eb8990fd847b98f5b96838935f9cc8c0b006f906a8d71276ac008f13f7ad50d"
+  "packageSha256": "31d9b483940fd77c85a51d786f8503b784ad1617dd6d2d48421955784f31dd38"
 }

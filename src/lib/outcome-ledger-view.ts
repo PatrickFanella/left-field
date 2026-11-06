@@ -1,6 +1,6 @@
 import { findSourceLockEntry, readSourceLock } from "@/rapid-acquisition/intake/source-lock";
 import { PRE_ELECTION_SNAPSHOT_2026 } from "@/rapid-acquisition/pre-election-snapshot-2026";
-import { readSeatOutcomeLedger, SEAT_OUTCOME_LEDGER, type SeatOutcomeLedger, type SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
+import { readSeatOutcomeLedger, SEAT_OUTCOME_LEDGER, type PrimaryStage, type PrimaryStageCounts, type SeatOutcomeLedger, type SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
 import type { CandidacyStatus } from "@/rapid-acquisition/seat-outcome-evidence";
 import type { ContestStatus, EvidenceGrade, Outcome } from "@/rapid-acquisition/seat-outcome-resolver";
 import type { StateLegislativeScoreStatus } from "@/rapid-acquisition/state-legislative-score-v01";
@@ -50,6 +50,23 @@ const CANDIDACY_LABELS: Readonly<Record<CandidacyStatus, string>> = {
   not_observed: "no filing observed",
   not_applicable: "not applicable",
 };
+
+const PRIMARY_STAGE_LABELS: Readonly<Record<PrimaryStage, string>> = {
+  unknown: "No retained primary",
+  won: "Won the primary",
+  lost: "Lost the primary",
+  pending: "Pending",
+  not_on_ballot: "Not on the primary ballot",
+  other_office: "Filed for another office (FEC)",
+};
+
+export const primaryStageLabel = (stage: PrimaryStage): string => PRIMARY_STAGE_LABELS[stage];
+
+/** Lost primaries as a share of the settled ones (won or lost); null when none settled. */
+export function primaryLossShare(counts: PrimaryStageCounts): number | null {
+  const settled = counts.won + counts.lost;
+  return settled === 0 ? null : counts.lost / settled;
+}
 
 export const outcomeLabel = (outcome: Outcome): string => OUTCOME_LABELS[outcome];
 export const evidenceLabel = (grade: EvidenceGrade): string => EVIDENCE_LABELS[grade];

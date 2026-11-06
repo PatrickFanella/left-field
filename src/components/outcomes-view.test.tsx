@@ -44,6 +44,14 @@ function fixtureLedger(): SeatOutcomeLedger {
       ],
       byRankQuartile: [1, 2, 3, 4].map((quartile) => ({ quartile: quartile as 1 | 2 | 3 | 4, counts: counts(scored.filter((row) => Math.min(4, Math.ceil((row.rank ?? 0) / 2)) === quartile)) })),
     },
+    primaryComparison: {
+      stages: ["unknown", "won", "lost", "pending", "not_on_ballot", "other_office"],
+      byChamberRoute: [
+        { chamber: "house", route: "democratic_incumbent_primary", band: "70+", counts: { unknown: 1, won: 0, lost: 1, pending: 0, not_on_ballot: 0, other_office: 1 } },
+        { chamber: "house", route: "democratic_incumbent_primary", band: "50-69.9", counts: { unknown: 0, won: 3, lost: 1, pending: 0, not_on_ballot: 1, other_office: 0 } },
+        { chamber: "house", route: "democratic_incumbent_primary", band: "<50", counts: { unknown: 0, won: 0, lost: 0, pending: 1, not_on_ballot: 1, other_office: 0 } },
+      ],
+    },
     rowSetSha256: "", packageSha256: "",
   };
 }
@@ -57,7 +65,13 @@ describe("OutcomesView", () => {
     const summary = screen.getByRole("table", { name: /outcomes by chamber/i });
     const headers = within(summary).getAllByRole("columnheader").map((cell) => cell.textContent);
     expect(headers[1]).toBe("No retained evidence yet");
-    expect(screen.getAllByRole("table", { name: /score band/i })).toHaveLength(2);
+    expect(screen.getAllByRole("table", { name: /outcomes by score band/i })).toHaveLength(2);
+    // The primary record counts won primaries and gives the loss share of the settled ones, or a dash when none settled.
+    const primary = screen.getByRole("table", { name: /House primary record/i });
+    expect(within(primary).getAllByRole("columnheader").map((cell) => cell.textContent)[2]).toBe("No retained primary");
+    expect(within(primary).getByText("100.0% (1 of 1)")).toBeTruthy();
+    expect(within(primary).getByText("25.0% (1 of 4)")).toBeTruthy();
+    expect(within(primary).getByText("—")).toBeTruthy();
     const list = screen.getByRole("list", { name: /seats on the 2026 ballot/i });
     const items = within(list).getAllByRole("listitem");
     // Seven scored House seats in rank order, then the unscored state seat that is on the ballot all the same.
