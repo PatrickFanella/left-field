@@ -3,7 +3,8 @@ import { describe, expect, it } from "vitest";
 import type { SeatOutcomeRow } from "@/rapid-acquisition/seat-outcome-ledger";
 import { OUTCOMES, type EvidenceGrade, type ContestStatus } from "@/rapid-acquisition/seat-outcome-resolver";
 
-import { candidacyLabel, contestStatusLabel, coverageTable, evidenceLabel, filterOutcomeRows, loadOutcomeLedger, outcomeFor, outcomeLabel } from "./outcome-ledger-view";
+import { candidacyLabel, contestStatusLabel, coverageTable, evidenceLabel, filterOutcomeRows, loadOutcomeLedger, outcomeFor, outcomeLabel, primaryLossShare, primaryStageLabel } from "./outcome-ledger-view";
+import { PRIMARY_STAGES } from "@/rapid-acquisition/seat-outcome-ledger";
 
 const rowOf = (overrides: Partial<SeatOutcomeRow>): SeatOutcomeRow => ({
   chamber: "house", seatId: "seat_house_tn_09_current", seatLabel: "TN-09", stateCode: "TN", holderName: "Steve Cohen", holderId: "C001068", holderParty: "Democratic", scoreStatus: "scored",
@@ -29,6 +30,15 @@ describe("outcome ledger labels", () => {
     expect(outcomeLabel("incumbent_ran_for_other_office")).toBe("Filed for another office (FEC)");
     expect(candidacyLabel("not_on_primary_ballot")).toBe("not on the primary ballot");
     expect(candidacyLabel("filed_for_other_office")).toBe("filed for another office");
+  });
+});
+
+describe("primary record", () => {
+  it("labels every primary stage and shares losses over settled primaries only", () => {
+    for (const stage of PRIMARY_STAGES) expect(primaryStageLabel(stage).length).toBeGreaterThan(3);
+    const zero = { unknown: 0, won: 0, lost: 0, pending: 0, not_on_ballot: 0, other_office: 0 };
+    expect(primaryLossShare({ ...zero, unknown: 9, pending: 2 })).toBeNull();
+    expect(primaryLossShare({ ...zero, won: 3, lost: 1, unknown: 50, not_on_ballot: 4 })).toBe(0.25);
   });
 });
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { buildSeatOutcomeLedger, readSeatOutcomeLedger, scoreBandOf } from "./seat-outcome-ledger";
+import { buildSeatOutcomeLedger, PRIMARY_STAGES, primaryStageOf, readSeatOutcomeLedger, scoreBandOf } from "./seat-outcome-ledger";
 import { OUTCOMES } from "./seat-outcome-resolver";
 
 const total = (counts: Readonly<Record<string, number>>): number => Object.values(counts).reduce((sum, value) => sum + value, 0);
@@ -59,6 +59,20 @@ describe("seat outcome ledger", () => {
     expect(value.comparison.byChamberRoute.every((cell) => Object.keys(cell.counts).length === OUTCOMES.length)).toBe(true);
     const houseDemocratic = value.comparison.byChamberRoute.filter((cell) => cell.chamber === "house" && cell.route === "democratic_incumbent_primary");
     expect(houseDemocratic.reduce((sum, cell) => sum + total(cell.counts), 0)).toBe(scored.filter((row) => row.chamber === "house" && row.route === "democratic_incumbent_primary").length);
+  });
+
+  it("writes a primary record that sums to the scored seats on the 2026 ballot", () => {
+    const value = buildSeatOutcomeLedger();
+    const up = value.rows.filter((row) => row.score !== null && row.stage === "up_in_2026");
+    const cells = value.primaryComparison.byChamberRoute;
+    expect(cells.reduce((sum, cell) => sum + total(cell.counts), 0)).toBe(up.length);
+    expect(cells.every((cell) => Object.keys(cell.counts).length === PRIMARY_STAGES.length)).toBe(true);
+    // Every primary loss is counted, and a primary loss is never also another stage.
+    expect(cells.reduce((sum, cell) => sum + cell.counts.lost, 0)).toBe(up.filter((row) => row.outcome === "incumbent_lost_primary").length);
+    expect(cells.reduce((sum, cell) => sum + cell.counts.other_office, 0)).toBe(up.filter((row) => row.outcome === "incumbent_ran_for_other_office").length);
+    expect(up.filter((row) => primaryStageOf(row) === "won").every((row) => row.primary.status === "won")).toBe(true);
+    expect(primaryStageOf(value.rows.find((row) => row.seatLabel === "TN-09")!)).toBe("not_on_ballot");
+    expect(primaryStageOf(value.rows.find((row) => row.seatLabel === "CO-01")!)).toBe("lost");
   });
 
   it("matches the pinned artifact", () => {
