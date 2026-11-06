@@ -274,7 +274,7 @@ jobs:
           PYCODE
           curl --fail --silent --show-error --retry 4 --retry-all-errors --max-time 30 \
             https://left-field.subcult.tv/favicon.ico > "$deploy_dir/favicon.ico"
-          cmp public/favicon.ico "$deploy_dir/favicon.ico"
+          cmp src/app/favicon.ico "$deploy_dir/favicon.ico"
           curl --fail --silent --show-error --retry 4 --retry-all-errors --max-time 30 \
             https://left-field.subcult.tv/ > "$deploy_dir/index.html"
           python3 - "$deploy_dir/index.html" <<'PYCODE'
