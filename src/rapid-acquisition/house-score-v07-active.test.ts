@@ -1,10 +1,15 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 import { buildHouseScoreV07ActiveProjection, validateHouseScoreV07ActiveProjection } from "./house-score-v07-active";
 
 describe("House v0.7 active score projection", () => {
+  let projection: ReturnType<typeof buildHouseScoreV07ActiveProjection>;
+  beforeAll(() => {
+    projection = buildHouseScoreV07ActiveProjection();
+  }, 180_000);
+
   it("activates the exact North Dakota at-large comparison at 70% local evidence coverage", () => {
-    const value = buildHouseScoreV07ActiveProjection();
+    const value = structuredClone(projection);
     expect(value.summary).toEqual({ seats: 430, downBallotActiveSeats: 4, newlyActivatedSeats: 1, unchangedSeats: 429, normalizedFipsSeats: 1, partialComponentSeats: 1, routeChanges: 0, movementCapBreaches: 0 });
     expect(value.rows.filter((row) => row.downBallotDemocraticOverperformance !== null).map((row) => ({
       district: row.districtLabel,
@@ -28,11 +33,11 @@ describe("House v0.7 active score projection", () => {
   }, 120_000);
 
   it("rejects missing-data and lifecycle escalation", () => {
-    const inferredRegistration = structuredClone(buildHouseScoreV07ActiveProjection()) as unknown as { rows: Array<{ districtLabel: string; activationContextComponents: { inverseActiveRegistrationToCvap: number | null } | null }> };
+    const inferredRegistration = structuredClone(projection) as unknown as { rows: Array<{ districtLabel: string; activationContextComponents: { inverseActiveRegistrationToCvap: number | null } | null }> };
     inferredRegistration.rows.find((row) => row.districtLabel === "ND-AL")!.activationContextComponents!.inverseActiveRegistrationToCvap = 50;
     expect(() => validateHouseScoreV07ActiveProjection(inferredRegistration)).toThrow("HOUSE_V07_ACTIVE_INVALID");
 
-    const inference = structuredClone(buildHouseScoreV07ActiveProjection()) as unknown as { methodology: { winnerInference: boolean } };
+    const inference = structuredClone(projection) as unknown as { methodology: { winnerInference: boolean } };
     inference.methodology.winnerInference = true;
     expect(() => validateHouseScoreV07ActiveProjection(inference)).toThrow("HOUSE_V07_ACTIVE_INVALID");
   }, 120_000);
