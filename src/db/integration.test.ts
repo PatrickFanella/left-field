@@ -409,6 +409,8 @@ integration("PostgreSQL integration", () => {
       const writerPid = (await writer.query<{ pid: number }>("SELECT pg_backend_pid() AS pid")).rows[0]!.pid;
       await writer.query("BEGIN");
       const mutation = writer.query("UPDATE sources SET name='race mutation' WHERE release_id=$1", [manifest.release.id]);
+      // It may reject before COMMIT resolves on the other connection; assert it below.
+      void mutation.catch(() => undefined);
       await waitForWriterToBlockOnAdvisoryLock(ownerPool, writerPid);
 
       await preflight.query("SELECT public.issue_release_preflight($1,'promote',$2,NULL,NULL,NULL,300)", [randomUUID(), manifest.release.id]);

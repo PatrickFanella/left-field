@@ -306,6 +306,9 @@ describe("nationwide manifest v2", () => {
     const incompatible = nationwideSkeleton(); incompatible.coverageRecords[0]!.scope = { kind: "seat_cycle", seatCycleId: incompatible.seatCycles[0]!.id } as never; expectV2Issue(incompatible, "Invalid scoped coverage record");
     const electionMismatch = nationwideSkeleton(); electionMismatch.coverageRecords[7]!.scope = { kind: "election", jurisdictionCode: "AL", electionYear: 2022 } as never; expectV2Issue(electionMismatch, "Invalid scoped coverage record");
     const duplicate = nationwideSkeleton(); duplicate.coverageRecords.push({ ...duplicate.coverageRecords[0]! }); expectV2Issue(duplicate, "Duplicate coverage scope natural key");
+    const duplicateFunding = nationwideSkeleton();
+    duplicateFunding.coverageRecords.push({ ...duplicateFunding.coverageRecords.find((record) => record.domain === "finance" && record.scope.kind === "funding")! });
+    expectV2Issue(duplicateFunding, "Every catalog seat cycle requires funding coverage");
     const duplicateReason = nationwideSkeleton(); duplicateReason.coverageRecords[3]!.missingByReason = [{ reason: "not_collected", count: 1 }, { reason: "not_collected", count: 490 }]; expectV2Issue(duplicateReason, "Invalid coverage record");
     const input = nationwideSkeleton(); input.coverageRecords[0]!.inputSnapshotIds = ["snap_missing" as never]; expectV2Issue(input, "Invalid coverage record");
   }, 15_000);
