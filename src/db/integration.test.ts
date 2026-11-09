@@ -448,7 +448,7 @@ integration("PostgreSQL integration", () => {
          expect(report.productionReadinessStatus).not.toBe("pass");
          expect(report.status).not.toBe("pass");
          expect(report.databaseClass).toBe("test");
-         for (const name of ["preflight_access", "validation_gate", "repository_smokes", "rollback_drill"] as const) expect(report.checks.find((check) => check.name === name)?.status).toBe("pass");
+         for (const name of ["preflight_access", "validation_gate", "repository_smokes", "rollback_drill"] as const) expect(report.checks.find((check) => check.name === name)?.status, `${name} (drill duration ${result.durationMs}ms)`).toBe("pass");
          expect(report.checks.find((check) => check.name === "production_telemetry")).toMatchObject({ status: "not_run", evidence: { status: "not_observed" } });
          expect(JSON.stringify(report)).not.toMatch(/password|session_user|membership|rolname|locator|raw_object/i);
        } finally { await preflightPool.end(); }
