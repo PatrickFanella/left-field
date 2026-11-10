@@ -6,7 +6,7 @@ Written 2026-10-20. Commands and file paths refer to this repository.
 
 ## What updates on its own
 
-The weekly workflow (`.github/workflows/refresh.yml`, Mondays 09:17 UTC) retains the FEC candidate summary and master, the Congress roster (`legislators-current.json`), Open States legislator CSVs and executive files. It re-derives the derived artifacts, bumps the release and opens a pull request. Review the generated note under `docs/reviews/` before merging.
+The weekly workflow (`.gitea/workflows/refresh.yml`, Mondays 09:17 UTC) retains the FEC candidate summary and master, the Congress roster (`legislators-current.json`), Open States legislator CSVs and executive files. It re-derives the derived artifacts, bumps the release and opens a pull request. Review the generated note under `docs/reviews/` before merging.
 
 Picked up without code changes:
 

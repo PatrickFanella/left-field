@@ -1,11 +1,10 @@
 name: static
 
 # Database-free gate: typecheck, lint, source-lock verification, the fast unit
-# lanes, and the production build. This is the check that must be green on
-# every pull request; the acceptance job needs Postgres and Chromium and runs
-# beside it.
+# lanes, and the production build. Pull requests run the same lane on the
+# GitHub organization copy (.github/workflows/mirror-ci.yml, reported back as
+# "GitHub CI / Mirror CI gate"); Gitea re-verifies every main commit after merge.
 on:
-  pull_request:
   push:
     branches: [main]
 
@@ -14,7 +13,8 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  # Nothing is deployed here, so a newer main commit supersedes an older run.
+  cancel-in-progress: true
 
 jobs:
   static:
