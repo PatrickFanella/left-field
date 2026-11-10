@@ -1,7 +1,9 @@
 name: acceptance
 
+# Pull requests run the acceptance and web image lanes on the GitHub
+# organization copy (.github/workflows/mirror-ci.yml). Gitea keeps the main
+# and manual runs, which deploy the accepted image to NUC.
 on:
-  pull_request:
   workflow_dispatch:
   push:
     branches: [main]
@@ -11,7 +13,8 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  # The web image job deploys; never cancel a run that may be mid-deploy.
+  cancel-in-progress: false
 
 jobs:
   acceptance:

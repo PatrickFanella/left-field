@@ -1,0 +1,291 @@
+name: Mirror CI
+run-name: Mirror CI ${{ github.sha }}
+
+# Pull request verification for the Gitea source. Gitea publishes each pull
+# request head to this organization copy; a bridge on Kvant reports the
+# "Mirror CI gate" result back to Gitea as "GitHub CI / Mirror CI gate".
+# The static, acceptance and Web image jobs reproduce the Gitea pull request
+# lanes. Main is verified and deployed by .gitea/workflows after merge.
+'on':
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # The Census fixture is about 200 MB of LFS. Fetch it once per run and hand
+  # it to the other jobs as a run artifact, so each pull request head costs at
+  # most one LFS download. Bridge-published heads are new branches whose cache
+  # scope starts empty, so only a cache saved on main can be restored; a
+  # workflow_dispatch run on main seeds it and later heads then download nothing.
+  lfs:
+    name: LFS objects
+    if: github.repository == 'subculture-collective/left-field'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          lfs: false
+      - name: Key the pinned LFS objects
+        id: lfs
+        run: echo "key=lfs-v1-$(git lfs ls-files --long | sha256sum | cut -c1-64)" >> "$GITHUB_OUTPUT"
+      - name: Restore LFS objects saved on main
+        id: restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .git/lfs/objects
+          key: ${{ steps.lfs.outputs.key }}
+      - name: Fetch pinned LFS sources without conflicting headers
+        if: steps.restore.outputs.cache-hit != 'true'
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      - name: Seed the LFS cache from main
+        if: github.ref == 'refs/heads/main' && steps.restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .git/lfs/objects
+          key: ${{ steps.lfs.outputs.key }}
+      - name: Package LFS objects
+        run: tar -C .git/lfs -cf "$RUNNER_TEMP/lfs-objects.tar" objects
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs-objects.tar
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+
+  static:
+    needs: lfs
+    if: github.repository == 'subculture-collective/left-field'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          lfs: false
+      - name: Download this run's LFS objects
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs
+      - name: Unpack LFS objects
+        run: |
+          mkdir -p .git/lfs
+          tar -C .git/lfs -xf "$RUNNER_TEMP/lfs/lfs-objects.tar"
+      - name: Verify LFS authentication boundaries
+        run: python3 scripts/test-ci-lfs-checkout.py
+      - name: Verify backup source identity guards
+        run: python3 deploy/tests/test_backup_source.py
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: Verify acceptance summary guards
+        run: npx --no-install vitest run scripts/test-acceptance.test.ts
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run data:verify
+      - run: npm run test:fast
+      - run: npm run build
+        env:
+          NODE_OPTIONS: --max-old-space-size=2048
+
+  acceptance:
+    needs: lfs
+    if: github.repository == 'subculture-collective/left-field'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    env:
+      ACCEPTANCE_TESTS: "1"
+      # Date columns come back from pg as local-midnight Dates; pin the lane's timezone so subject hashes are reproducible.
+      TZ: UTC
+      NODE_ENV: test
+      ACCEPTANCE_MAP_ARTIFACT_ROOT: /tmp/dsa-seats-task13-acceptance/task10-maps
+      E2E_MAP_PROFILE_PATH: /seats/seat_0
+      POSTGRES_PORT: "0"
+      POSTGRES_FSYNC: "off"
+      POSTGRES_SYNCHRONOUS_COMMIT: "off"
+      POSTGRES_FULL_PAGE_WRITES: "off"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          lfs: false
+      - name: Download this run's LFS objects
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs
+      - name: Unpack LFS objects
+        run: |
+          mkdir -p .git/lfs
+          tar -C .git/lfs -xf "$RUNNER_TEMP/lfs/lfs-objects.tar"
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install source-evidence tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends poppler-utils
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Name the disposable Compose project
+        run: |
+          echo "COMPOSE_PROJECT_NAME=dsa_seats_acceptance_${GITHUB_RUN_ID}_${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_ENV"
+      - name: Create disposable tmpfs database volume
+        run: |
+          database_volume="${COMPOSE_PROJECT_NAME}_postgres_data"
+          docker volume create \
+            --driver local \
+            --opt type=tmpfs \
+            --opt device=tmpfs \
+            --opt o=size=4g \
+            --label "com.docker.compose.project=${COMPOSE_PROJECT_NAME}" \
+            --label com.docker.compose.volume=postgres_data \
+            "$database_volume"
+      - run: docker compose up -d --wait
+      # The job runs on the hosted VM, not in a container: the published
+      # loopback port is the database transport.
+      - name: Configure loopback database transport
+        run: |
+          database_port="$(docker compose port postgres 5432)"
+          database_port="${database_port##*:}"
+          base="postgresql://dsa_seats:dsa_seats@127.0.0.1:${database_port}"
+          {
+            echo "ACCEPTANCE_JOB_CONTAINER=0"
+            echo "DATABASE_URL=${base}/dsa_seats_acceptance_integration_test"
+            echo "TEST_DATABASE_URL=${base}/dsa_seats_acceptance_integration_test"
+            echo "QUERY_DATABASE_URL=${base}/dsa_seats_acceptance_query_test"
+            echo "E2E_DATABASE_URL=${base}/dsa_seats_acceptance_browser_test"
+            echo "WEB_DATABASE_URL=postgresql://acceptance_web:acceptance_web@127.0.0.1:${database_port}/dsa_seats_acceptance_browser_test"
+          } >> "$GITHUB_ENV"
+      - run: docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -U dsa_seats -d postgres -c "CREATE DATABASE dsa_seats_acceptance_integration_test OWNER dsa_seats;" -c "CREATE DATABASE dsa_seats_acceptance_query_test OWNER dsa_seats;" -c "CREATE DATABASE dsa_seats_acceptance_browser_test OWNER dsa_seats;"
+      - name: Verify database transport
+        run: |
+          node <<'NODE'
+          const { Client } = require('pg');
+          const client = new Client({ connectionString: process.env.DATABASE_URL });
+          client.connect()
+            .then(() => client.query('SELECT 1'))
+            .then(() => client.end())
+            .catch((error) => {
+              console.error(error);
+              process.exitCode = 1;
+            });
+          NODE
+      - run: npm run db:migrate
+      - run: docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -U dsa_seats -d postgres -c "CREATE ROLE acceptance_web LOGIN PASSWORD 'acceptance_web' NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS; GRANT dsa_seats_web TO acceptance_web;"
+      - run: npm run test:acceptance
+        env:
+          # Inherited by the aggregate production build and its workers.
+          NODE_OPTIONS: --max-old-space-size=2048
+      - name: Retain browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: acceptance-browser-failure
+          path: |
+            test-results/
+            playwright-report/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  web_image:
+    name: Web image
+    needs: lfs
+    if: github.repository == 'subculture-collective/left-field'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    env:
+      DEPLOY_REVISION: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          lfs: false
+      - name: Download this run's LFS objects
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs
+      - name: Unpack LFS objects
+        run: |
+          mkdir -p .git/lfs
+          tar -C .git/lfs -xf "$RUNNER_TEMP/lfs/lfs-objects.tar"
+      - name: Verify LFS authentication and native backup guards
+        run: |
+          python3 scripts/test-ci-lfs-checkout.py
+          python3 deploy/tests/test_backup_source.py
+          python3 scripts/test-ci-source-archive.py
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      # Build and qualify only; deployment stays on Gitea after merge.
+      - name: Build and qualify the accepted web image
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$DEPLOY_REVISION"
+          image="fleet-deploy/left-field/app:$DEPLOY_REVISION"
+          source_sha=$(python3 scripts/ci-source-archive.py)
+          [[ "$source_sha" =~ ^[0-9a-f]{64}$ ]]
+          docker build -f deploy/nuc/Dockerfile \
+            --build-arg "VCS_REF=$DEPLOY_REVISION" \
+            --build-arg "SOURCE_TREE_SHA256=$source_sha" \
+            --build-arg "BUILD_DATE=$(git show -s --format=%cI "$DEPLOY_REVISION")" \
+            --label "org.opencontainers.image.revision=$DEPLOY_REVISION" \
+            --label "org.opencontainers.image.source=https://git.subcult.tv/subculture-collective/left-field" \
+            -t "$image" .
+          python3 scripts/check-ci-image.py "$image" "$DEPLOY_REVISION"
+
+  mirror-gate:
+    name: Mirror CI gate
+    if: always() && github.repository == 'subculture-collective/left-field'
+    needs: [lfs, static, acceptance, web_image]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Require every verification job
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          results = json.loads(os.environ["RESULTS"])
+          expected = {'lfs', 'static', 'acceptance', 'web_image'}
+          assert set(results) == expected, results
+          for name, result in results.items():
+              assert result["result"] == "success", name + " did not pass"
+          PY
