@@ -4,8 +4,8 @@ run-name: Mirror CI ${{ github.sha }}
 # Pull request verification for the Gitea source. Gitea publishes each pull
 # request head to this organization copy; a bridge on Kvant reports the
 # "Mirror CI gate" result back to Gitea as "GitHub CI / Mirror CI gate".
-# These jobs reproduce the Gitea static, acceptance and Web image pull
-# request lanes. Main is verified and deployed by .gitea/workflows after merge.
+# The static, acceptance and Web image jobs reproduce the Gitea pull request
+# lanes. Main is verified and deployed by .gitea/workflows after merge.
 'on':
   push:
     branches-ignore: [main]
@@ -19,10 +19,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  static:
+  # The Census fixture is about 200 MB of LFS. Fetch it once per run and hand
+  # it to the other jobs as a run artifact, so each pull request head costs at
+  # most one LFS download. Bridge-published heads are new branches whose cache
+  # scope starts empty, so only a cache saved on main can be restored; a
+  # workflow_dispatch run on main seeds it and later heads then download nothing.
+  lfs:
+    name: LFS objects
     if: github.repository == 'subculture-collective/left-field'
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 10
     defaults:
       run:
         shell: bash
@@ -33,13 +39,54 @@ jobs:
       - name: Key the pinned LFS objects
         id: lfs
         run: echo "key=lfs-v1-$(git lfs ls-files --long | sha256sum | cut -c1-64)" >> "$GITHUB_OUTPUT"
-      # The Census fixture is about 200 MB; reuse it instead of spending LFS
-      # bandwidth on every push.
-      - name: Restore LFS objects
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      - name: Restore LFS objects saved on main
+        id: restore
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .git/lfs/objects
           key: ${{ steps.lfs.outputs.key }}
+      - name: Fetch pinned LFS sources without conflicting headers
+        if: steps.restore.outputs.cache-hit != 'true'
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      - name: Seed the LFS cache from main
+        if: github.ref == 'refs/heads/main' && steps.restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .git/lfs/objects
+          key: ${{ steps.lfs.outputs.key }}
+      - name: Package LFS objects
+        run: tar -C .git/lfs -cf "$RUNNER_TEMP/lfs-objects.tar" objects
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs-objects.tar
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+
+  static:
+    needs: lfs
+    if: github.repository == 'subculture-collective/left-field'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          lfs: false
+      - name: Download this run's LFS objects
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs
+      - name: Unpack LFS objects
+        run: |
+          mkdir -p .git/lfs
+          tar -C .git/lfs -xf "$RUNNER_TEMP/lfs/lfs-objects.tar"
       - name: Verify LFS authentication boundaries
         run: python3 scripts/test-ci-lfs-checkout.py
       - name: Verify backup source identity guards
@@ -65,6 +112,7 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=2048
 
   acceptance:
+    needs: lfs
     if: github.repository == 'subculture-collective/left-field'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -86,14 +134,15 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           lfs: false
-      - name: Key the pinned LFS objects
-        id: lfs
-        run: echo "key=lfs-v1-$(git lfs ls-files --long | sha256sum | cut -c1-64)" >> "$GITHUB_OUTPUT"
-      - name: Restore LFS objects
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      - name: Download this run's LFS objects
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
-          path: .git/lfs/objects
-          key: ${{ steps.lfs.outputs.key }}
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs
+      - name: Unpack LFS objects
+        run: |
+          mkdir -p .git/lfs
+          tar -C .git/lfs -xf "$RUNNER_TEMP/lfs/lfs-objects.tar"
       - name: Fetch pinned LFS sources without conflicting headers
         env:
           CI_LFS_TOKEN: ${{ github.token }}
@@ -172,6 +221,7 @@ jobs:
 
   web_image:
     name: Web image
+    needs: lfs
     if: github.repository == 'subculture-collective/left-field'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -185,14 +235,15 @@ jobs:
         with:
           ref: ${{ github.sha }}
           lfs: false
-      - name: Key the pinned LFS objects
-        id: lfs
-        run: echo "key=lfs-v1-$(git lfs ls-files --long | sha256sum | cut -c1-64)" >> "$GITHUB_OUTPUT"
-      - name: Restore LFS objects
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+      - name: Download this run's LFS objects
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
-          path: .git/lfs/objects
-          key: ${{ steps.lfs.outputs.key }}
+          name: lfs-objects
+          path: ${{ runner.temp }}/lfs
+      - name: Unpack LFS objects
+        run: |
+          mkdir -p .git/lfs
+          tar -C .git/lfs -xf "$RUNNER_TEMP/lfs/lfs-objects.tar"
       - name: Verify LFS authentication and native backup guards
         run: |
           python3 scripts/test-ci-lfs-checkout.py
@@ -222,7 +273,7 @@ jobs:
   mirror-gate:
     name: Mirror CI gate
     if: always() && github.repository == 'subculture-collective/left-field'
-    needs: [static, acceptance, web_image]
+    needs: [lfs, static, acceptance, web_image]
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -233,7 +284,7 @@ jobs:
           python3 - <<'PY'
           import json, os
           results = json.loads(os.environ["RESULTS"])
-          expected = {'static', 'acceptance', 'web_image'}
+          expected = {'lfs', 'static', 'acceptance', 'web_image'}
           assert set(results) == expected, results
           for name, result in results.items():
               assert result["result"] == "success", name + " did not pass"

@@ -4,8 +4,8 @@ name: Refresh priority index inputs
 # re-derive the Senate and state-legislative layers, and open a pull request
 # with the new pins. The House layer is frozen and only re-verified. A human
 # reviews the diff, fills in the review note, and merges. Runs on Gitea Actions
-# and GitHub Actions; on Gitea set FORGE_TOKEN with write access to contents
-# and pull requests.
+# only; set FORGE_TOKEN with write access to contents and pull requests. The
+# GitHub branch of the pull request step below is no longer reached.
 on:
   schedule:
     - cron: "17 9 * * 1"
