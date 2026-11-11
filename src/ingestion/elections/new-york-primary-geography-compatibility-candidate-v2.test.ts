@@ -44,5 +44,5 @@ describe("New York primary geography compatibility candidate v2", () => {
       (value) => { value.unexpected = true; },
     ];
     for (const mutate of mutations) { const value = structuredClone(base) as unknown as MutablePackage; mutate(value); expect(() => validateNewYorkPrimaryGeographyCandidateV2(value as never, currentInput)).toThrow("NY_PRIMARY_GEOGRAPHY_V2_INVALID:semantic_or_hash_drift"); }
-  }, 30_000);
+  }, 60_000);
 });

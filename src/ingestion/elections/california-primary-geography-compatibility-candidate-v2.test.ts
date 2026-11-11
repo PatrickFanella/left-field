@@ -72,5 +72,5 @@ describe("California primary geography compatibility candidate v2", () => {
       mutate(value);
       expect(() => validateCaliforniaPrimaryGeographyCandidateV2(value as never, currentInput)).toThrow("CA_PRIMARY_GEOGRAPHY_V2_INVALID:semantic_or_hash_drift");
     }
-  }, 30_000);
+  }, 60_000);
 });

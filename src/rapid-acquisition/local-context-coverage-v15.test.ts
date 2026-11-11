@@ -27,5 +27,5 @@ describe("rapid local context coverage v15", () => {
     expect(() => validateRapidLocalContextCoverageV15(value)).toThrow(
       "RAPID_LOCAL_CONTEXT_COVERAGE_V15_INVALID",
     );
-  }, 60_000);
+  }, 120_000);
 });

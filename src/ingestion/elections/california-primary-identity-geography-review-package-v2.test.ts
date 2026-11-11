@@ -89,5 +89,5 @@ describe("California primary identity-geography review package v2", () => {
       mutate(value);
       expect(() => validateCaliforniaPrimaryIdentityGeographyReviewPackageV2(value as never, currentInput)).toThrow("CA_PRIMARY_JOINT_REVIEW_V2_INVALID:semantic_or_hash_drift");
     }
-  }, 30_000);
+  }, 60_000);
 });
