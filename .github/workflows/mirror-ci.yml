@@ -115,7 +115,9 @@ jobs:
     needs: lfs
     if: github.repository == 'subculture-collective/left-field'
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    # test:acceptance alone takes 27-29 minutes on a hosted runner (the
+    # single-worker unit suite is about 18 of them); 30 cancelled it.
+    timeout-minutes: 45
     defaults:
       run:
         shell: bash
