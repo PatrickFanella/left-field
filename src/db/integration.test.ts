@@ -1409,7 +1409,7 @@ integration("PostgreSQL integration", () => {
       await expect(promoteCandidateRelease(pool, unrelated.release.id)).rejects.toThrow(/wrong promotion branch/);
       await expect(rollForwardRetiredRelease(pool, v1.release.id)).rejects.toThrow(/direct successor/);
     } finally { await pool.end(); }
-  }, 60_000);
+  }, 120_000); // 27-61 s depending on the hosted runner
 
   it("baselines a validated v2 candidate with rewritten release metadata and a fresh gate", async () => {
     const pool = new Pool({ connectionString: testDatabaseUrl });
