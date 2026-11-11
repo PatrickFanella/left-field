@@ -27,7 +27,9 @@ jobs:
     name: Web image and deploy NUC
     if: github.repository == 'subculture-collective/left-field' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    # The image upload goes through a Tailscale relay (NUC sits behind a hard
+    # NAT) at about 1.5 MB/s, so the compressed upload alone takes ~25 min.
+    timeout-minutes: 90
     defaults:
       run:
         shell: bash
@@ -119,8 +121,10 @@ jobs:
           ssh "${ssh_args[@]}" status
           image="fleet-deploy/left-field/app:$DEPLOY_REVISION"
           if [[ "$REUSE_ARTIFACT" != true ]]; then
+            # The runner saves uncompressed layers (~6 GB); compressing on the
+            # wire cuts the relayed upload to about a third.
             # shellcheck disable=SC2029
-            docker save "$image" | ssh "${ssh_args[@]}" "receive $DEPLOY_REVISION app"
+            docker save "$image" | ssh -o Compression=yes "${ssh_args[@]}" "receive $DEPLOY_REVISION app"
           fi
           # shellcheck disable=SC2029
           ssh "${ssh_args[@]}" "deploy $DEPLOY_REVISION"
