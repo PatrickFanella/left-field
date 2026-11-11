@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -175,7 +176,7 @@ export function buildCaliforniaHouseTopTwoResultsReceipt(inputs: readonly Califo
     parentProposal: { id: "house-democratic-primary-source-selection-proposal-20260804-v1" as const, fileSha256: "85246e9adfd181e6f24606b6eaa29250c45c9e8e42a6dd5af5cb162de17f45b1", packageSha256: "a090e0be03dc2b0fa5edd0c1132a8261eed0f98ceb4df090154d0b150d8721fb" },
     decisionSupport: DECISIONS.map((decisionId) => ({ decisionId, lifecycle: "evidence_for_bound_existing_decision_not_an_independent_decision" as const })), inheritedDecisionResolutions: DECISIONS.map((decisionId) => ({ decisionId, resolution: null })),
     nominationSystem: "top_two_open_primary" as const, partyFieldMeaning: "candidate_qualified_party_preference" as const, formulaApplicability: "confirmed_incompatible_with_party_primary_metrics" as const,
-    cycles, sources: inputs.map((input) => input.entry).sort((left, right) => bytewise(left.id, right.id)), contests,
+    cycles, sources: (inputs.map((input) => input.entry).sort((left, right) => bytewise(left.id, right.id))).map(sourceLockContent), contests,
     summary: { cycles: 3 as const, contests: 156 as const, candidates: 814 as const, votes: 23007877 as const, writeIns: 20 as const, sourceIncumbentMarkers: 45 as const, evaluatorNumericValues: 0 as const, scoreEligibleContests: 0 as const, contestSetSha256 },
     limitations: ["California U.S. House primaries are voter-nominated top-two contests, not Democratic Party nomination contests.", "Candidate party preference is retained as source data but is not party nomination, endorsement, or current identity evidence.", "No top-two advancement is derived from vote rank in this receipt; every contest remains incompatible with party-primary evaluator metrics.", "The 2024 district 16 values use the official recertified recount totals and retain the separate recertification instrument.", "Current identity, historical geography compatibility, candidate ideology, and evaluator applicability remain unreviewed."],
     unresolvedGates: ["Independent reviewer approval is required before factual promotion.", "A separately reviewed top-two-aware scoring contract is required before any evaluator use.", "Identity and district-geography mappings remain unresolved."],

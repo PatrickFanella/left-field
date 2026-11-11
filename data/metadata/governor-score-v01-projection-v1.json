@@ -27,207 +27,205 @@
     "refresh-inputs-v1",
     "statewide-presidential-2024-v1",
     "rapid-state-legislative-primary-context-v1",
-    "openstates-executive-ak-671acdf5-e1ec-4259-ba3d-19d1df9a146e-20260925",
-    "openstates-executive-ak-6b940121-937e-47ba-916a-626b67fe54f4-20260925",
-    "openstates-executive-ak-80f0f5f8-976d-427b-b980-ce3a23a23e84-20260925",
-    "openstates-executive-al-1fcc4f8d-90c5-4e7c-aa4c-3b58a3a87ba5-20260925",
-    "openstates-executive-al-3636b6ed-56b0-44bb-97b8-dee266b6d9c8-20260925",
-    "openstates-executive-al-6a69be8a-7d2c-4291-9d18-a03b7fdfd29d-20260925",
-    "openstates-executive-al-6e7f8f74-90fd-416b-b08e-188d6315b3ce-20260925",
-    "openstates-executive-al-7a749447-b86f-4788-ab1f-235b8f7a0097-20260925",
-    "openstates-executive-al-cb01dcb8-b382-48af-a781-d4019eb3dfa6-20260925",
-    "openstates-executive-al-f8daba65-dcf6-43b4-8c38-8b02b5b59db7-20260925",
-    "openstates-executive-ar-1c9262ce-53a4-4d0c-ab9e-45edb5377fa0-20260925",
-    "openstates-executive-ar-20b42b64-6dd3-4b52-97f2-def9b8207a7d-20260925",
-    "openstates-executive-ar-29e6b6e2-82fc-48f8-9177-96b1ec30a2a6-20260925",
-    "openstates-executive-ar-77a57e2c-188c-42fd-adad-24066f27ec3c-20260925",
-    "openstates-executive-ar-7cf8a839-6c34-4375-bfd5-7cfe92233b72-20260925",
-    "openstates-executive-ar-99f67d4f-c181-46a8-b7a9-4b45ada32c50-20260925",
-    "openstates-executive-az-45ff1caf-0d6b-4915-9e34-5f4694907a07-20260925",
-    "openstates-executive-az-6e522a2a-e7b7-4713-a40f-c897e4341a87-20260925",
-    "openstates-executive-az-a94ae259-7b2d-4756-9c9b-d9fc778e6c1f-20260925",
-    "openstates-executive-ca-113aeeca-7bac-4407-8ec3-bceab97680e5-20260925",
-    "openstates-executive-ca-1529b892-b3da-4958-bb3a-5bf04d7b5e0c-20260925",
-    "openstates-executive-ca-19e0dbe3-0e2d-4dec-b5dd-c34618cdc2c3-20260925",
-    "openstates-executive-ca-c8e67d27-47c2-4565-8e29-79bc78ae9495-20260925",
-    "openstates-executive-co-21632200-6ff5-4b76-9c2e-190d8804ac16-20260925",
-    "openstates-executive-co-570385fc-0dd8-4754-9e94-3faeae5f2287-20260925",
-    "openstates-executive-co-be56ceea-ca7e-46b1-acdd-d4266e9d2893-20260925",
-    "openstates-executive-co-fb02dd97-db94-4350-841f-e5adb9065c0c-20260925",
-    "openstates-executive-ct-4cd3e60f-3830-4121-965f-f29d9b5ec6e7-20260925",
-    "openstates-executive-ct-4e747abf-37ad-41ba-aba5-064e420d2cc8-20260925",
-    "openstates-executive-ct-e54205b6-c824-4f64-9a68-301d01318457-20260925",
-    "openstates-executive-ct-e5e49f6f-a9d8-4f9c-b235-53f7f571c3e3-20260925",
-    "openstates-executive-dc-dce9c4a8-218a-411d-bb93-09f7e8347d8c-20260925",
-    "openstates-executive-de-1fbb3c2f-b3ec-421d-af2a-2f0af26b2939-20260925",
-    "openstates-executive-de-8c05321d-6737-437f-928b-adaf129103f5-20260925",
-    "openstates-executive-de-96f29b7f-bd5a-4a83-8ed0-7a5c6d3c6036-20260925",
-    "openstates-executive-de-d1ed8b9a-53e1-4cd6-b1b2-ef6632fbde5d-20260925",
-    "openstates-executive-fl-284392c5-5708-4014-9ea1-9552536c5a3e-20260925",
-    "openstates-executive-fl-34dac893-eae3-495e-9237-9689a1114895-20260925",
-    "openstates-executive-fl-669df589-03af-4b3a-9588-d95ab977e171-20260925",
-    "openstates-executive-fl-bf19e4db-85d0-4b4e-a980-e30d84905d8a-20260925",
-    "openstates-executive-ga-02e75ac0-4350-4305-980e-8dc0462c5cc1-20260925",
-    "openstates-executive-ga-57002bfc-2ba0-48cd-85d4-94673c5bf75a-20260925",
-    "openstates-executive-ga-600e5c48-f5c0-4535-a219-60a5fd94c38f-20260925",
-    "openstates-executive-ga-ddfab174-3a42-42c0-946e-0ce3169c4d1b-20260925",
-    "openstates-executive-hi-8145b3ac-aaee-43d1-a534-d51d5e80f178-20260925",
-    "openstates-executive-hi-c7e5e0d4-7a5d-42dc-a3cc-d7b54b1dc51b-20260925",
-    "openstates-executive-hi-c9a8622e-5a8a-4387-bcdc-b0905ae7f9ad-20260925",
-    "openstates-executive-hi-f3a50da6-6c22-4c5a-ba48-d10ee2188333-20260925",
-    "openstates-executive-ia-3895278c-5226-4b70-bce0-d2ac15b3bce1-20260925",
-    "openstates-executive-ia-a32d2cef-0ce9-4a2d-bbf6-8c8a53eaad4f-20260925",
-    "openstates-executive-ia-f0883baf-9a96-4631-8dd8-2a768fe9357b-20260925",
-    "openstates-executive-ia-fcb94ca1-9a57-4378-9568-ecbe6c3ae0d6-20260925",
-    "openstates-executive-id-7b647b3d-a3e6-47b3-91b2-a26f0f7f711c-20260925",
-    "openstates-executive-id-8f948dc8-8e7a-4a63-8fa8-b65efa9236f8-20260925",
-    "openstates-executive-id-a6d731ea-af56-43f8-ba93-124774ae97c4-20260925",
-    "openstates-executive-id-e64e04bc-21eb-475a-87f3-89aeacfc9f0c-20260925",
-    "openstates-executive-il-65ee6848-68bd-430d-890c-a121fb6e8577-20260925",
-    "openstates-executive-il-c8b35f07-1a0b-4019-b476-9fa032494c5e-20260925",
-    "openstates-executive-il-db3adc7a-d2f8-4e61-a017-bf5d3804ba33-20260925",
-    "openstates-executive-il-ddd1688a-cbb6-4d94-a7e3-d865896507df-20260925",
-    "openstates-executive-in-3ed7846b-4aaa-44fc-b502-a64d70bfd36f-20260925",
-    "openstates-executive-in-b2cb0fa8-b426-4c50-94d8-dedd948175cd-20260925",
-    "openstates-executive-in-bdc262d7-ce67-4fd1-a96d-f92059ac0dfd-20260925",
-    "openstates-executive-in-f3361ebb-630c-4160-9f66-68c7c9eb7419-20260925",
-    "openstates-executive-ks-10fdb8a1-6fed-43c9-a7ee-289b859b60ab-20260925",
-    "openstates-executive-ks-2654d836-700f-464d-a0dd-81cb0bd77b9e-20260925",
-    "openstates-executive-ks-33e1e312-76c0-4d83-81d3-fa07768eab34-20260925",
-    "openstates-executive-ks-5ef16835-fd08-407d-abaf-0407a665ada1-20260925",
-    "openstates-executive-ky-542cf596-f393-4fcf-b2d6-7439e7726328-20260925",
-    "openstates-executive-ky-88966c8e-873b-4bb4-8b06-6ddef3f16171-20260925",
-    "openstates-executive-ky-9b07a848-b96c-4424-826a-5194b65e43d9-20260925",
-    "openstates-executive-ky-c7dbc1b4-67fb-4bb2-b1c5-cc5ef9356a5a-20260925",
-    "openstates-executive-la-003d1e83-14f4-4bda-8484-c552e036f421-20260925",
-    "openstates-executive-la-6beaac02-1e0d-4aee-96d3-9033f9f918e8-20260925",
-    "openstates-executive-la-90d9e851-bec3-4bde-b883-bfa43d63194f-20260925",
-    "openstates-executive-la-e5d7ed7a-e3d9-4290-86d4-edc0b4113ac1-20260925",
-    "openstates-executive-ma-0587c400-b81a-4ced-b560-a4009519076a-20260925",
-    "openstates-executive-ma-34e31265-0ac9-4817-b54a-3dc5a02b313c-20260925",
-    "openstates-executive-ma-4e8f36fb-9017-4a35-a692-7f09958dcf61-20260925",
-    "openstates-executive-ma-d90a06b9-0edf-4fda-a823-4247987244dc-20260925",
-    "openstates-executive-ma-e4405312-71fd-4192-a658-6adbeeebe48c-20260925",
-    "openstates-executive-ma-ead7f955-7ff0-4ac0-bc29-35688074b79f-20260925",
-    "openstates-executive-ma-ec37a070-639f-4c27-9228-33c9d38f9639-20260925",
-    "openstates-executive-md-1ad81709-e1d6-42bd-86bc-afdec934288c-20260925",
-    "openstates-executive-md-27dd7c4f-0e25-4cd0-b849-6830e5ec7fa1-20260925",
-    "openstates-executive-md-a6a4f3ad-59c0-471c-8fd3-ea06a8e21a87-20260925",
-    "openstates-executive-md-d0d1f668-64ae-40ba-b796-97234ddc96d1-20260925",
-    "openstates-executive-me-3a068db0-d252-4bf9-929d-feb15cb84087-20260925",
-    "openstates-executive-me-530fa17b-8a45-4d39-adb1-e9492081a761-20260925",
-    "openstates-executive-me-a641743d-e1c1-4bb6-bba0-ad1f143dbf20-20260925",
-    "openstates-executive-mi-9b425a88-36ae-439c-b2f9-8da167b9ff27-20260925",
-    "openstates-executive-mi-bcdc22e9-cca9-47d9-96a4-757fef25f866-20260925",
-    "openstates-executive-mi-d45a5608-2735-4ef3-883b-0ebdabed89e0-20260925",
-    "openstates-executive-mi-e077b72e-8c9e-4506-a4b5-1fd83d6f6226-20260925",
-    "openstates-executive-mn-029aa632-cefd-431d-bba0-e2ed611b2151-20260925",
-    "openstates-executive-mn-46deef0f-6af0-4cb8-b4ac-385aa505df50-20260925",
-    "openstates-executive-mn-aba9f63e-b8ee-4515-acac-af7a63a4d1ec-20260925",
-    "openstates-executive-mn-d563a09c-876b-4384-a7cc-a15f3d5d064c-20260925",
-    "openstates-executive-mo-43d8764b-a3b7-432a-8750-ae0e9165ecf9-20260925",
-    "openstates-executive-mo-b1263b48-7df4-443c-8a71-41abc892bd7e-20260925",
-    "openstates-executive-mo-c2f94a50-d59c-4c56-abe6-2eebbce40a68-20260925",
-    "openstates-executive-mo-fb5f8d73-1782-4478-b33b-1c6494933249-20260925",
-    "openstates-executive-ms-3a1d28c1-dd21-40b8-9a79-159441a5c88a-20260925",
-    "openstates-executive-ms-3c19275b-6e87-43fa-83fa-ced52c9119bf-20260925",
-    "openstates-executive-ms-a9b2b93d-b993-4a20-af9e-3e9e2c9cd770-20260925",
-    "openstates-executive-ms-c735ee81-f40f-4c16-aa57-e7068d7df10e-20260925",
-    "openstates-executive-mt-6932f017-6867-409a-8321-6cf9dce312ef-20260925",
-    "openstates-executive-mt-9539fe67-8a54-46b1-ac08-c5c6c9ca7fef-20260925",
-    "openstates-executive-mt-c40b88ef-ba7b-415f-a6d4-581bfecf0ea7-20260925",
-    "openstates-executive-mt-f4a7fa52-2f69-40f9-b806-7cec241ab27d-20260925",
-    "openstates-executive-nc-0a494878-c7fd-4a6a-8b82-3eb681e3fe6e-20260925",
-    "openstates-executive-nc-4c3a1120-2dd5-4fbe-a084-e64894e57163-20260925",
-    "openstates-executive-nc-59ece42c-d325-427b-bd54-96b3625bc43d-20260925",
-    "openstates-executive-nc-dfa5c5d2-cc09-4b52-98fd-26f169882e48-20260925",
-    "openstates-executive-nd-31c83885-ce7e-4b8f-ac6d-bf310c12acb8-20260925",
-    "openstates-executive-nd-482e4b71-bc8b-4c9e-80a5-bc2c51e90aa0-20260925",
-    "openstates-executive-nd-a6e733ce-ccdc-425a-bb9b-9010a09c3933-20260925",
-    "openstates-executive-nd-b86dfdcd-93e3-40d8-929f-47f1c86813e3-20260925",
-    "openstates-executive-ne-3eafc2ab-5448-40ac-9d5f-b317abdbc747-20260925",
-    "openstates-executive-ne-74c5deca-9550-45e2-a5dc-c3386623edef-20260925",
-    "openstates-executive-ne-c67c3ac8-3260-44d7-b419-3d8210c4f0bd-20260925",
-    "openstates-executive-ne-ecaf1ef5-c273-497b-8c05-74d0edc97e27-20260925",
-    "openstates-executive-nh-3eabef50-7d86-44cf-87db-8c549d2d21bd-20260925",
-    "openstates-executive-nh-e5a00ff2-baa7-41c5-b329-274a478f9108-20260925",
-    "openstates-executive-nh-f317bfaf-ded5-4ef7-88e3-02e675b20c17-20260925",
-    "openstates-executive-nj-45caac41-0f71-4243-99cc-bb18b7b82386-20260925",
-    "openstates-executive-nj-a239e47a-d97a-4c6e-a723-f03c207d003b-20260925",
-    "openstates-executive-nj-cf9793dd-4ef2-4db2-807c-4cf8fce4eecb-20260925",
-    "openstates-executive-nj-d0bf3dce-c5b7-4f9f-a4e2-9637582299ac-20260925",
-    "openstates-executive-nm-56e025c5-7367-4e17-98eb-d7a5cf0b5688-20260925",
-    "openstates-executive-nm-cb607080-ff7b-48c8-acf4-0180e6e2f999-20260925",
-    "openstates-executive-nm-d52c0e56-76f1-4b81-a62c-2a3dd7abcc4e-20260925",
-    "openstates-executive-nm-f28f6559-556c-4c2e-a023-08b9df9f1d71-20260925",
-    "openstates-executive-nv-05db3ab9-9801-410f-9d35-2f184df77f8e-20260925",
-    "openstates-executive-nv-7697f67a-9050-4e1d-9640-3710b6a53603-20260925",
-    "openstates-executive-nv-b71b3b3a-2122-43ec-a5e8-1ac394f13cf0-20260925",
-    "openstates-executive-nv-d2c166cc-f53f-491d-9c4a-6c3fc68274fe-20260925",
-    "openstates-executive-nv-e730bc7c-c97e-4428-8bc7-f1e9708cb878-20260925",
-    "openstates-executive-ny-6a95f6b7-1eb0-439b-af25-c9b26d19de9e-20260925",
-    "openstates-executive-ny-8af60485-fd92-4880-9cc4-07f72487de4c-20260925",
-    "openstates-executive-ny-a620faf8-81e3-490e-8d26-dbf84c707786-20260925",
-    "openstates-executive-ny-ccdd914d-9853-4fd2-9a80-ce6c962cdd18-20260925",
-    "openstates-executive-oh-37478cd9-ed21-43f7-b2cc-578df43ad32d-20260925",
-    "openstates-executive-oh-6aef5093-5720-48fd-9997-e4f5451014b4-20260925",
-    "openstates-executive-oh-b8ac5c3b-66e6-47f4-b8c2-1fd148a1f041-20260925",
-    "openstates-executive-oh-eaeed96a-2f5c-43f2-aef4-fa3432d33451-20260925",
-    "openstates-executive-ok-2de0b4a5-69b8-424a-bc60-af11e453c622-20260925",
-    "openstates-executive-ok-b4b14ac3-5ee6-4404-a4fc-ec6ea805ac90-20260925",
-    "openstates-executive-ok-c363ab87-72b9-4c52-af58-c5cb2da323d2-20260925",
-    "openstates-executive-ok-e55fbb4f-73e3-4ee7-a4c6-6e5ae860d360-20260925",
-    "openstates-executive-or-201cf42b-d036-4582-a6ff-f23b3ab3f442-20260925",
-    "openstates-executive-or-73710d6f-5ce6-4015-8b6f-92fa17458afc-20260925",
-    "openstates-executive-or-c136922d-c34a-4b53-a56b-2201b139d469-20260925",
-    "openstates-executive-pa-6726e869-3e54-4b33-8765-d4704529465d-20260925",
-    "openstates-executive-pa-ac7497c7-0a0d-495f-98ce-75dedbfeb0c7-20260925",
-    "openstates-executive-pa-d880fd50-7249-4f5d-b7d4-193a4ae8319e-20260925",
-    "openstates-executive-pa-e5de67f9-3e82-4e65-89ce-47aa0772d1f8-20260925",
-    "openstates-executive-ri-18b9f6aa-ba50-4c0a-953c-fba2720ef2a6-20260925",
-    "openstates-executive-ri-2c4e5251-d011-436c-8d4e-5142d174813e-20260925",
-    "openstates-executive-ri-7ca005d1-05b8-4ce2-80b4-04ff7acaa59e-20260925",
-    "openstates-executive-ri-811001df-7f40-4641-9461-fb2dc02bacce-20260925",
-    "openstates-executive-sc-333130a9-ecba-4992-b223-d2af0c9f2a06-20260925",
-    "openstates-executive-sc-b9f92b67-9de4-489e-861b-995274f4d20e-20260925",
-    "openstates-executive-sc-f96c83a2-ed1e-4ff6-b5a7-7bb83afdf2df-20260925",
-    "openstates-executive-sc-fd462977-6631-4203-820c-a91b0b4ebcd2-20260925",
-    "openstates-executive-sd-b305d3f4-6e90-44ab-a228-3ed2933e2989-20260925",
-    "openstates-executive-sd-b41fff76-c4dd-4e5c-b7f5-c6480a6b1710-20260925",
-    "openstates-executive-sd-c8d6a31f-a4e9-454a-a75a-28b668c1b729-20260925",
-    "openstates-executive-sd-e4192363-de65-4632-8224-6d59098f1e61-20260925",
-    "openstates-executive-tn-8a5fa491-f871-4b57-962e-8db9adf2c8c3-20260925",
-    "openstates-executive-tn-d94cf7a2-1ba6-46f2-bdbf-54ace20b8dfc-20260925",
-    "openstates-executive-tn-fd642e2d-42da-4d24-a0e8-0e99ab43644e-20260925",
-    "openstates-executive-tx-1c1b6320-5ed6-4739-9f53-389b724b0305-20260925",
-    "openstates-executive-tx-22c1bff3-e936-4398-8d7c-95233e85b5c5-20260925",
-    "openstates-executive-tx-d73f10ee-69f2-4ca8-ac00-405c453a62d7-20260925",
-    "openstates-executive-tx-ff63d52e-ec3f-4749-9b96-8e8323cd655f-20260925",
-    "openstates-executive-ut-34430fff-d52e-4218-a99b-3d2764578bc9-20260925",
-    "openstates-executive-ut-52dd3ff2-e7a2-458e-b8f1-797fdab69e4a-20260925",
-    "openstates-executive-ut-8bae8ef6-d21e-4eba-94e4-2aad97023cbc-20260925",
-    "openstates-executive-va-2ae6c10e-e6d0-4033-927f-0b067b2ba0fc-20260925",
-    "openstates-executive-va-30e93a95-5457-4263-96f9-2ea38017a253-20260925",
-    "openstates-executive-va-5dcee999-b5aa-4ba8-acbf-59dd13d56180-20260925",
-    "openstates-executive-va-7ef2fdd9-b55d-4ab4-83ea-17c47c2e5227-20260925",
-    "openstates-executive-vt-19d6cf01-f77c-4db7-8765-af838a00bc75-20260925",
-    "openstates-executive-vt-2cb218ea-52a4-4d1f-9732-217940ba260e-20260925",
-    "openstates-executive-vt-5ff8e24a-93df-4bc3-a669-7ea42d42c59b-20260925",
-    "openstates-executive-vt-f3e613ff-3cd6-4b2c-b268-f6460d029f05-20260925",
-    "openstates-executive-wa-117499b6-79e9-4eaf-827d-59c0ed14b7c0-20260925",
-    "openstates-executive-wa-4816d75e-eac4-4ff8-8270-fb79324b93c8-20260925",
-    "openstates-executive-wa-4a203502-87b1-49f6-8cf2-8cbf4dedb954-20260925",
-    "openstates-executive-wa-b1789e29-3532-4554-9ee1-853497224a85-20260925",
-    "openstates-executive-wi-21c76f44-b31e-4300-b8d1-bb8d4b93bc51-20260925",
-    "openstates-executive-wi-44ad52d1-4ba8-4ca2-b1e1-cda1621a0bc7-20260925",
-    "openstates-executive-wi-48f0bd58-e9cb-4e70-b61e-6c45e03764f8-20260925",
-    "openstates-executive-wi-827a69f2-8b85-4a72-ac01-14be2c08aa6c-20260925",
-    "openstates-executive-wv-0788d53c-8461-4f0f-ba32-07f626cb45e1-20260925",
-    "openstates-executive-wv-cf5ab5dc-33c4-4d93-a810-f42cd6f98f5d-20260925",
-    "openstates-executive-wv-f37cb5a5-e2b8-4c2b-83b8-9ea5c9651af3-20260925",
-    "openstates-executive-wy-d2a01d75-b8ff-4c5b-8e8e-38803e9502b4-20260925",
-    "openstates-executive-wy-d832b435-0a83-49ba-abd8-6ce265eb52ef-20260925",
-    "openstates-executive-wy-fc4a66ba-5fc1-47e2-8e8a-4fec762c7af6-20260925"
+    "openstates-executive-ak-671acdf5-e1ec-4259-ba3d-19d1df9a146e-20261103",
+    "openstates-executive-ak-6b940121-937e-47ba-916a-626b67fe54f4-20261103",
+    "openstates-executive-ak-80f0f5f8-976d-427b-b980-ce3a23a23e84-20261103",
+    "openstates-executive-al-1fcc4f8d-90c5-4e7c-aa4c-3b58a3a87ba5-20261103",
+    "openstates-executive-al-3636b6ed-56b0-44bb-97b8-dee266b6d9c8-20261103",
+    "openstates-executive-al-6e7f8f74-90fd-416b-b08e-188d6315b3ce-20261103",
+    "openstates-executive-al-7a749447-b86f-4788-ab1f-235b8f7a0097-20261103",
+    "openstates-executive-al-cb01dcb8-b382-48af-a781-d4019eb3dfa6-20261103",
+    "openstates-executive-al-f8daba65-dcf6-43b4-8c38-8b02b5b59db7-20261103",
+    "openstates-executive-ar-1c9262ce-53a4-4d0c-ab9e-45edb5377fa0-20261103",
+    "openstates-executive-ar-20b42b64-6dd3-4b52-97f2-def9b8207a7d-20261103",
+    "openstates-executive-ar-29e6b6e2-82fc-48f8-9177-96b1ec30a2a6-20261103",
+    "openstates-executive-ar-77a57e2c-188c-42fd-adad-24066f27ec3c-20261103",
+    "openstates-executive-ar-7cf8a839-6c34-4375-bfd5-7cfe92233b72-20261103",
+    "openstates-executive-ar-99f67d4f-c181-46a8-b7a9-4b45ada32c50-20261103",
+    "openstates-executive-az-45ff1caf-0d6b-4915-9e34-5f4694907a07-20261103",
+    "openstates-executive-az-6e522a2a-e7b7-4713-a40f-c897e4341a87-20261103",
+    "openstates-executive-az-a94ae259-7b2d-4756-9c9b-d9fc778e6c1f-20261103",
+    "openstates-executive-ca-113aeeca-7bac-4407-8ec3-bceab97680e5-20261103",
+    "openstates-executive-ca-1529b892-b3da-4958-bb3a-5bf04d7b5e0c-20261103",
+    "openstates-executive-ca-19e0dbe3-0e2d-4dec-b5dd-c34618cdc2c3-20261103",
+    "openstates-executive-ca-c8e67d27-47c2-4565-8e29-79bc78ae9495-20261103",
+    "openstates-executive-co-21632200-6ff5-4b76-9c2e-190d8804ac16-20261103",
+    "openstates-executive-co-570385fc-0dd8-4754-9e94-3faeae5f2287-20261103",
+    "openstates-executive-co-be56ceea-ca7e-46b1-acdd-d4266e9d2893-20261103",
+    "openstates-executive-co-fb02dd97-db94-4350-841f-e5adb9065c0c-20261103",
+    "openstates-executive-ct-4cd3e60f-3830-4121-965f-f29d9b5ec6e7-20261103",
+    "openstates-executive-ct-4e747abf-37ad-41ba-aba5-064e420d2cc8-20261103",
+    "openstates-executive-ct-e54205b6-c824-4f64-9a68-301d01318457-20261103",
+    "openstates-executive-ct-e5e49f6f-a9d8-4f9c-b235-53f7f571c3e3-20261103",
+    "openstates-executive-dc-dce9c4a8-218a-411d-bb93-09f7e8347d8c-20261103",
+    "openstates-executive-de-1fbb3c2f-b3ec-421d-af2a-2f0af26b2939-20261103",
+    "openstates-executive-de-8c05321d-6737-437f-928b-adaf129103f5-20261103",
+    "openstates-executive-de-96f29b7f-bd5a-4a83-8ed0-7a5c6d3c6036-20261103",
+    "openstates-executive-de-d1ed8b9a-53e1-4cd6-b1b2-ef6632fbde5d-20261103",
+    "openstates-executive-fl-284392c5-5708-4014-9ea1-9552536c5a3e-20261103",
+    "openstates-executive-fl-34dac893-eae3-495e-9237-9689a1114895-20261103",
+    "openstates-executive-fl-669df589-03af-4b3a-9588-d95ab977e171-20261103",
+    "openstates-executive-fl-bf19e4db-85d0-4b4e-a980-e30d84905d8a-20261103",
+    "openstates-executive-ga-02e75ac0-4350-4305-980e-8dc0462c5cc1-20261103",
+    "openstates-executive-ga-57002bfc-2ba0-48cd-85d4-94673c5bf75a-20261103",
+    "openstates-executive-ga-600e5c48-f5c0-4535-a219-60a5fd94c38f-20261103",
+    "openstates-executive-ga-ddfab174-3a42-42c0-946e-0ce3169c4d1b-20261103",
+    "openstates-executive-hi-8145b3ac-aaee-43d1-a534-d51d5e80f178-20261103",
+    "openstates-executive-hi-c7e5e0d4-7a5d-42dc-a3cc-d7b54b1dc51b-20261103",
+    "openstates-executive-hi-c9a8622e-5a8a-4387-bcdc-b0905ae7f9ad-20261103",
+    "openstates-executive-hi-f3a50da6-6c22-4c5a-ba48-d10ee2188333-20261103",
+    "openstates-executive-ia-3895278c-5226-4b70-bce0-d2ac15b3bce1-20261103",
+    "openstates-executive-ia-a32d2cef-0ce9-4a2d-bbf6-8c8a53eaad4f-20261103",
+    "openstates-executive-ia-f0883baf-9a96-4631-8dd8-2a768fe9357b-20261103",
+    "openstates-executive-ia-fcb94ca1-9a57-4378-9568-ecbe6c3ae0d6-20261103",
+    "openstates-executive-id-7b647b3d-a3e6-47b3-91b2-a26f0f7f711c-20261103",
+    "openstates-executive-id-8f948dc8-8e7a-4a63-8fa8-b65efa9236f8-20261103",
+    "openstates-executive-id-a6d731ea-af56-43f8-ba93-124774ae97c4-20261103",
+    "openstates-executive-id-e64e04bc-21eb-475a-87f3-89aeacfc9f0c-20261103",
+    "openstates-executive-il-65ee6848-68bd-430d-890c-a121fb6e8577-20261103",
+    "openstates-executive-il-c8b35f07-1a0b-4019-b476-9fa032494c5e-20261103",
+    "openstates-executive-il-db3adc7a-d2f8-4e61-a017-bf5d3804ba33-20261103",
+    "openstates-executive-il-ddd1688a-cbb6-4d94-a7e3-d865896507df-20261103",
+    "openstates-executive-in-3ed7846b-4aaa-44fc-b502-a64d70bfd36f-20261103",
+    "openstates-executive-in-b2cb0fa8-b426-4c50-94d8-dedd948175cd-20261103",
+    "openstates-executive-in-bdc262d7-ce67-4fd1-a96d-f92059ac0dfd-20261103",
+    "openstates-executive-in-f3361ebb-630c-4160-9f66-68c7c9eb7419-20261103",
+    "openstates-executive-ks-10fdb8a1-6fed-43c9-a7ee-289b859b60ab-20261103",
+    "openstates-executive-ks-2654d836-700f-464d-a0dd-81cb0bd77b9e-20261103",
+    "openstates-executive-ks-33e1e312-76c0-4d83-81d3-fa07768eab34-20261103",
+    "openstates-executive-ks-5ef16835-fd08-407d-abaf-0407a665ada1-20261103",
+    "openstates-executive-ky-542cf596-f393-4fcf-b2d6-7439e7726328-20261103",
+    "openstates-executive-ky-88966c8e-873b-4bb4-8b06-6ddef3f16171-20261103",
+    "openstates-executive-ky-9b07a848-b96c-4424-826a-5194b65e43d9-20261103",
+    "openstates-executive-ky-c7dbc1b4-67fb-4bb2-b1c5-cc5ef9356a5a-20261103",
+    "openstates-executive-la-003d1e83-14f4-4bda-8484-c552e036f421-20261103",
+    "openstates-executive-la-6beaac02-1e0d-4aee-96d3-9033f9f918e8-20261103",
+    "openstates-executive-la-90d9e851-bec3-4bde-b883-bfa43d63194f-20261103",
+    "openstates-executive-la-e5d7ed7a-e3d9-4290-86d4-edc0b4113ac1-20261103",
+    "openstates-executive-ma-0587c400-b81a-4ced-b560-a4009519076a-20261103",
+    "openstates-executive-ma-34e31265-0ac9-4817-b54a-3dc5a02b313c-20261103",
+    "openstates-executive-ma-4e8f36fb-9017-4a35-a692-7f09958dcf61-20261103",
+    "openstates-executive-ma-d90a06b9-0edf-4fda-a823-4247987244dc-20261103",
+    "openstates-executive-ma-ead7f955-7ff0-4ac0-bc29-35688074b79f-20261103",
+    "openstates-executive-ma-ec37a070-639f-4c27-9228-33c9d38f9639-20261103",
+    "openstates-executive-md-1ad81709-e1d6-42bd-86bc-afdec934288c-20261103",
+    "openstates-executive-md-27dd7c4f-0e25-4cd0-b849-6830e5ec7fa1-20261103",
+    "openstates-executive-md-a6a4f3ad-59c0-471c-8fd3-ea06a8e21a87-20261103",
+    "openstates-executive-md-d0d1f668-64ae-40ba-b796-97234ddc96d1-20261103",
+    "openstates-executive-me-3a068db0-d252-4bf9-929d-feb15cb84087-20261103",
+    "openstates-executive-me-530fa17b-8a45-4d39-adb1-e9492081a761-20261103",
+    "openstates-executive-me-a641743d-e1c1-4bb6-bba0-ad1f143dbf20-20261103",
+    "openstates-executive-mi-9b425a88-36ae-439c-b2f9-8da167b9ff27-20261103",
+    "openstates-executive-mi-bcdc22e9-cca9-47d9-96a4-757fef25f866-20261103",
+    "openstates-executive-mi-d45a5608-2735-4ef3-883b-0ebdabed89e0-20261103",
+    "openstates-executive-mi-e077b72e-8c9e-4506-a4b5-1fd83d6f6226-20261103",
+    "openstates-executive-mn-029aa632-cefd-431d-bba0-e2ed611b2151-20261103",
+    "openstates-executive-mn-46deef0f-6af0-4cb8-b4ac-385aa505df50-20261103",
+    "openstates-executive-mn-aba9f63e-b8ee-4515-acac-af7a63a4d1ec-20261103",
+    "openstates-executive-mn-d563a09c-876b-4384-a7cc-a15f3d5d064c-20261103",
+    "openstates-executive-mo-43d8764b-a3b7-432a-8750-ae0e9165ecf9-20261103",
+    "openstates-executive-mo-b1263b48-7df4-443c-8a71-41abc892bd7e-20261103",
+    "openstates-executive-mo-c2f94a50-d59c-4c56-abe6-2eebbce40a68-20261103",
+    "openstates-executive-mo-fb5f8d73-1782-4478-b33b-1c6494933249-20261103",
+    "openstates-executive-ms-3a1d28c1-dd21-40b8-9a79-159441a5c88a-20261103",
+    "openstates-executive-ms-3c19275b-6e87-43fa-83fa-ced52c9119bf-20261103",
+    "openstates-executive-ms-a9b2b93d-b993-4a20-af9e-3e9e2c9cd770-20261103",
+    "openstates-executive-ms-c735ee81-f40f-4c16-aa57-e7068d7df10e-20261103",
+    "openstates-executive-mt-6932f017-6867-409a-8321-6cf9dce312ef-20261103",
+    "openstates-executive-mt-9539fe67-8a54-46b1-ac08-c5c6c9ca7fef-20261103",
+    "openstates-executive-mt-c40b88ef-ba7b-415f-a6d4-581bfecf0ea7-20261103",
+    "openstates-executive-mt-f4a7fa52-2f69-40f9-b806-7cec241ab27d-20261103",
+    "openstates-executive-nc-0a494878-c7fd-4a6a-8b82-3eb681e3fe6e-20261103",
+    "openstates-executive-nc-4c3a1120-2dd5-4fbe-a084-e64894e57163-20261103",
+    "openstates-executive-nc-59ece42c-d325-427b-bd54-96b3625bc43d-20261103",
+    "openstates-executive-nc-dfa5c5d2-cc09-4b52-98fd-26f169882e48-20261103",
+    "openstates-executive-nd-31c83885-ce7e-4b8f-ac6d-bf310c12acb8-20261103",
+    "openstates-executive-nd-482e4b71-bc8b-4c9e-80a5-bc2c51e90aa0-20261103",
+    "openstates-executive-nd-a6e733ce-ccdc-425a-bb9b-9010a09c3933-20261103",
+    "openstates-executive-nd-b86dfdcd-93e3-40d8-929f-47f1c86813e3-20261103",
+    "openstates-executive-ne-3eafc2ab-5448-40ac-9d5f-b317abdbc747-20261103",
+    "openstates-executive-ne-74c5deca-9550-45e2-a5dc-c3386623edef-20261103",
+    "openstates-executive-ne-c67c3ac8-3260-44d7-b419-3d8210c4f0bd-20261103",
+    "openstates-executive-ne-ecaf1ef5-c273-497b-8c05-74d0edc97e27-20261103",
+    "openstates-executive-nh-3eabef50-7d86-44cf-87db-8c549d2d21bd-20261103",
+    "openstates-executive-nh-e5a00ff2-baa7-41c5-b329-274a478f9108-20261103",
+    "openstates-executive-nh-f317bfaf-ded5-4ef7-88e3-02e675b20c17-20261103",
+    "openstates-executive-nj-45caac41-0f71-4243-99cc-bb18b7b82386-20261103",
+    "openstates-executive-nj-a239e47a-d97a-4c6e-a723-f03c207d003b-20261103",
+    "openstates-executive-nj-cf9793dd-4ef2-4db2-807c-4cf8fce4eecb-20261103",
+    "openstates-executive-nj-d0bf3dce-c5b7-4f9f-a4e2-9637582299ac-20261103",
+    "openstates-executive-nm-56e025c5-7367-4e17-98eb-d7a5cf0b5688-20261103",
+    "openstates-executive-nm-cb607080-ff7b-48c8-acf4-0180e6e2f999-20261103",
+    "openstates-executive-nm-d52c0e56-76f1-4b81-a62c-2a3dd7abcc4e-20261103",
+    "openstates-executive-nm-f28f6559-556c-4c2e-a023-08b9df9f1d71-20261103",
+    "openstates-executive-nv-05db3ab9-9801-410f-9d35-2f184df77f8e-20261103",
+    "openstates-executive-nv-7697f67a-9050-4e1d-9640-3710b6a53603-20261103",
+    "openstates-executive-nv-b71b3b3a-2122-43ec-a5e8-1ac394f13cf0-20261103",
+    "openstates-executive-nv-d2c166cc-f53f-491d-9c4a-6c3fc68274fe-20261103",
+    "openstates-executive-nv-e730bc7c-c97e-4428-8bc7-f1e9708cb878-20261103",
+    "openstates-executive-ny-6a95f6b7-1eb0-439b-af25-c9b26d19de9e-20261103",
+    "openstates-executive-ny-8af60485-fd92-4880-9cc4-07f72487de4c-20261103",
+    "openstates-executive-ny-a620faf8-81e3-490e-8d26-dbf84c707786-20261103",
+    "openstates-executive-ny-ccdd914d-9853-4fd2-9a80-ce6c962cdd18-20261103",
+    "openstates-executive-oh-37478cd9-ed21-43f7-b2cc-578df43ad32d-20261103",
+    "openstates-executive-oh-6aef5093-5720-48fd-9997-e4f5451014b4-20261103",
+    "openstates-executive-oh-b8ac5c3b-66e6-47f4-b8c2-1fd148a1f041-20261103",
+    "openstates-executive-oh-eaeed96a-2f5c-43f2-aef4-fa3432d33451-20261103",
+    "openstates-executive-ok-2de0b4a5-69b8-424a-bc60-af11e453c622-20261103",
+    "openstates-executive-ok-b4b14ac3-5ee6-4404-a4fc-ec6ea805ac90-20261103",
+    "openstates-executive-ok-c363ab87-72b9-4c52-af58-c5cb2da323d2-20261103",
+    "openstates-executive-ok-e55fbb4f-73e3-4ee7-a4c6-6e5ae860d360-20261103",
+    "openstates-executive-or-201cf42b-d036-4582-a6ff-f23b3ab3f442-20261103",
+    "openstates-executive-or-73710d6f-5ce6-4015-8b6f-92fa17458afc-20261103",
+    "openstates-executive-or-c136922d-c34a-4b53-a56b-2201b139d469-20261103",
+    "openstates-executive-pa-6726e869-3e54-4b33-8765-d4704529465d-20261103",
+    "openstates-executive-pa-ac7497c7-0a0d-495f-98ce-75dedbfeb0c7-20261103",
+    "openstates-executive-pa-d880fd50-7249-4f5d-b7d4-193a4ae8319e-20261103",
+    "openstates-executive-pa-e5de67f9-3e82-4e65-89ce-47aa0772d1f8-20261103",
+    "openstates-executive-ri-18b9f6aa-ba50-4c0a-953c-fba2720ef2a6-20261103",
+    "openstates-executive-ri-2c4e5251-d011-436c-8d4e-5142d174813e-20261103",
+    "openstates-executive-ri-7ca005d1-05b8-4ce2-80b4-04ff7acaa59e-20261103",
+    "openstates-executive-ri-811001df-7f40-4641-9461-fb2dc02bacce-20261103",
+    "openstates-executive-sc-333130a9-ecba-4992-b223-d2af0c9f2a06-20261103",
+    "openstates-executive-sc-b9f92b67-9de4-489e-861b-995274f4d20e-20261103",
+    "openstates-executive-sc-f96c83a2-ed1e-4ff6-b5a7-7bb83afdf2df-20261103",
+    "openstates-executive-sc-fd462977-6631-4203-820c-a91b0b4ebcd2-20261103",
+    "openstates-executive-sd-b305d3f4-6e90-44ab-a228-3ed2933e2989-20261103",
+    "openstates-executive-sd-b41fff76-c4dd-4e5c-b7f5-c6480a6b1710-20261103",
+    "openstates-executive-sd-c8d6a31f-a4e9-454a-a75a-28b668c1b729-20261103",
+    "openstates-executive-sd-e4192363-de65-4632-8224-6d59098f1e61-20261103",
+    "openstates-executive-tn-8a5fa491-f871-4b57-962e-8db9adf2c8c3-20261103",
+    "openstates-executive-tn-d94cf7a2-1ba6-46f2-bdbf-54ace20b8dfc-20261103",
+    "openstates-executive-tn-fd642e2d-42da-4d24-a0e8-0e99ab43644e-20261103",
+    "openstates-executive-tx-1c1b6320-5ed6-4739-9f53-389b724b0305-20261103",
+    "openstates-executive-tx-22c1bff3-e936-4398-8d7c-95233e85b5c5-20261103",
+    "openstates-executive-tx-d73f10ee-69f2-4ca8-ac00-405c453a62d7-20261103",
+    "openstates-executive-tx-ff63d52e-ec3f-4749-9b96-8e8323cd655f-20261103",
+    "openstates-executive-ut-34430fff-d52e-4218-a99b-3d2764578bc9-20261103",
+    "openstates-executive-ut-52dd3ff2-e7a2-458e-b8f1-797fdab69e4a-20261103",
+    "openstates-executive-ut-8bae8ef6-d21e-4eba-94e4-2aad97023cbc-20261103",
+    "openstates-executive-va-2ae6c10e-e6d0-4033-927f-0b067b2ba0fc-20261103",
+    "openstates-executive-va-30e93a95-5457-4263-96f9-2ea38017a253-20261103",
+    "openstates-executive-va-5dcee999-b5aa-4ba8-acbf-59dd13d56180-20261103",
+    "openstates-executive-va-7ef2fdd9-b55d-4ab4-83ea-17c47c2e5227-20261103",
+    "openstates-executive-vt-19d6cf01-f77c-4db7-8765-af838a00bc75-20261103",
+    "openstates-executive-vt-2cb218ea-52a4-4d1f-9732-217940ba260e-20261103",
+    "openstates-executive-vt-5ff8e24a-93df-4bc3-a669-7ea42d42c59b-20261103",
+    "openstates-executive-vt-f3e613ff-3cd6-4b2c-b268-f6460d029f05-20261103",
+    "openstates-executive-wa-117499b6-79e9-4eaf-827d-59c0ed14b7c0-20261103",
+    "openstates-executive-wa-4816d75e-eac4-4ff8-8270-fb79324b93c8-20261103",
+    "openstates-executive-wa-4a203502-87b1-49f6-8cf2-8cbf4dedb954-20261103",
+    "openstates-executive-wa-b1789e29-3532-4554-9ee1-853497224a85-20261103",
+    "openstates-executive-wi-21c76f44-b31e-4300-b8d1-bb8d4b93bc51-20261103",
+    "openstates-executive-wi-44ad52d1-4ba8-4ca2-b1e1-cda1621a0bc7-20261103",
+    "openstates-executive-wi-48f0bd58-e9cb-4e70-b61e-6c45e03764f8-20261103",
+    "openstates-executive-wi-827a69f2-8b85-4a72-ac01-14be2c08aa6c-20261103",
+    "openstates-executive-wv-0788d53c-8461-4f0f-ba32-07f626cb45e1-20261103",
+    "openstates-executive-wv-cf5ab5dc-33c4-4d93-a810-f42cd6f98f5d-20261103",
+    "openstates-executive-wv-f37cb5a5-e2b8-4c2b-83b8-9ea5c9651af3-20261103",
+    "openstates-executive-wy-d2a01d75-b8ff-4c5b-8e8e-38803e9502b4-20261103",
+    "openstates-executive-wy-d832b435-0a83-49ba-abd8-6ce265eb52ef-20261103",
+    "openstates-executive-wy-fc4a66ba-5fc1-47e2-8e8a-4fec762c7af6-20261103"
   ],
   "rows": [
     {
@@ -238,7 +236,7 @@
       "openStatesId": "ocd-person/80f0f5f8-976d-427b-b980-ce3a23a23e84",
       "incumbentParty": "Republican",
       "caucus": "Republican",
-      "termStart": "2018-12-03",
+      "termStart": "2022-12-05",
       "termEnd": "2026-12-07",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": -13.14,
@@ -277,8 +275,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ak-80f0f5f8-976d-427b-b980-ce3a23a23e84-20260925",
-      "rowSha256": "839a8737801427252981f4b5d0a764e3cab7715d9b750cc68660fe24df376854"
+      "sourceId": "openstates-executive-ak-80f0f5f8-976d-427b-b980-ce3a23a23e84-20261103",
+      "rowSha256": "1e9063ae27140cd1af2dc44c3babfc5978bad128224d42769fd1fce2c5c2fd14"
     },
     {
       "seatId": "seat_governor_al_current",
@@ -288,7 +286,7 @@
       "openStatesId": "ocd-person/1fcc4f8d-90c5-4e7c-aa4c-3b58a3a87ba5",
       "incumbentParty": "Republican",
       "caucus": "Republican",
-      "termStart": "2017-04-10",
+      "termStart": "2023-01-16",
       "termEnd": "2027-01-18",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": -30.47,
@@ -327,8 +325,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-al-1fcc4f8d-90c5-4e7c-aa4c-3b58a3a87ba5-20260925",
-      "rowSha256": "746521a2a54027f18e06b3eccffceba78080b2e7063fa06810139d1273dc3a67"
+      "sourceId": "openstates-executive-al-1fcc4f8d-90c5-4e7c-aa4c-3b58a3a87ba5-20261103",
+      "rowSha256": "e82c9d808f7d437a7009c2fe19948431492d00e06fefe8f8b7d898bb8967426c"
     },
     {
       "seatId": "seat_governor_ar_current",
@@ -377,8 +375,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ar-1c9262ce-53a4-4d0c-ab9e-45edb5377fa0-20260925",
-      "rowSha256": "8efed552cb296c360fb9583471c8839e45271c701f9f8280d197e445a083340b"
+      "sourceId": "openstates-executive-ar-1c9262ce-53a4-4d0c-ab9e-45edb5377fa0-20261103",
+      "rowSha256": "d1608e494ce196363f8766a8383264d805695a3936e4f4cc32b6505d54f98bd4"
     },
     {
       "seatId": "seat_governor_az_current",
@@ -427,8 +425,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-az-6e522a2a-e7b7-4713-a40f-c897e4341a87-20260925",
-      "rowSha256": "446cfe4f1fc8cf06ec43a88cd1ed2b36ff8163bbafe38eee2222f2c47a22a58e"
+      "sourceId": "openstates-executive-az-6e522a2a-e7b7-4713-a40f-c897e4341a87-20261103",
+      "rowSha256": "14f5adca960650015fd8d0024ec67a7c6be0fce6084bc4cd910a55199c1df63b"
     },
     {
       "seatId": "seat_governor_ca_current",
@@ -438,7 +436,7 @@
       "openStatesId": "ocd-person/19e0dbe3-0e2d-4dec-b5dd-c34618cdc2c3",
       "incumbentParty": "Democratic",
       "caucus": "Democratic",
-      "termStart": "2019-01-07",
+      "termStart": "2023-01-02",
       "termEnd": "2027-01-04",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": 20.13,
@@ -477,8 +475,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ca-19e0dbe3-0e2d-4dec-b5dd-c34618cdc2c3-20260925",
-      "rowSha256": "e219e5eff94e39c22c1d91869e46065e31c63c9ec4f9319773e75542783fef36"
+      "sourceId": "openstates-executive-ca-19e0dbe3-0e2d-4dec-b5dd-c34618cdc2c3-20261103",
+      "rowSha256": "2c8dd7a03ddea16b29abb6459f02dd4d21b4cda96921cd8ae36f60f7e448c274"
     },
     {
       "seatId": "seat_governor_co_current",
@@ -488,7 +486,7 @@
       "openStatesId": "ocd-person/be56ceea-ca7e-46b1-acdd-d4266e9d2893",
       "incumbentParty": "Democratic",
       "caucus": "Democratic",
-      "termStart": "2019-01-08",
+      "termStart": "2023-01-10",
       "termEnd": "2027-01-12",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": 10.98,
@@ -527,8 +525,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-co-be56ceea-ca7e-46b1-acdd-d4266e9d2893-20260925",
-      "rowSha256": "4fa4d05fb69434982d0027cfb80169f0c25367847c5c1f56276fe8b8d2280923"
+      "sourceId": "openstates-executive-co-be56ceea-ca7e-46b1-acdd-d4266e9d2893-20261103",
+      "rowSha256": "2b6f6555af075961a52343472a8020c6a4cfb3975834668c0599d05ca2110224"
     },
     {
       "seatId": "seat_governor_ct_current",
@@ -538,7 +536,7 @@
       "openStatesId": "ocd-person/4cd3e60f-3830-4121-965f-f29d9b5ec6e7",
       "incumbentParty": "Democratic",
       "caucus": "Democratic",
-      "termStart": "2019-01-09",
+      "termStart": "2023-01-04",
       "termEnd": "2027-01-06",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": 14.5,
@@ -577,8 +575,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ct-4cd3e60f-3830-4121-965f-f29d9b5ec6e7-20260925",
-      "rowSha256": "6442d7737648a89411c11bda12f502d2c8e8d9936aafb641d7ad6b60e0fde323"
+      "sourceId": "openstates-executive-ct-4cd3e60f-3830-4121-965f-f29d9b5ec6e7-20261103",
+      "rowSha256": "2dcd41c40251f8c5015fa84590e828bd571feb07bc1bc474ff253623e2a56194"
     },
     {
       "seatId": "seat_governor_de_current",
@@ -627,8 +625,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-de-8c05321d-6737-437f-928b-adaf129103f5-20260925",
-      "rowSha256": "78d65e4791221e829eec9a11c351a9eda59a54565bbaaa929d2eac31f2302cbc"
+      "sourceId": "openstates-executive-de-8c05321d-6737-437f-928b-adaf129103f5-20261103",
+      "rowSha256": "dc4e98df0e5bd2008fbe12dc7714c5b9a6d25ef6794860634d84afe710854ab9"
     },
     {
       "seatId": "seat_governor_fl_current",
@@ -638,8 +636,8 @@
       "openStatesId": "ocd-person/284392c5-5708-4014-9ea1-9552536c5a3e",
       "incumbentParty": "Republican",
       "caucus": "Republican",
-      "termStart": "2019-01-08",
-      "termEnd": "2027-01-01",
+      "termStart": "2023-01-03",
+      "termEnd": "2027-01-05",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": -13.1,
       "stateContestation": null,
@@ -677,8 +675,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-fl-284392c5-5708-4014-9ea1-9552536c5a3e-20260925",
-      "rowSha256": "f21b1c281864053af2f0e5dcc88fe8ce7c2e389a600a01ec84b73cf120838c8e"
+      "sourceId": "openstates-executive-fl-284392c5-5708-4014-9ea1-9552536c5a3e-20261103",
+      "rowSha256": "b0e69cb38160c475ead3e93b985351d91a8700f578ec44aaccb4490a1f0e0219"
     },
     {
       "seatId": "seat_governor_ga_current",
@@ -688,7 +686,7 @@
       "openStatesId": "ocd-person/600e5c48-f5c0-4535-a219-60a5fd94c38f",
       "incumbentParty": "Republican",
       "caucus": "Republican",
-      "termStart": "2019-01-14",
+      "termStart": "2023-01-12",
       "termEnd": "2027-01-11",
       "nextElectionYear": 2026,
       "presidentialDemocraticMargin2024": -2.19,
@@ -727,8 +725,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ga-600e5c48-f5c0-4535-a219-60a5fd94c38f-20260925",
-      "rowSha256": "8eba5852fe7ad848d680d34b7efc23ba8c25e74e478c4981cde4a77b65cbb333"
+      "sourceId": "openstates-executive-ga-600e5c48-f5c0-4535-a219-60a5fd94c38f-20261103",
+      "rowSha256": "f9bad18c7a653166239fdaeaf4b917fd58b63ccdcda924d5decf085a12554b23"
     },
     {
       "seatId": "seat_governor_hi_current",
@@ -777,8 +775,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-hi-c7e5e0d4-7a5d-42dc-a3cc-d7b54b1dc51b-20260925",
-      "rowSha256": "692f6581eecf0fdc531fe0758a75a14fbb6959a37dc342a1fe6d7bbf622fe665"
+      "sourceId": "openstates-executive-hi-c7e5e0d4-7a5d-42dc-a3cc-d7b54b1dc51b-20261103",
+      "rowSha256": "3da675116b811dd29208af31eea36de8606b1f7d715069aaa6132339ded7b28a"
     },
     {
       "seatId": "seat_governor_ia_current",
@@ -827,8 +825,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ia-3895278c-5226-4b70-bce0-d2ac15b3bce1-20260925",
-      "rowSha256": "e807a11ddf38bcbf26b5607c56180640553a9f820bea430c63c11cb29eaf85f3"
+      "sourceId": "openstates-executive-ia-3895278c-5226-4b70-bce0-d2ac15b3bce1-20261103",
+      "rowSha256": "d1957350f1d92a20e9a0cc0bb02d1622ffcb29d31c6cc91723fe4cb433b748c4"
     },
     {
       "seatId": "seat_governor_id_current",
@@ -877,8 +875,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-id-7b647b3d-a3e6-47b3-91b2-a26f0f7f711c-20260925",
-      "rowSha256": "bfeb8f44afa3dd7b2e6c9bcc0d9bfb03683308ecebc4c6423c492ca643bc3c7e"
+      "sourceId": "openstates-executive-id-7b647b3d-a3e6-47b3-91b2-a26f0f7f711c-20261103",
+      "rowSha256": "2362d968b4e784fe673c0316e9fb1cdcdddbaec620cc233fb7ac28cb1419edf5"
     },
     {
       "seatId": "seat_governor_il_current",
@@ -927,8 +925,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-il-db3adc7a-d2f8-4e61-a017-bf5d3804ba33-20260925",
-      "rowSha256": "1656ddd039156ddcb9b4dd5cc43e26b80aa19dd00b43373517b42b39c9d8eade"
+      "sourceId": "openstates-executive-il-db3adc7a-d2f8-4e61-a017-bf5d3804ba33-20261103",
+      "rowSha256": "7bfd2d829bc7860ceb12fda44768a4a3dde28b89bb2f38080f0d485dcf7b8bda"
     },
     {
       "seatId": "seat_governor_in_current",
@@ -977,8 +975,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-in-bdc262d7-ce67-4fd1-a96d-f92059ac0dfd-20260925",
-      "rowSha256": "275aa1ade8e76c30ef05b940e04bb7f24afb28e74b585f2ecf58bd2248627950"
+      "sourceId": "openstates-executive-in-bdc262d7-ce67-4fd1-a96d-f92059ac0dfd-20261103",
+      "rowSha256": "404480fc48f782b1a6dba41f881fca33564c202302ef114ff5adf6511ee69fc1"
     },
     {
       "seatId": "seat_governor_ks_current",
@@ -1027,8 +1025,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ks-2654d836-700f-464d-a0dd-81cb0bd77b9e-20260925",
-      "rowSha256": "974077edd126494261a1a6bb647c11f88c63d1b71c94b03c377c11c7c04ab3fa"
+      "sourceId": "openstates-executive-ks-2654d836-700f-464d-a0dd-81cb0bd77b9e-20261103",
+      "rowSha256": "5c497acf71d46017313dee8bbdf985e8c72bba9aa766901ba8fbeee0f0ae2f0e"
     },
     {
       "seatId": "seat_governor_ky_current",
@@ -1077,8 +1075,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ky-c7dbc1b4-67fb-4bb2-b1c5-cc5ef9356a5a-20260925",
-      "rowSha256": "8630aa0849948129229cc724d2434d99e230304f5f751f23c99aabd5b58c4c8c"
+      "sourceId": "openstates-executive-ky-c7dbc1b4-67fb-4bb2-b1c5-cc5ef9356a5a-20261103",
+      "rowSha256": "15e1086e33a7a7082e851d0d8ee921f2eff7d97dec50bb75e096ad8e6b917a98"
     },
     {
       "seatId": "seat_governor_la_current",
@@ -1127,8 +1125,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-la-90d9e851-bec3-4bde-b883-bfa43d63194f-20260925",
-      "rowSha256": "38751462f84b7654943897a8f055410ed4754c75fc6f555508819e9716cb1254"
+      "sourceId": "openstates-executive-la-90d9e851-bec3-4bde-b883-bfa43d63194f-20261103",
+      "rowSha256": "d85552d854ac5f6e533bc243aff2627d00af83135672dfae66097c808c3313fb"
     },
     {
       "seatId": "seat_governor_ma_current",
@@ -1177,8 +1175,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ma-d90a06b9-0edf-4fda-a823-4247987244dc-20260925",
-      "rowSha256": "32db927d378c8bd7a44c53296fa2320746bb8c3c2c17c26f317a76e4b1f13b1b"
+      "sourceId": "openstates-executive-ma-d90a06b9-0edf-4fda-a823-4247987244dc-20261103",
+      "rowSha256": "509b34a1ae1d548770126a114b793eeccfcacb9a0754cdc3f293f42c28b8892a"
     },
     {
       "seatId": "seat_governor_md_current",
@@ -1227,8 +1225,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-md-a6a4f3ad-59c0-471c-8fd3-ea06a8e21a87-20260925",
-      "rowSha256": "5ba13173ed1ae8e19d4ddbc97e9bb30a2f59bf629bdcc03612380b7142946d34"
+      "sourceId": "openstates-executive-md-a6a4f3ad-59c0-471c-8fd3-ea06a8e21a87-20261103",
+      "rowSha256": "5142c08d5dbf5ad6930e662686315f21e3e198082ab811ad08eb514424ba12f9"
     },
     {
       "seatId": "seat_governor_me_current",
@@ -1277,8 +1275,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-me-3a068db0-d252-4bf9-929d-feb15cb84087-20260925",
-      "rowSha256": "6cf7d87f34bd84021864254d02eaab38caf3c796a1b0d6084f6b24285d67d70b"
+      "sourceId": "openstates-executive-me-3a068db0-d252-4bf9-929d-feb15cb84087-20261103",
+      "rowSha256": "caa40598471c18595b53d866f8fbb207aa469da6eeac401d6ba967069703b1a8"
     },
     {
       "seatId": "seat_governor_mi_current",
@@ -1327,8 +1325,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-mi-9b425a88-36ae-439c-b2f9-8da167b9ff27-20260925",
-      "rowSha256": "a6a45de291cf2a8e83623eb2e205600de37c5e10e3c8770f14a387e109ffe06d"
+      "sourceId": "openstates-executive-mi-9b425a88-36ae-439c-b2f9-8da167b9ff27-20261103",
+      "rowSha256": "6a4343baa4d6be9c7478f2ddaa599a3c43bc530c9e8c85c2fdd2e4758e2f4d71"
     },
     {
       "seatId": "seat_governor_mn_current",
@@ -1377,8 +1375,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-mn-aba9f63e-b8ee-4515-acac-af7a63a4d1ec-20260925",
-      "rowSha256": "801fa75ff8a345d762c3aaa26592e25eab6331c00ea47e577db303d172fa6d9f"
+      "sourceId": "openstates-executive-mn-aba9f63e-b8ee-4515-acac-af7a63a4d1ec-20261103",
+      "rowSha256": "ec4f0ecb93fbe816b2dbe3dec4a4be0b90b8b50da38bdadd6463099a4e665da4"
     },
     {
       "seatId": "seat_governor_mo_current",
@@ -1427,8 +1425,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-mo-b1263b48-7df4-443c-8a71-41abc892bd7e-20260925",
-      "rowSha256": "a17965c3b7f2ed13a9e2f0dc6727867c4a9ee89ed3b1aa82ef4b36bb44752a6b"
+      "sourceId": "openstates-executive-mo-b1263b48-7df4-443c-8a71-41abc892bd7e-20261103",
+      "rowSha256": "fbb58701b6092854c8e5db1d76379b3cbe8029d558945beebab3e365f1cd8c45"
     },
     {
       "seatId": "seat_governor_ms_current",
@@ -1477,8 +1475,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ms-3c19275b-6e87-43fa-83fa-ced52c9119bf-20260925",
-      "rowSha256": "682be74f65170daebf9fe7de0206b0158ed99de7c0e69689bdb7631657cbdc28"
+      "sourceId": "openstates-executive-ms-3c19275b-6e87-43fa-83fa-ced52c9119bf-20261103",
+      "rowSha256": "2cd20ee7d8173e7d5077a99aaf880905144c6b7bef847b0e0410086151d27b71"
     },
     {
       "seatId": "seat_governor_mt_current",
@@ -1527,8 +1525,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-mt-c40b88ef-ba7b-415f-a6d4-581bfecf0ea7-20260925",
-      "rowSha256": "3716e2554554fe3f30cdead8ea8192465d4533dbef43823c755ed61875d83f31"
+      "sourceId": "openstates-executive-mt-c40b88ef-ba7b-415f-a6d4-581bfecf0ea7-20261103",
+      "rowSha256": "bca18814bc232da34a0589a16a9dbd91e457bf32be55fbce930a6bf176129b17"
     },
     {
       "seatId": "seat_governor_nc_current",
@@ -1577,8 +1575,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-nc-0a494878-c7fd-4a6a-8b82-3eb681e3fe6e-20260925",
-      "rowSha256": "8566b65597671bca80234fcce3da3debaf2e02f03a2f77941e94ffb23c9b9f86"
+      "sourceId": "openstates-executive-nc-0a494878-c7fd-4a6a-8b82-3eb681e3fe6e-20261103",
+      "rowSha256": "877ac5ed80e610631ecd0ad8bba2076b7d464417614931d8886f98efc28b972f"
     },
     {
       "seatId": "seat_governor_nd_current",
@@ -1627,8 +1625,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-nd-482e4b71-bc8b-4c9e-80a5-bc2c51e90aa0-20260925",
-      "rowSha256": "94c988a75cdb110a6b064a2a93eaff0711089a70d0a4496e5bea2971d1565a49"
+      "sourceId": "openstates-executive-nd-482e4b71-bc8b-4c9e-80a5-bc2c51e90aa0-20261103",
+      "rowSha256": "8bbb0d45f76d4c1c4f18834054ddc9c2bfce7b6b66307f762c098e1142b57566"
     },
     {
       "seatId": "seat_governor_ne_current",
@@ -1677,8 +1675,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ne-c67c3ac8-3260-44d7-b419-3d8210c4f0bd-20260925",
-      "rowSha256": "a1e4def9c894966f92284e08ee68ff5938657c96cbbeae34f0f64cb6b4be6eeb"
+      "sourceId": "openstates-executive-ne-c67c3ac8-3260-44d7-b419-3d8210c4f0bd-20261103",
+      "rowSha256": "795237ed1d1f254ed748b972d4cf3eb23c9453cb596edb053ad7ad5b32daeea5"
     },
     {
       "seatId": "seat_governor_nh_current",
@@ -1727,8 +1725,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-nh-3eabef50-7d86-44cf-87db-8c549d2d21bd-20260925",
-      "rowSha256": "4c24688db5513cfab469ae01fedf2e7ebed0c50c494ac79bd52dc6422d9790e0"
+      "sourceId": "openstates-executive-nh-3eabef50-7d86-44cf-87db-8c549d2d21bd-20261103",
+      "rowSha256": "65e8cea80193a6c4bf042ed74a51ad2a026c408b05bbcfc3793b488b03e61c26"
     },
     {
       "seatId": "seat_governor_nj_current",
@@ -1777,8 +1775,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-nj-d0bf3dce-c5b7-4f9f-a4e2-9637582299ac-20260925",
-      "rowSha256": "e735ff39e4c1959897e5eaaaf7d4c8ba2e7d3c31638cc46b0df9413b1cede0f3"
+      "sourceId": "openstates-executive-nj-d0bf3dce-c5b7-4f9f-a4e2-9637582299ac-20261103",
+      "rowSha256": "3d923be5b2e5e8a39df1b06274e7fcaf82a9e0e87586366e6dc1b360b6a49790"
     },
     {
       "seatId": "seat_governor_nm_current",
@@ -1827,8 +1825,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-nm-cb607080-ff7b-48c8-acf4-0180e6e2f999-20260925",
-      "rowSha256": "a5cf2a64658f51978eebbb378e30d1f66354c411b6c0e2f0c2945ce357a25458"
+      "sourceId": "openstates-executive-nm-cb607080-ff7b-48c8-acf4-0180e6e2f999-20261103",
+      "rowSha256": "54199eb2c73ce399b62057f8030ac1d0ff33e90f542ad051cae246de90b79ef3"
     },
     {
       "seatId": "seat_governor_nv_current",
@@ -1877,8 +1875,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-nv-d2c166cc-f53f-491d-9c4a-6c3fc68274fe-20260925",
-      "rowSha256": "45fa89b8b874e71a5022f9eddc5c1f43f5b3c22fd36114571207b423c4e40737"
+      "sourceId": "openstates-executive-nv-d2c166cc-f53f-491d-9c4a-6c3fc68274fe-20261103",
+      "rowSha256": "21d0a9bcdc7574b2d69246a440ecb98ad6772eef3b9a2016c99e3157a7cef496"
     },
     {
       "seatId": "seat_governor_ny_current",
@@ -1927,8 +1925,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ny-ccdd914d-9853-4fd2-9a80-ce6c962cdd18-20260925",
-      "rowSha256": "c7250bb9eaf37006c6f48938eed72c92f69261a26e5fff36251c05c9e68696a1"
+      "sourceId": "openstates-executive-ny-ccdd914d-9853-4fd2-9a80-ce6c962cdd18-20261103",
+      "rowSha256": "a7123ce62e44bf767d9d626518bd5229cd6348a9cebdd5d8e1fcb455973ac84d"
     },
     {
       "seatId": "seat_governor_oh_current",
@@ -1977,8 +1975,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-oh-37478cd9-ed21-43f7-b2cc-578df43ad32d-20260925",
-      "rowSha256": "717ecf8a4410517a54bca8756275bbd242812569138b2c9da331fb03dc192f2b"
+      "sourceId": "openstates-executive-oh-37478cd9-ed21-43f7-b2cc-578df43ad32d-20261103",
+      "rowSha256": "443e1f1414792b8244f72da605970cbccf5d0783c8bbe9d2f12d883131c88f22"
     },
     {
       "seatId": "seat_governor_ok_current",
@@ -2027,8 +2025,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ok-b4b14ac3-5ee6-4404-a4fc-ec6ea805ac90-20260925",
-      "rowSha256": "e12990b8b87f0386ff8786625abfe59bda58d43a85ac8180bf0d3561eb21dc63"
+      "sourceId": "openstates-executive-ok-b4b14ac3-5ee6-4404-a4fc-ec6ea805ac90-20261103",
+      "rowSha256": "fb8b6f0d09e34c3c5c189b327f1d1d761aa58881ca97dd791591f569a6bef9a2"
     },
     {
       "seatId": "seat_governor_or_current",
@@ -2077,8 +2075,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-or-c136922d-c34a-4b53-a56b-2201b139d469-20260925",
-      "rowSha256": "92dd3cdcde45a4943d6922d90611a8faceff68f58e10bf6804e6bcb4a53d6065"
+      "sourceId": "openstates-executive-or-c136922d-c34a-4b53-a56b-2201b139d469-20261103",
+      "rowSha256": "8b9bc5b8aa927e6689ad30fe0517cd5c41faf2a5ebc57ed21c458c51a324965f"
     },
     {
       "seatId": "seat_governor_pa_current",
@@ -2127,8 +2125,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-pa-ac7497c7-0a0d-495f-98ce-75dedbfeb0c7-20260925",
-      "rowSha256": "f13d66f3be227837afafeda6647bfb3689fde373bbcfaaf5cd81b66f17ba2216"
+      "sourceId": "openstates-executive-pa-ac7497c7-0a0d-495f-98ce-75dedbfeb0c7-20261103",
+      "rowSha256": "931a8800ca0f6e5d8643ce86e32cf1807fb1a66d6228685a998d3f018d4f1a14"
     },
     {
       "seatId": "seat_governor_ri_current",
@@ -2177,8 +2175,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-ri-7ca005d1-05b8-4ce2-80b4-04ff7acaa59e-20260925",
-      "rowSha256": "08486f5d5c8706ff60f9d18c4ce64e3bfaa3b4573feb423f6ad905267e6759b2"
+      "sourceId": "openstates-executive-ri-7ca005d1-05b8-4ce2-80b4-04ff7acaa59e-20261103",
+      "rowSha256": "7b4250f2f58ea353713cbcbabb13da494ec4ca2ff777c220eacbd412a8702448"
     },
     {
       "seatId": "seat_governor_sc_current",
@@ -2227,8 +2225,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-sc-333130a9-ecba-4992-b223-d2af0c9f2a06-20260925",
-      "rowSha256": "a6deefa9e3c18aae5326659ca5e5148a762d3930b70658b31ebd614fcd48b1a4"
+      "sourceId": "openstates-executive-sc-333130a9-ecba-4992-b223-d2af0c9f2a06-20261103",
+      "rowSha256": "4f399a0b001e57cf2b4145ad94861429da9c751fe9919af375e56df6ae514a38"
     },
     {
       "seatId": "seat_governor_sd_current",
@@ -2277,8 +2275,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-sd-b41fff76-c4dd-4e5c-b7f5-c6480a6b1710-20260925",
-      "rowSha256": "7b5d161836d4a1245d2e5e05958e586a2d0ab4c0d24df794557c370f5e58f061"
+      "sourceId": "openstates-executive-sd-b41fff76-c4dd-4e5c-b7f5-c6480a6b1710-20261103",
+      "rowSha256": "0a16f391ace6079ea9a79891e40eda430bbd79841cd160964b38030331a9a1ac"
     },
     {
       "seatId": "seat_governor_tn_current",
@@ -2327,8 +2325,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-tn-d94cf7a2-1ba6-46f2-bdbf-54ace20b8dfc-20260925",
-      "rowSha256": "b9807cd9e4fdb7f085222168d80c85e6d4ff10b04bc20faac7d6b73a08455b6d"
+      "sourceId": "openstates-executive-tn-d94cf7a2-1ba6-46f2-bdbf-54ace20b8dfc-20261103",
+      "rowSha256": "32b49e9011c24554f83728e1c991489cb720c98faedbc9a7515d6a6732685c95"
     },
     {
       "seatId": "seat_governor_tx_current",
@@ -2377,8 +2375,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-tx-d73f10ee-69f2-4ca8-ac00-405c453a62d7-20260925",
-      "rowSha256": "6c1405dd4e00fd3b68d94fc65b3cd7536b3de295c57cdc1c3815a8e6895875b0"
+      "sourceId": "openstates-executive-tx-d73f10ee-69f2-4ca8-ac00-405c453a62d7-20261103",
+      "rowSha256": "9cc782c4b949452cb7c3b5cdb61900ea13b6e511520ea430838bbdb509b77a15"
     },
     {
       "seatId": "seat_governor_ut_current",
@@ -2427,8 +2425,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-ut-52dd3ff2-e7a2-458e-b8f1-797fdab69e4a-20260925",
-      "rowSha256": "9c1f9ef6626fd900259a82034ae50f8b5caf2df792f22c287dc2083f4ddb85ac"
+      "sourceId": "openstates-executive-ut-52dd3ff2-e7a2-458e-b8f1-797fdab69e4a-20261103",
+      "rowSha256": "66c94d382cad78245aa874fd1796f574cd152779b582c457c0ff591ae77836ab"
     },
     {
       "seatId": "seat_governor_va_current",
@@ -2477,8 +2475,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-va-30e93a95-5457-4263-96f9-2ea38017a253-20260925",
-      "rowSha256": "61fa67e1669975087547a7c4d5eb583ec5c98d3270edc7f2b4f7d1326c7b2d58"
+      "sourceId": "openstates-executive-va-30e93a95-5457-4263-96f9-2ea38017a253-20261103",
+      "rowSha256": "80574ba5781b748679eec7bc4f029036bfd0dd21a2783ed3500db7b92b351add"
     },
     {
       "seatId": "seat_governor_vt_current",
@@ -2527,8 +2525,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-vt-f3e613ff-3cd6-4b2c-b268-f6460d029f05-20260925",
-      "rowSha256": "8406d0f9f219f09c2bae478baffa07f3d7e1a847ccb8303d1bb08fc0c4fa31c9"
+      "sourceId": "openstates-executive-vt-f3e613ff-3cd6-4b2c-b268-f6460d029f05-20261103",
+      "rowSha256": "446c758a084985956dae02f3aa139fdd8b9d7d60468077e8e5803e4733beecde"
     },
     {
       "seatId": "seat_governor_wa_current",
@@ -2577,8 +2575,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-wa-117499b6-79e9-4eaf-827d-59c0ed14b7c0-20260925",
-      "rowSha256": "90fdea8f0bb20b6744adb0509619036f9ee244f72652675168f9d3b8c9410d51"
+      "sourceId": "openstates-executive-wa-117499b6-79e9-4eaf-827d-59c0ed14b7c0-20261103",
+      "rowSha256": "83877f94e186f4bc8f61dfc97ba33cfe53707b6663d5eef0fe33a7596427af97"
     },
     {
       "seatId": "seat_governor_wi_current",
@@ -2627,8 +2625,8 @@
         }
       ],
       "formula": "renormalized(0.65 × structural + 0.20 × alignment gap + 0.15 × cash vulnerability) × (0.6 + 0.4 × 0.65)",
-      "sourceId": "openstates-executive-wi-44ad52d1-4ba8-4ca2-b1e1-cda1621a0bc7-20260925",
-      "rowSha256": "8eb217b9bf63956206474a8c198f25a96103bcfbdb4962e7dafad5855f6d4eaf"
+      "sourceId": "openstates-executive-wi-44ad52d1-4ba8-4ca2-b1e1-cda1621a0bc7-20261103",
+      "rowSha256": "50e7a35b6e2b36b91599beb1c14d1f04ccea5bf7a62d4aafb1b3070e79c9ed5b"
     },
     {
       "seatId": "seat_governor_wv_current",
@@ -2677,8 +2675,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-wv-cf5ab5dc-33c4-4d93-a810-f42cd6f98f5d-20260925",
-      "rowSha256": "74841defd9492ed8cdb51578b638393946c035201540a8a8e1155bd864bc42c3"
+      "sourceId": "openstates-executive-wv-cf5ab5dc-33c4-4d93-a810-f42cd6f98f5d-20261103",
+      "rowSha256": "e23b83758bbd453016f5c9d183b773c12faa9524f0c99a64da0cc2cc3f9655ef"
     },
     {
       "seatId": "seat_governor_wy_current",
@@ -2727,8 +2725,8 @@
         }
       ],
       "formula": "renormalized(0.45 × competitiveness + 0.20 × cash vulnerability + 0.15 × local context + 0.20 × state contestation) × (0.6 + 0.4 × 0.45)",
-      "sourceId": "openstates-executive-wy-d832b435-0a83-49ba-abd8-6ce265eb52ef-20260925",
-      "rowSha256": "dac383405bb233ba152caa8e21cecacdf66e3386133f6db737130c93c102e1cd"
+      "sourceId": "openstates-executive-wy-d832b435-0a83-49ba-abd8-6ce265eb52ef-20261103",
+      "rowSha256": "189ce5096c859ea0e8dcd780611b4dc3b21afc05e64a7447f2462239d60d195e"
     }
   ],
   "summary": {
@@ -2740,6 +2738,6 @@
     "democraticMaxScore": 81,
     "republicanMaxScore": 78
   },
-  "rowSetSha256": "c460ccc0fd8d6935354f7fe8007ed32bf30c42d0022647df3764f51b9c266db6",
-  "packageSha256": "13d86586c6fb0ace141597cad1abfa0d5fe966368b872110991161473575aabb"
+  "rowSetSha256": "cc025c31731120ed4122516a0d57a30d76e74fdf9a563a554d22504b9dd33167",
+  "packageSha256": "1b9d322dfbbead5df76abc034e55908a081e571e26c62914347ff939c2af659f"
 }

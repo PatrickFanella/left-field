@@ -1,0 +1,26 @@
+id: ocd-person/7b647b3d-a3e6-47b3-91b2-a26f0f7f711c
+name: Brad Little
+given_name: Brad
+family_name: Little
+birth_date: 1954-02-15
+image: https://gov.idaho.gov/wp-content/uploads/2018/12/Brad-Little.jpg
+party:
+- name: Republican
+roles:
+- start_date: '2019-01-07'
+  end_date: '2027-01-04'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:id/government
+offices:
+- classification: capitol
+  address: State Capitol; PO Box 83720; Boise, ID 83720
+  voice: 208-334-2100
+  fax: 208-854-3036
+links:
+- url: https://gov.idaho.gov/
+- url: https://gov.idaho.gov/contact-us/
+  note: webform
+ids:
+  twitter: governorlittle
+sources:
+- url: https://gov.idaho.gov/

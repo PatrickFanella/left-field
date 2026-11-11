@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -60,7 +61,7 @@ export function buildCountyDemographicsProjection(root = process.cwd()): CountyD
     const value = readFileSync(join(root, source.path)); bytes.set(source.id, value);
     const expected = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [] };
     const matches = lock.entries.filter((entry) => entry.id === source.id);
-    if (value.length !== source.bytes || sha(value) !== source.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`COUNTY_DEMOGRAPHICS_SOURCE_BINDING_INVALID:${source.id}`);
+    if (value.length !== source.bytes || sha(value) !== source.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`COUNTY_DEMOGRAPHICS_SOURCE_BINDING_INVALID:${source.id}`);
   }
   const ages = ["B01001_E001", "B01001_E007", "B01001_E008", "B01001_E009", "B01001_E010", "B01001_E011", "B01001_E012", "B01001_E031", "B01001_E032", "B01001_E033", "B01001_E034", "B01001_E035", "B01001_E036"];
   const age = table(bytes.get(SOURCES[0].id)!, ages), population = table(bytes.get(SOURCES[1].id)!, ["B01003_E001"]), income = table(bytes.get(SOURCES[2].id)!, ["B19013_E001"]), housing = table(bytes.get(SOURCES[3].id)!, ["B25003_E001", "B25003_E003"]);

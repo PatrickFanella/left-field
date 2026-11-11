@@ -1,0 +1,29 @@
+id: ocd-person/284392c5-5708-4014-9ea1-9552536c5a3e
+name: Ron DeSantis
+given_name: Ron
+family_name: DeSantis
+email: GovernorRon.Desantis@eog.myflorida.com
+birth_date: 1978-09-14
+image: https://www.flgov.com/wp-content/uploads/desantis/Ron_DeSantis,_Official_Portrait,_113th_Congress.jpg
+party:
+- name: Republican
+roles:
+- start_date: '2019-01-08'
+  end_date: '2023-01-03'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:fl/government
+- start_date: '2023-01-03'
+  end_date: '2027-01-05'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:fl/government
+offices:
+- classification: capitol
+  address: Office of Governor Ron DeSantis; The Capitol; 400 S.Monroe St.; Tallahassee,
+    FL 32399-0001
+  voice: 850-717-9337
+links:
+- url: https://www.flgov.com/
+ids:
+  twitter: GovRonDeSantis
+sources:
+- url: https://www.flgov.com/

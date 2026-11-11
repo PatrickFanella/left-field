@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -101,7 +102,7 @@ export function buildTennesseePrimaryResultsV2(root = process.cwd()): TennesseeP
 
   const sourceBytes = readFileSync(join(root, SOURCE.path));
   const expectedLock = { id: SOURCE.id, url: SOURCE.url, retainedPath: SOURCE.path, retainedStatus: "retained", byteSize: SOURCE.bytes, sha256: SOURCE.sha256, kind: "official_unofficial_result_snapshot", parentIds: [] };
-  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === SOURCE.id), expectedLock)) throw new Error("TENNESSEE_2026_SOURCE_BINDING_INVALID");
+  if (sourceBytes.length !== SOURCE.bytes || sha(sourceBytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === SOURCE.id)), expectedLock)) throw new Error("TENNESSEE_2026_SOURCE_BINDING_INVALID");
   const races = parseDemocraticHouseRaces(sourceBytes.toString("utf8"));
   const target = races[8];
   const sourceCandidateNames = target.map((row) => row[0]);

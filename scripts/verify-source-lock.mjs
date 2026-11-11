@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFile, readdir, stat } from "node:fs/promises";
 import { join, relative } from "node:path";
+import { validateSourceRights } from "./lib/source-license.mjs";
 
 const lock = JSON.parse(await readFile("data/source-lock.json", "utf8"));
 if (!lock || typeof lock !== "object" || lock.version !== 1 || !Array.isArray(lock.entries)) {
@@ -21,6 +22,7 @@ for (const entry of lock.entries) {
     throw new Error(`Invalid parent IDs: ${entry.id}`);
   }
 }
+validateSourceRights(lock);
 for (const entry of lock.entries) {
   for (const parentId of entry.parentIds) {
     if (parentId === entry.id || !ids.has(parentId)) throw new Error(`Unknown or self-referential parent ${parentId}: ${entry.id}`);
@@ -58,3 +60,6 @@ for (const root of ["data/source", "data/geometry", "data/metadata"]) {
 const fecFiles = await readdir("data/source/fec");
 if (fecFiles.length !== 1 || fecFiles[0] !== "summary-filings.json") throw new Error("Unexpected retained FEC file; contributor CSVs are prohibited");
 console.log(`Verified ${lock.entries.length} source-lock entries.`);
+const unknown = lock.entries.filter((entry) => entry.license === "unknown").map((entry) => entry.id).sort();
+console.log(`Unknown source licenses (${unknown.length}); these are review gaps, not redistribution grants:`);
+for (const id of unknown) console.log(`  ${id}`);

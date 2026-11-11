@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { unzipSync } from "fflate";
@@ -74,7 +75,7 @@ function exactSourceEntries(sourceLock: SourceLock): readonly LockEntry[] {
   if (sourceLock.version !== 1 || !Array.isArray(sourceLock.entries)) fail("SOURCE_LOCK_VERSION");
   for (const expected of REQUIRED_SOURCES) {
     const matches = sourceLock.entries.filter((entry) => entry.id === expected.id);
-    if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`SOURCE_LOCK_${expected.id}`);
+    if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`SOURCE_LOCK_${expected.id}`);
   }
   return REQUIRED_SOURCES;
 }
@@ -130,9 +131,9 @@ function assertAuthorityText(input: MainePrimaryGeographyAuthoritySourceReceiptI
 }
 
 function build(input: MainePrimaryGeographyAuthoritySourceReceiptInput) {
-  const sources = exactSourceEntries(input.sourceLock);
+  const sources = (exactSourceEntries(input.sourceLock)).map(sourceLockContent);
   const outputMatches = input.sourceLock.entries.filter((entry) => entry.id === MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_V1);
-  if (outputMatches.length !== 1 || canonicalJson(outputMatches[0]) !== canonicalJson({ id: MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_V1, url: "urn:dsa-seats:maine-primary-geography-authority-source-receipt:v1:2022-2026", retainedPath: "data/metadata/maine-primary-geography-authority-source-receipt-v1.json", retainedStatus: "retained", byteSize: MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_FILE_BYTES, sha256: MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_FILE_SHA256, kind: "evidence_receipt", parentIds: PARENTS })) fail("OUTPUT_SOURCE_LOCK");
+  if (outputMatches.length !== 1 || canonicalJson(sourceLockContent(outputMatches[0])) !== canonicalJson(sourceLockContent({ id: MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_V1, url: "urn:dsa-seats:maine-primary-geography-authority-source-receipt:v1:2022-2026", retainedPath: "data/metadata/maine-primary-geography-authority-source-receipt-v1.json", retainedStatus: "retained", byteSize: MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_FILE_BYTES, sha256: MAINE_PRIMARY_GEOGRAPHY_AUTHORITY_SOURCE_RECEIPT_FILE_SHA256, kind: "evidence_receipt", parentIds: PARENTS }))) fail("OUTPUT_SOURCE_LOCK");
   assertAuthorityText(input);
   const cd118 = parseAssignments(input.cd118MaineAssignmentsBytes, REQUIRED_SOURCES[6]!.sha256, "GEOID, CDFP");
   const cd119 = parseAssignments(input.cd119MaineAssignmentsBytes, REQUIRED_SOURCES[8]!.sha256, "GEOID,CDFP");

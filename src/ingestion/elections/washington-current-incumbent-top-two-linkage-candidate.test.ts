@@ -75,6 +75,6 @@ describe("Washington current-incumbent top-two linkage candidate", () => {
       retainedPath: "data/metadata/washington-current-incumbent-top-two-linkage-candidate-v1.json",
       retainedStatus: "retained", byteSize: artifact.bytes.byteLength, sha256: artifact.sha256, kind: "review_candidate",
       parentIds: ["dsa-target-incumbent-roster-20260804-v1", "house-democratic-primary-source-selection-proposal-20260804-v1", "house-xml", "congress-legislators-current-20260804", "washington-house-top-two-results-receipt-20220802-20240806-v1"],
-    }]);
+    license: "unknown", }]);
   });
 });

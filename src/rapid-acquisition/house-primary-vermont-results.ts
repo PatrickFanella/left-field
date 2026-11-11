@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { hash, sha, exact } from "./shared";
@@ -57,7 +58,7 @@ export function buildVermontPrimaryResults(root = process.cwd()): VermontPrimary
     const pdf = readFileSync(join(root, source.pdfPath)), textBytes = readFileSync(join(root, source.textPath));
     const pdfLock = { id: source.pdfId, url: source.pdfUrl, retainedPath: source.pdfPath, retainedStatus: "retained", byteSize: source.pdfBytes, sha256: source.pdfSha256, kind: "source", parentIds: [] };
     const textLock = { id: source.textId, url: `urn:dsa-seats:vt-${source.year}-primary-official-canvass:pdftotext-layout`, retainedPath: source.textPath, retainedStatus: "retained", byteSize: source.textBytes, sha256: source.textSha256, kind: "derived_extract", parentIds: [source.pdfId] };
-    if (!pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || pdf.length !== source.pdfBytes || sha(pdf) !== source.pdfSha256 || textBytes.length !== source.textBytes || sha(textBytes) !== source.textSha256 || lock.entries.filter((entry) => entry.id === source.pdfId).length !== 1 || lock.entries.filter((entry) => entry.id === source.textId).length !== 1 || !exact(lock.entries.find((entry) => entry.id === source.pdfId), pdfLock) || !exact(lock.entries.find((entry) => entry.id === source.textId), textLock)) throw new Error(`VERMONT_SOURCE_BINDING_INVALID:${source.year}`);
+    if (!pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || pdf.length !== source.pdfBytes || sha(pdf) !== source.pdfSha256 || textBytes.length !== source.textBytes || sha(textBytes) !== source.textSha256 || lock.entries.filter((entry) => entry.id === source.pdfId).length !== 1 || lock.entries.filter((entry) => entry.id === source.textId).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.pdfId)), pdfLock) || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.textId)), textLock)) throw new Error(`VERMONT_SOURCE_BINDING_INVALID:${source.year}`);
     requireText(source.year, textBytes.toString("utf8"));
     const expected = EXPECTED[source.year], sourceCandidateNames = expected.candidates.map((row) => row[0]), candidateVotes = expected.candidates.map((row) => row[1]), candidateVoteSum = candidateVotes.reduce((sum, value) => sum + value, 0);
     if (candidateVoteSum + expected.writeIn + expected.overvotes + expected.blank !== expected.total) throw new Error(`VERMONT_CONTEST_ARITHMETIC_INVALID:${source.year}`);

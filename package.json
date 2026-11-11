@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "node --test scripts/next-eslint-glob.check.mjs scripts/minimatch-compat.check.mjs && eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
@@ -17,6 +17,14 @@
     "test:acceptance": "tsx scripts/test-acceptance.ts",
     "test:a11y": "playwright test --grep @a11y",
     "data:verify": "node scripts/verify-source-lock.mjs",
+    "data:licenses": "tsx scripts/generate-source-license-report.ts",
+    "data:licenses:check": "tsx scripts/generate-source-license-report.ts --check",
+    "data:crosscheck:az": "tsx scripts/generate-arizona-2024-general-openelections-crosscheck.ts",
+    "data:crosscheck:az:check": "tsx scripts/generate-arizona-2024-general-openelections-crosscheck.ts --check",
+    "data:identity:state-seats": "tsx scripts/rapid/generate-state-legislative-ocd-crosswalk.ts",
+    "data:identity:state-seats:check": "tsx scripts/rapid/generate-state-legislative-ocd-crosswalk.ts --check",
+    "data:coverage": "tsx scripts/generate-nationwide-office-coverage-inventory.ts",
+    "data:coverage:check": "tsx scripts/generate-nationwide-office-coverage-inventory.ts --check",
     "acquire:rapid-house-primary": "tsx scripts/rapid/acquire-house-primary.ts",
     "generate:rapid-house-primary-projection": "tsx scripts/rapid/generate-house-primary-projection.ts",
     "generate:rapid-house-primary-structured-results": "tsx scripts/rapid/generate-house-primary-structured-results.ts",
@@ -378,7 +386,10 @@
     "rapid:refresh": "tsx scripts/rapid/refresh.ts",
     "rapid:publish": "tsx scripts/rapid/publish.ts",
     "seed:nationwide-office-universe-registry": "tsx scripts/seed-nationwide-office-universe-registry.ts",
-    "rapid:state-returns": "tsx scripts/rapid/retain-state-returns.ts"
+    "rapid:state-returns": "tsx scripts/rapid/retain-state-returns.ts",
+    "rapid:state-primaries": "tsx scripts/rapid/retain-state-primaries.ts",
+    "rapid:check-state-primary": "tsx scripts/rapid/check-state-primary.ts",
+    "rapid:freeze-pre-election": "tsx scripts/rapid/freeze-pre-election-snapshot.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1017.0",
@@ -387,13 +398,13 @@
     "drizzle-orm": "^0.45.1",
     "fast-xml-parser": "^5.10.1",
     "fflate": "0.8.3",
-    "next": "16.3.7",
+    "next": "16.4.2",
     "pg": "^8.16.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sharp": "0.35.5",
     "tsx": "^4.23.1",
-    "zod": "^4.1.12"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
@@ -408,12 +419,13 @@
     "@types/react-dom": "^19.2.2",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9.39.1",
-    "eslint-config-next": "16.3.7",
+    "eslint-config-next": "16.4.2",
     "jsdom": "^27.0.1",
     "mapshaper": "0.6.113",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12",
+    "minimatch": "file:tools/minimatch-compat"
   },
   "overrides": {
     "@esbuild-kit/core-utils": {
@@ -423,13 +435,11 @@
       "adm-zip": "0.6.1",
       "fflate": "0.8.3"
     },
-    "minimatch@3.1.5": {
-      "brace-expansion": "1.1.21"
-    },
-    "minimatch@10.2.5": {
-      "brace-expansion": "5.0.12"
-    },
     "postcss": "^8.5.23",
-    "sharp": "$sharp"
+    "sharp": "$sharp",
+    "@next/eslint-plugin-next": {
+      "fast-glob": "npm:tinyglobby@0.2.17"
+    },
+    "minimatch": "$minimatch"
   }
 }

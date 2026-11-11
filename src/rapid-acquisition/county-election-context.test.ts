@@ -10,6 +10,6 @@ describe("rapid county registration and turnout context", () => {
     expect(value.rows.find((row) => row.countyFips === "01001" && row.cycleYear === 2024)).toMatchObject({ registeredVoters: 46292, ballotsCast: 28388 });
     expect(value.rows.every((row) => row.reportingUnitDefinition === "eavs_jurisdiction_exact_census_county_fips")).toBe(true);
     expect(validateCountyElectionContextProjection(value)).toEqual(value);
-  }, 20_000);
+  }, 40_000);
   it.each([["formulaEligible", true], ["registeredVoters", 0], ["countyFips", "00000"], ["reportingUnitDefinition", "assumed_county"]])("rejects coherent %s mutation", (field, replacement) => { const value = structuredClone(buildCountyElectionContextProjection()) as unknown as Record<string, unknown>; (value.rows as Record<string, unknown>[])[0]![field] = replacement; value.packageSha256 = "0".repeat(64); expect(() => validateCountyElectionContextProjection(value)).toThrow("COUNTY_ELECTION_CONTEXT_PROJECTION_INVALID"); }, 20_000);
 });

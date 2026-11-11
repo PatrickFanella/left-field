@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -21,7 +22,7 @@ const fail = (reason: string): never => { throw new Error(`NY_PRIMARY_JOINT_REVI
 const parse = (value: string, reason: string): unknown => { try { return JSON.parse(value); } catch { return fail(reason); } };
 const exactEntry = (entries: LockEntry[], expected: LockEntry): LockEntry => {
   const matches = entries.filter((entry) => entry.id === expected.id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
   return matches[0]!;
 };
 

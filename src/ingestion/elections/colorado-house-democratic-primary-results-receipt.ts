@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -160,7 +161,7 @@ export function buildColoradoPrimaryResultsReceipt(inputs: readonly ColoradoPrim
   const parsed2024 = JSON.parse(checked(byId.get("co-2024-democratic-us-house-normalized-transcription")!).toString("utf8")) as unknown, parsed2026 = JSON.parse(checked(byId.get("co-2026-democratic-us-house-normalized-transcription")!).toString("utf8")) as unknown;
   const tables: Readonly<Record<Cycle, readonly ParsedTable[]>> = { 2022: parse2022(checked(byId.get("co-2022-democratic-us-house-official-abstract")!).toString("utf8")), 2024: validateTables(parsed2024, 2024), 2026: validateTables(parsed2026, 2026) };
   const contests: Contest[] = []; for (const cycleYear of [2022, 2024, 2026] as const) for (const table of tables[cycleYear]) addContest(contests, cycleYear, table);
-  const contestSetSha256 = digest("dsa-seats:co-house-democratic-primary-result-set:v1\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 }))), sources = inputs.map((input) => input.entry).sort((left, right) => bytewise(left.id, right.id));
+  const contestSetSha256 = digest("dsa-seats:co-house-democratic-primary-result-set:v1\0", contests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 }))), sources = (inputs.map((input) => input.entry).sort((left, right) => bytewise(left.id, right.id))).map(sourceLockContent);
   const cycles = ([2022, 2024, 2026] as const).map((cycleYear) => ({ cycleYear, electionDate: CYCLE[cycleYear].date, resultAuthorityStatus: CYCLE[cycleYear].authority, certificationStatus: CYCLE[cycleYear].certification, districtContests: 8 as const, sourceLockIds: SOURCE_IDS[cycleYear] }));
   const unsigned = {
     schema: COLORADO_HOUSE_DEMOCRATIC_PRIMARY_RESULTS_V1, version: 1 as const, generatedAt: "2026-08-06T16:00:00.000Z" as const, sourceCutoff: "2026-08-06" as const, reviewerOnly: true as const, publicationEligible: false as const,

@@ -117,7 +117,7 @@ describe("Arizona primary identity/geography joint reviewer package", () => {
         "arizona-current-incumbent-primary-linkage-candidate-v1",
         "arizona-primary-geography-compatibility-candidate-v1",
       ],
-    }]);
+    license: "unknown", }]);
     const drifted = structuredClone(lock);
     drifted.entries.find((entry: any) => entry.id === "arizona-primary-identity-geography-review-package-v1").parentIds = [];
     expect(() => build({ sourceLockJson: `${JSON.stringify(drifted, null, 2)}\n` })).toThrow("SOURCE_LOCK_MISMATCH");

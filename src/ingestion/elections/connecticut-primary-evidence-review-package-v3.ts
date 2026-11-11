@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
 import { validateConnecticutFinalPrimaryBallotReceipt } from "./connecticut-final-primary-ballot-receipt";
@@ -19,7 +20,7 @@ const fail = (reason: string): never => { throw new Error(`CT_PRIMARY_EVIDENCE_R
 
 function exactEntry(entries: LockEntry[], expected: LockEntry) {
   const matches = entries.filter((entry) => entry.id === expected.id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
   return matches[0]!;
 }
 
@@ -97,7 +98,7 @@ function assemble(input: Input) {
     publicationEligible: false as const,
     defaultUse: "exclude_from_evaluator_until_corpus_scope_statutory_and_publication_review" as const,
     review: { status: "proposed" as const, reviewer: null, reviewedAt: null, resolution: null },
-    sources: parentEntries,
+    sources: (parentEntries).map(sourceLockContent),
     methodology: { joinKey: "cycle_year_only_for_ballot_context" as const, townToDistrictCrosswalkPerformed: false as const, districtSpecificBallotCompletenessClaimed: false as const, postedBallotCorpusLegalFinalityClaimed: false as const, automaticApprovals: 0 as const, evaluatorNumericValues: 0 as const },
     evidenceDisposition: { v2Parent: "proposed_unapproved" as const, ballotReceiptParent: "proposed_unapproved_cycle_level_context" as const, inheritedApprovals: 0 as const, automaticApprovals: 0 as const },
     summary: { reviewRecords: 10 as const, cycles: 2 as const, ballotIndexTownRows: 338 as const, linkedDemocraticBallots: 196 as const, noDemocraticBallotLinkRows: 142 as const, linkedBallotsWithHouseOfficeContest: 0 as const, ballotEvidenceAttachedRecords: 10 as const, districtSpecificBallotJoins: 0 as const, primaryNominationConclusions: 0 as const, resultConclusions: 0 as const, approvedRecords: 0 as const, scoreEligibleRecords: 0 as const },

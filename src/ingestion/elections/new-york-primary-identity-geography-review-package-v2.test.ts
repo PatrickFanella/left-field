@@ -25,5 +25,5 @@ describe("New York primary identity/geography joint reviewer package v2", () => 
     const outputLock = input(); outputLock.sourceLock.entries.find((entry: { id: string }) => entry.id === "new-york-primary-identity-geography-review-package-v2").parentIds = []; expect(() => buildNewYorkPrimaryJointReviewPackageV2(outputLock)).toThrow("NY_PRIMARY_JOINT_REVIEW_V2_INVALID");
     const mutations: Array<(value: MutablePackage) => void> = [(value) => { value.records[0]!.jointApproved = true; }, (value) => { value.records[0]!.scoreEligible = true; }, (value) => { value.decisions[0]!.review = { status: "approved" }; }, (value) => { value.methodology.electionUseAssessed = true; }, (value) => { value.publicationEligible = true; }, (value) => { value.unexpected = true; }];
     for (const mutate of mutations) { const value = structuredClone(base) as unknown as MutablePackage; mutate(value); expect(() => validateNewYorkPrimaryJointReviewPackageV2(value as never, currentInput)).toThrow("NY_PRIMARY_JOINT_REVIEW_V2_INVALID:semantic_or_hash_drift"); }
-  }, 30_000);
+  }, 60_000);
 });

@@ -57,7 +57,7 @@ describe("Washington primary geography compatibility candidate", () => {
       retainedPath: "data/metadata/washington-primary-geography-compatibility-candidate-v1.json",
       retainedStatus: "retained", byteSize: artifact.length, sha256: sha(artifact), kind: "review_candidate",
       parentIds: ["house-democratic-primary-source-selection-proposal-20260804-v1", "washington-house-top-two-results-receipt-20220802-20240806-v1", "washington-current-incumbent-top-two-linkage-candidate-v1", "census-cd119-plan-change-authority-20260805", "tiger-cd118-53", "tiger-cd119-53"],
-    }]);
+    license: "unknown", }]);
   });
 
   it("rejects fully rehashed approval and evidence escalation plus source-lock drift", () => {

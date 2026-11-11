@@ -59,3 +59,21 @@ are subject to 52 U.S.C. §30111(a)(4), notwithstanding government publication.
 `source/fec/summary-filings.json` contains filing metadata and response hashes
 only. Finance values in this private prototype are intentionally uncollected;
 see `metadata/phase0-collection-status.json`.
+
+## Git LFS source data
+
+The retained ACS B01001 table is stored in Git LFS. Install Git LFS before
+cloning this repository; after cloning, run `rtk proxy git lfs pull` if the
+file is still a pointer. Source-lock verification expects the original
+200,356,282 bytes with SHA-256
+`1637b18a96881b81e050df1cd3d5ac38a33208b9b69b40e1dbeb3c4e13718f0e`.
+The data and its source-lock record are unchanged by LFS storage.
+
+The October 3, 2026 migration rewrote affected history across the canonical
+branches to remove the oversized Git blob. Existing clones must preserve
+their local work and reconcile against the new history before pushing.
+Fresh clones are the safest starting point. Do not merge old history into
+the migrated branches: that would restore the oversized blob. Carry local
+changes onto the corresponding migrated base with a patch or a bounded
+rebase after backing up the old branch. Git archives contain pointer files;
+materialize LFS data before building or validating an archive.

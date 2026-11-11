@@ -1,0 +1,151 @@
+name: Deploy
+run-name: Deploy ${{ github.sha }}
+
+# Deploys main to NUC. The job joins the tailnet as tag:github-ci (Tailscale
+# OAuth client in the TS_OAUTH_* organization secrets), then uses this
+# repository's deploy key, which NUC accepts only from tailnet addresses and
+# only for the left-field fleet-deploy receiver.
+'on':
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  # Never cancel a run that may be mid-deployment.
+  cancel-in-progress: false
+
+env:
+  TARGET: onnwee@100.93.201.83
+  DEPLOY_REVISION: ${{ github.sha }}
+
+jobs:
+  deploy:
+    name: Web image and deploy NUC
+    if: github.repository == 'subculture-collective/left-field' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          lfs: false
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      - name: Join the tailnet
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:github-ci
+          version: latest
+          # The tailnet DNS server (10.0.0.200) is unreachable from hosted runners.
+          args: --accept-dns=false
+      - name: Prepare the deploy key
+        env:
+          DEPLOY_KEY: ${{ secrets.HOMELAB_DEPLOY_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.HOMELAB_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY"
+          test -n "$DEPLOY_KNOWN_HOSTS"
+          umask 077
+          mkdir -p "$RUNNER_TEMP/deploy"
+          printf '%s\n' "$DEPLOY_KEY" > "$RUNNER_TEMP/deploy/key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$RUNNER_TEMP/deploy/known_hosts"
+      - name: Reuse an already accepted web artifact
+        id: artifact
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$DEPLOY_REVISION"
+          d="$RUNNER_TEMP/deploy"
+          ssh_args=(-F /dev/null -i "$d/key" -o ControlPath=none -o ControlMaster=no -o BatchMode=yes -o IdentitiesOnly=yes
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$d/known_hosts" -o ConnectTimeout=15 "$TARGET")
+          # The receiver deploys only Gitea's current main. Kvant copies GitHub
+          # to Gitea every minute, so wait while the revision has not arrived.
+          for attempt in $(seq 1 20); do
+            # shellcheck disable=SC2029
+            if ssh "${ssh_args[@]}" "artifact $DEPLOY_REVISION app" > "$d/artifact.json" 2> "$d/err"; then break; fi
+            if grep -q "no longer the current main" "$d/err" && [ "$attempt" -lt 20 ]; then
+              echo "Gitea has not received $DEPLOY_REVISION yet; waiting 30 s ($attempt/20)"; sleep 30; continue
+            fi
+            cat "$d/err" >&2; exit 1
+          done
+          python3 - "$d/artifact.json" "$GITHUB_OUTPUT" "$DEPLOY_REVISION" <<'PYCODE'
+          import json, re, sys
+          from pathlib import Path
+          info = json.loads(Path(sys.argv[1]).read_text())
+          available = info.get("available") is True
+          if available:
+              assert re.fullmatch(r"sha256:[0-9a-f]{64}", info.get("image", ""))
+              assert info["revision"] == sys.argv[3] and info["service"] == "app"
+          with Path(sys.argv[2]).open("a") as output:
+              output.write("available=" + str(available).lower() + "\n")
+          PYCODE
+      - name: Build and qualify the accepted web image
+        if: steps.artifact.outputs.available != 'true'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$DEPLOY_REVISION"
+          image="fleet-deploy/left-field/app:$DEPLOY_REVISION"
+          source_sha=$(python3 scripts/ci-source-archive.py)
+          [[ "$source_sha" =~ ^[0-9a-f]{64}$ ]]
+          # The fleet-deploy receiver identifies the application by this Gitea source label.
+          docker build -f deploy/nuc/Dockerfile \
+            --build-arg "VCS_REF=$DEPLOY_REVISION" \
+            --build-arg "SOURCE_TREE_SHA256=$source_sha" \
+            --build-arg "BUILD_DATE=$(git show -s --format=%cI "$DEPLOY_REVISION")" \
+            --label "org.opencontainers.image.revision=$DEPLOY_REVISION" \
+            --label "org.opencontainers.image.source=https://git.subcult.tv/subculture-collective/left-field" \
+            -t "$image" .
+          python3 scripts/check-ci-image.py "$image" "$DEPLOY_REVISION"
+      - name: Deploy the read-only factual web and verify the public build
+        env:
+          REUSE_ARTIFACT: ${{ steps.artifact.outputs.available }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$DEPLOY_REVISION"
+          d="$RUNNER_TEMP/deploy"
+          ssh_args=(-F /dev/null -i "$d/key" -o ControlPath=none -o ControlMaster=no -o BatchMode=yes -o IdentitiesOnly=yes
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$d/known_hosts" -o ConnectTimeout=15 "$TARGET")
+          ssh "${ssh_args[@]}" status
+          image="fleet-deploy/left-field/app:$DEPLOY_REVISION"
+          if [[ "$REUSE_ARTIFACT" != true ]]; then
+            # shellcheck disable=SC2029
+            docker save "$image" | ssh "${ssh_args[@]}" "receive $DEPLOY_REVISION app"
+          fi
+          # shellcheck disable=SC2029
+          ssh "${ssh_args[@]}" "deploy $DEPLOY_REVISION"
+          curl --fail --silent --show-error --retry 4 --retry-all-errors --max-time 30 \
+            -D "$d/headers" https://left-field.subcult.tv/build-info.json > "$d/build-info.json"
+          python3 - "$d" "$DEPLOY_REVISION" <<'PYCODE'
+          import json, sys
+          from pathlib import Path
+          directory = Path(sys.argv[1])
+          expected = (json.dumps({"schema_version": 1, "source_commit": sys.argv[2]}, separators=(",", ":")) + "\n").encode()
+          assert (directory / "build-info.json").read_bytes() == expected
+          assert "cache-control: no-store" in (directory / "headers").read_text().lower()
+          PYCODE
+          curl --fail --silent --show-error --retry 4 --retry-all-errors --max-time 30 \
+            https://left-field.subcult.tv/favicon.ico > "$d/favicon.ico"
+          cmp src/app/favicon.ico "$d/favicon.ico"
+          curl --fail --silent --show-error --retry 4 --retry-all-errors --max-time 30 \
+            https://left-field.subcult.tv/ > "$d/index.html"
+          python3 - "$d/index.html" <<'PYCODE'
+          import sys
+          from pathlib import Path
+          body = Path(sys.argv[1]).read_bytes()
+          assert b"Left Field" in body and b"Synthetic" not in body and len(body) > 10000
+          PYCODE
+          printf 'Live Left Field marker, favicon and factual page match %s\n' "$DEPLOY_REVISION"
+      - name: Remove the deploy key
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/deploy"

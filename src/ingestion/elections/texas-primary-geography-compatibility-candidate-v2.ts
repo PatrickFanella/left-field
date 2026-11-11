@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -18,7 +19,7 @@ const sha = (value: string) => createHash("sha256").update(value).digest("hex");
 const digest = (domain: string, value: unknown) => createHash("sha256").update(domain, "ascii").update(canonicalJson(value), "utf8").digest("hex");
 const order = (left: string, right: string) => Buffer.compare(Buffer.from(left), Buffer.from(right));
 const fail = (reason: string): never => { throw new Error(`TX_PRIMARY_GEOGRAPHY_V2_INVALID:${reason}`); };
-const exactEntry = (entries: LockEntry[], expected: LockEntry) => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`); };
+const exactEntry = (entries: LockEntry[], expected: LockEntry) => { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`); };
 
 function assemble(input: TexasPrimaryGeographyV2Input) {
   if (input.sourceLock.version !== 1 || sha(input.geographyV1Json) !== GEOGRAPHY_SHA || sha(input.crosswalkJson) !== CROSSWALK_SHA) fail("input_bytes");

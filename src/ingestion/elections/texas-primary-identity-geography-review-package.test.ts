@@ -54,7 +54,7 @@ describe("Texas primary identity-geography joint reviewer package", () => {
         "texas-current-incumbent-primary-event-identity-candidate-v1",
         "texas-primary-geography-compatibility-candidate-v1",
       ],
-    });
+    license: "unknown", });
   });
 
   it("closes all seventy-eight event records across four review categories", () => {

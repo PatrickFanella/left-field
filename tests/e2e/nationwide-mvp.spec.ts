@@ -16,7 +16,7 @@ test.beforeEach(() => {
 });
 
 test("browses the seeded nationwide record and public ledger routes", async ({ page }) => {
-  for (const [path, heading] of [["/", "Where the field bends."], ["/browse", "Browse the active record"], [profilePath!, "Synthetic 0"], ["/sources", "What we have, and what we do not."], ["/methodology", "How the Priority Index works"]] as const) {
+  for (const [path, heading] of [["/", "Where the field bends."], ["/browse", "Browse the active record"], [profilePath!, "Synthetic 0"], ["/sources", "What we have, and what we do not."], ["/methodology", "How the Priority Index works"], ["/outcomes", "How the index did in 2026"], ["/about", "Who publishes this"]] as const) {
     const response = await navigate(page, path);
     expect(response?.status(), path).toBeLessThan(500);
     await expect(page.getByRole("heading", { name: heading })).toBeVisible();
@@ -58,7 +58,7 @@ test("renders the seeded map and keyboard-accessible profile tables", async ({ p
 });
 
 test("@a11y has no detectable WCAG A/AA violations across nationwide routes", async ({ page }) => {
-  for (const path of ["/", "/browse", "/sources", "/methodology", "/lookup", profilePath!]) {
+  for (const path of ["/", "/browse", "/sources", "/methodology", "/about", "/lookup", profilePath!]) {
     await navigate(page, path);
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]).analyze();
     expect(results.violations, path).toEqual([]);

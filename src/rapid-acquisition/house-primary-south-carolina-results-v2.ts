@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -119,7 +120,7 @@ export function buildSouthCarolinaPrimaryResultsV2(root = process.cwd()): SouthC
   const bytes = readFileSync(join(root, SOURCE.path));
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] };
   const expectedLock = { id:SOURCE.id,url:SOURCE.url,retainedPath:SOURCE.path,retainedStatus:"retained",byteSize:SOURCE.bytes,sha256:SOURCE.sha256,kind:"source",parentIds:[] };
-  if (bytes.length !== SOURCE.bytes || sha(bytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === SOURCE.id), expectedLock)) throw new Error("SOUTH_CAROLINA_2024_SOURCE_BINDING_INVALID");
+  if (bytes.length !== SOURCE.bytes || sha(bytes) !== SOURCE.sha256 || lock.entries.filter((entry) => entry.id === SOURCE.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === SOURCE.id)), expectedLock)) throw new Error("SOUTH_CAROLINA_2024_SOURCE_BINDING_INVALID");
   const eventInventory = parseInventory(bytes);
   const absenceUnsigned = { observationId:"sc:primary:2024:06:democratic" as const,cycleYear:2024 as const,electionDate:"2024-06-11" as const,districtLabel:"SC-06" as const,status:"source_absent_no_disposition_inference" as const,sourceLockIds:[SOURCE.id] as const,eventInventoryContestCount:9 as const,sourceContestId:null,candidateCount:null,votes:null,sourceWinnerStatus:null,resultAuthorityStatus:null,winner:null,identity:null,scoreEligible:false as const };
   const sourceAbsences = [{ ...absenceUnsigned, rowSha256:hash("dsa-seats:rapid-house-primary-south-carolina-source-absence:v2",absenceUnsigned) }];

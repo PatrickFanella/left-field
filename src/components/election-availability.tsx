@@ -19,7 +19,7 @@ function ElectionAvailabilityRecord({ decision }: { decision: ElectionDecisionVi
     <h3 id={`election-availability-${decision.electionYear}`}>{decision.electionYear} election data for {decision.jurisdictionCode}</h3>
     {explanation ? <>
       <p><Status>{decision.status}</Status> <strong>{explanation.heading}</strong> {explanation.detail}</p>
-      <p className="lineage"><span>{decision.coverage!.observedCount} observed / {decision.coverage!.expectedCount} expected</span><span>{decision.coverage!.missingByReason.length === 0 ? "No stated missingness" : decision.coverage!.missingByReason.map(({ reason, count }) => `${count} ${reason.replace(/_/g, " ")}`).join(", ")}</span></p>
+      <p className="lineage"><span>{decision.coverage!.observedCount} observed / {decision.coverage!.expectedCount} expected</span><span>{decision.coverage!.missingByReason.length === 0 ? "Nothing recorded as missing" : decision.coverage!.missingByReason.map(({ reason, count }) => `${count} ${reason.replace(/_/g, " ")}`).join(", ")}</span></p>
     </> : <p className="empty-copy">Availability details are not published for this release.</p>}
     {explanation && decision.evidence.length > 0 && <p>Published evidence for this release: {decision.evidence.map((item, index) => <span key={item.id}>{index > 0 && ", "}<a href={item.sourceUrl}>{item.sourceName} snapshot {item.id}</a> <small>retrieved {fmtDate(item.retrievedAt)}</small></span>)}</p>}
     <p><a href="/sources">Open the release source ledger</a>.</p>

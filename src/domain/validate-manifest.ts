@@ -141,7 +141,7 @@ function validateNationwideManifest(input: unknown):
   const cycleIds = new Set(manifest.seatCycles.map((cycle) => cycle.id));
   const duplicateValues = (values: readonly string[], path: string) => { if (new Set(values).size !== values.length) issues.push({ path, message: "Duplicate reference" }); };
   const scopeKey = (scope: NationwideManifest["coverageRecords"][number]["scope"]) => JSON.stringify(scope);
-  const coverageKey = new Set<string>();
+  const coverageKey = new Map<string, number>();
   const cycleJurisdiction = (seatCycleId: NationwideManifest["seatCycles"][number]["id"]) => { const cycle = cycleById.get(seatCycleId); return cycle && officeById.get(cycle.officeId)?.stateCode; };
   const geographyJurisdiction = (geographyVersionId: NationwideManifest["geographyVersions"][number]["id"]) => manifest.geographyVersions.find((geography) => geography.id === geographyVersionId)?.stateCode;
   const memberJurisdictions = (personId: NationwideManifest["people"][number]["id"]) => new Set(manifest.memberships.filter((membership) => membership.personId === personId).map((membership) => manifest.officeTerms.find((term) => term.id === membership.officeTermId)).flatMap((term) => term ? [officeById.get(term.officeId)?.stateCode] : []));
@@ -169,7 +169,7 @@ function validateNationwideManifest(input: unknown):
     return scope.kind === "release" ? manifest.electionDecisions.filter((row) => row.electionYear === electionYear && row.status === "approved").length : scope.kind === "jurisdiction" ? manifest.electionDecisions.filter((row) => row.electionYear === electionYear && row.jurisdictionCode === scope.jurisdictionCode && row.status === "approved").length : scope.kind === "election" && scope.electionYear === electionYear ? manifest.electionDecisions.filter((row) => row.jurisdictionCode === scope.jurisdictionCode && row.electionYear === scope.electionYear && row.status === "approved").length : undefined;
   };
   manifest.coverageRecords.forEach((record, index) => {
-    const key = `${record.domain}:${scopeKey(record.scope)}`; if (coverageKey.has(key)) { issues.push({ path: `coverageRecords.${index}`, message: "Duplicate coverage scope natural key" }); issues.push({ path: "coverageRecords", message: "Coverage records must close exactly over the Phase 1 domains" }); } coverageKey.add(key);
+    const key = `${record.domain}:${scopeKey(record.scope)}`; if (coverageKey.has(key)) { issues.push({ path: `coverageRecords.${index}`, message: "Duplicate coverage scope natural key" }); issues.push({ path: "coverageRecords", message: "Coverage records must close exactly over the Phase 1 domains" }); } coverageKey.set(key, (coverageKey.get(key) ?? 0) + 1);
     const missing = record.missingByReason.reduce((total, item) => total + item.count, 0);
     const observed = coverageObserved(record);
     const scoped = record.scope;
@@ -186,7 +186,7 @@ function validateNationwideManifest(input: unknown):
     const restrictedAbsence = (record.status === "not_collected" || record.status === "unavailable") && record.observedCount === 0 && record.missingByReason.some((item) => item.reason === "license_unavailable");
     if (!validScope || observed === undefined || record.releaseId !== manifest.release.id || record.inputSnapshotIds.some((id) => !snapshotIds.has(id)) || (!restrictedAbsence && record.inputSnapshotIds.some((id) => !approvedSnapshotIds.has(id))) || new Set(record.inputSnapshotIds).size !== record.inputSnapshotIds.length || new Set(record.missingByReason.map((item) => item.reason)).size !== record.missingByReason.length || record.observedCount !== observed || record.observedCount + missing + record.quarantinedCount + record.incompatibleCount !== record.expectedCount || (record.status === "complete" && (record.observedCount !== record.expectedCount || record.quarantinedCount !== 0 || record.incompatibleCount !== 0)) || (record.status === "partial" && (record.observedCount === 0 || (record.observedCount === record.expectedCount && record.quarantinedCount === 0 && record.incompatibleCount === 0))) || ((record.status === "not_collected" || record.status === "unavailable") && (record.observedCount !== 0 || !explicitAbsence))) { issues.push({ path: `coverageRecords.${index}`, message: "Invalid scoped coverage record" }); issues.push({ path: `coverageRecords.${index}`, message: "Invalid coverage record" }); }
   });
-  const hasCoverage = (domain: string, scope: object) => manifest.coverageRecords.filter((record) => record.domain === domain && JSON.stringify(record.scope) === JSON.stringify(scope)).length === 1;
+  const hasCoverage = (domain: string, scope: object) => coverageKey.get(`${domain}:${JSON.stringify(scope)}`) === 1;
   manifest.acsVariables.forEach((definition) => {
     if (!hasCoverage("acs", { kind: "acs_indicator", variable: definition.variable, surveyPeriod: definition.surveyPeriod })) issues.push({ path: "coverageRecords", message: "Every ACS definition requires one indicator coverage record" });
   });

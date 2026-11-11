@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-readonly PUBLIC_URL="${PUBLIC_URL:-https://seats.dsaslate.us}"
+readonly PUBLIC_URL="${PUBLIC_URL:-https://left-field.subcult.tv}"
 readonly CADDY_URL="${CADDY_URL:-http://10.0.0.200}"
 readonly ORIGIN_URL="${ORIGIN_URL:-http://10.0.0.56:3045}"
-readonly CADDY_HOST="${CADDY_HOST:-seats.dsaslate.us}"
+readonly CADDY_HOST="${CADDY_HOST:-left-field.subcult.tv}"
 readonly METRIC_FILE="${METRIC_FILE:-/srv/server/monitoring/data/node-exporter-textfile/dsa_seats_factual.prom}"
 readonly POSTGRES_CONTAINER="${POSTGRES_CONTAINER:-dsa-seats-r1-postgres-1}"
 readonly APP_CONTAINER="${APP_CONTAINER:-dsa-seats-r1-app-1}"

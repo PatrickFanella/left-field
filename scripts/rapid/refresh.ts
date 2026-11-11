@@ -4,6 +4,12 @@
  *   npm run rapid:refresh                 retain today's FEC candidate summary and Open States rosters, pin them, rewrite the refresh pointer
  *   npm run rapid:refresh -- --date 2026-10-01   use an explicit snapshot date for the retained paths and pointer
  *   npm run rapid:refresh -- --skip-download     only re-point at files already retained for the date
+ *   npm run rapid:refresh -- --cycle 2028        switch the FEC files to another two-year cycle
+ *
+ * The FEC cycle stays on the one the current pointer names until --cycle moves
+ * it. It does not follow the calendar: the 2028 bulk files can lag January 1,
+ * and the House and Senate layers filter on the 2026 election year, so moving
+ * cycles is a model change, not a weekly refresh.
  *
  * Downloads are HTTPS only, written under data/source/rapid/, and pinned with
  * their public URL. Nothing is overwritten: a snapshot that already exists for
@@ -13,7 +19,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 import { derivedArtifactEntry, findSourceLockEntry, readSourceLock, upsertSourceLockEntry, writeSourceLock, type SourceLock } from "@/rapid-acquisition/intake/source-lock";
-import { REFRESH_INPUTS, serializeRefreshInputs, type RefreshInputs } from "@/rapid-acquisition/refresh-inputs";
+import { readRefreshInputs, REFRESH_INPUTS, serializeRefreshInputs, type RefreshInputs } from "@/rapid-acquisition/refresh-inputs";
 import { sha } from "@/rapid-acquisition/shared";
 import { US_STATE_CODES } from "@/rapid-acquisition/us-states";
 
@@ -24,7 +30,9 @@ const today = new Date().toISOString().slice(0, 10);
 const date = option("date") ?? today;
 if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`REFRESH_DATE_INVALID:${date}`);
 const stamp = date.replace(/-/g, "");
-const cycle = Number(option("cycle") ?? (new Date(date).getUTCFullYear() + (new Date(date).getUTCFullYear() % 2)));
+const cycleOption = option("cycle");
+if (cycleOption !== undefined && !/^20\d\d$/.test(cycleOption)) throw new Error(`REFRESH_CYCLE_INVALID:${cycleOption}`);
+if (cycleOption !== undefined && Number(cycleOption) % 2 !== 0) throw new Error(`REFRESH_CYCLE_NOT_EVEN:${cycleOption}`);
 const out = (line: string) => process.stdout.write(`${line}\n`);
 
 async function download(url: string): Promise<Buffer> {
@@ -52,11 +60,15 @@ async function retain(lock: SourceLock, id: string, path: string, url: string): 
 
 async function main(): Promise<void> {
   let lock = readSourceLock();
+  const cycle = cycleOption !== undefined ? Number(cycleOption) : readRefreshInputs(process.cwd(), lock).fecCandidateSummaryCycle;
   const yy = String(cycle).slice(2);
   const fecId = `fec-candidate-summary-${cycle}-${stamp}`;
   lock = await retain(lock, fecId, `data/source/rapid/fec/candidate-summary-${cycle}-${stamp}.zip`, `https://www.fec.gov/files/bulk-downloads/${cycle}/weball${yy}.zip`);
   const masterId = `fec-candidate-master-${cycle}-${stamp}`;
   lock = await retain(lock, masterId, `data/source/rapid/fec/candidate-master-${cycle}-${stamp}.zip`, `https://www.fec.gov/files/bulk-downloads/${cycle}/cn${yy}.zip`);
+  // Congress roster (CC0): the Senate layer reads members, terms and FEC ids from it.
+  const congressId = `congress-legislators-current-${stamp}`;
+  lock = await retain(lock, congressId, `data/source/rapid/congress/legislators-current-${stamp}.json`, "https://unitedstates.github.io/congress-legislators/legislators-current.json");
   const rosterIds: string[] = [];
   for (const code of Object.values(US_STATE_CODES).map((value) => value.toLowerCase()).sort()) {
     const id = `openstates-people-${code}-${stamp}`;
@@ -76,12 +88,12 @@ async function main(): Promise<void> {
       executiveIds.push(id);
     }
   }
-  const inputs: RefreshInputs = { schema: "refresh-inputs-v1", version: 1, snapshotDate: date, fecCandidateSummaryId: fecId, fecCandidateSummaryCycle: cycle, fecCandidateMasterId: masterId, stateLegislativeRosterIds: rosterIds, stateExecutiveIds: executiveIds.sort() };
+  const inputs: RefreshInputs = { schema: "refresh-inputs-v1", version: 1, snapshotDate: date, fecCandidateSummaryId: fecId, fecCandidateSummaryCycle: cycle, fecCandidateMasterId: masterId, stateLegislativeRosterIds: rosterIds, stateExecutiveIds: executiveIds.sort(), congressLegislatorsId: congressId };
   const bytes = Buffer.from(serializeRefreshInputs(inputs));
   writeFileSync(REFRESH_INPUTS.path, bytes);
   lock = upsertSourceLockEntry(lock, derivedArtifactEntry({ id: REFRESH_INPUTS.id, url: `urn:dsa-seats:refresh-inputs:v1`, retainedPath: REFRESH_INPUTS.path, bytes, kind: "editorial_ledger", parentIds: [] }));
   writeSourceLock(lock);
-  out(`refresh pointer now ${date}: ${fecId}, ${masterId}, ${rosterIds.length} rosters, ${executiveIds.length} executive files. Next: npm run rapid:publish -- --bump`);
+  out(`refresh pointer now ${date}: ${fecId}, ${masterId}, ${congressId}, ${rosterIds.length} rosters, ${executiveIds.length} executive files. Next: npm run rapid:publish -- --bump`);
 }
 
 main().catch((error: unknown) => { process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`); process.exit(1); });

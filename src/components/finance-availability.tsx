@@ -21,14 +21,14 @@ export function FinanceAvailability({ cashOnHand, availability, aggregates }: { 
       {missingCash && aggregates.length > 0 && <p>Aggregate totals shown below cover {includedCommittees} included {includedCommittees === 1 ? "committee" : "committees"} and {missingCommittees} {missingCommittees === 1 ? "committee" : "committees"} without a usable aggregate filing. They do not replace the missing summary field.</p>}
       {availability.evidence.length > 0 && <p>Published source for this availability statement: {availability.evidence.map((item, index) => <span key={item.id}>{index > 0 && ", "}<a href={item.sourceUrl}>{item.sourceName} snapshot {item.id}</a> <small>retrieved {fmtDate(item.retrievedAt)}</small></span>)}</p>}
     </> : <p className="empty-copy">Finance availability details are not published for this release. No value or zero is inferred.</p>}
-    <p><a href="#source-closure">Open this profile&apos;s source closure</a> · <a href="/sources">Open the release-wide source ledger</a>.</p>
+    <p><a href="#source-closure">See the sources behind this record</a> · <a href="/sources">Open the release-wide source ledger</a>.</p>
   </section>;
 }
 
 function cashExplanation(reason: string): { heading: string; detail: string } {
   if (reason === "not_reported") return { heading: "Cash-on-hand amount not reported in this release.", detail: "The approved source did not provide a usable reported cash-on-hand amount for this seat's finance-summary scope at the release cutoff. This is not a zero balance, and it does not mean that no committee activity or filing exists." };
   if (reason === "not_collected") return { heading: "Cash-on-hand amount not collected for this release.", detail: "The release did not collect or assess the required summary field. This does not mean the amount is zero or that no filing exists." };
-  return { heading: `Cash-on-hand amount unavailable — ${reason.replace(/_/g, " ")}.`, detail: "The release preserves this typed missingness and does not infer a value or zero." };
+  return { heading: `Cash-on-hand amount unavailable — ${reason.replace(/_/g, " ")}.`, detail: "The release keeps the stated reason and does not infer a value or a zero." };
 }
 
 function coverageHeading(status: FinanceAvailabilityViewModel["status"]): string {

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { hash, sha, exact } from "./shared";
@@ -37,7 +38,7 @@ export function buildKentuckyPrimaryResults(root = process.cwd()): KentuckyPrima
   for (const pin of [PDF, TEXT]) {
     const bytes = pin === PDF ? pdf : textBytes, matches = lock.entries.filter((entry) => entry.id === pin.id);
     const expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: pin.kind, parentIds: [...pin.parentIds] };
-    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`KENTUCKY_SOURCE_BINDING_INVALID:${pin.id}`);
+    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`KENTUCKY_SOURCE_BINDING_INVALID:${pin.id}`);
   }
   if (!pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || !/Commonwealth of Kentucky\s+Michael G\. Adams, Secretary of State\s+2024 Primary Election Results/.test(text)) throw new Error("KENTUCKY_DOCUMENT_IDENTITY_INVALID");
   const section = text.match(/US Representative\s+3rd Congressional District\s+Democratic Party\s+Morgan\s+Geoffrey M\. "Geoff"\s+Jared\s+McGARVEY\s+YOUNG\s+RANDALL\s+Jefferson\s+44,275\s+5,875\s+2,491\s+Total Votes\s+44,275\s+5,875\s+2,491/);

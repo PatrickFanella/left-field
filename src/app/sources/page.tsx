@@ -1,19 +1,25 @@
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { loadSourcesPage } from "@/ui/server-data";
+import { ledgerSources, loadOutcomeLedger } from "@/lib/outcome-ledger-view";
 import type { SourcesPageViewModel } from "@/ui/view-models";
 import {
   Shell,
   RouteState,
   Status,
+  fmtCount,
   fmtDate,
   words,
 } from "@/components/presentational";
 import { housePriorityBriefsV11 } from "@/lib/house-priority-index";
+import { getDefaultPriorityRepository } from "@/lib/priority-index-store";
 import { loadRapidHousePrimaryCoverage } from "@/ui/rapid-house-primary-coverage";
 import { loadRapidLocalContextCoverage } from "@/ui/rapid-local-context-coverage";
 import { loadRapidExpansionStatus } from "@/ui/rapid-expansion-status";
 
 export const dynamic = "force-dynamic";
+export const metadata: Metadata = pageMetadata("/sources", "Source ledger", "Which inputs feed the Priority Index, how many seats each one covers, and the retained snapshots behind them.");
 type Coverage = SourcesPageViewModel["coverage"][number];
 
 export default async function Sources() {
@@ -27,6 +33,12 @@ export default async function Sources() {
   if (!result.ok) return <RouteState code={result.code} />;
   const { value: page } = result;
   const indexRows = housePriorityBriefsV11();
+  const outcomeLedger = loadOutcomeLedger();
+  const priorityRepository = getDefaultPriorityRepository();
+  const rankedRows = priorityRepository.getBriefs();
+  const model = priorityRepository.getModelRelease();
+  const rankedIn = (...chambers: string[]) =>
+    rankedRows.filter((row) => chambers.includes(row.chamber)).length;
   const driverCoverage = (key: string) =>
     indexRows.filter((row) => {
       const driver = row.scoreDrivers.find(
@@ -48,7 +60,7 @@ export default async function Sources() {
     }));
   return (
     <Shell release={page.release}>
-      <main className="page sources-page">
+      <main id="content" className="page sources-page">
         <p className="eyebrow">SOURCE LEDGER</p>
         <h1>What we have, and what we do not.</h1>
         <p className="lede">
@@ -61,19 +73,23 @@ export default async function Sources() {
           aria-label="Priority Index source coverage"
         >
           <article>
-            <span>Ranked universe</span>
-            <strong>{indexRows.length + (expansionStatus?.senate.seats ?? 0)}</strong>
+            <span>Ranked seats · model {model.version}</span>
+            <strong>{fmtCount(rankedRows.length)}</strong>
             <p>
-              House {democraticSeats} Democratic · {republicanSeats} Republican
-              {expansionStatus ? ` · Senate ${expansionStatus.senate.democraticCaucus} Democratic caucus · ${expansionStatus.senate.republicanCaucus} Republican` : ""}
+              House {fmtCount(rankedIn("house"))} · Senate {fmtCount(rankedIn("senate"))} · governors{" "}
+              {fmtCount(rankedIn("governor"))} · state legislative{" "}
+              {fmtCount(rankedIn("state_house", "state_senate"))}
             </p>
           </article>
           <article>
-            <span>Cash on hand</span>
+            <span>House cash on hand</span>
             <strong>
               {driverCoverage("cash_vulnerability")} / {indexRows.length}
             </strong>
-            <p>Three explicit not-reported outcomes</p>
+            <p>
+              {indexRows.length - driverCoverage("cash_vulnerability")} House
+              seats without a reported value
+            </p>
           </article>
           <article>
             <span>Source cutoff</span>
@@ -85,12 +101,14 @@ export default async function Sources() {
           <div className="section-heading-pair">
             <div>
               <p className="eyebrow">WHAT FEEDS THE SCORE</p>
-              <h2>Seven inputs, two routes</h2>
+              <h2>Seven House inputs, two routes</h2>
             </div>
             <p>
               Coverage means a usable numeric component is present. It does not
               mean every desirable historical or challenger-level field has been
-              collected.
+              collected. Counts on these cards are House seats; Senate,
+              governor, and state-legislative coverage is described below and on
+              the Method page.
             </p>
           </div>
           <div className="source-input-grid">
@@ -138,7 +156,7 @@ export default async function Sources() {
             />
             <SourceInput
               title="Member and service history"
-              coverage={`${indexRows.length} / ${indexRows.length}`}
+              coverage="Context, not scored"
               source="House Clerk and Congress Legislators"
               use="Provides identity, biography, and tenure context; it does not independently change rank."
             />
@@ -154,7 +172,7 @@ export default async function Sources() {
           <h2>One published finance row per ranked seat</h2>
           <p>
             The v0.3 through v0.9 layers project the incumbent finance aggregate from{" "}
-            <code>rel_full_20260804_v2</code> onto the 430-seat ranking. Since
+            <code>rel_full_20260804_v2</code> onto the 430 ranked House seats. Since
             v0.10 the active score refreshes cash from the FEC candidate summary
             snapshot; the release aggregate below remains the retained fallback.
             Cash changes the score; receipts and disbursements are displayed as
@@ -162,10 +180,10 @@ export default async function Sources() {
           </p>
           <div className="source-projection-facts">
             <span>
-              <b>427</b> cash values
+              <b>427</b> cash values in the release aggregate
             </span>
             <span>
-              <b>3</b> not reported
+              <b>3</b> not reported in the release aggregate
             </span>
             <span>
               <b>cf00b2bcfaf0…</b> projection
@@ -296,7 +314,7 @@ export default async function Sources() {
           <div className="section-heading-pair">
             <div>
               <p className="eyebrow">LOCAL CONTEXT INTAKE</p>
-              <h2>Broad intake with a narrow active adapter</h2>
+              <h2>Retained widely, scored in two places</h2>
             </div>
             <p>
               These retained county and state-legislative inputs are
@@ -566,8 +584,28 @@ export default async function Sources() {
                   {expansionStatus.stateLegislative.catalogStates} catalog states match a candidate in their latest retained Democratic primary;{" "}
                   {expansionStatus.stateLegislative.holdersNotInLatestPrimary} do not.{" "}
                   {expansionStatus.stateLegislative.scored
-                    ? `${expansionStatus.stateLegislative.scored.seats} seats in ${expansionStatus.stateLegislative.scored.coveredStates.join(", ")} are ranked from ${expansionStatus.stateLegislative.scored.generalContests} official general-election contests retained from each state's election authority; the seat's own most recent margin is the district baseline. ${expansionStatus.stateLegislative.scored.stateNotCovered.toLocaleString("en-US")} seats in other states wait for their returns.`
+                    ? `${expansionStatus.stateLegislative.scored.seats} seats in ${expansionStatus.stateLegislative.scored.coveredStates.join(", ")} are ranked from ${expansionStatus.stateLegislative.scored.generalContests} official general-election contests retained from each state's election authority; the seat's own most recent margin is the district baseline. ${expansionStatus.stateLegislative.scored.stateNotCovered.toLocaleString("en-US")} seats in other states wait for their returns.${expansionStatus.stateLegislative.scored.unofficialStates.length > 0 ? ` Returns for ${expansionStatus.stateLegislative.scored.unofficialStates.join(", ")} are unofficial and will be replaced by the certified canvass.` : ""}`
                     : "No state-legislative seats are ranked yet: no open nationwide file gives presidential results by legislative district, and no state returns are retained."}
+                </small>
+              </article>
+              <article>
+                <div>
+                  <h3>2026 outcomes</h3>
+                  <strong>{outcomeLedger.summary.upIn2026.toLocaleString("en-US")} seats on the ballot</strong>
+                </div>
+                <p>
+                  {outcomeLedger.summary.byOutcome.unknown.toLocaleString("en-US")} without retained evidence ·{" "}
+                  {outcomeLedger.summary.byOutcome.incumbent_lost_primary} lost a primary ·{" "}
+                  {outcomeLedger.summary.byOutcome.incumbent_ran_for_other_office} ran for another office ·{" "}
+                  evidence as of {outcomeLedger.observedAt}
+                </p>
+                <small>
+                  {ledgerSources().map((artifact) => (
+                    <span key={artifact.id}>
+                      <code>{artifact.id}</code> — {artifact.label}; {artifact.byteSize.toLocaleString("en-US")} bytes; SHA-256 <code>{artifact.sha256}</code>.{" "}
+                    </span>
+                  ))}
+                  Outcomes rest on FEC filings, the retained 2026 primary files, and the current rosters; nothing is inferred from a count that is not certified. <Link href="/outcomes">How the index did</Link>
                 </small>
               </article>
             </div>
@@ -599,7 +637,7 @@ export default async function Sources() {
                   </p>
                   {snapshots.length === 0 ? (
                     <p className="empty-copy">
-                      No snapshots fall within this page closure.
+                      This source has no snapshots in the active release.
                     </p>
                   ) : (
                     <div

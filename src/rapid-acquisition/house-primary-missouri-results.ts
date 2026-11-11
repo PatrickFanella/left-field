@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { hash, sha, exact } from "./shared";
@@ -32,7 +33,7 @@ const TEXT = { id: "mo-2024-primary-results-layout-text", url: "urn:dsa-seats:de
 export function buildMissouriPrimaryResults(root = process.cwd()): MissouriPrimaryResults {
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] };
   const pdf = readFileSync(join(root, PDF.path)), textBytes = readFileSync(join(root, TEXT.path)), text = textBytes.toString("utf8");
-  for (const pin of [PDF, TEXT]) { const bytes = pin === PDF ? pdf : textBytes, matches = lock.entries.filter((entry) => entry.id === pin.id), expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: pin.kind, parentIds: [...pin.parentIds] }; if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`MISSOURI_SOURCE_BINDING_INVALID:${pin.id}`); }
+  for (const pin of [PDF, TEXT]) { const bytes = pin === PDF ? pdf : textBytes, matches = lock.entries.filter((entry) => entry.id === pin.id), expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: pin.kind, parentIds: [...pin.parentIds] }; if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`MISSOURI_SOURCE_BINDING_INVALID:${pin.id}`); }
   if (!pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || !/Missouri Office of Secretary of State\s+OFFICIAL RESULTS\s+Primary Election - August 6, 2024/.test(text)) throw new Error("MISSOURI_DOCUMENT_IDENTITY_INVALID");
   const districtOneA = /U\.S\. Representative\s+Republican\s+Republican\s+Republican\s+Republican\s+Republican\s+Democratic Democratic\s+District 1\s+Stan Hall\s+Laura Mitchell-Riley\s+Mike Hebron\s+Timothy Gartin\s+Andrew Jones\s+Cori Bush Wesley Bell[\s\S]*?Total\s+4008\s+3215\s+3247\s+996\s+4209\s+56723\s+63521/.test(text);
   const districtOneB = /U\.S\. Representative\s+Democratic\s+Democratic\s+Libertarian\s+District 1\s+Maria N\. Chappelle-Nadal Ron Harshaw\s+Rochelle A\. Riggins\s+Total[\s\S]*?Total\s+3279\s+735\s+272\s+140205/.test(text);

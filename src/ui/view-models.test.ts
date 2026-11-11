@@ -83,7 +83,7 @@ describe("UI data boundary", () => {
   it("associates source snapshots without inventing a source", () => {
     const model = compileSourcesPage(canonicalManifest.release, canonicalManifest.sources, projection.snapshots());
     expect(model.sources.every(({ source, snapshots }) => snapshots.every((snapshot) => snapshot.sourceId === source.id))).toBe(true);
-    expect(model.snapshotScope).toContain("full active-release snapshot inventory");
+    expect(model.snapshotScope).toContain("every snapshot in the active release");
     expect(model.sources.flatMap(({ snapshots }) => snapshots)).toHaveLength(projection.snapshots().length);
   });
   it("exposes homogeneous release coverage groups without source fanout", () => {
@@ -157,7 +157,7 @@ describe("UI data boundary", () => {
   });
   it("loads the full active-release source snapshot inventory without seat fanout", async () => {
     const { repo, calls } = recordingRepository(); const result = await loadSourcesPage(repo);
-    expect(result).toMatchObject({ ok: true, value: { snapshotScope: expect.stringContaining("full active-release snapshot inventory") } });
+    expect(result).toMatchObject({ ok: true, value: { snapshotScope: expect.stringContaining("every snapshot in the active release") } });
     expect(calls).toEqual(["getActiveRelease", "listSources", "listSourceSnapshots", "listReleaseCoverage"]);
   });
   it("loads methodology with only the active-release repository call", async () => {

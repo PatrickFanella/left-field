@@ -9,13 +9,17 @@ import { formatPartisanMargin, type PriorityDriver, type PublicPriorityBrief } f
  * "state_house" or "state_senate" (Nebraska's unicameral counts as a senate).
  */
 const chamberOf = (row: StateLegislativeScoreV01Row): "state_house" | "state_senate" => row.chamber === "lower" ? "state_house" : "state_senate";
-const chamberLabel = (row: StateLegislativeScoreV01Row): string => row.chamber === "lower" ? "state House" : row.chamber === "unicameral" ? "Legislature" : "state Senate";
+const chamberLabel = (row: StateLegislativeScoreV01Row): string => row.stateCode === "DC" ? "Council" : row.chamber === "lower" ? "state House" : row.chamber === "unicameral" ? "Legislature" : "state Senate";
+
+const unofficialBaseline = (row: StateLegislativeScoreV01Row): boolean => row.baselineResultStatus === "unofficial";
 
 function baselineSentence(row: StateLegislativeScoreV01Row): string {
   const margin = formatPartisanMargin(row.ownRaceDemocraticMargin ?? 0);
   const contest = row.baselineContested ? `the ${row.baselineCycleYear} general election for this seat` : `the ${row.baselineCycleYear} general election, which was uncontested`;
   const multi = (row.baselineSeats ?? 1) > 1 ? ` The district elects ${row.baselineSeats} members, so party totals across all candidates are used.` : "";
-  return `The official state returns record ${margin} in ${contest}.${multi}`;
+  return unofficialBaseline(row)
+    ? `${margin} comes from unofficial returns from ${contest}; the state has not certified its canvass, so the figure may change.${multi}`
+    : `The official state returns record ${margin} in ${contest}.${multi}`;
 }
 
 function drivers(row: StateLegislativeScoreV01Row): PriorityDriver[] {
@@ -79,7 +83,7 @@ export function stateLegislativePriorityBrief(row: StateLegislativeScoreV01Row):
       : `${row.seatLabel} enters through the Republican-held flip route at ${row.score.toFixed(1)} with ${pct}% of the component weight available: own-race competitiveness${row.stateContestation === null ? "" : " and state-level Democratic primary contestation"}.`,
     personSummary: `${row.holderName} holds ${row.stateCode} ${chamberLabel(row)} district ${row.district} as a ${row.incumbentParty}. The Open States roster is the identity source; the seat is next regularly contested in ${row.nextElectionYear} on a ${row.termYears}-year term.${mismatch}`,
     districtSummary: `${baselineSentence(row)}${uncontested} The margin here is the seat's own race, not a presidential overlay; state campaign-finance filings are not retained.`,
-    limitations: "Own-race margin and, where retained, primary evidence and state contestation only. Term lengths are chamber defaults and special elections are not modelled. This is a comparative research index, not a forecast or endorsement.",
+    limitations: `Own-race margin and, where retained, primary evidence and state contestation only.${unofficialBaseline(row) ? " The baseline rests on unofficial returns and will be rebuilt from the certified canvass." : ""} Term lengths are chamber defaults and special elections are not modelled. This is a comparative research index, not a forecast or endorsement.`,
   };
 }
 

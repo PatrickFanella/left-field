@@ -160,6 +160,6 @@ describe("Arizona primary geography compatibility candidate", () => {
         "tiger-cd118-04",
         "tiger-az",
       ],
-    }]);
+    license: "unknown", }]);
   });
 });

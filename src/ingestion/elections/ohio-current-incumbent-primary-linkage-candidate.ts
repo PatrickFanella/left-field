@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -82,7 +83,7 @@ export function buildOhioPrimaryIdentityCandidate(input: Input) {
   }).sort((left, right) => Buffer.compare(Buffer.from(left.observationId), Buffer.from(right.observationId)));
   if (observations.length !== 10 || new Set(observations.map((row) => row.observationId)).size !== 10) fail("OBSERVATION_CLOSURE_INVALID");
   const summary = { targetSeats: 5 as const, reportedContestObservations: 10 as const, exactNameObservations: 8 as const, derivedNameRelationships: 2 as const, proposedIdentityLinks: 10 as const, partialCountyEvidenceExcluded2022: 12 as const, districtIdentityObservations2022: 0 as const, directIdentifierBridges: 0 as const, automaticallyApprovedRows: 0 as const, scoreEligibleRows: 0 as const };
-  const sources = REQUIRED.map(([id]) => (entries as LockEntry[]).find((entry) => entry.id === id)!);
+  const sources = (REQUIRED.map(([id]) => (entries as LockEntry[]).find((entry) => entry.id === id)!)).map(sourceLockContent);
   const unsigned = {
     schema: OHIO_PRIMARY_IDENTITY_V1, version: 1 as const, generatedAt: "2026-08-07T04:20:00.000Z" as const, sourceCutoff: "2026-08-06" as const, reviewerOnly: true as const, publicationEligible: false as const, defaultUse: "exclude_from_evaluator_until_authorized_identity_and_historical_geography_review" as const,
     review: { status: "proposed" as const, reviewer: null, reviewedAt: null, resolution: null }, inputs: { roster: { sourceLockId: PARENTS[0], fileSha256: INPUTS.rosterFile, rosterSha256: INPUTS.rosterPackage }, proposal: { sourceLockId: PARENTS[1], fileSha256: INPUTS.proposalFile, packageSha256: INPUTS.proposalPackage }, houseClerk: { sourceLockId: PARENTS[2], fileSha256: INPUTS.houseFile }, congressLegislators: { sourceLockId: PARENTS[3], fileSha256: INPUTS.congressFile }, receipt: { sourceLockId: PARENTS[4], fileSha256: INPUTS.receiptFile, packageSha256: INPUTS.receiptPackage, contestSetSha256: INPUTS.receiptSet } },

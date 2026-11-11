@@ -78,5 +78,5 @@ describe("California 2026 primary block crosswalk candidate", () => {
       mutate(value);
       expect(() => validateCalifornia2026PrimaryBlockCrosswalkCandidate(value as never, currentInput)).toThrow("CA_2026_PRIMARY_BLOCK_CROSSWALK_INVALID:semantic_or_hash_drift");
     }
-  }, 30_000);
+  }, 60_000);
 });

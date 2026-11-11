@@ -72,7 +72,7 @@ const byteCompare = (left: string, right: string): number => left < right ? -1 :
 const sameSnapshot = (left: SourceSnapshot, right: SourceSnapshot): boolean => left.id === right.id && left.releaseId === right.releaseId && left.sourceId === right.sourceId && left.sourceUrl === right.sourceUrl && left.publishedAt === right.publishedAt && left.retrievedAt === right.retrievedAt && left.checksumSha256 === right.checksumSha256 && left.parserVersion === right.parserVersion && left.license === right.license && left.usageStatus === right.usageStatus;
 
 export function compileBrowsePage(releaseValue: DataRelease, page: SeatPage, appliedQuery: SeatQuery, facets: SeatFacets): BrowsePageViewModel {
-  return { release: release(releaseValue), appliedQuery: { ...appliedQuery }, rows: page.items.map((row) => ({ ...row })), total: page.total, nextCursor: page.nextCursor, available: { states: unique(facets.states), parties: unique(facets.parties), incumbencyStatuses: unique(facets.incumbencyStatuses), electionYears: unique(facets.electionYears) }, disclosure: { coverage: "Coverage is limited to the active release; missing values retain their stated reason.", rankings: "This catalog is not score-ordered; the separate Priority Index publishes the strategic model.", demographicFilters: "Demographics are display-only and cannot filter, order, subset, or rank seats." } };
+  return { release: release(releaseValue), appliedQuery: { ...appliedQuery }, rows: page.items.map((row) => ({ ...row })), total: page.total, nextCursor: page.nextCursor, available: { states: unique(facets.states), parties: unique(facets.parties), incumbencyStatuses: unique(facets.incumbencyStatuses), electionYears: unique(facets.electionYears) }, disclosure: { coverage: "Coverage is limited to the active release; missing values retain their stated reason.", rankings: "This catalog is not ordered by score. The ranking is published separately, in the Priority Index.", demographicFilters: "Demographics are display-only and cannot filter, order, subset, or rank seats." } };
 }
 
 export function compileProfilePage(profile: SeatProfile, seat: SeatListItem): ProfilePageViewModel {
@@ -170,7 +170,7 @@ export function compileSourcesPage(releaseValue: DataRelease, sources: readonly 
     snapshotsById.set(snapshot.id, snapshot);
   }
   const uniqueSnapshots = [...snapshotsById.values()].sort((left, right) => byteCompare(left.id, right.id));
-  return { release: release(releaseValue), snapshotScope: "Snapshots are the full active-release snapshot inventory; a source can have zero snapshots in this inventory.", coverage: [...coverage], sources: [...sources].sort((left, right) => byteCompare(String(left.id), String(right.id))).map((source) => ({ source, snapshots: uniqueSnapshots.filter((snapshot) => snapshot.sourceId === source.id) })) };
+  return { release: release(releaseValue), snapshotScope: "This inventory lists every snapshot in the active release. A source can appear with no snapshots.", coverage: [...coverage], sources: [...sources].sort((left, right) => byteCompare(String(left.id), String(right.id))).map((source) => ({ source, snapshots: uniqueSnapshots.filter((snapshot) => snapshot.sourceId === source.id) })) };
 }
 
 export function compileMethodologyPage(releaseValue: DataRelease): MethodologyPageViewModel {

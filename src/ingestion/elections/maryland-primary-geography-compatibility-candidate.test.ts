@@ -165,6 +165,6 @@ describe("Maryland primary geography compatibility candidate", () => {
         "tiger-cd118-24",
         "tiger-cd119-24",
       ],
-    }]);
+    license: "unknown", }]);
   });
 });

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { hash, sha, exact } from "./shared";
@@ -26,7 +27,7 @@ const TEXT = { id: "ms-2024-primary-statewide-democratic-recap-layout-text", url
 export function buildMississippiPrimaryResults(root = process.cwd()): MississippiPrimaryResults {
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] };
   const bytesById = new Map([[INDEX.id, readFileSync(join(root, INDEX.path))], [PDF.id, readFileSync(join(root, PDF.path))], [TEXT.id, readFileSync(join(root, TEXT.path))]]);
-  for (const pin of [INDEX, PDF, TEXT]) { const bytes = bytesById.get(pin.id)!, matches = lock.entries.filter((entry) => entry.id === pin.id), expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: pin.kind, parentIds: [...pin.parentIds] }; if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`MISSISSIPPI_SOURCE_BINDING_INVALID:${pin.id}`); }
+  for (const pin of [INDEX, PDF, TEXT]) { const bytes = bytesById.get(pin.id)!, matches = lock.entries.filter((entry) => entry.id === pin.id), expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: pin.kind, parentIds: [...pin.parentIds] }; if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`MISSISSIPPI_SOURCE_BINDING_INVALID:${pin.id}`); }
   const index = bytesById.get(INDEX.id)!.toString("utf8"), pdf = bytesById.get(PDF.id)!, text = bytesById.get(TEXT.id)!.toString("utf8");
   if (!/href="2024DemocraticPrimary\/Statewide%20Democratic%20Recap\.pdf"/.test(index) || !pdf.subarray(0, 5).equals(Buffer.from("%PDF-")) || !/Official Results\s+Total Votes Reported by Counties for Presidential Primary\s+Date of Election: 3\/12\/2024/.test(text)) throw new Error("MISSISSIPPI_DOCUMENT_IDENTITY_INVALID");
   if (!/US House Of Rep 02-2nd Congressional\s+District[\s\S]*?Bennie G\. Thompson\s+Democrat[\s\S]*?TOTAL[\s\S]*?Bennie G\. Thompson\s+Democrat\s+X\s+566\s+X\s+507\s+1001\s+44295/.test(text)) throw new Error("MISSISSIPPI_TARGET_TABLE_INVALID");

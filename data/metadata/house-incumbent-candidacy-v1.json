@@ -2,8 +2,8 @@
   "schema": "house-incumbent-candidacy-v1",
   "version": 1,
   "methodology": {
-    "source": "fec-candidate-master-2026-20260925",
-    "snapshotDate": "2026-09-24",
+    "source": "fec-candidate-master-2026-20261103",
+    "snapshotDate": "2026-11-03",
     "senateNameGate": "same_state_same_last_name_given_token_or_initial_or_unique_last_name",
     "retirementsAndStateOffice": "not_observed_in_federal_filings",
     "winnerInference": false
@@ -11,7 +11,7 @@
   "sourceIds": [
     "congress-legislators-current-20260804",
     "refresh-inputs-v1",
-    "fec-candidate-master-2026-20260925"
+    "fec-candidate-master-2026-20261103"
   ],
   "rows": [
     {
@@ -5752,5 +5752,5 @@
     "noHouseRow": 0
   },
   "rowSetSha256": "197c6530650edb878c7a43525802ed749aff5306639af5bf96dc989b65c335fc",
-  "packageSha256": "bfde20b699e4a804a8cb1a522da45531f22cfb28e16df79857bfc26b93f40540"
+  "packageSha256": "b1e64749f79e5d82677dac7d6085d2ddf09bcf824d9bd1deb69f2c937d9b5639"
 }

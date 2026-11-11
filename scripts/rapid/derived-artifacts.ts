@@ -5,11 +5,13 @@ import { buildHouseIncumbentCandidacy, HOUSE_INCUMBENT_CANDIDACY } from "@/rapid
 import { buildHouseScoreV10ActiveProjection, HOUSE_SCORE_V10 } from "@/rapid-acquisition/house-score-v10-active";
 import { buildHouseScoreV11ActiveProjection, HOUSE_SCORE_V11 } from "@/rapid-acquisition/house-score-v11-active";
 import type { SourceLock } from "@/rapid-acquisition/intake/source-lock";
+import { buildSeatOutcomeLedger, SEAT_OUTCOME_LEDGER } from "@/rapid-acquisition/seat-outcome-ledger";
 import { buildSenateScoreV01Projection, SENATE_SCORE_V01 } from "@/rapid-acquisition/senate-score-v01";
 import { buildStateLegislativePrimaryContext, STATE_LEGISLATIVE_PRIMARY_CONTEXT } from "@/rapid-acquisition/state-legislative-primary-context";
 import { buildStateLegislativeGeneralResults, STATE_LEGISLATIVE_GENERAL_RESULTS } from "@/rapid-acquisition/state-legislative-general-results";
 import { buildStateLegislativeRoster, STATE_LEGISLATIVE_ROSTER } from "@/rapid-acquisition/state-legislative-roster";
 import { buildStateLegislativeScoreV01Projection, STATE_LEGISLATIVE_SCORE_V01 } from "@/rapid-acquisition/state-legislative-score-v01";
+import { buildStatePrimaryResults2026, STATE_PRIMARY_RESULTS_2026 } from "@/rapid-acquisition/state-primary-results-2026";
 import { buildStatewidePresidential2024, STATEWIDE_PRESIDENTIAL_2024 } from "@/rapid-acquisition/statewide-presidential-2024";
 
 /**
@@ -135,6 +137,22 @@ export const DERIVED_ARTIFACTS: readonly DerivedArtifact[] = [
     kind: "derived_artifact",
     parentIds: STATE_LEGISLATIVE_SCORE_V01.parentIds,
     build: (root, lock) => buildStateLegislativeScoreV01Projection(root, lock),
+    describe: summaryLine,
+  },
+  {
+    id: STATE_PRIMARY_RESULTS_2026.id,
+    path: STATE_PRIMARY_RESULTS_2026.path,
+    url: STATE_PRIMARY_RESULTS_2026.url,
+    kind: "derived_artifact",
+    parentIds: STATE_PRIMARY_RESULTS_2026.parentIds,
+    build: (root, lock) => buildStatePrimaryResults2026(root, lock),
+    describe: summaryLine,
+  },
+  {
+    // Last: it joins the frozen pre-election snapshot to the rosters, candidacy and primary artifacts rebuilt above.
+    ...SEAT_OUTCOME_LEDGER,
+    kind: "derived_artifact",
+    build: (root, lock) => buildSeatOutcomeLedger(root, lock),
     describe: summaryLine,
   },
 ];

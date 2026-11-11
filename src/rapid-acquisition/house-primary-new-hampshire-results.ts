@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { unzipSync } from "fflate";
@@ -63,7 +64,7 @@ function parseWorkbook(bytes:Buffer,source:(typeof SOURCES)[number]):NewHampshir
 
 export function buildNewHampshirePrimaryResults(root=process.cwd()):NewHampshirePrimaryResults{
   const lock=JSON.parse(readFileSync(join(root,"data/source-lock.json"),"utf8"))as{entries:readonly Record<string,unknown>[]};
-  const results=SOURCES.map(source=>{const bytes=readFileSync(join(root,source.path)),expected={id:source.id,url:source.archiveUrl,retainedPath:source.path,retainedStatus:"retained",byteSize:source.bytes,sha256:source.sha256,kind:"archived_official_source",parentIds:["nh-2024-primary-results"]};if(bytes.length!==source.bytes||sha(bytes)!==source.sha256||lock.entries.filter(entry=>entry.id===source.id).length!==1||!exact(lock.entries.find(entry=>entry.id===source.id),expected))throw new Error(`NEW_HAMPSHIRE_SOURCE_BINDING_INVALID:${source.district}`);return parseWorkbook(bytes,source);});
+  const results=SOURCES.map(source=>{const bytes=readFileSync(join(root,source.path)),expected={id:source.id,url:source.archiveUrl,retainedPath:source.path,retainedStatus:"retained",byteSize:source.bytes,sha256:source.sha256,kind:"archived_official_source",parentIds:["nh-2024-primary-results"]};if(bytes.length!==source.bytes||sha(bytes)!==source.sha256||lock.entries.filter(entry=>entry.id===source.id).length!==1||!exact(sourceLockContent(lock.entries.find(entry=>entry.id===source.id)),expected))throw new Error(`NEW_HAMPSHIRE_SOURCE_BINDING_INVALID:${source.district}`);return parseWorkbook(bytes,source);});
   const summary={observations:2 as const,candidateRows:4 as const,candidateVotes:125_012 as const,sourceMarkedWinnerContests:0 as const,scoreEligibleRows:0 as const};
   if(results.reduce((sum,row)=>sum+row.totalCandidateVotes,0)!==summary.candidateVotes||results.some(row=>row.scoreEligible||row.winner!==null||row.identity!==null||row.sourceWinnerStatus!=="not_marked_by_source"))throw new Error("NEW_HAMPSHIRE_RESULTS_CLOSURE_INVALID");
   const resultSetSha256=hash("dsa-seats:rapid-house-primary-new-hampshire-result-set:v1",results),unsigned={schema:"rapid-house-primary-new-hampshire-results-v1" as const,version:1 as const,results,resultSetSha256,summary};return{...unsigned,packageSha256:hash("dsa-seats:rapid-house-primary-new-hampshire-package:v1",unsigned)};

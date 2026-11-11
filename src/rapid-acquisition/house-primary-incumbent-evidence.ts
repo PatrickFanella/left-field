@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -79,7 +80,7 @@ function candidates(row: Record<string, unknown>): [string, number][] { if (Arra
 
 export function buildHousePrimaryIncumbentEvidence(root = process.cwd()): HousePrimaryIncumbentEvidence {
   const lock = JSON.parse(readFileSync(join(root, "data/source-lock.json"), "utf8")) as { entries: readonly Record<string, unknown>[] }, values = new Map<string, Buffer>();
-  for (const [id, path, bytes, digest, entryDigest] of PINS) { const value = readFileSync(join(root, path)), matches = lock.entries.filter((entry) => entry.id === id); if (value.length !== bytes || sha(value) !== digest || matches.length !== 1 || sha(JSON.stringify(matches[0])) !== entryDigest) throw new Error(`HOUSE_PRIMARY_INCUMBENT_SOURCE_INVALID:${id}`); values.set(id, value); }
+  for (const [id, path, bytes, digest, entryDigest] of PINS) { const value = readFileSync(join(root, path)), matches = lock.entries.filter((entry) => entry.id === id); if (value.length !== bytes || sha(value) !== digest || matches.length !== 1 || sha(JSON.stringify(sourceLockContent(matches[0]))) !== entryDigest) throw new Error(`HOUSE_PRIMARY_INCUMBENT_SOURCE_INVALID:${id}`); values.set(id, value); }
   const projection = validateHousePrimaryProjectionV25(JSON.parse(values.get("rapid-house-primary-projection-v25")!.toString("utf8")), root);
   const xml = values.get("house-xml")!.toString("utf8"), congress = JSON.parse(values.get("congress-legislators-current-20260804")!.toString("utf8")) as { id?: { bioguide?: string }; name?: { suffix?: string }; terms?: { type?: string; state?: string; district?: number }[] }[];
   const parsedArtifacts = new Map(PINS.slice(3).map(([id]) => [id, JSON.parse(values.get(id)!.toString("utf8"))]));
@@ -102,7 +103,7 @@ export function buildHousePrimaryIncumbentEvidence(root = process.cwd()): HouseP
   const actual = { observations: rows.length, exactIdentityLinks: rows.filter((row) => row.identityStatus === "exact_name_observation").length, derivedIdentityLinks: rows.filter((row) => row.identityStatus === "derived_name_relationship").length, unresolvedIdentityRows: rows.filter((row) => row.identityStatus.startsWith("unresolved")).length, formulaEligibleRows: rows.filter((row) => row.formulaEligible).length, linkedCandidateVotes: rows.reduce((sum, row) => sum + (row.incumbentVotes ?? 0), 0), eligibleContestVotes: rows.reduce((sum, row) => sum + (row.formulaEligible ? row.contestVotes : 0), 0), winnerInferences: rows.filter((row) => row.winnerInference !== null).length };
   if (canonical(actual) !== canonical(summary) || new Set(rows.map((row) => row.targetSeatId)).size !== 22) throw new Error("HOUSE_PRIMARY_INCUMBENT_CLOSURE_INVALID");
   const sourceIds = PINS.map(([id]) => id), rowSetSha256 = hash("dsa-seats:rapid-house-primary-incumbent-evidence-row-set:v1", rows), unsigned = { schema: "rapid-house-primary-2024-incumbent-evidence-v1" as const, version: 1 as const, sourceIds, rows, rowSetSha256, summary }, result = { ...unsigned, packageSha256: hash("dsa-seats:rapid-house-primary-incumbent-evidence-package:v1", unsigned) };
-  const output = lock.entries.filter((entry) => entry.id === OUTPUT.id); if (output.length === 1) { const bytes = readFileSync(join(root, OUTPUT.path)), expected = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: bytes.length, sha256: sha(bytes), kind: "derived_artifact", parentIds: sourceIds }; if (canonical(output[0]) !== canonical(expected)) throw new Error("HOUSE_PRIMARY_INCUMBENT_OUTPUT_LOCK_INVALID"); } else if (output.length !== 0) throw new Error("HOUSE_PRIMARY_INCUMBENT_OUTPUT_LOCK_INVALID");
+  const output = lock.entries.filter((entry) => entry.id === OUTPUT.id); if (output.length === 1) { const bytes = readFileSync(join(root, OUTPUT.path)), expected = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: bytes.length, sha256: sha(bytes), kind: "derived_artifact", parentIds: sourceIds }; if (canonical(sourceLockContent(output[0])) !== canonical(expected)) throw new Error("HOUSE_PRIMARY_INCUMBENT_OUTPUT_LOCK_INVALID"); } else if (output.length !== 0) throw new Error("HOUSE_PRIMARY_INCUMBENT_OUTPUT_LOCK_INVALID");
   return result;
 }
 

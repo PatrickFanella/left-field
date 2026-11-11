@@ -1,0 +1,34 @@
+id: ocd-person/1fcc4f8d-90c5-4e7c-aa4c-3b58a3a87ba5
+name: Kay Ivey
+given_name: Kay
+family_name: Ivey
+birth_date: 1944-10-15
+image: https://governor.alabama.gov/assets/2019/09/Governor-Ivey-2019-Headshot.jpg
+party:
+- name: Republican
+roles:
+- start_date: '2023-01-16'
+  end_date: '2027-01-18'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:al/government
+- start_date: '2019-01-14'
+  end_date: '2023-01-16'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:al/government
+- start_date: '2017-04-10'
+  end_date: '2019-01-14'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:al/government
+offices:
+- classification: capitol
+  address: State Capitol; 600 Dexter Avenue; Montgomery, AL 36130-2751
+  voice: 334-242-7100
+  fax: 334-353-0004
+links:
+- url: https://governor.alabama.gov/
+- url: https://contact.governor.alabama.gov/contact.aspx
+  note: webform
+ids:
+  twitter: GovernorKayIvey
+sources:
+- url: https://governor.alabama.gov/

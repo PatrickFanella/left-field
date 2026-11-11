@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 export type MinnesotaDflPrimaryCandidate = Readonly<{
   sourceCandidateId: string;
   sourceCandidateOrder: string;
@@ -173,7 +174,7 @@ export function buildMinnesotaPrimaryReceipt(inputs: readonly MinnesotaPrimaryIn
   }));
   const sourceContestSetSha256 = digest("dsa-seats:mn-house-democratic-primary-source-contest-set:v1\0", sourceContests.map(({ contestId, contestSha256 }) => ({ contestId, contestSha256 })));
   const targetObservationSetSha256 = digest("dsa-seats:mn-house-democratic-primary-target-observation-set:v1\0", targetObservations.map(({ seatCycleId, rowSha256 }) => ({ seatCycleId, rowSha256 })));
-  const sources = inputs.map((input) => input.entry).sort((left, right) => bytewise(left.id, right.id));
+  const sources = (inputs.map((input) => input.entry).sort((left, right) => bytewise(left.id, right.id))).map(sourceLockContent);
   const summary = {
     historicalCycles: 2 as const, scheduledFutureCycles: 1 as const,
     sourceContests: sourceContests.length, sourceCandidates: parsed.reduce((sum, result) => sum + result.summary.candidates, 0), sourceVotes: parsed.reduce((sum, result) => sum + result.summary.votes, 0),

@@ -1,0 +1,45 @@
+{
+  "repository": "https://git.subcult.tv/subculture-collective/subcult-tv",
+  "revision": "0148fb91547e94f4c9834b1618e005e464260937",
+  "brand": "Left Field",
+  "direction": "The field ledger",
+  "copied": "2026-10-03",
+  "note": "Files are byte-identical to the Studio pack at this revision, which was on the branch t3code/distinct-product-voices and not yet on a remote branch when they were copied. The share card and the About banner were replaced on 2026-10-03 with the re-rendered headline, Where the field bends. The icons are unchanged from the 2026-10-02 copy (subcult-studio 3b63a784b5e5b1b471c17e389bae2b5a3481df83). The header mark in src/components/presentational.tsx redraws logos/mark-primary.svg with the page colours. Replace these files from Studio; do not edit them here.",
+  "files": [
+    {
+      "target": "src/app/icon.svg",
+      "source": "studio/branding/library/brands/left-field/product/favicon.svg",
+      "sha256": "2180ea7aef2fbb5c56bad64ec0743fa4c0cdf6b4826aa2db91d2d8e4313ab67e"
+    },
+    {
+      "target": "src/app/apple-icon.png",
+      "source": "studio/branding/library/brands/left-field/product/apple-touch-icon.png",
+      "sha256": "5273f7dcd8b684e9cca5920021c219e6f8fdabb3f731eea0966b9a775e127293"
+    },
+    {
+      "target": "src/app/opengraph-image.png",
+      "source": "studio/branding/library/brands/left-field/product/og.png",
+      "sha256": "ca27d5233eb294d6a2c0d339247421bb833c5e9994e38b4907a47d026a631973"
+    },
+    {
+      "target": "src/app/twitter-image.png",
+      "source": "studio/branding/library/brands/left-field/product/og.png",
+      "sha256": "ca27d5233eb294d6a2c0d339247421bb833c5e9994e38b4907a47d026a631973"
+    },
+    {
+      "target": "public/icons/icon-192.png",
+      "source": "studio/branding/library/brands/left-field/product/icon-192.png",
+      "sha256": "c5fa7930497d36e50bc577474838e17912a4bdaf1c6c07cfb10f1f9cf1076f76"
+    },
+    {
+      "target": "public/icons/icon-512.png",
+      "source": "studio/branding/library/brands/left-field/product/icon-512.png",
+      "sha256": "ebecf2a2d9228713cf83b8965492cc89b8ff2ca81300533c561304589ed484f6"
+    },
+    {
+      "target": "public/brand/left-field-hero.svg",
+      "source": "studio/branding/library/brands/left-field/product/hero-outlined.svg",
+      "sha256": "13d31d414076649d755741c44d0626af1e4740fc03fefdb36427fc4182330a73"
+    }
+  ]
+}

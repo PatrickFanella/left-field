@@ -1,0 +1,107 @@
+name: Refresh priority index inputs
+
+# Weekly: retain the latest FEC candidate summary, Congress roster and Open States rosters,
+# re-derive the Senate and state-legislative layers, and open a pull request
+# with the new pins. The House layer is frozen and only re-verified. A human
+# reviews the diff, fills in the review note, and merges. Runs on Gitea Actions
+# only; set FORGE_TOKEN with write access to contents and pull requests. The
+# GitHub branch of the pull request step below is no longer reached.
+on:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Model version to publish (vX.Y); empty bumps the minor version"
+        required: false
+        default: ""
+      cycle:
+        description: "FEC two-year cycle (e.g. 2028); empty keeps the cycle the current pointer names"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    timeout-minutes: 30
+    steps:
+      - name: Ensure Git LFS is available
+        run: |
+          if ! command -v git-lfs >/dev/null 2>&1; then
+            apt-get update
+            apt-get install --yes --no-install-recommends git-lfs
+          fi
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - name: Fetch pinned LFS sources without conflicting headers
+        env:
+          CI_LFS_TOKEN: ${{ github.token }}
+        run: bash scripts/ci-lfs-checkout.sh
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Retain dated snapshots
+        run: |
+          if [ -n "${{ github.event.inputs.cycle }}" ]; then npm run rapid:refresh -- --cycle "${{ github.event.inputs.cycle }}"; else npm run rapid:refresh; fi
+      - name: Probe state returns against their pins
+        # Re-fetches every declared state-returns URL and reports which files the
+        # publisher has changed since they were pinned (a re-issued canvass, a
+        # recount). It writes nothing and exits 0; the report goes into the pull
+        # request. Publishers that refuse the runner's egress show as unreachable.
+        run: npm run --silent rapid:state-returns -- --probe > "$RUNNER_TEMP/state-returns-probe.md"
+      - name: Publish release descriptor and re-derive artifacts
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then npm run rapid:publish -- --version "${{ github.event.inputs.version }}"; else npm run rapid:publish -- --bump; fi
+      - name: Regenerate the committed reports that follow the new pins
+        # The acceptance suite reproduces these three from the lock and the
+        # rosters; a refresh that re-pins inputs without them leaves main red.
+        run: |
+          npm run data:coverage
+          npm run data:licenses
+          npm run data:identity:state-seats
+      - run: npm run data:verify
+      - run: npm run typecheck
+      - run: npm run test:fast
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ secrets.FORGE_TOKEN || github.token }}
+        run: |
+          set -euo pipefail
+          date="$(date -u +%F)"
+          branch="refresh/${date}"
+          git config user.name "priority-index-refresh"
+          git config user.email "noreply@subcult.tv"
+          git checkout -b "$branch"
+          git add data docs/reviews
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Refresh priority index inputs ${date}"
+          git push origin "$branch"
+          pr_body="$RUNNER_TEMP/pr-body.md"
+          { echo "Automated refresh. Review the generated note under docs/reviews/ and the artifact diffs before merging. A changed state-returns file below means the publisher re-issued it since it was pinned: retain it under a new source id with \`supersedes\` (see docs/operations/post-election-runbook.md)."; echo; cat "$RUNNER_TEMP/state-returns-probe.md"; } > "$pr_body"
+          if [ "$GITHUB_SERVER_URL" = https://git.subcult.tv ]; then
+            pr_payload=$(mktemp)
+            pr_response=$(mktemp)
+            trap 'rm -f "$pr_payload" "$pr_response"' EXIT
+            REFRESH_BRANCH="$branch" REFRESH_DATE="$date" PR_BODY="$pr_body" python3 - > "$pr_payload" <<'PYTHON'
+          import json, os
+          print(json.dumps({"title": "Refresh priority index inputs " + os.environ["REFRESH_DATE"],
+                            "body": open(os.environ["PR_BODY"], encoding="utf-8").read(),
+                            "base": "main", "head": os.environ["REFRESH_BRANCH"]}))
+          PYTHON
+            curl --fail --silent --show-error \
+              -H "Authorization: token $GH_TOKEN" -H 'Content-Type: application/json' \
+              --data-binary "@$pr_payload" \
+              "$GITHUB_SERVER_URL/api/v1/repos/$GITHUB_REPOSITORY/pulls" > "$pr_response"
+            python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["html_url"])' "$pr_response"
+          else
+            gh pr create --title "Refresh priority index inputs ${date}" --body-file "$pr_body" --base main --head "$branch"
+          fi

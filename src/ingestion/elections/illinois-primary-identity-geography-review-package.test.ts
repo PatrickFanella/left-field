@@ -108,7 +108,7 @@ describe("Illinois primary identity/geography joint reviewer package", () => {
         "illinois-current-incumbent-primary-linkage-candidate-v1",
         "illinois-primary-geography-compatibility-candidate-v1",
       ],
-    });
+    license: "unknown", });
   });
 
   it("rejects parent-byte substitution and exact input lineage drift", () => {

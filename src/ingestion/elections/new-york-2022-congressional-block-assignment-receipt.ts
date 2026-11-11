@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
 
@@ -47,12 +48,12 @@ export function parseNewYorkCensusBef(bytes: Buffer, session: "118" | "119") {
   if (blocks.size !== 288819 || districtCounts.size !== 26) fail(`cd${session}_inventory`); return { blocks, districtCounts };
 }
 
-function exactEntry(entries: LockEntry[], expected: LockEntry) { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`); return matches[0]!; }
+function exactEntry(entries: LockEntry[], expected: LockEntry) { const matches = entries.filter((entry) => entry.id === expected.id); if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`); return matches[0]!; }
 function assemble(input: Input) {
   if (input.sourceLock.version !== 1 || sha(input.authorityBytes) !== AUTHORITY_SHA || sha(input.assignmentBytes) !== ASSIGNMENT_SHA) fail("input_bytes");
   const authority = input.authorityBytes.toString("utf8");
   if (!authority.includes("Congress22_AmendedTechnicalCorrections_June_02_2022.dbf") || !authority.includes("Download 2022 Congressional district block assignments") || !authority.includes("Updated June 2022 to reflect Court Ordered Technical Corrections of NY Congress Map")) fail("authority_claim");
-  const parsed = parseNewYork2022BlockAssignment(input.assignmentBytes), cd118 = parseNewYorkCensusBef(input.cd118Bytes, "118"), sources = sourceEntries.map((entry) => exactEntry(input.sourceLock.entries, entry));
+  const parsed = parseNewYork2022BlockAssignment(input.assignmentBytes), cd118 = parseNewYorkCensusBef(input.cd118Bytes, "118"), sources = (sourceEntries.map((entry) => exactEntry(input.sourceLock.entries, entry))).map(sourceLockContent);
   if (OUTPUT_SHA) exactEntry(input.sourceLock.entries, outputEntry); else if (input.sourceLock.entries.some((entry) => entry.id === outputEntry.id)) fail("unexpected_output_lock");
   let cd118Differences = 0; for (const [geoid, district] of parsed.blocks) if (cd118.blocks.get(geoid) !== district) cd118Differences++; for (const geoid of cd118.blocks.keys()) if (!parsed.blocks.has(geoid)) cd118Differences++;
   if (cd118Differences !== 0 || parsed.blocks.size !== cd118.blocks.size) fail("cd118_concordance");

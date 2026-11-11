@@ -7,14 +7,14 @@ import {
   COVERAGE_PATH,
   validateRapidLocalContextCoverageV16,
 } from "./coverage";
-import { registeredArtifacts } from "./registry";
+import { LEGACY_ARTIFACTS, registeredArtifacts } from "./registry";
 
 describe("registry-driven local context coverage v16", () => {
   it("lists every registered artifact from lock-verified bytes", () => {
     const value = buildRapidLocalContextCoverageV16();
     expect(value.artifacts.map((artifact) => artifact.id)).toEqual(registeredArtifacts().map((artifact) => artifact.id));
     expect(value.artifacts.every((artifact) => artifact.formulaEligibleCount === 0)).toBe(true);
-    expect(value.artifacts.at(-1)).toMatchObject({
+    expect(value.artifacts.find((artifact) => artifact.id === "rapid-ohio-state-legislative-democratic-primary-results-v1")).toMatchObject({
       id: "rapid-ohio-state-legislative-democratic-primary-results-v1",
       summary: { reportedPartyContests: 221, candidateRows: 282 },
     });
@@ -24,7 +24,7 @@ describe("registry-driven local context coverage v16", () => {
     const current = buildRapidLocalContextCoverageV16();
     const prior = JSON.parse(readFileSync("data/metadata/rapid-local-context-coverage-v15.json", "utf8")) as { artifacts: unknown[] };
     // v16 carries every v15 artifact unchanged and adds the Indiana local-office receipt that v15 omitted (see the Phase B charter).
-    const carried = current.artifacts.filter((artifact) => artifact.id !== "rapid-indiana-local-office-primary-results-v1");
+    const carried = current.artifacts.filter((artifact) => artifact.id !== "rapid-indiana-local-office-primary-results-v1" && LEGACY_ARTIFACTS.some((legacy) => legacy.id === artifact.id));
     expect(carried.map(({ cyclesThrough, ...rest }) => ({ ...rest, observed: typeof cyclesThrough }))).toEqual(prior.artifacts.map((artifact) => ({ ...(artifact as object), observed: "number" })));
     expect(current.artifacts.find((artifact) => artifact.id === "rapid-indiana-local-office-primary-results-v1")).toMatchObject({ formulaEligibleCount: 0, cyclesThrough: 2024 });
   });

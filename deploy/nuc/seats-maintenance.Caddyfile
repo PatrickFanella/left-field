@@ -1,4 +1,4 @@
-http://seats.dsaslate.us {
+http://left-field.subcult.tv {
 	encode zstd gzip
 	header Cache-Control "no-store"
 	respond "Seat / Record factual data is temporarily unavailable." 503

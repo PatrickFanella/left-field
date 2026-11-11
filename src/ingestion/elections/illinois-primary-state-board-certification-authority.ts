@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -17,20 +18,20 @@ const OUTPUT = { id: "illinois-primary-state-board-certification-authority-recei
 const sha = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
 const digest = (domain: string, value: unknown) => createHash("sha256").update(domain, "ascii").update(canonicalJson(value)).digest("hex");
 const fail = (reason: string): never => { throw new Error(`IL_PRIMARY_CERTIFICATION_AUTHORITY_INVALID:${reason}`); };
-function exactEntry(entries: LockEntry[], expected: typeof SOURCES[number]) { const matches = entries.filter((entry) => entry.id === expected.id); const entry = matches[0]; if (matches.length !== 1 || !entry || canonicalJson(entry) !== canonicalJson({ ...expected, retainedStatus: "retained" })) fail(`source_lock:${expected.id}`); return entry; }
+function exactEntry(entries: LockEntry[], expected: typeof SOURCES[number]) { const matches = entries.filter((entry) => entry.id === expected.id); const entry = matches[0]; if (matches.length !== 1 || !entry || canonicalJson(sourceLockContent(entry)) !== canonicalJson(sourceLockContent({ ...expected, retainedStatus: "retained" }))) fail(`source_lock:${expected.id}`); return entry; }
 
 function assemble(input: IllinoisPrimaryCertificationAuthorityInput) {
   if (input.sourceLock.version !== 1 || sha(input.parentReceiptJson) !== PARENT.fileSha256) fail("parent_bytes");
   const bytes = [input.indexBytes, input.release2022Bytes, input.release2022TextBytes, input.release2024Bytes, input.release2024TextBytes];
   if (bytes.some((value, index) => sha(value) !== SOURCES[index]!.sha256)) fail("source_bytes");
-  const sources = SOURCES.map((source) => exactEntry(input.sourceLock.entries, source));
+  const sources = (SOURCES.map((source) => exactEntry(input.sourceLock.entries, source))).map(sourceLockContent);
   const parent = validateIllinoisHouseDemocraticPrimaryResultsReceipt(JSON.parse(input.parentReceiptJson));
   if (parent.packageSha256 !== PARENT.packageSha256 || parent.summary.contestSetSha256 !== PARENT.contestSetSha256 || parent.contests.length !== 34) fail("parent_identity");
   const parentEntries = input.sourceLock.entries.filter((entry) => entry.id === PARENT.id), parentEntry = parentEntries[0];
   const expectedParentIds = [...parent.sourceListings.map((entry) => entry.id), ...parent.sources.map((entry) => entry.id), parent.methodologyParent.sourceLockId];
   if (parentEntries.length !== 1 || !parentEntry || parentEntry.retainedPath !== "data/metadata/illinois-house-democratic-primary-results-receipt-2022-2024-v1.json" || parentEntry.retainedStatus !== "retained" || parentEntry.byteSize !== 83040 || parentEntry.sha256 !== PARENT.fileSha256 || parentEntry.kind !== "review_candidate" || parentEntry.parentIds.length !== expectedParentIds.length || expectedParentIds.some((id) => !parentEntry.parentIds.includes(id))) fail("source_lock:parent");
   const outputEntries = input.sourceLock.entries.filter((entry) => entry.id === OUTPUT.id);
-  if (outputEntries.length !== 1 || canonicalJson(outputEntries[0]) !== canonicalJson(OUTPUT)) fail("source_lock:output");
+  if (outputEntries.length !== 1 || canonicalJson(sourceLockContent(outputEntries[0])) !== canonicalJson(sourceLockContent(OUTPUT))) fail("source_lock:output");
   const index = input.indexBytes.toString("utf8"), text2022 = input.release2022TextBytes.toString("utf8"), text2024 = input.release2024TextBytes.toString("utf8");
   if (!input.release2022Bytes.subarray(0, 5).equals(Buffer.from("%PDF-")) || !input.release2024Bytes.subarray(0, 5).equals(Buffer.from("%PDF-"))) fail("pdf_magic");
   if (!index.includes("Fri, August 5, 2022") || !index.includes("State Board of Elections certifies results of June 28 primary") || !index.includes("Fri, April 19, 2024") || !index.includes("State Board of Elections certifies March 19 primary results")) fail("index_sentinels");

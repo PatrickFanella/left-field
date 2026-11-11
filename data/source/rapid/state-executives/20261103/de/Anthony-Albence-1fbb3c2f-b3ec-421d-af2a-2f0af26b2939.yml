@@ -1,0 +1,25 @@
+id: ocd-person/1fbb3c2f-b3ec-421d-af2a-2f0af26b2939
+name: Anthony Albence
+given_name: Anthony
+family_name: Albence
+email: Anthony.Albence@delaware.gov
+party:
+- name: Independent
+roles:
+- start_date: '2019-06-19'
+  end_date: '2023-06-19'
+  type: chief election officer
+  jurisdiction: ocd-jurisdiction/country:us/state:de/government
+- start_date: '2023-06-19'
+  end_date: '2028-06-30'
+  type: chief election officer
+  jurisdiction: ocd-jurisdiction/country:us/state:de/government
+offices:
+- classification: capitol
+  address: 905 S. Governors Ave; Suite 170; Dover, DE 19904-
+  voice: 302-739-4277
+  fax: 302-739-6794
+links:
+- url: https://elections.delaware.gov/index.shtml
+sources:
+- url: https://elections.delaware.gov/index.shtml

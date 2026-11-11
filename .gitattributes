@@ -11,3 +11,4 @@ data/source/elections/primary-results/ohio/2022/county-boe/** -text -diff
 data/source/rapid/geography/census-county-changes-2010s.html -text -diff
 data/source/rapid/house-primary/hi/2026/summary.txt -text -diff
 data/source/rapid/county-demographics/acsdt5y2024-b01001.dat filter=lfs diff=lfs merge=lfs -text
+data/source/rapid/state-primary/** -text -diff

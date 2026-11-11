@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -73,7 +74,7 @@ export function buildNevadaPrimaryResults(root = process.cwd()): NevadaPrimaryRe
   const parsed = new Map<number, ReadonlyMap<string, Readonly<{ names: readonly string[]; votes: readonly number[] }>>>();
   for (const source of SOURCES) {
     const bytes = readFileSync(join(root, source.path)), expectedLock = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "archived_official_source", parentIds: [] };
-    if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || lock.entries.filter((entry) => entry.id === source.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === source.id), expectedLock)) throw new Error(`NEVADA_PRIMARY_SOURCE_BINDING_INVALID:${source.cycleYear}`);
+    if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || lock.entries.filter((entry) => entry.id === source.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.id)), expectedLock)) throw new Error(`NEVADA_PRIMARY_SOURCE_BINDING_INVALID:${source.cycleYear}`);
     const html = bytes.toString("utf8");
     if (!html.includes(`${source.cycleYear} Official Statewide Primary Election Results`) || !html.includes(`${source.date.slice(5).replace("06-14", "June 14").replace("06-11", "June 11")}, ${source.cycleYear}`)) throw new Error(`NEVADA_PRIMARY_DOCUMENT_IDENTITY_INVALID:${source.cycleYear}`);
     const contests = democraticHouseContests(html), expectedDistricts = source.cycleYear === 2022 ? ["01", "02", "03"] : ["03", "04"];

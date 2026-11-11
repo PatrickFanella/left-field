@@ -1,4 +1,4 @@
-import { readPinnedPackage, readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
+import { findSourceLockEntry, readPinnedPackage, readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { byteCompare, hash } from "./shared";
 import { districtKey, type RosterParty, type StateChamber } from "./state-legislative-roster";
 import { STATE_GENERAL_ADAPTERS } from "./state-general";
@@ -47,6 +47,8 @@ export interface StateGeneralContest {
   readonly democraticMarginPercentagePoints: number | null;
   readonly contested: boolean;
   readonly sourceId: string;
+  /** Present only for unofficial (election-night or pre-canvass) returns; absent means the certified canvass. */
+  readonly resultStatus?: "unofficial";
   readonly contestSha256: string;
 }
 
@@ -59,6 +61,10 @@ export interface StateGeneralStateSummary {
   readonly upperContests: number;
   readonly uncontested: number;
   readonly candidateVotes: number;
+  /** Sources still carrying unofficial returns; absent when every source is certified. */
+  readonly unofficialSourceIds?: readonly string[];
+  /** Declared sources that replace an earlier retained file for the same returns; absent when none does. */
+  readonly supersessions?: readonly Readonly<{ sourceId: string; supersedes: string }>[];
 }
 
 export interface StateLegislativeGeneralResults {
@@ -98,6 +104,18 @@ export interface StateGeneralSource {
   readonly electionDate: string;
   /** Human note for the review ledger, e.g. which chamber the file covers. */
   readonly note: string;
+  /**
+   * "unofficial" for returns retained before the state certifies its canvass. Absent means certified; every
+   * source before 2026 is a certified canvass. Replace an unofficial source with the certified file, under a new
+   * id, once the state certifies.
+   */
+  readonly resultStatus?: "certified" | "unofficial";
+  /**
+   * The id of the retained source this one replaces: the unofficial file a certified canvass supersedes, or a
+   * certified file an amended canvass or recount supersedes. Say why in `note`. The replaced source must stay
+   * pinned in the lock and must no longer be declared by the adapter; the build records the pair.
+   */
+  readonly supersedes?: string;
   /** Request body when the publisher serves the file only in response to a POST; the retained bytes are that response. */
   readonly postBody?: string;
   /** Content type of postBody; form encoding when absent. */
@@ -109,6 +127,12 @@ export interface StateGeneralSource {
    * pdftotext. The extract is retained beside the PDF with id `${id}-pdftotext-layout`.
    */
   readonly pdfLayoutExtract?: boolean;
+  /**
+   * For scanned PDFs with no text layer: parse a reviewed transcription retained beside the PDF instead, with id
+   * `${id}-transcription`, pinned with the PDF as its parent. The transcription is made by hand or by OCR and
+   * checked figure by figure; the adapter documents how.
+   */
+  readonly transcription?: boolean;
 }
 
 export interface StateGeneralAdapter {
@@ -117,19 +141,27 @@ export interface StateGeneralAdapter {
   readonly sources: readonly StateGeneralSource[];
   /** Expected contest count per source, checked after parsing so a silently truncated file fails closed. */
   readonly expectedContests: Readonly<Record<string, number>>;
-  readonly parse: (bytes: Buffer, source: StateGeneralSource) => readonly RawGeneralContest[];
+  /**
+   * `readSource` returns the parsed bytes of another of this adapter's sources, for a results file that needs a
+   * companion such as a candidate list for party labels. A companion that reports no contests expects 0.
+   */
+  readonly parse: (bytes: Buffer, source: StateGeneralSource, readSource: (sourceId: string) => Buffer) => readonly RawGeneralContest[];
 }
 
 export const STATE_LEGISLATIVE_GENERAL_RESULTS = {
   id: "state-legislative-general-results-v1",
   path: "data/metadata/state-legislative-general-results-v1.json",
   url: "urn:dsa-seats:state-legislative-general-results:v1",
-  parentIds: (): string[] => STATE_GENERAL_ADAPTERS.flatMap((adapter) => adapter.sources.flatMap((source) => source.pdfLayoutExtract ? [source.id, pdfLayoutExtractId(source.id)] : [source.id])),
+  parentIds: (): string[] => STATE_GENERAL_ADAPTERS.flatMap((adapter) => adapter.sources.flatMap((source) => source.pdfLayoutExtract ? [source.id, pdfLayoutExtractId(source.id)] : source.transcription ? [source.id, transcriptionId(source.id)] : [source.id])),
 } as const;
 
 const fail = (code: string): never => { throw new Error(`STATE_LEG_GENERAL_${code}`); };
 export const pdfLayoutExtractId = (sourceId: string): string => `${sourceId}-pdftotext-layout`;
 export const pdfLayoutExtractPath = (pdfPath: string): string => `${pdfPath.replace(/\.pdf$/i, "")}-layout.txt`;
+export const transcriptionId = (sourceId: string): string => `${sourceId}-transcription`;
+export const transcriptionPath = (pdfPath: string): string => `${pdfPath.replace(/\.pdf$/i, "")}-transcription.tsv`;
+/** The retained file an adapter parses: the source itself, its pdftotext extract, or its reviewed transcription. */
+export const parsedSourceId = (source: StateGeneralSource): string => source.pdfLayoutExtract ? pdfLayoutExtractId(source.id) : source.transcription ? transcriptionId(source.id) : source.id;
 const one = (value: number): number => Math.round(value * 10) / 10;
 
 /** Party from a source label: national parties and their state affiliates, everything else Independent or Other. */
@@ -167,8 +199,19 @@ function normalize(raw: RawGeneralContest, source: StateGeneralSource, stateCode
     stateCode, chamber: raw.chamber, district, districtKey: districtKey(district), position: raw.position ?? null, cycleYear: source.cycleYear,
     electionDate: raw.electionDate ?? source.electionDate, electionKind: raw.electionKind ?? "general", seats: raw.seats ?? 1,
     candidates, totalVotes, democraticVotes, republicanVotes, democraticMarginPercentagePoints: margin, contested, sourceId: source.id,
+    ...(source.resultStatus === "unofficial" ? { resultStatus: "unofficial" as const } : {}),
   };
   return { ...unsigned, contestSha256: hash("dsa-seats:state-legislative-general-contest:v1", unsigned) };
+}
+
+/** The result-status facts a release records: states still on unofficial returns, and every source replacement. */
+export type StateReturnsStatus = Readonly<{ unofficialStates: readonly string[]; supersessions: readonly Readonly<{ stateCode: string; sourceId: string; supersedes: string }>[] }>;
+
+export function stateReturnsStatus(results: StateLegislativeGeneralResults): StateReturnsStatus {
+  return {
+    unofficialStates: results.states.filter((state) => (state.unofficialSourceIds?.length ?? 0) > 0).map((state) => state.stateCode),
+    supersessions: results.states.flatMap((state) => (state.supersessions ?? []).map((pair) => ({ stateCode: state.stateCode, ...pair }))),
+  };
 }
 
 export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: SourceLock = readSourceLock(root), adapters: readonly StateGeneralAdapter[] = STATE_GENERAL_ADAPTERS): StateLegislativeGeneralResults {
@@ -176,10 +219,21 @@ export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: 
   const states: StateGeneralStateSummary[] = [];
   for (const adapter of [...adapters].sort((left, right) => byteCompare(left.stateCode, right.stateCode))) {
     const stateContests: StateGeneralContest[] = [];
+    const declared = new Set(adapter.sources.map((source) => source.id));
+    const supersessions = adapter.sources.flatMap((source) => {
+      if (source.supersedes === undefined) return [];
+      if (declared.has(source.supersedes)) fail(`SUPERSEDED_STILL_DECLARED:${adapter.stateCode}:${source.supersedes}`);
+      if (!findSourceLockEntry(lock, source.supersedes)) fail(`SUPERSEDED_NOT_RETAINED:${adapter.stateCode}:${source.supersedes}`);
+      return [{ sourceId: source.id, supersedes: source.supersedes }];
+    });
     for (const source of adapter.sources) {
       readRetainedSource(lock, source.id, root);
-      const { bytes } = readRetainedSource(lock, source.pdfLayoutExtract ? pdfLayoutExtractId(source.id) : source.id, root);
-      const parsed = adapter.parse(bytes, source).map((raw) => normalize(raw, source, adapter.stateCode));
+      const { bytes } = readRetainedSource(lock, parsedSourceId(source), root);
+      const readSource = (sourceId: string): Buffer => {
+        const companion = adapter.sources.find((candidate) => candidate.id === sourceId) ?? fail(`COMPANION_UNKNOWN:${adapter.stateCode}:${sourceId}`);
+        return readRetainedSource(lock, parsedSourceId(companion), root).bytes;
+      };
+      const parsed = adapter.parse(bytes, source, readSource).map((raw) => normalize(raw, source, adapter.stateCode));
       const expected = adapter.expectedContests[source.id];
       if (expected === undefined) fail(`EXPECTED_COUNT_MISSING:${source.id}`);
       if (parsed.length !== expected) fail(`CONTEST_COUNT:${source.id}:${parsed.length}:expected:${expected}`);
@@ -191,6 +245,8 @@ export function buildStateLegislativeGeneralResults(root = process.cwd(), lock: 
       stateCode: adapter.stateCode, sourceIds: adapter.sources.map((source) => source.id), cycles: [...new Set(stateContests.map((contest) => contest.cycleYear))].sort(),
       contests: stateContests.length, lowerContests: stateContests.filter((contest) => contest.chamber === "lower").length, upperContests: stateContests.filter((contest) => contest.chamber !== "lower").length,
       uncontested: stateContests.filter((contest) => !contest.contested).length, candidateVotes: stateContests.reduce((sum, contest) => sum + contest.totalVotes, 0),
+      ...(adapter.sources.some((source) => source.resultStatus === "unofficial") ? { unofficialSourceIds: adapter.sources.filter((source) => source.resultStatus === "unofficial").map((source) => source.id) } : {}),
+      ...(supersessions.length > 0 ? { supersessions } : {}),
     });
     contests.push(...stateContests);
   }

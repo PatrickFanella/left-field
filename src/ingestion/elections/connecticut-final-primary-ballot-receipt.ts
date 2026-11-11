@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
 
@@ -17,7 +18,7 @@ const fail = (reason: string): never => { throw new Error(`CT_FINAL_PRIMARY_BALL
 
 function exactEntry(lock: Lock, expected: LockEntry): LockEntry {
   const matches = lock.entries.filter((entry) => entry.id === expected.id);
-  if (matches.length !== 1 || canonicalJson(matches[0]) !== canonicalJson(expected)) fail(`source_lock:${expected.id}`);
+  if (matches.length !== 1 || canonicalJson(sourceLockContent(matches[0])) !== canonicalJson(sourceLockContent(expected))) fail(`source_lock:${expected.id}`);
   return matches[0]!;
 }
 
@@ -27,12 +28,12 @@ function inputs(input: ConnecticutFinalPrimaryBallotReceiptInput) {
   if (catalog.schema !== "connecticut-final-primary-ballot-source-catalog-v1" || catalog.version !== 1 || catalog.indexes.length !== 2 || catalog.documents.length !== 196 || catalog.townRows.length !== 338) fail("catalog_shape");
   const expectedIndexes: LockEntry[] = catalog.indexes.map((source) => ({ id: source.id, url: source.url, retainedPath: source.retainedPath, retainedStatus: "retained", byteSize: source.byteSize, sha256: source.sha256, kind: "official_primary_ballot_index", parentIds: [] }));
   const expectedDocuments: LockEntry[] = catalog.documents.map((source) => ({ id: source.sourceLockId, url: source.url, retainedPath: source.retainedPath, retainedStatus: "retained", byteSize: source.byteSize, sha256: source.sha256, kind: "official_primary_ballot", parentIds: [`ct-${source.cycleYear}-primary-${source.cycleYear === 2022 ? "town" : "sample"}-ballot-index`] }));
-  const rawSources = [...expectedIndexes, ...expectedDocuments].map((entry) => exactEntry(input.sourceLock, entry));
+  const rawSources = ([...expectedIndexes, ...expectedDocuments].map((entry) => exactEntry(input.sourceLock, entry))).map(sourceLockContent);
   const expectedCatalog: LockEntry = { id: "ct-final-primary-ballot-source-catalog-v1", url: "urn:dsa-seats:connecticut-final-primary-ballot-source-catalog:v1:2026-08-06", retainedPath: "data/source/elections/primary-results/connecticut/ballots/source-catalog-v1.json", retainedStatus: "retained", byteSize: input.catalogBytes.length, sha256: CATALOG_SHA256, kind: "derived_manifest", parentIds: rawSources.map((entry) => entry.id) };
   const catalogSource = exactEntry(input.sourceLock, expectedCatalog);
   const townKeys = catalog.townRows.map((row) => `${row.cycleYear}:${row.townIndex}`);
   if (new Set(townKeys).size !== 338 || new Set(catalog.documents.map((row) => row.sourceLockId)).size !== 196 || catalog.indexes.some((row) => row.townRows !== 169) || catalog.documents.some((row) => row.houseOfficeContestRows !== 0 || row.personalAddressFieldsObserved !== 0)) fail("catalog_universe");
-  return { catalog, rawSources, catalogSource };
+  return { catalog, rawSources, catalogSource: sourceLockContent(catalogSource) };
 }
 
 function assemble(input: ConnecticutFinalPrimaryBallotReceiptInput) {

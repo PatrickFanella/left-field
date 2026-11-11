@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -66,7 +67,7 @@ export function buildTennesseePrimaryResults(root = process.cwd()): TennesseePri
   for (const source of SOURCES) {
     const bytes = readFileSync(join(root, source.path));
     const expectedLock = { id: source.id, url: source.url, retainedPath: source.path, retainedStatus: "retained", byteSize: source.bytes, sha256: source.sha256, kind: "source", parentIds: [] };
-    if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || lock.entries.filter((entry) => entry.id === source.id).length !== 1 || !exact(lock.entries.find((entry) => entry.id === source.id), expectedLock)) throw new Error(`TENNESSEE_SOURCE_BINDING_INVALID:${source.year}`);
+    if (bytes.length !== source.bytes || sha(bytes) !== source.sha256 || lock.entries.filter((entry) => entry.id === source.id).length !== 1 || !exact(sourceLockContent(lock.entries.find((entry) => entry.id === source.id)), expectedLock)) throw new Error(`TENNESSEE_SOURCE_BINDING_INVALID:${source.year}`);
     if (bytes.subarray(0, 2).toString("binary") !== "PK") throw new Error(`TENNESSEE_WORKBOOK_INVALID:${source.year}`);
     const extracted = extract(readWorkbookCsvExtract(readSourceLock(root), workbookExtractId(source.id), source.id, root), source.year);
     if (extracted.precinctRows !== 125 || !exact(extracted.candidates, EXPECTED[source.year])) throw new Error(`TENNESSEE_EXTRACTED_RESULTS_INVALID:${source.year}`);

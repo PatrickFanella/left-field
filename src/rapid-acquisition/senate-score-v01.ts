@@ -6,7 +6,7 @@ import { scoreSeat, type SeatRoute, type SeatScoreDriver } from "@/lib/seat-scor
 import { readFecCandidateSummary } from "./fec-candidate-summary";
 import { readPinnedPackage, readRetainedSource, readSourceLock, type SourceLock } from "./intake/source-lock";
 import { readWorkbookSheet } from "./intake/workbook";
-import { readRefreshInputs, REFRESH_INPUTS } from "./refresh-inputs";
+import { congressLegislatorsIdFor, readRefreshInputs, REFRESH_INPUTS } from "./refresh-inputs";
 import { hash } from "./shared";
 import { readStatewidePresidential2024Pinned, STATEWIDE_PRESIDENTIAL_2024 } from "./statewide-presidential-2024";
 import { STATE_LEGISLATIVE_PRIMARY_CONTEXT, type StateLegislativePrimaryContext } from "./state-legislative-primary-context";
@@ -84,8 +84,8 @@ export const SENATE_SCORE_V01 = {
   id: "senate-score-v01-projection-v1",
   path: "data/metadata/senate-score-v01-projection-v1.json",
   url: "urn:dsa-seats:senate-score-v01-projection:v1",
-  staticParentIds: ["congress-legislators-current-20260804", "congressional-democrat-left-tracker-119th-house-20260804", "congressional-democrat-palestine-tracker-119th-house-20260730", REFRESH_INPUTS.id, STATEWIDE_PRESIDENTIAL_2024.id, STATE_LEGISLATIVE_PRIMARY_CONTEXT.id],
-  parentIds: (root: string, lock: SourceLock): string[] => [...SENATE_SCORE_V01.staticParentIds, readRefreshInputs(root, lock).fecCandidateSummaryId],
+  staticParentIds: ["congressional-democrat-left-tracker-119th-house-20260804", "congressional-democrat-palestine-tracker-119th-house-20260730", REFRESH_INPUTS.id, STATEWIDE_PRESIDENTIAL_2024.id, STATE_LEGISLATIVE_PRIMARY_CONTEXT.id],
+  parentIds: (root: string, lock: SourceLock): string[] => { const inputs = readRefreshInputs(root, lock); return [congressLegislatorsIdFor(inputs), ...SENATE_SCORE_V01.staticParentIds, inputs.fecCandidateSummaryId]; },
 } as const;
 
 type Legislator = { id?: { bioguide?: string; fec?: string[] }; name?: { official_full?: string; first?: string; last?: string; nickname?: string }; bio?: { birthday?: string }; terms?: Array<{ type?: string; state?: string; class?: number; party?: string; start?: string; end?: string; how?: string; "end-type"?: string }> };
@@ -144,7 +144,7 @@ function matchAlignment(rows: Map<string, AlignmentRow[]>, state: string, person
 
 export function buildSenateScoreV01Projection(root = process.cwd(), lock: SourceLock = readSourceLock(root)): SenateScoreV01Projection {
   const inputs = readRefreshInputs(root, lock);
-  const congress = JSON.parse(readRetainedSource(lock, "congress-legislators-current-20260804", root).bytes.toString("utf8")) as Legislator[];
+  const congress = JSON.parse(readRetainedSource(lock, congressLegislatorsIdFor(inputs), root).bytes.toString("utf8")) as Legislator[];
   const finance = readFecCandidateSummary(lock, inputs.fecCandidateSummaryId, root);
   const presidential = readStatewidePresidential2024Pinned(root, lock);
   const margins = new Map(presidential.rows.map((row) => [row.stateCode, row.democraticMarginPercentagePoints]));

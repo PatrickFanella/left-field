@@ -1,10 +1,15 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 import { buildHouseScoreV06ActiveProjection, validateHouseScoreV06ActiveProjection } from "./house-score-v06-active";
 
 describe("House v0.6 active score projection", () => {
+  let projection: ReturnType<typeof buildHouseScoreV06ActiveProjection>;
+  beforeAll(() => {
+    projection = buildHouseScoreV06ActiveProjection();
+  }, 180_000);
+
   it("adds the officially normalized South Dakota at-large comparison", () => {
-    const value = buildHouseScoreV06ActiveProjection();
+    const value = structuredClone(projection);
     expect(value.summary).toEqual({ seats: 430, downBallotActiveSeats: 3, newlyActivatedSeats: 1, unchangedSeats: 429, normalizedFipsSeats: 1, routeChanges: 0, movementCapBreaches: 0 });
     expect(value.rows.filter((row) => row.downBallotDemocraticOverperformance !== null).map((row) => ({
       district: row.districtLabel,
@@ -23,11 +28,11 @@ describe("House v0.6 active score projection", () => {
   });
 
   it("rejects normalization and score lifecycle escalation", () => {
-    const normalization = structuredClone(buildHouseScoreV06ActiveProjection()) as unknown as { rows: Array<{ districtLabel: string; officialCountyFipsNormalizationApplied: boolean }> };
+    const normalization = structuredClone(projection) as unknown as { rows: Array<{ districtLabel: string; officialCountyFipsNormalizationApplied: boolean }> };
     normalization.rows.find((row) => row.districtLabel === "DE-AL")!.officialCountyFipsNormalizationApplied = true;
     expect(() => validateHouseScoreV06ActiveProjection(normalization)).toThrow("HOUSE_V06_ACTIVE_INVALID");
 
-    const inference = structuredClone(buildHouseScoreV06ActiveProjection()) as unknown as { methodology: { winnerInference: boolean } };
+    const inference = structuredClone(projection) as unknown as { methodology: { winnerInference: boolean } };
     inference.methodology.winnerInference = true;
     expect(() => validateHouseScoreV06ActiveProjection(inference)).toThrow("HOUSE_V06_ACTIVE_INVALID");
   });

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 /* eslint-disable @typescript-eslint/no-explicit-any -- source-lock JSON is runtime validated */
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -74,9 +75,9 @@ export function buildConnecticutNominationStatutoryAuthorityReceipt(input: Input
   if (sha(input.nominationReceiptBytes) !== NOMINATION_RECEIPT_SHA256) fail();
   let nominationReceipt: any; try { nominationReceipt = JSON.parse(input.nominationReceiptBytes.toString("utf8")); } catch { fail(); }
   if (nominationReceipt?.schema !== "connecticut-primary-nomination-authority-receipt-v1" || nominationReceipt?.observations?.length !== 10 || nominationReceipt.observations.some((row: any) => row.nominationStatus !== null || row.resultStatus !== null || row.scoreEligible)) fail();
-  const sources = sourceIds.map((id) => { const matches = input.sourceLock.entries?.filter((entry: any) => entry.id === id) ?? []; if (matches.length !== 1) fail(); return matches[0]; });
+  const sources = sourceIds.map((id) => { const matches = input.sourceLock.entries?.filter((entry: any) => entry.id === id) ?? []; if (matches.length !== 1) fail(); return sourceLockContent(matches[0]); });
   const outputMatches = input.sourceLock.entries?.filter((entry: any) => entry.id === outputLockEntry.id) ?? [];
-  if (digest("dsa-seats:ct-nomination-statutory-authority-source-set:v1\0", sources) !== SOURCE_SET_SHA256 || outputMatches.length !== 1 || canonicalJson(outputMatches[0]) !== canonicalJson(outputLockEntry)) fail();
+  if (digest("dsa-seats:ct-nomination-statutory-authority-source-set:v1\0", sources) !== SOURCE_SET_SHA256 || outputMatches.length !== 1 || canonicalJson(sourceLockContent(outputMatches[0])) !== canonicalJson(sourceLockContent(outputLockEntry))) fail();
   const text2021 = input.statute2021.toString("utf8"), text2022 = input.supplement2022.toString("utf8"), text2023 = input.statute2023.toString("utf8"), text2024 = input.supplement2024.toString("utf8");
   if (!sections.every((section) => hasSection(text2021, section) && hasSection(text2023, section)) || sections.some((section) => hasSection(text2022, section)) || !hasSection(text2024, "9-426") || !hasSection(text2024, "9-429") || ["9-400", "9-415", "9-416"].some((section) => hasSection(text2024, section)) || !text2021.includes("prior to the opening of the polls at such primary") || !text2024.includes("before the commencement of the period of early voting at the primary") || !text2024.includes("effective January 1, 2024")) fail();
   const baseRows = [

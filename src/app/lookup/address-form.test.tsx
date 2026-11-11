@@ -17,7 +17,7 @@ describe("AddressForm", () => {
   it("uses finite messages that do not repeat an address or server detail", async () => {
     const fetch = vi.fn().mockResolvedValueOnce(token).mockResolvedValueOnce({ ok: false, json: async () => ({ status: "no_match", detail: "123 Example Street 1,2" }) }); vi.stubGlobal("fetch", fetch);
     render(<AddressForm />); fireEvent.change(await screen.findByLabelText("Street address"), { target: { value: "123 Example Street" } }); fireEvent.click(screen.getByRole("button", { name: "Find seats" }));
-    const status = await screen.findByRole("status"); expect(status).toHaveTextContent("No match was found"); expect(status).not.toHaveTextContent("123 Example"); expect(status).toHaveFocus();
+    const status = await screen.findByRole("status"); expect(status).toHaveTextContent("No match was found"); expect(status).not.toHaveTextContent("123 Example"); await waitFor(() => expect(status).toHaveFocus());
   });
   it("aborts outstanding work and clears the controlled field on unmount", async () => {
     let signal: AbortSignal | undefined; const fetch = vi.fn().mockResolvedValueOnce(token).mockImplementationOnce((_url, init) => { signal = (init as RequestInit).signal ?? undefined; return new Promise(() => {}); }); vi.stubGlobal("fetch", fetch);

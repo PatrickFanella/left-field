@@ -20,10 +20,13 @@ import { sha } from "@/rapid-acquisition/shared";
 import { GOVERNOR_SCORE_V01 } from "@/rapid-acquisition/governor-score-v01";
 import { HOUSE_SCORE_V11 } from "@/rapid-acquisition/house-score-v11-active";
 import { SENATE_SCORE_V01 } from "@/rapid-acquisition/senate-score-v01";
+import { readSeatOutcomeLedger } from "@/rapid-acquisition/seat-outcome-ledger";
+import { readStateLegislativeGeneralResults, stateReturnsStatus } from "@/rapid-acquisition/state-legislative-general-results";
 import { buildStateLegislativeScoreV01Projection, STATE_LEGISLATIVE_SCORE_V01 } from "@/rapid-acquisition/state-legislative-score-v01";
 import { PRIORITY_INDEX_RELEASE, readPriorityIndexRelease, serializePriorityIndexRelease, type PriorityIndexRelease } from "@/lib/priority-index-release";
 
 import { DERIVED_ARTIFACTS, derivedParentIds } from "./derived-artifacts";
+import { formatResultStatusNote } from "./state-returns";
 
 const args = process.argv.slice(2);
 const option = (name: string): string | undefined => { const index = args.indexOf(`--${name}`); return index >= 0 ? args[index + 1] : undefined; };
@@ -52,6 +55,8 @@ function main(): void {
     out(`${artifact.id}: ${before === sha(bytes) ? "unchanged" : "rebuilt"}`);
   }
   const inputs = readRefreshInputs(root);
+  // Read back the general-results artifact the loop just pinned: which states are still on unofficial returns, and what replaced what.
+  const returns = stateReturnsStatus(readStateLegislativeGeneralResults(root));
   const release: PriorityIndexRelease = {
     ...previous,
     modelVersion: version,
@@ -60,7 +65,7 @@ function main(): void {
       house: { ...previous.chambers.house, artifactId: HOUSE_SCORE_V11.id, modelVersion: "v0.11", financeAsOf: inputs.snapshotDate },
       senate: { artifactId: SENATE_SCORE_V01.id, modelVersion: previous.chambers.senate.modelVersion, sourceCutoff: inputs.snapshotDate, financeAsOf: inputs.snapshotDate },
       governor: { artifactId: GOVERNOR_SCORE_V01.id, modelVersion: previous.chambers.governor?.modelVersion ?? "v0.1", sourceCutoff: inputs.snapshotDate },
-      stateLegislative: { artifactId: STATE_LEGISLATIVE_SCORE_V01.id, modelVersion: previous.chambers.stateLegislative?.modelVersion ?? "v0.1", sourceCutoff: inputs.snapshotDate, coveredStates: buildStateLegislativeScoreV01Projection(root).coveredStates },
+      stateLegislative: { artifactId: STATE_LEGISLATIVE_SCORE_V01.id, modelVersion: previous.chambers.stateLegislative?.modelVersion ?? "v0.1", sourceCutoff: inputs.snapshotDate, coveredStates: buildStateLegislativeScoreV01Projection(root).coveredStates, ...(returns.unofficialStates.length > 0 ? { unofficialStates: returns.unofficialStates } : {}) },
     },
   };
   const bytes = Buffer.from(serializePriorityIndexRelease(release));
@@ -77,6 +82,12 @@ function main(): void {
     "## Immutable outputs",
     "",
     ...digests,
+    "",
+    ...formatResultStatusNote(returns),
+    "",
+    "## 2026 outcomes",
+    "",
+    ((ledger) => `${ledger.summary.upIn2026.toLocaleString("en-US")} seats up in 2026 as of ${ledger.observedAt}: ${ledger.summary.byOutcome.unknown.toLocaleString("en-US")} without retained evidence, ${ledger.summary.byOutcome.incumbent_lost_primary} lost a primary, ${ledger.summary.byOutcome.incumbent_ran_for_other_office} ran for another office, ${ledger.summary.byOutcome.incumbent_lost_general} lost the general, ${ledger.summary.byOutcome.incumbent_won} won, ${ledger.summary.byOutcome.open_seat_held + ledger.summary.byOutcome.open_seat_flipped} open seats settled.`)(readSeatOutcomeLedger(root)),
     "",
     "## Reproduction",
     "",

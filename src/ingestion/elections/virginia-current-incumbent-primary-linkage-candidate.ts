@@ -1,3 +1,4 @@
+import { sourceLockContent } from "../../rapid-acquisition/intake/source-lock-content";
 /* eslint-disable @typescript-eslint/no-explicit-any -- immutable JSON parents are strictly hash- and validator-bound */
 import { createHash } from "node:crypto";
 import { canonicalJson } from "../fec/aipac-proposed-packages";
@@ -35,7 +36,7 @@ export function buildVirginiaCurrentIncumbentPrimaryLinkageCandidate(input: Inpu
   if (sha(input.rosterBytes) !== FILES.roster || sha(input.proposalBytes) !== FILES.proposal || sha(input.receiptBytes) !== FILES.receipt || sha(input.houseBytes) !== FILES.house || sha(input.congressBytes) !== FILES.congress) fail();
   const roster = validateDsaTargetIncumbentRoster(parse(input.rosterBytes)), proposal = validateHouseDemocraticPrimarySourceSelectionProposal(parse(input.proposalBytes)), receipt = validateVirginiaPrimaryReceipt(parse(input.receiptBytes)), congress = parse(input.congressBytes), lock = parse(input.sourceLockBytes);
   if (!Array.isArray(congress) || proposal.decisions.find((decision) => decision.decisionId === "approve-historic-primary-candidate-identity-resolution-v1")?.resolution !== null) fail();
-  const sources = sourceIds.map((id) => { const matches = lock.entries?.filter((entry: any) => entry.id === id) ?? []; if (matches.length !== 1) fail(); return matches[0]; });
+  const sources = sourceIds.map((id) => { const matches = lock.entries?.filter((entry: any) => entry.id === id) ?? []; if (matches.length !== 1) fail(); return sourceLockContent(matches[0]); });
   if (digest("dsa-seats:va-primary-identity-source-set:v1\0", sources) !== SOURCE_SET_SHA256) fail();
   const outputEntries = lock.entries?.filter((entry: any) => entry.id === OUTPUT.id) ?? [];
   if (outputEntries.length !== 1 || outputEntries[0].url !== OUTPUT.url || outputEntries[0].retainedPath !== OUTPUT.path || outputEntries[0].retainedStatus !== "retained" || outputEntries[0].byteSize !== OUTPUT.bytes || outputEntries[0].sha256 !== OUTPUT.sha256 || outputEntries[0].kind !== "review_candidate" || canonicalJson(outputEntries[0].parentIds) !== canonicalJson(OUTPUT.parents)) fail();

@@ -17,6 +17,9 @@ const SOURCES: readonly StateGeneralSource[] = [
   { id: "wv-2022-general-clarity-summary-zip", url: "https://results.enr.clarityelections.com/WV/115844/316316/reports/summary.zip", path: "data/source/rapid/state-general/wv/2022-general-clarity-summary.zip", cycleYear: 2022, electionDate: "2022-11-08", note: "100 House of Delegates (superseded by 2024) and 17 Senate contests for the other seat in each district." },
 ];
 
+/** Senate seats alternate every two years on four-year terms: 2026 and 2030 refill the 2022 seat, 2028 the 2024 seat. */
+export const senateSeatCycle = (cycleYear: number): number => 2022 + (((cycleYear - 2022) % 4) + 4) % 4;
+
 export const WEST_VIRGINIA_GENERAL: StateGeneralAdapter = {
   stateCode: "WV",
   authority: "West Virginia Secretary of State, general election results (Clarity ENR)",
@@ -26,7 +29,8 @@ export const WEST_VIRGINIA_GENERAL: StateGeneralAdapter = {
     const house = contest.match(/^HOUSE OF DELEGATES, (\d+(?:st|nd|rd|th)) District \(Vote For (\d+)\)$/);
     if (house) return { chamber: "lower", district: ordinal(house[1]!), seats: Number(house[2]) };
     const senate = contest.match(/^STATE SENATOR, (\d+(?:st|nd|rd|th)) Senatorial District \(Vote For (\d+)\)$/);
-    // Each Senate cycle elects one of the district's two seats; the seat is recorded as a position named for the cycle.
-    return senate ? { chamber: "upper", district: ordinal(senate[1]!), seats: Number(senate[2]), position: String(source.cycleYear) } : null;
+    // Each Senate cycle elects one of the district's two seats. The position names the seat by its first retained
+    // cycle (2022 or 2024), so the 2026 contest supersedes 2022's for the same seat instead of becoming a third.
+    return senate ? { chamber: "upper", district: ordinal(senate[1]!), seats: Number(senate[2]), position: String(senateSeatCycle(source.cycleYear)) } : null;
   }),
 };

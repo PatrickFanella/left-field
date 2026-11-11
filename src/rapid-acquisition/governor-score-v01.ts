@@ -78,7 +78,9 @@ export function buildGovernorScoreV01Projection(root = process.cwd(), lock: Sour
 
   const rows = SENATE_STATE_CODES.map((state): GovernorScoreV01Row => {
     const jurisdiction = `ocd-jurisdiction/country:us/state:${state.toLowerCase()}/government`;
-    const holders = people.flatMap((person) => person.roles.filter((role) => role.type === "governor" && role.jurisdiction === jurisdiction && (role.endDate === null || role.endDate >= snapshot) && (role.startDate === null || role.startDate <= snapshot)).map((role) => ({ person, role })));
+    const covering = people.flatMap((person) => person.roles.filter((role) => role.type === "governor" && role.jurisdiction === jurisdiction && (role.endDate === null || role.endDate >= snapshot) && (role.startDate === null || role.startDate <= snapshot)).map((role) => ({ person, role })));
+    // On inauguration day the outgoing term ends the day the incoming one starts; the incoming governor holds the seat.
+    const holders = covering.length > 1 && covering.some(({ role }) => role.endDate !== snapshot) ? covering.filter(({ role }) => role.endDate !== snapshot) : covering;
     if (holders.length !== 1) fail(`GOVERNOR_NOT_UNIQUE:${state}:${holders.length}`);
     const { person, role } = holders[0]!;
     if (role.endDate === null) fail(`TERM_END_MISSING:${state}`);

@@ -18,6 +18,7 @@ const entry = (id: string, retainedPath: string): SourceLockEntry => ({
   sha256: "a".repeat(64),
   kind: "source",
   parentIds: [],
+  license: "unknown",
 });
 
 describe("source-lock helpers", () => {
@@ -47,5 +48,15 @@ describe("source-lock helpers", () => {
     const derived = derivedArtifactEntry({ id: "x", url: "urn:x", retainedPath: "data/metadata/x.json", bytes, kind: "derived_artifact", parentIds: ["one", "one", "two"] });
     expect(derived).toMatchObject({ byteSize: 3, retainedStatus: "retained", parentIds: ["one", "two"] });
     expect(derived.sha256).toMatch(/^[a-f0-9]{64}$/);
+  });
+
+  it("preserves reviewed terms for unchanged bytes and drops stale evidence for a changed pin", () => {
+    const reviewed = { ...entry("one", "data/a"), license: "CC0-1.0", licenseEvidence: { url: "https://example.test/LICENSE", scope: "dataset" as const, reviewedAt: "2026-10-30", notes: "Dataset dedication." } };
+    const rebuilt = { ...entry("one", "data/a") };
+    delete rebuilt.license;
+    const lock: SourceLock = { version: 1, entries: [reviewed] };
+    expect(upsertSourceLockEntry(lock, rebuilt).entries[0]).toEqual(reviewed);
+    expect(upsertSourceLockEntry(lock, { ...rebuilt, sha256: "b".repeat(64) }).entries[0]).toEqual({ ...rebuilt, sha256: "b".repeat(64), license: "unknown" });
+    expect(JSON.parse(serializeSourceLock({ version: 1, entries: [rebuilt] })).entries[0].license).toBe("unknown");
   });
 });

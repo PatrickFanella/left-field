@@ -51,7 +51,7 @@ describe("Washington primary identity/geography joint reviewer package", () => {
       retainedPath: "data/metadata/washington-primary-identity-geography-review-package-v1.json",
       retainedStatus: "retained", byteSize: artifact.bytes.length, sha256: artifact.sha256, kind: "review_proposal",
       parentIds: ["house-democratic-primary-source-selection-proposal-20260804-v1", "filing-runway-exception-authority-proposal-20260804-v1", "washington-current-incumbent-top-two-linkage-candidate-v1", "washington-primary-geography-compatibility-candidate-v1"],
-    }]);
+    license: "unknown", }]);
   });
 
   it("rejects parent join drift, source-lock drift, and fully rehashed fabricated approval", () => {

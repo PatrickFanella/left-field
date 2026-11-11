@@ -49,6 +49,12 @@ async function productionFecEnv(): Promise<NodeJS.ProcessEnv> {
 }
 
 describe("ingestion runtime configuration", () => {
+  it("keeps valid rights annotations outside legacy content pins while rejecting malformed rights", () => {
+    expect(parseSourceLock(lock([entry({ license: "unknown" })])).entries).toEqual([entry()]);
+    expect(() => parseSourceLock(lock([entry({ license: {} })]))).toThrow("SOURCE_LOCK_INVALID");
+    expect(() => parseSourceLock(lock([entry({ license: "MIT" })]))).toThrow("SOURCE_LOCK_INVALID");
+    expect(() => parseSourceLock(lock([entry({ license: "unknown", unexpected: true })]))).toThrow("SOURCE_LOCK_INVALID");
+  });
   it("strictly parses version-one locks and rejects malformed entry identity", () => {
     expect(parseSourceLock(lock())).toMatchObject({ version: 1, entries: [entry()] });
     for (const invalid of [

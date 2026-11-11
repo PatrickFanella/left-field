@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -79,7 +80,7 @@ export function buildSouthDakotaCountyFipsNormalization(root = process.cwd()): S
     { id: SOURCE.id, url: SOURCE.url, retainedPath: SOURCE.path, retainedStatus: "retained", byteSize: SOURCE.bytes, sha256: SOURCE.sha256, kind: "source", parentIds: [] },
     { id: AUTHORITY.id, url: AUTHORITY.url, retainedPath: AUTHORITY.path, retainedStatus: "retained", byteSize: AUTHORITY.bytes, sha256: AUTHORITY.sha256, kind: "source", parentIds: [] },
   ];
-  if (zipBytes.length !== SOURCE.bytes || sha(zipBytes) !== SOURCE.sha256 || authorityBytes.length !== AUTHORITY.bytes || sha(authorityBytes) !== AUTHORITY.sha256 || expectedSources.some((expected) => { const matches = lock.entries.filter((entry) => entry.id === expected.id); return matches.length !== 1 || !exact(matches[0], expected); })) throw new Error("SD_FIPS_SOURCE_INVALID");
+  if (zipBytes.length !== SOURCE.bytes || sha(zipBytes) !== SOURCE.sha256 || authorityBytes.length !== AUTHORITY.bytes || sha(authorityBytes) !== AUTHORITY.sha256 || expectedSources.some((expected) => { const matches = lock.entries.filter((entry) => entry.id === expected.id); return matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected); })) throw new Error("SD_FIPS_SOURCE_INVALID");
   const authorityText = authorityBytes.toString("utf8");
   if (!authorityText.includes("Oglala Lakota County, South Dakota (46-102)") || !authorityText.includes("Changed name and code from Shannon County (46-113) effective May 1, 2015.") || !authorityText.includes("Changed name and code to Oglala Lakota County (46-102) effective May 1, 2015.")) throw new Error("SD_FIPS_AUTHORITY_INVALID");
   const archive = unzipSync(zipBytes), member = archive["sd24.csv"];
@@ -116,7 +117,7 @@ export function buildSouthDakotaCountyFipsNormalization(root = process.cwd()): S
   const output = lock.entries.filter((entry) => entry.id === OUTPUT.id);
   if (output.length === 1) {
     const outputBytes = readFileSync(join(root, OUTPUT.path)), expected = { id: OUTPUT.id, url: OUTPUT.url, retainedPath: OUTPUT.path, retainedStatus: "retained", byteSize: outputBytes.length, sha256: sha(outputBytes), kind: "derived_artifact", parentIds: [SOURCE.id, AUTHORITY.id] };
-    if (!exact(output[0], expected)) throw new Error("SD_FIPS_OUTPUT_LOCK_INVALID");
+    if (!exact(sourceLockContent(output[0]), expected)) throw new Error("SD_FIPS_OUTPUT_LOCK_INVALID");
   } else if (output.length !== 0) throw new Error("SD_FIPS_OUTPUT_LOCK_INVALID");
   return result;
 }

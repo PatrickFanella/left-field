@@ -81,6 +81,6 @@ describe("New York current-incumbent primary linkage candidate", () => {
       retainedPath: "data/metadata/new-york-current-incumbent-primary-linkage-candidate-v1.json",
       retainedStatus: "retained", byteSize: artifact.bytes.byteLength, sha256: artifact.sha256, kind: "review_candidate",
       parentIds: ["dsa-target-incumbent-roster-20260804-v1", "house-democratic-primary-source-selection-proposal-20260804-v1", "house-xml", "congress-legislators-current-20260804", "new-york-house-democratic-primary-dispositions-2022-2024-v2", "new-york-house-democratic-primary-reported-results-2022-2024-v1", "new-york-city-house-democratic-primary-certified-results-2022-2024-v1"],
-    }]);
+    license: "unknown", }]);
   });
 });

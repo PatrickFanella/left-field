@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { readSourceLock } from "./intake/source-lock";
-import { buildStateLegislativeGeneralResults, generalPartyOf, readStateLegislativeGeneralResults, type StateGeneralAdapter } from "./state-legislative-general-results";
+import { buildStateLegislativeGeneralResults, generalPartyOf, readStateLegislativeGeneralResults, stateReturnsStatus, type StateGeneralAdapter } from "./state-legislative-general-results";
 import { CALIFORNIA_GENERAL } from "./state-general/california";
 import { GEORGIA_GENERAL } from "./state-general/georgia";
 import { ILLINOIS_GENERAL } from "./state-general/illinois";
@@ -9,6 +9,10 @@ import { NEW_YORK_GENERAL } from "./state-general/new-york";
 import { PENNSYLVANIA_GENERAL } from "./state-general/pennsylvania";
 import { COLORADO_GENERAL } from "./state-general/colorado";
 import { ALASKA_GENERAL } from "./state-general/alaska";
+import { ARIZONA_GENERAL } from "./state-general/arizona";
+import { MICHIGAN_GENERAL } from "./state-general/michigan";
+import { NEVADA_GENERAL } from "./state-general/nevada";
+import { OHIO_GENERAL } from "./state-general/ohio";
 import { ARKANSAS_GENERAL } from "./state-general/arkansas";
 import { HAWAII_GENERAL } from "./state-general/hawaii";
 import { VERMONT_GENERAL } from "./state-general/vermont";
@@ -39,6 +43,10 @@ import { NORTH_CAROLINA_GENERAL } from "./state-general/north-carolina";
 import { WASHINGTON_GENERAL, washingtonPreference } from "./state-general/washington";
 import { VIRGINIA_GENERAL } from "./state-general/virginia";
 import { WISCONSIN_GENERAL } from "./state-general/wisconsin";
+import { MINNESOTA_GENERAL } from "./state-general/minnesota";
+import { NEW_MEXICO_GENERAL } from "./state-general/new-mexico";
+import { NORTH_DAKOTA_GENERAL } from "./state-general/north-dakota";
+import { SOUTH_DAKOTA_GENERAL } from "./state-general/south-dakota";
 
 describe("state-legislative general results", () => {
   it("maps source party labels to caucus families", () => {
@@ -200,8 +208,101 @@ describe("state-legislative general results", () => {
     expect(value.contests.filter((contest) => contest.stateCode === "OR" && contest.chamber === "upper").map((contest) => contest.district).length).toBe(30);
   });
 
+  it("reads Minnesota text files, New Mexico results JSON, North Dakota results pages and the South Dakota canvass", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [MINNESOTA_GENERAL, NEW_MEXICO_GENERAL, NORTH_DAKOTA_GENERAL, SOUTH_DAKOTA_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.cycles])).toEqual([["MN", 202, 134, 68, [2022, 2024]], ["ND", 119, 62, 57, [2022, 2024]], ["NM", 112, 70, 42, [2024]], ["SD", 72, 37, 35, [2024]]]);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes]);
+    expect(value.contests.find((contest) => contest.contestId === "mn:state-leg-general:2024:upper:45")).toMatchObject({ electionKind: "special_general", democraticVotes: 29791, republicanVotes: 26969 });
+    expect(votes("mn:state-leg-general:2024:lower:2a")).toEqual([["Bidal Duran Jr", "Republican", 11518], ["Reed Olson", "Democratic", 10667], ["Write-in", "Independent", 26]]);
+    expect(votes("nd:state-leg-general:2024:lower:4a")).toEqual([["Lisa Finley-DeVille", "Democratic", 1627], ["Ronald Brugh", "Republican", 919], ["Write-in", "Independent", 15]]);
+    // New Mexico House 57 takes the December 2024 automatic recount.
+    expect(votes("nm:state-leg-general:2024:lower:57")).toEqual([["CATHERINE JEANETTE CULLEN", "Republican", 8373], ["MICHELLE ELEANOR SANDOVAL", "Democratic", 8240]]);
+    expect(value.contests.find((contest) => contest.contestId === "sd:state-leg-general:2024:lower:15")).toMatchObject({ seats: 2, democraticVotes: 8915, republicanVotes: 8275 });
+  });
+
+  it("reads the reviewed transcription of Arizona's scanned canvass", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [ARIZONA_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.uncontested, state.cycles])).toEqual([["AZ", 60, 30, 30, 11, [2024]]]);
+    expect(value.contests.every((contest) => contest.seats === (contest.chamber === "lower" ? 2 : 1))).toBe(true);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes, candidate.writeIn]);
+    // Tom Simes is missing from the OpenElections precinct files; his total was confirmed from the scan.
+    expect(votes("az:state-leg-general:2024:lower:2")).toEqual([["Stephanie Simacek", "Democratic", 47801, false], ["Justin Wilmeth", "Republican", 46942, false], ["Ari Daniel Bradshaw", "Republican", 46810, false], ["Tom Simes", "Independent", 15946, false]]);
+    // OCR read this write-in's total as 1,152; the scan reads 1,112. A lone named candidate is uncontested.
+    expect(value.contests.find((contest) => contest.contestId === "az:state-leg-general:2024:upper:28")).toMatchObject({ contested: false, democraticVotes: 1112, republicanVotes: 97174 });
+    expect(votes("az:state-leg-general:2024:upper:30")).toEqual([["Hildy Angius", "Republican", 92213, false], ["J'aime MorgAine", "Democratic", 25295, false]]);
+    const source = ARIZONA_GENERAL.sources[0]!, noCompanion = (): Buffer => Buffer.alloc(0);
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("page\tchamber\tdistrict\tparty\tcandidate\twrite_in\tvotes\n7\tupper\t31\tREP\tX\tno\t1\n"), source, noCompanion)).toThrow("ARIZONA_GENERAL_ROW");
+    expect(() => ARIZONA_GENERAL.parse(Buffer.from("chamber\tdistrict\n"), source, noCompanion)).toThrow("ARIZONA_GENERAL_HEADER");
+  });
+
+  it("reads the archived Michigan Senate page, Nevada results with candidate-list parties, and Ohio canvass workbooks", () => {
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [MICHIGAN_GENERAL, NEVADA_GENERAL, OHIO_GENERAL]);
+    expect(value.states.map((state) => [state.stateCode, state.contests, state.lowerContests, state.upperContests, state.cycles])).toEqual([["MI", 38, 0, 38, [2022]], ["NV", 105, 84, 21, [2022, 2024]], ["OH", 232, 198, 34, [2022, 2024]]]);
+    const votes = (id: string) => value.contests.find((contest) => contest.contestId === id)?.candidates.map((candidate) => [candidate.name, candidate.party, candidate.votes]);
+    expect(votes("mi:state-leg-general:2022:upper:1")).toEqual([["Geiss, Erika", "Democratic", 53475], ["Soderquist, Erik", "Republican", 21243]]);
+    // Nevada party comes from the Legislative Counsel Bureau list; No Political Party is Independent.
+    expect(votes("nv:state-leg-general:2024:upper:3")).toEqual([["NGUYEN, ROCHELLE", "Democratic", 28254], ["HOWARD, BRENT", "Republican", 21215], ["JONES, KEYA \"KJ\"", "Independent", 2078]]);
+    expect(votes("nv:state-leg-general:2022:lower:26")).toEqual([["DELONG, RICH", "Republican", 23964], ["MITCHELL, REED", "Other", 9455]]);
+    expect(value.contests.find((contest) => contest.contestId === "oh:state-leg-general:2024:upper:33")).toMatchObject({ electionKind: "special_general" });
+    expect(votes("oh:state-leg-general:2024:upper:2")).toEqual([["Theresa Gavarone", "Republican", 111096], ["Paloma De La Fuente", "Democratic", 68948]]);
+  });
+
   it("matches the pinned artifact", () => {
     const pinned = readStateLegislativeGeneralResults();
     expect(pinned.packageSha256).toBe(buildStateLegislativeGeneralResults().packageSha256);
+  });
+});
+
+describe("West Virginia Senate seat positions", () => {
+  it("files each cycle under the seat it refills", async () => {
+    const { senateSeatCycle } = await import("./state-general/west-virginia");
+    expect([2022, 2024, 2026, 2028, 2030].map(senateSeatCycle)).toEqual([2022, 2024, 2022, 2024, 2022]);
+  });
+});
+
+describe("unofficial returns", () => {
+  it("marks contests and the state summary when a source is unofficial", async () => {
+    const { WEST_VIRGINIA_GENERAL } = await import("./state-general/west-virginia");
+    const unofficial: StateGeneralAdapter = { ...WEST_VIRGINIA_GENERAL, sources: WEST_VIRGINIA_GENERAL.sources.map((source) => source.cycleYear === 2024 ? { ...source, resultStatus: "unofficial" as const } : source) };
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [unofficial]);
+    expect(value.states[0]?.unofficialSourceIds).toEqual(["wv-2024-general-clarity-summary-zip"]);
+    expect(value.contests.filter((contest) => contest.resultStatus === "unofficial").every((contest) => contest.cycleYear === 2024)).toBe(true);
+    expect(value.contests.filter((contest) => contest.resultStatus === "unofficial")).toHaveLength(117);
+    const certified = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [WEST_VIRGINIA_GENERAL]);
+    expect(certified.states[0]).not.toHaveProperty("unofficialSourceIds");
+    expect(certified.contests.some((contest) => "resultStatus" in contest)).toBe(false);
+  });
+});
+
+describe("source supersession", () => {
+  const westVirginia = async () => {
+    const { WEST_VIRGINIA_GENERAL } = await import("./state-general/west-virginia");
+    return { adapter: WEST_VIRGINIA_GENERAL, certified: WEST_VIRGINIA_GENERAL.sources.find((source) => source.cycleYear === 2024)!, replaced: WEST_VIRGINIA_GENERAL.sources.find((source) => source.cycleYear === 2022)! };
+  };
+
+  it("records which retained source a declared source replaces", async () => {
+    const { adapter, certified, replaced } = await westVirginia();
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, supersedes: replaced.id }] }]);
+    expect(value.states[0]?.supersessions).toEqual([{ sourceId: certified.id, supersedes: replaced.id }]);
+    expect(value.states[0]?.sourceIds).toEqual([certified.id]);
+    expect(value.contests.every((contest) => contest.sourceId === certified.id)).toBe(true);
+    expect(buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [adapter]).states[0]).not.toHaveProperty("supersessions");
+  });
+
+  it("refuses a replacement whose predecessor is still declared", async () => {
+    const { adapter, certified, replaced } = await westVirginia();
+    expect(() => buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, supersedes: replaced.id }, replaced] }])).toThrow(`STATE_LEG_GENERAL_SUPERSEDED_STILL_DECLARED:WV:${replaced.id}`);
+  });
+
+  it("refuses a replacement whose predecessor was never retained", async () => {
+    const { adapter, certified } = await westVirginia();
+    expect(() => buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, supersedes: "wv-2022-general-never-retained" }] }])).toThrow("STATE_LEG_GENERAL_SUPERSEDED_NOT_RETAINED:WV:wv-2022-general-never-retained");
+  });
+
+  it("summarises unofficial states and replacements for the release", async () => {
+    const { adapter, certified, replaced } = await westVirginia();
+    const value = buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [{ ...adapter, sources: [{ ...certified, resultStatus: "unofficial", supersedes: replaced.id }] }, GEORGIA_GENERAL]);
+    expect(stateReturnsStatus(value)).toEqual({ unofficialStates: ["WV"], supersessions: [{ stateCode: "WV", sourceId: certified.id, supersedes: replaced.id }] });
+    expect(stateReturnsStatus(buildStateLegislativeGeneralResults(process.cwd(), readSourceLock(), [GEORGIA_GENERAL]))).toEqual({ unofficialStates: [], supersessions: [] });
   });
 });

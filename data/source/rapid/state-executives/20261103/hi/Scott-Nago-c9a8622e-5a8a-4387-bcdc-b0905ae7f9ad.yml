@@ -1,0 +1,20 @@
+id: ocd-person/c9a8622e-5a8a-4387-bcdc-b0905ae7f9ad
+name: Scott Nago
+given_name: Scott
+family_name: Nago
+email: elections@hawaii.gov
+party:
+- name: Independent
+roles:
+- end_date: '2024-12-30'
+  type: chief election officer
+  jurisdiction: ocd-jurisdiction/country:us/state:hi/government
+offices:
+- classification: capitol
+  address: 802 Lehua Avenue; ; Pearl City, HI 96782-
+  voice: 808-453-8683
+  fax: 808-453-6006
+links:
+- url: https://elections.hawaii.gov/about-us/contact-us/
+sources:
+- url: https://elections.hawaii.gov/about-us/contact-us/

@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -36,7 +37,7 @@ export function buildAtLargeCd119CountyUniverse(root = process.cwd()): AtLargeCd
   const bundle = readFileSync(join(root, BUNDLE.path)), demographicsBytes = readFileSync(join(root, DEMOGRAPHICS.path));
   const expected = { id: BUNDLE.id, url: BUNDLE.url, retainedPath: BUNDLE.path, retainedStatus: "retained", byteSize: BUNDLE.bytes, sha256: BUNDLE.sha256, kind: "source", parentIds: [] };
   const matches = lock.entries.filter((entry) => entry.id === BUNDLE.id);
-  if (bundle.length !== BUNDLE.bytes || sha(bundle) !== BUNDLE.sha256 || matches.length !== 1 || !exact(matches[0], expected) || demographicsBytes.length !== DEMOGRAPHICS.bytes || sha(demographicsBytes) !== DEMOGRAPHICS.sha256) throw new Error("AT_LARGE_CD119_SOURCE_INVALID");
+  if (bundle.length !== BUNDLE.bytes || sha(bundle) !== BUNDLE.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected) || demographicsBytes.length !== DEMOGRAPHICS.bytes || sha(demographicsBytes) !== DEMOGRAPHICS.sha256) throw new Error("AT_LARGE_CD119_SOURCE_INVALID");
   const member = unzipSync(bundle)["NationalCD119.txt"];
   if (!member) throw new Error("AT_LARGE_CD119_MEMBER_MISSING");
   const relevant = new Map<string, { counties: Set<string>; blocks: number }>(STATES.map(([, fips]) => [fips, { counties: new Set<string>(), blocks: 0 }]));

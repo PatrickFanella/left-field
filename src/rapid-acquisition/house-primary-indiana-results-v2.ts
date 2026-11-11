@@ -1,3 +1,4 @@
+import { sourceLockContent } from "./intake/source-lock-content";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -60,7 +61,7 @@ export function buildIndianaPrimaryResultsV2(root = process.cwd()): IndianaPrima
   for (const [pin, bytes] of [[SETTINGS, settingsBytes], [RESULTS, resultsBytes]] as const) {
     const expected = { id: pin.id, url: pin.url, retainedPath: pin.path, retainedStatus: "retained", byteSize: pin.bytes, sha256: pin.sha256, kind: "source", parentIds: [...pin.parents] };
     const matches = lock.entries.filter((entry) => entry.id === pin.id);
-    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(matches[0], expected)) throw new Error(`INDIANA_2026_SOURCE_BINDING_INVALID:${pin.id}`);
+    if (bytes.length !== pin.bytes || sha(bytes) !== pin.sha256 || matches.length !== 1 || !exact(sourceLockContent(matches[0]), expected)) throw new Error(`INDIANA_2026_SOURCE_BINDING_INVALID:${pin.id}`);
   }
   const settings = JSON.parse(settingsBytes.toString("utf8")) as { Root?: Record<string, unknown> };
   if (!exact({ CurrentElection: settings.Root?.CurrentElection, ElectionType: settings.Root?.ElectionType, Certified: settings.Root?.Certified, VersionType: settings.Root?.VersionType, JSONContainer: settings.Root?.JSONContainer }, { CurrentElection: "05/05/2026", ElectionType: "P", Certified: "T", VersionType: "A", JSONContainer: "site" })) throw new Error("INDIANA_2026_SETTINGS_INVALID");

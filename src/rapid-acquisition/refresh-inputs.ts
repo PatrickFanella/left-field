@@ -18,7 +18,14 @@ export interface RefreshInputs {
   readonly stateLegislativeRosterIds: readonly string[];
   /** Open States executive (governor and statewide officer) YAML files; optional for pointers written before v1.3. */
   readonly stateExecutiveIds?: readonly string[];
+  /** unitedstates/congress-legislators legislators-current.json snapshot; optional for pointers written before v1.16. */
+  readonly congressLegislatorsId?: string;
 }
+
+/** The Congress roster the Senate layer read before the refresh retained one. */
+export const CONGRESS_LEGISLATORS_BASELINE_ID = "congress-legislators-current-20260804";
+
+export const congressLegislatorsIdFor = (inputs: RefreshInputs): string => inputs.congressLegislatorsId ?? CONGRESS_LEGISLATORS_BASELINE_ID;
 
 export const REFRESH_INPUTS = { id: "refresh-inputs-v1", path: "data/metadata/refresh-inputs.json" } as const;
 
@@ -31,6 +38,7 @@ export function validateRefreshInputs(value: unknown): RefreshInputs {
   if (!Array.isArray(input!.stateLegislativeRosterIds) || input!.stateLegislativeRosterIds.some((id) => typeof id !== "string")) fail("ROSTER_POINTER_INVALID");
   if (input!.fecCandidateMasterId !== undefined && typeof input!.fecCandidateMasterId !== "string") fail("FEC_MASTER_POINTER_INVALID");
   if (input!.stateExecutiveIds !== undefined && (!Array.isArray(input!.stateExecutiveIds) || input!.stateExecutiveIds.some((id) => typeof id !== "string"))) fail("EXECUTIVE_POINTER_INVALID");
+  if (input!.congressLegislatorsId !== undefined && typeof input!.congressLegislatorsId !== "string") fail("CONGRESS_POINTER_INVALID");
   return input as RefreshInputs;
 }
 

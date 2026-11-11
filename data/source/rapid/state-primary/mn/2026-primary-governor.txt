@@ -1,0 +1,14 @@
+MN;;;0331;Governor & Lt Governor;;0301;John Krhin and Dennis Conn;;;R;4105;4105;4663;1.13;413605
+MN;;;0331;Governor & Lt Governor;;0302;Ross Nova and Kerry Busby;;;R;4105;4105;2760;0.67;413605
+MN;;;0331;Governor & Lt Governor;;0303;Loner Blue and Andrew Maass;;;R;4105;4105;1393;0.34;413605
+MN;;;0331;Governor & Lt Governor;;0304;Mike Lindell and Phillip C Parrish;;;R;4105;4105;134282;32.47;413605
+MN;;;0331;Governor & Lt Governor;;0305;Raul J Estrada and Joe Kincaid;;;R;4105;4105;2411;0.58;413605
+MN;;;0331;Governor & Lt Governor;;0306;Lisa Demuth and Ryan Wilson;;;R;4105;4105;179683;43.44;413605
+MN;;;0331;Governor & Lt Governor;;0307;Kendall Qualls and Brian Nicholson;;;R;4105;4105;88413;21.38;413605
+MN;;;0331;Governor & Lt Governor;;0401;Kobey J Layne and Paul Ference;;;DFL;4105;4105;39528;5.76;685749
+MN;;;0331;Governor & Lt Governor;;0402;Mohammad Wazwaz and Murad Alshlool;;;DFL;4105;4105;9633;1.40;685749
+MN;;;0331;Governor & Lt Governor;;0403;Thomas Evenstad and Jason Haarsager;;;DFL;4105;4105;3843;0.56;685749
+MN;;;0331;Governor & Lt Governor;;0404;Amy Klobuchar and Ben Schierer;;;DFL;4105;4105;615040;89.69;685749
+MN;;;0331;Governor & Lt Governor;;0405;Po Vang and Mark Frascone;;;DFL;4105;4105;8834;1.29;685749
+MN;;;0331;Governor & Lt Governor;;0406;Bill E Gates J.R. and Leah Harris;;;DFL;4105;4105;3380;0.49;685749
+MN;;;0331;Governor & Lt Governor;;0407;Ole "Viking" Savior and Ashley "Skol" Johnson;;;DFL;4105;4105;5491;0.80;685749

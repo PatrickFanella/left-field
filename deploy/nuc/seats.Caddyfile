@@ -1,4 +1,4 @@
-http://seats.dsaslate.us {
+http://left-field.subcult.tv {
 	encode zstd gzip
 	reverse_proxy 10.0.0.56:3045
 }

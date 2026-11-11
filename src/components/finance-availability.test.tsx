@@ -28,7 +28,7 @@ describe("FinanceAvailability", () => {
     expect(screen.queryByText(/filing summary used for this record/i)).not.toBeInTheDocument();
     expect(screen.getByText(/approved source did not report a usable summary/)).toHaveTextContent("No amount is inferred as zero");
     expect(screen.getByRole("link", { name: /FEC Candidate Summary 2026 snapshot snap_fec/ })).toHaveAttribute("href", snapshot.sourceUrl);
-    expect(screen.getByRole("link", { name: "Open this profile's source closure" })).toHaveAttribute("href", "#source-closure");
+    expect(screen.getByRole("link", { name: "See the sources behind this record" })).toHaveAttribute("href", "#source-closure");
     expect(screen.getByRole("link", { name: "Open the release-wide source ledger" })).toHaveAttribute("href", "/sources");
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });

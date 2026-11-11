@@ -1,0 +1,118 @@
+page	office	district	name	note
+1	us_senate		Barry Moore
+1	us_house	3	Mike Rogers
+1	us_house	4	Robert B. Aderholt
+1	us_house	5	Dale W. Strong
+1	governor		Tommy Tuberville
+3	state_upper	1	Tim Melson
+3	state_upper	2	John Roberts
+3	state_upper	3	Arthur Orr
+3	state_upper	4	Garlan Gudger
+3	state_upper	5	Matt Woods
+3	state_upper	6	Larry Stutts
+3	state_upper	7	Sam Givhan
+3	state_upper	8	Steve Livingston
+3	state_upper	9	Wes Kitchens
+3	state_upper	10	Andrew Jones
+3	state_upper	11	Lance Bell
+3	state_upper	12	Keith Kelley
+3	state_upper	13	Randy Price
+3	state_upper	14	April Weaver
+3	state_upper	15	Scott Ortis
+3	state_upper	16	J.T. "Jabo" Waggoner
+4	state_upper	17	Shay Shelnutt
+4	state_upper	21	Gerald Allen
+4	state_upper	22	Terry L. Waters
+4	state_upper	23	Thayer “Bear” Havard Spencer
+4	state_upper	27	Jay Hovey
+4	state_upper	28	Brent Comer
+4	state_upper	29	Donnie Chesteen
+4	state_upper	30	Clyde Chambliss, Jr.
+4	state_upper	31	Josh Carnley
+4	state_upper	32	Chris Elliott
+4	state_upper	34	Rusty Glover
+4	state_upper	35	David Sessions
+4	state_lower	1	Maurice McCaney
+4	state_lower	2	Ben Harrison
+4	state_lower	3	Kerry Bubba Underwood
+4	state_lower	4	Parker Duncan Moore
+4	state_lower	5	Danny F. Crawford
+4	state_lower	6	Andy Whitt
+4	state_lower	7	Ernie Yarbrough
+4	state_lower	8	Patrick Johnson
+4	state_lower	9	Scott Stadthagen
+4	state_lower	10	Aaron Thomas
+4	state_lower	11	Heath Allbright
+4	state_lower	12	Cindy Myrex
+4	state_lower	13	Mike Elliott
+4	state_lower	14	Tim R. Wadsworth
+4	state_lower	15	Leigh Hulsey
+4	state_lower	16	Bryan Brinyark
+4	state_lower	17	Phil Segraves
+4	state_lower	18	Jamie Kiel
+4	state_lower	19	Donald Barnes
+4	state_lower	20	James Lomax
+5	state_lower	21	Rex Reynolds
+5	state_lower	22	Ritchie Whorton
+5	state_lower	23	Mike Kirkland
+5	state_lower	24	Nathaniel Ledbetter
+5	state_lower	25	Phillip K. Rigsby
+5	state_lower	26	Brock Colvin
+5	state_lower	27	Jeana Ross
+5	state_lower	28	Mack N Butler
+5	state_lower	29	Mark A. Gidley
+5	state_lower	30	Craig Lipscomb
+5	state_lower	31	Troy B. Stubbs
+5	state_lower	32	Joey Callahan
+5	state_lower	33	Ben Robbins
+5	state_lower	34	David Standridge
+5	state_lower	35	Steve Hurst
+5	state_lower	36	Randy Wood
+5	state_lower	37	Jeff Monroe
+5	state_lower	38	Kristin Nelson
+5	state_lower	39	Ginny Shaver
+5	state_lower	40	Chad Robertson
+5	state_lower	41	Corley Ellis
+5	state_lower	42	Van Smith
+5	state_lower	43	Arnold Mooney
+5	state_lower	44	Danny Garrett
+5	state_lower	45	Susan DuBose
+5	state_lower	46	David L. Faulkner
+5	state_lower	47	Mike Shaw
+5	state_lower	48	Lloyd Peeples
+5	state_lower	49	Russell Bedsole
+5	state_lower	50	Bill Morris
+5	state_lower	61	Ron Bolton
+5	state_lower	62	Bill Lamb
+6	state_lower	63	Norman Crow
+6	state_lower	64	Donna Givens
+6	state_lower	65	John Knapp
+6	state_lower	66	Alan Baker
+6	state_lower	68	Fred Kelley
+6	state_lower	69	Josh Pendergrass
+6	state_lower	70	Ian M. Chwatuk
+6	state_lower	73	Kenneth Paschal
+6	state_lower	74	Alva Lambert
+6	state_lower	75	Reed Ingram
+6	state_lower	79	Joe Lovvorn
+6	state_lower	80	Chris Blackshear
+6	state_lower	81	Ed Oliver
+6	state_lower	82	Kinsley Hammons
+6	state_lower	85	Rick Rehm
+6	state_lower	86	Paul Lee
+6	state_lower	87	Jeff Sorrells
+6	state_lower	88	Jerry Starnes
+6	state_lower	89	Marcus B. Paramore
+6	state_lower	90	Chris Sells
+6	state_lower	91	Jody Linton
+6	state_lower	92	Matthew Hammett
+6	state_lower	93	Steve Clouse
+6	state_lower	94	Jennifer Fidler
+6	state_lower	95	Frances Holk-Jones
+6	state_lower	96	Danielle Duggar
+6	state_lower	99	Charlie Watts
+6	state_lower	100	Mark Shirey
+6	state_lower	101	Chris Pringle
+6	state_lower	102	Shane Stringer
+6	state_lower	104	Margie Wilcox
+6	state_lower	105	Chip Brown

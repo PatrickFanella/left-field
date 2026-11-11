@@ -266,8 +266,53 @@
       "packageSha256": "45612e0ce2949555193c1372cc3a6302c110f1776a47e2da8a63b5b0896cee04",
       "formulaEligibleCount": 0,
       "cyclesThrough": 2026
+    },
+    {
+      "id": "rapid-north-carolina-local-office-general-results-v1",
+      "label": "North Carolina local-office general results",
+      "scope": "2024 general election county commissioner, school-board, register-of-deeds, court-clerk, sheriff, municipal council and mayor results",
+      "summary": {
+        "contests": 635,
+        "candidateRows": 1793,
+        "candidateVotes": 22219489,
+        "contestedContests": 417,
+        "formulaEligibleContests": 0
+      },
+      "packageSha256": "bb2f89293e6f85202cbb9106cee75a91ba3223db5fb4a9f0f85141f3c32eed51",
+      "formulaEligibleCount": 0,
+      "cyclesThrough": 2024
+    },
+    {
+      "id": "rapid-north-carolina-soil-water-general-results-v1",
+      "label": "North Carolina soil-and-water supervisor general results",
+      "scope": "2024 general election soil-and-water conservation district supervisor results",
+      "summary": {
+        "contests": 100,
+        "candidateRows": 510,
+        "candidateVotes": 4143641,
+        "contestedContests": 100,
+        "formulaEligibleContests": 0
+      },
+      "packageSha256": "d064f14246d41dc133df7350130ed1a5c35b9c87300db8fad340e540ddd04ac4",
+      "formulaEligibleCount": 0,
+      "cyclesThrough": 2024
+    },
+    {
+      "id": "rapid-north-carolina-sanitary-general-results-v1",
+      "label": "North Carolina sanitary-district general results",
+      "scope": "2024 general election sanitary-district board, commissioner and supervisor results",
+      "summary": {
+        "contests": 14,
+        "candidateRows": 51,
+        "candidateVotes": 24789,
+        "contestedContests": 13,
+        "formulaEligibleContests": 0
+      },
+      "packageSha256": "55ffd1d22330e238c60e86002799f0f14e74054224e55ab6c9a16630493f6206",
+      "formulaEligibleCount": 0,
+      "cyclesThrough": 2024
     }
   ],
-  "artifactSetSha256": "6ea29ae44dfa01b29b6e1be9c79909a6c7481e35cd450b37a37052a5877c1d03",
-  "packageSha256": "fec5fdc4a8d456cb1016c01ac7a08d5c73777b2a7503993058fd99deee2261f3"
+  "artifactSetSha256": "8b725eb2e46d1303640a8f9a829c9db7a76f4a29a31e5e9dea147b6b872d457c",
+  "packageSha256": "332106a64cb039d1b6970ef91fb309bb74e293772ab742fd8b3c6313abcedc57"
 }

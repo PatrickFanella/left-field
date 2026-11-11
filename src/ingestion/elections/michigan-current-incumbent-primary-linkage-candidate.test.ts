@@ -115,6 +115,7 @@ describe("Michigan current-incumbent primary linkage candidate", () => {
     const matches = persisted.entries.filter((entry: any) => entry.id === "michigan-current-incumbent-primary-linkage-candidate-v1");
     expect(matches).toHaveLength(1);
     expect(matches[0]).toEqual({
+      license: "unknown",
       id: "michigan-current-incumbent-primary-linkage-candidate-v1",
       url: "urn:dsa-seats:michigan-current-incumbent-primary-linkage-candidate:v1:2026-08-05",
       retainedPath: "data/metadata/michigan-current-incumbent-primary-linkage-candidate-v1.json",

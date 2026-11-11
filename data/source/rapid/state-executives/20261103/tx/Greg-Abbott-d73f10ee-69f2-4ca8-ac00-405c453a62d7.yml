@@ -1,0 +1,24 @@
+id: ocd-person/d73f10ee-69f2-4ca8-ac00-405c453a62d7
+name: Greg Abbott
+given_name: Greg
+family_name: Abbott
+birth_date: 1957-11-13
+image: https://gov.texas.gov/uploads/images/general/2015-GovernorAbbott-Portrait.jpg
+party:
+- name: Republican
+roles:
+- start_date: '2015-01-20'
+  end_date: '2027-01-10'
+  type: governor
+  jurisdiction: ocd-jurisdiction/country:us/state:tx/government
+offices:
+- classification: capitol
+  address: P.O. Box 12428; Austin, TX 78711
+  voice: 512-463-2000
+  fax: 512-463-5571
+links:
+- url: https://gov.texas.gov/
+ids:
+  twitter: GovAbbott
+sources:
+- url: https://gov.texas.gov/

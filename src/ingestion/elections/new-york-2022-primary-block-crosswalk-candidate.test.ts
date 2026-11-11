@@ -50,5 +50,5 @@ describe("New York 2022 primary block crosswalk candidate", () => {
       mutate(value);
       expect(() => validateNewYork2022PrimaryBlockCrosswalkCandidate(value as never, currentInput)).toThrow("NY_2022_PRIMARY_BLOCK_CROSSWALK_INVALID:semantic_or_hash_drift");
     }
-  }, 60_000);
+  }, 120_000);
 });

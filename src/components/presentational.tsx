@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 export function fmtDate(value: string | null | undefined) {
   if (!value) return "Not published";
+  // Leave a value that is not a date readable instead of throwing on it.
+  if (Number.isNaN(Date.parse(value))) return value;
   return new Intl.DateTimeFormat("en-US", {
     dateStyle: "medium",
     timeZone: "UTC",
@@ -9,6 +11,11 @@ export function fmtDate(value: string | null | undefined) {
 }
 export function fmtNumber(value: number) {
   return new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(
+    value,
+  );
+}
+export function fmtCount(value: number) {
+  return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(
     value,
   );
 }
@@ -21,6 +28,16 @@ export function fmtMoney(value: number) {
 }
 export function words(value: string) {
   return value.replace(/_/g, " ");
+}
+/** Party values arrive lower-case from the release; show them as names. */
+export function partyLabel(value: string) {
+  const text = words(value);
+  return text.charAt(0).toLocaleUpperCase("en-US") + text.slice(1);
+}
+export function incumbencyLabel(status: string) {
+  if (status === "unknown") return "incumbency not recorded";
+  if (status === "open") return "open seat";
+  return words(status);
 }
 export function missing(reason: string) {
   return `Unavailable — ${words(reason)}`;
@@ -55,11 +72,20 @@ export function Lineage({
     <p className="lineage">
       <Status>{status}</Status>
       <span>As of {fmtDate(asOf)}</span>
-      <span>{methodology}</span>
+      <span>{words(methodology)}</span>
       <span>
         {inputs.length} input {inputs.length === 1 ? "snapshot" : "snapshots"}
       </span>
     </p>
+  );
+}
+/** The approved LF mark from the Studio pack (logos/mark-primary.svg), drawn in the page's own ink and rust. */
+export function LeftFieldMark({ size = 28 }: { size?: number }) {
+  return (
+    <svg className="mark" width={size} height={size} viewBox="18 18 126 126" aria-hidden="true" focusable="false">
+      <path d="M18 18h26v100h50v26H18z M68 18h74v26H94v24h40v26H94v50H68z" fill="currentColor" />
+      <rect x="68" y="118" width="26" height="26" fill="var(--signal)" />
+    </svg>
   );
 }
 export function ReleaseStrip({
@@ -98,13 +124,20 @@ export function Shell({
 }) {
   return (
     <>
+      <a className="skip-link" href="#content">
+        Skip to content
+      </a>
       <header className="masthead">
         <Link prefetch={false} className="wordmark" href="/">
+          <LeftFieldMark />
           LEFT FIELD
         </Link>
         <nav aria-label="Primary navigation">
           <Link prefetch={false} href="/">
             Priority index
+          </Link>
+          <Link prefetch={false} href="/map">
+            Map
           </Link>
           <Link prefetch={false} href="/browse">
             Browse
@@ -115,19 +148,39 @@ export function Shell({
           <Link prefetch={false} href="/methodology">
             Method
           </Link>
+          <Link prefetch={false} href="/outcomes">
+            2026 outcomes
+          </Link>
         </nav>
       </header>
       {release && <ReleaseStrip release={release} />}
       {children}
       <footer>
-        LEFT FIELD · Federal seat research ·{" "}
-        <Link prefetch={false} href="/">
-          Priority index
-        </Link>{" "}
-        ·{" "}
-        <Link prefetch={false} href="/sources">
-          Source ledger
-        </Link>
+        <span>
+          LEFT FIELD · Seat research for Congress, governorships, and state
+          legislatures · Published by SUBCULT,{" "}
+          <a href="https://subcult.tv">subcult.tv</a>. Support goes to the studio’s development work, not a campaign, and cannot buy a conclusion or change a score. <a href="https://subcult.tv/support">Support SUBCULT</a>
+        </span>
+        <nav aria-label="Footer navigation">
+          <Link prefetch={false} href="/">
+            Priority index
+          </Link>
+          <Link prefetch={false} href="/methodology">
+            Method
+          </Link>
+          <Link prefetch={false} href="/sources">
+            Source ledger
+          </Link>
+          <Link prefetch={false} href="/outcomes">
+            2026 outcomes
+          </Link>
+          <Link prefetch={false} href="/corrections">
+            Corrections
+          </Link>
+          <Link prefetch={false} href="/about">
+            About
+          </Link>
+        </nav>
       </footer>
     </>
   );
@@ -149,7 +202,12 @@ export function Notice({
 export function RouteState({
   code,
 }: {
-  code: "invalid_request" | "not_found" | "unavailable" | "configuration";
+  code:
+    | "invalid_request"
+    | "not_found"
+    | "page_not_found"
+    | "unavailable"
+    | "configuration";
 }) {
   const copy = {
     invalid_request: [
@@ -159,6 +217,10 @@ export function RouteState({
     not_found: [
       "Seat not in this release",
       "This seat is not present in the active factual release.",
+    ],
+    page_not_found: [
+      "Page not found",
+      "This address does not match a page, seat record, or brief in the current release.",
     ],
     unavailable: [
       "Data temporarily unavailable",
@@ -171,13 +233,18 @@ export function RouteState({
   }[code];
   return (
     <Shell>
-      <main className="page state">
+      <main id="content" className="page state">
         <p className="eyebrow">RECORD STATUS</p>
         <h1>{copy[0]}</h1>
         <p>{copy[1]}</p>
-        <Link prefetch={false} className="button" href="/browse">
-          Return to browse
-        </Link>
+        <div className="state-actions">
+          <Link prefetch={false} className="button" href="/">
+            Open the Priority Index
+          </Link>
+          <Link prefetch={false} className="button" href="/browse">
+            Browse seat records
+          </Link>
+        </div>
       </main>
     </Shell>
   );

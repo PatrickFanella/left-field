@@ -1,0 +1,1193 @@
+contest_id,election_id,election_date,election_type,primary_party,question_text,question_type,office_id,office_name,office_modifier,district_id,district_type,district_name,candidate_id,candidate_name,retention_candidate_id,retention_candidate_name,division_id,division_type,division_name,vote_channel,is_winner,number_seats,candidate_party_id,candidate_party_name,votes
+5917,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,177,Congressional District,1,13877,Christopher J. Gallant,,,429,County,Suffolk,,true,1,7,Democratic,12492
+5917,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,177,Congressional District,1,13876,Lukas Ventouras,,,429,County,Suffolk,,false,1,7,Democratic,7349
+5917,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,177,Congressional District,1,6,Scattering,,,429,County,Suffolk,,false,1,,,29
+5917,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,177,Congressional District,1,10,Blank,,,429,County,Suffolk,,false,1,,,1044
+5917,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,177,Congressional District,1,9,Void,,,429,County,Suffolk,,false,1,,,11
+5917,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,177,Congressional District,1,1,Total Votes,,,429,County,Suffolk,,false,1,,,20925
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,10757,Thomas R. Suozzi,,,428,County,Nassau,,true,1,7,Democratic,14382
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,14268,Danielle Welch,,,428,County,Nassau,,false,1,7,Democratic,3093
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,6,Scattering,,,428,County,Nassau,,false,1,,,33
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,10,Blank,,,428,County,Nassau,,false,1,,,234
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,9,Void,,,428,County,Nassau,,false,1,,,157
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,1,Total Votes,,,428,County,Nassau,,false,1,,,17899
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,10757,Thomas R. Suozzi,,,430,County,Queens,,true,1,7,Democratic,5896
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,14268,Danielle Welch,,,430,County,Queens,,false,1,7,Democratic,2006
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,6,Scattering,,,430,County,Queens,,false,1,,,35
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,10,Blank,,,430,County,Queens,,false,1,,,103
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,9,Void,,,430,County,Queens,,false,1,,,0
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,1,Total Votes,,,430,County,Queens,,false,1,,,8040
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,10757,Thomas R. Suozzi,,,429,County,Suffolk,,true,1,7,Democratic,1223
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,14268,Danielle Welch,,,429,County,Suffolk,,false,1,7,Democratic,454
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,6,Scattering,,,429,County,Suffolk,,false,1,,,1
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,10,Blank,,,429,County,Suffolk,,false,1,,,41
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,9,Void,,,429,County,Suffolk,,false,1,,,3
+6045,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,179,Congressional District,3,1,Total Votes,,,429,County,Suffolk,,false,1,,,1722
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,13457,Michael J. LiPetri Jr,,,428,County,Nassau,,true,1,8,Republican,9133
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,14269,Greg Hach,,,428,County,Nassau,,false,1,8,Republican,1862
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,6,Scattering,,,428,County,Nassau,,false,1,,,97
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,10,Blank,,,428,County,Nassau,,false,1,,,35
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,9,Void,,,428,County,Nassau,,false,1,,,159
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,1,Total Votes,,,428,County,Nassau,,false,1,,,11286
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,13457,Michael J. LiPetri Jr,,,430,County,Queens,,true,1,8,Republican,1551
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,14269,Greg Hach,,,430,County,Queens,,false,1,8,Republican,352
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,6,Scattering,,,430,County,Queens,,false,1,,,14
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,10,Blank,,,430,County,Queens,,false,1,,,57
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,9,Void,,,430,County,Queens,,false,1,,,0
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,1,Total Votes,,,430,County,Queens,,false,1,,,1974
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,13457,Michael J. LiPetri Jr,,,429,County,Suffolk,,true,1,8,Republican,393
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,14269,Greg Hach,,,429,County,Suffolk,,false,1,8,Republican,111
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,6,Scattering,,,429,County,Suffolk,,false,1,,,9
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,10,Blank,,,429,County,Suffolk,,false,1,,,4
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,9,Void,,,429,County,Suffolk,,false,1,,,1
+6046,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,179,Congressional District,3,1,Total Votes,,,429,County,Suffolk,,false,1,,,518
+5918,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,180,Congressional District,4,13878,Jeanine C. Driscoll,,,428,County,Nassau,,true,1,8,Republican,13063
+5918,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,180,Congressional District,4,13879,Marvin Williams,,,428,County,Nassau,,false,1,8,Republican,1278
+5918,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,180,Congressional District,4,6,Scattering,,,428,County,Nassau,,false,1,,,53
+5918,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,180,Congressional District,4,10,Blank,,,428,County,Nassau,,false,1,,,44
+5918,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,180,Congressional District,4,9,Void,,,428,County,Nassau,,false,1,,,287
+5918,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,180,Congressional District,4,1,Total Votes,,,428,County,Nassau,,false,1,,,14725
+6047,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,182,Congressional District,6,30,Grace Meng,,,430,County,Queens,,true,1,7,Democratic,18971
+6047,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,182,Congressional District,6,14270,Chuck Park,,,430,County,Queens,,false,1,7,Democratic,14335
+6047,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,182,Congressional District,6,6,Scattering,,,430,County,Queens,,false,1,,,86
+6047,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,182,Congressional District,6,10,Blank,,,430,County,Queens,,false,1,,,673
+6047,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,182,Congressional District,6,9,Void,,,430,County,Queens,,false,1,,,0
+6047,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,182,Congressional District,6,1,Total Votes,,,430,County,Queens,,false,1,,,34065
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,13537,Claire Valdez,,,67,County,Kings,,true,1,7,Democratic,25554
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,14272,Antonio Reynoso,,,67,County,Kings,,false,1,7,Democratic,20461
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,14273,Julie Won,,,67,County,Kings,,false,1,7,Democratic,1339
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,14271,Vichal Kumar,,,67,County,Kings,,false,1,7,Democratic,505
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,6,Scattering,,,67,County,Kings,,false,1,,,76
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,10,Blank,,,67,County,Kings,,false,1,,,441
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,9,Void,,,67,County,Kings,,false,1,,,0
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,1,Total Votes,,,67,County,Kings,,false,1,,,48376
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,13537,Claire Valdez,,,430,County,Queens,,true,1,7,Democratic,14072
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,14272,Antonio Reynoso,,,430,County,Queens,,false,1,7,Democratic,4666
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,14273,Julie Won,,,430,County,Queens,,false,1,7,Democratic,3099
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,14271,Vichal Kumar,,,430,County,Queens,,false,1,7,Democratic,682
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,6,Scattering,,,430,County,Queens,,false,1,,,34
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,10,Blank,,,430,County,Queens,,false,1,,,269
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,9,Void,,,430,County,Queens,,false,1,,,0
+6048,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,183,Congressional District,7,1,Total Votes,,,430,County,Queens,,false,1,,,22822
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,36,Yvette D. Clarke,,,67,County,Kings,,true,1,7,Democratic,30723
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,14274,Mike Goldfarb,,,67,County,Kings,,false,1,7,Democratic,6932
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,14275,Joshua A. Bristol,,,67,County,Kings,,false,1,7,Democratic,6666
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,6,Scattering,,,67,County,Kings,,false,1,,,564
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,10,Blank,,,67,County,Kings,,false,1,,,1486
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,9,Void,,,67,County,Kings,,false,1,,,0
+6049,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,185,Congressional District,9,1,Total Votes,,,67,County,Kings,,false,1,,,46371
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,14277,Brad Lander,,,67,County,Kings,,true,1,7,Democratic,38495
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,14276,Dan Goldman,,,67,County,Kings,,false,1,7,Democratic,14464
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,6,Scattering,,,67,County,Kings,,false,1,,,108
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,10,Blank,,,67,County,Kings,,false,1,,,172
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,9,Void,,,67,County,Kings,,false,1,,,0
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,1,Total Votes,,,67,County,Kings,,false,1,,,53239
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,14277,Brad Lander,,,68,County,New York,,true,1,7,Democratic,19552
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,14276,Dan Goldman,,,68,County,New York,,false,1,7,Democratic,15317
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,6,Scattering,,,68,County,New York,,false,1,,,57
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,10,Blank,,,68,County,New York,,false,1,,,540
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,9,Void,,,68,County,New York,,false,1,,,0
+6050,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,186,Congressional District,10,1,Total Votes,,,68,County,New York,,false,1,,,35466
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,14279,Mike DeCillis,,,67,County,Kings,,true,1,7,Democratic,3916
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,14278,Allison Ziogas,,,67,County,Kings,,false,1,7,Democratic,2248
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,6,Scattering,,,67,County,Kings,,false,1,,,80
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,10,Blank,,,67,County,Kings,,false,1,,,328
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,9,Void,,,67,County,Kings,,false,1,,,0
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,1,Total Votes,,,67,County,Kings,,false,1,,,6572
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,14279,Mike DeCillis,,,63,County,Richmond,,true,1,7,Democratic,6539
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,14278,Allison Ziogas,,,63,County,Richmond,,false,1,7,Democratic,4061
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,6,Scattering,,,63,County,Richmond,,false,1,,,170
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,10,Blank,,,63,County,Richmond,,false,1,,,613
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,9,Void,,,63,County,Richmond,,false,1,,,0
+6051,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,187,Congressional District,11,1,Total Votes,,,63,County,Richmond,,false,1,,,11383
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,13546,Micah C. Lasher,,,68,County,New York,,true,1,7,Democratic,41940
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,308,Alex Bores,,,68,County,New York,,false,1,7,Democratic,37637
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,14285,Jack Kennedy Schlossberg,,,68,County,New York,,false,1,7,Democratic,11719
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,14280,Nina Schwalbe,,,68,County,New York,,false,1,7,Democratic,7819
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,14283,George Conway,,,68,County,New York,,false,1,7,Democratic,6588
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,14284,Laura Dunn,,,68,County,New York,,false,1,7,Democratic,1477
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,14281,Patrick Timmins,,,68,County,New York,,false,1,7,Democratic,330
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,14282,Chris Diep,,,68,County,New York,,false,1,7,Democratic,214
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,6,Scattering,,,68,County,New York,,false,1,,,166
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,10,Blank,,,68,County,New York,,false,1,,,439
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,9,Void,,,68,County,New York,,false,1,,,0
+6052,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,188,Congressional District,12,1,Total Votes,,,68,County,New York,,false,1,,,108329
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,14288,Darializa Avila Chevalier,,,431,County,Bronx,,false,1,7,Democratic,2879
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,9360,Adriano Espaillat,,,431,County,Bronx,,true,1,7,Democratic,5290
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,14286,Oscar J. Romero Jr,,,431,County,Bronx,,false,1,7,Democratic,436
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,14287,Theo Bruce Chino-Tavarez,,,431,County,Bronx,,false,1,7,Democratic,101
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,6,Scattering,,,431,County,Bronx,,false,1,,,53
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,10,Blank,,,431,County,Bronx,,false,1,,,134
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,9,Void,,,431,County,Bronx,,false,1,,,0
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,1,Total Votes,,,431,County,Bronx,,false,1,,,8893
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,14288,Darializa Avila Chevalier,,,68,County,New York,,true,1,7,Democratic,33413
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,9360,Adriano Espaillat,,,68,County,New York,,false,1,7,Democratic,28265
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,14286,Oscar J. Romero Jr,,,68,County,New York,,false,1,7,Democratic,2195
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,14287,Theo Bruce Chino-Tavarez,,,68,County,New York,,false,1,7,Democratic,522
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,6,Scattering,,,68,County,New York,,false,1,,,235
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,10,Blank,,,68,County,New York,,false,1,,,1076
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,9,Void,,,68,County,New York,,false,1,,,0
+6053,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,189,Congressional District,13,1,Total Votes,,,68,County,New York,,false,1,,,65706
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,3045,Alexandria Ocasio-Cortez,,,431,County,Bronx,,true,1,7,Democratic,11980
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,14289,Felipe Garcia,,,431,County,Bronx,,false,1,7,Democratic,1394
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,14290,Marty Dolan,,,431,County,Bronx,,false,1,7,Democratic,994
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,6,Scattering,,,431,County,Bronx,,false,1,,,70
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,10,Blank,,,431,County,Bronx,,false,1,,,412
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,9,Void,,,431,County,Bronx,,false,1,,,0
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,1,Total Votes,,,431,County,Bronx,,false,1,,,14850
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,3045,Alexandria Ocasio-Cortez,,,430,County,Queens,,true,1,7,Democratic,19222
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,14289,Felipe Garcia,,,430,County,Queens,,false,1,7,Democratic,1035
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,14290,Marty Dolan,,,430,County,Queens,,false,1,7,Democratic,1142
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,6,Scattering,,,430,County,Queens,,false,1,,,77
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,10,Blank,,,430,County,Queens,,false,1,,,532
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,9,Void,,,430,County,Queens,,false,1,,,0
+6054,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,190,Congressional District,14,1,Total Votes,,,430,County,Queens,,false,1,,,22008
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,50,Ritchie Torres,,,431,County,Bronx,,true,1,7,Democratic,24598
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,5373,Michael Blake,,,431,County,Bronx,,false,1,7,Democratic,7474
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,13465,Jose Vega,,,431,County,Bronx,,false,1,7,Democratic,1939
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,6,Scattering,,,431,County,Bronx,,false,1,,,229
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,10,Blank,,,431,County,Bronx,,false,1,,,613
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,9,Void,,,431,County,Bronx,,false,1,,,0
+6055,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,191,Congressional District,15,1,Total Votes,,,431,County,Bronx,,false,1,,,34853
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,14291,Cait Conley,,,14,County,Dutchess,,true,1,7,Democratic,747
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13882,Beth Davidson,,,14,County,Dutchess,,false,1,7,Democratic,363
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13880,Effie Guadalupe Phillips-Staley,,,14,County,Dutchess,,false,1,7,Democratic,228
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13883,John Cappello,,,14,County,Dutchess,,false,1,7,Democratic,33
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13884,Michael Sacks,,,14,County,Dutchess,,false,1,7,Democratic,38
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,6,Scattering,,,14,County,Dutchess,,false,1,,,0
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,10,Blank,,,14,County,Dutchess,,false,1,,,8
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,9,Void,,,14,County,Dutchess,,false,1,,,1
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,1,Total Votes,,,14,County,Dutchess,,false,1,,,1418
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,14291,Cait Conley,,,38,County,Putnam,,true,1,7,Democratic,2858
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13882,Beth Davidson,,,38,County,Putnam,,false,1,7,Democratic,1074
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13880,Effie Guadalupe Phillips-Staley,,,38,County,Putnam,,false,1,7,Democratic,924
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13883,John Cappello,,,38,County,Putnam,,false,1,7,Democratic,63
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13884,Michael Sacks,,,38,County,Putnam,,false,1,7,Democratic,68
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,6,Scattering,,,38,County,Putnam,,false,1,,,1
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,10,Blank,,,38,County,Putnam,,false,1,,,26
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,9,Void,,,38,County,Putnam,,false,1,,,10
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,1,Total Votes,,,38,County,Putnam,,false,1,,,5024
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,14291,Cait Conley,,,40,County,Rockland,,true,1,7,Democratic,7339
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13882,Beth Davidson,,,40,County,Rockland,,false,1,7,Democratic,6949
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13880,Effie Guadalupe Phillips-Staley,,,40,County,Rockland,,false,1,7,Democratic,2240
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13883,John Cappello,,,40,County,Rockland,,false,1,7,Democratic,419
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13884,Michael Sacks,,,40,County,Rockland,,false,1,7,Democratic,192
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,6,Scattering,,,40,County,Rockland,,false,1,,,36
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,10,Blank,,,40,County,Rockland,,false,1,,,313
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,9,Void,,,40,County,Rockland,,false,1,,,88
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,1,Total Votes,,,40,County,Rockland,,false,1,,,17576
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,14291,Cait Conley,,,432,County,Westchester,,true,1,7,Democratic,12319
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13882,Beth Davidson,,,432,County,Westchester,,false,1,7,Democratic,6552
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13880,Effie Guadalupe Phillips-Staley,,,432,County,Westchester,,false,1,7,Democratic,3802
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13883,John Cappello,,,432,County,Westchester,,false,1,7,Democratic,243
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,13884,Michael Sacks,,,432,County,Westchester,,false,1,7,Democratic,458
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,6,Scattering,,,432,County,Westchester,,false,1,,,7
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,10,Blank,,,432,County,Westchester,,false,1,,,148
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,9,Void,,,432,County,Westchester,,false,1,,,51
+5919,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,193,Congressional District,17,1,Total Votes,,,432,County,Westchester,,false,1,,,23580
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,4,County,Broome,,true,1,8,Republican,2878
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,4,County,Broome,,false,1,8,Republican,1108
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,4,County,Broome,,false,1,,,38
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,4,County,Broome,,false,1,,,117
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,4,County,Broome,,false,1,,,24
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,4,County,Broome,,false,1,,,4165
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,9,County,Chenango,,true,1,8,Republican,1217
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,9,County,Chenango,,false,1,8,Republican,323
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,9,County,Chenango,,false,1,,,6
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,9,County,Chenango,,false,1,,,68
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,9,County,Chenango,,false,1,,,8
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,9,County,Chenango,,false,1,,,1622
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,11,County,Columbia,,true,1,8,Republican,720
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,11,County,Columbia,,false,1,8,Republican,228
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,11,County,Columbia,,false,1,,,4
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,11,County,Columbia,,false,1,,,8
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,11,County,Columbia,,false,1,,,9
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,11,County,Columbia,,false,1,,,969
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,12,County,Cortland,,true,1,8,Republican,177
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,12,County,Cortland,,false,1,8,Republican,36
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,12,County,Cortland,,false,1,,,0
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,12,County,Cortland,,false,1,,,2
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,12,County,Cortland,,false,1,,,0
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,12,County,Cortland,,false,1,,,215
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,13,County,Delaware,,true,1,8,Republican,1803
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,13,County,Delaware,,false,1,8,Republican,253
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,13,County,Delaware,,false,1,,,4
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,13,County,Delaware,,false,1,,,23
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,13,County,Delaware,,false,1,,,94
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,13,County,Delaware,,false,1,,,2177
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,20,County,Greene,,true,1,8,Republican,1120
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,20,County,Greene,,false,1,8,Republican,318
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,20,County,Greene,,false,1,,,1
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,20,County,Greene,,false,1,,,3
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,20,County,Greene,,false,1,,,11
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,20,County,Greene,,false,1,,,1453
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,37,County,Otsego,,true,1,8,Republican,2311
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,37,County,Otsego,,false,1,8,Republican,606
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,37,County,Otsego,,false,1,,,3
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,37,County,Otsego,,false,1,,,82
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,37,County,Otsego,,false,1,,,7
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,37,County,Otsego,,false,1,,,3009
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,39,County,Rensselaer,,true,1,8,Republican,713
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,39,County,Rensselaer,,false,1,8,Republican,377
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,39,County,Rensselaer,,false,1,,,16
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,39,County,Rensselaer,,false,1,,,9
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,39,County,Rensselaer,,false,1,,,8
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,39,County,Rensselaer,,false,1,,,1123
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,49,County,Sullivan,,true,1,8,Republican,1699
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,49,County,Sullivan,,false,1,8,Republican,311
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,49,County,Sullivan,,false,1,,,5
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,49,County,Sullivan,,false,1,,,365
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,49,County,Sullivan,,false,1,,,6
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,49,County,Sullivan,,false,1,,,2386
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,51,County,Tompkins,,true,1,8,Republican,399
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,51,County,Tompkins,,false,1,8,Republican,184
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,51,County,Tompkins,,false,1,,,8
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,51,County,Tompkins,,false,1,,,2
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,51,County,Tompkins,,false,1,,,4
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,51,County,Tompkins,,false,1,,,597
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,554,Peter K Oberacker,,,52,County,Ulster,,true,1,8,Republican,761
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,13885,Alexander M. Portelli,,,52,County,Ulster,,false,1,8,Republican,201
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,6,Scattering,,,52,County,Ulster,,false,1,,,1
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,10,Blank,,,52,County,Ulster,,false,1,,,55
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,9,Void,,,52,County,Ulster,,false,1,,,1
+5920,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,195,Congressional District,19,1,Total Votes,,,52,County,Ulster,,false,1,,,1019
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,10,County,Clinton,,true,1,7,Democratic,1830
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,10,County,Clinton,,false,1,7,Democratic,1454
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,10,County,Clinton,,false,1,,,17
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,10,County,Clinton,,false,1,,,81
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,10,County,Clinton,,false,1,,,7
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,10,County,Clinton,,false,1,,,3389
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,438,County,Essex,,true,1,7,Democratic,1148
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,438,County,Essex,,false,1,7,Democratic,940
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,438,County,Essex,,false,1,,,5
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,438,County,Essex,,false,1,,,40
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,438,County,Essex,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,438,County,Essex,,false,1,,,2134
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,17,County,Franklin,,true,1,7,Democratic,984
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,17,County,Franklin,,false,1,7,Democratic,767
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,17,County,Franklin,,false,1,,,8
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,17,County,Franklin,,false,1,,,66
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,17,County,Franklin,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,17,County,Franklin,,false,1,,,1826
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,18,County,Fulton,,true,1,7,Democratic,828
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,18,County,Fulton,,false,1,7,Democratic,366
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,18,County,Fulton,,false,1,,,9
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,18,County,Fulton,,false,1,,,40
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,18,County,Fulton,,false,1,,,2
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,18,County,Fulton,,false,1,,,1245
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,21,County,Hamilton,,true,1,7,Democratic,181
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,21,County,Hamilton,,false,1,7,Democratic,62
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,21,County,Hamilton,,false,1,,,0
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,21,County,Hamilton,,false,1,,,5
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,21,County,Hamilton,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,21,County,Hamilton,,false,1,,,249
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,22,County,Herkimer,,true,1,7,Democratic,638
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,22,County,Herkimer,,false,1,7,Democratic,419
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,22,County,Herkimer,,false,1,,,4
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,22,County,Herkimer,,false,1,,,39
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,22,County,Herkimer,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,22,County,Herkimer,,false,1,,,1101
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,23,County,Jefferson,,true,1,7,Democratic,139
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,23,County,Jefferson,,false,1,7,Democratic,83
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,23,County,Jefferson,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,23,County,Jefferson,,false,1,,,12
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,23,County,Jefferson,,false,1,,,0
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,23,County,Jefferson,,false,1,,,235
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,24,County,Lewis,,true,1,7,Democratic,393
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,24,County,Lewis,,false,1,7,Democratic,105
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,24,County,Lewis,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,24,County,Lewis,,false,1,,,34
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,24,County,Lewis,,false,1,,,2
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,24,County,Lewis,,false,1,,,535
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,28,County,Montgomery,,true,1,7,Democratic,331
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,28,County,Montgomery,,false,1,7,Democratic,165
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,28,County,Montgomery,,false,1,,,7
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,28,County,Montgomery,,false,1,,,45
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,28,County,Montgomery,,false,1,,,7
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,28,County,Montgomery,,false,1,,,555
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,31,County,Oneida,,true,1,7,Democratic,1169
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,31,County,Oneida,,false,1,7,Democratic,656
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,31,County,Oneida,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,31,County,Oneida,,false,1,,,146
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,31,County,Oneida,,false,1,,,5
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,31,County,Oneida,,false,1,,,1977
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,42,County,Saratoga,,true,1,7,Democratic,1137
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,42,County,Saratoga,,false,1,7,Democratic,717
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,42,County,Saratoga,,false,1,,,10
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,42,County,Saratoga,,false,1,,,70
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,42,County,Saratoga,,false,1,,,7
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,42,County,Saratoga,,false,1,,,1941
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,44,County,Schoharie,,true,1,7,Democratic,728
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,44,County,Schoharie,,false,1,7,Democratic,376
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,44,County,Schoharie,,false,1,,,8
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,44,County,Schoharie,,false,1,,,44
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,44,County,Schoharie,,false,1,,,1
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,44,County,Schoharie,,false,1,,,1157
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,41,County,St. Lawrence,,true,1,7,Democratic,2581
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,41,County,St. Lawrence,,false,1,7,Democratic,852
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,41,County,St. Lawrence,,false,1,,,17
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,41,County,St. Lawrence,,false,1,,,90
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,41,County,St. Lawrence,,false,1,,,0
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,41,County,St. Lawrence,,false,1,,,3540
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,53,County,Warren,,true,1,7,Democratic,1938
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,53,County,Warren,,false,1,7,Democratic,969
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,53,County,Warren,,false,1,,,14
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,53,County,Warren,,false,1,,,131
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,53,County,Warren,,false,1,,,6
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,53,County,Warren,,false,1,,,3058
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13887,Blake Gendebien,,,54,County,Washington,,true,1,7,Democratic,1420
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,13886,Stuart J. Amoriell,,,54,County,Washington,,false,1,7,Democratic,448
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,54,County,Washington,,false,1,,,9
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,54,County,Washington,,false,1,,,36
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,54,County,Washington,,false,1,,,4
+5921,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,54,County,Washington,,false,1,,,1917
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,10,County,Clinton,,true,1,8,Republican,1805
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,10,County,Clinton,,false,1,8,Republican,1249
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,10,County,Clinton,,false,1,,,11
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,10,County,Clinton,,false,1,,,3
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,10,County,Clinton,,false,1,,,6
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,10,County,Clinton,,false,1,,,3074
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,438,County,Essex,,true,1,8,Republican,1523
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,438,County,Essex,,false,1,8,Republican,977
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,438,County,Essex,,false,1,,,20
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,438,County,Essex,,false,1,,,46
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,438,County,Essex,,false,1,,,4
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,438,County,Essex,,false,1,,,2570
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,17,County,Franklin,,true,1,8,Republican,1139
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,17,County,Franklin,,false,1,8,Republican,612
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,17,County,Franklin,,false,1,,,9
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,17,County,Franklin,,false,1,,,8
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,17,County,Franklin,,false,1,,,3
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,17,County,Franklin,,false,1,,,1771
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,18,County,Fulton,,true,1,8,Republican,2710
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,18,County,Fulton,,false,1,8,Republican,2683
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,18,County,Fulton,,false,1,,,23
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,18,County,Fulton,,false,1,,,78
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,18,County,Fulton,,false,1,,,4
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,18,County,Fulton,,false,1,,,5498
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,21,County,Hamilton,,false,1,8,Republican,341
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,21,County,Hamilton,,true,1,8,Republican,540
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,21,County,Hamilton,,false,1,,,0
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,21,County,Hamilton,,false,1,,,20
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,21,County,Hamilton,,false,1,,,3
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,21,County,Hamilton,,false,1,,,904
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,22,County,Herkimer,,false,1,8,Republican,1972
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,22,County,Herkimer,,true,1,8,Republican,2096
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,22,County,Herkimer,,false,1,,,7
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,22,County,Herkimer,,false,1,,,72
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,22,County,Herkimer,,false,1,,,4
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,22,County,Herkimer,,false,1,,,4151
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,23,County,Jefferson,,true,1,8,Republican,363
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,23,County,Jefferson,,false,1,8,Republican,233
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,23,County,Jefferson,,false,1,,,4
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,23,County,Jefferson,,false,1,,,1
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,23,County,Jefferson,,false,1,,,2
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,23,County,Jefferson,,false,1,,,603
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,24,County,Lewis,,true,1,8,Republican,1332
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,24,County,Lewis,,false,1,8,Republican,618
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,24,County,Lewis,,false,1,,,8
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,24,County,Lewis,,false,1,,,13
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,24,County,Lewis,,false,1,,,2
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,24,County,Lewis,,false,1,,,1973
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,28,County,Montgomery,,true,1,8,Republican,1099
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,28,County,Montgomery,,false,1,8,Republican,647
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,28,County,Montgomery,,false,1,,,10
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,28,County,Montgomery,,false,1,,,26
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,28,County,Montgomery,,false,1,,,2
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,28,County,Montgomery,,false,1,,,1784
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,31,County,Oneida,,true,1,8,Republican,3015
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,31,County,Oneida,,false,1,8,Republican,1972
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,31,County,Oneida,,false,1,,,17
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,31,County,Oneida,,false,1,,,85
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,31,County,Oneida,,false,1,,,4
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,31,County,Oneida,,false,1,,,5093
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,42,County,Saratoga,,true,1,8,Republican,2342
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,42,County,Saratoga,,false,1,8,Republican,1202
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,42,County,Saratoga,,false,1,,,27
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,42,County,Saratoga,,false,1,,,22
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,42,County,Saratoga,,false,1,,,3
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,42,County,Saratoga,,false,1,,,3596
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,44,County,Schoharie,,true,1,8,Republican,1479
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,44,County,Schoharie,,false,1,8,Republican,616
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,44,County,Schoharie,,false,1,,,6
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,44,County,Schoharie,,false,1,,,49
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,44,County,Schoharie,,false,1,,,1
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,44,County,Schoharie,,false,1,,,2151
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,41,County,St. Lawrence,,true,1,8,Republican,2619
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,41,County,St. Lawrence,,false,1,8,Republican,1993
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,41,County,St. Lawrence,,false,1,,,31
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,41,County,St. Lawrence,,false,1,,,40
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,41,County,St. Lawrence,,false,1,,,0
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,41,County,St. Lawrence,,false,1,,,4683
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,53,County,Warren,,true,1,8,Republican,2738
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,53,County,Warren,,false,1,8,Republican,1754
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,53,County,Warren,,false,1,,,30
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,53,County,Warren,,false,1,,,6
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,53,County,Warren,,false,1,,,7
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,53,County,Warren,,false,1,,,4535
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,14292,Anthony Constantino,,,54,County,Washington,,true,1,8,Republican,2301
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,393,Robert J. Smullen,,,54,County,Washington,,false,1,8,Republican,1026
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,6,Scattering,,,54,County,Washington,,false,1,,,15
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,10,Blank,,,54,County,Washington,,false,1,,,23
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,9,Void,,,54,County,Washington,,false,1,,,11
+5922,164,2026-06-23T00:00:00Z,Primary,Republican,,,13,Representative in Congress,,197,Congressional District,21,1,Total Votes,,,54,County,Washington,,false,1,,,3376
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,3,County,Allegany,,true,1,7,Democratic,997
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,3,County,Allegany,,false,1,7,Democratic,132
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,3,County,Allegany,,false,1,,,0
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,3,County,Allegany,,false,1,,,23
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,3,County,Allegany,,false,1,,,0
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,3,County,Allegany,,false,1,,,1152
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,5,County,Cattaraugus,,true,1,7,Democratic,1223
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,5,County,Cattaraugus,,false,1,7,Democratic,287
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,5,County,Cattaraugus,,false,1,,,0
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,5,County,Cattaraugus,,false,1,,,54
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,5,County,Cattaraugus,,false,1,,,6
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,5,County,Cattaraugus,,false,1,,,1570
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,7,County,Chautauqua,,true,1,7,Democratic,2241
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,7,County,Chautauqua,,false,1,7,Democratic,504
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,7,County,Chautauqua,,false,1,,,222
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,7,County,Chautauqua,,false,1,,,2
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,7,County,Chautauqua,,false,1,,,4
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,7,County,Chautauqua,,false,1,,,2973
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,8,County,Chemung,,true,1,7,Democratic,1639
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,8,County,Chemung,,false,1,7,Democratic,503
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,8,County,Chemung,,false,1,,,8
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,8,County,Chemung,,false,1,,,121
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,8,County,Chemung,,false,1,,,1
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,8,County,Chemung,,false,1,,,2272
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,445,County,Erie,,true,1,7,Democratic,4851
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,445,County,Erie,,false,1,7,Democratic,3375
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,445,County,Erie,,false,1,,,35
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,445,County,Erie,,false,1,,,469
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,445,County,Erie,,false,1,,,22
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,445,County,Erie,,false,1,,,8752
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,30,County,Niagara,,true,1,7,Democratic,217
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,30,County,Niagara,,false,1,7,Democratic,172
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,30,County,Niagara,,false,1,,,2
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,30,County,Niagara,,false,1,,,30
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,30,County,Niagara,,false,1,,,0
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,30,County,Niagara,,false,1,,,421
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,45,County,Schuyler,,true,1,7,Democratic,155
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,45,County,Schuyler,,false,1,7,Democratic,56
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,45,County,Schuyler,,false,1,,,0
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,45,County,Schuyler,,false,1,,,9
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,45,County,Schuyler,,false,1,,,2
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,45,County,Schuyler,,false,1,,,222
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,47,County,Steuben,,true,1,7,Democratic,1574
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,47,County,Steuben,,false,1,7,Democratic,331
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,47,County,Steuben,,false,1,,,2
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,47,County,Steuben,,false,1,,,33
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,47,County,Steuben,,false,1,,,4
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,47,County,Steuben,,false,1,,,1944
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,13889,Aaron Gies,,,50,County,Tioga,,true,1,7,Democratic,1175
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1541,Kevin T. Stocker,,,50,County,Tioga,,false,1,7,Democratic,203
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,6,Scattering,,,50,County,Tioga,,false,1,,,1
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,10,Blank,,,50,County,Tioga,,false,1,,,38
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,9,Void,,,50,County,Tioga,,false,1,,,7
+5923,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,199,Congressional District,23,1,Total Votes,,,50,County,Tioga,,false,1,,,1424
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,6,County,Cayuga,,true,1,7,Democratic,182
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,6,County,Cayuga,,false,1,7,Democratic,123
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,6,County,Cayuga,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,6,County,Cayuga,,false,1,,,16
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,6,County,Cayuga,,false,1,,,1
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,6,County,Cayuga,,false,1,,,322
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,19,County,Genesee,,false,1,7,Democratic,337
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,19,County,Genesee,,true,1,7,Democratic,557
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,19,County,Genesee,,false,1,,,1
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,19,County,Genesee,,false,1,,,23
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,19,County,Genesee,,false,1,,,5
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,19,County,Genesee,,false,1,,,923
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,23,County,Jefferson,,true,1,7,Democratic,822
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,23,County,Jefferson,,false,1,7,Democratic,499
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,23,County,Jefferson,,false,1,,,2
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,23,County,Jefferson,,false,1,,,100
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,23,County,Jefferson,,false,1,,,2
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,23,County,Jefferson,,false,1,,,1425
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,442,County,Livingston,,true,1,7,Democratic,922
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,442,County,Livingston,,false,1,7,Democratic,619
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,442,County,Livingston,,false,1,,,7
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,442,County,Livingston,,false,1,,,49
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,442,County,Livingston,,false,1,,,2
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,442,County,Livingston,,false,1,,,1599
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,30,County,Niagara,,true,1,7,Democratic,1245
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,30,County,Niagara,,false,1,7,Democratic,523
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,30,County,Niagara,,false,1,,,5
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,30,County,Niagara,,false,1,,,101
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,30,County,Niagara,,false,1,,,7
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,30,County,Niagara,,false,1,,,1881
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,33,County,Ontario,,true,1,7,Democratic,2187
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,33,County,Ontario,,false,1,7,Democratic,1586
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,33,County,Ontario,,false,1,,,6
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,33,County,Ontario,,false,1,,,112
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,33,County,Ontario,,false,1,,,7
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,33,County,Ontario,,false,1,,,3898
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,35,County,Orleans,,true,1,7,Democratic,219
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,35,County,Orleans,,false,1,7,Democratic,214
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,35,County,Orleans,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,35,County,Orleans,,false,1,,,15
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,35,County,Orleans,,false,1,,,1
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,35,County,Orleans,,false,1,,,449
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,733,County,Oswego,,true,1,7,Democratic,1426
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,733,County,Oswego,,false,1,7,Democratic,559
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,733,County,Oswego,,false,1,,,4
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,733,County,Oswego,,false,1,,,169
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,733,County,Oswego,,false,1,,,3
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,733,County,Oswego,,false,1,,,2161
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,45,County,Schuyler,,true,1,7,Democratic,202
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,45,County,Schuyler,,false,1,7,Democratic,121
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,45,County,Schuyler,,false,1,,,2
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,45,County,Schuyler,,false,1,,,14
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,45,County,Schuyler,,false,1,,,1
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,45,County,Schuyler,,false,1,,,340
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,46,County,Seneca,,true,1,7,Democratic,621
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,46,County,Seneca,,false,1,7,Democratic,247
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,46,County,Seneca,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,46,County,Seneca,,false,1,,,19
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,46,County,Seneca,,false,1,,,2
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,46,County,Seneca,,false,1,,,889
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,47,County,Steuben,,true,1,7,Democratic,130
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,47,County,Steuben,,false,1,7,Democratic,65
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,47,County,Steuben,,false,1,,,1
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,47,County,Steuben,,false,1,,,6
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,47,County,Steuben,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,47,County,Steuben,,false,1,,,202
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,55,County,Wayne,,true,1,7,Democratic,1292
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,55,County,Wayne,,false,1,7,Democratic,716
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,55,County,Wayne,,false,1,,,2
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,55,County,Wayne,,false,1,,,102
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,55,County,Wayne,,false,1,,,4
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,55,County,Wayne,,false,1,,,2116
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,57,County,Wyoming,,true,1,7,Democratic,257
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,57,County,Wyoming,,false,1,7,Democratic,192
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,57,County,Wyoming,,false,1,,,1
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,57,County,Wyoming,,false,1,,,31
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,57,County,Wyoming,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,57,County,Wyoming,,false,1,,,481
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,13890,Alissa J. Ellman,,,58,County,Yates,,true,1,7,Democratic,355
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,3697,Diana K. Kastenbaum,,,58,County,Yates,,false,1,7,Democratic,286
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,6,Scattering,,,58,County,Yates,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,10,Blank,,,58,County,Yates,,false,1,,,11
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,9,Void,,,58,County,Yates,,false,1,,,0
+5924,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,200,Congressional District,24,1,Total Votes,,,58,County,Yates,,false,1,,,652
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,11084,Joseph D. Morelle,,,535,County,Monroe,,true,1,7,Democratic,24053
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,9064,Robin Wilt,,,535,County,Monroe,,false,1,7,Democratic,11693
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,1479,Sherita S. Traywick,,,535,County,Monroe,,false,1,7,Democratic,2290
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,6,Scattering,,,535,County,Monroe,,false,1,,,59
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,10,Blank,,,535,County,Monroe,,false,1,,,597
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,9,Void,,,535,County,Monroe,,false,1,,,92
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,1,Total Votes,,,535,County,Monroe,,false,1,,,38784
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,11084,Joseph D. Morelle,,,33,County,Ontario,,true,1,7,Democratic,514
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,9064,Robin Wilt,,,33,County,Ontario,,false,1,7,Democratic,173
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,1479,Sherita S. Traywick,,,33,County,Ontario,,false,1,7,Democratic,42
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,6,Scattering,,,33,County,Ontario,,false,1,,,0
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,10,Blank,,,33,County,Ontario,,false,1,,,1
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,9,Void,,,33,County,Ontario,,false,1,,,0
+5925,164,2026-06-23T00:00:00Z,Primary,Democratic,,,13,Representative in Congress,,201,Congressional District,25,1,Total Votes,,,33,County,Ontario,,false,1,,,730
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,14293,Aber Kawas,,,67,County,Kings,,true,1,7,Democratic,1
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,241,Steven B. Raga,,,67,County,Kings,,false,1,7,Democratic,0
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,6,Scattering,,,67,County,Kings,,false,1,,,0
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,10,Blank,,,67,County,Kings,,false,1,,,0
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,9,Void,,,67,County,Kings,,false,1,,,0
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,1,Total Votes,,,67,County,Kings,,false,1,,,1
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,14293,Aber Kawas,,,430,County,Queens,,true,1,7,Democratic,13022
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,241,Steven B. Raga,,,430,County,Queens,,false,1,7,Democratic,8486
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,6,Scattering,,,430,County,Queens,,false,1,,,82
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,10,Blank,,,430,County,Queens,,false,1,,,678
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,9,Void,,,430,County,Queens,,false,1,,,0
+6056,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,214,State Senate District,12,1,Total Votes,,,430,County,Queens,,false,1,,,22268
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,248,Jessica Gonzalez-Rojas,,,430,County,Queens,,true,1,7,Democratic,6636
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,8709,Jessica Ramos,,,430,County,Queens,,false,1,7,Democratic,5133
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,9259,Hiram Monserrate,,,430,County,Queens,,false,1,7,Democratic,2000
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,6,Scattering,,,430,County,Queens,,false,1,,,60
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,10,Blank,,,430,County,Queens,,false,1,,,324
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,9,Void,,,430,County,Queens,,false,1,,,0
+6057,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,215,State Senate District,13,1,Total Votes,,,430,County,Queens,,false,1,,,14153
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,98,"Joseph P. Addabbo, Jr.",,,67,County,Kings,,true,1,7,Democratic,2
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,1484,Albert Baldeo,,,67,County,Kings,,false,1,7,Democratic,1
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,6,Scattering,,,67,County,Kings,,false,1,,,0
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,10,Blank,,,67,County,Kings,,false,1,,,0
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,9,Void,,,67,County,Kings,,false,1,,,0
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,1,Total Votes,,,67,County,Kings,,false,1,,,3
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,98,"Joseph P. Addabbo, Jr.",,,430,County,Queens,,true,1,7,Democratic,7820
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,1484,Albert Baldeo,,,430,County,Queens,,false,1,7,Democratic,2751
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,6,Scattering,,,430,County,Queens,,false,1,,,60
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,10,Blank,,,430,County,Queens,,false,1,,,578
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,9,Void,,,430,County,Queens,,false,1,,,0
+6058,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,217,State Senate District,15,1,Total Votes,,,430,County,Queens,,false,1,,,11209
+5926,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,224,State Senate District,22,13892,Carl Caller,,,67,County,Kings,,true,1,8,Republican,535
+5926,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,224,State Senate District,22,13891,Bernard Vaiselberg,,,67,County,Kings,,false,1,8,Republican,517
+5926,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,224,State Senate District,22,6,Scattering,,,67,County,Kings,,false,1,,,151
+5926,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,224,State Senate District,22,10,Blank,,,67,County,Kings,,false,1,,,52
+5926,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,224,State Senate District,22,9,Void,,,67,County,Kings,,false,1,,,2
+5926,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,224,State Senate District,22,1,Total Votes,,,67,County,Kings,,false,1,,,1257
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,111,Jessica Scarcella-Spanton,,,67,County,Kings,,true,1,7,Democratic,2586
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,14294,Omar Mohamad,,,67,County,Kings,,false,1,7,Democratic,840
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,6,Scattering,,,67,County,Kings,,false,1,,,17
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,10,Blank,,,67,County,Kings,,false,1,,,62
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,9,Void,,,67,County,Kings,,false,1,,,0
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,1,Total Votes,,,67,County,Kings,,false,1,,,3505
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,111,Jessica Scarcella-Spanton,,,63,County,Richmond,,true,1,7,Democratic,4207
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,14294,Omar Mohamad,,,63,County,Richmond,,false,1,7,Democratic,1684
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,6,Scattering,,,63,County,Richmond,,false,1,,,17
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,10,Blank,,,63,County,Richmond,,false,1,,,51
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,9,Void,,,63,County,Richmond,,false,1,,,0
+6059,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,225,State Senate District,23,1,Total Votes,,,63,County,Richmond,,false,1,,,5959
+6060,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,227,State Senate District,25,114,Jabari Brisport,,,67,County,Kings,,true,1,7,Democratic,23922
+6060,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,227,State Senate District,25,14295,Marlon Rice,,,67,County,Kings,,false,1,7,Democratic,6483
+6060,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,227,State Senate District,25,6,Scattering,,,67,County,Kings,,false,1,,,133
+6060,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,227,State Senate District,25,10,Blank,,,67,County,Kings,,false,1,,,2324
+6060,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,227,State Senate District,25,9,Void,,,67,County,Kings,,false,1,,,0
+6060,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,227,State Senate District,25,1,Total Votes,,,67,County,Kings,,false,1,,,32862
+6061,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,229,State Senate District,27,296,Grace Lee,,,68,County,New York,,true,1,7,Democratic,18832
+6061,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,229,State Senate District,27,789,Yuh-Line Niou,,,68,County,New York,,false,1,7,Democratic,11429
+6061,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,229,State Senate District,27,6,Scattering,,,68,County,New York,,false,1,,,88
+6061,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,229,State Senate District,27,10,Blank,,,68,County,New York,,false,1,,,1330
+6061,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,229,State Senate District,27,9,Void,,,68,County,New York,,false,1,,,0
+6061,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,229,State Senate District,27,1,Total Votes,,,68,County,New York,,false,1,,,31679
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,122,Jose M. Serrano,,,431,County,Bronx,,true,1,7,Democratic,5480
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,14296,Nicholas Reyes,,,431,County,Bronx,,false,1,7,Democratic,1611
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,6,Scattering,,,431,County,Bronx,,false,1,,,59
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,10,Blank,,,431,County,Bronx,,false,1,,,310
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,9,Void,,,431,County,Bronx,,false,1,,,0
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,1,Total Votes,,,431,County,Bronx,,false,1,,,7460
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,122,Jose M. Serrano,,,68,County,New York,,true,1,7,Democratic,6481
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,14296,Nicholas Reyes,,,68,County,New York,,false,1,7,Democratic,3627
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,6,Scattering,,,68,County,New York,,false,1,,,71
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,10,Blank,,,68,County,New York,,false,1,,,1042
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,9,Void,,,68,County,New York,,false,1,,,0
+6062,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,231,State Senate District,29,1,Total Votes,,,68,County,New York,,false,1,,,11221
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,9168,Robert Jackson,,,431,County,Bronx,,true,1,7,Democratic,3462
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,14297,Nayma Silver-Matos,,,431,County,Bronx,,false,1,7,Democratic,1889
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,6,Scattering,,,431,County,Bronx,,false,1,,,41
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,10,Blank,,,431,County,Bronx,,false,1,,,752
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,9,Void,,,431,County,Bronx,,false,1,,,0
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,1,Total Votes,,,431,County,Bronx,,false,1,,,6144
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,9168,Robert Jackson,,,68,County,New York,,true,1,7,Democratic,15420
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,14297,Nayma Silver-Matos,,,68,County,New York,,false,1,7,Democratic,5391
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,6,Scattering,,,68,County,New York,,false,1,,,67
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,10,Blank,,,68,County,New York,,false,1,,,3147
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,9,Void,,,68,County,New York,,false,1,,,0
+6063,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,233,State Senate District,31,1,Total Votes,,,68,County,New York,,false,1,,,24025
+5927,164,2026-06-23T00:00:00Z,Primary,Working Families,,,5,State Senator,,240,State Senate District,38,13893,Joseph W. Rand,,,40,County,Rockland,,true,1,10,Working Families,218
+5927,164,2026-06-23T00:00:00Z,Primary,Working Families,,,5,State Senator,,240,State Senate District,38,6,Scattering,,,40,County,Rockland,,false,1,,,138
+5927,164,2026-06-23T00:00:00Z,Primary,Working Families,,,5,State Senator,,240,State Senate District,38,10,Blank,,,40,County,Rockland,,false,1,,,2
+5927,164,2026-06-23T00:00:00Z,Primary,Working Families,,,5,State Senator,,240,State Senate District,38,9,Void,,,40,County,Rockland,,false,1,,,1
+5927,164,2026-06-23T00:00:00Z,Primary,Working Families,,,5,State Senator,,240,State Senate District,38,1,Total Votes,,,40,County,Rockland,,false,1,,,359
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,13894,Lisa Kaul,,,14,County,Dutchess,,true,1,7,Democratic,6227
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,13895,Evan R. Menist,,,14,County,Dutchess,,false,1,7,Democratic,2606
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,3909,Gay Lee,,,14,County,Dutchess,,false,1,7,Democratic,487
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,6,Scattering,,,14,County,Dutchess,,false,1,,,4
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,10,Blank,,,14,County,Dutchess,,false,1,,,90
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,9,Void,,,14,County,Dutchess,,false,1,,,23
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,1,Total Votes,,,14,County,Dutchess,,false,1,,,9437
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,13894,Lisa Kaul,,,34,County,Orange,,true,1,7,Democratic,965
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,13895,Evan R. Menist,,,34,County,Orange,,false,1,7,Democratic,730
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,3909,Gay Lee,,,34,County,Orange,,false,1,7,Democratic,377
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,6,Scattering,,,34,County,Orange,,false,1,,,4
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,10,Blank,,,34,County,Orange,,false,1,,,52
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,9,Void,,,34,County,Orange,,false,1,,,8
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,1,Total Votes,,,34,County,Orange,,false,1,,,2136
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,13894,Lisa Kaul,,,38,County,Putnam,,true,1,7,Democratic,1198
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,13895,Evan R. Menist,,,38,County,Putnam,,false,1,7,Democratic,775
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,3909,Gay Lee,,,38,County,Putnam,,false,1,7,Democratic,155
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,6,Scattering,,,38,County,Putnam,,false,1,,,3
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,10,Blank,,,38,County,Putnam,,false,1,,,52
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,9,Void,,,38,County,Putnam,,false,1,,,0
+5928,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,241,State Senate District,39,1,Total Votes,,,38,County,Putnam,,false,1,,,2183
+5929,164,2026-06-23T00:00:00Z,Primary,Conservative,,,5,State Senator,,244,State Senate District,42,13897,Joshua Blumenthal-Write In,,,34,County,Orange,,true,1,9,Conservative,422
+5929,164,2026-06-23T00:00:00Z,Primary,Conservative,,,5,State Senator,,244,State Senate District,42,13896,Jennifer R. Figueroa,,,34,County,Orange,,false,1,9,Conservative,240
+5929,164,2026-06-23T00:00:00Z,Primary,Conservative,,,5,State Senator,,244,State Senate District,42,6,Scattering,,,34,County,Orange,,false,1,,,13
+5929,164,2026-06-23T00:00:00Z,Primary,Conservative,,,5,State Senator,,244,State Senate District,42,10,Blank,,,34,County,Orange,,false,1,,,6
+5929,164,2026-06-23T00:00:00Z,Primary,Conservative,,,5,State Senator,,244,State Senate District,42,9,Void,,,34,County,Orange,,false,1,,,1
+5929,164,2026-06-23T00:00:00Z,Primary,Conservative,,,5,State Senator,,244,State Senate District,42,1,Total Votes,,,34,County,Orange,,false,1,,,682
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,13898,Sarah F. Rogerson,,,42,County,Saratoga,,true,1,7,Democratic,5480
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,12439,Patrick F. Nelson,,,42,County,Saratoga,,false,1,7,Democratic,3128
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,6,Scattering,,,42,County,Saratoga,,false,1,,,16
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,10,Blank,,,42,County,Saratoga,,false,1,,,252
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,9,Void,,,42,County,Saratoga,,false,1,,,21
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,1,Total Votes,,,42,County,Saratoga,,false,1,,,8897
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,13898,Sarah F. Rogerson,,,43,County,Schenectady,,true,1,7,Democratic,3266
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,12439,Patrick F. Nelson,,,43,County,Schenectady,,false,1,7,Democratic,895
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,6,Scattering,,,43,County,Schenectady,,false,1,,,7
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,10,Blank,,,43,County,Schenectady,,false,1,,,20
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,9,Void,,,43,County,Schenectady,,false,1,,,221
+5930,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,246,State Senate District,44,1,Total Votes,,,43,County,Schenectady,,false,1,,,4409
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,4,County,Broome,,false,1,8,Republican,453
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,4,County,Broome,,true,1,8,Republican,848
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,4,County,Broome,,false,1,,,6
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,4,County,Broome,,false,1,,,77
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,4,County,Broome,,false,1,,,6
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,4,County,Broome,,false,1,,,1390
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,9,County,Chenango,,true,1,8,Republican,567
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,9,County,Chenango,,false,1,8,Republican,559
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,9,County,Chenango,,false,1,,,2
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,9,County,Chenango,,false,1,,,70
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,9,County,Chenango,,false,1,,,7
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,9,County,Chenango,,false,1,,,1205
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,13,County,Delaware,,true,1,8,Republican,1351
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,13,County,Delaware,,false,1,8,Republican,705
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,13,County,Delaware,,false,1,,,5
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,13,County,Delaware,,false,1,,,90
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,13,County,Delaware,,false,1,,,26
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,13,County,Delaware,,false,1,,,2177
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,37,County,Otsego,,true,1,8,Republican,1434
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,37,County,Otsego,,false,1,8,Republican,1412
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,37,County,Otsego,,false,1,,,3
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,37,County,Otsego,,false,1,,,156
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,37,County,Otsego,,false,1,,,4
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,37,County,Otsego,,false,1,,,3009
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,44,County,Schoharie,,true,1,8,Republican,1768
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,44,County,Schoharie,,false,1,8,Republican,337
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,44,County,Schoharie,,false,1,,,2
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,44,County,Schoharie,,false,1,,,42
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,44,County,Schoharie,,false,1,,,2
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,44,County,Schoharie,,false,1,,,2151
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,49,County,Sullivan,,false,1,8,Republican,745
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,49,County,Sullivan,,true,1,8,Republican,1522
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,49,County,Sullivan,,false,1,,,0
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,49,County,Sullivan,,false,1,,,113
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,49,County,Sullivan,,false,1,,,6
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,49,County,Sullivan,,false,1,,,2386
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,13899,Christopher W. Tague,,,52,County,Ulster,,false,1,8,Republican,403
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,553,Terry Bernardo,,,52,County,Ulster,,true,1,8,Republican,499
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,6,Scattering,,,52,County,Ulster,,false,1,,,1
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,10,Blank,,,52,County,Ulster,,false,1,,,22
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,9,Void,,,52,County,Ulster,,false,1,,,0
+5931,164,2026-06-23T00:00:00Z,Primary,Republican,,,5,State Senator,,253,State Senate District,51,1,Total Votes,,,52,County,Ulster,,false,1,,,925
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,13900,Michael Mills,,,442,County,Livingston,,true,1,7,Democratic,782
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,412,Scott Comegys,,,442,County,Livingston,,false,1,7,Democratic,770
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,6,Scattering,,,442,County,Livingston,,false,1,,,4
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,10,Blank,,,442,County,Livingston,,false,1,,,31
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,9,Void,,,442,County,Livingston,,false,1,,,4
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,1,Total Votes,,,442,County,Livingston,,false,1,,,1591
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,13900,Michael Mills,,,535,County,Monroe,,true,1,7,Democratic,1282
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,412,Scott Comegys,,,535,County,Monroe,,false,1,7,Democratic,1006
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,6,Scattering,,,535,County,Monroe,,false,1,,,7
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,10,Blank,,,535,County,Monroe,,false,1,,,107
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,9,Void,,,535,County,Monroe,,false,1,,,5
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,1,Total Votes,,,535,County,Monroe,,false,1,,,2407
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,13900,Michael Mills,,,33,County,Ontario,,true,1,7,Democratic,2494
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,412,Scott Comegys,,,33,County,Ontario,,false,1,7,Democratic,2015
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,6,Scattering,,,33,County,Ontario,,false,1,,,3
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,10,Blank,,,33,County,Ontario,,false,1,,,79
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,9,Void,,,33,County,Ontario,,false,1,,,7
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,1,Total Votes,,,33,County,Ontario,,false,1,,,4598
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,13900,Michael Mills,,,55,County,Wayne,,false,1,7,Democratic,793
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,412,Scott Comegys,,,55,County,Wayne,,true,1,7,Democratic,1260
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,6,Scattering,,,55,County,Wayne,,false,1,,,0
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,10,Blank,,,55,County,Wayne,,false,1,,,60
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,9,Void,,,55,County,Wayne,,false,1,,,3
+5932,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,256,State Senate District,54,1,Total Votes,,,55,County,Wayne,,false,1,,,2116
+5933,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,263,State Senate District,61,444,Jonathan D. Rivera,,,445,County,Erie,,true,1,7,Democratic,10171
+5933,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,263,State Senate District,61,13377,Jeremy J. Zellner,,,445,County,Erie,,false,1,7,Democratic,8322
+5933,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,263,State Senate District,61,6,Scattering,,,445,County,Erie,,false,1,,,29
+5933,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,263,State Senate District,61,10,Blank,,,445,County,Erie,,false,1,,,130
+5933,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,263,State Senate District,61,9,Void,,,445,County,Erie,,false,1,,,42
+5933,164,2026-06-23T00:00:00Z,Primary,Democratic,,,5,State Senator,,263,State Senate District,61,1,Total Votes,,,445,County,Erie,,false,1,,,18694
+6064,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,288,State Assembly District,23,14298,Pesach Osina,,,430,County,Queens,,true,1,7,Democratic,3445
+6064,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,288,State Assembly District,23,4661,Mike Scala,,,430,County,Queens,,false,1,7,Democratic,2201
+6064,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,288,State Assembly District,23,6,Scattering,,,430,County,Queens,,false,1,,,34
+6064,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,288,State Assembly District,23,10,Blank,,,430,County,Queens,,false,1,,,71
+6064,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,288,State Assembly District,23,9,Void,,,430,County,Queens,,false,1,,,0
+6064,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,288,State Assembly District,23,1,Total Votes,,,430,County,Queens,,false,1,,,5751
+6065,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,291,State Assembly District,26,235,Robert J. Speranza,,,430,County,Queens,,true,1,8,Republican,809
+6065,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,291,State Assembly District,26,14299,Philip Sean Grillo,,,430,County,Queens,,false,1,8,Republican,491
+6065,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,291,State Assembly District,26,6,Scattering,,,430,County,Queens,,false,1,,,9
+6065,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,291,State Assembly District,26,10,Blank,,,430,County,Queens,,false,1,,,69
+6065,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,291,State Assembly District,26,9,Void,,,430,County,Queens,,false,1,,,0
+6065,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,291,State Assembly District,26,1,Total Votes,,,430,County,Queens,,false,1,,,1378
+6066,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,293,State Assembly District,28,238,Andrew D. Hevesi,,,430,County,Queens,,true,1,7,Democratic,7096
+6066,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,293,State Assembly District,28,13534,Jonathan D. Rinaldi,,,430,County,Queens,,false,1,7,Democratic,944
+6066,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,293,State Assembly District,28,6,Scattering,,,430,County,Queens,,false,1,,,41
+6066,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,293,State Assembly District,28,10,Blank,,,430,County,Queens,,false,1,,,499
+6066,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,293,State Assembly District,28,9,Void,,,430,County,Queens,,false,1,,,0
+6066,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,293,State Assembly District,28,1,Total Votes,,,430,County,Queens,,false,1,,,8580
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,14301,Patrick Martinez,,,430,County,Queens,,true,1,7,Democratic,2784
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,14302,Shamsul Haque,,,430,County,Queens,,false,1,7,Democratic,2777
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,14300,Somnath Ghimire,,,430,County,Queens,,false,1,7,Democratic,718
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,6,Scattering,,,430,County,Queens,,false,1,,,26
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,10,Blank,,,430,County,Queens,,false,1,,,250
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,9,Void,,,430,County,Queens,,false,1,,,0
+6067,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,295,State Assembly District,30,1,Total Votes,,,430,County,Queens,,false,1,,,6555
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,14307,Nathaniel Hezekiah III,,,430,County,Queens,,true,1,7,Democratic,3783
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,14304,Latoya L. LeGrand,,,430,County,Queens,,false,1,7,Democratic,1425
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,14303,Mohammed J. Molla,,,430,County,Queens,,false,1,7,Democratic,799
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,14305,Tunisia Morrison,,,430,County,Queens,,false,1,7,Democratic,733
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,14306,Queen Johnson,,,430,County,Queens,,false,1,7,Democratic,539
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,6,Scattering,,,430,County,Queens,,false,1,,,17
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,10,Blank,,,430,County,Queens,,false,1,,,65
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,9,Void,,,430,County,Queens,,false,1,,,0
+6068,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,297,State Assembly District,32,1,Total Votes,,,430,County,Queens,,false,1,,,7361
+6069,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,298,State Assembly District,33,247,Clyde Vanel,,,430,County,Queens,,true,1,7,Democratic,3710
+6069,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,298,State Assembly District,33,1491,Oster Bryan,,,430,County,Queens,,false,1,7,Democratic,1502
+6069,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,298,State Assembly District,33,6,Scattering,,,430,County,Queens,,false,1,,,23
+6069,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,298,State Assembly District,33,10,Blank,,,430,County,Queens,,false,1,,,154
+6069,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,298,State Assembly District,33,9,Void,,,430,County,Queens,,false,1,,,0
+6069,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,298,State Assembly District,33,1,Total Votes,,,430,County,Queens,,false,1,,,5389
+6070,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,299,State Assembly District,34,14308,Brian Romero,,,430,County,Queens,,true,1,7,Democratic,5064
+6070,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,299,State Assembly District,34,14309,Rosa Sanchez,,,430,County,Queens,,false,1,7,Democratic,2436
+6070,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,299,State Assembly District,34,6,Scattering,,,430,County,Queens,,false,1,,,63
+6070,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,299,State Assembly District,34,10,Blank,,,430,County,Queens,,false,1,,,605
+6070,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,299,State Assembly District,34,9,Void,,,430,County,Queens,,false,1,,,0
+6070,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,299,State Assembly District,34,1,Total Votes,,,430,County,Queens,,false,1,,,8168
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,14311,Diana C. Moreno,,,430,County,Queens,,true,1,7,Democratic,9386
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,1497,Mary Jobaida,,,430,County,Queens,,false,1,7,Democratic,2045
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,14310,Kevin P. Coenen,,,430,County,Queens,,false,1,7,Democratic,490
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,6,Scattering,,,430,County,Queens,,false,1,,,55
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,10,Blank,,,430,County,Queens,,false,1,,,244
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,9,Void,,,430,County,Queens,,false,1,,,0
+6071,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,301,State Assembly District,36,1,Total Votes,,,430,County,Queens,,false,1,,,12220
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,14312,Samantha Kattan,,,68,County,New York,,false,1,7,Democratic,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,14314,Melissa Orlando,,,68,County,New York,,false,1,7,Democratic,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,14313,Pia Rahman,,,68,County,New York,,false,1,7,Democratic,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,6,Scattering,,,68,County,New York,,false,1,,,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,10,Blank,,,68,County,New York,,false,1,,,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,9,Void,,,68,County,New York,,false,1,,,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,1,Total Votes,,,68,County,New York,,false,1,,,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,14312,Samantha Kattan,,,430,County,Queens,,true,1,7,Democratic,8031
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,14314,Melissa Orlando,,,430,County,Queens,,false,1,7,Democratic,2028
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,14313,Pia Rahman,,,430,County,Queens,,false,1,7,Democratic,1904
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,6,Scattering,,,430,County,Queens,,false,1,,,46
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,10,Blank,,,430,County,Queens,,false,1,,,442
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,9,Void,,,430,County,Queens,,false,1,,,0
+6072,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,302,State Assembly District,37,1,Total Votes,,,430,County,Queens,,false,1,,,12451
+6073,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,303,State Assembly District,38,14315,David Orkin,,,430,County,Queens,,true,1,7,Democratic,3861
+6073,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,303,State Assembly District,38,772,Jenifer Rajkumar,,,430,County,Queens,,false,1,7,Democratic,2649
+6073,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,303,State Assembly District,38,6,Scattering,,,430,County,Queens,,false,1,,,18
+6073,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,303,State Assembly District,38,10,Blank,,,430,County,Queens,,false,1,,,89
+6073,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,303,State Assembly District,38,9,Void,,,430,County,Queens,,false,1,,,0
+6073,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,303,State Assembly District,38,1,Total Votes,,,430,County,Queens,,false,1,,,6617
+6074,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,304,State Assembly District,39,3052,Catalina Cruz,,,430,County,Queens,,true,1,7,Democratic,5449
+6074,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,304,State Assembly District,39,3280,Yonel E. Letellier Sosa,,,430,County,Queens,,false,1,7,Democratic,483
+6074,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,304,State Assembly District,39,6,Scattering,,,430,County,Queens,,false,1,,,59
+6074,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,304,State Assembly District,39,10,Blank,,,430,County,Queens,,false,1,,,450
+6074,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,304,State Assembly District,39,9,Void,,,430,County,Queens,,false,1,,,0
+6074,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,304,State Assembly District,39,1,Total Votes,,,430,County,Queens,,false,1,,,6441
+6075,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,308,State Assembly District,43,13259,Brian-Christopher A. Cunningham,,,67,County,Kings,,true,1,7,Democratic,10180
+6075,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,308,State Assembly District,43,14316,Ahron Gluck,,,67,County,Kings,,false,1,7,Democratic,2325
+6075,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,308,State Assembly District,43,6,Scattering,,,67,County,Kings,,false,1,,,88
+6075,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,308,State Assembly District,43,10,Blank,,,67,County,Kings,,false,1,,,379
+6075,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,308,State Assembly District,43,9,Void,,,67,County,Kings,,false,1,,,0
+6075,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,308,State Assembly District,43,1,Total Votes,,,67,County,Kings,,false,1,,,12972
+6076,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,311,State Assembly District,46,5432,Chris McCreight,,,67,County,Kings,,true,1,7,Democratic,3317
+6076,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,311,State Assembly District,46,14317,Joseph Santangelo,,,67,County,Kings,,false,1,7,Democratic,1845
+6076,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,311,State Assembly District,46,6,Scattering,,,67,County,Kings,,false,1,,,13
+6076,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,311,State Assembly District,46,10,Blank,,,67,County,Kings,,false,1,,,158
+6076,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,311,State Assembly District,46,9,Void,,,67,County,Kings,,false,1,,,0
+6076,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,311,State Assembly District,46,1,Total Votes,,,67,County,Kings,,false,1,,,5333
+6077,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,315,State Assembly District,50,14318,Emily Gallagher,,,67,County,Kings,,true,1,7,Democratic,11680
+6077,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,315,State Assembly District,50,13397,Andrew Bodiford,,,67,County,Kings,,false,1,7,Democratic,1720
+6077,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,315,State Assembly District,50,6,Scattering,,,67,County,Kings,,false,1,,,285
+6077,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,315,State Assembly District,50,10,Blank,,,67,County,Kings,,false,1,,,4229
+6077,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,315,State Assembly District,50,9,Void,,,67,County,Kings,,false,1,,,0
+6077,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,315,State Assembly District,50,1,Total Votes,,,67,County,Kings,,false,1,,,17914
+6078,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,316,State Assembly District,52,274,Jo Anne Simon,,,67,County,Kings,,true,1,7,Democratic,18259
+6078,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,316,State Assembly District,52,14319,Lydia Bella Green,,,67,County,Kings,,false,1,7,Democratic,7333
+6078,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,316,State Assembly District,52,6,Scattering,,,67,County,Kings,,false,1,,,124
+6078,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,316,State Assembly District,52,10,Blank,,,67,County,Kings,,false,1,,,1341
+6078,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,316,State Assembly District,52,9,Void,,,67,County,Kings,,false,1,,,0
+6078,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,316,State Assembly District,52,1,Total Votes,,,67,County,Kings,,false,1,,,27057
+6079,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,319,State Assembly District,54,14320,Christian Celeste Tate,,,67,County,Kings,,true,1,7,Democratic,4192
+6079,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,319,State Assembly District,54,279,Erik Martin Dilan,,,67,County,Kings,,false,1,7,Democratic,2550
+6079,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,319,State Assembly District,54,6,Scattering,,,67,County,Kings,,false,1,,,16
+6079,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,319,State Assembly District,54,10,Blank,,,67,County,Kings,,false,1,,,207
+6079,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,319,State Assembly District,54,9,Void,,,67,County,Kings,,false,1,,,0
+6079,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,319,State Assembly District,54,1,Total Votes,,,67,County,Kings,,false,1,,,6965
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,14322,Eon Huntley,,,67,County,Kings,,true,1,7,Democratic,9004
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,284,Stefani L. Zinerman,,,67,County,Kings,,false,1,7,Democratic,5627
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,14321,Michael Bailey,,,67,County,Kings,,false,1,7,Democratic,764
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,6,Scattering,,,67,County,Kings,,false,1,,,23
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,10,Blank,,,67,County,Kings,,false,1,,,322
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,9,Void,,,67,County,Kings,,false,1,,,0
+6080,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,321,State Assembly District,56,1,Total Votes,,,67,County,Kings,,false,1,,,15740
+6081,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,322,State Assembly District,57,285,Phara Souffrant Forrest,,,67,County,Kings,,true,1,7,Democratic,12866
+6081,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,322,State Assembly District,57,14323,Samantha N. Johnson,,,67,County,Kings,,false,1,7,Democratic,3386
+6081,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,322,State Assembly District,57,6,Scattering,,,67,County,Kings,,false,1,,,135
+6081,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,322,State Assembly District,57,10,Blank,,,67,County,Kings,,false,1,,,1851
+6081,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,322,State Assembly District,57,9,Void,,,67,County,Kings,,false,1,,,0
+6081,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,322,State Assembly District,57,1,Total Votes,,,67,County,Kings,,false,1,,,18238
+6082,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,324,State Assembly District,59,8491,Jaime R. Williams,,,67,County,Kings,,true,1,7,Democratic,4277
+6082,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,324,State Assembly District,59,1773,Jibreel Jalloh,,,67,County,Kings,,false,1,7,Democratic,2189
+6082,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,324,State Assembly District,59,6,Scattering,,,67,County,Kings,,false,1,,,15
+6082,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,324,State Assembly District,59,10,Blank,,,67,County,Kings,,false,1,,,172
+6082,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,324,State Assembly District,59,9,Void,,,67,County,Kings,,false,1,,,0
+6082,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,324,State Assembly District,59,1,Total Votes,,,67,County,Kings,,false,1,,,6653
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,14325,Illapa Sairitupac,,,68,County,New York,,true,1,7,Democratic,4417
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,14324,Jasmin Sanchez,,,68,County,New York,,false,1,7,Democratic,2095
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,4420,Wei Li Tjong,,,68,County,New York,,false,1,7,Democratic,1822
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,14328,Jay Jacky Wong,,,68,County,New York,,false,1,7,Democratic,1819
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,14326,Mariama N. James,,,68,County,New York,,false,1,7,Democratic,1258
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,14327,Lilah Mejia,,,68,County,New York,,false,1,7,Democratic,533
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,6,Scattering,,,68,County,New York,,false,1,,,39
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,10,Blank,,,68,County,New York,,false,1,,,697
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,9,Void,,,68,County,New York,,false,1,,,0
+6083,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,330,State Assembly District,65,1,Total Votes,,,68,County,New York,,false,1,,,12680
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,13606,David Siffert,,,68,County,New York,,true,1,7,Democratic,4388
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,13629,Jeannine Kiely,,,68,County,New York,,false,1,7,Democratic,4373
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,13903,Ryder Kessler,,,68,County,New York,,false,1,7,Democratic,3641
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,13901,Benjamin Yee,,,68,County,New York,,false,1,7,Democratic,2238
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,13904,Corinne Arnold,,,68,County,New York,,false,1,7,Democratic,727
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,13902,Furhan Ahmad,,,68,County,New York,,false,1,7,Democratic,610
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,6,Scattering,,,68,County,New York,,false,1,,,50
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,10,Blank,,,68,County,New York,,false,1,,,1125
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,9,Void,,,68,County,New York,,false,1,,,20
+5934,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,331,State Assembly District,66,1,Total Votes,,,68,County,New York,,false,1,,,17172
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,13292,Diana I. Ayala,,,68,County,New York,,true,1,7,Democratic,5759
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,300,Edward Gibbs,,,68,County,New York,,false,1,7,Democratic,3453
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,1505,Tamika Mapp,,,68,County,New York,,false,1,7,Democratic,1273
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,10792,William Smith,,,68,County,New York,,false,1,7,Democratic,564
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,6,Scattering,,,68,County,New York,,false,1,,,40
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,10,Blank,,,68,County,New York,,false,1,,,841
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,9,Void,,,68,County,New York,,false,1,,,0
+6084,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,333,State Assembly District,68,1,Total Votes,,,68,County,New York,,false,1,,,11930
+6085,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,334,State Assembly District,69,14329,Eli Northrup,,,68,County,New York,,true,1,7,Democratic,15713
+6085,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,334,State Assembly District,69,14330,Stephanie R. Ruskay,,,68,County,New York,,false,1,7,Democratic,10211
+6085,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,334,State Assembly District,69,6,Scattering,,,68,County,New York,,false,1,,,83
+6085,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,334,State Assembly District,69,10,Blank,,,68,County,New York,,false,1,,,639
+6085,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,334,State Assembly District,69,9,Void,,,68,County,New York,,false,1,,,0
+6085,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,334,State Assembly District,69,1,Total Votes,,,68,County,New York,,false,1,,,26646
+6086,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,335,State Assembly District,70,13547,Jordan J.G. Wright,,,68,County,New York,,true,1,7,Democratic,9152
+6086,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,335,State Assembly District,70,14331,Conrad Blackburn,,,68,County,New York,,false,1,7,Democratic,7456
+6086,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,335,State Assembly District,70,6,Scattering,,,68,County,New York,,false,1,,,75
+6086,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,335,State Assembly District,70,10,Blank,,,68,County,New York,,false,1,,,480
+6086,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,335,State Assembly District,70,9,Void,,,68,County,New York,,false,1,,,0
+6086,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,335,State Assembly District,70,1,Total Votes,,,68,County,New York,,false,1,,,17163
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,13549,Al Taylor,,,68,County,New York,,true,1,7,Democratic,9174
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,14333,Julien Segura,,,68,County,New York,,false,1,7,Democratic,5603
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,14332,Rolando Gomez,,,68,County,New York,,false,1,7,Democratic,1634
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,6,Scattering,,,68,County,New York,,false,1,,,104
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,10,Blank,,,68,County,New York,,false,1,,,1509
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,9,Void,,,68,County,New York,,false,1,,,0
+6087,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,336,State Assembly District,71,1,Total Votes,,,68,County,New York,,false,1,,,18024
+6088,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,337,State Assembly District,72,307,Manny De Los Santos,,,68,County,New York,,true,1,7,Democratic,9176
+6088,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,337,State Assembly District,72,5901,Francesca  Castellanos,,,68,County,New York,,false,1,7,Democratic,2882
+6088,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,337,State Assembly District,72,6,Scattering,,,68,County,New York,,false,1,,,83
+6088,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,337,State Assembly District,72,10,Blank,,,68,County,New York,,false,1,,,1469
+6088,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,337,State Assembly District,72,9,Void,,,68,County,New York,,false,1,,,0
+6088,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,337,State Assembly District,72,1,Total Votes,,,68,County,New York,,false,1,,,13610
+6089,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,340,State Assembly District,75,312,Tony Simone,,,68,County,New York,,true,1,7,Democratic,10230
+6089,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,340,State Assembly District,75,14334,aEmily YueXin Miller,,,68,County,New York,,false,1,7,Democratic,2968
+6089,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,340,State Assembly District,75,6,Scattering,,,68,County,New York,,false,1,,,126
+6089,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,340,State Assembly District,75,10,Blank,,,68,County,New York,,false,1,,,1640
+6089,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,340,State Assembly District,75,9,Void,,,68,County,New York,,false,1,,,0
+6089,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,340,State Assembly District,75,1,Total Votes,,,68,County,New York,,false,1,,,14964
+6090,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,346,State Assembly District,81,12355,Jeffrey Dinowitz,,,431,County,Bronx,,true,1,7,Democratic,7791
+6090,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,346,State Assembly District,81,14335,Morgan Evers,,,431,County,Bronx,,false,1,7,Democratic,4225
+6090,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,346,State Assembly District,81,6,Scattering,,,431,County,Bronx,,false,1,,,29
+6090,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,346,State Assembly District,81,10,Blank,,,431,County,Bronx,,false,1,,,387
+6090,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,346,State Assembly District,81,9,Void,,,431,County,Bronx,,false,1,,,0
+6090,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,346,State Assembly District,81,1,Total Votes,,,431,County,Bronx,,false,1,,,12432
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,326,Michael R. Benedetto,,,431,County,Bronx,,true,1,7,Democratic,4636
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,14336,Jake Kuhl,,,431,County,Bronx,,false,1,7,Democratic,1864
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,14337,Felix Omozusi,,,431,County,Bronx,,false,1,7,Democratic,911
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,6,Scattering,,,431,County,Bronx,,false,1,,,39
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,10,Blank,,,431,County,Bronx,,false,1,,,115
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,9,Void,,,431,County,Bronx,,false,1,,,0
+6091,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,347,State Assembly District,82,1,Total Votes,,,431,County,Bronx,,false,1,,,7565
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,330,Amanda N. Septimo,,,431,County,Bronx,,true,1,7,Democratic,2494
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,14339,Hector Feliciano,,,431,County,Bronx,,false,1,7,Democratic,888
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,14338,Courtland W. Hankins,,,431,County,Bronx,,false,1,7,Democratic,777
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,6,Scattering,,,431,County,Bronx,,false,1,,,21
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,10,Blank,,,431,County,Bronx,,false,1,,,286
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,9,Void,,,431,County,Bronx,,false,1,,,0
+6092,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,349,State Assembly District,84,1,Total Votes,,,431,County,Bronx,,false,1,,,4466
+6093,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,351,State Assembly District,86,14340,Maria Diaz,,,431,County,Bronx,,true,1,8,Republican,122
+6093,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,351,State Assembly District,86,14341,Shery A. Olivo,,,431,County,Bronx,,false,1,8,Republican,76
+6093,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,351,State Assembly District,86,6,Scattering,,,431,County,Bronx,,false,1,,,8
+6093,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,351,State Assembly District,86,10,Blank,,,431,County,Bronx,,false,1,,,8
+6093,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,351,State Assembly District,86,9,Void,,,431,County,Bronx,,false,1,,,0
+6093,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,351,State Assembly District,86,1,Total Votes,,,431,County,Bronx,,false,1,,,214
+6094,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,352,State Assembly District,87,336,Karines Reyes,,,431,County,Bronx,,true,1,7,Democratic,4221
+6094,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,352,State Assembly District,87,14342,Zakir Choudhury,,,431,County,Bronx,,false,1,7,Democratic,1654
+6094,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,352,State Assembly District,87,6,Scattering,,,431,County,Bronx,,false,1,,,18
+6094,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,352,State Assembly District,87,10,Blank,,,431,County,Bronx,,false,1,,,104
+6094,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,352,State Assembly District,87,9,Void,,,431,County,Bronx,,false,1,,,0
+6094,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,352,State Assembly District,87,1,Total Votes,,,431,County,Bronx,,false,1,,,5997
+5935,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,355,State Assembly District,90,13905,Frank Jereis,,,432,County,Westchester,,true,1,7,Democratic,2826
+5935,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,355,State Assembly District,90,13906,Jeannette M. Garcia,,,432,County,Westchester,,false,1,7,Democratic,2122
+5935,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,355,State Assembly District,90,6,Scattering,,,432,County,Westchester,,false,1,,,2
+5935,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,355,State Assembly District,90,10,Blank,,,432,County,Westchester,,false,1,,,255
+5935,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,355,State Assembly District,90,9,Void,,,432,County,Westchester,,false,1,,,32
+5935,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,355,State Assembly District,90,1,Total Votes,,,432,County,Westchester,,false,1,,,5237
+5936,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,361,State Assembly District,96,13570,Patrick Carroll,,,40,County,Rockland,,true,1,7,Democratic,6745
+5936,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,361,State Assembly District,96,13907,P.T. Thomas,,,40,County,Rockland,,false,1,7,Democratic,1618
+5936,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,361,State Assembly District,96,6,Scattering,,,40,County,Rockland,,false,1,,,16
+5936,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,361,State Assembly District,96,10,Blank,,,40,County,Rockland,,false,1,,,740
+5936,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,361,State Assembly District,96,9,Void,,,40,County,Rockland,,false,1,,,37
+5936,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,361,State Assembly District,96,1,Total Votes,,,40,County,Rockland,,false,1,,,9156
+5937,164,2026-06-23T00:00:00Z,Primary,Conservative,,,14,Member of Assembly,,362,State Assembly District,97,13908,Abraham Klein,,,40,County,Rockland,,true,1,9,Conservative,397
+5937,164,2026-06-23T00:00:00Z,Primary,Conservative,,,14,Member of Assembly,,362,State Assembly District,97,13909,Rob Bonomolo,,,40,County,Rockland,,false,1,9,Conservative,288
+5937,164,2026-06-23T00:00:00Z,Primary,Conservative,,,14,Member of Assembly,,362,State Assembly District,97,6,Scattering,,,40,County,Rockland,,false,1,,,0
+5937,164,2026-06-23T00:00:00Z,Primary,Conservative,,,14,Member of Assembly,,362,State Assembly District,97,10,Blank,,,40,County,Rockland,,false,1,,,1
+5937,164,2026-06-23T00:00:00Z,Primary,Conservative,,,14,Member of Assembly,,362,State Assembly District,97,9,Void,,,40,County,Rockland,,false,1,,,5
+5937,164,2026-06-23T00:00:00Z,Primary,Conservative,,,14,Member of Assembly,,362,State Assembly District,97,1,Total Votes,,,40,County,Rockland,,false,1,,,691
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13403,Janet S. Tweed,,,2,County,Albany,,false,1,7,Democratic,243
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13910,Thomas Boomhower,,,2,County,Albany,,true,1,7,Democratic,290
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13402,Mary T. Finneran,,,2,County,Albany,,false,1,7,Democratic,258
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,6,Scattering,,,2,County,Albany,,false,1,,,3
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,10,Blank,,,2,County,Albany,,false,1,,,16
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,9,Void,,,2,County,Albany,,false,1,,,0
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,1,Total Votes,,,2,County,Albany,,false,1,,,810
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13403,Janet S. Tweed,,,13,County,Delaware,,true,1,7,Democratic,891
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13910,Thomas Boomhower,,,13,County,Delaware,,false,1,7,Democratic,97
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13402,Mary T. Finneran,,,13,County,Delaware,,false,1,7,Democratic,135
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,6,Scattering,,,13,County,Delaware,,false,1,,,2
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,10,Blank,,,13,County,Delaware,,false,1,,,17
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,9,Void,,,13,County,Delaware,,false,1,,,5
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,1,Total Votes,,,13,County,Delaware,,false,1,,,1147
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13403,Janet S. Tweed,,,20,County,Greene,,false,1,7,Democratic,505
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13910,Thomas Boomhower,,,20,County,Greene,,true,1,7,Democratic,726
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13402,Mary T. Finneran,,,20,County,Greene,,false,1,7,Democratic,588
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,6,Scattering,,,20,County,Greene,,false,1,,,0
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,10,Blank,,,20,County,Greene,,false,1,,,16
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,9,Void,,,20,County,Greene,,false,1,,,7
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,1,Total Votes,,,20,County,Greene,,false,1,,,1842
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13403,Janet S. Tweed,,,37,County,Otsego,,true,1,7,Democratic,399
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13910,Thomas Boomhower,,,37,County,Otsego,,false,1,7,Democratic,179
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13402,Mary T. Finneran,,,37,County,Otsego,,false,1,7,Democratic,124
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,6,Scattering,,,37,County,Otsego,,false,1,,,0
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,10,Blank,,,37,County,Otsego,,false,1,,,12
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,9,Void,,,37,County,Otsego,,false,1,,,16
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,1,Total Votes,,,37,County,Otsego,,false,1,,,730
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13403,Janet S. Tweed,,,44,County,Schoharie,,true,1,7,Democratic,533
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13910,Thomas Boomhower,,,44,County,Schoharie,,false,1,7,Democratic,271
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,13402,Mary T. Finneran,,,44,County,Schoharie,,false,1,7,Democratic,320
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,6,Scattering,,,44,County,Schoharie,,false,1,,,1
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,10,Blank,,,44,County,Schoharie,,false,1,,,30
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,9,Void,,,44,County,Schoharie,,false,1,,,2
+5938,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,367,State Assembly District,102,1,Total Votes,,,44,County,Schoharie,,false,1,,,1157
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,372,Didi Barrett,,,11,County,Columbia,,true,1,7,Democratic,2913
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,13911,Samuel Hodge,,,11,County,Columbia,,false,1,7,Democratic,937
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,6,Scattering,,,11,County,Columbia,,false,1,,,4
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,10,Blank,,,11,County,Columbia,,false,1,,,23
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,9,Void,,,11,County,Columbia,,false,1,,,6
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,1,Total Votes,,,11,County,Columbia,,false,1,,,3883
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,372,Didi Barrett,,,14,County,Dutchess,,true,1,7,Democratic,3573
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,13911,Samuel Hodge,,,14,County,Dutchess,,false,1,7,Democratic,1461
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,6,Scattering,,,14,County,Dutchess,,false,1,,,2
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,10,Blank,,,14,County,Dutchess,,false,1,,,32
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,9,Void,,,14,County,Dutchess,,false,1,,,9
+5939,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,371,State Assembly District,106,1,Total Votes,,,14,County,Dutchess,,false,1,,,5077
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13912,Heather A. Scribner,,,18,County,Fulton,,true,1,8,Republican,1728
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13913,Charles Potter,,,18,County,Fulton,,false,1,8,Republican,1310
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13914,Chanda King,,,18,County,Fulton,,false,1,8,Republican,979
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,6,Scattering,,,18,County,Fulton,,false,1,,,8
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,10,Blank,,,18,County,Fulton,,false,1,,,191
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,9,Void,,,18,County,Fulton,,false,1,,,9
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,1,Total Votes,,,18,County,Fulton,,false,1,,,4225
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13912,Heather A. Scribner,,,21,County,Hamilton,,false,1,8,Republican,269
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13913,Charles Potter,,,21,County,Hamilton,,false,1,8,Republican,210
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13914,Chanda King,,,21,County,Hamilton,,true,1,8,Republican,360
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,6,Scattering,,,21,County,Hamilton,,false,1,,,1
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,10,Blank,,,21,County,Hamilton,,false,1,,,63
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,9,Void,,,21,County,Hamilton,,false,1,,,1
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,1,Total Votes,,,21,County,Hamilton,,false,1,,,904
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13912,Heather A. Scribner,,,22,County,Herkimer,,false,1,8,Republican,1233
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13913,Charles Potter,,,22,County,Herkimer,,true,1,8,Republican,1372
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13914,Chanda King,,,22,County,Herkimer,,false,1,8,Republican,1021
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,6,Scattering,,,22,County,Herkimer,,false,1,,,5
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,10,Blank,,,22,County,Herkimer,,false,1,,,282
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,9,Void,,,22,County,Herkimer,,false,1,,,6
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,1,Total Votes,,,22,County,Herkimer,,false,1,,,3919
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13912,Heather A. Scribner,,,28,County,Montgomery,,true,1,8,Republican,657
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13913,Charles Potter,,,28,County,Montgomery,,false,1,8,Republican,630
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13914,Chanda King,,,28,County,Montgomery,,false,1,8,Republican,352
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,6,Scattering,,,28,County,Montgomery,,false,1,,,4
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,10,Blank,,,28,County,Montgomery,,false,1,,,135
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,9,Void,,,28,County,Montgomery,,false,1,,,6
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,1,Total Votes,,,28,County,Montgomery,,false,1,,,1784
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13912,Heather A. Scribner,,,31,County,Oneida,,true,1,8,Republican,404
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13913,Charles Potter,,,31,County,Oneida,,false,1,8,Republican,164
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13914,Chanda King,,,31,County,Oneida,,false,1,8,Republican,106
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,6,Scattering,,,31,County,Oneida,,false,1,,,2
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,10,Blank,,,31,County,Oneida,,false,1,,,94
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,9,Void,,,31,County,Oneida,,false,1,,,1
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,1,Total Votes,,,31,County,Oneida,,false,1,,,771
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13912,Heather A. Scribner,,,37,County,Otsego,,true,1,8,Republican,92
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13913,Charles Potter,,,37,County,Otsego,,false,1,8,Republican,24
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,13914,Chanda King,,,37,County,Otsego,,false,1,8,Republican,31
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,6,Scattering,,,37,County,Otsego,,false,1,,,0
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,10,Blank,,,37,County,Otsego,,false,1,,,16
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,9,Void,,,37,County,Otsego,,false,1,,,0
+5940,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,383,State Assembly District,118,1,Total Votes,,,37,County,Otsego,,false,1,,,163
+5941,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,384,State Assembly District,119,13915,Jonathan E. Lipe,,,31,County,Oneida,,true,1,7,Democratic,1735
+5941,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,384,State Assembly District,119,13916,Joseph M. Betar,,,31,County,Oneida,,false,1,7,Democratic,1454
+5941,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,384,State Assembly District,119,6,Scattering,,,31,County,Oneida,,false,1,,,0
+5941,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,384,State Assembly District,119,10,Blank,,,31,County,Oneida,,false,1,,,114
+5941,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,384,State Assembly District,119,9,Void,,,31,County,Oneida,,false,1,,,11
+5941,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,384,State Assembly District,119,1,Total Votes,,,31,County,Oneida,,false,1,,,3314
+5942,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,384,State Assembly District,119,853,Michael C. Gentile,,,31,County,Oneida,,true,1,8,Republican,1895
+5942,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,384,State Assembly District,119,13917,Daniel Fusco,,,31,County,Oneida,,false,1,8,Republican,1778
+5942,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,384,State Assembly District,119,6,Scattering,,,31,County,Oneida,,false,1,,,4
+5942,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,384,State Assembly District,119,10,Blank,,,31,County,Oneida,,false,1,,,267
+5942,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,384,State Assembly District,119,9,Void,,,31,County,Oneida,,false,1,,,16
+5942,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,384,State Assembly District,119,1,Total Votes,,,31,County,Oneida,,false,1,,,3960
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,13918,Timothy C. Allers,,,6,County,Cayuga,,true,1,7,Democratic,62
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,13919,Jim Cannon,,,6,County,Cayuga,,false,1,7,Democratic,42
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,6,Scattering,,,6,County,Cayuga,,false,1,,,0
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,10,Blank,,,6,County,Cayuga,,false,1,,,6
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,9,Void,,,6,County,Cayuga,,false,1,,,0
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,1,Total Votes,,,6,County,Cayuga,,false,1,,,110
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,13918,Timothy C. Allers,,,23,County,Jefferson,,true,1,7,Democratic,77
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,13919,Jim Cannon,,,23,County,Jefferson,,false,1,7,Democratic,43
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,6,Scattering,,,23,County,Jefferson,,false,1,,,0
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,10,Blank,,,23,County,Jefferson,,false,1,,,25
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,9,Void,,,23,County,Jefferson,,false,1,,,0
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,1,Total Votes,,,23,County,Jefferson,,false,1,,,145
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,13918,Timothy C. Allers,,,733,County,Oswego,,false,1,7,Democratic,977
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,13919,Jim Cannon,,,733,County,Oswego,,true,1,7,Democratic,1003
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,6,Scattering,,,733,County,Oswego,,false,1,,,2
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,10,Blank,,,733,County,Oswego,,false,1,,,170
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,9,Void,,,733,County,Oswego,,false,1,,,2
+5943,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,385,State Assembly District,120,1,Total Votes,,,733,County,Oswego,,false,1,,,2154
+5944,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,388,State Assembly District,123,13920,Dan Norton,,,4,County,Broome,,true,1,7,Democratic,3444
+5944,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,388,State Assembly District,123,8976,Dan Livingston,,,4,County,Broome,,false,1,7,Democratic,2315
+5944,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,388,State Assembly District,123,6,Scattering,,,4,County,Broome,,false,1,,,8
+5944,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,388,State Assembly District,123,10,Blank,,,4,County,Broome,,false,1,,,101
+5944,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,388,State Assembly District,123,9,Void,,,4,County,Broome,,false,1,,,11
+5944,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,388,State Assembly District,123,1,Total Votes,,,4,County,Broome,,false,1,,,5879
+5945,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,394,State Assembly District,129,13921,Maurice Mo Brown,,,32,County,Onondaga,,true,1,7,Democratic,3473
+5945,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,394,State Assembly District,129,411,William B. Magnarelli,,,32,County,Onondaga,,false,1,7,Democratic,3366
+5945,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,394,State Assembly District,129,6,Scattering,,,32,County,Onondaga,,false,1,,,6
+5945,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,394,State Assembly District,129,10,Blank,,,32,County,Onondaga,,false,1,,,63
+5945,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,394,State Assembly District,129,9,Void,,,32,County,Onondaga,,false,1,,,38
+5945,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,394,State Assembly District,129,1,Total Votes,,,32,County,Onondaga,,false,1,,,6946
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,13922,Carl Fitzsimmons,,,535,County,Monroe,,true,1,7,Democratic,1207
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,13923,Joseph Lamanna,,,535,County,Monroe,,false,1,7,Democratic,928
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,6,Scattering,,,535,County,Monroe,,false,1,,,6
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,10,Blank,,,535,County,Monroe,,false,1,,,102
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,9,Void,,,535,County,Monroe,,false,1,,,4
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,1,Total Votes,,,535,County,Monroe,,false,1,,,2247
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,13922,Carl Fitzsimmons,,,55,County,Wayne,,false,1,7,Democratic,906
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,13923,Joseph Lamanna,,,55,County,Wayne,,true,1,7,Democratic,1131
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,6,Scattering,,,55,County,Wayne,,false,1,,,3
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,10,Blank,,,55,County,Wayne,,false,1,,,72
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,9,Void,,,55,County,Wayne,,false,1,,,4
+5946,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,395,State Assembly District,130,1,Total Votes,,,55,County,Wayne,,false,1,,,2116
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,13925,George Dobbins,,,535,County,Monroe,,false,1,8,Republican,394
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,13924,Summer L. Johnson,,,535,County,Monroe,,false,1,8,Republican,470
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,874,Mark C. Johns,,,535,County,Monroe,,true,1,8,Republican,802
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,6,Scattering,,,535,County,Monroe,,false,1,,,11
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,10,Blank,,,535,County,Monroe,,false,1,,,9
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,9,Void,,,535,County,Monroe,,false,1,,,2
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,1,Total Votes,,,535,County,Monroe,,false,1,,,1688
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,13925,George Dobbins,,,55,County,Wayne,,true,1,8,Republican,1706
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,13924,Summer L. Johnson,,,55,County,Wayne,,false,1,8,Republican,1287
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,874,Mark C. Johns,,,55,County,Wayne,,false,1,8,Republican,693
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,6,Scattering,,,55,County,Wayne,,false,1,,,10
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,10,Blank,,,55,County,Wayne,,false,1,,,32
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,9,Void,,,55,County,Wayne,,false,1,,,15
+5947,164,2026-06-23T00:00:00Z,Primary,Republican,,,14,Member of Assembly,,395,State Assembly District,130,1,Total Votes,,,55,County,Wayne,,false,1,,,3743
+5948,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,402,State Assembly District,137,423,Demond L. Meeks,,,535,County,Monroe,,true,1,7,Democratic,4801
+5948,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,402,State Assembly District,137,13926,Mercedes Vazquez-Simmons,,,535,County,Monroe,,false,1,7,Democratic,1100
+5948,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,402,State Assembly District,137,6,Scattering,,,535,County,Monroe,,false,1,,,6
+5948,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,402,State Assembly District,137,10,Blank,,,535,County,Monroe,,false,1,,,198
+5948,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,402,State Assembly District,137,9,Void,,,535,County,Monroe,,false,1,,,14
+5948,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,402,State Assembly District,137,1,Total Votes,,,535,County,Monroe,,false,1,,,6119
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,1542,Adam L. Bojak,,,445,County,Erie,,true,1,7,Democratic,4014
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,13928,Karen L. Hoak,,,445,County,Erie,,false,1,7,Democratic,2700
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,13927,Kevin W. Deese,,,445,County,Erie,,false,1,7,Democratic,1387
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,6,Scattering,,,445,County,Erie,,false,1,,,10
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,10,Blank,,,445,County,Erie,,false,1,,,86
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,9,Void,,,445,County,Erie,,false,1,,,26
+5949,164,2026-06-23T00:00:00Z,Primary,Democratic,,,14,Member of Assembly,,414,State Assembly District,149,1,Total Votes,,,445,County,Erie,,false,1,,,8223
