@@ -1,6 +1,6 @@
 # Left Field
 
-![Left Field: Where the field bends. Editorial field-ledger artwork with the LF monogram.](docs/assets/readme/banner.png)
+![Left Field banner: Where the field bends. Priority Index, model v1.17, published Nov 3, 2026: 7,403 seats scored, 1,410 with two or more inputs. A research priority, not a forecast.](docs/assets/readme/banner.png)
 
 A score here is a research note with a version number. It is not a forecast or
 an endorsement.

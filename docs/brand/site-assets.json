@@ -1,45 +1,45 @@
 {
-  "repository": "https://git.subcult.tv/subculture-collective/subcult-tv",
-  "revision": "0148fb91547e94f4c9834b1618e005e464260937",
+  "repository": "https://github.com/subculture-collective/subcult-tv",
+  "revision": "cf93e968400cd4b483f6a656775bacd32101d6dc",
   "brand": "Left Field",
   "direction": "The field ledger",
-  "copied": "2026-10-03",
-  "note": "Files are byte-identical to the Studio pack at this revision, which was on the branch t3code/distinct-product-voices and not yet on a remote branch when they were copied. The share card and the About banner were replaced on 2026-10-03 with the re-rendered headline, Where the field bends. The icons are unchanged from the 2026-10-02 copy (subcult-studio 3b63a784b5e5b1b471c17e389bae2b5a3481df83). The header mark in src/components/presentational.tsx redraws logos/mark-primary.svg with the page colours. Replace these files from Studio; do not edit them here.",
+  "copied": "2026-11-13",
+  "note": "Files are byte-identical to the Studio pack at this revision (subcult-tv PR 53, merged to main). The share card and the About banner were replaced on 2026-11-13 with the index-scale layouts the owner approved on 2026-11-12; they print the index totals with their model version and publication date, so replace them again when the index republishes. The icons are unchanged since 2026-10-02. The header mark in src/components/presentational.tsx redraws logos/mark-primary.svg with the page colours. The site keeps Georgia and Arial and loads no font files; the pack's Liberation Serif, Public Sans and JetBrains Mono are stand-ins for exports (Studio GUIDE.md, Type). Replace these files from Studio; do not edit them here.",
   "files": [
     {
       "target": "src/app/icon.svg",
-      "source": "studio/branding/library/brands/left-field/product/favicon.svg",
+      "source": "studio/brands/left-field/product/favicon.svg",
       "sha256": "2180ea7aef2fbb5c56bad64ec0743fa4c0cdf6b4826aa2db91d2d8e4313ab67e"
     },
     {
       "target": "src/app/apple-icon.png",
-      "source": "studio/branding/library/brands/left-field/product/apple-touch-icon.png",
+      "source": "studio/brands/left-field/product/apple-touch-icon.png",
       "sha256": "5273f7dcd8b684e9cca5920021c219e6f8fdabb3f731eea0966b9a775e127293"
     },
     {
       "target": "src/app/opengraph-image.png",
-      "source": "studio/branding/library/brands/left-field/product/og.png",
-      "sha256": "ca27d5233eb294d6a2c0d339247421bb833c5e9994e38b4907a47d026a631973"
+      "source": "studio/brands/left-field/product/og.png",
+      "sha256": "4af0a3f34e43ede0f3eed7e8dc580810f75cc19f84aea4b8f026f77ea2878c21"
     },
     {
       "target": "src/app/twitter-image.png",
-      "source": "studio/branding/library/brands/left-field/product/og.png",
-      "sha256": "ca27d5233eb294d6a2c0d339247421bb833c5e9994e38b4907a47d026a631973"
+      "source": "studio/brands/left-field/product/og.png",
+      "sha256": "4af0a3f34e43ede0f3eed7e8dc580810f75cc19f84aea4b8f026f77ea2878c21"
     },
     {
       "target": "public/icons/icon-192.png",
-      "source": "studio/branding/library/brands/left-field/product/icon-192.png",
+      "source": "studio/brands/left-field/product/icon-192.png",
       "sha256": "c5fa7930497d36e50bc577474838e17912a4bdaf1c6c07cfb10f1f9cf1076f76"
     },
     {
       "target": "public/icons/icon-512.png",
-      "source": "studio/branding/library/brands/left-field/product/icon-512.png",
+      "source": "studio/brands/left-field/product/icon-512.png",
       "sha256": "ebecf2a2d9228713cf83b8965492cc89b8ff2ca81300533c561304589ed484f6"
     },
     {
       "target": "public/brand/left-field-hero.svg",
-      "source": "studio/branding/library/brands/left-field/product/hero-outlined.svg",
-      "sha256": "13d31d414076649d755741c44d0626af1e4740fc03fefdb36427fc4182330a73"
+      "source": "studio/brands/left-field/product/hero-outlined.svg",
+      "sha256": "4559b56cba520e40209feec744d6fbf5bed83dd2239868205241fd2071e144fa"
     }
   ]
 }

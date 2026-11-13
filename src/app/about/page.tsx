@@ -21,7 +21,7 @@ export default function About() {
             height={1000}
             unoptimized
             priority
-            alt="Left Field, by SUBCULT. Where the field bends. Seat research and source context."
+            alt="Left Field, by SUBCULT. Where the field bends. Priority Index, model v1.17, published Nov 3, 2026: 7,403 seats scored, 1,410 with two or more inputs. A research priority, not a forecast."
           />
         </figure>
         <p className="eyebrow">ABOUT</p>
