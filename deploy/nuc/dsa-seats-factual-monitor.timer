@@ -1,5 +1,5 @@
 [Unit]
-Description=Run DSA Seats factual production probes every minute
+Description=Run Left Field factual production probes every minute
 
 [Timer]
 OnBootSec=1min

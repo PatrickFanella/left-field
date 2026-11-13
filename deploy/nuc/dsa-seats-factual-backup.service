@@ -1,5 +1,5 @@
 [Unit]
-Description=Back up DSA Seats factual PostgreSQL and immutable artifacts
+Description=Back up Left Field factual PostgreSQL and immutable artifacts
 Wants=network-online.target docker.service
 After=network-online.target docker.service
 

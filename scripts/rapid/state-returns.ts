@@ -35,7 +35,7 @@ export interface ProbeResult {
   readonly detail: string | null;
 }
 
-const USER_AGENT = "dsa-seats-intake (+https://git.subcult.tv/subculture-collective/dsa-seats)";
+const USER_AGENT = "left-field-intake (+https://git.subcult.tv/subculture-collective/left-field)";
 /** A POST-served file is pinned under a URL that records its form body, so the lock says exactly what was requested. */
 const pinnedUrl = (source: StateGeneralSource): string => source.postBody === undefined ? source.url : `${source.url}#post:${source.postBody}`;
 

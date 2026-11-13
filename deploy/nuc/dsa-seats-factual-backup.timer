@@ -1,5 +1,5 @@
 [Unit]
-Description=Daily encrypted off-host backup of DSA Seats factual data
+Description=Daily encrypted off-host backup of Left Field factual data
 
 [Timer]
 OnCalendar=*-*-* 01:43:00

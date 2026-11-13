@@ -42,7 +42,7 @@ npm run production:health -- --release <rel_release_id>
 The command uses the restricted preflight database role and Prometheus API. A
 healthy deployment reports `repositoryStatus=pass` and
 `productionTelemetryStatus=pass`. `alertDeliveryStatus` remains `blocked` until
-a named human receiver owns the DSA Seats alert route and an end-to-end test
+a named human receiver owns the Left Field alert route and an end-to-end test
 receipt is retained; a technically configured receiver name alone is not
 delivery evidence.
 

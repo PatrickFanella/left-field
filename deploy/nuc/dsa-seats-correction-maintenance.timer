@@ -1,5 +1,5 @@
 [Unit]
-Description=Clean expired DSA Seats correction controls daily
+Description=Clean expired Left Field correction controls daily
 
 [Timer]
 OnCalendar=*-*-* 02:17:00
