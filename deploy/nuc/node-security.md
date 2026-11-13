@@ -1,7 +1,8 @@
 # Node runtime security backport
 
-The maintained application build pins Node 22.23.4 and its official image digest.
-This is the fixed 22.x release in the [October 21 advisory](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases).
+The maintained application build pins Node 22.23.5 and its official image digest.
+22.23.4 was the fixed 22.x release in the [October 21 advisory](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases);
+later 22.x patch releases include that fix.
 
 For a production image that needs only the runtime patch, use
 `Dockerfile.node-security` with `APP_IMAGE` set to a retained local image tag.
