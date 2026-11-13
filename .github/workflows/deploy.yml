@@ -27,6 +27,7 @@ jobs:
     name: Web image and deploy NUC
     if: github.repository == 'subculture-collective/left-field' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
+    environment: production
     # The image upload goes through a Tailscale relay (NUC sits behind a hard
     # NAT) at about 1.5 MB/s, so the compressed upload alone takes ~25 min.
     timeout-minutes: 90
@@ -43,12 +44,12 @@ jobs:
           CI_LFS_TOKEN: ${{ github.token }}
         run: bash scripts/ci-lfs-checkout.sh
       - name: Join the tailnet
-        uses: tailscale/github-action@v3
+        uses: tailscale/github-action@6cae46e2d796f265265cfcf628b72a32b4d7cade # v3.3.0
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:github-ci
-          version: latest
+          version: 1.104.7
           # The tailnet DNS server (10.0.0.200) is unreachable from hosted runners.
           args: --accept-dns=false
       - name: Prepare the deploy key
